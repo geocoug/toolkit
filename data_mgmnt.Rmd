@@ -1,0 +1,110 @@
+---
+title: "Data Management"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = T, warning = F, message = F)
+
+# https://readxl.tidyverse.org/
+library(tidyverse)
+library(readxl)
+library(DT)
+```
+
+---
+
+# Resources
+- [execSQL](https://execsql.osdn.io/)
+- [PostgreSQL Tutorial](https://www.postgresqltutorial.com/)
+- [PostgreSQL Tips](https://pgdash.io/blog/postgres-tips-and-tricks.html?)
+- [DevDocs.io](https://devdocs.io/)
+
+---
+
+# Data Handling
+
+## Summarization
+
+Chemistry data frequently is summarized for use in analyses or for presentation using tables or maps. Summarization is ordinarily performed when there are multiple concentration values measured for a sample, or for a specific location, date, and depth. Multiple concentration values result from field or laboratory replications, from field splits created for quality control evaluations, and sometimes from sample reanalyses. Although field splits and laboratory replicates are created to support data quality assessments, all of the valid results that are produced are informative, are ordinarily stored in the project database, and are used to produce the most accurate possible estimate of the true concentration in a sample. When there are replicate results for a sample, the data will be averaged in a stepwise, or hierarchical, fashion. Because each level of the hierarchy represents a different source of variation, all the results at a single level are averaged together before results are averaged across levels. The different levels of replication, and the source of variation that each represents, are as follows:
+
+1.  Average across lab replicates<br>
+2.  Average across multiple analyses (if they exist) for the same lab sample. This will average across multiple methods and reanalyses (different SDGs)<br>
+3.  Average across multiple lab samples (if they exist) for the same sample number (split) and lab.  Multiple lab samples may exist for the same sample number if the laboratory has created new laboratory sample IDs for reanalyses.<br>
+4.  Average across multiple splits (if they exist) for the same lab and interpretive sample. Multiple sample numbers (splits) may exist for the same lab, or the same sample  number may exist for different labs. Splits sent to different labs potentially have an additional source of variability in addition to variability between splits sent to the same lab.<br>
+5.  Average across laboratories for the same main sample. This summarizes data by main sample (sample_id), which is typically the lowest level of data summarization to be used for data interpretation.
+
+By default, data are summarized by successive averaging across these levels of replication, in the order given above. During the averaging process, data validation qualifiers and significant digits must be propagated. The rules for propagating the data validation qualifiers U (undetected), J (estimated), and R (rejected) are as follows:
+
+- If both detected and undetected data are to be averaged, then undetected data lower than the highest detected value will be taken at one-half the detection limit and averaged with the detected data, and the result will be identified as detected. Non-detects that are higher than the highest detected value will be omitted from the average.
+- If all data to be averaged are undetected, the result will be taken to be the lowest detection limit, and will be identified as undetected.
+- If J-qualified data are averaged with non-J-qualified data, the result will be J-qualified.
+- If R-qualified data are averaged with non-R-qualified data, the result will be R-qualified.
+
+Significant digits are propagated so that the place (in the sense of one's place, ten's place, etc.) of the least significant digit of the average is equal to the highest place of the least significant digit of any of the values that are averaged.
+
+These rules are built into custom aggregate functions in IDB that use the measurement_result data type.
+
+These default data handling rules will be applied if no project-specific alternate rules are specified. The project manager, project technical staff, and data manager should evaluate, at the start of a project, whether an alternative approach is needed. Alternate data summarization rules should be summarized in the project plan or in the data management plan, if it exists.  (Data managers: if not documented elsewhere, record this information in the Data Manager's Manual.)
+
+Note that the handling of nondetects during hierarchical averaging and the presentation of nondetects in data summaries may be different.  Regardless of whether nondetects are taken at half the detection limit or the full detection limit when averaging, the summarized result may be presented with either the full detection limit or half the detection limit.  Reporting nondetects at the full detection limit should ordinarily be done when preparing data tables for reports or other deliverables.  Data analyses to be conducted by Integral may be carried out using either half or full detection limits.  The method of reporting nondetects should be specified when requesting data summaries.
+
+---
+
+## Character Encoding
+
+We deal with character encoding issues when importing data to databases all the time.  All databases are encoded in UTF-8, and the most common non-ASCII, non-UTF-8 format is Microsoft's custom encoding, which is CP-1252 (also known as win-1252 and a few other things).  The character encoding of a file can't necessarily be definitively determined by examination, but the Linux command-line tool file generally does a good job.  (It's available on the "rstudio" server.)  Also, the Geany editor does a good job of diagnosing file formats.  If you want to change the encoding of a file rather than importing it in a known format, the Linux command-line tool iconv will do that for you.  There's a Python library on PyPI named chardet that will also diagnose file encodings.
+
+For data managers, the workflow is to first guess that encoding errors on data import are due to the file being cp-1252.  That covers about 90% of cases.  Our import tool also automatically diagnoses instances where a file starts with a byte order mark (BOM), which covers most of the rest of the cases.  For the remainders, Geany is usually the quickest way to check the file encoding.
+
+Everything that comes out of our databases is always in UTF-8, so I, at least, don't ordinarily have encoding issues when importing data to R.  For those who use data from other sources, it is a good idea to document a recommended workflow and set of tools.
+
+---
+
+# Execsql
+
+## Linux
+
+### executable
+```{sql, eval=F, include=T, class.source='fold-show'}
+-- ===Convert template to csv===
+-- !x! sub sh !!$CURRENT_DIR!!/preprocess.sh
+-- !x! rm_file !!sh!!
+-- !x! write "cd source" to !!sh!!
+-- !x! write "xls2csv.py !!FNAME!!" to !!sh!!
+-- !x! system_cmd (chmod +x !!sh!!)
+-- !x! system_cmd (bash !!sh!!)
+```
+
+### Remove csv rows
+```{sql, eval=F, include=T, class.source='fold-show'}
+	-- ===Remove rows 1, 3, 4, 5, 6, 7===
+	-- !x! rm_file !!sh!!
+	-- !x! write "cd source" to !!sh!!
+	-- !x! write [cat "!!template_name!!.csv" | sed -e '1d' | sed -e '2d' | sed -e '2d' | sed -e '2d' | sed -e '2d' | sed -e '2d' > !!src_tbl!!.csv] to !!sh!!
+	-- !x! system_cmd (chmod +x !!sh!!)
+	-- !x! system_cmd (bash !!sh!!)
+	-- !x! rm_file !!sh!!
+```
+
+### Copy file
+```{sql, eval=F, include=T, class.source='fold-show'}
+-- ===Copy file to current working directory===
+-- !x! system_cmd (cp !!FPATH!! !!$CURRENT_DIR!!/source)
+```
+
+### Create CSV of files in directory
+```{sql, eval=F, include=T, class.source='fold-show'}
+echo fname > output.csv | ls >> output.csv
+```
+
+---
+
+## Windows
+
+### Create CSV of files in directory
+```{sql, eval=F, include=T, class.source='fold-show'}
+dir /b *.xls > files.csv
+echo fname > head.csv
+type head.csv > output.csv
+type files.csv >> output.csv
+```

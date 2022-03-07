@@ -1,0 +1,273 @@
+---
+title: "RStudio Reference"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = T, warning = F, message = F)
+```
+
+---
+
+```{r pkgs, eval = F}
+# Still need to figure out what this is actually doing
+if (!require(librarian)){
+  remotes::install_github("DesiQuintans/librarian")
+  library(librarian)
+}
+shelf(
+  # database
+  DBI, RPostgres,
+  # spatial
+  ggmap, leaflet, 
+  r-spatial/mapview,
+  sf, sp,
+  # tidyverse
+  dplyr, purrr, readr, tibble, tidyr,
+  reticulate,
+  # todo: use these
+  # googledrive,
+  # report
+  DT, gt, htmltools, htmlwidgets, kableExtra, knitr, markdown, rmarkdown, shiny, webshot,
+  # utility
+  fs, glue, here, png, scales, stringr, urltools)
+here <- here::here
+```
+
+# References
+
+  - [R Markdown Basics](https://rmarkdown.rstudio.com/authoring_basics.html)
+  - [R Markdown Reference Guide](https://bookdown.org/yihui/rmarkdown/)
+  - [Flexdashboard](https://rmarkdown.rstudio.com/flexdashboard/)
+  - [Awesome public datasets](https://github.com/awesomedata/awesome-public-datasets)
+
+---
+
+# Languages
+
+## R
+```{r}
+x <- 5 * 5
+x
+```
+
+
+## SQL
+
+There are a couple ways to connect to a database instance. These examples show how to connect to a local PostgreSQL instance, and how to use the connection information to query a database.
+
+### Option 1
+Create connection chunk, then call connection in each subsequent chunk.
+```{r connSQL, class.source='fold-show'}
+library(DBI)
+
+pass <- readLines("../../pwd.txt")
+
+db = dbConnect(
+  RPostgres::Postgres(),
+  dbname   = "personal",
+  host     = "localhost",
+  port     = 5432,
+  user     = "cgrant",
+  password = pass
+)
+```
+
+```{sql, connection=db, eval=F}
+select * from sleepdata
+```
+
+### Option 2
+Set default connection in the setup chunk (pretend its the setup chunk).
+```{r setup-v2, eval=F, class.source='fold-show'}
+library(DBI)
+db = dbConnect(
+  RPostgres::Postgres(),
+  dbname   = "personal",
+  host     = "localhost",
+  port     = 5432,
+  user     = "cgrant",
+  password = pass
+)
+knitr::opts_chunk$set(connection = "db")
+```
+
+Now you dont have to specify the connection for each chunk.
+```{sql, eval=F}
+select * from sleepdata
+```
+
+
+## Python
+
+To use a Python engine, you need to call `library(reticulate)` [link](https://rstudio.github.io/reticulate/)
+```{r, class.source='fold-show'}
+# install.packages("reticulate")
+library(reticulate)
+
+# Use specific Python installation
+# use_python("C:/Python37")
+
+# Use conda environment
+use_condaenv("dev")
+```
+
+Now you can run Python code
+```{python, class.source='fold-show'}
+x = 4 * 4
+print(x)
+```
+
+You can import libraries as normal
+```{python, class.source='fold-show'}
+import pandas as pd
+
+vals = {"col1": ['a', 'b', 'c', 'd'], "col2": [1, 10, 100, 1000]}
+df = pd.DataFrame(vals)
+print(df)
+```
+
+Access objects created within Python chunks from R using `py$<var>`
+```{r, class.source='fold-show'}
+library(DT)
+datatable(py$df)
+```
+
+---
+
+# Mapping
+```{r include=F}
+library(leaflet)
+library(dplyr)
+```
+
+## Leaflet
+Use the leaflet map below to explore.
+```{r, class.source='fold-show'}
+leaflet() %>% 
+  setView(lng=-122.90486, lat=47.03576, zoom=16) %>% 
+  addTiles() %>% 
+  addMarkers(lng=-122.90486, lat=47.03576, popup="WA State Capitol")
+```
+
+---
+
+# Databases
+```{r, include=F}
+## Load packages
+library(DBI)
+library(RPostgres)
+library(here)
+library(glue)
+library(leaflet)
+library(lwgeom)
+library(dplyr)
+library(ggplot2)
+library(rmarkdown)
+library(DT)
+library(plotly)
+```
+
+## Packages
+* [DT::datatables - options](https://datatables.net/reference/option/)
+
+## Connection
+```{r dbconn, class.source='fold-show'}
+pass <- readLines("../../pwd.txt")
+
+conn <- DBI::dbConnect(
+  RPostgres::Postgres(),
+  dbname   = "personal",
+  host     = "localhost",
+  port     = 5432,
+  user     = "cgrant",
+  password = pass
+)
+```
+
+
+## Query
+```{r dbquery, class.source='fold-show'}
+# tbls <- dbListTables(conn)
+sql <- glue("SELECT * FROM sleepdata")
+res <- dbGetQuery(conn, sql)
+# cols <- names(res)
+#datatable(res, options=list(scrollX=T))
+```
+
+
+# Plots
+
+## Temperature
+
+[Reference](https://rstudio-pubs-static.s3.amazonaws.com/392197_d66db681e0fa4ab1b19b85f8ce38aacc.html)
+[Source](https://www.ncdc.noaa.gov/cdo-web/datasets/LCD/stations/WBAN:24233/detail)
+
+```{r plot}
+f <- "./static/NOAA-SeaTac_cleaned.csv"
+dt <- read.csv(f)
+
+df <- as.data.frame(dt)
+
+updatemenus <- list(
+  list(
+    active = 0,
+    x = -.125,
+    type= 'buttons',
+    buttons = list(
+      list(
+        label = "Wet Bulb",
+        method = "update",
+        args = list(list(visible = c(TRUE, "legendonly")))),
+      list(
+        label = "Dry Bulb",
+        method = "update",
+        args = list(list(visible = c("legendonly", TRUE))))
+    )
+  )
+)
+
+plt <- plot_ly(data = df) %>%
+  add_markers(x=as.Date(df$Timestamp), y=df$HourlyWetBulbTemperature, name="Wet Bulb") %>%
+  add_markers(x=as.Date(df$Timestamp), y=df$HourlyDryBulbTemperature, name="Dry Bulb", visible="legendonly") %>%
+  layout(title = "SeaTac 2020 Temperature Data", 
+         showlegend=FALSE,
+         xaxis=list(zeroline = FALSE,title="Date"),
+         yaxis=list(zeroline = FALSE,title="Temperature (F)"),
+         updatemenus=updatemenus)
+
+plt
+
+```
+
+
+<!-- ## Steps -->
+<!-- ```{r steps} -->
+<!-- plt1 <- ggplot(res, aes(x=as.Date(start_time), y=steps)) + -->
+<!--   geom_line(color="red", size=1) + -->
+<!--   ylab("Steps") + -->
+<!--   xlab("Date") + -->
+<!--   scale_x_date(date_labels="%b\n%Y") -->
+<!-- plt1 -->
+<!-- ``` -->
+
+<!-- ## Sleep Time -->
+<!-- ```{r sleeptime} -->
+<!-- plt2 <- ggplot(res, aes(x=as.Date(start_time), y=(seconds_asleep / 60) / 60)) + -->
+<!--   geom_line(color="purple", size=1) + -->
+<!--   ylab("Hours Asleep") + -->
+<!--   xlab("Date") + -->
+<!--   scale_x_date(date_labels="%b\n%Y") -->
+<!-- plt2 -->
+<!-- ``` -->
+
+<!-- ## Sleep Quality -->
+<!-- ```{r sleepqual} -->
+<!-- plt3 <- ggplot(res, aes(x=as.Date(start_time), y=sleep_quality)) + -->
+<!--   geom_line(color="blue", size=1) + -->
+<!--   ylab("Sleep Quality") + -->
+<!--   xlab("Date") + -->
+<!--   scale_x_date(date_labels="%b\n%Y") -->
+<!-- plt3 -->
+<!-- ``` -->
+
+

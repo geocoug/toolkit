@@ -1,0 +1,62 @@
+---
+title: "Tools"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = T, warning = F, message = F)
+```
+
+---
+
+# Developer
+
+- [devdocs.io](https://devdocs.io/) - Searchable documentations
+- [ss64](https://ss64.com/) - CLI reference guide
+- [ReadTheDocs](https://readthedocs.org/) - Create, host, and browse documentation
+- [execsql](http://execsql.osdn.io/) - Run SQL with metacommands
+- [Bootstrap](https://getbootstrap.com/docs/4.5/getting-started/introduction/) - Web framework
+- [pgAdmin](https://www.pgadmin.org/try/) - PostgreSQL sandbox 
+- [Google Colab](https://colab.research.google.com/notebooks/intro.ipynb) - Collaborative Python notebooks
+- [JavaScript]() - Guide 
+- [swirl]() - Learn R, in R 
+- [geojson.io]() - Create, view, and share maps 
+- [repl.it]() - Collaborative in-browser IDE. 50+ languages 
+- [Dev Tools]() - Collection of tools for developers
+- [Integromat]() - Online scenario automation
+- [PostgreSQL cheatsheet](https://karloespiritu.github.io/cheatsheets/postgresql/) - PostgreSQL cheatsheet
+- [python-utils](https://www.python-utils.com/) - Playground for Python utilities
+- [Spektran](https://spektran.com/) - Collection of useful color tools
+- [Observable](https://observablehq.com/) - JavaScript notebooks
+- [HTML Dog](https://www.htmldog.com/) - HTML tutorials
+
+---
+
+
+# Music
+
+- [Songsterr](https://flagrantior.art/) - Guitar tabs
+- [Ultimate Guitar](https://www.ultimate-guitar.com/explore) - Guitar tabs 
+- [Flagrantior](https://flagrantior.art/) - Music theory
+- [musictheory.net](https://www.musictheory.net/) - Music theory
+- [Teoria](https://www.teoria.com/) - Music theory
+- [JustinGuitar](https://www.justinguitar.com/) - Guitar lessons
+- [HowToPlayPiano](https://howtoplaypiano.ca/) - Piano lessons
+- [Soundation](https://soundation.com/) - Broswer based music maker
+
+---
+
+
+# e-Books
+
+- [Project Gutenberg](https://www.gutenberg.org/)
+- [LibriVox](https://librivox.org/search?primary_key=0&search_category=title&search_page=1&search_form=get_results)
+- [Standard eBooks](https://standardebooks.org/)
+
+
+---
+
+
+# Miscellaneous
+
+- [Free Learning](https://freelearninglist.org/) - List of free educational resources
+

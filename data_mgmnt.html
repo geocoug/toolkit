@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Data Management</title>
+
+<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<link rel="shortcut icon" href="static/favicon.ico" type="image/x-icon" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">geocoug</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="rstudio_ref.html">RStudio</a>
+</li>
+<li>
+  <a href="data_mgmnt.html">Data Management</a>
+</li>
+<li>
+  <a href="chem.html">Analytical Chemistry</a>
+</li>
+<li>
+  <a href="cli.html">CLI</a>
+</li>
+<li>
+  <a href="dbms.html">DBMS</a>
+</li>
+<li>
+  <a href="tools.html">Tools</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://geocoug.github.io">
+    <span class="fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://www.linkedin.com/in/caleb-grant-04b098101">
+    <span class="fab fa-linkedin fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
+
+
+
+<h1 class="title toc-ignore">Data Management</h1>
+
+</div>
+
+
+<hr />
+<div id="resources" class="section level1">
+<h1>Resources</h1>
+<ul>
+<li><a href="https://execsql.osdn.io/">execSQL</a></li>
+<li><a href="https://www.postgresqltutorial.com/">PostgreSQL Tutorial</a></li>
+<li><a href="https://pgdash.io/blog/postgres-tips-and-tricks.html?">PostgreSQL Tips</a></li>
+<li><a href="https://devdocs.io/">DevDocs.io</a></li>
+</ul>
+<hr />
+</div>
+<div id="data-handling" class="section level1">
+<h1>Data Handling</h1>
+<div id="summarization" class="section level2">
+<h2>Summarization</h2>
+<p>Chemistry data frequently is summarized for use in analyses or for presentation using tables or maps. Summarization is ordinarily performed when there are multiple concentration values measured for a sample, or for a specific location, date, and depth. Multiple concentration values result from field or laboratory replications, from field splits created for quality control evaluations, and sometimes from sample reanalyses. Although field splits and laboratory replicates are created to support data quality assessments, all of the valid results that are produced are informative, are ordinarily stored in the project database, and are used to produce the most accurate possible estimate of the true concentration in a sample. When there are replicate results for a sample, the data will be averaged in a stepwise, or hierarchical, fashion. Because each level of the hierarchy represents a different source of variation, all the results at a single level are averaged together before results are averaged across levels. The different levels of replication, and the source of variation that each represents, are as follows:</p>
+<ol style="list-style-type: decimal">
+<li>Average across lab replicates<br></li>
+<li>Average across multiple analyses (if they exist) for the same lab sample. This will average across multiple methods and reanalyses (different SDGs)<br></li>
+<li>Average across multiple lab samples (if they exist) for the same sample number (split) and lab. Multiple lab samples may exist for the same sample number if the laboratory has created new laboratory sample IDs for reanalyses.<br></li>
+<li>Average across multiple splits (if they exist) for the same lab and interpretive sample. Multiple sample numbers (splits) may exist for the same lab, or the same sample number may exist for different labs. Splits sent to different labs potentially have an additional source of variability in addition to variability between splits sent to the same lab.<br></li>
+<li>Average across laboratories for the same main sample. This summarizes data by main sample (sample_id), which is typically the lowest level of data summarization to be used for data interpretation.</li>
+</ol>
+<p>By default, data are summarized by successive averaging across these levels of replication, in the order given above. During the averaging process, data validation qualifiers and significant digits must be propagated. The rules for propagating the data validation qualifiers U (undetected), J (estimated), and R (rejected) are as follows:</p>
+<ul>
+<li>If both detected and undetected data are to be averaged, then undetected data lower than the highest detected value will be taken at one-half the detection limit and averaged with the detected data, and the result will be identified as detected. Non-detects that are higher than the highest detected value will be omitted from the average.</li>
+<li>If all data to be averaged are undetected, the result will be taken to be the lowest detection limit, and will be identified as undetected.</li>
+<li>If J-qualified data are averaged with non-J-qualified data, the result will be J-qualified.</li>
+<li>If R-qualified data are averaged with non-R-qualified data, the result will be R-qualified.</li>
+</ul>
+<p>Significant digits are propagated so that the place (in the sense of one’s place, ten’s place, etc.) of the least significant digit of the average is equal to the highest place of the least significant digit of any of the values that are averaged.</p>
+<p>These rules are built into custom aggregate functions in IDB that use the measurement_result data type.</p>
+<p>These default data handling rules will be applied if no project-specific alternate rules are specified. The project manager, project technical staff, and data manager should evaluate, at the start of a project, whether an alternative approach is needed. Alternate data summarization rules should be summarized in the project plan or in the data management plan, if it exists. (Data managers: if not documented elsewhere, record this information in the Data Manager’s Manual.)</p>
+<p>Note that the handling of nondetects during hierarchical averaging and the presentation of nondetects in data summaries may be different. Regardless of whether nondetects are taken at half the detection limit or the full detection limit when averaging, the summarized result may be presented with either the full detection limit or half the detection limit. Reporting nondetects at the full detection limit should ordinarily be done when preparing data tables for reports or other deliverables. Data analyses to be conducted by Integral may be carried out using either half or full detection limits. The method of reporting nondetects should be specified when requesting data summaries.</p>
+<hr />
+</div>
+<div id="character-encoding" class="section level2">
+<h2>Character Encoding</h2>
+<p>We deal with character encoding issues when importing data to databases all the time. All databases are encoded in UTF-8, and the most common non-ASCII, non-UTF-8 format is Microsoft’s custom encoding, which is CP-1252 (also known as win-1252 and a few other things). The character encoding of a file can’t necessarily be definitively determined by examination, but the Linux command-line tool file generally does a good job. (It’s available on the “rstudio” server.) Also, the Geany editor does a good job of diagnosing file formats. If you want to change the encoding of a file rather than importing it in a known format, the Linux command-line tool iconv will do that for you. There’s a Python library on PyPI named chardet that will also diagnose file encodings.</p>
+<p>For data managers, the workflow is to first guess that encoding errors on data import are due to the file being cp-1252. That covers about 90% of cases. Our import tool also automatically diagnoses instances where a file starts with a byte order mark (BOM), which covers most of the rest of the cases. For the remainders, Geany is usually the quickest way to check the file encoding.</p>
+<p>Everything that comes out of our databases is always in UTF-8, so I, at least, don’t ordinarily have encoding issues when importing data to R. For those who use data from other sources, it is a good idea to document a recommended workflow and set of tools.</p>
+<hr />
+</div>
+</div>
+<div id="execsql" class="section level1">
+<h1>Execsql</h1>
+<div id="linux" class="section level2">
+<h2>Linux</h2>
+<div id="executable" class="section level3">
+<h3>executable</h3>
+<pre class="sql fold-show"><code>-- ===Convert template to csv===
+-- !x! sub sh !!$CURRENT_DIR!!/preprocess.sh
+-- !x! rm_file !!sh!!
+-- !x! write &quot;cd source&quot; to !!sh!!
+-- !x! write &quot;xls2csv.py !!FNAME!!&quot; to !!sh!!
+-- !x! system_cmd (chmod +x !!sh!!)
+-- !x! system_cmd (bash !!sh!!)</code></pre>
+</div>
+<div id="remove-csv-rows" class="section level3">
+<h3>Remove csv rows</h3>
+<pre class="sql fold-show"><code>    -- ===Remove rows 1, 3, 4, 5, 6, 7===
+    -- !x! rm_file !!sh!!
+    -- !x! write &quot;cd source&quot; to !!sh!!
+    -- !x! write [cat &quot;!!template_name!!.csv&quot; | sed -e &#39;1d&#39; | sed -e &#39;2d&#39; | sed -e &#39;2d&#39; | sed -e &#39;2d&#39; | sed -e &#39;2d&#39; | sed -e &#39;2d&#39; &gt; !!src_tbl!!.csv] to !!sh!!
+    -- !x! system_cmd (chmod +x !!sh!!)
+    -- !x! system_cmd (bash !!sh!!)
+    -- !x! rm_file !!sh!!</code></pre>
+</div>
+<div id="copy-file" class="section level3">
+<h3>Copy file</h3>
+<pre class="sql fold-show"><code>-- ===Copy file to current working directory===
+-- !x! system_cmd (cp !!FPATH!! !!$CURRENT_DIR!!/source)</code></pre>
+</div>
+<div id="create-csv-of-files-in-directory" class="section level3">
+<h3>Create CSV of files in directory</h3>
+<pre class="sql fold-show"><code>echo fname &gt; output.csv | ls &gt;&gt; output.csv</code></pre>
+<hr />
+</div>
+</div>
+<div id="windows" class="section level2">
+<h2>Windows</h2>
+<div id="create-csv-of-files-in-directory-1" class="section level3">
+<h3>Create CSV of files in directory</h3>
+<pre class="sql fold-show"><code>dir /b *.xls &gt; files.csv
+echo fname &gt; head.csv
+type head.csv &gt; output.csv
+type files.csv &gt;&gt; output.csv</code></pre>
+</div>
+</div>
+</div>
+
+<hr>
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("hide" === "show");
+});
+</script>
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

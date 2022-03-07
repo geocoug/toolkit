@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>DBMS</title>
+
+<script src="site_libs/header-attrs-2.12/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<link rel="shortcut icon" href="static/favicon.ico" type="image/x-icon" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">geocoug</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="rstudio.html">RStudio</a>
+</li>
+<li>
+  <a href="python.html">Python</a>
+</li>
+<li>
+  <a href="chem.html">Analytical Chemistry</a>
+</li>
+<li>
+  <a href="cli.html">CLI</a>
+</li>
+<li>
+  <a href="dbms.html">DBMS</a>
+</li>
+<li>
+  <a href="tools.html">Tools</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://geocoug.github.io">
+    <span class="fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://www.linkedin.com/in/caleb-grant-04b098101">
+    <span class="fab fa-linkedin fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
+
+
+
+<h1 class="title toc-ignore">DBMS</h1>
+
+</div>
+
+
+<div id="postgresql" class="section level1">
+<h1>PostgreSQL</h1>
+<hr />
+<div id="pg_dump" class="section level2">
+<h2>pg_dump</h2>
+<p><a
+href="https://www.postgresql.org/docs/12/app-pgdump.html">Reference</a></p>
+<p><code>pg_dump -h [host] -d [database] -U [user] -s [schema only] -W [force password] &gt; &lt;file&gt;.sql</code></p>
+<hr />
+</div>
+<div id="primary-key-relationships" class="section level2">
+<h2>Primary Key Relationships</h2>
+<p><strong>Columns</strong></p>
+<ul>
+<li>table_schema: PK schema name</li>
+<li>table_name: PK table name</li>
+<li>constraint_name: PK constraint name</li>
+<li>position: index of column in table (1, 2, …). 2 or higher means key
+is composite (contains more than one column)</li>
+<li>key_column: PK column name</li>
+</ul>
+<p><strong>Rows</strong></p>
+<ul>
+<li>One row represents one primary key column</li>
+<li>Scope of rows: columns of all PK constraints in a database</li>
+<li>Ordered by table schema, table name, column position</li>
+</ul>
+<pre class="sql fold-show"><code>select * from (
+    -- Main query. Returns all tables
+    select kcu.table_schema,
+           kcu.table_name,
+           tco.constraint_name,
+           kcu.ordinal_position as position,
+           kcu.column_name as key_column
+    from information_schema.table_constraints tco
+    join information_schema.key_column_usage kcu 
+         on kcu.constraint_name = tco.constraint_name
+         and kcu.constraint_schema = tco.constraint_schema
+         and kcu.constraint_name = tco.constraint_name
+    where tco.constraint_type = &#39;PRIMARY KEY&#39;
+    order by kcu.table_schema,
+             kcu.table_name,
+             position
+) main
+where table_name = &#39;d_location&#39;</code></pre>
+<hr />
+</div>
+<div id="foreign-key-relationships" class="section level2">
+<h2>Foreign Key Relationships</h2>
+<p><strong>Columns</strong></p>
+<ul>
+<li>foreign_table: foreign table schema and name</li>
+<li>rel: relationship symbol implicating direction</li>
+<li>primary_table: primary (rerefenced) table schema and name</li>
+<li>fk_columns: list of FK colum names, separated with “,”</li>
+<li>constraint_name: foreign key constraint name</li>
+</ul>
+<p><strong>Rows</strong></p>
+<ul>
+<li>One row represents one foreign key.</li>
+<li>If foreign key consists of multiple columns (composite key) it is
+still represented as one row.</li>
+<li>Scope of rows: all foregin keys in a database.</li>
+<li>Ordered by foreign table schema name and table name.</li>
+</ul>
+</div>
+<div id="ordering-tables-by-fk" class="section level2">
+<h2>Ordering Tables by FK</h2>
+<pre class="sql fold-show"><code>drop table if exists dependencies cascade;
+create temporary table dependencies as
+select 
+        tc.table_name as child,
+        tu.table_name as parent
+from 
+        information_schema.table_constraints as tc
+        inner join information_schema.constraint_table_usage as tu
+             on tu.constraint_name = tc.constraint_name
+where 
+        tc.constraint_type = &#39;FOREIGN KEY&#39;
+        and tc.table_name &lt;&gt; tu.table_name;
+
+with recursive dep_depth as (
+ select
+  dep.child,
+  dep.parent,
+  1 as lvl
+ from
+  dependencies as dep
+ union all
+ select
+  dep.child,
+  dep.parent,
+  dd.lvl + 1 as lvl
+ from
+  dep_depth as dd
+  inner join dependencies as dep on dep.parent = dd.child
+ )
+select
+ table_name,
+ table_order
+from (
+ select
+  dd.parent as table_name,
+  max(lvl) as table_order
+ from
+  dep_depth as dd
+ group by
+  table_name
+ union
+ select
+  dd.child as table_name,
+  max(lvl) + 1 as level
+ from
+  dep_depth as dd
+  left join dependencies as dp on dp.parent = dd.child
+ where
+  dp.parent is null
+ group by
+  dd.child
+ ) as all_levels
+ order by table_order;</code></pre>
+<pre class="sql fold-show"><code>select * from (
+    -- Main query. Returns FK relationships for all tables
+    select 
+            kcu.table_schema as table_schema,
+            kcu.table_name as foreign_table,
+           &#39;&gt;-&#39; as relationship,
+           rel_tco.table_name as primary_table,
+           string_agg(kcu.column_name, &#39;, &#39;) as fk_columns,
+           kcu.constraint_name
+    from information_schema.table_constraints tco
+    join information_schema.key_column_usage kcu
+              on tco.constraint_schema = kcu.constraint_schema
+              and tco.constraint_name = kcu.constraint_name
+    join information_schema.referential_constraints rco
+              on tco.constraint_schema = rco.constraint_schema
+              and tco.constraint_name = rco.constraint_name
+    join information_schema.table_constraints rel_tco
+              on rco.unique_constraint_schema = rel_tco.constraint_schema
+              and rco.unique_constraint_name = rel_tco.constraint_name
+    where tco.constraint_type = &#39;FOREIGN KEY&#39;
+    group by kcu.table_schema,
+             kcu.table_name,
+             rel_tco.table_name,
+             rel_tco.table_schema,
+             kcu.constraint_name
+    order by kcu.table_schema,
+             kcu.table_name
+) main
+where primary_table = &#39;d_location&#39;</code></pre>
+<hr />
+</div>
+<div id="create-db" class="section level2">
+<h2>Create DB</h2>
+<pre class="sql fold-show"><code>create database &lt;new_db_name&gt; owner &lt;user_or_group&gt; template &lt;name_of_db_to_use_as_template&gt;;
+-- show search_path;
+set search_path to &lt;default_schema&gt;,public;
+create extension if not exists postgis;
+create extension if not exists dblink;
+
+
+-- Database Creation
+-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+create database &lt;new_db_name&gt; owner &lt;user_or_group&gt; template &lt;name_of_db_to_use_as_template&gt;;
+-- show search_path;
+set search_path to idb, public;
+
+grant connect, temporary on database &lt;new_db_name&gt; to public;
+grant all on database &lt;new_db_name&gt; to &lt;user&gt;;
+grant all on database &lt;new_db_name&gt; to &lt;group&gt;;
+
+create extension if not exists postgis;
+create extension if not exists dblink;
+
+create schema staging;
+
+-- Add a unique constraint to e_analyte.full_name and e_analyte.cas_rn so that
+--  no full name or cas_rn can be used for more than one analyte
+-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+alter table e_analyte
+  add constraint uc_fullname unique(full_name),
+  add constraint uc_casrn unique(cas_rn);</code></pre>
+</div>
+<div id="dblink" class="section level2">
+<h2>DBLink</h2>
+<pre class="sql fold-show"><code>select
+  a.*, b.*
+from
+  table1 as a
+  left join (
+    select * from dblink(
+      &#39;dbname=&lt;database&gt;&#39;,
+      &#39;select col1, col2, col3 from &lt;table&gt;&#39;
+    ) as d (
+      col1 text, col2 text, col3 text
+    )
+  ) as b
+  on a.col1 = b.col2</code></pre>
+</div>
+<div id="partitioning" class="section level2">
+<h2>Partitioning</h2>
+<pre class="sql fold-show"><code>select * from (
+    select *, row_number() over(
+        partition by
+            col1, col2, col3
+        order by col1 desc
+    ) rowid
+    from sometable
+) someid
+where rowid &gt; 1;</code></pre>
+</div>
+<div id="temporary-objects" class="section level2">
+<h2>Temporary Objects</h2>
+<pre class="sql fold-show"><code>SELECT
+    n.nspname as SchemaName,
+    c.relname as RelationName,
+    CASE c.relkind
+        WHEN &#39;r&#39; THEN &#39;table&#39;
+        WHEN &#39;v&#39; THEN &#39;view&#39;
+        WHEN &#39;i&#39; THEN &#39;index&#39;
+        WHEN &#39;S&#39; THEN &#39;sequence&#39;
+        WHEN &#39;s&#39; THEN &#39;special&#39;
+        END as RelationType,
+    pg_catalog.pg_get_userbyid(c.relowner) as RelationOwner,             
+    pg_size_pretty(pg_relation_size(n.nspname ||&#39;.&#39;|| c.relname)) as RelationSize
+FROM pg_catalog.pg_class c
+LEFT JOIN pg_catalog.pg_namespace AS n ON n.oid = c.relnamespace
+    WHERE  c.relkind IN (&#39;r&#39;,&#39;s&#39;) 
+    AND  (n.nspname !~ &#39;^pg_toast&#39; and nspname like &#39;pg_temp%&#39;)
+ORDER BY pg_relation_size(n.nspname ||&#39;.&#39;|| c.relname) DESC;</code></pre>
+</div>
+<div id="table-relationships" class="section level2">
+<h2>Table Relationships</h2>
+<p><a
+href="https://dataedo.com/kb/query/postgresql/list-tables-with-most-relationships">https://dataedo.com/kb/query/postgresql/list-tables-with-most-relationships</a></p>
+<pre class="sql fold-show"><code>select * from
+(select relations.table_name as table_name, -- schema name and table name
+       count(relations.table_name) as relationships, -- number of table relationships
+       count(relations.referenced_tables) as foreign_keys, -- number of foreign keys in a table
+       count(relations.referencing_tables) as references, -- number of foreign keys that are refering to this table
+       count(distinct related_table) as related_tables, -- number of related tables
+       count(distinct relations.referenced_tables) as referenced_tables, -- number of different tables referenced with FKs (multiple FKs can refer to one table, so number of FKs might be different than number of referenced tables)
+       count(distinct relations.referencing_tables) as referencing_tables -- number of different tables that are refering to this table (similar to referenced_tables)
+from(
+     select pk_tco.table_schema || &#39;.&#39; || pk_tco.table_name as table_name,
+            fk_tco.table_schema || &#39;.&#39; || fk_tco.table_name as related_table,
+            fk_tco.table_name as referencing_tables,
+            null::varchar(100) as referenced_tables
+     from information_schema.referential_constraints rco
+     join information_schema.table_constraints fk_tco
+          on rco.constraint_name = fk_tco.constraint_name
+          and rco.constraint_schema = fk_tco.table_schema
+     join information_schema.table_constraints pk_tco
+          on rco.unique_constraint_name = pk_tco.constraint_name
+          and rco.unique_constraint_schema = pk_tco.table_schema
+    union all
+    select fk_tco.table_schema || &#39;.&#39; || fk_tco.table_name as table_name,
+           pk_tco.table_schema || &#39;.&#39; || pk_tco.table_name as related_table,
+           null as referencing_tables,
+           pk_tco.table_name as referenced_tables
+    from information_schema.referential_constraints rco
+    join information_schema.table_constraints fk_tco 
+         on rco.constraint_name = fk_tco.constraint_name
+         and rco.constraint_schema = fk_tco.table_schema
+    join information_schema.table_constraints pk_tco
+         on rco.unique_constraint_name = pk_tco.constraint_name
+         and rco.unique_constraint_schema = pk_tco.table_schema
+) relations
+group by table_name
+order by relationships asc) results
+
+where substring(table_name, 5, 2) = &#39;d_&#39;; -- substring(string, start_position, length)</code></pre>
+</div>
+<div id="current-database" class="section level2">
+<h2>Current Database</h2>
+<pre class="sql fold-show"><code>select * from pg_catalog.current_database()</code></pre>
+</div>
+<div id="current-userrole" class="section level2">
+<h2>Current user/role</h2>
+<pre class="sql fold-show"><code>select * from current_role
+select * from current_user</code></pre>
+</div>
+<div id="process-id" class="section level2">
+<h2>Process ID</h2>
+<pre class="sql fold-show"><code>select * from pg_catalog.pg_backend_pid()</code></pre>
+</div>
+<div id="list-functionsdefsargs" class="section level2">
+<h2>List functions/defs/args</h2>
+<pre class="sql fold-show"><code>select 
+    pg_get_userbyid(p.proowner) as owner,
+    n.nspname as function_schema,
+    p.proname as function_name,
+    l.lanname as function_language,
+    case when l.lanname = &#39;internal&#39; then p.prosrc
+        else pg_get_functiondef(p.oid)
+        end as definition,
+    pg_get_function_arguments(p.oid) as function_arguments,
+    t.typname as return_type
+from pg_proc p
+    left join pg_namespace n on p.pronamespace = n.oid
+    left join pg_language l on p.prolang = l.oid
+    left join pg_type t on t.oid = p.prorettype 
+where n.nspname not in (&#39;pg_catalog&#39;, &#39;information_schema&#39;)
+and n.nspname = &#39;idb&#39;
+order by function_schema, function_name;</code></pre>
+</div>
+<div id="whos-logged-in" class="section level2">
+<h2>Whos logged in</h2>
+<pre class="sql fold-show"><code>select * from pg_stat_activity
+where usename != &#39;&#39; and usename != &#39;postgres&#39;
+order by usename, pid</code></pre>
+</div>
+<div id="aggregate-functions" class="section level2">
+<h2>Aggregate Functions</h2>
+<p><a
+href="https://www.postgresql.org/docs/9.6/catalog-pg-aggregate.html">https://www.postgresql.org/docs/9.6/catalog-pg-aggregate.html</a></p>
+<pre class="sql fold-show"><code>-- pg_proc contains data for aggregate functions as well as plain functions
+select * from pg_proc
+-- pg_aggregate is an extension of pg_proc.
+select * from pg_aggregate</code></pre>
+</div>
+<div id="list-users" class="section level2">
+<h2>List users</h2>
+<pre class="sql fold-show"><code>SELECT rolname FROM pg_roles;</code></pre>
+</div>
+<div id="list-tables-in-database" class="section level2">
+<h2>List tables in database</h2>
+<pre class="sql fold-show"><code>SELECT table_schema,table_name FROM information_schema.tables ORDER BY table_schema,table_name;</code></pre>
+</div>
+<div id="list-columns-in-table" class="section level2">
+<h2>List columns in table</h2>
+<pre class="sql fold-show"><code>SELECT column_name
+FROM   information_schema.columns
+WHERE  table_schema = &#39;schema&#39;
+AND    table_name = &#39;table&#39;;</code></pre>
+</div>
+<div id="update-from" class="section level2">
+<h2>Update From</h2>
+<pre class="sql fold-show"><code>UPDATE tablename
+SET columnname = someothervalue
+FROM ...
+WHERE ...</code></pre>
+</div>
+<div id="materialized-view" class="section level2">
+<h2>Materialized View</h2>
+<p><a
+href="https://www.postgresqltutorial.com/postgresql-materialized-views/">Reference</a></p>
+<pre class="sql fold-show"><code>CREATE MATERIALIZED VIEW view_name
+AS
+query
+WITH [NO] DATA;</code></pre>
+<p>When you refresh data for a materialized view, PostgreSQL locks the
+entire table therefore you cannot query data against it. To avoid this,
+you can use the CONCURRENTLY option.</p>
+<p>With CONCURRENTLY option, PostgreSQL creates a temporary updated
+version of the materialized view, compares two versions, and performs
+INSERT and UPDATE only the differences.</p>
+<pre class="sql fold-show"><code>REFRESH MATERIALIZED VIEW CONCURRENTLY view_name;</code></pre>
+</div>
+<div id="constants" class="section level2">
+<h2>Constants</h2>
+<pre class="sql fold-show"><code>WITH myconstants (analyte_search) as (
+   values (&#39;%Hexachlorocyclopentadiene%&#39;)
+)
+
+SELECT *
+FROM e_analyte, myconstants
+WHERE analyte ilike analyte_search
+   OR full_name ilike analyte_search
+   OR aliases ilike analyte_search;</code></pre>
+</div>
+<div id="sequential-keys" class="section level2">
+<h2>Sequential Keys</h2>
+<pre class="sql fold-show"><code>seq_key bigint NOT NULL DEFAULT nextval(&#39;seq_key&#39;::regclass)
+
+ALTER SEQUENCE seq_key RESTART WITH 3;</code></pre>
+</div>
+</div>
+
+<hr>
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("hide" === "show");
+});
+</script>
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

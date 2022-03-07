@@ -1,0 +1,115 @@
+---
+title: "Misc"
+---
+
+---
+
+```{r config, echo=F, include=F}
+if (!require(librarian)){
+  remotes::install_github("DesiQuintans/librarian")
+  library(librarian)
+}
+
+shelf(
+  # database
+  DBI, RPostgres,
+  # tidyverse
+  dplyr, purrr, readr, tibble, tidyr,
+  # report
+  DT, knitr, markdown, rmarkdown,
+  # utility
+  fs, glue, here, png, scales, stringr, urltools, ggplot2)
+# here <- here::here
+
+pass <- readLines("../../pwd.txt")
+
+conn = dbConnect(
+  RPostgres::Postgres(),
+  dbname   = "btc",
+  host     = "localhost",
+  port     = 5432,
+  user     = "cgrant",
+  password = pass
+)
+knitr::opts_chunk$set(echo = T, warning = F, message = F, connection = "conn")
+```
+
+# Bitcoin
+```{r query, include=T, class.source='fold-show'}
+sql <- glue ("SELECT * FROM public.bitcoin")
+res <- dbGetQuery(conn, sql)
+```
+
+## Table
+```{r tbl, include=T}
+datatable(res)
+```
+
+## Price Plot
+```{r price, include=T, class.source='fold-show'}
+plt <- ggplot(res, aes(x=as.Date(updated), y=btc_price)) +
+ geom_line(color="red", size=1) +
+ ylab("BTC Price") +
+ xlab("Date") +
+  #scale_x_date(date_labels="%b\n%Y")
+ scale_x_date(date_labels='%m-%d-%YS')
+plt
+```
+
+## Balance Plot
+```{r balance, include=T, class.source='fold-show'}
+plt2 <- ggplot(res, aes(x=as.Date(updated), y=usd_amount)) +
+ geom_line(color="green", size=1) +
+ ylab("Balance") +
+ xlab("Date") +
+ #scale_x_date(date_labels="%b\n%Y")
+ scale_x_date(date_labels='%m-%d-%YS')
+plt2
+```
+
+
+
+# Health
+```{r dbconn, class.source='fold-show'}
+library(leaflet)
+library(dplyr)
+library(DBI)
+library(DT)
+
+pass <- readLines("../../pwd.txt")
+
+conn <- DBI::dbConnect(
+  RPostgres::Postgres(),
+  dbname   = "personal",
+  host     = "localhost",
+  port     = 5432,
+  user     = "cgrant",
+  password = pass
+)
+```
+
+## Leaflet
+Use the leaflet map below to explore.
+```{r, class.source='fold-show'}
+# sql <- "SELECT * FROM workouts" # limit 50"
+# res <- dbGetQuery(conn, sql)
+
+# leaflet() %>%
+#   addTiles() %>%
+#   for (row in 1:nrow(res)) {
+#     long <- res[row, "longitude"]
+#     lat <- res[row, "latitide"]
+#     dtime <- res[row, "datetime"]
+#     addMarkers(lng=long, lat=lat, popup=dtime)
+#   }
+
+# leaflet(data=res) %>%
+#     addTiles() %>%
+#     addMarkers(~longitude, ~latitude, popup = ~datetime)
+
+  
+# leaflet() %>% 
+#   setView(lng=-122.90486, lat=47.03576, zoom=16) %>% 
+#   addTiles() %>% 
+#   addMarkers(lng=-122.90486, lat=47.03576, popup="WA State Capitol")
+```

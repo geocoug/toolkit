@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Misc</title>
+
+<script src="site_libs/header-attrs-2.12/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+<script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="site_libs/datatables-binding-0.21/datatables.js"></script>
+<link href="site_libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="site_libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="site_libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
+<link href="site_libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="site_libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<link rel="shortcut icon" href="static/favicon.ico" type="image/x-icon" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">geocoug</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="rstudio.html">RStudio</a>
+</li>
+<li>
+  <a href="python.html">Python</a>
+</li>
+<li>
+  <a href="chem.html">Analytical Chemistry</a>
+</li>
+<li>
+  <a href="cli.html">CLI</a>
+</li>
+<li>
+  <a href="dbms.html">DBMS</a>
+</li>
+<li>
+  <a href="tools.html">Tools</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://geocoug.github.io">
+    <span class="fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://www.linkedin.com/in/caleb-grant-04b098101">
+    <span class="fab fa-linkedin fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
+
+
+
+<h1 class="title toc-ignore">Misc</h1>
+
+</div>
+
+
+<hr />
+<div id="bitcoin" class="section level1">
+<h1>Bitcoin</h1>
+<pre class="r fold-show"><code>sql &lt;- glue (&quot;SELECT * FROM public.bitcoin&quot;)
+res &lt;- dbGetQuery(conn, sql)</code></pre>
+<div id="table" class="section level2">
+<h2>Table</h2>
+<pre class="r"><code>datatable(res)</code></pre>
+<div id="htmlwidget-fe67ff8744f7c01857f1" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-fe67ff8744f7c01857f1">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80","81","82","83","84","85","86","87","88","89","90","91","92","93","94","95","96","97","98","99","100","101","102","103","104","105","106","107","108","109","110","111","112","113","114","115","116","117","118","119","120","121","122","123","124","125","126","127","128","129","130","131","132","133","134","135","136","137","138","139","140","141","142","143","144","145","146","147","148","149","150","151","152","153","154","155","156","157","158","159","160","161","162","163","164","165","166","167","168","169","170","171","172","173","174","175","176","177","178","179","180","181","182","183","184","185","186","187","188","189","190","191","192","193","194","195","196","197","198","199","200","201","202","203","204","205","206","207","208","209","210","211","212","213","214","215","216","217","218","219","220","221","222","223","224","225","226","227","228","229","230","231","232","233","234","235","236","237","238","239","240","241","242","243","244","245","246","247","248","249","250","251","252","253","254","255"],[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191,192,193,194,195,196,197,198,199,200,201,202,203,204,205,206,207,208,209,210,211,212,213,214,215,216,217,218,219,220,221,222,223,224,225,226,227,228,229,230,231,232,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249,250,251,252,253,254,255],["2021-01-10T20:02:56Z","2021-01-10T20:03:42Z","2021-01-10T20:04:39Z","2021-01-10T20:05:25Z","2021-01-10T20:06:40Z","2021-01-10T20:15:24Z","2021-01-10T20:17:25Z","2021-01-10T20:17:42Z","2021-01-10T20:19:21Z","2021-01-10T20:19:42Z","2021-01-10T20:20:08Z","2021-01-10T20:20:21Z","2021-01-11T07:26:32Z","2021-01-11T12:14:49Z","2021-01-12T07:13:42Z","2021-01-12T07:26:30Z","2021-01-13T07:26:33Z","2021-01-14T07:26:33Z","2021-01-15T07:26:34Z","2021-01-16T11:48:19Z","2021-01-16T12:34:44Z","2021-01-16T12:35:42Z","2021-01-16T12:49:47Z","2021-01-16T12:50:05Z","2021-01-17T17:34:58Z","2021-01-18T07:26:33Z","2021-01-19T07:26:33Z","2021-01-20T07:26:38Z","2021-01-21T07:26:34Z","2021-01-22T07:26:32Z","2021-01-23T17:23:53Z","2021-01-25T06:39:58Z","2021-01-25T07:26:31Z","2021-01-26T07:26:33Z","2021-01-27T07:26:34Z","2021-01-28T07:26:33Z","2021-01-29T07:26:33Z","2021-01-30T07:26:34Z","2021-02-01T07:26:34Z","2021-02-02T07:26:34Z","2021-02-03T07:26:33Z","2021-02-04T07:26:33Z","2021-02-05T07:26:33Z","2021-02-08T06:55:47Z","2021-02-08T07:07:27Z","2021-02-08T07:26:31Z","2021-02-09T07:26:34Z","2021-02-09T12:02:11Z","2021-02-10T07:26:33Z","2021-02-11T06:28:10Z","2021-02-11T07:26:32Z","2021-02-16T07:26:34Z","2021-02-17T07:26:34Z","2021-02-18T07:26:34Z","2021-02-19T07:26:34Z","2021-02-19T11:21:02Z","2021-02-22T07:26:33Z","2021-02-23T07:26:32Z","2021-02-25T07:26:34Z","2021-02-26T07:26:36Z","2021-03-01T07:26:34Z","2021-03-02T07:26:33Z","2021-03-03T07:26:34Z","2021-03-03T13:48:15Z","2021-03-03T15:48:19Z","2021-03-04T07:26:34Z","2021-03-05T07:26:34Z","2021-03-08T07:11:29Z","2021-03-08T07:26:35Z","2021-03-09T06:58:11Z","2021-03-09T07:26:34Z","2021-03-10T07:07:30Z","2021-03-10T07:26:31Z","2021-03-12T07:26:34Z","2021-03-15T07:26:33Z","2021-03-16T07:26:33Z","2021-03-17T07:26:34Z","2021-03-19T07:26:34Z","2021-03-23T07:26:35Z","2021-03-24T07:26:42Z","2021-03-26T07:26:33Z","2021-03-29T07:26:34Z","2021-03-30T07:26:35Z","2021-03-31T07:26:34Z","2021-04-01T07:26:34Z","2021-04-02T07:26:34Z","2021-04-06T07:26:34Z","2021-04-12T07:26:38Z","2021-04-14T07:26:34Z","2021-04-15T07:26:33Z","2021-04-16T07:26:34Z","2021-04-19T07:26:35Z","2021-04-23T07:26:34Z","2021-04-26T06:43:12Z","2021-04-26T07:26:33Z","2021-04-27T07:26:34Z","2021-04-28T07:26:33Z","2021-04-29T07:26:33Z","2021-04-30T07:26:33Z","2021-05-03T07:26:34Z","2021-05-04T07:26:35Z","2021-05-05T07:26:34Z","2021-05-10T07:26:34Z","2021-05-11T07:26:34Z","2021-05-12T07:26:34Z","2021-05-13T07:26:34Z","2021-05-13T07:32:25Z","2021-05-14T07:26:34Z","2021-05-17T07:26:33Z","2021-05-18T07:26:49Z","2021-05-19T07:26:35Z","2021-05-20T07:26:33Z","2021-05-21T07:26:34Z","2021-05-24T07:26:34Z","2021-05-25T07:26:33Z","2021-05-26T07:26:33Z","2021-05-27T07:26:34Z","2021-05-28T07:26:32Z","2021-06-01T07:45:06Z","2021-06-01T07:45:18Z","2021-06-02T07:26:36Z","2021-06-03T07:26:34Z","2021-06-04T07:26:34Z","2021-06-07T07:26:45Z","2021-06-08T07:26:34Z","2021-06-09T07:26:34Z","2021-06-10T07:26:35Z","2021-06-11T07:26:36Z","2021-06-14T07:26:33Z","2021-06-15T07:26:35Z","2021-06-16T07:26:34Z","2021-06-17T07:26:34Z","2021-06-18T07:26:32Z","2021-06-21T06:56:48Z","2021-06-21T07:26:36Z","2021-06-22T07:26:31Z","2021-06-23T07:26:32Z","2021-06-25T07:26:34Z","2021-06-28T07:26:35Z","2021-07-01T07:26:37Z","2021-07-02T07:26:35Z","2021-07-09T07:26:34Z","2021-07-12T07:26:36Z","2021-07-13T07:26:34Z","2021-07-15T07:26:34Z","2021-07-16T07:26:47Z","2021-07-19T07:26:33Z","2021-07-20T07:26:36Z","2021-07-21T08:03:58Z","2021-07-23T07:26:35Z","2021-07-26T13:52:13Z","2021-07-27T07:26:33Z","2021-08-02T07:26:47Z","2021-08-05T07:26:34Z","2021-08-09T07:26:34Z","2021-08-10T07:46:12Z","2021-08-11T06:02:53Z","2021-08-11T07:26:31Z","2021-08-12T07:26:34Z","2021-08-20T10:43:42Z","2021-08-23T07:26:47Z","2021-08-25T07:26:34Z","2021-08-26T07:26:34Z","2021-08-27T07:26:33Z","2021-09-20T07:26:33Z","2021-09-21T07:26:34Z","2021-09-22T07:26:33Z","2021-09-23T07:26:34Z","2021-09-24T07:26:33Z","2021-09-27T07:26:34Z","2021-09-28T07:26:33Z","2021-09-29T07:26:34Z","2021-09-30T07:26:38Z","2021-10-01T07:26:34Z","2021-10-04T07:26:33Z","2021-10-06T07:26:33Z","2021-10-07T07:26:33Z","2021-10-08T07:26:34Z","2021-10-11T07:26:33Z","2021-10-12T07:26:33Z","2021-10-13T07:26:34Z","2021-10-14T07:26:35Z","2021-11-01T07:26:37Z","2021-11-01T07:33:22Z","2021-11-02T07:26:35Z","2021-11-03T07:26:38Z","2021-11-04T07:26:35Z","2021-11-08T07:26:35Z","2021-11-09T07:26:35Z","2021-11-10T07:26:35Z","2021-11-12T07:26:34Z","2021-11-17T07:26:35Z","2021-11-18T07:26:35Z","2021-11-19T07:26:35Z","2021-11-22T07:26:35Z","2021-11-23T07:26:34Z","2021-11-29T07:26:36Z","2021-11-30T07:26:34Z","2021-12-01T07:26:35Z","2021-12-02T07:26:34Z","2021-12-03T07:26:33Z","2021-12-06T07:26:39Z","2021-12-07T07:26:35Z","2021-12-08T07:26:34Z","2021-12-09T07:26:34Z","2021-12-10T07:26:36Z","2021-12-24T08:55:01Z","2021-12-24T09:01:35Z","2021-12-24T09:26:48Z","2021-12-24T09:27:01Z","2021-12-24T09:28:00Z","2021-12-26T08:05:01Z","2021-12-27T08:09:31Z","2021-12-28T08:05:01Z","2021-12-29T08:05:01Z","2021-12-30T08:05:01Z","2021-12-31T08:05:01Z","2022-01-01T08:05:01Z","2022-01-02T08:05:00Z","2022-01-04T08:05:01Z","2022-01-05T08:05:01Z","2022-01-06T08:05:05Z","2022-01-07T08:05:02Z","2022-01-09T08:05:01Z","2022-01-10T08:05:01Z","2022-01-11T08:05:02Z","2022-01-12T08:05:01Z","2022-01-13T08:05:01Z","2022-01-14T08:05:02Z","2022-01-15T08:05:02Z","2022-01-17T17:05:51Z","2022-01-18T08:05:01Z","2022-01-19T08:05:01Z","2022-01-20T08:05:02Z","2022-01-21T08:05:02Z","2022-01-26T08:05:05Z","2022-01-27T08:05:02Z","2022-01-28T08:05:01Z","2022-01-28T09:45:49Z","2022-01-31T18:00:40Z","2022-01-31T18:12:02Z","2022-02-01T08:05:01Z","2022-02-02T08:05:02Z","2022-02-03T08:05:01Z","2022-02-04T08:05:01Z","2022-02-06T08:07:09Z","2022-02-07T08:05:01Z","2022-02-08T08:05:01Z","2022-02-09T08:05:02Z","2022-02-13T09:38:40Z","2022-02-14T08:05:01Z","2022-02-15T07:08:15Z","2022-02-16T08:05:01Z","2022-02-17T08:05:01Z","2022-02-18T08:05:02Z"],[35582.96,35877.53,35908.79,35663.73,35671.01,35799.89,35719.28,35719.28,35688.03,35688.03,35688.03,35517.98,33447.32,31743.55,33750.02,33718.79,34506.05,39635.65,37597.88,36281.31,36281.31,36281.31,36281.31,36281.31,35754.44,36818.46,37078.99,34713.91,31752.35,32517.01,32025,34537.73,34537.73,31435.1,29800,32155.77,37500,34206.56,33530,34777.24,36771.45,36324.77,38058.01,43600.01,43600.01,43600.01,46949.99,47057.78,44864.59,47775.38,47850.01,49056.69,51241.86,51865.51,53265.85,55135.32,53131.64,48505.77,51170.23,46555.27,48743.13,49354.64,50762.14,51069.32,50691.09,49153.15,48286.77,50949.35,50956.39,54571.01,54349.21,56279.12,56369.83,56288.02,57092.07,55475.84,54955.3,58530,55157.72,56625.56,52922.06,58020.01,58783.1,58631.69,59025.91,59300,57606.43,60280.02,62797.23,62820.58,61282.04,56133.95,49437.79,53888.75,53627.61,54808.08,54772.14,53832.34,56055,57921.47,55460.54,55960.03,57403.11,55809.26,56940.61,50675.79,50572.3,50729.19,44144.61,43459.47,36120,41723.01,38819.41,37851.42,38189.9,39154.46,40195.83,36868.95,36889.43,36889.43,37639.81,38493.15,36432.78,36074.69,31816.03,35278.6,37400,37291.93,40854.48,40099.99,39186.24,38594.95,36798.49,32950.01,32595.89,29773.4,34029.81,33266.1,34450.01,33310.39,33492.32,33577.41,33405.15,32503.31,31765.14,31849,30606.03,29700,31836.52,32549.95,37936.77,37873.59,39219.48,38425.08,46003.87,45308.58,45960,46425.45,44253.86,48649.38,50292.21,48044.68,47254.88,47895.34,43843.07,42712.74,42463.5,44155.48,42248.92,43550.28,41548.92,42217.81,43080.82,47070.1,48335.49,54234.34,54500,54449.36,57320.79,57043.94,54913.85,57617.72,61816.47,61772.2,63383.26,62048.76,62136.44,65645.49,67034.99,68335.99,63220.04,59528.16,58144.1,57907.54,58351.78,57275.68,57029.08,58950.41,58460.02,56628.39,56286.15,48842.72,51691.94,51093.99,48293.93,48394.2,51009.24,50964.96,50868.22,50888.42,50787.09,50207.82,51391.24,48892.92,47954.98,47182.02,47958.96,47277.23,47404.64,46769.9,46572.64,42952.14,41353.37,41658.93,40919.77,41880.84,43640.76,43157.67,43033.08,43371.82,42337.34,41629.7,42046.47,43505.92,38768.46,37964.84,36664.26,37178.67,37010.1,38263.14,38290.01,38691.94,37283.85,36890.41,39761.03,41468.5,43817.05,43493.91,43943.12,42215.61,42695.6,44264.6,43623.69,41782.66,39659.49],[0.02188771,0.02188771,0.02188771,0.02188771,0.02188771,0.02188771,0.02188771,0.02188771,0.02188771,0.02188771,0.02188771,0.02188771,0.02188771,0.02188771,0.02188771,0.02188771,0.02188771,0.02188771,0.02188771,0.02188771,0.02188771,0.02188771,0.02188771,0.02188771,0.02188771,0.02188771,0.02188771,0.02188771,0.02188771,0.02188771,0.02188771,0.02188771,0.02188771,0.02188771,0.02188771,0.02188771,0.02737106,0.02737106,0.02737106,0.02737106,0.02737106,0.02737106,0.02737106,0.05731826,0.05731826,0.05731826,0.05731826,0.05731826,0.05731826,0.05731826,0.05731826,0.05731826,0.05731826,0.05731826,0.05731826,0.05731826,0.07519512,0.07519512,0.07519512,0.07519512,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.11000079,0.11000079,0.11000079,0.11000079,0.11044685,0.11044685,0.12939149,0.12939149,0.12939149,0.12939149,0.12939149,0.12939149,0.12939149,0.12939149,0.13504545,0.13504545,0.13504545,0.13504545,0.13504545,0.14,0.14,0.14,0.14,0.14,0.14,0.14,0.14,0.14,0.14,0.14,0.14,0.15,0.15,0.15,0.15500231,0.15500231,0.16156739,0.16156739,0.16156739,0.16156739,0.16156739,0.16766895,0.16766895,0.16766895,0.16766895,0.16766895,0.16766895,0.16766895,0.16766895,0.16766895,0.16766895,0.17468602,0.17468602,0.17468602,0.17468602,0.17468602,0.17468602,0.17468602,0.17468602,0.1818603,0.1818603,0.19012455,0.19012455,0.19012455,0.19012455,0.19012455,0.19012455,0.19012455,0.19012455,0.19012455,0.19012455,0.19012455,0.19012455,0.19012455,0.19012455,0.19012455,0.19012455,0.19012455,0.19012455,0.19012455,0.19012455,0.19012455,0.18718368,0.18718368,0.18718368,0.18718368,0.18718368,0.18718368,0.18718368,0.18718368,0.18718368,0.18718368,0.18718368,0.18718368,0.18718368,0.18718368,0.18718368,0.18718368,0.18718368,0.18718368,0.18718368,0.18718368,0.18718368,0.18718368,0.18718368,0.18718368,0.18718368,0.18718368,0.18718368,0.18718368,0.18718368,0.18718368,0.18718368,0.18718368,0.18718368,0.18718368,0.18718368,0.18718368,0.18718368,0.18718368,0.18718368,0.18718368,0.18718368,0.18718368,0.18718368,0.18718368,0.18718368,0.19235369,0.19235369,0.19235369,0.19235369,0.19235369,0.19235369,0.19235369,0.19235369,0.19235369,0.19235369,0.19235369,0.19235369,0.19235369,0.19235369,0.19235369,0.19235369,0.19235369,0.19235369,0.19235369,0.19235369,0.19235369,0.19235369,0.19235369,0.19235369,0.19235369,0.19235369,0.19235369,0.19235369,0.19235369,0.19235369,0.19235369,0.19235369,0.19235369,0.19235369,0.19235369,0.19235369,0.19235369,0.19235369,0.19235369,0.19235369,0.19235369,0.19235369,0.19771609,0.19771609,0.19771609,0.19771609,0.19771609,0.19771609,0.19771609,0.19771609,0.19771609,0.19771609,0.19771609,0.19771609],[778.829509422,785.276972156,785.961181971,780.597379758,780.756722287,783.577610352,781.813242049,781.813242049,781.129251111,781.129251111,781.129251111,777.407246026,732.085240437,694.79361677,738.710650254,738.027097071,755.258415646,867.533612862,822.931494055,794.1147917,794.1147917,794.1147917,794.1147917,794.1147917,782.582813932,805.871775127,811.574180213,759.807995046,694.986228619,711.722884947,700.95391275,755.951818298,755.951818298,688.042352621,652.253758,703.816168587,1026.41475,936.269806154,917.7516418,951.889922674,1006.47356424,994.247459156,1041.68807519,2499.07670918,2499.07670918,2499.07670918,2691.09173382,2697.27006906,2571.56023441,2738.40165244,2742.67931418,2811.84411216,2937.09425436,2972.84078721,3053.10583942,3160.26060694,3995.2400456,3647.39719584,3847.75158528,3500.72911428,4874.313,4935.464,5076.214,5106.932,5069.109,4915.315,4828.677,5094.935,5095.639,5457.101,5434.921,5627.912,5636.983,5628.802,6280.17280274,6102.38622591,6045.12641469,6438.3462387,6091.99642718,6254.11473149,6847.66419727,7507.29554371,7606.03289582,7586.44173032,7637.45044351,7672.915357,7453.78181128,7799.72160503,8480.4801841,8483.63349536,8275.86066872,7580.63453803,6676.34859756,7544.425,7507.8654,7673.1312,7668.0996,7536.5276,7847.7,8109.0058,7764.4756,7834.4042,8036.4354,7813.2964,7971.6854,7601.3685,7585.845,7609.3785,6842.51652405,6736.31824138,5835.8141268,6741.07782864,6271.95075504,6115.55513719,6170.24246736,6564.98719602,6739.59261048,6181.7781341,6185.2119942,6185.2119942,6311.0274209,6454.10604269,6108.64596818,6048.60539388,5334.56034327,6162.67822517,6533.257148,6514.37882982,7136.70651037,7004.90765514,6845.28830436,6741.9982076,6428.18176011,5992.2987036,5927.89833417,5660.65427697,6469.90231284,6324.70229275,6549.79264875,6333.12290907,6367.71226846,6383.88996642,6351.13911143,6179.67718726,6039.33294819,6055.27679295,5818.95768104,5646.699135,6052.90403857,6188.54459627,7212.7113247,7200.69925563,7456.58598623,7305.55104371,8746.46508201,8614.27338364,8602.9619328,8690.08657666,8283.600369,9106.36997812,9413.88094313,8993.18000682,8845.34233636,8965.22599605,8206.7071851,7995.12785608,7948.47419568,8265.18523857,7908.30832163,8151.90167543,7777.27974563,7902.48503734,8064.02642502,8810.75453597,9047.6148928,10151.7833436,10201.51056,10192.0315784,10729.5164127,10677.6946109,10278.976526,10785.0968628,11571.0343392,11562.7477177,11864.3118572,11614.5152362,11630.9275013,12287.7643936,12547.856117,12791.3820846,11833.7597369,11142.7000524,10883.6266083,10839.3464369,10922.500915,10721.0725569,10674.9130614,11034.5546813,10942.7616765,10599.9104327,10535.84869,9395.07742164,9943.13540226,9828.11751332,9289.5156401,9308.8029446,9811.8155380956,9803.2981167024,9784.6898207318,9788.5753652698,9769.0841658621,9657.6594438558,9885.2946476756,9404.7335768748,9224.3173568762,9075.6356486538,9225.0829245624,9093.9496434787,9118.4574271216,8996.362845931,8958.4191570416,8262.0026223966,7954.4733134353,8013.2489069517,7871.0687534513,8055.9341142996,8394.4612204044,8301.5370763023,8277.5717300652,8342.7296190158,8143.7435737846,8007.626408593,8087.7936559743,8368.5242488448,7457.2563366174,7302.6770642596,7052.5057021194,7151.4543637923,7119.029302269,7360.0561699866,7365.2247136369,7442.5374322586,7171.6861249065,7293.8276236969,7861.3953859727,8198.989678165,8663.3358013345,8599.4458240119,8688.2618688008,8346.7053461649,8441.607092204,8751.823637414,8625.1054181721,8261.1041649994,7841.3192941941],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,"last run on CG-ALPHA","first run on MacOS",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>id<\/th>\n      <th>updated<\/th>\n      <th>btc_price<\/th>\n      <th>btc_balance<\/th>\n      <th>usd_amount<\/th>\n      <th>notes<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,3,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="price-plot" class="section level2">
+<h2>Price Plot</h2>
+<pre class="r fold-show"><code>plt &lt;- ggplot(res, aes(x=as.Date(updated), y=btc_price)) +
+ geom_line(color=&quot;red&quot;, size=1) +
+ ylab(&quot;BTC Price&quot;) +
+ xlab(&quot;Date&quot;) +
+  #scale_x_date(date_labels=&quot;%b\n%Y&quot;)
+ scale_x_date(date_labels=&#39;%m-%d-%YS&#39;)
+plt</code></pre>
+<p><img src="misc_files/figure-html/price-1.png" width="672" /></p>
+</div>
+<div id="balance-plot" class="section level2">
+<h2>Balance Plot</h2>
+<pre class="r fold-show"><code>plt2 &lt;- ggplot(res, aes(x=as.Date(updated), y=usd_amount)) +
+ geom_line(color=&quot;green&quot;, size=1) +
+ ylab(&quot;Balance&quot;) +
+ xlab(&quot;Date&quot;) +
+ #scale_x_date(date_labels=&quot;%b\n%Y&quot;)
+ scale_x_date(date_labels=&#39;%m-%d-%YS&#39;)
+plt2</code></pre>
+<p><img src="misc_files/figure-html/balance-1.png" width="672" /></p>
+</div>
+</div>
+<div id="health" class="section level1">
+<h1>Health</h1>
+<pre class="r fold-show"><code>library(leaflet)
+library(dplyr)
+library(DBI)
+library(DT)
+
+pass &lt;- readLines(&quot;../../pwd.txt&quot;)
+
+conn &lt;- DBI::dbConnect(
+  RPostgres::Postgres(),
+  dbname   = &quot;personal&quot;,
+  host     = &quot;localhost&quot;,
+  port     = 5432,
+  user     = &quot;cgrant&quot;,
+  password = pass
+)</code></pre>
+<div id="leaflet" class="section level2">
+<h2>Leaflet</h2>
+<p>Use the leaflet map below to explore.</p>
+<pre class="r fold-show"><code># sql &lt;- &quot;SELECT * FROM workouts&quot; # limit 50&quot;
+# res &lt;- dbGetQuery(conn, sql)
+
+# leaflet() %&gt;%
+#   addTiles() %&gt;%
+#   for (row in 1:nrow(res)) {
+#     long &lt;- res[row, &quot;longitude&quot;]
+#     lat &lt;- res[row, &quot;latitide&quot;]
+#     dtime &lt;- res[row, &quot;datetime&quot;]
+#     addMarkers(lng=long, lat=lat, popup=dtime)
+#   }
+
+# leaflet(data=res) %&gt;%
+#     addTiles() %&gt;%
+#     addMarkers(~longitude, ~latitude, popup = ~datetime)
+
+  
+# leaflet() %&gt;% 
+#   setView(lng=-122.90486, lat=47.03576, zoom=16) %&gt;% 
+#   addTiles() %&gt;% 
+#   addMarkers(lng=-122.90486, lat=47.03576, popup=&quot;WA State Capitol&quot;)</code></pre>
+</div>
+</div>
+
+<hr>
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("hide" === "show");
+});
+</script>
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+name: "geocoug Rmarkdown"
+navbar:
+  title: "geocoug"
+  type: default
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "RStudio"
+      href: rstudio.html
+    - text: "Python"
+      href: python.html
+    - text: "Analytical Chemistry"
+      href: chem.html
+    - text: "CLI"
+      href: cli.html
+    - text: "DBMS"
+      href: dbms.html
+    - text: "Tools"
+      href: tools.html
+  right:
+    - icon: fab fa-github fa-lg
+      href: https://geocoug.github.io
+    - icon: fab fa-linkedin fa-lg
+      href: https://www.linkedin.com/in/caleb-grant-04b098101
+output:
+  html_document:
+    theme: flatly
+    #css:
+    toc: TRUE
+    toc_float: TRUE
+    # number_sections: TRUE
+    df_print: paged # default, kable, tibble
+    code_folding: hide
+    includes:
+      in_header: header.html
+      # before_body: _.html
+      after_body: footer.html
+output_dir: "."
