@@ -300,6 +300,16 @@ The reagent blank is a sample of the solvents used during recovery of the sample
   - Instrument type and maintenance
 
 
+
+**detection_limit** - the lowest possible value an instrument/method can sense a compound is present (think of it like a whisper - you can barely hear it, but know its there). This is better known as the "method detection limit"
+
+**quantification_limit** - the limit in which an instrument/method can actually start to quantify the amount of something which is present. If the result is between the detection_limit and the quantification_limit, the result is estimated, because the instrument/method cant confidently identify the amount of something until it reaches the quantification_limit.
+
+**reporting_limit** - usually project or dataset specific. this limit is used for data analysis/statistics. the reporting_limit is equal to either the detection_limit or quantification_limit. This is better known as the "reporting detection limit".
+
+
+
+
 ### Method Detection Limit (MDL)
 
 - Statistically determined
