@@ -15,7 +15,8 @@ knitr::opts_chunk$set(echo = T, warning = F, message = F)
 - [ReadTheDocs](https://readthedocs.org/) - Create, host, and browse documentation
 - [execsql](http://execsql.osdn.io/) - Run SQL with metacommands
 - [Bootstrap](https://getbootstrap.com/docs/4.5/getting-started/introduction/) - Web framework
-- [pgAdmin](https://www.pgadmin.org/try/) - PostgreSQL sandbox 
+- [pgAdmin](https://www.pgadmin.org/try/) - PostgreSQL sandbox
+- [Regex](https://www.rexegg.com/regex-quickstart.html) - Regular expressions
 - [Google Colab](https://colab.research.google.com/notebooks/intro.ipynb) - Collaborative Python notebooks
 - [JavaScript]() - Guide 
 - [swirl]() - Learn R, in R 
@@ -28,9 +29,16 @@ knitr::opts_chunk$set(echo = T, warning = F, message = F)
 - [Spektran](https://spektran.com/) - Collection of useful color tools
 - [Observable](https://observablehq.com/) - JavaScript notebooks
 - [HTML Dog](https://www.htmldog.com/) - HTML tutorials
+- [Crontab](https://crontab.tech/)
 
 ---
 
+# GIS
+
+- [epsg.io](epsg.io) - Spatial reference systems
+- [ArcGIS](https://pro.arcgis.com/en/pro-app/2.8/arcpy/get-started/installing-python-for-arcgis-pro.htm) - ArcGIS Python
+
+---
 
 # Music
 
