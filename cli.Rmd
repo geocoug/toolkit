@@ -312,7 +312,10 @@ You have to go to DigitalOcean and reboot
 
 # Docker
 
-[CheatSheet](./static/Docker-CheatSheet.pdf)
+## Resources
+
+- [CheatSheet](./static/Docker-CheatSheet.pdf)
+- [Convert Docker command to docker-compose.yml](https://www.composerize.com/)
 
 ## Image vs. Container
 
@@ -423,7 +426,29 @@ Also:
 
 Check out command `docker --rm`
 
-### Docker Images
+## Dockerfiles
+
+Recipe for creating images 
+
+Each Dockerfile stanza such as "RUN", "CMD", etc. are stored as a single image layer. Docker caches each layer by giving it a unique SHA (hash), so whenever the image is (re)built, it can check to see if a layer has changed, and if not, it will use the cached layer.
+
+Docker builds images top down, so it is best practice to structure the Dockerfile in such a way that lines which will change the most are at the bottom, and lines that will change the least are at the top. If a line is changed (ie. source code changes) Docker will rebuild that line, and thus each line after that will also need to be rebuilt.
+
+## Keeping the Docker system clean
+
+`docker system prune`
+- all stopped containers
+- all networks not used by at least one container
+- all dangling images
+- all dangling build cache
+
+## Volumes an Bind Mounts
+
+**Volumes** - Special location outside of container UFS
+
+**Bind Mounts** - Link container path to host path
+
+Build an image and ***named*** volume (persistent): `docker run -d --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=True -v mysql:/var/lib/mysql --platform linux/amd64 mysql`
 
 ---
 
