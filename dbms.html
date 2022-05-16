@@ -13,7 +13,7 @@
 
 <title>DBMS</title>
 
-<script src="site_libs/header-attrs-2.12/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
@@ -763,6 +763,121 @@ WHERE analyte ilike analyte_search
 <pre class="sql fold-show"><code>seq_key bigint NOT NULL DEFAULT nextval(&#39;seq_key&#39;::regclass)
 
 ALTER SEQUENCE seq_key RESTART WITH 3;</code></pre>
+</div>
+<div id="cross-database-search" class="section level2">
+<h2>Cross-Database Search</h2>
+<p>This could be refined further by creating a function.</p>
+<pre class="sql fold-show"><code>with
+dbrows as (
+    select * from dblink(
+        &#39;dbname=chemcrit&#39;,
+        &#39;select analyte, full_name, chem_class, aliases, cas_rn from e_analyte&#39;
+        ) as d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)
+  union
+    select * from dblink(
+        &#39;dbname=ahtna&#39;,
+        &#39;select analyte, full_name, chem_class, aliases, cas_rn from e_analyte&#39;
+        ) as d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)
+  union
+    select * from dblink(
+    &#39;dbname=arkema_ph&#39;,
+    &#39;select analyte, full_name, chem_class, aliases, cas_rn from e_analyte&#39;
+    ) as d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)
+  union
+    select * from dblink(
+    &#39;dbname=bae_north&#39;,
+    &#39;select analyte, full_name, chem_class, aliases, cas_rn from e_analyte&#39;
+    ) as d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)
+  union
+    select * from dblink(
+    &#39;dbname=bayer_ldw&#39;,
+    &#39;select analyte, full_name, chem_class, aliases, cas_rn from e_analyte&#39;
+    ) as d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)
+  union
+    select * from dblink(
+    &#39;dbname=bcsa&#39;,
+    &#39;select analyte, full_name, chem_class, aliases, cas_rn from e_analyte&#39;
+    ) as d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)
+  union
+    select * from dblink(
+    &#39;dbname=c840_livent&#39;,
+    &#39;select analyte, full_name, chem_class, aliases, cas_rn from e_analyte&#39;
+    ) as d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)
+  union
+    select * from dblink(
+    &#39;dbname=cabotroad&#39;,
+    &#39;select analyte, full_name, chem_class, aliases, cas_rn from e_analyte&#39;
+    ) as d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)
+  union
+    select * from dblink(
+    &#39;dbname=centralia&#39;,
+    &#39;select analyte, full_name, chem_class, aliases, cas_rn from e_analyte&#39;
+    ) as d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)
+  union
+    select * from dblink(
+    &#39;dbname=centredale&#39;,
+    &#39;select analyte, full_name, chem_class, aliases, cas_rn from e_analyte&#39;
+    ) as d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)
+  union
+    select * from dblink(
+    &#39;dbname=eos&#39;,
+    &#39;select analyte, full_name, chem_class, aliases, cas_rn from e_analyte&#39;
+    ) as d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)
+  union
+    select * from dblink(
+    &#39;dbname=evraz_inwater&#39;,
+    &#39;select analyte, full_name, chem_class, aliases, cas_rn from e_analyte&#39;
+    ) as d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)
+  union
+    select * from dblink(
+    &#39;dbname=frenchtown_mill&#39;,
+    &#39;select analyte, full_name, chem_class, aliases, cas_rn from e_analyte&#39;
+    ) as d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)
+  union
+    select * from dblink(
+    &#39;dbname=gemt_columbus&#39;,
+    &#39;select analyte, full_name, chem_class, aliases, cas_rn from e_analyte&#39;
+    ) as d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)
+  union
+    select * from dblink(
+    &#39;dbname=gemt_meridian&#39;,
+    &#39;select analyte, full_name, chem_class, aliases, cas_rn from e_analyte&#39;
+    ) as d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)
+  union
+    select * from dblink(
+    &#39;dbname=gemt_springfield&#39;,
+    &#39;select analyte, full_name, chem_class, aliases, cas_rn from e_analyte&#39;
+    ) as d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)
+  union
+    select * from dblink(
+    &#39;dbname=reddog&#39;,
+    &#39;select analyte, full_name, chem_class, aliases, cas_rn from e_analyte&#39;
+    ) as d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)
+  union
+    select * from dblink(
+    &#39;dbname=shoreham&#39;,
+    &#39;select analyte, full_name, chem_class, aliases, cas_rn from e_analyte&#39;
+    ) as d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)
+  union
+    select * from dblink(
+    &#39;dbname=solvay&#39;,
+    &#39;select analyte, full_name, chem_class, aliases, cas_rn from e_analyte&#39;
+    ) as d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)
+  union
+    select * from dblink(
+    &#39;dbname=three_m_mb&#39;,
+    &#39;select analyte, full_name, chem_class, aliases, cas_rn from e_analyte&#39;
+    ) as d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)
+),
+const (param) as (
+    values (&#39;%solid%&#39;)
+)
+select analyte, full_name, chem_class, cas_rn, aliases
+from dbrows, const
+where analyte ilike param
+or full_name ilike param
+or aliases ilike param
+order by chem_class, analyte;</code></pre>
 </div>
 </div>
 
