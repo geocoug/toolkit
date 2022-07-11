@@ -9,8 +9,8 @@ navbar:
       href: rstudio.html
     - text: "Python"
       href: python.html
-    - text: "Analytical Chemistry"
-      href: chem.html
+    - text: "Data Management"
+      href: dm.html
     - text: "CLI"
       href: cli.html
     - text: "DBMS"
