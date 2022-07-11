@@ -107,7 +107,7 @@ To use a Python engine, you need to call `library(reticulate)` [link](https://rs
 ```{r, class.source='fold-show'}
 # install.packages("reticulate")
 
-Sys.setenv(RETICULATE_PYTHON = "/opt/homebrew/Caskroom/miniconda/base/envs/dev/bin/python")
+Sys.setenv(RETICULATE_PYTHON = "/Users/cgrant/envs/dev/bin/python")
 library(reticulate)
 py_config()
 ```

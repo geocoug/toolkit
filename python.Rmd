@@ -13,14 +13,15 @@ knitr::opts_chunk$set(echo = T, warning = F, message = F)
 ---
 
 ```{r, class.source='fold-show'}
-Sys.setenv(RETICULATE_PYTHON = "/opt/homebrew/Caskroom/miniconda/base/envs/dev/bin/python")
+Sys.setenv(RETICULATE_PYTHON = "/Users/cgrant/envs/dev/bin/python")
 library(reticulate)
 py_config()
 ```
 
 # Regular Expressions
 
-[Quickstart](https://www.rexegg.com/regex-quickstart.html)\
+- [Quickstart](https://www.rexegg.com/regex-quickstart.html)
+- [Regex101](https://regex101.com/)
 
 ## Cheat Sheet
 
@@ -726,37 +727,48 @@ def diagnose_delim(linestream, possible_delimiters=None, possible_quotechars=Non
 # VS Code Config
 ```{json, class.source='fold-show'}
 {
-    "window.title": "${activeEditorLong}${separator}${rootName}",
-    "files.autoSave": "onWindowChange",
-    "editor.minimap.enabled": false,
-    "editor.formatOnSave": true,
-    "editor.codeActionsOnSave": {
-        "source.organizeImports": true
-    },
-    "editor.scrollBeyondLastLine": false,
-    "editor.bracketPairColorization.enabled": true,
-    "editor.linkedEditing": true,
-    "terminal.integrated.fontFamily": "'MesloLGS NF'",
-    "terminal.integrated.inheritEnv": false,
-    "python.terminal.activateEnvironment": true,
-    "python.condaPath": "conda",
-    "python.linting.enabled": true,
-    "python.linting.lintOnSave": true,
-    "python.linting.banditEnabled": false,
-    "python.linting.pylintEnabled": false,
-    "python.linting.flake8Enabled": true,
-    "python.linting.flake8Path": "flake8",
-    "python.formatting.provider": "black",
-    "python.formatting.blackPath": "black",
-    "python.analysis.typeCheckingMode": "basic",
-    "workbench.iconTheme": "material-icon-theme",
-    "workbench.settings.editor": "json",
-    "workbench.settings.openDefaultSettings": true,
-    "workbench.settings.useSplitJSON": true,
-    "prettier.tabWidth": 4,
-    "prettier.quoteProps": "consistent",
-    "prettier.bracketSpacing": true,
-    "terminal.integrated.defaultProfile.osx": "zsh",
-    "terminal.external.osxExec": "iTerm.app"
+  "python.linting.flake8Path": "flake8",
+  "python.terminal.activateEnvironment": true,
+  "workbench.settings.editor": "json",
+  "prettier.tabWidth": 2,
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "python.analysis.typeCheckingMode": "basic",
+  "prettier.bracketSpacing": true,
+  "editor.formatOnSave": true,
+  "workbench.iconTheme": "material-icon-theme",
+  "python.linting.pylintEnabled": false,
+  "prettier.quoteProps": "consistent",
+  "window.title": "${activeEditorLong}${separator}${rootName}",
+  "python.formatting.provider": "black",
+  "editor.accessibilitySupport": "off",
+  "terminal.external.osxExec": "iTerm.app",
+  "python.formatting.blackPath": "black",
+  "editor.minimap.enabled": false,
+  "python.linting.banditEnabled": false,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.tabCompletion": "on",
+  "python.linting.lintOnSave": true,
+  "explorer.confirmDelete": false,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true
+  },
+  "editor.scrollBeyondLastLine": false,
+  "workbench.settings.openDefaultSettings": true,
+  "editor.linkedEditing": true,
+  "terminal.integrated.inheritEnv": false,
+  "terminal.integrated.fontFamily": "'MesloLGS NF'",
+  "python.linting.enabled": true,
+  "workbench.settings.useSplitJSON": true,
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1"
+  },
+  "python.linting.flake8Enabled": true,
+  "prettier.jsxBracketSameLine": true,
+  "python.linting.flake8Args": [
+    "--max-line-length=88"
+    // "--ignore=E402,F841,F401,E302,E305",
+  ],
+  "workbench.startupEditor": "none",
+  "editor.wordWrap": "on",
 }
 ```

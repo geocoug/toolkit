@@ -13,7 +13,7 @@
 
 <title>Python</title>
 
-<script src="site_libs/header-attrs-2.12/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
@@ -340,7 +340,7 @@ div.tocify {
   <a href="python.html">Python</a>
 </li>
 <li>
-  <a href="chem.html">Analytical Chemistry</a>
+  <a href="dm.html">Data Management</a>
 </li>
 <li>
   <a href="cli.html">CLI</a>
@@ -393,22 +393,24 @@ directly from an <a
 href="https://splinterofthesingularity.blogspot.com/search/label/Python">RDN
 blog</a></p>
 <hr />
-<pre class="r fold-show"><code>Sys.setenv(RETICULATE_PYTHON = &quot;/opt/homebrew/Caskroom/miniconda/base/envs/dev/bin/python&quot;)
+<pre class="r fold-show"><code>Sys.setenv(RETICULATE_PYTHON = &quot;/Users/cgrant/envs/dev/bin/python&quot;)
 library(reticulate)
 py_config()</code></pre>
-<pre><code>## python:         /opt/homebrew/Caskroom/miniconda/base/envs/dev/bin/python
-## libpython:      /opt/homebrew/Caskroom/miniconda/base/envs/dev/lib/libpython3.9.dylib
-## pythonhome:     /opt/homebrew/Caskroom/miniconda/base/envs/dev:/opt/homebrew/Caskroom/miniconda/base/envs/dev
-## version:        3.9.10 | packaged by conda-forge | (main, Feb  1 2022, 21:27:43)  [Clang 11.1.0 ]
-## numpy:          /opt/homebrew/Caskroom/miniconda/base/envs/dev/lib/python3.9/site-packages/numpy
-## numpy_version:  1.22.1
+<pre><code>## python:         /Users/cgrant/envs/dev/bin/python
+## libpython:      /opt/homebrew/opt/python@3.9/Frameworks/Python.framework/Versions/3.9/lib/python3.9/config-3.9-darwin/libpython3.9.dylib
+## pythonhome:     /Users/cgrant/envs/dev:/Users/cgrant/envs/dev
+## version:        3.9.13 (main, May 24 2022, 21:13:51)  [Clang 13.1.6 (clang-1316.0.21.2)]
+## numpy:          /Users/cgrant/envs/dev/lib/python3.9/site-packages/numpy
+## numpy_version:  1.22.3
 ## 
 ## NOTE: Python version was forced by RETICULATE_PYTHON</code></pre>
 <div id="regular-expressions" class="section level1">
 <h1>Regular Expressions</h1>
-<p><a
-href="https://www.rexegg.com/regex-quickstart.html">Quickstart</a><br />
-</p>
+<ul>
+<li><a
+href="https://www.rexegg.com/regex-quickstart.html">Quickstart</a></li>
+<li><a href="https://regex101.com/">Regex101</a></li>
+</ul>
 <div id="cheat-sheet" class="section level2">
 <h2>Cheat Sheet</h2>
 <div id="metacharacters-need-to-be-escaped" class="section level3">
@@ -1270,38 +1272,49 @@ def diagnose_delim(linestream, possible_delimiters=None, possible_quotechars=Non
 <div id="vs-code-config" class="section level1">
 <h1>VS Code Config</h1>
 <pre class="json fold-show"><code>{
-    &quot;window.title&quot;: &quot;${activeEditorLong}${separator}${rootName}&quot;,
-    &quot;files.autoSave&quot;: &quot;onWindowChange&quot;,
-    &quot;editor.minimap.enabled&quot;: false,
-    &quot;editor.formatOnSave&quot;: true,
-    &quot;editor.codeActionsOnSave&quot;: {
-        &quot;source.organizeImports&quot;: true
-    },
-    &quot;editor.scrollBeyondLastLine&quot;: false,
-    &quot;editor.bracketPairColorization.enabled&quot;: true,
-    &quot;editor.linkedEditing&quot;: true,
-    &quot;terminal.integrated.fontFamily&quot;: &quot;&#39;MesloLGS NF&#39;&quot;,
-    &quot;terminal.integrated.inheritEnv&quot;: false,
-    &quot;python.terminal.activateEnvironment&quot;: true,
-    &quot;python.condaPath&quot;: &quot;conda&quot;,
-    &quot;python.linting.enabled&quot;: true,
-    &quot;python.linting.lintOnSave&quot;: true,
-    &quot;python.linting.banditEnabled&quot;: false,
-    &quot;python.linting.pylintEnabled&quot;: false,
-    &quot;python.linting.flake8Enabled&quot;: true,
-    &quot;python.linting.flake8Path&quot;: &quot;flake8&quot;,
-    &quot;python.formatting.provider&quot;: &quot;black&quot;,
-    &quot;python.formatting.blackPath&quot;: &quot;black&quot;,
-    &quot;python.analysis.typeCheckingMode&quot;: &quot;basic&quot;,
-    &quot;workbench.iconTheme&quot;: &quot;material-icon-theme&quot;,
-    &quot;workbench.settings.editor&quot;: &quot;json&quot;,
-    &quot;workbench.settings.openDefaultSettings&quot;: true,
-    &quot;workbench.settings.useSplitJSON&quot;: true,
-    &quot;prettier.tabWidth&quot;: 4,
-    &quot;prettier.quoteProps&quot;: &quot;consistent&quot;,
-    &quot;prettier.bracketSpacing&quot;: true,
-    &quot;terminal.integrated.defaultProfile.osx&quot;: &quot;zsh&quot;,
-    &quot;terminal.external.osxExec&quot;: &quot;iTerm.app&quot;
+  &quot;python.linting.flake8Path&quot;: &quot;flake8&quot;,
+  &quot;python.terminal.activateEnvironment&quot;: true,
+  &quot;workbench.settings.editor&quot;: &quot;json&quot;,
+  &quot;prettier.tabWidth&quot;: 2,
+  &quot;terminal.integrated.defaultProfile.osx&quot;: &quot;zsh&quot;,
+  &quot;python.analysis.typeCheckingMode&quot;: &quot;basic&quot;,
+  &quot;prettier.bracketSpacing&quot;: true,
+  &quot;editor.formatOnSave&quot;: true,
+  &quot;workbench.iconTheme&quot;: &quot;material-icon-theme&quot;,
+  &quot;python.linting.pylintEnabled&quot;: false,
+  &quot;prettier.quoteProps&quot;: &quot;consistent&quot;,
+  &quot;window.title&quot;: &quot;${activeEditorLong}${separator}${rootName}&quot;,
+  &quot;python.formatting.provider&quot;: &quot;black&quot;,
+  &quot;editor.accessibilitySupport&quot;: &quot;off&quot;,
+  &quot;terminal.external.osxExec&quot;: &quot;iTerm.app&quot;,
+  &quot;python.formatting.blackPath&quot;: &quot;black&quot;,
+  &quot;editor.minimap.enabled&quot;: false,
+  &quot;python.linting.banditEnabled&quot;: false,
+  &quot;editor.bracketPairColorization.enabled&quot;: true,
+  &quot;editor.tabCompletion&quot;: &quot;on&quot;,
+  &quot;python.linting.lintOnSave&quot;: true,
+  &quot;explorer.confirmDelete&quot;: false,
+  &quot;editor.codeActionsOnSave&quot;: {
+    &quot;source.organizeImports&quot;: true
+  },
+  &quot;editor.scrollBeyondLastLine&quot;: false,
+  &quot;workbench.settings.openDefaultSettings&quot;: true,
+  &quot;editor.linkedEditing&quot;: true,
+  &quot;terminal.integrated.inheritEnv&quot;: false,
+  &quot;terminal.integrated.fontFamily&quot;: &quot;&#39;MesloLGS NF&#39;&quot;,
+  &quot;python.linting.enabled&quot;: true,
+  &quot;workbench.settings.useSplitJSON&quot;: true,
+  &quot;terminal.integrated.env.osx&quot;: {
+    &quot;FIG_NEW_SESSION&quot;: &quot;1&quot;
+  },
+  &quot;python.linting.flake8Enabled&quot;: true,
+  &quot;prettier.jsxBracketSameLine&quot;: true,
+  &quot;python.linting.flake8Args&quot;: [
+    &quot;--max-line-length=88&quot;
+    // &quot;--ignore=E402,F841,F401,E302,E305&quot;,
+  ],
+  &quot;workbench.startupEditor&quot;: &quot;none&quot;,
+  &quot;editor.wordWrap&quot;: &quot;on&quot;,
 }</code></pre>
 </div>
 
