@@ -29,6 +29,10 @@ Reference guide containing syntax and examples for the most prevalent computing 
 
 ## Mac
 
+### Movie > Gif
+
+`ffmpeg -i file.mov -s 600x400 -pix_fmt rgb24 -r 20 -f gif - | gifsicle --optimize=3 --delay=3 > file.gif`
+
 ### .zshrc
 ```{}
 export GPG_TTY=$TTY
