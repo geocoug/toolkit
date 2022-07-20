@@ -1,0 +1,60 @@
+---
+title: "Health"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = T, warning = F, message = F, error = T)
+
+# https://readxl.tidyverse.org/
+library(tidyverse)
+library(readxl)
+library(DT)
+```
+
+---
+
+# Workout Routines
+
+The following regimen outlines a typical week of lifts. Non-lift days should be supplemented with active recovery workouts.An example week could look something like this:
+
+1. **Monday**: Back, Biceps, Abs
+1. **Tuesday**: Chest & Triceps
+1. **Wednesday**: Run
+1. **Thursday**: Legs
+1. **Friday**: Shoulders & Traps
+1. **Saturday**: Long Walk
+1. **Sunday**: Run
+
+```{r, include=F}
+workouts <- "./static/workouts.xlsx"
+w1 <- read_excel(workouts, sheet=1)
+w2 <- read_excel(workouts, sheet=2)
+w3 <- read_excel(workouts, sheet=3)
+w4 <- read_excel(workouts, sheet=4)
+```
+
+## Back, Biceps, Abs
+
+```{r, eval=T}
+datatable(w1, options=list(scrollX=T, dom='t'))
+```
+
+
+## Chest & Triceps
+
+```{r, eval=T}
+datatable(w2, options=list(scrollX=T, dom='t'))
+```
+
+## Legs
+
+```{r, eval=T}
+datatable(w3, options=list(scrollX=T, dom='t'))
+```
+
+## Shoulders & Traps
+
+```{r, eval=T}
+datatable(w4, options=list(scrollX=T, dom='t'))
+```
+

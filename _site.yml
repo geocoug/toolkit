@@ -17,6 +17,8 @@ navbar:
       href: dbms.html
     - text: "Tools"
       href: tools.html
+    - text: "Health"
+      href: health.html
   right:
     - icon: fab fa-github fa-lg
       href: https://geocoug.github.io
