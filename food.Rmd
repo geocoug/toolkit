@@ -1,0 +1,34 @@
+---
+title: "Food"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = T, warning = F, message = F, error = T)
+
+```
+
+---
+
+## Sourdough Bread
+
+Typical schedule for baking sourdough bread. Timing could change based on room temperature. 
+
+| Time | Step | Notes |
+| --- | --- | --- |
+| 8:00am | Feed starter | Discard all but at least 2 tbsp |
+| 12:00pm | Autolyse | |
+| 1:00pm | Add starter & salt | |
+| 1:30pm | Stretch & fold | Every 30 min for 2-2.5 hours |
+| 3:30pm | Bulk rise | 1-3 hours, should rise 30-50% |
+| 8:30pm | Pre shape & bench rest | |
+| 9:00pm | Final shaping & proof | Place in proofing baskets, cover, place in fridge overnight |
+| 9:00am | Bake | 500 F in dutch oven, 20 min lid on, lower to 450, 15-30 min lid off |
+
+---
+
+## Recipes
+
+- [Buffalo cauliflower](https://tasty.co/recipe/buffalo-cauliflower)
+- [Quinoa & cucumber salad w/avacado dressing](https://www.eatwell101.com/quinoa-cucumber-noodles-salad-recipe)
+
+

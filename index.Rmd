@@ -1,5 +1,8 @@
 ---
 title: "Welcome"
+output:
+  html_document:
+    toc: false
 ---
 
 ```{r setup, include=FALSE}
@@ -7,8 +10,5 @@ knitr::opts_chunk$set(echo = T, warning = F, message = F)
 ```
 
 ---
-
-# Purpose
-<!-- The purpose of this site is to learn about RStudio and how to create websites using R Markdown. My intention is to compile resources I use on a regular basis into an organized toolkit. -->
 
 The purpose of this site is to compile resources I use on a regular basis into an organized toolkit. I chose this framework to learn about RStudio and static website building using R Markdown.

@@ -3,22 +3,26 @@ navbar:
   title: "geocoug"
   type: default
   left:
-    - text: "Home"
-      href: index.html
-    - text: "RStudio"
-      href: rstudio.html
-    - text: "Python"
-      href: python.html
-    - text: "Data Management"
-      href: dm.html
-    - text: "CLI"
-      href: cli.html
-    - text: "DBMS"
-      href: dbms.html
-    - text: "Tools"
-      href: tools.html
-    - text: "Health"
-      href: health.html
+    - text: "Development"
+      menu:
+      - text: "RStudio"
+        href: rstudio.html
+      - text: "Python"
+        href: python.html
+      - text: "Data Management"
+        href: dm.html
+      - text: "CLI"
+        href: cli.html
+      - text: "DBMS"
+        href: dbms.html
+      - text: "Tools"
+        href: tools.html
+    - text: "Health & Fitness"
+      menu:
+      - text: "Workouts"
+        href: workouts.html
+      - text: "Food"
+        href: food.html
   right:
     - icon: fab fa-github fa-lg
       href: https://geocoug.github.io

@@ -1,5 +1,5 @@
 ---
-title: "Health"
+title: "Workouts"
 ---
 
 ```{r setup, include=FALSE}
@@ -13,7 +13,7 @@ library(DT)
 
 ---
 
-# Workout Routines
+# Routines
 
 The following regimen outlines a typical week of lifts. Non-lift days should be supplemented with active recovery workouts.An example week could look something like this:
 

@@ -11,7 +11,7 @@
 
 
 
-<title>Tools</title>
+<title>Workouts</title>
 
 <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -38,6 +38,14 @@
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
 <script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+<script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="site_libs/datatables-binding-0.23/datatables.js"></script>
+<link href="site_libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="site_libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="site_libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
+<link href="site_libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="site_libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 <link rel="shortcut icon" href="static/favicon.ico" type="image/x-icon" />
@@ -403,100 +411,50 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Tools</h1>
+<h1 class="title toc-ignore">Workouts</h1>
 
 </div>
 
 
 <hr />
-<div id="developer" class="section level1">
-<h1>Developer</h1>
-<ul>
-<li><a href="https://devdocs.io/">devdocs.io</a> - Searchable
-documentations</li>
-<li><a href="https://ss64.com/">ss64</a> - CLI reference guide</li>
-<li><a href="https://readthedocs.org/">ReadTheDocs</a> - Create, host,
-and browse documentation</li>
-<li><a href="http://execsql.osdn.io/">execsql</a> - Run SQL with
-metacommands</li>
-<li><a
-href="https://getbootstrap.com/docs/4.5/getting-started/introduction/">Bootstrap</a>
-- Web framework</li>
-<li><a href="https://www.pgadmin.org/try/">pgAdmin</a> - PostgreSQL
-sandbox</li>
-<li><a href="https://www.rexegg.com/regex-quickstart.html">Regex</a> -
-Regular expressions</li>
-<li><a
-href="https://colab.research.google.com/notebooks/intro.ipynb">Google
-Colab</a> - Collaborative Python notebooks</li>
-<li><a href="">JavaScript</a> - Guide</li>
-<li><a href="">swirl</a> - Learn R, in R</li>
-<li><a href="">geojson.io</a> - Create, view, and share maps</li>
-<li><a href="">repl.it</a> - Collaborative in-browser IDE. 50+
-languages</li>
-<li><a href="">Dev Tools</a> - Collection of tools for developers</li>
-<li><a href="">Integromat</a> - Online scenario automation</li>
-<li><a
-href="https://karloespiritu.github.io/cheatsheets/postgresql/">PostgreSQL
-cheatsheet</a> - PostgreSQL cheatsheet</li>
-<li><a href="https://www.python-utils.com/">python-utils</a> -
-Playground for Python utilities</li>
-<li><a href="https://spektran.com/">Spektran</a> - Collection of useful
-color tools</li>
-<li><a href="https://observablehq.com/">Observable</a> - JavaScript
-notebooks</li>
-<li><a href="https://www.htmldog.com/">HTML Dog</a> - HTML
-tutorials</li>
-<li><a href="https://crontab.tech/">Crontab</a></li>
-</ul>
-<hr />
+<div id="routines" class="section level1">
+<h1>Routines</h1>
+<p>The following regimen outlines a typical week of lifts. Non-lift days
+should be supplemented with active recovery workouts.An example week
+could look something like this:</p>
+<ol style="list-style-type: decimal">
+<li><strong>Monday</strong>: Back, Biceps, Abs</li>
+<li><strong>Tuesday</strong>: Chest &amp; Triceps</li>
+<li><strong>Wednesday</strong>: Run</li>
+<li><strong>Thursday</strong>: Legs</li>
+<li><strong>Friday</strong>: Shoulders &amp; Traps</li>
+<li><strong>Saturday</strong>: Long Walk</li>
+<li><strong>Sunday</strong>: Run</li>
+</ol>
+<div id="back-biceps-abs" class="section level2">
+<h2>Back, Biceps, Abs</h2>
+<pre class="r"><code>datatable(w1, options=list(scrollX=T, dom=&#39;t&#39;))</code></pre>
+<div id="htmlwidget-3725d89e6fcb367c36e5" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3725d89e6fcb367c36e5">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10"],["Deadlift","Pull-Ups","Lat Pull Downs","Rows","Dumbbell Rows","Hammer Curls","Barbell Curls","Planks","Leg Raises","Sit Ups"],[4,4,4,4,4,3,3,3,3,3],["10, 8, 5, 3","10","10","12","12","12","12","60 seconds","15","25"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Lift<\/th>\n      <th>Sets<\/th>\n      <th>Reps<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"dom":"t","columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
-<div id="gis" class="section level1">
-<h1>GIS</h1>
-<ul>
-<li><a href="epsg.io">epsg.io</a> - Spatial reference systems</li>
-<li><a
-href="https://pro.arcgis.com/en/pro-app/2.8/arcpy/get-started/installing-python-for-arcgis-pro.htm">ArcGIS</a>
-- ArcGIS Python</li>
-</ul>
-<hr />
+<div id="chest-triceps" class="section level2">
+<h2>Chest &amp; Triceps</h2>
+<pre class="r"><code>datatable(w2, options=list(scrollX=T, dom=&#39;t&#39;))</code></pre>
+<div id="htmlwidget-5faeee5f751141527017" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-5faeee5f751141527017">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8"],["Bench Press","Incline Press","Flys","Dips","Tricep Pushdowns","Bench Press","Ab Roller","Russian Twist"],[4,4,4,3,4,4,3,3],["10, 8, 5, 3","12","12","Failure","12","12","6","30"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Lift<\/th>\n      <th>Sets<\/th>\n      <th>Reps<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"dom":"t","columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
-<div id="music" class="section level1">
-<h1>Music</h1>
-<ul>
-<li><a href="https://flagrantior.art/">Songsterr</a> - Guitar tabs</li>
-<li><a href="https://www.ultimate-guitar.com/explore">Ultimate
-Guitar</a> - Guitar tabs</li>
-<li><a href="https://flagrantior.art/">Flagrantior</a> - Music
-theory</li>
-<li><a href="https://www.musictheory.net/">musictheory.net</a> - Music
-theory</li>
-<li><a href="https://www.teoria.com/">Teoria</a> - Music theory</li>
-<li><a href="https://www.justinguitar.com/">JustinGuitar</a> - Guitar
-lessons</li>
-<li><a href="https://howtoplaypiano.ca/">HowToPlayPiano</a> - Piano
-lessons</li>
-<li><a href="https://soundation.com/">Soundation</a> - Broswer based
-music maker</li>
-</ul>
-<hr />
+<div id="legs" class="section level2">
+<h2>Legs</h2>
+<pre class="r"><code>datatable(w3, options=list(scrollX=T, dom=&#39;t&#39;))</code></pre>
+<div id="htmlwidget-c8819c07cdefdf401357" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c8819c07cdefdf401357">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7"],["Back Squat","Front Squat","Lunges","Kettelbell Deadlift","Back Hyperextension","Calf Raises","Glute Bridges"],[4,4,3,3,4,4,3],["10, 8, 5, 3","6","12","12","12","12","10"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Lift<\/th>\n      <th>Sets<\/th>\n      <th>Reps<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"dom":"t","columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
-<div id="e-books" class="section level1">
-<h1>e-Books</h1>
-<ul>
-<li><a href="https://www.gutenberg.org/">Project Gutenberg</a></li>
-<li><a
-href="https://librivox.org/search?primary_key=0&amp;search_category=title&amp;search_page=1&amp;search_form=get_results">LibriVox</a></li>
-<li><a href="https://standardebooks.org/">Standard eBooks</a></li>
-</ul>
-<hr />
+<div id="shoulders-traps" class="section level2">
+<h2>Shoulders &amp; Traps</h2>
+<pre class="r"><code>datatable(w4, options=list(scrollX=T, dom=&#39;t&#39;))</code></pre>
+<div id="htmlwidget-b5edd98053f85ef499a3" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b5edd98053f85ef499a3">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9"],["Military Press","Lateral Raises","Rear Delt Flys","Front Raises","Barbell Shrugs","One Arm Dumbbell Snatch","Kettlebell Swing","Dumbbell Shrugs","Farmers Carry"],[4,4,4,3,4,3,3,3,3],["12, 8, 5, 3","12","12","10","10","10","10","10","Failure"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Lift<\/th>\n      <th>Sets<\/th>\n      <th>Reps<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"dom":"t","columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
-<div id="miscellaneous" class="section level1">
-<h1>Miscellaneous</h1>
-<ul>
-<li><a href="https://freelearninglist.org/">Free Learning</a> - List of
-free educational resources</li>
-</ul>
 </div>
 
 <hr>
