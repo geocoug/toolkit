@@ -13,15 +13,20 @@ library(DT)
 
 ---
 
+
 # Routines
 
-The following regimen outlines a typical week of lifts. Non-lift days should be supplemented with active recovery workouts.An example week could look something like this:
 
-1. **Monday**: Back, Biceps, Abs
-1. **Tuesday**: Chest & Triceps
+## Option 1
+The following regimen outlines a typical week of lifts. The routine is a slightly modified version of [this](https://jackedgorilla.com/chris-pratt-workout-routine/).
+
+Non-lift days should be supplemented with active recovery workouts.An example week could look something like this:
+
+1. **Monday**: [Back, Biceps, Abs]
+1. **Tuesday**: [Chest & Triceps]
 1. **Wednesday**: Run
-1. **Thursday**: Legs
-1. **Friday**: Shoulders & Traps
+1. **Thursday**: [Legs]
+1. **Friday**: [Shoulders & Traps]
 1. **Saturday**: Long Walk
 1. **Sunday**: Run
 
@@ -33,26 +38,26 @@ w3 <- read_excel(workouts, sheet=3)
 w4 <- read_excel(workouts, sheet=4)
 ```
 
-## Back, Biceps, Abs
+### Back, Biceps, Abs
 
 ```{r, eval=T}
 datatable(w1, options=list(scrollX=T, dom='t'))
 ```
 
 
-## Chest & Triceps
+### Chest & Triceps
 
 ```{r, eval=T}
 datatable(w2, options=list(scrollX=T, dom='t'))
 ```
 
-## Legs
+### Legs
 
 ```{r, eval=T}
 datatable(w3, options=list(scrollX=T, dom='t'))
 ```
 
-## Shoulders & Traps
+### Shoulders & Traps
 
 ```{r, eval=T}
 datatable(w4, options=list(scrollX=T, dom='t'))
