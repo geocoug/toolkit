@@ -24,6 +24,10 @@ navbar:
       - text: "Food"
         href: food.html
   right:
+    - icon: fab fa-python fa-lg
+      href: https://jupyter.geocoug.com
+    - icon: fab fa-r-project fa-lg
+      href: https://rstudio.geocoug.com
     - icon: fab fa-github fa-lg
       href: https://geocoug.github.io
     - icon: fab fa-linkedin fa-lg
