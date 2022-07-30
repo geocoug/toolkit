@@ -433,46 +433,37 @@ div.tocify {
 <h1>Routines</h1>
 <div id="option-1" class="section level2">
 <h2>Option 1</h2>
-<p>The following regimen outlines a typical week of lifts. The routine
-is a slightly modified version of <a
+<p>The following regimen outlines a 4 week lift cycle. The routine is a
+slightly modified version of <a
 href="https://jackedgorilla.com/chris-pratt-workout-routine/">this</a>.</p>
-<p>Non-lift days should be supplemented with active recovery workouts.An
-example week could look something like this:</p>
-<ol style="list-style-type: decimal">
-<li><strong>Monday</strong>: <a href="#back-biceps-abs">Back, Biceps,
-Abs</a></li>
-<li><strong>Tuesday</strong>: <a href="#chest-triceps">Chest &amp;
-Triceps</a></li>
-<li><strong>Wednesday</strong>: Run</li>
-<li><strong>Thursday</strong>: <a href="#legs">Legs</a></li>
-<li><strong>Friday</strong>: <a href="#shoulders-traps">Shoulders &amp;
-Traps</a></li>
-<li><strong>Saturday</strong>: Long Walk</li>
-<li><strong>Sunday</strong>: Run</li>
-</ol>
+<p>Non-lift days should be supplemented with active recovery workouts.
+An example 4 week cycle could look something like this:</p>
+<pre class="r"><code>datatable(schedule, options=list(scrollX=T, dom=&#39;t&#39;), rownames=FALSE)</code></pre>
+<div id="htmlwidget-48c59dfdeebe51cc28e3" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-48c59dfdeebe51cc28e3">{"x":{"filter":"none","vertical":false,"data":[[1,2,3,4],["Cardio","Cardio","Cardio","Cardio"],["Chest &amp; Triceps","Shoulders &amp; Trraps","Legs","Back, Biceps, Abs"],["Back, Biceps, Abs","Chest &amp; Triceps","Shoulders &amp; Trraps","Legs"],["Legs","Back, Biceps, Abs","Chest &amp; Triceps","Shoulders &amp; Trraps"],["Shoulders &amp; Traps","Legs","Back, Biceps, Abs","Chest &amp; Triceps"],["Chest &amp; Triceps","Shoulders &amp; Traps","Legs","Back, Biceps, Abs"],["Cardio","Cardio","Cardio","Cardio"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Week<\/th>\n      <th>Sunday<\/th>\n      <th>Monday<\/th>\n      <th>Tuesday<\/th>\n      <th>Wednesday<\/th>\n      <th>Thursday<\/th>\n      <th>Friday<\/th>\n      <th>Saturday<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"dom":"t","columnDefs":[{"className":"dt-right","targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <div id="back-biceps-abs" class="section level3">
 <h3>Back, Biceps, Abs</h3>
 <pre class="r"><code>datatable(w1, options=list(scrollX=T, dom=&#39;t&#39;))</code></pre>
-<div id="htmlwidget-7f5e6d2755249fbe2fee" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-7f5e6d2755249fbe2fee">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11"],["Deadlift","Pull-Ups","Lat Pull Downs","Rows","Dumbbell Rows","Hammer Curls","Barbell Curls","Back Hyperextension","Planks","Leg Raises","Sit Ups"],[4,4,4,4,4,3,3,4,3,3,3],["10, 8, 5, 3","10","10","12","12","12","12","12","60 seconds","15","25"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Lift<\/th>\n      <th>Sets<\/th>\n      <th>Reps<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"dom":"t","columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-5f23faf5288b7fd4d38f" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-5f23faf5288b7fd4d38f">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11"],["Deadlift","Pull-Ups","Lat Pull Downs","Rows","Dumbbell Rows","Hammer Curls","Barbell Curls","Back Hyperextension","Planks","Leg Raises","Sit Ups"],[4,4,4,4,4,3,3,4,3,3,3],["10, 8, 5, 3","10","10","12","12","12","12","12","60 seconds","15","25"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Lift<\/th>\n      <th>Sets<\/th>\n      <th>Reps<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"dom":"t","columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="chest-triceps" class="section level3">
 <h3>Chest &amp; Triceps</h3>
 <pre class="r"><code>datatable(w2, options=list(scrollX=T, dom=&#39;t&#39;))</code></pre>
-<div id="htmlwidget-5624d58d38292600e2cb" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-5624d58d38292600e2cb">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8"],["Bench Press","Incline Press","Flys","Dips","Tricep Pushdowns","Dumbbell Press","Ab Roller","Russian Twist"],[4,4,4,3,4,4,3,3],["10, 8, 5, 3","12","12","Failure","12","12","10","30"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Lift<\/th>\n      <th>Sets<\/th>\n      <th>Reps<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"dom":"t","columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-b295e6d3f92c2bb74e2d" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b295e6d3f92c2bb74e2d">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8"],["Bench Press","Incline Press","Flys","Dips","Tricep Pushdowns","Dumbbell Press","Ab Roller","Russian Twist"],[4,4,4,3,4,4,3,3],["10, 8, 5, 3","12","12","Failure","12","12","10","30"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Lift<\/th>\n      <th>Sets<\/th>\n      <th>Reps<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"dom":"t","columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="legs" class="section level3">
 <h3>Legs</h3>
 <pre class="r"><code>datatable(w3, options=list(scrollX=T, dom=&#39;t&#39;))</code></pre>
-<div id="htmlwidget-54a367b02dea18311b11" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-54a367b02dea18311b11">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7"],["Back Squat","Front Squat","Lunges","Kettelbell Deadlift","Back Hyperextension","Calf Raises","Glute Bridges"],[4,4,3,3,4,4,3],["10, 8, 5, 3","6","12","12","12","12","10"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Lift<\/th>\n      <th>Sets<\/th>\n      <th>Reps<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"dom":"t","columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-e7f381127a68e3cc1816" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e7f381127a68e3cc1816">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7"],["Back Squat","Front Squat","Lunges","Kettelbell Deadlift","Back Hyperextension","Calf Raises","Glute Bridges"],[4,4,3,3,4,4,3],["10, 8, 5, 3","6","12","12","12","12","10"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Lift<\/th>\n      <th>Sets<\/th>\n      <th>Reps<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"dom":"t","columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="shoulders-traps" class="section level3">
 <h3>Shoulders &amp; Traps</h3>
 <pre class="r"><code>datatable(w4, options=list(scrollX=T, dom=&#39;t&#39;))</code></pre>
-<div id="htmlwidget-a02df4b31ea7949b42ee" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-a02df4b31ea7949b42ee">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8"],["Military Press","Lateral Raises","Rear Delt Flys","Front Raises","Barbell Shrugs","One Arm Dumbbell Snatch","Kettlebell Swing","Farmers Carry"],[4,4,4,3,4,3,3,3],["12, 8, 5, 3","12","12","10","10","10","10","Failure"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Lift<\/th>\n      <th>Sets<\/th>\n      <th>Reps<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"dom":"t","columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-461d1d50d534b59c4e91" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-461d1d50d534b59c4e91">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8"],["Military Press","Lateral Raises","Rear Delt Flys","Front Raises","Barbell Shrugs","One Arm Dumbbell Snatch","Kettlebell Swing","Farmers Carry"],[4,4,4,3,4,3,3,3],["12, 8, 5, 3","12","12","10","10","10","10","Failure"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Lift<\/th>\n      <th>Sets<\/th>\n      <th>Reps<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"dom":"t","columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
