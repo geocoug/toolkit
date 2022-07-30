@@ -1,0 +1,45 @@
+---
+title: "John's Workouts"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = T, warning = F, message = F, error = T)
+
+# https://readxl.tidyverse.org/
+library(tidyverse)
+library(readxl)
+library(DT)
+```
+
+---
+
+
+# Routines
+
+
+```{r, include=F}
+workouts <- "./static/workouts.xlsx"
+w1 <- read_excel(workouts, sheet=6)
+w2 <- read_excel(workouts, sheet=7)
+w3 <- read_excel(workouts, sheet=8)
+```
+
+
+## Push
+
+```{r, eval=T}
+datatable(w1, options=list(scrollX=T, dom='t'), escape=FALSE)
+```
+
+
+## Pull
+
+```{r, eval=T}
+datatable(w2, options=list(scrollX=T, dom='t'), escape=FALSE)
+```
+
+## Legs
+
+```{r, eval=T}
+datatable(w3, options=list(scrollX=T, dom='t'), escape=FALSE)
+```
