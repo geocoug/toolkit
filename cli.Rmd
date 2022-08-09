@@ -157,8 +157,10 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# APT GET STUFF
-alias u='sudo apt update && sudo apt upgrade -y'
+# STANDARD FUNCTION MODIFICATIONS
+alias cat='ccat'
+alias l='exa -1 -G -l --icons -t modified --git -g'
+alias la='exa -1 -G -l --icons -t modified --git -g -a'
 # SHORTCUTS
 alias c='clear'
 alias h='history'
@@ -175,12 +177,11 @@ alias one='cd /Users/cgrant/OneDrive'
 alias my='sudo chown -R `id -u`'
 # GIT
 alias gaa='git add --all'
-# LS
-alias l='ls -lh'
-alias la='ls -lAh'
-# FUNCTIONS
-alias repo='conda activate dev && python ~/bin/create_repo.py'
-alias dev='conda activate dev'
+# DOCKER / ENVIRONMENTS
+alias lab='docker run -it --rm -p 8888:8888 -v $(PWD):/home/jovyan jupyter-lab'
+alias dev='source ~/envs/dev/bin/acivate'
+alias pyenv='/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/bin/python3.10 -m venv env && source ./env/bin/activate && python -m pip install --no-cache-dir pre_commit flake8 black isort autoflake > /dev/null 2>&1 && python -m pip freeze > requirements.txt > /dev/null 2>&1'
+
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -189,21 +190,6 @@ alias dev='conda activate dev'
 export PATH="/Users/cgrant/bin:$PATH"
 
 export PATH="/opt/homebrew/opt/curl/bin:$PATH"
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/opt/homebrew/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/opt/homebrew/Caskroom/miniconda/base/etc/profile.d/conda.sh" ]; then
-        . "/opt/homebrew/Caskroom/miniconda/base/etc/profile.d/conda.sh"
-    else
-        export PATH="/opt/homebrew/Caskroom/miniconda/base/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
 ```
 
 

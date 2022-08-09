@@ -571,8 +571,10 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig=&quot;mate ~/.zshrc&quot;
 # alias ohmyzsh=&quot;mate ~/.oh-my-zsh&quot;
 
-# APT GET STUFF
-alias u=&#39;sudo apt update &amp;&amp; sudo apt upgrade -y&#39;
+# STANDARD FUNCTION MODIFICATIONS
+alias cat=&#39;ccat&#39;
+alias l=&#39;exa -1 -G -l --icons -t modified --git -g&#39;
+alias la=&#39;exa -1 -G -l --icons -t modified --git -g -a&#39;
 # SHORTCUTS
 alias c=&#39;clear&#39;
 alias h=&#39;history&#39;
@@ -589,12 +591,11 @@ alias one=&#39;cd /Users/cgrant/OneDrive&#39;
 alias my=&#39;sudo chown -R `id -u`&#39;
 # GIT
 alias gaa=&#39;git add --all&#39;
-# LS
-alias l=&#39;ls -lh&#39;
-alias la=&#39;ls -lAh&#39;
-# FUNCTIONS
-alias repo=&#39;conda activate dev &amp;&amp; python ~/bin/create_repo.py&#39;
-alias dev=&#39;conda activate dev&#39;
+# DOCKER / ENVIRONMENTS
+alias lab=&#39;docker run -it --rm -p 8888:8888 -v $(PWD):/home/jovyan jupyter-lab&#39;
+alias dev=&#39;source ~/envs/dev/bin/acivate&#39;
+alias pyenv=&#39;/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/bin/python3.10 -m venv env &amp;&amp; source ./env/bin/activate &amp;&amp; python -m pip install --no-cache-dir pre_commit flake8 black isort autoflake &gt; /dev/null 2&gt;&amp;1 &amp;&amp; python -m pip freeze &gt; requirements.txt &gt; /dev/null 2&gt;&amp;1&#39;
+
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -602,22 +603,7 @@ alias dev=&#39;conda activate dev&#39;
 
 export PATH=&quot;/Users/cgrant/bin:$PATH&quot;
 
-export PATH=&quot;/opt/homebrew/opt/curl/bin:$PATH&quot;
-
-# &gt;&gt;&gt; conda initialize &gt;&gt;&gt;
-# !! Contents within this block are managed by &#39;conda init&#39; !!
-__conda_setup=&quot;$(&#39;/opt/homebrew/Caskroom/miniconda/base/bin/conda&#39; &#39;shell.zsh&#39; &#39;hook&#39; 2&gt; /dev/null)&quot;
-if [ $? -eq 0 ]; then
-    eval &quot;$__conda_setup&quot;
-else
-    if [ -f &quot;/opt/homebrew/Caskroom/miniconda/base/etc/profile.d/conda.sh&quot; ]; then
-        . &quot;/opt/homebrew/Caskroom/miniconda/base/etc/profile.d/conda.sh&quot;
-    else
-        export PATH=&quot;/opt/homebrew/Caskroom/miniconda/base/bin:$PATH&quot;
-    fi
-fi
-unset __conda_setup
-# &lt;&lt;&lt; conda initialize &lt;&lt;&lt;</code></pre>
+export PATH=&quot;/opt/homebrew/opt/curl/bin:$PATH&quot;</code></pre>
 </div>
 </div>
 <div id="windows" class="section level2">
@@ -633,8 +619,8 @@ Docs</a><br> Command line syntax</p>
 <code>"&lt;command1&gt;&amp;&amp;&lt;command2&gt;&amp;&amp;&lt;command3&gt;"</code></p>
 <div id="parameters" class="section level4">
 <h4>Parameters</h4>
-<div id="htmlwidget-414fb485ee62afeeccb8" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-414fb485ee62afeeccb8">{"x":{"filter":"none","vertical":false,"data":[["/c","/k","/s","/q","/d","/a","/u","/t:{&lt;b&gt;&lt;f&gt; &lt;f&gt;}","/e:on","/e:off","/f:on","/f:off","/v:on","/v:off","&lt;string&gt;","/?"],["Carries out the command specified by string and then stops.","Carries out the command specified by string and continues.","Modifies the treatment of string after /c or /k.","Turns the echo off.","Disables execution of AutoRun commands.","Formats internal command output to a pipe or a file as American National Standards Institute (ANSI).","Formats internal command output to a pipe or a file as Unicode.","Sets the background (b) and foreground (f) colors.","Enables command extensions.","Disables commands extensions.","Enables file and directory name completion.","Disables file and directory name completion.","Enables delayed environment variable expansion.","Disables delayed environment variable expansion.","Specifies the command you want to carry out.","Displays help at the command prompt."]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Parameter<\/th>\n      <th>Description<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-3f11121881a75a71d8b1" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3f11121881a75a71d8b1">{"x":{"filter":"none","vertical":false,"data":[["/c","/k","/s","/q","/d","/a","/u","/t:{&lt;b&gt;&lt;f&gt; &lt;f&gt;}","/e:on","/e:off","/f:on","/f:off","/v:on","/v:off","&lt;string&gt;","/?"],["Carries out the command specified by string and then stops.","Carries out the command specified by string and continues.","Modifies the treatment of string after /c or /k.","Turns the echo off.","Disables execution of AutoRun commands.","Formats internal command output to a pipe or a file as American National Standards Institute (ANSI).","Formats internal command output to a pipe or a file as Unicode.","Sets the background (b) and foreground (f) colors.","Enables command extensions.","Disables commands extensions.","Enables file and directory name completion.","Disables file and directory name completion.","Enables delayed environment variable expansion.","Disables delayed environment variable expansion.","Specifies the command you want to carry out.","Displays help at the command prompt."]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Parameter<\/th>\n      <th>Description<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <div id="powershell" class="section level3">
@@ -654,13 +640,13 @@ Under construction…
 <pre class="r"><code>t2 &lt;- read_excel(f, sheet=&quot;linux-commands&quot;)
 # Show all rows in table (no pagination)
 datatable(t2, options=list(paging=FALSE), rownames=F)</code></pre>
-<div id="htmlwidget-b2f3668d059829a1ce91" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-b2f3668d059829a1ce91">{"x":{"filter":"none","vertical":false,"data":[["sudo","apt-get","clear","pwd","cd","cd /","cd ~","cd ./","cd ~/Documents","ls","ls -l","ls -p","ls ~/Documents","su &lt;username&gt;","sudo su","xdg-open .","caja .","cp [source] [destination]","touch &lt;file&gt;.&lt;ext&gt;","mkdir","mv &lt;source&gt; &lt;destination&gt;","copy &lt;source&gt; &lt;destination&gt;","find &lt;directory&gt; -type f -name \"*.txt\"","grep","grep -n -I &lt;file&gt;","find &lt;directory&gt; -type f -name \"*.txt\" | grep \"sometext\"","rm","rm -d","rm -r"],["Run as administrator (superuser do)","Install/uninstall programs","Clear terminal","Print working directory","Change directory","Change directory to absolute path from root","Home directory","Same directory","/home/&lt;username&gt;/Documents","List contents of directory","Shows contents and their permissions","Shows type of content","Example","Switch user","Switch to root user (full control of everything)","Open default file manager in current directory","Open Caja in current directory","Copy file","Create file","Make directory","Move file","Copy file","Find files with .py extension","search for content in file(s)","search for content in files, list line number, ignore case","Search for \".txt\" files that contain \"sometext\" in them","remove file","remove empty directory","remove directory and files"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Command<\/th>\n      <th>Detail<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-b895c721054bce268cf7" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b895c721054bce268cf7">{"x":{"filter":"none","vertical":false,"data":[["sudo","apt-get","clear","pwd","cd","cd /","cd ~","cd ./","cd ~/Documents","ls","ls -l","ls -p","ls ~/Documents","su &lt;username&gt;","sudo su","xdg-open .","caja .","cp [source] [destination]","touch &lt;file&gt;.&lt;ext&gt;","mkdir","mv &lt;source&gt; &lt;destination&gt;","copy &lt;source&gt; &lt;destination&gt;","find &lt;directory&gt; -type f -name \"*.txt\"","grep","grep -n -I &lt;file&gt;","find &lt;directory&gt; -type f -name \"*.txt\" | grep \"sometext\"","rm","rm -d","rm -r"],["Run as administrator (superuser do)","Install/uninstall programs","Clear terminal","Print working directory","Change directory","Change directory to absolute path from root","Home directory","Same directory","/home/&lt;username&gt;/Documents","List contents of directory","Shows contents and their permissions","Shows type of content","Example","Switch user","Switch to root user (full control of everything)","Open default file manager in current directory","Open Caja in current directory","Copy file","Create file","Make directory","Move file","Copy file","Find files with .py extension","search for content in file(s)","search for content in files, list line number, ignore case","Search for \".txt\" files that contain \"sometext\" in them","remove file","remove empty directory","remove directory and files"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Command<\/th>\n      <th>Detail<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="file-system" class="section level3">
 <h3>File System</h3>
-<div id="htmlwidget-fbc0ea4da81f4cee4b67" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-fbc0ea4da81f4cee4b67">{"x":{"filter":"none","vertical":false,"data":[["\\","\\home","\\usr","\\usr\\share\\applications"],["Root directory","User directory","User binary files?","Applications"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Endpoint<\/th>\n      <th>Detail<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-b9777497b75e011d6984" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b9777497b75e011d6984">{"x":{"filter":"none","vertical":false,"data":[["\\","\\home","\\usr","\\usr\\share\\applications"],["Root directory","User directory","User binary files?","Applications"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Endpoint<\/th>\n      <th>Detail<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="permissions" class="section level3">
 <h3>Permissions</h3>
@@ -676,8 +662,8 @@ permissions<br></p>
 </div>
 <div id="package-manager" class="section level3">
 <h3>Package Manager</h3>
-<div id="htmlwidget-cb04ddeb255740287612" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-cb04ddeb255740287612">{"x":{"filter":"none","vertical":false,"data":[["apt-get","apt-get install &lt;program&gt;","apt-get remove","apt-cache search &lt;program&gt;*","apt-cache policy &lt;program&gt;","sudo dpkg -i ~/Downloads/&lt;package&gt;.deb","sudo apt-get upgrade"],["Package manager (works with .deb files)","Install a program (if exists in apt-get repository)","Remove a program","Search for a program in repository (* = wildcard)","Check if program is installed","Install .deb file/package","Upgrade all packages"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Command<\/th>\n      <th>Detail<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-7a9453a6a6aabdf77b4e" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-7a9453a6a6aabdf77b4e">{"x":{"filter":"none","vertical":false,"data":[["apt-get","apt-get install &lt;program&gt;","apt-get remove","apt-cache search &lt;program&gt;*","apt-cache policy &lt;program&gt;","sudo dpkg -i ~/Downloads/&lt;package&gt;.deb","sudo apt-get upgrade"],["Package manager (works with .deb files)","Install a program (if exists in apt-get repository)","Remove a program","Search for a program in repository (* = wildcard)","Check if program is installed","Install .deb file/package","Upgrade all packages"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Command<\/th>\n      <th>Detail<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="server-setup" class="section level3">
 <h3>Server Setup</h3>
@@ -1104,8 +1090,8 @@ set spell</code></pre>
 <div id="psql" class="section level1">
 <h1>psql</h1>
 <p><a href="https://quickref.me/postgres">Cheat sheet</a></p>
-<div id="htmlwidget-3ca6bd120f79f4e5b923" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-3ca6bd120f79f4e5b923">{"x":{"filter":"none","vertical":false,"data":[["sudo -s postgres psql","postgres=# \\l","postgres=# \\c postgres","postgres=# \\q","postgres=# -d mydb","postgres=# -U john mydb","postgres=# -h localhost -p 5432 mydb","postgres=# -U admin -h 192.168.1.5 -p 2506 -d mydb","postgres=# -W mydb","postgres=# -c '\\c postgres' -c '\\dt'","postgres=# -c \"\\l+\" -H postgres &gt; database.html","postgres=# -l","postgres=# \\dt","postgres=# mydb -f file.sql","postgres=# -V","postgres=# \\df &lt;schema&gt;","postgres=# \\du","postgres=# \\d &lt;table&gt;","postgres=# \\d+ &lt;table&gt;","postgres=# \\di","postgres=# \\du","postgres=# \\ds","postgres=# \\copy …","postgres=# \\echo [string]","postgres=# \\i [file]","postgres=# \\o [file]"],["Connect to PostgreSQL as admin","List all databases","Connect to the database named postgres","Disconnect","Connecting to database","Connecting as a specific user","Connecting to a host/port","Connect remote PostgreSQL","Force password","Execute a SQL query or command","Generate HTML report","List all databases","Show all tables in a database","Execute commands from a file","Print the psql version","List functions in schema","Show current user permission","Describe table","Describe table with details","List indexes","List roles","List sequences","Import/export table","Print string","Execute file","Export all results to file"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Command<\/th>\n      <th>Detail<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-0f4ff6fd16d3f2e4ef65" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-0f4ff6fd16d3f2e4ef65">{"x":{"filter":"none","vertical":false,"data":[["sudo -s postgres psql","postgres=# \\l","postgres=# \\c postgres","postgres=# \\q","postgres=# -d mydb","postgres=# -U john mydb","postgres=# -h localhost -p 5432 mydb","postgres=# -U admin -h 192.168.1.5 -p 2506 -d mydb","postgres=# -W mydb","postgres=# -c '\\c postgres' -c '\\dt'","postgres=# -c \"\\l+\" -H postgres &gt; database.html","postgres=# -l","postgres=# \\dt","postgres=# mydb -f file.sql","postgres=# -V","postgres=# \\df &lt;schema&gt;","postgres=# \\du","postgres=# \\d &lt;table&gt;","postgres=# \\d+ &lt;table&gt;","postgres=# \\di","postgres=# \\du","postgres=# \\ds","postgres=# \\copy …","postgres=# \\echo [string]","postgres=# \\i [file]","postgres=# \\o [file]"],["Connect to PostgreSQL as admin","List all databases","Connect to the database named postgres","Disconnect","Connecting to database","Connecting as a specific user","Connecting to a host/port","Connect remote PostgreSQL","Force password","Execute a SQL query or command","Generate HTML report","List all databases","Show all tables in a database","Execute commands from a file","Print the psql version","List functions in schema","Show current user permission","Describe table","Describe table with details","List indexes","List roles","List sequences","Import/export table","Print string","Execute file","Export all results to file"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Command<\/th>\n      <th>Detail<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <div id="export-table-to-csv" class="section level2">
 <h2>Export table to CSV</h2>
 <ul>
