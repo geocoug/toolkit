@@ -453,16 +453,16 @@ Build an image and ***named*** volume (persistent): `docker run -d --name mysql 
 [init]
 	defaultBranch = main
 [user]
-        useConfigOnly = true
-        name = geocoug
-        email = 
-        signingKey = 
+  useConfigOnly = true
+	name = Caleb Grant
+  email = 
+  signingKey = 
 [core]
 	excludesfile = /Users/cgrant/.gitignore_global
 	editor = vim
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
@@ -471,6 +471,13 @@ Build an image and ***named*** volume (persistent): `docker run -d --name mysql 
 	gpgsign = true
 [gpg]
 	program = gpg
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[credential]
+	helper = osxkeychain
 ```
 
 
