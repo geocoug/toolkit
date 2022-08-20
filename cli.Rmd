@@ -159,8 +159,8 @@ source $ZSH/oh-my-zsh.sh
 
 # STANDARD FUNCTION MODIFICATIONS
 alias cat='ccat'
-alias l='exa -1 -G -l --icons -t modified --git -g'
-alias la='exa -1 -G -l --icons -t modified --git -g -a'
+alias l='exa -1 -g -h -l --git --group-directories-first --icons --sort=Name --time=modified'
+alias la='exa -1 -g -h -l --git --group-directories-first --icons --sort=Name --time=modified -a'
 # SHORTCUTS
 alias c='clear'
 alias h='history'
@@ -178,9 +178,10 @@ alias my='sudo chown -R `id -u`'
 # GIT
 alias gaa='git add --all'
 # DOCKER / ENVIRONMENTS
+alias repo='docker run --rm -it -v /Users/cgrant/Library/CloudStorage/OneDrive-Personal/GitHub/github.txt:/app/github.txt create-repo python create_repo.py -f /app/github.txt -r'
 alias lab='docker run -it --rm -p 8888:8888 -v $(PWD):/home/jovyan jupyter-lab'
-alias dev='source ~/envs/dev/bin/acivate'
-alias pyenv='/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/bin/python3.10 -m venv env && source ./env/bin/activate && python -m pip install --no-cache-dir pre_commit flake8 black isort autoflake > /dev/null 2>&1 && python -m pip freeze > requirements.txt > /dev/null 2>&1'
+alias dev='source ~/venvs/dev/bin/activate'
+alias pyenv='/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/bin/python3.10 -m venv .venv && source ./.venv/bin/activate && python -m pip install --no-cache-dir pre_commit flake8 black isort autoflake bandit mypy > /dev/null 2>&1 && python -m pip freeze > requirements.txt > /dev/null 2>&1 && code .'
 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
