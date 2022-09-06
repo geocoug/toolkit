@@ -13,7 +13,7 @@
 
 <title>Food</title>
 
-<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.16/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
@@ -150,11 +150,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -482,16 +486,74 @@ off</td>
 </tr>
 </tbody>
 </table>
-<hr />
 </div>
-<div id="recipes" class="section level2">
-<h2>Recipes</h2>
+<div id="greek-yogurt-smoothie" class="section level2">
+<h2>Greek Yogurt Smoothie</h2>
 <ul>
-<li><a href="https://tasty.co/recipe/buffalo-cauliflower">Buffalo
-cauliflower</a></li>
-<li><a
-href="https://www.eatwell101.com/quinoa-cucumber-noodles-salad-recipe">Quinoa
-&amp; cucumber salad w/avacado dressing</a></li>
+<li>Greek yogurt</li>
+<li>Banana</li>
+<li>Berries</li>
+<li>Oats</li>
+<li>Honey</li>
+<li>Ice</li>
+</ul>
+</div>
+<div id="overnight-oats" class="section level2">
+<h2>Overnight Oats</h2>
+<ul>
+<li>90 grams oats</li>
+<li>90 grams greek yogurt</li>
+<li>140 grams milk</li>
+<li>5 grams chia and/or flaxseed</li>
+<li>15 grams honey</li>
+</ul>
+<p>Stir or shake to combine. Refrigerate overnight.</p>
+</div>
+<div id="buffalo-cauliflower" class="section level2">
+<h2>Buffalo Cauliflower</h2>
+<ol style="list-style-type: decimal">
+<li>Preheat oven to 450 F</li>
+<li><strong>Batter</strong>:
+<ul>
+<li>3/4 cup flour</li>
+<li>1 tsp paprika</li>
+<li>2 tsp garlic powder</li>
+<li>1 tsp salt</li>
+<li>1/2 tsp black pepper</li>
+<li>3/4 cup milk</li>
+</ul></li>
+<li><strong>Sauce</strong>:
+<ul>
+<li>1/4 cup buffalo sauce</li>
+<li>1 tbsp Honey</li>
+<li>1/2 tsp black pepper</li>
+</ul></li>
+<li>Split cauliflower into florets and mix in batter</li>
+<li>Bake for 20 minutes, flip after 10.</li>
+<li>Brush sauce onto cauliflower, bake 10 minutes.</li>
+<li>Flip cauliflower and brush again with sauce, bake 10 minutes.</li>
+</ol>
+</div>
+<div id="quinoa-cucumber-salad" class="section level2">
+<h2>Quinoa &amp; Cucumber Salad</h2>
+<ul>
+<li><strong>Salad</strong>:
+<ul>
+<li>2 cups cucumber, spiralized or julienned</li>
+<li>2 cups chopped tomatoes</li>
+<li>2 large avocados, diced</li>
+<li>1 red onion, sliced</li>
+<li>2 cups cooked quinoa</li>
+<li>1 handful chopped parsley (or cilantro)</li>
+</ul></li>
+<li><strong>Dressing</strong> - blend the following:
+<ul>
+<li>1 ripe avocado</li>
+<li>1/4 cup white wine vinegar</li>
+<li>Juice of one lime</li>
+<li>Salt and fresh cracked pepper, to taste</li>
+<li>3/4 cup olive oil</li>
+</ul></li>
 </ul>
 </div>
 
