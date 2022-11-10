@@ -33,166 +33,6 @@ Reference guide containing syntax and examples for the most prevalent computing 
 
 `ffmpeg -i file.mov -s 600x400 -pix_fmt rgb24 -r 20 -f gif - | gifsicle --optimize=3 --delay=3 > file.gif`
 
-### .zshrc
-```{}
-export GPG_TTY=$TTY
-
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-# Path to your oh-my-zsh installation.
-export ZSH="/Users/cgrant/.oh-my-zsh"
-
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
-
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
-# Uncomment the following line to use case-sensitive completion.
-CASE_SENSITIVE="false"
-
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment one of the following lines to change the auto-update behavior
-# zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
-zstyle ':omz:update' mode reminder  # just remind me to update when it's time
-
-# Uncomment the following line to change how often to auto-update (in days).
-zstyle ':omz:update' frequency 13
-
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS="true"
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# You can also set it to another string to have that shown instead of the default red dots.
-# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
-# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  git
-  docker
-  zsh-syntax-highlighting
-  zsh-autosuggestions
-  web-search
-  copypath
-  copyfile
-  copybuffer
-  macos
-  1password
-)
-
-source $ZSH/oh-my-zsh.sh
-
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# STANDARD FUNCTION MODIFICATIONS
-alias cat='ccat'
-alias l='exa -1 -g -h -l --git --group-directories-first --icons --sort=Name --time=modified'
-alias la='exa -1 -g -h -l --git --group-directories-first --icons --sort=Name --time=modified -a'
-# SHORTCUTS
-alias c='clear'
-alias h='history'
-alias r='source ~/.zshrc'
-alias speed='speedtest-cli --simple'
-# HOMEBREW
-alias casks='brew cu -a --no-brew-update -v'
-alias brewup='brew update; brew upgrade; brew cu -a --no-brew-update -v; brew cleanup; brew doctor'
-# PATHS
-alias geo='cd /Users/cgrant/OneDrive/GitHub/geocoug'
-alias cloud='cd "/Users/cgrant/Library/Mobile Documents/com~apple~CloudDocs"'
-alias one='cd /Users/cgrant/OneDrive'
-# OWNERSHIP
-alias my='sudo chown -R `id -u`'
-# GIT
-alias gaa='git add --all'
-# DOCKER / ENVIRONMENTS
-alias repo='docker run --rm -it -v /Users/cgrant/Library/CloudStorage/OneDrive-Personal/GitHub/github.txt:/app/github.txt create-repo python create_repo.py -f /app/github.txt -r'
-alias lab='docker run -it --rm -p 8888:8888 -v $(PWD):/home/jovyan jupyter-lab'
-alias dev='source ~/venvs/dev/bin/activate'
-alias pyenv='/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/bin/python3.10 -m venv .venv && source ./.venv/bin/activate && python -m pip install --no-cache-dir pre_commit flake8 black isort autoflake bandit mypy > /dev/null 2>&1 && python -m pip freeze > requirements.txt > /dev/null 2>&1 && code .'
-
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-
-export PATH="/Users/cgrant/bin:$PATH"
-
-export PATH="/opt/homebrew/opt/curl/bin:$PATH"
-```
-
 
 ## Windows
 
@@ -251,53 +91,40 @@ General syntax: `_rwxrwxrwx 1 owner group`<br>
 `sudo chown 664 <file>`
 
 ### Package Manager
+
 ```{r, echo=F}
 t4 <- read_excel(f, sheet="linux-packages")
 # Show all rows in table (no pagination)
 datatable(t4, options=list(paging=FALSE), rownames=F)
 ```
 
-
 ### Server Setup
+
 Initial Linux server setup on Digital Ocean
 
-1) Login to server as root
-2) `$ adduser <username>`
-  a. Creates new admin user
-  Add user to sudo group: `usermod -aG sudo <username>`
-3) `$ exit`
-4) Reload SSH connection
-5) Login as new user
-6) `$ sudo vi /etc/ssh/sshd_config`
-  a. Configuration fo rputty/incoming SSH connections
-  b. Change `PermitRootLogin` to `no`
-7) `$ sudo reboot`
-8) On boot, can see linux kernel used for current build/image
-  a. `GNU/Linux 5.4.0-51-generic`
-9) `$ apt list --upgradable`
-10) `$ sudo apt upgrade`
-11) `$ uname -a`
-  a. Shows system info
-  b. Even though you updated the kernel, need to reboot to take effect
-12) `$ sudo reboot`
-13) `$ sudo apt update`
-	a. Just to be sure 
-14) `$ sudo apt upgrade`
-15) `$ ufw`
-	a. *Uncomplicated firewall
-16) `$ sudo ufw status verbose`
-	a. Shows firewall status
-17) `$ sudo ufw help`
-18) `$ sudo ufw allow OpenSSH`
-	a. Will allow opening of ports
-19) `$ sudo ufw enable`
-	a. Turns on firewall
-20) `$ sudo ufw status verbose`
-  a. Shows status of firewall/open ports
-21) Good time for snapshot backup
-	a. Has to be shutdown for backup/snapshot
-22) `$ sudo shutdown -h now`
-You have to go to DigitalOcean and reboot
+1. Login to server as root
+1. Create new admin user: `$ adduser <username>`
+1. Add user to sudo group: `usermod -aG sudo <username>`
+1. `$ exit`
+1. Reload SSH connection
+1. Login as new user
+1. `$ sudo vi /etc/ssh/sshd_config`
+  1. Configuration for putty/incoming SSH connections
+  1. Change `PermitRootLogin` to `no`
+1. `$ sudo reboot`
+1. On boot, can see linux kernel used for current build/image: `GNU/Linux 5.4.0-51-generic`
+1. Check for package updates `$ apt list --upgradable`
+1, Upgrade packages `$ sudo apt upgrade`
+1. Show system info: `$ uname -a`
+1. Even though you updated the kernel, need to reboot to take effect: `$ sudo reboot`
+1. Just to be sure: `$ sudo apt update & sudo apt upgrade`
+1. Uncomplicated firewall: `$ ufw status verbose`
+1. Allow SSH connections: `$ sudo ufw allow OpenSSH`
+  1. Can also do `$ sudo ufw allow 'Apache Full'` if web server needed. Opens port 80 and 443.
+1. Turn on firewall: `$ sudo ufw enable`
+1. Check: `$ sudo ufw status verbose`
+1. Shutdown for backup/snapshot `$ sudo shutdown -h now`
+1. Navigate to provider website and restart machine
 
 ---
 
@@ -448,42 +275,6 @@ Build an image and ***named*** volume (persistent): `docker run -d --name mysql 
 - [https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners](https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners)
 - [https://docs.gitlab.com/ee/gitlab-basics/start-using-git.html](https://docs.gitlab.com/ee/gitlab-basics/start-using-git.html)
 
-## .gitconfig
-```{}
-# This is Git's per-user configuration file.
-[init]
-	defaultBranch = main
-[user]
-  useConfigOnly = true
-	name = Caleb Grant
-  email = 
-  signingKey = 
-[core]
-	excludesfile = /Users/cgrant/.gitignore_global
-	editor = vim
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-[commit]
-	template = /Users/cgrant/.stCommitMsg
-	gpgsign = true
-[gpg]
-	program = gpg
-[filter "lfs"]
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-[credential]
-	helper = osxkeychain
-```
-
-
-
-
 ## Initialize
 1) Launch Git Bash
 2) Navigate to project directory
@@ -580,37 +371,6 @@ check all new commits: `git log`
 ### Directory
 `git rm --cahced -r dir/`
 
-
----
-
-# Vim
-
-## .vimrc
-```{}
-syntax on
-
-" Color scheme
-
-
-" New lines inherit indentation of previous line
-set autoindent
-" Convert tabs to spaces
-set expandtab
-
-" Search highlighting
-set hlsearch
-" Ignore case when searching
-set ignorecase
-
-" Highlight line currently under cursor
-set cursorline
-" Line numbers on sidebar
-set number
-
-" Spellchecking
-set spell
-```
-
 ---
 
 # psql
@@ -620,7 +380,6 @@ t4 <- read_excel(f, sheet="psql-commands")
 # Show all rows in table (no pagination)
 datatable(t4, options=list(paging=FALSE), rownames=F)
 ```
-
 
 ## Export table to CSV
 - `\copy table TO '<path>' CSV`

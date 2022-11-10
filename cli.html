@@ -13,7 +13,7 @@
 
 <title>CLI</title>
 
-<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.18/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
@@ -40,10 +40,10 @@
 <script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 <script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="site_libs/datatables-binding-0.23/datatables.js"></script>
-<link href="site_libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
-<link href="site_libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
-<script src="site_libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
+<script src="site_libs/datatables-binding-0.26/datatables.js"></script>
+<link href="site_libs/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="site_libs/dt-core-1.12.1/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="site_libs/dt-core-1.12.1/js/jquery.dataTables.min.js"></script>
 <link href="site_libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
 <script src="site_libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
@@ -158,11 +158,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -191,8 +195,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -200,16 +204,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -447,165 +444,6 @@ and Operating System).<br></p>
 <h3>Movie &gt; Gif</h3>
 <p><code>ffmpeg -i file.mov -s 600x400 -pix_fmt rgb24 -r 20 -f gif - | gifsicle --optimize=3 --delay=3 &gt; file.gif</code></p>
 </div>
-<div id="zshrc" class="section level3">
-<h3>.zshrc</h3>
-<pre><code>export GPG_TTY=$TTY
-
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r &quot;${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh&quot; ]]; then
-  source &quot;${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh&quot;
-fi
-
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-# Path to your oh-my-zsh installation.
-export ZSH=&quot;/Users/cgrant/.oh-my-zsh&quot;
-
-# Set name of the theme to load --- if set to &quot;random&quot;, it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME=&quot;powerlevel10k/powerlevel10k&quot;
-
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( &quot;robbyrussell&quot; &quot;agnoster&quot; )
-
-# Uncomment the following line to use case-sensitive completion.
-CASE_SENSITIVE=&quot;false&quot;
-
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE=&quot;true&quot;
-
-# Uncomment one of the following lines to change the auto-update behavior
-# zstyle &#39;:omz:update&#39; mode disabled  # disable automatic updates
-# zstyle &#39;:omz:update&#39; mode auto      # update automatically without asking
-zstyle &#39;:omz:update&#39; mode reminder  # just remind me to update when it&#39;s time
-
-# Uncomment the following line to change how often to auto-update (in days).
-zstyle &#39;:omz:update&#39; frequency 13
-
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS=&quot;true&quot;
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS=&quot;true&quot;
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE=&quot;true&quot;
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION=&quot;true&quot;
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# You can also set it to another string to have that shown instead of the default red dots.
-# e.g. COMPLETION_WAITING_DOTS=&quot;%F{yellow}waiting...%f&quot;
-# Caution: this setting can cause issues with multiline prompts in zsh &lt; 5.7.1 (see #5765)
-# COMPLETION_WAITING_DOTS=&quot;true&quot;
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY=&quot;true&quot;
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# &quot;mm/dd/yyyy&quot;|&quot;dd.mm.yyyy&quot;|&quot;yyyy-mm-dd&quot;
-# or set a custom format using the strftime function format specifications,
-# see &#39;man strftime&#39; for details.
-# HIST_STAMPS=&quot;mm/dd/yyyy&quot;
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  git
-  docker
-  zsh-syntax-highlighting
-  zsh-autosuggestions
-  web-search
-  copypath
-  copyfile
-  copybuffer
-  macos
-  1password
-)
-
-source $ZSH/oh-my-zsh.sh
-
-# User configuration
-
-# export MANPATH=&quot;/usr/local/man:$MANPATH&quot;
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR=&#39;vim&#39;
-# else
-#   export EDITOR=&#39;mvim&#39;
-# fi
-
-# Compilation flags
-# export ARCHFLAGS=&quot;-arch x86_64&quot;
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig=&quot;mate ~/.zshrc&quot;
-# alias ohmyzsh=&quot;mate ~/.oh-my-zsh&quot;
-
-# STANDARD FUNCTION MODIFICATIONS
-alias cat=&#39;ccat&#39;
-alias l=&#39;exa -1 -g -h -l --git --group-directories-first --icons --sort=Name --time=modified&#39;
-alias la=&#39;exa -1 -g -h -l --git --group-directories-first --icons --sort=Name --time=modified -a&#39;
-# SHORTCUTS
-alias c=&#39;clear&#39;
-alias h=&#39;history&#39;
-alias r=&#39;source ~/.zshrc&#39;
-alias speed=&#39;speedtest-cli --simple&#39;
-# HOMEBREW
-alias casks=&#39;brew cu -a --no-brew-update -v&#39;
-alias brewup=&#39;brew update; brew upgrade; brew cu -a --no-brew-update -v; brew cleanup; brew doctor&#39;
-# PATHS
-alias geo=&#39;cd /Users/cgrant/OneDrive/GitHub/geocoug&#39;
-alias cloud=&#39;cd &quot;/Users/cgrant/Library/Mobile Documents/com~apple~CloudDocs&quot;&#39;
-alias one=&#39;cd /Users/cgrant/OneDrive&#39;
-# OWNERSHIP
-alias my=&#39;sudo chown -R `id -u`&#39;
-# GIT
-alias gaa=&#39;git add --all&#39;
-# DOCKER / ENVIRONMENTS
-alias repo=&#39;docker run --rm -it -v /Users/cgrant/Library/CloudStorage/OneDrive-Personal/GitHub/github.txt:/app/github.txt create-repo python create_repo.py -f /app/github.txt -r&#39;
-alias lab=&#39;docker run -it --rm -p 8888:8888 -v $(PWD):/home/jovyan jupyter-lab&#39;
-alias dev=&#39;source ~/venvs/dev/bin/activate&#39;
-alias pyenv=&#39;/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/bin/python3.10 -m venv .venv &amp;&amp; source ./.venv/bin/activate &amp;&amp; python -m pip install --no-cache-dir pre_commit flake8 black isort autoflake bandit mypy &gt; /dev/null 2&gt;&amp;1 &amp;&amp; python -m pip freeze &gt; requirements.txt &gt; /dev/null 2&gt;&amp;1 &amp;&amp; code .&#39;
-
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-
-export PATH=&quot;/Users/cgrant/bin:$PATH&quot;
-
-export PATH=&quot;/opt/homebrew/opt/curl/bin:$PATH&quot;</code></pre>
-</div>
 </div>
 <div id="windows" class="section level2">
 <h2>Windows</h2>
@@ -620,15 +458,15 @@ Docs</a><br> Command line syntax</p>
 <code>"&lt;command1&gt;&amp;&amp;&lt;command2&gt;&amp;&amp;&lt;command3&gt;"</code></p>
 <div id="parameters" class="section level4">
 <h4>Parameters</h4>
-<div id="htmlwidget-502a8477446aad759aa3" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-502a8477446aad759aa3">{"x":{"filter":"none","vertical":false,"data":[["/c","/k","/s","/q","/d","/a","/u","/t:{&lt;b&gt;&lt;f&gt; &lt;f&gt;}","/e:on","/e:off","/f:on","/f:off","/v:on","/v:off","&lt;string&gt;","/?"],["Carries out the command specified by string and then stops.","Carries out the command specified by string and continues.","Modifies the treatment of string after /c or /k.","Turns the echo off.","Disables execution of AutoRun commands.","Formats internal command output to a pipe or a file as American National Standards Institute (ANSI).","Formats internal command output to a pipe or a file as Unicode.","Sets the background (b) and foreground (f) colors.","Enables command extensions.","Disables commands extensions.","Enables file and directory name completion.","Disables file and directory name completion.","Enables delayed environment variable expansion.","Disables delayed environment variable expansion.","Specifies the command you want to carry out.","Displays help at the command prompt."]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Parameter<\/th>\n      <th>Description<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-6c62fa3cecf5f2dc84a6" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6c62fa3cecf5f2dc84a6">{"x":{"filter":"none","vertical":false,"data":[["/c","/k","/s","/q","/d","/a","/u","/t:{&lt;b&gt;&lt;f&gt; &lt;f&gt;}","/e:on","/e:off","/f:on","/f:off","/v:on","/v:off","&lt;string&gt;","/?"],["Carries out the command specified by string and then stops.","Carries out the command specified by string and continues.","Modifies the treatment of string after /c or /k.","Turns the echo off.","Disables execution of AutoRun commands.","Formats internal command output to a pipe or a file as American National Standards Institute (ANSI).","Formats internal command output to a pipe or a file as Unicode.","Sets the background (b) and foreground (f) colors.","Enables command extensions.","Disables commands extensions.","Enables file and directory name completion.","Disables file and directory name completion.","Enables delayed environment variable expansion.","Disables delayed environment variable expansion.","Specifies the command you want to carry out.","Displays help at the command prompt."]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Parameter<\/th>\n      <th>Description<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <div id="powershell" class="section level3">
 <h3>Powershell</h3>
 <div style="display:inline;">
-<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M480 288c0-80.25-49.28-148.92-119.19-177.62L320 192V80a16 16 0 0 0-16-16h-96a16 16 0 0 0-16 16v112l-40.81-81.62C81.28 139.08 32 207.75 32 288v64h448zm16 96H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h480a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16z"/></svg>
-<svg aria-hidden="true" role="img" viewBox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M571.31 193.94l-22.63-22.63c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31-28.9-28.9c5.63-21.31.36-44.9-16.35-61.61l-45.25-45.25c-62.48-62.48-163.79-62.48-226.28 0l90.51 45.25v18.75c0 16.97 6.74 33.25 18.75 45.25l49.14 49.14c16.71 16.71 40.3 21.98 61.61 16.35l28.9 28.9-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63l22.63 22.63c6.25 6.25 16.38 6.25 22.63 0l90.51-90.51c6.23-6.24 6.23-16.37-.02-22.62zm-286.72-15.2c-3.7-3.7-6.84-7.79-9.85-11.95L19.64 404.96c-25.57 23.88-26.26 64.19-1.53 88.93s65.05 24.05 88.93-1.53l238.13-255.07c-3.96-2.91-7.9-5.87-11.44-9.41l-49.14-49.14z"/></svg>
+<svg aria-hidden="true" role="img" viewBox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M256 32c-17.7 0-32 14.3-32 32v2.3 99.6c0 5.6-4.5 10.1-10.1 10.1c-3.6 0-7-1.9-8.8-5.1L157.1 87C83 123.5 32 199.8 32 288v64H544l0-66.4c-.9-87.2-51.7-162.4-125.1-198.6l-48 83.9c-1.8 3.2-5.2 5.1-8.8 5.1c-5.6 0-10.1-4.5-10.1-10.1V66.3 64c0-17.7-14.3-32-32-32H256zM16.6 384C7.4 384 0 391.4 0 400.6c0 4.7 2 9.2 5.8 11.9C27.5 428.4 111.8 480 288 480s260.5-51.6 282.2-67.5c3.8-2.8 5.8-7.2 5.8-11.9c0-9.2-7.4-16.6-16.6-16.6H16.6z"/></svg>
+<svg aria-hidden="true" role="img" viewBox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M413.5 237.5c-28.2 4.8-58.2-3.6-80-25.4l-38.1-38.1C280.4 159 272 138.8 272 117.6V105.5L192.3 62c-5.3-2.9-8.6-8.6-8.3-14.7s3.9-11.5 9.5-14l47.2-21C259.1 4.2 279 0 299.2 0h18.1c36.7 0 72 14 98.7 39.1l44.6 42c24.2 22.8 33.2 55.7 26.6 86L503 183l8-8c9.4-9.4 24.6-9.4 33.9 0l24 24c9.4 9.4 9.4 24.6 0 33.9l-88 88c-9.4 9.4-24.6 9.4-33.9 0l-24-24c-9.4-9.4-9.4-24.6 0-33.9l8-8-17.5-17.5zM27.4 377.1L260.9 182.6c3.5 4.9 7.5 9.6 11.8 14l38.1 38.1c6 6 12.4 11.2 19.2 15.7L134.9 484.6c-14.5 17.4-36 27.4-58.6 27.4C34.1 512 0 477.8 0 435.7c0-22.6 10.1-44.1 27.4-58.6z"/></svg>
 Under construction…
 </div>
 <hr />
@@ -641,13 +479,13 @@ Under construction…
 <pre class="r"><code>t2 &lt;- read_excel(f, sheet=&quot;linux-commands&quot;)
 # Show all rows in table (no pagination)
 datatable(t2, options=list(paging=FALSE), rownames=F)</code></pre>
-<div id="htmlwidget-239337d655a6288139e5" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-239337d655a6288139e5">{"x":{"filter":"none","vertical":false,"data":[["sudo","apt-get","clear","pwd","cd","cd /","cd ~","cd ./","cd ~/Documents","ls","ls -l","ls -p","ls ~/Documents","su &lt;username&gt;","sudo su","xdg-open .","caja .","cp [source] [destination]","touch &lt;file&gt;.&lt;ext&gt;","mkdir","mv &lt;source&gt; &lt;destination&gt;","copy &lt;source&gt; &lt;destination&gt;","find &lt;directory&gt; -type f -name \"*.txt\"","grep","grep -n -I &lt;file&gt;","find &lt;directory&gt; -type f -name \"*.txt\" | grep \"sometext\"","rm","rm -d","rm -r"],["Run as administrator (superuser do)","Install/uninstall programs","Clear terminal","Print working directory","Change directory","Change directory to absolute path from root","Home directory","Same directory","/home/&lt;username&gt;/Documents","List contents of directory","Shows contents and their permissions","Shows type of content","Example","Switch user","Switch to root user (full control of everything)","Open default file manager in current directory","Open Caja in current directory","Copy file","Create file","Make directory","Move file","Copy file","Find files with .py extension","search for content in file(s)","search for content in files, list line number, ignore case","Search for \".txt\" files that contain \"sometext\" in them","remove file","remove empty directory","remove directory and files"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Command<\/th>\n      <th>Detail<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-557c6a0ca21761eb549a" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-557c6a0ca21761eb549a">{"x":{"filter":"none","vertical":false,"data":[["sudo","apt-get","clear","pwd","cd","cd /","cd ~","cd ./","cd ~/Documents","ls","ls -l","ls -p","ls ~/Documents","su &lt;username&gt;","sudo su","xdg-open .","caja .","cp [source] [destination]","touch &lt;file&gt;.&lt;ext&gt;","mkdir","mv &lt;source&gt; &lt;destination&gt;","copy &lt;source&gt; &lt;destination&gt;","find &lt;directory&gt; -type f -name \"*.txt\"","grep","grep -n -I &lt;file&gt;","find &lt;directory&gt; -type f -name \"*.txt\" | grep \"sometext\"","rm","rm -d","rm -r"],["Run as administrator (superuser do)","Install/uninstall programs","Clear terminal","Print working directory","Change directory","Change directory to absolute path from root","Home directory","Same directory","/home/&lt;username&gt;/Documents","List contents of directory","Shows contents and their permissions","Shows type of content","Example","Switch user","Switch to root user (full control of everything)","Open default file manager in current directory","Open Caja in current directory","Copy file","Create file","Make directory","Move file","Copy file","Find files with .py extension","search for content in file(s)","search for content in files, list line number, ignore case","Search for \".txt\" files that contain \"sometext\" in them","remove file","remove empty directory","remove directory and files"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Command<\/th>\n      <th>Detail<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="file-system" class="section level3">
 <h3>File System</h3>
-<div id="htmlwidget-0dcac40494ac95f0eda3" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-0dcac40494ac95f0eda3">{"x":{"filter":"none","vertical":false,"data":[["\\","\\home","\\usr","\\usr\\share\\applications"],["Root directory","User directory","User binary files?","Applications"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Endpoint<\/th>\n      <th>Detail<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-e23e96d45a5ecf82b16e" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e23e96d45a5ecf82b16e">{"x":{"filter":"none","vertical":false,"data":[["\\","\\home","\\usr","\\usr\\share\\applications"],["Root directory","User directory","User binary files?","Applications"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Endpoint<\/th>\n      <th>Detail<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="permissions" class="section level3">
 <h3>Permissions</h3>
@@ -663,83 +501,42 @@ permissions<br></p>
 </div>
 <div id="package-manager" class="section level3">
 <h3>Package Manager</h3>
-<div id="htmlwidget-4f61851c1fbe16dfb33e" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-4f61851c1fbe16dfb33e">{"x":{"filter":"none","vertical":false,"data":[["apt-get","apt-get install &lt;program&gt;","apt-get remove","apt-cache search &lt;program&gt;*","apt-cache policy &lt;program&gt;","sudo dpkg -i ~/Downloads/&lt;package&gt;.deb","sudo apt-get upgrade"],["Package manager (works with .deb files)","Install a program (if exists in apt-get repository)","Remove a program","Search for a program in repository (* = wildcard)","Check if program is installed","Install .deb file/package","Upgrade all packages"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Command<\/th>\n      <th>Detail<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-16323a9c182cff28150e" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-16323a9c182cff28150e">{"x":{"filter":"none","vertical":false,"data":[["apt-get","apt-get install &lt;program&gt;","apt-get remove","apt-cache search &lt;program&gt;*","apt-cache policy &lt;program&gt;","sudo dpkg -i ~/Downloads/&lt;package&gt;.deb","sudo apt-get upgrade"],["Package manager (works with .deb files)","Install a program (if exists in apt-get repository)","Remove a program","Search for a program in repository (* = wildcard)","Check if program is installed","Install .deb file/package","Upgrade all packages"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Command<\/th>\n      <th>Detail<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="server-setup" class="section level3">
 <h3>Server Setup</h3>
 <p>Initial Linux server setup on Digital Ocean</p>
 <ol style="list-style-type: decimal">
 <li>Login to server as root</li>
-<li><code>$ adduser &lt;username&gt;</code></li>
-</ol>
-<ol style="list-style-type: lower-alpha">
-<li>Creates new admin user Add user to sudo group:
+<li>Create new admin user: <code>$ adduser &lt;username&gt;</code></li>
+<li>Add user to sudo group:
 <code>usermod -aG sudo &lt;username&gt;</code></li>
-</ol>
-<ol start="3" style="list-style-type: decimal">
 <li><code>$ exit</code></li>
 <li>Reload SSH connection</li>
 <li>Login as new user</li>
 <li><code>$ sudo vi /etc/ssh/sshd_config</code></li>
-</ol>
-<ol style="list-style-type: lower-alpha">
-<li>Configuration fo rputty/incoming SSH connections</li>
+<li>Configuration for putty/incoming SSH connections</li>
 <li>Change <code>PermitRootLogin</code> to <code>no</code></li>
-</ol>
-<ol start="7" style="list-style-type: decimal">
 <li><code>$ sudo reboot</code></li>
-<li>On boot, can see linux kernel used for current build/image</li>
-</ol>
-<ol style="list-style-type: lower-alpha">
-<li><code>GNU/Linux 5.4.0-51-generic</code></li>
-</ol>
-<ol start="9" style="list-style-type: decimal">
-<li><code>$ apt list --upgradable</code></li>
-<li><code>$ sudo apt upgrade</code></li>
-<li><code>$ uname -a</code></li>
-</ol>
-<ol style="list-style-type: lower-alpha">
-<li>Shows system info</li>
-<li>Even though you updated the kernel, need to reboot to take
-effect</li>
-</ol>
-<ol start="12" style="list-style-type: decimal">
-<li><code>$ sudo reboot</code></li>
-<li><code>$ sudo apt update</code>
-<ol style="list-style-type: lower-alpha">
-<li>Just to be sure</li>
-</ol></li>
-<li><code>$ sudo apt upgrade</code></li>
-<li><code>$ ufw</code>
-<ol style="list-style-type: lower-alpha">
-<li>*Uncomplicated firewall</li>
-</ol></li>
-<li><code>$ sudo ufw status verbose</code>
-<ol style="list-style-type: lower-alpha">
-<li>Shows firewall status</li>
-</ol></li>
-<li><code>$ sudo ufw help</code></li>
-<li><code>$ sudo ufw allow OpenSSH</code>
-<ol style="list-style-type: lower-alpha">
-<li>Will allow opening of ports</li>
-</ol></li>
-<li><code>$ sudo ufw enable</code>
-<ol style="list-style-type: lower-alpha">
-<li>Turns on firewall</li>
-</ol></li>
-<li><code>$ sudo ufw status verbose</code></li>
-</ol>
-<ol style="list-style-type: lower-alpha">
-<li>Shows status of firewall/open ports</li>
-</ol>
-<ol start="21" style="list-style-type: decimal">
-<li>Good time for snapshot backup
-<ol style="list-style-type: lower-alpha">
-<li>Has to be shutdown for backup/snapshot</li>
-</ol></li>
-<li><code>$ sudo shutdown -h now</code> You have to go to DigitalOcean
-and reboot</li>
+<li>On boot, can see linux kernel used for current build/image:
+<code>GNU/Linux 5.4.0-51-generic</code></li>
+<li>Check for package updates <code>$ apt list --upgradable</code> 1,
+Upgrade packages <code>$ sudo apt upgrade</code></li>
+<li>Show system info: <code>$ uname -a</code></li>
+<li>Even though you updated the kernel, need to reboot to take effect:
+<code>$ sudo reboot</code></li>
+<li>Just to be sure:
+<code>$ sudo apt update &amp; sudo apt upgrade</code></li>
+<li>Uncomplicated firewall: <code>$ ufw status verbose</code></li>
+<li>Allow SSH connections: <code>$ sudo ufw allow OpenSSH</code></li>
+<li>Can also do <code>$ sudo ufw allow 'Apache Full'</code> if web
+server needed. Opens port 80 and 443.</li>
+<li>Turn on firewall: <code>$ sudo ufw enable</code></li>
+<li>Check: <code>$ sudo ufw status verbose</code></li>
+<li>Shutdown for backup/snapshot
+<code>$ sudo shutdown -h now</code></li>
+<li>Navigate to provider website and restart machine</li>
 </ol>
 <hr />
 </div>
@@ -911,38 +708,6 @@ href="https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners">ht
 <li><a
 href="https://docs.gitlab.com/ee/gitlab-basics/start-using-git.html">https://docs.gitlab.com/ee/gitlab-basics/start-using-git.html</a></li>
 </ul>
-<div id="gitconfig" class="section level2">
-<h2>.gitconfig</h2>
-<pre><code># This is Git&#39;s per-user configuration file.
-[init]
-    defaultBranch = main
-[user]
-  useConfigOnly = true
-    name = Caleb Grant
-  email = 
-  signingKey = 
-[core]
-    excludesfile = /Users/cgrant/.gitignore_global
-    editor = vim
-[difftool &quot;sourcetree&quot;]
-    cmd = opendiff \&quot;$LOCAL\&quot; \&quot;$REMOTE\&quot;
-    path =
-[mergetool &quot;sourcetree&quot;]
-    cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \&quot;$LOCAL\&quot; \&quot;$REMOTE\&quot; -ancestor \&quot;$BASE\&quot; -merge \&quot;$MERGED\&quot;
-    trustExitCode = true
-[commit]
-    template = /Users/cgrant/.stCommitMsg
-    gpgsign = true
-[gpg]
-    program = gpg
-[filter &quot;lfs&quot;]
-    process = git-lfs filter-process
-    required = true
-    clean = git-lfs clean -- %f
-    smudge = git-lfs smudge -- %f
-[credential]
-    helper = osxkeychain</code></pre>
-</div>
 <div id="initialize" class="section level2">
 <h2>Initialize</h2>
 <ol style="list-style-type: decimal">
@@ -1066,40 +831,11 @@ master branch.</p>
 </div>
 </div>
 </div>
-<div id="vim" class="section level1">
-<h1>Vim</h1>
-<div id="vimrc" class="section level2">
-<h2>.vimrc</h2>
-<pre><code>syntax on
-
-&quot; Color scheme
-
-
-&quot; New lines inherit indentation of previous line
-set autoindent
-&quot; Convert tabs to spaces
-set expandtab
-
-&quot; Search highlighting
-set hlsearch
-&quot; Ignore case when searching
-set ignorecase
-
-&quot; Highlight line currently under cursor
-set cursorline
-&quot; Line numbers on sidebar
-set number
-
-&quot; Spellchecking
-set spell</code></pre>
-<hr />
-</div>
-</div>
 <div id="psql" class="section level1">
 <h1>psql</h1>
 <p><a href="https://quickref.me/postgres">Cheat sheet</a></p>
-<div id="htmlwidget-47183e0ecc60f5cd3660" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-47183e0ecc60f5cd3660">{"x":{"filter":"none","vertical":false,"data":[["sudo -s postgres psql","postgres=# \\l","postgres=# \\c postgres","postgres=# \\q","postgres=# -d mydb","postgres=# -U john mydb","postgres=# -h localhost -p 5432 mydb","postgres=# -U admin -h 192.168.1.5 -p 2506 -d mydb","postgres=# -W mydb","postgres=# -c '\\c postgres' -c '\\dt'","postgres=# -c \"\\l+\" -H postgres &gt; database.html","postgres=# -l","postgres=# \\dt","postgres=# mydb -f file.sql","postgres=# -V","postgres=# \\df &lt;schema&gt;","postgres=# \\du","postgres=# \\d &lt;table&gt;","postgres=# \\d+ &lt;table&gt;","postgres=# \\di","postgres=# \\du","postgres=# \\ds","postgres=# \\copy …","postgres=# \\echo [string]","postgres=# \\i [file]","postgres=# \\o [file]"],["Connect to PostgreSQL as admin","List all databases","Connect to the database named postgres","Disconnect","Connecting to database","Connecting as a specific user","Connecting to a host/port","Connect remote PostgreSQL","Force password","Execute a SQL query or command","Generate HTML report","List all databases","Show all tables in a database","Execute commands from a file","Print the psql version","List functions in schema","Show current user permission","Describe table","Describe table with details","List indexes","List roles","List sequences","Import/export table","Print string","Execute file","Export all results to file"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Command<\/th>\n      <th>Detail<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-1effe5bd7adac9a5f339" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1effe5bd7adac9a5f339">{"x":{"filter":"none","vertical":false,"data":[["sudo -s postgres psql","postgres=# \\l","postgres=# \\c postgres","postgres=# \\q","postgres=# -d mydb","postgres=# -U john mydb","postgres=# -h localhost -p 5432 mydb","postgres=# -U admin -h 192.168.1.5 -p 2506 -d mydb","postgres=# -W mydb","postgres=# -c '\\c postgres' -c '\\dt'","postgres=# -c \"\\l+\" -H postgres &gt; database.html","postgres=# -l","postgres=# \\dt","postgres=# mydb -f file.sql","postgres=# -V","postgres=# \\df &lt;schema&gt;","postgres=# \\du","postgres=# \\d &lt;table&gt;","postgres=# \\d+ &lt;table&gt;","postgres=# \\di","postgres=# \\du","postgres=# \\ds","postgres=# \\copy …","postgres=# \\echo [string]","postgres=# \\i [file]","postgres=# \\o [file]"],["Connect to PostgreSQL as admin","List all databases","Connect to the database named postgres","Disconnect","Connecting to database","Connecting as a specific user","Connecting to a host/port","Connect remote PostgreSQL","Force password","Execute a SQL query or command","Generate HTML report","List all databases","Show all tables in a database","Execute commands from a file","Print the psql version","List functions in schema","Show current user permission","Describe table","Describe table with details","List indexes","List roles","List sequences","Import/export table","Print string","Execute file","Export all results to file"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Command<\/th>\n      <th>Detail<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <div id="export-table-to-csv" class="section level2">
 <h2>Export table to CSV</h2>
 <ul>

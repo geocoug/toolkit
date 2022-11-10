@@ -29,7 +29,11 @@ knitr::opts_chunk$set(echo = T, warning = F, message = F)
 - [Spektran](https://spektran.com/) - Collection of useful color tools
 - [Observable](https://observablehq.com/) - JavaScript notebooks
 - [HTML Dog](https://www.htmldog.com/) - HTML tutorials
-- [Crontab](https://crontab.tech/)
+- [Crontab](https://crontab.tech/) - Crontab scheduler
+- [Media Library](https://ian.umces.edu/media-library/)
+- [UTF-8 Character Debug](https://www.i18nqa.com/debug/utf8-debug.html) - UTF-8 character debugging chart
+- [LaTeX Basics](https://en.wikibooks.org/wiki/LaTeX/Basics#Compilation)
+- [Quarto](https://quarto.org/) - Scientific and technical publishing system built on Pandoc
 
 ---
 
