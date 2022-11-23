@@ -64,7 +64,6 @@ Create connection chunk, then call connection in each subsequent chunk.
 library(DBI)
 
 pass <- readLines("../../pwd.txt")
-
 db = dbConnect(
   RPostgres::Postgres(),
   dbname   = "personal",
