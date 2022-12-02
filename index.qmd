@@ -1,0 +1,11 @@
+---
+title: "Welcome"
+pagetitle: "Welcome"
+description: "Landing page"
+listing: grid
+---
+
+Welcome to [geocoug's](https://github.com/geocoug) resource toolkit. This site was built using [quarto](https://quarto.org/).
+
+::: {#listing}
+:::

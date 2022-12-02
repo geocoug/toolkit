@@ -1,0 +1,55 @@
+project:
+  type: website
+  output-dir: docs
+  resources:
+    - "/.nojekyll"
+    - "/static/*"
+    - "/lib/*"
+  render:
+    - "*.qmd"
+
+website:
+  title: "Toolkit"
+  favicon: /static/favicon.ico
+  navbar:
+    title: <a class="navbar-brand" href="index.html"><img src="static/logo.svg" width="32px" height="32px" class="d-inline-block align-text-top"></a>
+    type: default
+    left:
+      - text: "Development"
+        menu:
+          - text: "RStudio"
+            href: rstudio.qmd
+          - text: "Python"
+            href: python.qmd
+          - text: "Data Management"
+            href: dm.qmd
+          - text: "CLI"
+            href: cli.qmd
+          - text: "DBMS"
+            href: dbms.qmd
+          - text: "Resources"
+            href: resources.qmd
+      - text: "Health & Fitness"
+        menu:
+          - text: "Workouts"
+            href: workouts.qmd
+          - text: "Food"
+            href: food.qmd
+    right:
+      - text: "{{< fa brands github size=xl >}}"
+        href: https://geocoug.github.io
+      - text: "{{< fa brands linkedin size=xl >}}"
+        href: https://www.linkedin.com/in/caleb-grant-04b098101
+      - text: "{{< fa brands python size=xl >}}"
+        href: https://jupyter.geocoug.com
+      - text: "{{< fa brands r-project size=xl >}}"
+        href: https://rstudio.geocoug.com
+
+format:
+  html:
+    theme: flatly
+    toc: true
+    toc_float: true
+    includes:
+      in_header: /lib/header.html
+      after_body: /lib/footer.html

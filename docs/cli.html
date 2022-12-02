@@ -1,0 +1,2266 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Command Line Interface Tools">
+
+<title>CLI</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title"><a class="navbar-brand" href="index.html"><img src="static/logo.svg" width="32px" height="32px" class="d-inline-block align-text-top"></a></span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-development" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Development</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-development">    
+        <li>
+    <a class="dropdown-item" href="./rstudio.html">
+ <span class="dropdown-text">RStudio</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./python.html">
+ <span class="dropdown-text">Python</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./dm.html">
+ <span class="dropdown-text">Data Management</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./cli.html">
+ <span class="dropdown-text">CLI</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./dbms.html">
+ <span class="dropdown-text">DBMS</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./resources.html">
+ <span class="dropdown-text">Resources</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-health--fitness" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Health &amp; Fitness</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-health--fitness">    
+        <li>
+    <a class="dropdown-item" href="./workouts.html">
+ <span class="dropdown-text">Workouts</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./food.html">
+ <span class="dropdown-text">Food</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://geocoug.github.io">
+ <span class="menu-text"><i class="fa-brands fa-github fa-xl" aria-label="github"></i></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://www.linkedin.com/in/caleb-grant-04b098101">
+ <span class="menu-text"><i class="fa-brands fa-linkedin fa-xl" aria-label="linkedin"></i></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://jupyter.geocoug.com">
+ <span class="menu-text"><i class="fa-brands fa-python fa-xl" aria-label="python"></i></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://rstudio.geocoug.com">
+ <span class="menu-text"><i class="fa-brands fa-r-project fa-xl" aria-label="r-project"></i></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#operating-systems" id="toc-operating-systems" class="nav-link active" data-scroll-target="#operating-systems">Operating Systems</a>
+  <ul class="collapse">
+  <li><a href="#general" id="toc-general" class="nav-link" data-scroll-target="#general">General</a>
+  <ul class="collapse">
+  <li><a href="#ssh" id="toc-ssh" class="nav-link" data-scroll-target="#ssh">SSH</a></li>
+  </ul></li>
+  <li><a href="#mac" id="toc-mac" class="nav-link" data-scroll-target="#mac">Mac</a>
+  <ul class="collapse">
+  <li><a href="#movie-gif" id="toc-movie-gif" class="nav-link" data-scroll-target="#movie-gif">Movie &gt; Gif</a></li>
+  </ul></li>
+  <li><a href="#windows" id="toc-windows" class="nav-link" data-scroll-target="#windows">Windows</a>
+  <ul class="collapse">
+  <li><a href="#cmd" id="toc-cmd" class="nav-link" data-scroll-target="#cmd">CMD</a></li>
+  <li><a href="#powershell" id="toc-powershell" class="nav-link" data-scroll-target="#powershell">Powershell</a></li>
+  </ul></li>
+  <li><a href="#linux" id="toc-linux" class="nav-link" data-scroll-target="#linux">Linux</a>
+  <ul class="collapse">
+  <li><a href="#commands" id="toc-commands" class="nav-link" data-scroll-target="#commands">Commands</a></li>
+  <li><a href="#file-system" id="toc-file-system" class="nav-link" data-scroll-target="#file-system">File System</a></li>
+  <li><a href="#permissions" id="toc-permissions" class="nav-link" data-scroll-target="#permissions">Permissions</a></li>
+  <li><a href="#package-manager" id="toc-package-manager" class="nav-link" data-scroll-target="#package-manager">Package Manager</a></li>
+  <li><a href="#server-setup" id="toc-server-setup" class="nav-link" data-scroll-target="#server-setup">Server Setup</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#docker" id="toc-docker" class="nav-link" data-scroll-target="#docker">Docker</a>
+  <ul class="collapse">
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
+  <li><a href="#image-vs.-container" id="toc-image-vs.-container" class="nav-link" data-scroll-target="#image-vs.-container">Image vs.&nbsp;Container</a></li>
+  <li><a href="#docker-basics" id="toc-docker-basics" class="nav-link" data-scroll-target="#docker-basics">Docker Basics</a>
+  <ul class="collapse">
+  <li><a href="#create-an-nginx-container" id="toc-create-an-nginx-container" class="nav-link" data-scroll-target="#create-an-nginx-container">Create an Nginx container</a></li>
+  <li><a href="#other-examples" id="toc-other-examples" class="nav-link" data-scroll-target="#other-examples">Other examples</a></li>
+  <li><a href="#processes-and-configurations" id="toc-processes-and-configurations" class="nav-link" data-scroll-target="#processes-and-configurations">Processes and configurations</a></li>
+  <li><a href="#getting-a-shell-inside-containers" id="toc-getting-a-shell-inside-containers" class="nav-link" data-scroll-target="#getting-a-shell-inside-containers">Getting a shell inside containers</a></li>
+  <li><a href="#pull-an-image-from-docker-hub" id="toc-pull-an-image-from-docker-hub" class="nav-link" data-scroll-target="#pull-an-image-from-docker-hub">Pull an image from docker hub</a></li>
+  </ul></li>
+  <li><a href="#docker-networks" id="toc-docker-networks" class="nav-link" data-scroll-target="#docker-networks">Docker Networks</a>
+  <ul class="collapse">
+  <li><a href="#publishing" id="toc-publishing" class="nav-link" data-scroll-target="#publishing">Publishing (#:#)</a></li>
+  <li><a href="#dns" id="toc-dns" class="nav-link" data-scroll-target="#dns">DNS</a></li>
+  </ul></li>
+  <li><a href="#dockerfiles" id="toc-dockerfiles" class="nav-link" data-scroll-target="#dockerfiles">Dockerfiles</a></li>
+  <li><a href="#keeping-the-docker-system-clean" id="toc-keeping-the-docker-system-clean" class="nav-link" data-scroll-target="#keeping-the-docker-system-clean">Keeping the Docker system clean</a></li>
+  <li><a href="#volumes-an-bind-mounts" id="toc-volumes-an-bind-mounts" class="nav-link" data-scroll-target="#volumes-an-bind-mounts">Volumes an Bind Mounts</a></li>
+  </ul></li>
+  <li><a href="#git" id="toc-git" class="nav-link" data-scroll-target="#git">Git</a>
+  <ul class="collapse">
+  <li><a href="#initialize" id="toc-initialize" class="nav-link" data-scroll-target="#initialize">Initialize</a></li>
+  <li><a href="#staging" id="toc-staging" class="nav-link" data-scroll-target="#staging">Staging</a></li>
+  <li><a href="#commit-locally" id="toc-commit-locally" class="nav-link" data-scroll-target="#commit-locally">Commit Locally</a></li>
+  <li><a href="#branches" id="toc-branches" class="nav-link" data-scroll-target="#branches">Branches</a></li>
+  <li><a href="#commit-to-github" id="toc-commit-to-github" class="nav-link" data-scroll-target="#commit-to-github">Commit to Github</a></li>
+  <li><a href="#push-a-branch-to-github" id="toc-push-a-branch-to-github" class="nav-link" data-scroll-target="#push-a-branch-to-github">Push a Branch to Github</a></li>
+  <li><a href="#pull-request" id="toc-pull-request" class="nav-link" data-scroll-target="#pull-request">Pull Request</a></li>
+  <li><a href="#get-changes-on-github" id="toc-get-changes-on-github" class="nav-link" data-scroll-target="#get-changes-on-github">Get Changes on Github</a></li>
+  <li><a href="#view-differences" id="toc-view-differences" class="nav-link" data-scroll-target="#view-differences">View Differences</a></li>
+  <li><a href="#remove-a-branch" id="toc-remove-a-branch" class="nav-link" data-scroll-target="#remove-a-branch">Remove a Branch</a>
+  <ul class="collapse">
+  <li><a href="#locally" id="toc-locally" class="nav-link" data-scroll-target="#locally">Locally</a></li>
+  <li><a href="#remote" id="toc-remote" class="nav-link" data-scroll-target="#remote">Remote</a></li>
+  </ul></li>
+  <li><a href="#remove-tracked-filedirectory" id="toc-remove-tracked-filedirectory" class="nav-link" data-scroll-target="#remove-tracked-filedirectory">Remove tracked file/directory</a>
+  <ul class="collapse">
+  <li><a href="#file" id="toc-file" class="nav-link" data-scroll-target="#file">File</a></li>
+  <li><a href="#directory" id="toc-directory" class="nav-link" data-scroll-target="#directory">Directory</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#psql" id="toc-psql" class="nav-link" data-scroll-target="#psql">psql</a>
+  <ul class="collapse">
+  <li><a href="#export-table-to-csv" id="toc-export-table-to-csv" class="nav-link" data-scroll-target="#export-table-to-csv">Export table to CSV</a></li>
+  <li><a href="#backup" id="toc-backup" class="nav-link" data-scroll-target="#backup">Backup</a></li>
+  <li><a href="#restore" id="toc-restore" class="nav-link" data-scroll-target="#restore">Restore</a>
+  <ul class="collapse">
+  <li><a href="#psql-1" id="toc-psql-1" class="nav-link" data-scroll-target="#psql-1">psql</a></li>
+  <li><a href="#pg_restore" id="toc-pg_restore" class="nav-link" data-scroll-target="#pg_restore">pg_restore</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">CLI</h1>
+</div>
+
+<div>
+  <div class="description">
+    Command Line Interface Tools
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> <span class="st">"./static/commands.xlsx"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<hr>
+<section id="operating-systems" class="level1">
+<h1>Operating Systems</h1>
+<section id="general" class="level2">
+<h2 class="anchored" data-anchor-id="general">General</h2>
+<p><a href="https://ss64.com/">SS64</a><br> Reference guide containing syntax and examples for the most prevalent computing commands (Database and Operating System).<br></p>
+<section id="ssh" class="level3">
+<h3 class="anchored" data-anchor-id="ssh">SSH</h3>
+<p><code>ssh &lt;username&gt;@&lt;host ip&gt;</code></p>
+</section>
+</section>
+<section id="mac" class="level2">
+<h2 class="anchored" data-anchor-id="mac">Mac</h2>
+<section id="movie-gif" class="level3">
+<h3 class="anchored" data-anchor-id="movie-gif">Movie &gt; Gif</h3>
+<p><code>ffmpeg -i file.mov -s 600x400 -pix_fmt rgb24 -r 20 -f gif - | gifsicle --optimize=3 --delay=3 &gt; file.gif</code></p>
+</section>
+</section>
+<section id="windows" class="level2">
+<h2 class="anchored" data-anchor-id="windows">Windows</h2>
+<section id="cmd" class="level3">
+<h3 class="anchored" data-anchor-id="cmd">CMD</h3>
+<p><a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/cmd">Microsoft Docs</a><br> Command line syntax</p>
+<p><strong>Syntax</strong>: <code>cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{&lt;b&gt;&lt;f&gt; | &lt;f&gt;}] [/e:{on | off}] [/f:{on | off}] [/v:{on | off}] [&lt;string&gt;]</code></p>
+<p><strong>Multiple commands</strong>: <code>"&lt;command1&gt;&amp;&amp;&lt;command2&gt;&amp;&amp;&lt;command3&gt;"</code></p>
+<section id="parameters" class="level4">
+<h4 class="anchored" data-anchor-id="parameters">Parameters</h4>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>t1 <span class="op">=</span> pd.read_excel(f, sheet_name<span class="op">=</span><span class="st">"windows-commands"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>t1.to_html(index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+
+<table class="dataframe table table-sm table-striped">
+
+<thead>
+
+<tr>
+
+<th>
+Parameter
+</th>
+
+<th>
+Description
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>
+/c
+</td>
+
+<td>
+Carries out the command specified by string and then stops.
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+/k
+</td>
+
+<td>
+Carries out the command specified by string and continues.
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+/s
+</td>
+
+<td>
+Modifies the treatment of string after /c or /k.
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+/q
+</td>
+
+<td>
+Turns the echo off.
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+/d
+</td>
+
+<td>
+Disables execution of AutoRun commands.
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+/a
+</td>
+
+<td>
+Formats internal command output to a pipe or a file as American National Standards Institute (ANSI).
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+/u
+</td>
+
+<td>
+Formats internal command output to a pipe or a file as Unicode.
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+/t:{&lt;b&gt;&lt;f&gt; &lt;f&gt;}
+</td>
+
+<td>
+Sets the background (b) and foreground (f) colors.
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+/e:on
+</td>
+
+<td>
+Enables command extensions.
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+/e:off
+</td>
+
+<td>
+Disables commands extensions.
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+/f:on
+</td>
+
+<td>
+Enables file and directory name completion.
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+/f:off
+</td>
+
+<td>
+Disables file and directory name completion.
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+/v:on
+</td>
+
+<td>
+Enables delayed environment variable expansion.
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+/v:off
+</td>
+
+<td>
+Disables delayed environment variable expansion.
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+&lt;string&gt;
+</td>
+
+<td>
+Specifies the command you want to carry out.
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+/?
+</td>
+
+<td>
+Displays help at the command prompt.
+</td>
+
+</tr>
+
+</tbody>
+
+
+</table>
+</div>
+</div>
+</section>
+</section>
+<section id="powershell" class="level3">
+<h3 class="anchored" data-anchor-id="powershell">Powershell</h3>
+<div style="display:inline;">
+<code>r fa("hard-hat")</code> <code>r fa("hammer")</code> Under construction…
+</div>
+<hr>
+</section>
+</section>
+<section id="linux" class="level2">
+<h2 class="anchored" data-anchor-id="linux">Linux</h2>
+<section id="commands" class="level3">
+<h3 class="anchored" data-anchor-id="commands">Commands</h3>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>t2 <span class="op">=</span> pd.read_excel(f, sheet_name<span class="op">=</span><span class="st">"linux-commands"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>t2.to_html(index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+
+<table class="dataframe table table-sm table-striped">
+
+<thead>
+
+<tr>
+
+<th>
+Command
+</th>
+
+<th>
+Detail
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>
+sudo
+</td>
+
+<td>
+Run as administrator (superuser do)
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+apt-get
+</td>
+
+<td>
+Install/uninstall programs
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+clear
+</td>
+
+<td>
+Clear terminal
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+pwd
+</td>
+
+<td>
+Print working directory
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+cd
+</td>
+
+<td>
+Change directory
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+cd /
+</td>
+
+<td>
+Change directory to absolute path from root
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+cd ~
+</td>
+
+<td>
+Home directory
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+cd ./
+</td>
+
+<td>
+Same directory
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+cd ~/Documents
+</td>
+
+<td>
+/home/&lt;username&gt;/Documents
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+ls
+</td>
+
+<td>
+List contents of directory
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+ls -l
+</td>
+
+<td>
+Shows contents and their permissions
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+ls -p
+</td>
+
+<td>
+Shows type of content
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+ls ~/Documents
+</td>
+
+<td>
+Example
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+su &lt;username&gt;
+</td>
+
+<td>
+Switch user
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+sudo su
+</td>
+
+<td>
+Switch to root user (full control of everything)
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+xdg-open .
+</td>
+
+<td>
+Open default file manager in current directory
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+caja .
+</td>
+
+<td>
+Open Caja in current directory
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+cp [source] [destination]
+</td>
+
+<td>
+Copy file
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+touch &lt;file&gt;.&lt;ext&gt;
+</td>
+
+<td>
+Create file
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+mkdir
+</td>
+
+<td>
+Make directory
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+mv &lt;source&gt; &lt;destination&gt;
+</td>
+
+<td>
+Move file
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+copy &lt;source&gt; &lt;destination&gt;
+</td>
+
+<td>
+Copy file
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+find &lt;directory&gt; -type f -name “*.txt”
+</td>
+
+<td>
+Find files with .py extension
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+grep
+</td>
+
+<td>
+search for content in file(s)
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+grep -n -I &lt;file&gt;
+</td>
+
+<td>
+search for content in files, list line number, ignore case
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+find &lt;directory&gt; -type f -name “*.txt” | grep “sometext”
+</td>
+
+<td>
+Search for “.txt” files that contain “sometext” in them
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+rm
+</td>
+
+<td>
+remove file
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+rm -d
+</td>
+
+<td>
+remove empty directory
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+rm -r
+</td>
+
+<td>
+remove directory and files
+</td>
+
+</tr>
+
+</tbody>
+
+
+</table>
+</div>
+</div>
+</section>
+<section id="file-system" class="level3">
+<h3 class="anchored" data-anchor-id="file-system">File System</h3>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>t3 <span class="op">=</span> pd.read_excel(f, sheet_name<span class="op">=</span><span class="st">"linux-filesystem"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>t2.to_html(index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+
+<table class="dataframe table table-sm table-striped">
+
+<thead>
+
+<tr>
+
+<th>
+Command
+</th>
+
+<th>
+Detail
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>
+sudo
+</td>
+
+<td>
+Run as administrator (superuser do)
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+apt-get
+</td>
+
+<td>
+Install/uninstall programs
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+clear
+</td>
+
+<td>
+Clear terminal
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+pwd
+</td>
+
+<td>
+Print working directory
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+cd
+</td>
+
+<td>
+Change directory
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+cd /
+</td>
+
+<td>
+Change directory to absolute path from root
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+cd ~
+</td>
+
+<td>
+Home directory
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+cd ./
+</td>
+
+<td>
+Same directory
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+cd ~/Documents
+</td>
+
+<td>
+/home/&lt;username&gt;/Documents
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+ls
+</td>
+
+<td>
+List contents of directory
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+ls -l
+</td>
+
+<td>
+Shows contents and their permissions
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+ls -p
+</td>
+
+<td>
+Shows type of content
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+ls ~/Documents
+</td>
+
+<td>
+Example
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+su &lt;username&gt;
+</td>
+
+<td>
+Switch user
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+sudo su
+</td>
+
+<td>
+Switch to root user (full control of everything)
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+xdg-open .
+</td>
+
+<td>
+Open default file manager in current directory
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+caja .
+</td>
+
+<td>
+Open Caja in current directory
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+cp [source] [destination]
+</td>
+
+<td>
+Copy file
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+touch &lt;file&gt;.&lt;ext&gt;
+</td>
+
+<td>
+Create file
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+mkdir
+</td>
+
+<td>
+Make directory
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+mv &lt;source&gt; &lt;destination&gt;
+</td>
+
+<td>
+Move file
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+copy &lt;source&gt; &lt;destination&gt;
+</td>
+
+<td>
+Copy file
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+find &lt;directory&gt; -type f -name “*.txt”
+</td>
+
+<td>
+Find files with .py extension
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+grep
+</td>
+
+<td>
+search for content in file(s)
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+grep -n -I &lt;file&gt;
+</td>
+
+<td>
+search for content in files, list line number, ignore case
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+find &lt;directory&gt; -type f -name “*.txt” | grep “sometext”
+</td>
+
+<td>
+Search for “.txt” files that contain “sometext” in them
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+rm
+</td>
+
+<td>
+remove file
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+rm -d
+</td>
+
+<td>
+remove empty directory
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+rm -r
+</td>
+
+<td>
+remove directory and files
+</td>
+
+</tr>
+
+</tbody>
+
+
+</table>
+</div>
+</div>
+</section>
+<section id="permissions" class="level3">
+<h3 class="anchored" data-anchor-id="permissions">Permissions</h3>
+<p>General syntax: <code>_rwxrwxrwx 1 owner group</code><br></p>
+<p><code>_ | rwx | rwx | rwx</code> <special><owner><group><all users=""></all></group></owner></special></p>
+<p><code>r</code> = Read<br> <code>w</code> = Write<br> <code>x</code> = Execute</p>
+<p><code>chown</code> = Change ownership<br> <code>chmod</code> = Change permissions<br></p>
+<p><code>sudo chown &lt;user&gt;:&lt;group&gt; &lt;file&gt;</code></p>
+<p><code>sudo chown 664 &lt;file&gt;</code></p>
+</section>
+<section id="package-manager" class="level3">
+<h3 class="anchored" data-anchor-id="package-manager">Package Manager</h3>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>t4 <span class="op">=</span> pd.read_excel(f, sheet_name<span class="op">=</span><span class="st">"linux-packages"</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Show all rows in table (no pagination)</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>t4.to_html(index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+
+<table class="dataframe table table-sm table-striped">
+
+<thead>
+
+<tr>
+
+<th>
+Command
+</th>
+
+<th>
+Detail
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>
+apt-get
+</td>
+
+<td>
+Package manager (works with .deb files)
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+apt-get install &lt;program&gt;
+</td>
+
+<td>
+Install a program (if exists in apt-get repository)
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+apt-get remove
+</td>
+
+<td>
+Remove a program
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+apt-cache search &lt;program&gt;*
+</td>
+
+<td>
+Search for a program in repository (* = wildcard)
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+apt-cache policy &lt;program&gt;
+</td>
+
+<td>
+Check if program is installed
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+sudo dpkg -i ~/Downloads/&lt;package&gt;.deb
+</td>
+
+<td>
+Install .deb file/package
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+sudo apt-get upgrade
+</td>
+
+<td>
+Upgrade all packages
+</td>
+
+</tr>
+
+</tbody>
+
+
+</table>
+</div>
+</div>
+</section>
+<section id="server-setup" class="level3">
+<h3 class="anchored" data-anchor-id="server-setup">Server Setup</h3>
+<p>Initial Linux server setup on Digital Ocean</p>
+<ol type="1">
+<li>Login to server as root</li>
+<li>Create new admin user: <code>$ adduser &lt;username&gt;</code></li>
+<li>Add user to sudo group: <code>usermod -aG sudo &lt;username&gt;</code></li>
+<li><code>$ exit</code></li>
+<li>Reload SSH connection</li>
+<li>Login as new user</li>
+<li><code>$ sudo vi /etc/ssh/sshd_config</code></li>
+<li>Configuration for putty/incoming SSH connections</li>
+<li>Change <code>PermitRootLogin</code> to <code>no</code></li>
+<li><code>$ sudo reboot</code></li>
+<li>On boot, can see linux kernel used for current build/image: <code>GNU/Linux 5.4.0-51-generic</code></li>
+<li>Check for package updates <code>$ apt list --upgradable</code> 1, Upgrade packages <code>$ sudo apt upgrade</code></li>
+<li>Show system info: <code>$ uname -a</code></li>
+<li>Even though you updated the kernel, need to reboot to take effect: <code>$ sudo reboot</code></li>
+<li>Just to be sure: <code>$ sudo apt update &amp; sudo apt upgrade</code></li>
+<li>Uncomplicated firewall: <code>$ ufw status verbose</code></li>
+<li>Allow SSH connections: <code>$ sudo ufw allow OpenSSH</code></li>
+<li>Can also do <code>$ sudo ufw allow 'Apache Full'</code> if web server needed. Opens port 80 and 443.</li>
+<li>Turn on firewall: <code>$ sudo ufw enable</code></li>
+<li>Check: <code>$ sudo ufw status verbose</code></li>
+<li>Shutdown for backup/snapshot <code>$ sudo shutdown -h now</code></li>
+<li>Navigate to provider website and restart machine</li>
+</ol>
+<hr>
+</section>
+</section>
+</section>
+<section id="docker" class="level1">
+<h1>Docker</h1>
+<section id="resources" class="level2">
+<h2 class="anchored" data-anchor-id="resources">Resources</h2>
+<ul>
+<li><a href="./static/Docker-CheatSheet.pdf">CheatSheet</a></li>
+<li><a href="https://www.composerize.com/">Convert Docker command to docker-compose.yml</a></li>
+</ul>
+</section>
+<section id="image-vs.-container" class="level2">
+<h2 class="anchored" data-anchor-id="image-vs.-container">Image vs.&nbsp;Container</h2>
+<p><strong>Image</strong> - Application we want to run</p>
+<p><strong>Container</strong> - Instance of that image running as a process</p>
+<hr>
+</section>
+<section id="docker-basics" class="level2">
+<h2 class="anchored" data-anchor-id="docker-basics">Docker Basics</h2>
+<section id="create-an-nginx-container" class="level3">
+<h3 class="anchored" data-anchor-id="create-an-nginx-container">Create an Nginx container</h3>
+<p><code>docker run -p 80:80 -d --name webhost nginx</code></p>
+<ol type="1">
+<li>Downloads Nginx from Docker Hub</li>
+<li>Starts new container from that image</li>
+<li>Opened port 80 on host IP</li>
+<li>Routes port 80 traffic to the container IP, port 80</li>
+<li>View container at <a href="http://localhost:80">http://localhost:80</a></li>
+</ol>
+</section>
+<section id="other-examples" class="level3">
+<h3 class="anchored" data-anchor-id="other-examples">Other examples</h3>
+<p><code>docker run -p 80:80 -d --name nginx nginx</code></p>
+<p><code>docker run -p 8080:80 -d --name httpd httpd</code></p>
+<p><code>docker run -p 3306:3306 --platform linux/amd64 -d --name mysql -e MYSQL_RANDOM_ROOT_PASSWORD=true mysql</code></p>
+<p>Create a JupyterLab instance and attach your current directory as a volume: <code>docker run -it --rm -p 8888:8888 -v $(PWD):/home/jovyan jupyter/pyspark-notebook</code></p>
+</section>
+<section id="processes-and-configurations" class="level3">
+<h3 class="anchored" data-anchor-id="processes-and-configurations">Processes and configurations</h3>
+<p>Check processes running inside a container: <code>docker top &lt;container&gt;</code></p>
+<p>Container configuration: <code>docker &lt;container&gt; inspect</code></p>
+<p>Check container stats (memory, cpu, network): <code>docker stats &lt;container&gt;</code></p>
+</section>
+<section id="getting-a-shell-inside-containers" class="level3">
+<h3 class="anchored" data-anchor-id="getting-a-shell-inside-containers">Getting a shell inside containers</h3>
+<p>Start a new container interactively: <code>docker run -it &lt;container&gt;</code></p>
+<p>Run commands in existing container: <code>docker exec -it &lt;container&gt;</code></p>
+<section id="example-start-a-container-interactively-and-launch-bash-within-it" class="level4">
+<h4 class="anchored" data-anchor-id="example-start-a-container-interactively-and-launch-bash-within-it">Example: Start a container interactively and launch bash within it</h4>
+<ol type="1">
+<li>Start container and launch bash: <code>docker run -it --name ubuntu ubuntu bash</code></li>
+<li>Run some bash command: <code>apt-get install -y curl</code></li>
+<li>Exit the container: <code>exit</code></li>
+<li>Start and re-enter the container: <code>docker start -ai ubuntu</code></li>
+</ol>
+</section>
+<section id="example-launch-shell-in-running-container" class="level4">
+<h4 class="anchored" data-anchor-id="example-launch-shell-in-running-container">Example: Launch shell in running container</h4>
+<p><code>docker exec -it &lt;container&gt; bash</code></p>
+</section>
+</section>
+<section id="pull-an-image-from-docker-hub" class="level3">
+<h3 class="anchored" data-anchor-id="pull-an-image-from-docker-hub">Pull an image from docker hub</h3>
+<p><code>docker pull &lt;imagename&gt;</code></p>
+<hr>
+</section>
+</section>
+<section id="docker-networks" class="level2">
+<h2 class="anchored" data-anchor-id="docker-networks">Docker Networks</h2>
+<ul>
+<li>Each container is connected to a private virtual network (called “bridge”).</li>
+<li>Each virtual network routes through NAT firewall on host IP.</li>
+<li>All containers on a virtual network can talk to each other without <code>-p</code></li>
+<li><strong><em>Best practice</em></strong>: Create a new virtual network for each app.</li>
+<li>You can skip virtual networks and use the host IP (<code>--net=host</code>).</li>
+</ul>
+<p>Get container IP: <code>docker inspect --format '{{ .NetworkSettings.IPAddress }}' &lt;container&gt;</code></p>
+<section id="publishing" class="level3">
+<h3 class="anchored" data-anchor-id="publishing">Publishing (#:#)</h3>
+<p>example: 8080:80</p>
+<p><strong>left number</strong>: published/host port</p>
+<p><strong>right number</strong>: listening/container port</p>
+<p><em>Traffic passing through port 8080 on the HOST will be directed to port 80 on the container.</em></p>
+</section>
+<section id="dns" class="level3">
+<h3 class="anchored" data-anchor-id="dns">DNS</h3>
+<p>Docker uses container names as host names.</p>
+<p>Dont rely on IPs for inter-communication.</p>
+<p><strong><em>Best Practice</em></strong> Always use custom networks.</p>
+<section id="assignment" class="level4">
+<h4 class="anchored" data-anchor-id="assignment">Assignment</h4>
+<p>Check different curl versions within current versions of Ubuntu and CentOS.</p>
+<p>Run “curl –version” on both operating systems.</p>
+<section id="steps" class="level5">
+<h5 class="anchored" data-anchor-id="steps">Steps</h5>
+<p><strong>ubuntu</strong>: <code>apt-get update &amp;&amp; apt-get install curl</code></p>
+<p><strong>centos</strong>: <code>yum update curl</code></p>
+<p>Then…</p>
+<p><code>curl --version</code></p>
+<p>Also:</p>
+<p>Check out command <code>docker --rm</code></p>
+</section>
+</section>
+</section>
+</section>
+<section id="dockerfiles" class="level2">
+<h2 class="anchored" data-anchor-id="dockerfiles">Dockerfiles</h2>
+<p>Recipe for creating images</p>
+<p>Each Dockerfile stanza such as “RUN”, “CMD”, etc. are stored as a single image layer. Docker caches each layer by giving it a unique SHA (hash), so whenever the image is (re)built, it can check to see if a layer has changed, and if not, it will use the cached layer.</p>
+<p>Docker builds images top down, so it is best practice to structure the Dockerfile in such a way that lines which will change the most are at the bottom, and lines that will change the least are at the top. If a line is changed (ie. source code changes) Docker will rebuild that line, and thus each line after that will also need to be rebuilt.</p>
+</section>
+<section id="keeping-the-docker-system-clean" class="level2">
+<h2 class="anchored" data-anchor-id="keeping-the-docker-system-clean">Keeping the Docker system clean</h2>
+<p><code>docker system prune</code> - all stopped containers - all networks not used by at least one container - all dangling images - all dangling build cache</p>
+</section>
+<section id="volumes-an-bind-mounts" class="level2">
+<h2 class="anchored" data-anchor-id="volumes-an-bind-mounts">Volumes an Bind Mounts</h2>
+<p><strong>Volumes</strong> - Special location outside of container UFS</p>
+<p><strong>Bind Mounts</strong> - Link container path to host path</p>
+<p>Build an image and <strong><em>named</em></strong> volume (persistent): <code>docker run -d --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=True -v mysql:/var/lib/mysql --platform linux/amd64 mysql</code></p>
+<hr>
+</section>
+</section>
+<section id="git" class="level1">
+<h1>Git</h1>
+<ul>
+<li><a href="https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners">https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners</a></li>
+<li><a href="https://docs.gitlab.com/ee/gitlab-basics/start-using-git.html">https://docs.gitlab.com/ee/gitlab-basics/start-using-git.html</a></li>
+</ul>
+<section id="initialize" class="level2">
+<h2 class="anchored" data-anchor-id="initialize">Initialize</h2>
+<ol type="1">
+<li>Launch Git Bash</li>
+<li>Navigate to project directory</li>
+<li>initialize git repository in the folder root: <code>git init</code></li>
+<li>create new file in directory: <code>touch filename.extension</code></li>
+<li>list files in root: <code>ls</code></li>
+<li>check which files git recognizes: <code>git status</code></li>
+</ol>
+</section>
+<section id="staging" class="level2">
+<h2 class="anchored" data-anchor-id="staging">Staging</h2>
+<p>A commit is a record of what files you have changed since the last time you made a commit. Essentially, you make changes to your repo (for example, adding a file or modifying one) and then tell git to put those files into a commit. Commits make up the essence of your project and allow you to go back to the state of a project at any point.</p>
+<p>So, how do you tell git which files to put into a commit? This is where the staging environment or index come in. When you make changes to your repo, git notices that a file has changed but won’t do anything with it (like adding it in a commit).</p>
+<p>To add a file to a commit, you first need to add it to the staging environment. To do this, you can use the <code>git add &lt;filename&gt;</code> command.</p>
+<p>Once you’ve used the git add command to add all the files you want to the staging environment, you can then tell git to package them into a commit using the git commit command. Note: The staging environment, also called ‘staging’, is the new preferred term for this, but you can also see it referred to as the ‘index’.</p>
+<ol type="1">
+<li>Add files to the staging environment: <code>git add filename.extension</code></li>
+<li>Check staging environment for new files: <code>git status</code></li>
+</ol>
+</section>
+<section id="commit-locally" class="level2">
+<h2 class="anchored" data-anchor-id="commit-locally">Commit Locally</h2>
+<p><code>git commit -m "Your message about the commit"</code></p>
+</section>
+<section id="branches" class="level2">
+<h2 class="anchored" data-anchor-id="branches">Branches</h2>
+<p>Say you want to make a new feature but are worried about making changes to the main project while developing the feature. This is where git branches come in.</p>
+<p>Branches allow you to move back and forth between ‘states’ of a project. For instance, if you want to add a new page to your website you can create a new branch just for that page without affecting the main part of the project. Once you’re done with the page, you can merge your changes from your branch into the master branch. When you create a new branch, Git keeps track of which commit your branch ‘branched’ off of, so it knows the history behind all the files.</p>
+<ol type="1">
+<li><code>git checkout -b &lt;my branch name&gt;</code></li>
+<li>Show list of branches: <code>git branch</code></li>
+</ol>
+</section>
+<section id="commit-to-github" class="level2">
+<h2 class="anchored" data-anchor-id="commit-to-github">Commit to Github</h2>
+<ol type="1">
+<li>Create new repo on GitHub</li>
+<li><code>git remote add origin &lt;url produced on github for new repo&gt;</code></li>
+<li><code>git push -u origin [master/main]</code></li>
+</ol>
+</section>
+<section id="push-a-branch-to-github" class="level2">
+<h2 class="anchored" data-anchor-id="push-a-branch-to-github">Push a Branch to Github</h2>
+<p><code>git push origin &lt;my-new-branch&gt;</code></p>
+<p>You might be wondering what that “origin” word means in the command above. What happens is that when you clone a remote repository to your local machine, git creates an alias for you. In nearly all cases this alias is called “origin.” It’s essentially shorthand for the remote repository’s URL. So, to push your changes to the remote repository, you could’ve used either the command: git push git@github.com:git/git.git yourbranchname or git push origin yourbranchname</p>
+</section>
+<section id="pull-request" class="level2">
+<h2 class="anchored" data-anchor-id="pull-request">Pull Request</h2>
+<p>A pull request (or PR) is a way to alert a repo’s owners that you want to make some changes to their code. It allows them to review the code and make sure it looks good before putting your changes on the master branch.</p>
+</section>
+<section id="get-changes-on-github" class="level2">
+<h2 class="anchored" data-anchor-id="get-changes-on-github">Get Changes on Github</h2>
+<p><code>git pull origin master</code></p>
+<p>check all new commits: <code>git log</code></p>
+</section>
+<section id="view-differences" class="level2">
+<h2 class="anchored" data-anchor-id="view-differences">View Differences</h2>
+<ol type="1">
+<li>run: <code>git diff</code></li>
+</ol>
+</section>
+<section id="remove-a-branch" class="level2">
+<h2 class="anchored" data-anchor-id="remove-a-branch">Remove a Branch</h2>
+<section id="locally" class="level3">
+<h3 class="anchored" data-anchor-id="locally">Locally</h3>
+<p><code>git branch -d &lt;branch_name&gt;</code></p>
+</section>
+<section id="remote" class="level3">
+<h3 class="anchored" data-anchor-id="remote">Remote</h3>
+<p><code>git push &lt;remote_name&gt; --delete &lt;branch_name&gt;</code></p>
+</section>
+</section>
+<section id="remove-tracked-filedirectory" class="level2">
+<h2 class="anchored" data-anchor-id="remove-tracked-filedirectory">Remove tracked file/directory</h2>
+<section id="file" class="level3">
+<h3 class="anchored" data-anchor-id="file">File</h3>
+<p><code>git rm --cached &lt;file&gt;</code></p>
+</section>
+<section id="directory" class="level3">
+<h3 class="anchored" data-anchor-id="directory">Directory</h3>
+<p><code>git rm --cahced -r dir/</code></p>
+<hr>
+</section>
+</section>
+</section>
+<section id="psql" class="level1">
+<h1>psql</h1>
+<p><a href="https://quickref.me/postgres">Cheat sheet</a></p>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>t4 <span class="op">=</span> pd.read_excel(f, sheet_name<span class="op">=</span><span class="st">"psql-commands"</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>t4.to_html(index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+
+<table class="dataframe table table-sm table-striped">
+
+<thead>
+
+<tr>
+
+<th>
+Command
+</th>
+
+<th>
+Detail
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>
+sudo -s postgres psql
+</td>
+
+<td>
+Connect to PostgreSQL as admin
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# \l
+</td>
+
+<td>
+List all databases
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# \c postgres
+</td>
+
+<td>
+Connect to the database named postgres
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# \q
+</td>
+
+<td>
+Disconnect
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# -d mydb
+</td>
+
+<td>
+Connecting to database
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# -U john mydb
+</td>
+
+<td>
+Connecting as a specific user
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# -h localhost -p 5432 mydb
+</td>
+
+<td>
+Connecting to a host/port
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# -U admin -h 192.168.1.5 -p 2506 -d mydb
+</td>
+
+<td>
+Connect remote PostgreSQL
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# -W mydb
+</td>
+
+<td>
+Force password
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# -c '\c postgres' -c '\dt'
+</td>
+
+<td>
+Execute a SQL query or command
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# -c “\l+” -H postgres &gt; database.html
+</td>
+
+<td>
+Generate HTML report
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# -l
+</td>
+
+<td>
+List all databases
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# \dt
+</td>
+
+<td>
+Show all tables in a database
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# mydb -f file.sql
+</td>
+
+<td>
+Execute commands from a file
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# -V
+</td>
+
+<td>
+Print the psql version
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# \df &lt;schema&gt;
+</td>
+
+<td>
+List functions in schema
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# \du
+</td>
+
+<td>
+Show current user permission
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# \d &lt;table&gt;
+</td>
+
+<td>
+Describe table
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# \d+ &lt;table&gt;
+</td>
+
+<td>
+Describe table with details
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# \di
+</td>
+
+<td>
+List indexes
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# \du
+</td>
+
+<td>
+List roles
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# \ds
+</td>
+
+<td>
+List sequences
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# \copy …
+</td>
+
+<td>
+Import/export table
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# \echo [string]
+</td>
+
+<td>
+Print string
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# \i <a href="#file">file</a>
+</td>
+
+<td>
+Execute file
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# \o <a href="#file">file</a>
+</td>
+
+<td>
+Export all results to file
+</td>
+
+</tr>
+
+</tbody>
+
+
+</table>
+</div>
+</div>
+<section id="export-table-to-csv" class="level2">
+<h2 class="anchored" data-anchor-id="export-table-to-csv">Export table to CSV</h2>
+<ul>
+<li><code>\copy table TO '&lt;path&gt;' CSV</code></li>
+<li><code>\copy table(col1,col1) TO '&lt;path&gt;' CSV</code></li>
+<li><code>\copy (SELECT...) TO '&lt;path&gt;' CSV</code></li>
+</ul>
+</section>
+<section id="backup" class="level2">
+<h2 class="anchored" data-anchor-id="backup">Backup</h2>
+<p>Use pg_dumpall to backup all databases</p>
+<p><code>$ pg_dumpall -U postgres &gt; all.sql</code></p>
+<p>Use pg_dump to backup a database</p>
+<p><code>$ pg_dump -d mydb -f mydb_backup.sql</code></p>
+<ul>
+<li>&nbsp; <code>-a</code> &nbsp; Dump only the data, not the schema</li>
+<li>&nbsp; <code>-s</code> &nbsp; Dump only the schema, no data</li>
+<li>&nbsp; <code>-c</code> &nbsp; Drop database before recreating</li>
+<li>&nbsp; <code>-C</code> &nbsp; Create database before restoring</li>
+<li>&nbsp; <code>-t</code> &nbsp; Dump the named table(s) only</li>
+<li>&nbsp; <code>-F</code> &nbsp; Format (<code>c</code>: custom, <code>d</code>: directory, <code>t</code>: tar)</li>
+</ul>
+<p>Use <code>pg_dump -?</code> to get the full list of options</p>
+</section>
+<section id="restore" class="level2">
+<h2 class="anchored" data-anchor-id="restore">Restore</h2>
+<section id="psql-1" class="level3">
+<h3 class="anchored" data-anchor-id="psql-1">psql</h3>
+<p><code>$ psql -U user mydb &lt; mydb_backup.sql</code></p>
+</section>
+<section id="pg_restore" class="level3">
+<h3 class="anchored" data-anchor-id="pg_restore">pg_restore</h3>
+<p><code>$ pg_restore -d mydb mydb_backup.sql -c</code></p>
+<ul>
+<li><code>-U   Specify a database user</code></li>
+<li><code>-c   Drop database before recreating</code></li>
+<li><code>-C   Create database before restoring</code></li>
+<li><code>-e   Exit if an error has encountered</code></li>
+<li><code>-F   Format (c: custom, d: directory, t: tar, p: plain text sql(default))</code></li>
+</ul>
+<p>Use pg_restore -? to get the full list of options</p>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

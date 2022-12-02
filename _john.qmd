@@ -1,0 +1,43 @@
+---
+title: "John's Workouts"
+description: "John's workout routine"
+image: "/static/workouts.png"
+format:
+    html:
+        code-fold: true
+jupyter: python3
+execute:
+    echo: false # Remove this if you want to show code blocks
+---
+
+# Routines
+
+
+```{python}
+import pandas as pd
+
+workouts = "./static/workouts.xlsx"
+w1 = pd.read_excel(workouts, sheet_name=5)
+w2 = pd.read_excel(workouts, sheet_name=6)
+w3 = pd.read_excel(workouts, sheet_name=7)
+```
+
+
+## Push
+
+```{python}
+w1.to_html(index=False)
+```
+
+
+## Pull
+
+```{python}
+w2.to_html(index=False)
+```
+
+## Legs
+
+```{python}
+w3.to_html(index=False)
+```

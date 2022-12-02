@@ -1,0 +1,18 @@
+﻿Data Type,Postgres,MariaDB,SQL Server,Firebird,MS-Access,SQLite
+Timestamp with time zone,1184,,,,,
+Timestamp,1184,7,,type ‘datetime.datetime’,,None
+Datetime,,12,class ‘datetime.datetime’,,class ‘datetime.datetime’,None
+Date,1082,10,class ‘datetime.date’,type ‘datetime.date’,class ‘datetime.datetime’,None
+Time,1083,11,class ‘datetime.time’,type ‘datetime.time’,class ‘datetime.datetime’,None
+Boolean,16,16,class ‘bool’,,class ‘bool’,
+Small integer,21,1,class ‘int’,,class ‘int’,
+Integer,23,2,class ‘int’,type ‘int’,class ‘int’,None
+Long integer,20,3,class ‘int’,type ‘long’,,None
+Single,701,4,class ‘float’,type ‘float’,class ‘float’,None
+Double precision,701,5,class ‘float’,type ‘float’,class ‘float’,None
+Decimal,1700,0,class ‘decimal.Decimal’,class ‘decimal.Decimal’,,None
+Currency,790,,,class ‘decimal.Decimal’,class ‘decimal.Decimal’,
+Character,1042,,class ‘str’,type ‘str’,class ‘str’,None
+Character varying,1043,15,class ‘str’,type ‘str’,class ‘str’,None
+Text,25,,class ‘str’,type ‘str’,class ‘str’,None
+Binary / BLOB,17,"249,250,251,252",class ‘bytearray’,type ‘str’,type ‘bytearray’,None

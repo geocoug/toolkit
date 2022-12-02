@@ -1,0 +1,15 @@
+[
+  {
+    "listing": "/index.html",
+    "items": [
+      "/cli.html",
+      "/dbms.html",
+      "/dm.html",
+      "/food.html",
+      "/python.html",
+      "/rstudio.html",
+      "/resources.html",
+      "/workouts.html"
+    ]
+  }
+]
