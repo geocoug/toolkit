@@ -11,7 +11,124 @@ image: "/static/database.jpg"
 
 [Reference](https://www.postgresql.org/docs/12/app-pgdump.html)
 
+### Export table to sql
+
 `pg_dump -h [host] -d [database] -U [user] -s [schema only] -W [force password] > <file>.sql`
+
+## Joins
+
+::: {.grid}
+:::: {.g-col-6}
+```{mermaid}
+flowchart TD
+    subgraph inner[Inner Join]
+    direction LR
+        a1(A1)
+        a2(A2)
+		b1(B1)
+		b2(B2)
+		a1 -.- b1
+		a2 -.- b2
+    end
+```
+::::
+::::{.g-col-6}
+```{mermaid}
+flowchart LR
+    subgraph cross[Cross Join]
+    direction LR
+        a1(A1)
+		a2(A2)
+		b1(B1)
+		b2(B2)
+		a1 -.- b1
+		a1 -.- b2
+		a2 -.- b1
+		a2 -.- b2
+    end
+```
+::::
+:::
+::: {.grid}
+::::{.g-col-6}
+```{mermaid}
+flowchart TD
+    subgraph left[Left Join]
+    direction RL
+        a1(A1)
+        a2(A2)
+		a3(A3)
+		b1(B1)
+		b2(B2)
+		b1 -.- a1
+		b2 -.- a2
+    end
+```
+::::
+::::{.g-col-6}
+```{mermaid}
+flowchart TD
+    subgraph right[Right Join]
+    direction LR
+        a1(A1)
+        a2(A2)
+		b1(B1)
+		b2(B2)
+		b3(B3)
+		a1 -.- b1
+		a2 -.- b2
+    end
+```
+::::
+:::
+:::{.grid}
+:::: {.g-col-12}
+```{mermaid}
+flowchart LR
+	subgraph outer[Outer<br>Join]
+	direction LR
+		subgraph a[A]
+		direction TB
+			a1(A1)
+			a2(A2)
+			a3( )
+		end
+		subgraph b[B]
+		direction TB
+			b1(B1)
+			b2( )
+			b3(B3)
+		end
+		a1 -.- b1
+	end
+	style a3 fill-opacity:0, stroke-opacity:0;
+	style b2 fill-opacity:0, stroke-opacity:0;
+```
+::::
+:::
+
+## Common Functions
+
+- `LENGTH(string)`: Returns the length of the provided string
+- `POSITION(string IN substring)`: Returns the position of the substring within the specified string.
+- `CAST(expression AS datatype)`: Converts an expression into the specified data type.
+- `NOW: Returns the current date, including time.
+- `CEIL(input_val)`: Returns the smallest integer greater than the provided number.
+- `FLOOR(input_val)`: Returns the largest integer less than the provided number.
+- `ROUND(input_val, [round_to])`: Rounds a number to a specified number of decimal places.
+- `TRUNC(input_value, num_decimals)`: Truncates a number to a number of decimals.
+- `REPLACE(whole_string, string_to_replace, replacement_string)`: Replaces one string inside the whole string with another string.
+- `SUBSTRING(string, [start_pos], [length])`: Returns part of a value, based on a position and length.
+
+## Window Functions
+
+```sql
+function_name ( arguments ) OVER (
+	[query_partition_clause]
+	[ORDER BY order_by_clause
+	[windowing_clause] ] 
+)
+```
 
 ## Primary Key Relationships
 
@@ -29,8 +146,7 @@ image: "/static/database.jpg"
 - Scope of rows: columns of all PK constraints in a database
 - Ordered by table schema, table name, column position
 
-
-```{sql}
+```sql
 select * from (
 	-- Main query. Returns all tables
 	select kcu.table_schema,
@@ -70,7 +186,7 @@ where table_name = 'd_location'
 
 ## Ordering Tables by FK
 
-```{sql}
+```sql
 drop table if exists dependencies cascade;
 create temporary table dependencies as
 select 
@@ -126,8 +242,7 @@ from (
  order by table_order;
 ```
 
-
-```{sql}
+```sql
 select * from (
 	-- Main query. Returns FK relationships for all tables
 	select 
@@ -161,13 +276,12 @@ where primary_table = 'd_location'
 
 ## Create DB
 
-```{sql}
+```sql
 create database <new_db_name> owner <user_or_group> template <name_of_db_to_use_as_template>;
 -- show search_path;
 set search_path to <default_schema>,public;
 create extension if not exists postgis;
 create extension if not exists dblink;
-
 
 -- Database Creation
 -- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -192,10 +306,9 @@ alter table e_analyte
   add constraint uc_casrn unique(cas_rn);
 ```
 
-
 ## DBLink
 
-```{sql}
+```sql
 select
   a.*, b.*
 from
@@ -213,7 +326,7 @@ from
 
 ## Partitioning
 
-```{sql, eval=F, inclute=T, class.source='fold-show'}
+```sql
 select * from (
     select *, row_number() over(
         partition by
@@ -227,7 +340,7 @@ where rowid > 1;
 
 ## Temporary Objects
 
-```{sql, eval=F, inclute=T, class.source='fold-show'}
+```sql
 SELECT
 	n.nspname as SchemaName,
 	c.relname as RelationName,
@@ -247,12 +360,11 @@ LEFT JOIN pg_catalog.pg_namespace AS n ON n.oid = c.relnamespace
 ORDER BY pg_relation_size(n.nspname ||'.'|| c.relname) DESC;
 ```
 
-
 ## Table Relationships
 
 [https://dataedo.com/kb/query/postgresql/list-tables-with-most-relationships](https://dataedo.com/kb/query/postgresql/list-tables-with-most-relationships)
 
-```{sql}
+```sql
 select * from
 (select relations.table_name as table_name, -- schema name and table name
        count(relations.table_name) as relationships, -- number of table relationships
@@ -294,26 +406,26 @@ where substring(table_name, 5, 2) = 'd_'; -- substring(string, start_position, l
 
 ## Current Database
 
-```{sql}
+```sql
 select * from pg_catalog.current_database()
 ```
 
 ## Current user/role
 
-```{sql}
+```sql
 select * from current_role
 select * from current_user
 ```
 
 ## Process ID
 
-```{sql}
+```sql
 select * from pg_catalog.pg_backend_pid()
 ```
 
 ## List functions/defs/args
 
-```{sql}
+```sql
 select 
 	pg_get_userbyid(p.proowner) as owner,
 	n.nspname as function_schema,
@@ -335,7 +447,7 @@ order by function_schema, function_name;
 
 ## Whos logged in
 
-```{sql}
+```sql
 select * from pg_stat_activity
 where usename != '' and usename != 'postgres'
 order by usename, pid
@@ -345,7 +457,7 @@ order by usename, pid
 
 [https://www.postgresql.org/docs/9.6/catalog-pg-aggregate.html](https://www.postgresql.org/docs/9.6/catalog-pg-aggregate.html)
 
-```{sql}
+```sql
 -- pg_proc contains data for aggregate functions as well as plain functions
 select * from pg_proc
 -- pg_aggregate is an extension of pg_proc.
@@ -354,19 +466,19 @@ select * from pg_aggregate
 
 ## List users
 
-```{sql}
+```sql
 SELECT rolname FROM pg_roles;
 ```
 
 ## List tables in database
 
-```{sql}
+```sql
 SELECT table_schema,table_name FROM information_schema.tables ORDER BY table_schema,table_name;
 ```
 
 ## List columns in table
 
-```{sql}
+```sql
 SELECT column_name
 FROM   information_schema.columns
 WHERE  table_schema = 'schema'
@@ -375,7 +487,7 @@ AND    table_name = 'table';
 
 ## Update From
 
-```{sql}
+```sql
 UPDATE tablename
 SET columnname = someothervalue
 FROM ...
@@ -386,7 +498,7 @@ WHERE ...
 
 [Reference](https://www.postgresqltutorial.com/postgresql-materialized-views/)
 
-```{sql}
+```sql
 CREATE MATERIALIZED VIEW view_name
 AS
 query
@@ -397,13 +509,13 @@ When you refresh data for a materialized view, PostgreSQL locks the entire table
 
 With CONCURRENTLY option, PostgreSQL creates a temporary updated version of the materialized view, compares two versions, and performs INSERT and UPDATE only the differences.
 
-```{sql}
+```sql
 REFRESH MATERIALIZED VIEW CONCURRENTLY view_name;
 ```
 
 ## Constants
 
-```{sql}
+```sql
 WITH myconstants (analyte_search) as (
    values ('%Hexachlorocyclopentadiene%')
 )
@@ -417,7 +529,7 @@ WHERE analyte ilike analyte_search
 
 ## Sequential Keys
 
-```{sql}
+```sql
 seq_key bigint NOT NULL DEFAULT nextval('seq_key'::regclass)
 
 ALTER SEQUENCE seq_key RESTART WITH 3;
@@ -427,7 +539,7 @@ ALTER SEQUENCE seq_key RESTART WITH 3;
 
 This could be refined further by creating a function.
 
-```{sql}
+```sql
 with
 dbrows as (
 	select * from dblink(

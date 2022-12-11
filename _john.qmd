@@ -22,13 +22,11 @@ w2 = pd.read_excel(workouts, sheet_name=6)
 w3 = pd.read_excel(workouts, sheet_name=7)
 ```
 
-
 ## Push
 
 ```{python}
 w1.to_html(index=False)
 ```
-
 
 ## Pull
 

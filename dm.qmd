@@ -36,7 +36,6 @@ factors = pd.read_excel(dqo, sheet_name=1)
 elements.to_html(index=False)
 ```
 
-
 > When specifying the project goal (element #2 in Table 1), a key activity is to determine the key questions which the study will address once data and information are properly collected and analyzed.
 
 ---
@@ -47,7 +46,6 @@ elements.to_html(index=False)
 factors.to_html(index=False)
 ```
 
-
 ### Systematic Planning & GAF Commonalities 
 -   Achieving clarity in a project’s development becomes straightforward when using systematic planning, as almost every element of the planning process contributes to understanding how the project’s assumptions, methods, and proposed analyses will be conducted.
 -   Planning for analyzing the data and information before collection clearly meets the intent of the GAFs.
@@ -55,7 +53,6 @@ factors.to_html(index=False)
 -   Systematic planning leads to a clear statement of information needs and how the information will be collected, and leads to transparency in data quality.
 
 ![](./static/Commonalities.png)
-
 
 ![](./static/Project_Life_Cycle.png)
 
@@ -81,7 +78,6 @@ factors.to_html(index=False)
 - [PostgreSQL Tips](https://pgdash.io/blog/postgres-tips-and-tricks.html?)
 - [DevDocs.io](https://devdocs.io/)
 
-
 ## Character Encoding
 
 We deal with character encoding issues when importing data to databases all the time.  All databases are encoded in UTF-8, and the most common non-ASCII, non-UTF-8 format is Microsoft's custom encoding, which is CP-1252 (also known as win-1252 and a few other things).  The character encoding of a file can't necessarily be definitively determined by examination, but the Linux command-line tool file generally does a good job.  If you want to change the encoding of a file rather than importing it in a known format, the Linux command-line tool iconv will do that for you.  There's a Python library on PyPI named chardet that will also diagnose file encodings.
@@ -93,7 +89,6 @@ Everything that comes out of our databases is always in UTF-8, so I, at least, d
 ---
 
 # Analytical Chemistry
-
 
 ## Summarization
 
@@ -140,7 +135,6 @@ Note that the handling of nondetects during hierarchical averaging and the prese
 - [http://www.eccsmobilelab.com/resources/literature/?Id=117](http://www.eccsmobilelab.com/resources/literature/?Id=117)
 - [Conversions](./static/EFH-REFS_CHPT10.pdf)
 
-
 ```{python}
 import pandas as pd
 
@@ -161,7 +155,6 @@ pbde = pd.read_excel(wb, sheet_name=8)
 
 - [Van den Berg source document](./static/TEFs Van den Berg.pdf)
 - [Van den Berg TEF table](./static/TEFs_VanDenBerg.xlsx)
-
 
 ### Chemical Groups
 
@@ -220,7 +213,6 @@ PCBs can accumulate in the leaves and above-ground parts of plants and food crop
 
 The National Center for Health Statistics, a division of the Centers for Disease Control and Prevention, conducts the National Health and Nutrition Examination Surveys (NHANES). NHANES is a series of U.S. national surveys on the health and nutrition status of the noninstitutionalized civilian population, which includes data collection on selected chemicals. Interviews and physical examinations are conducted with approximately 10,000 people in each two-year survey cycle. PCBs are one of the chemicals where data are available from the NHANES surveys.
 
-
 ##### PCB Congeners
 
 A PCB congener is any single, unique well-defined chemical compound in the PCB category. The name of a congener specifies the total number of chlorine substituents, and the position of each chlorine. For example: 4,4'-Dichlorobiphenyl is a congener comprising the biphenyl structure with two chlorine substituents - one on each of the #4 carbons of the two rings. In 1980, a numbering system was developed which assigned a sequential number to each of the 209 PCB congeners.
@@ -252,7 +244,6 @@ There are a couple of things to be changed about the “d_labsample” table as 
 
 - The values in the “labqc_samp” column should be identifiers that appear in the “d_labqcsamp” table, not codes.  The codes for the lab QC type should be in the d_labqcsamp.qc_type column, and neither “Natural” nor “DUP” should be used there.
 - The “d_labsample” table should have values in the “study_id” and “sample_no” columns, or a value in the “labqc_samp” column, but not both.  There are other invalid combinations of columns also.  The “d_labsample” table may have any one of the following tables as a parent: d_sampsplit, d_fldqcsplit, d_labqcsamp, d_bioaccum_samp, d_samptreatsplit, or d_bioasrepsamp.  The “ck_one_sample” check constraint on the table enforces this rule.  Check constraints like this are not run by the upsert scripts, so a set of staged data may pass all the checks performed by the upsert script and yet the INSERT into d_labsample will fail. 
-
 
 ### Measurement Basis
 
@@ -358,7 +349,6 @@ The reagent blank is a sample of the solvents used during recovery of the sample
 - Laboratory, instrument, matrix, method, and analyte specific
 - Concentrations at MDL expected to be a false positive 1% of the time, but false negatives 50% of the time
 
-
 #### Method Reporting Limit (MRL)
 
 - May also be referred to as QL (quantitation limit), sample quantitation limit, or just RL (reporting limit)​
@@ -367,7 +357,6 @@ The reagent blank is a sample of the solvents used during recovery of the sample
 - Concentrations at MRL can be reliably quantified​
 - MRL > MDL​
 - Also laboratory, instrument, matrix, method, & analyte specific
-
 
 #### MDL & MRL Relationship
 

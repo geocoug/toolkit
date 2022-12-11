@@ -16,7 +16,6 @@ execute:
 
 ---
 
-
 # Regular Expressions
 
 - [Quickstart](https://www.rexegg.com/regex-quickstart.html)
@@ -99,7 +98,6 @@ for match in matches:
   print(text_string[match.start():match.end()])
 ```
 
-
 # OOP Basics
 
 ```{python}
@@ -143,7 +141,6 @@ class Employee:
         """Create representational object string"""
         return f"""Employee(first_name = {self.first_name}, last_name = {self.last_name}, position = {self.position}, years_employed = {self.years_employed})"""
 
-
 current_employees = [
     Employee("Geo", "Coug", "Developer", 6),
     Employee("Jane", "Doe", "HR", 4),
@@ -158,14 +155,12 @@ for e in current_employees:
     print("Salary: ${:,}\n".format(e.salary))
 ```
 
-
 # CSV Files
 
 ## DB and File Objects
 
 ```{python}
 import csv
-
 
 class CsvFile(object):
     """CsvFile class automatically opens a file and creates a CSV reader, reads the first row containing column headers, and stores those headers so that they can be used to construct the INSERT statement."""
@@ -190,7 +185,6 @@ class CsvFile(object):
         self.f.close()
         self.f = None
 
-
 class Database(object):
     """The Database class and subclasses provide a database connection for each type of DBMS, and a method to construct an INSERT statement for a given CsvFile object, using that DBMS's parameter substitution string.  The conn_info argument is a dictionary containing the host name, user name, and password."""
 
@@ -205,7 +199,6 @@ class Database(object):
             ",".join([self.paramstr] * len(csvfile.headers)),
         )
 
-
 class PgDb(Database):
     """Connection object for PostgreSQL"""
 
@@ -218,7 +211,6 @@ class PgDb(Database):
             "host=%(server)s dbname=%(db)s user=%(user)s password=%(pw)s" % conn_info
         )
         self.conn = psycopg2.connect(connstr)
-
 
 class MariaDb(Database):
     """Connection object for Maria DB"""
@@ -237,9 +229,7 @@ class MariaDb(Database):
         )
 ```
 
-
 ## Import Functions
-
 
 ### Postgres COPY command
 
@@ -253,7 +243,6 @@ def postgres_copy(csvfile, db):
     curs.copy_expert(copy_cmd, rf)
 ```
 
-
 ### Row-by-row reading and writing
 
 ```{python}
@@ -265,7 +254,6 @@ def simple_copy(csvfile, db):
         curs.execute(ins_sql, clean_line(line))
         db.conn.commit()
 ```
-
 
 ### Buffered reading and writing
 
@@ -292,7 +280,6 @@ def buffer1_copy(csvfile, db, buflines):
 
 ```
 
-
 # DBMS Data Types
 
 ```{python}
@@ -309,7 +296,6 @@ df.to_html(index=False)
 - Firebird: `fdb`
 - MS-Access: `pyodbc`
 - SQLite: `sqlite3`
-
 
 # DB Table Dependencies
 
@@ -331,7 +317,6 @@ def dependency_order(dep_list):
     return [item[0] for item in ret_list]
 ```
 
-
 # CSV Sniffer
 
 ```{python}
@@ -343,7 +328,6 @@ class CsvDiagError(Exception):
 
     def __str__(self):
         return self.value
-
 
 class CsvLine:
     escchar = "\\"
@@ -600,7 +584,6 @@ class CsvLine:
             sum([b[1] for b in wq]),
             any([b[2] for b in wq]),
         )
-
 
 def diagnose_delim(linestream, possible_delimiters=None, possible_quotechars=None):
     # Returns a tuple consisting of the delimiter, quote character, and escape

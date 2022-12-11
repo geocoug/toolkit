@@ -17,8 +17,8 @@ website:
     left:
       - text: "Development"
         menu:
-          - text: "RStudio"
-            href: rstudio.qmd
+          - text: "R"
+            href: r.qmd
           - text: "Python"
             href: python.qmd
           - text: "Data Management"
@@ -47,7 +47,9 @@ website:
 
 format:
   html:
-    theme: flatly
+    theme:
+      light: flatly
+      dark: darkly
     toc: true
     toc_float: true
     includes:

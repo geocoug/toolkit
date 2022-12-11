@@ -21,6 +21,69 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -37,10 +100,12 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -62,6 +127,9 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 </head>
@@ -88,8 +156,8 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-development">    
         <li>
-    <a class="dropdown-item" href="./rstudio.html">
- <span class="dropdown-text">RStudio</span></a>
+    <a class="dropdown-item" href="./r.html">
+ <span class="dropdown-text">R</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./python.html">
@@ -147,6 +215,9 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><i class="fa-brands fa-r-project fa-xl" aria-label="r-project"></i></span></a>
   </li>  
 </ul>
+              <div class="quarto-toggle-container">
+                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+              </div>
               <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
@@ -163,7 +234,13 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#postgresql" id="toc-postgresql" class="nav-link active" data-scroll-target="#postgresql">PostgreSQL</a>
   <ul class="collapse">
-  <li><a href="#pg_dump" id="toc-pg_dump" class="nav-link" data-scroll-target="#pg_dump">pg_dump</a></li>
+  <li><a href="#pg_dump" id="toc-pg_dump" class="nav-link" data-scroll-target="#pg_dump">pg_dump</a>
+  <ul class="collapse">
+  <li><a href="#export-table-to-sql" id="toc-export-table-to-sql" class="nav-link" data-scroll-target="#export-table-to-sql">Export table to sql</a></li>
+  </ul></li>
+  <li><a href="#joins" id="toc-joins" class="nav-link" data-scroll-target="#joins">Joins</a></li>
+  <li><a href="#common-functions" id="toc-common-functions" class="nav-link" data-scroll-target="#common-functions">Common Functions</a></li>
+  <li><a href="#window-functions" id="toc-window-functions" class="nav-link" data-scroll-target="#window-functions">Window Functions</a></li>
   <li><a href="#primary-key-relationships" id="toc-primary-key-relationships" class="nav-link" data-scroll-target="#primary-key-relationships">Primary Key Relationships</a></li>
   <li><a href="#foreign-key-relationships" id="toc-foreign-key-relationships" class="nav-link" data-scroll-target="#foreign-key-relationships">Foreign Key Relationships</a></li>
   <li><a href="#ordering-tables-by-fk" id="toc-ordering-tables-by-fk" class="nav-link" data-scroll-target="#ordering-tables-by-fk">Ordering Tables by FK</a></li>
@@ -220,7 +297,175 @@ ul.task-list li input[type="checkbox"] {
 <section id="pg_dump" class="level2">
 <h2 class="anchored" data-anchor-id="pg_dump">pg_dump</h2>
 <p><a href="https://www.postgresql.org/docs/12/app-pgdump.html">Reference</a></p>
+<section id="export-table-to-sql" class="level3">
+<h3 class="anchored" data-anchor-id="export-table-to-sql">Export table to sql</h3>
 <p><code>pg_dump -h [host] -d [database] -U [user] -s [schema only] -W [force password] &gt; &lt;file&gt;.sql</code></p>
+</section>
+</section>
+<section id="joins" class="level2">
+<h2 class="anchored" data-anchor-id="joins">Joins</h2>
+<div class="grid">
+<div class="g-col-6">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<p>
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-1">flowchart TD
+    subgraph inner[Inner Join]
+    direction LR
+        a1(A1)
+        a2(A2)
+        b1(B1)
+        b2(B2)
+        a1 -.- b1
+        a2 -.- b2
+    end
+</pre>
+<div id="mermaid-tooltip-1" class="mermaidTooltip">
+
+</div>
+<p></p>
+</div>
+</div>
+</div>
+</div>
+<div class="g-col-6">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<p>
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-2">flowchart LR
+    subgraph cross[Cross Join]
+    direction LR
+        a1(A1)
+        a2(A2)
+        b1(B1)
+        b2(B2)
+        a1 -.- b1
+        a1 -.- b2
+        a2 -.- b1
+        a2 -.- b2
+    end
+</pre>
+<div id="mermaid-tooltip-2" class="mermaidTooltip">
+
+</div>
+<p></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-6">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<p>
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-3">flowchart TD
+    subgraph left[Left Join]
+    direction RL
+        a1(A1)
+        a2(A2)
+        a3(A3)
+        b1(B1)
+        b2(B2)
+        b1 -.- a1
+        b2 -.- a2
+    end
+</pre>
+<div id="mermaid-tooltip-3" class="mermaidTooltip">
+
+</div>
+<p></p>
+</div>
+</div>
+</div>
+</div>
+<div class="g-col-6">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<p>
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-4">flowchart TD
+    subgraph right[Right Join]
+    direction LR
+        a1(A1)
+        a2(A2)
+        b1(B1)
+        b2(B2)
+        b3(B3)
+        a1 -.- b1
+        a2 -.- b2
+    end
+</pre>
+<div id="mermaid-tooltip-4" class="mermaidTooltip">
+
+</div>
+<p></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-12">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<p>
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-5">flowchart LR
+    subgraph outer[Outer&lt;br&gt;Join]
+    direction LR
+        subgraph a[A]
+        direction TB
+            a1(A1)
+            a2(A2)
+            a3( )
+        end
+        subgraph b[B]
+        direction TB
+            b1(B1)
+            b2( )
+            b3(B3)
+        end
+        a1 -.- b1
+    end
+    style a3 fill-opacity:0, stroke-opacity:0;
+    style b2 fill-opacity:0, stroke-opacity:0;
+</pre>
+<div id="mermaid-tooltip-5" class="mermaidTooltip">
+
+</div>
+<p></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="common-functions" class="level2">
+<h2 class="anchored" data-anchor-id="common-functions">Common Functions</h2>
+<ul>
+<li><code>LENGTH(string)</code>: Returns the length of the provided string</li>
+<li><code>POSITION(string IN substring)</code>: Returns the position of the substring within the specified string.</li>
+<li><code>CAST(expression AS datatype)</code>: Converts an expression into the specified data type.</li>
+<li>`NOW: Returns the current date, including time.</li>
+<li><code>CEIL(input_val)</code>: Returns the smallest integer greater than the provided number.</li>
+<li><code>FLOOR(input_val)</code>: Returns the largest integer less than the provided number.</li>
+<li><code>ROUND(input_val, [round_to])</code>: Rounds a number to a specified number of decimal places.</li>
+<li><code>TRUNC(input_value, num_decimals)</code>: Truncates a number to a number of decimals.</li>
+<li><code>REPLACE(whole_string, string_to_replace, replacement_string)</code>: Replaces one string inside the whole string with another string.</li>
+<li><code>SUBSTRING(string, [start_pos], [length])</code>: Returns part of a value, based on a position and length.</li>
+</ul>
+</section>
+<section id="window-functions" class="level2">
+<h2 class="anchored" data-anchor-id="window-functions">Window Functions</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>function_name ( arguments ) <span class="kw">OVER</span> (</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    [query_partition_clause]</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    [<span class="kw">ORDER</span> <span class="kw">BY</span> order_by_clause</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    [windowing_clause] ] </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="primary-key-relationships" class="level2">
 <h2 class="anchored" data-anchor-id="primary-key-relationships">Primary Key Relationships</h2>
@@ -238,24 +483,24 @@ ul.task-list li input[type="checkbox"] {
 <li>Scope of rows: columns of all PK constraints in a database</li>
 <li>Ordered by table schema, table name, column position</li>
 </ul>
-<pre class="{sql}"><code>select * from (
-    -- Main query. Returns all tables
-    select kcu.table_schema,
-           kcu.table_name,
-           tco.constraint_name,
-           kcu.ordinal_position as position,
-           kcu.column_name as key_column
-    from information_schema.table_constraints tco
-    join information_schema.key_column_usage kcu 
-         on kcu.constraint_name = tco.constraint_name
-         and kcu.constraint_schema = tco.constraint_schema
-         and kcu.constraint_name = tco.constraint_name
-    where tco.constraint_type = 'PRIMARY KEY'
-    order by kcu.table_schema,
-             kcu.table_name,
-             position
-) main
-where table_name = 'd_location'</code></pre>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> (</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">-- Main query. Returns all tables</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> kcu.table_schema,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>           kcu.table_name,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>           tco.constraint_name,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>           kcu.ordinal_position <span class="kw">as</span> position,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>           kcu.column_name <span class="kw">as</span> key_column</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">from</span> information_schema.table_constraints tco</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">join</span> information_schema.key_column_usage kcu </span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>         <span class="kw">on</span> kcu.constraint_name <span class="op">=</span> tco.constraint_name</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>         <span class="kw">and</span> kcu.constraint_schema <span class="op">=</span> tco.constraint_schema</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>         <span class="kw">and</span> kcu.constraint_name <span class="op">=</span> tco.constraint_name</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">where</span> tco.constraint_type <span class="op">=</span> <span class="st">'PRIMARY KEY'</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">order</span> <span class="kw">by</span> kcu.table_schema,</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>             kcu.table_name,</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>             position</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>) main</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="kw">where</span> table_name <span class="op">=</span> <span class="st">'d_location'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="foreign-key-relationships" class="level2">
 <h2 class="anchored" data-anchor-id="foreign-key-relationships">Foreign Key Relationships</h2>
@@ -277,397 +522,420 @@ where table_name = 'd_location'</code></pre>
 </section>
 <section id="ordering-tables-by-fk" class="level2">
 <h2 class="anchored" data-anchor-id="ordering-tables-by-fk">Ordering Tables by FK</h2>
-<pre class="{sql}"><code>drop table if exists dependencies cascade;
-create temporary table dependencies as
-select 
-        tc.table_name as child,
-        tu.table_name as parent
-from 
-        information_schema.table_constraints as tc
-        inner join information_schema.constraint_table_usage as tu
-             on tu.constraint_name = tc.constraint_name
-where 
-        tc.constraint_type = 'FOREIGN KEY'
-        and tc.table_name &lt;&gt; tu.table_name;
-
-with recursive dep_depth as (
- select
-  dep.child,
-  dep.parent,
-  1 as lvl
- from
-  dependencies as dep
- union all
- select
-  dep.child,
-  dep.parent,
-  dd.lvl + 1 as lvl
- from
-  dep_depth as dd
-  inner join dependencies as dep on dep.parent = dd.child
- )
-select
- table_name,
- table_order
-from (
- select
-  dd.parent as table_name,
-  max(lvl) as table_order
- from
-  dep_depth as dd
- group by
-  table_name
- union
- select
-  dd.child as table_name,
-  max(lvl) + 1 as level
- from
-  dep_depth as dd
-  left join dependencies as dp on dp.parent = dd.child
- where
-  dp.parent is null
- group by
-  dd.child
- ) as all_levels
- order by table_order;</code></pre>
-<pre class="{sql}"><code>select * from (
-    -- Main query. Returns FK relationships for all tables
-    select 
-            kcu.table_schema as table_schema,
-            kcu.table_name as foreign_table,
-           '&gt;-' as relationship,
-           rel_tco.table_name as primary_table,
-           string_agg(kcu.column_name, ', ') as fk_columns,
-           kcu.constraint_name
-    from information_schema.table_constraints tco
-    join information_schema.key_column_usage kcu
-              on tco.constraint_schema = kcu.constraint_schema
-              and tco.constraint_name = kcu.constraint_name
-    join information_schema.referential_constraints rco
-              on tco.constraint_schema = rco.constraint_schema
-              and tco.constraint_name = rco.constraint_name
-    join information_schema.table_constraints rel_tco
-              on rco.unique_constraint_schema = rel_tco.constraint_schema
-              and rco.unique_constraint_name = rel_tco.constraint_name
-    where tco.constraint_type = 'FOREIGN KEY'
-    group by kcu.table_schema,
-             kcu.table_name,
-             rel_tco.table_name,
-             rel_tco.table_schema,
-             kcu.constraint_name
-    order by kcu.table_schema,
-             kcu.table_name
-) main
-where primary_table = 'd_location'</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">drop</span> <span class="kw">table</span> <span class="cf">if</span> <span class="kw">exists</span> dependencies <span class="kw">cascade</span>;</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">create</span> <span class="kw">temporary</span> <span class="kw">table</span> dependencies <span class="kw">as</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">select</span> </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>        tc.table_name <span class="kw">as</span> <span class="kw">child</span>,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>        tu.table_name <span class="kw">as</span> <span class="kw">parent</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="kw">from</span> </span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        information_schema.table_constraints <span class="kw">as</span> tc</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        <span class="kw">inner</span> <span class="kw">join</span> information_schema.constraint_table_usage <span class="kw">as</span> tu</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>             <span class="kw">on</span> tu.constraint_name <span class="op">=</span> tc.constraint_name</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="kw">where</span> </span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>        tc.constraint_type <span class="op">=</span> <span class="st">'FOREIGN KEY'</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>        <span class="kw">and</span> tc.table_name <span class="op">&lt;&gt;</span> tu.table_name;</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="kw">with</span> recursive dep_depth <span class="kw">as</span> (</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a> <span class="kw">select</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  dep.<span class="kw">child</span>,</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  dep.<span class="kw">parent</span>,</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  <span class="dv">1</span> <span class="kw">as</span> lvl</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a> <span class="kw">from</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  dependencies <span class="kw">as</span> dep</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a> <span class="kw">union</span> <span class="kw">all</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a> <span class="kw">select</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>  dep.<span class="kw">child</span>,</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>  dep.<span class="kw">parent</span>,</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>  dd.lvl <span class="op">+</span> <span class="dv">1</span> <span class="kw">as</span> lvl</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a> <span class="kw">from</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>  dep_depth <span class="kw">as</span> dd</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>  <span class="kw">inner</span> <span class="kw">join</span> dependencies <span class="kw">as</span> dep <span class="kw">on</span> dep.<span class="kw">parent</span> <span class="op">=</span> dd.<span class="kw">child</span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a> )</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="kw">select</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a> table_name,</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a> table_order</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a><span class="kw">from</span> (</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a> <span class="kw">select</span></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>  dd.<span class="kw">parent</span> <span class="kw">as</span> table_name,</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">max</span>(lvl) <span class="kw">as</span> table_order</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a> <span class="kw">from</span></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>  dep_depth <span class="kw">as</span> dd</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a> <span class="kw">group</span> <span class="kw">by</span></span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>  table_name</span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a> <span class="kw">union</span></span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a> <span class="kw">select</span></span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>  dd.<span class="kw">child</span> <span class="kw">as</span> table_name,</span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">max</span>(lvl) <span class="op">+</span> <span class="dv">1</span> <span class="kw">as</span> <span class="kw">level</span></span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a> <span class="kw">from</span></span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>  dep_depth <span class="kw">as</span> dd</span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>  <span class="kw">left</span> <span class="kw">join</span> dependencies <span class="kw">as</span> dp <span class="kw">on</span> dp.<span class="kw">parent</span> <span class="op">=</span> dd.<span class="kw">child</span></span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a> <span class="kw">where</span></span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>  dp.<span class="kw">parent</span> <span class="kw">is</span> <span class="kw">null</span></span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a> <span class="kw">group</span> <span class="kw">by</span></span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>  dd.<span class="kw">child</span></span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a> ) <span class="kw">as</span> all_levels</span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a> <span class="kw">order</span> <span class="kw">by</span> table_order;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> (</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">-- Main query. Returns FK relationships for all tables</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>            kcu.table_schema <span class="kw">as</span> table_schema,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>            kcu.table_name <span class="kw">as</span> foreign_table,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>           <span class="st">'&gt;-'</span> <span class="kw">as</span> relationship,</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>           rel_tco.table_name <span class="kw">as</span> primary_table,</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>           string_agg(kcu.column_name, <span class="st">', '</span>) <span class="kw">as</span> fk_columns,</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>           kcu.constraint_name</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">from</span> information_schema.table_constraints tco</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">join</span> information_schema.key_column_usage kcu</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>              <span class="kw">on</span> tco.constraint_schema <span class="op">=</span> kcu.constraint_schema</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>              <span class="kw">and</span> tco.constraint_name <span class="op">=</span> kcu.constraint_name</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">join</span> information_schema.referential_constraints rco</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>              <span class="kw">on</span> tco.constraint_schema <span class="op">=</span> rco.constraint_schema</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>              <span class="kw">and</span> tco.constraint_name <span class="op">=</span> rco.constraint_name</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">join</span> information_schema.table_constraints rel_tco</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>              <span class="kw">on</span> rco.unique_constraint_schema <span class="op">=</span> rel_tco.constraint_schema</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>              <span class="kw">and</span> rco.unique_constraint_name <span class="op">=</span> rel_tco.constraint_name</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>    <span class="kw">where</span> tco.constraint_type <span class="op">=</span> <span class="st">'FOREIGN KEY'</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    <span class="kw">group</span> <span class="kw">by</span> kcu.table_schema,</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>             kcu.table_name,</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>             rel_tco.table_name,</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>             rel_tco.table_schema,</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>             kcu.constraint_name</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>    <span class="kw">order</span> <span class="kw">by</span> kcu.table_schema,</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>             kcu.table_name</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>) main</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="kw">where</span> primary_table <span class="op">=</span> <span class="st">'d_location'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="create-db" class="level2">
 <h2 class="anchored" data-anchor-id="create-db">Create DB</h2>
-<pre class="{sql}"><code>create database &lt;new_db_name&gt; owner &lt;user_or_group&gt; template &lt;name_of_db_to_use_as_template&gt;;
--- show search_path;
-set search_path to &lt;default_schema&gt;,public;
-create extension if not exists postgis;
-create extension if not exists dblink;
-
-
--- Database Creation
--- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-create database &lt;new_db_name&gt; owner &lt;user_or_group&gt; template &lt;name_of_db_to_use_as_template&gt;;
--- show search_path;
-set search_path to idb, public;
-
-grant connect, temporary on database &lt;new_db_name&gt; to public;
-grant all on database &lt;new_db_name&gt; to &lt;user&gt;;
-grant all on database &lt;new_db_name&gt; to &lt;group&gt;;
-
-create extension if not exists postgis;
-create extension if not exists dblink;
-
-create schema staging;
-
--- Add a unique constraint to e_analyte.full_name and e_analyte.cas_rn so that
---  no full name or cas_rn can be used for more than one analyte
--- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-alter table e_analyte
-  add constraint uc_fullname unique(full_name),
-  add constraint uc_casrn unique(cas_rn);</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">create</span> <span class="kw">database</span> <span class="op">&lt;</span>new_db_name<span class="op">&gt;</span> owner <span class="op">&lt;</span>user_or_group<span class="op">&gt;</span> template <span class="op">&lt;</span>name_of_db_to_use_as_template<span class="op">&gt;</span>;</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">-- show search_path;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">set</span> search_path <span class="kw">to</span> <span class="op">&lt;</span>default_schema<span class="op">&gt;</span>,<span class="kw">public</span>;</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="kw">create</span> extension <span class="cf">if</span> <span class="kw">not</span> <span class="kw">exists</span> postgis;</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="kw">create</span> extension <span class="cf">if</span> <span class="kw">not</span> <span class="kw">exists</span> dblink;</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co">-- Database Creation</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="kw">create</span> <span class="kw">database</span> <span class="op">&lt;</span>new_db_name<span class="op">&gt;</span> owner <span class="op">&lt;</span>user_or_group<span class="op">&gt;</span> template <span class="op">&lt;</span>name_of_db_to_use_as_template<span class="op">&gt;</span>;</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co">-- show search_path;</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="kw">set</span> search_path <span class="kw">to</span> idb, <span class="kw">public</span>;</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="kw">grant</span> <span class="kw">connect</span>, <span class="kw">temporary</span> <span class="kw">on</span> <span class="kw">database</span> <span class="op">&lt;</span>new_db_name<span class="op">&gt;</span> <span class="kw">to</span> <span class="kw">public</span>;</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="kw">grant</span> <span class="kw">all</span> <span class="kw">on</span> <span class="kw">database</span> <span class="op">&lt;</span>new_db_name<span class="op">&gt;</span> <span class="kw">to</span> <span class="op">&lt;</span><span class="fu">user</span><span class="op">&gt;</span>;</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="kw">grant</span> <span class="kw">all</span> <span class="kw">on</span> <span class="kw">database</span> <span class="op">&lt;</span>new_db_name<span class="op">&gt;</span> <span class="kw">to</span> <span class="op">&lt;</span><span class="kw">group</span><span class="op">&gt;</span>;</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="kw">create</span> extension <span class="cf">if</span> <span class="kw">not</span> <span class="kw">exists</span> postgis;</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="kw">create</span> extension <span class="cf">if</span> <span class="kw">not</span> <span class="kw">exists</span> dblink;</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="kw">create</span> <span class="kw">schema</span> staging;</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="co">-- Add a unique constraint to e_analyte.full_name and e_analyte.cas_rn so that</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="co">--  no full name or cas_rn can be used for more than one analyte</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="co">-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="kw">alter</span> <span class="kw">table</span> e_analyte</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>  <span class="kw">add</span> <span class="kw">constraint</span> uc_fullname <span class="kw">unique</span>(full_name),</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>  <span class="kw">add</span> <span class="kw">constraint</span> uc_casrn <span class="kw">unique</span>(cas_rn);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="dblink" class="level2">
 <h2 class="anchored" data-anchor-id="dblink">DBLink</h2>
-<pre class="{sql}"><code>select
-  a.*, b.*
-from
-  table1 as a
-  left join (
-    select * from dblink(
-      'dbname=&lt;database&gt;',
-      'select col1, col2, col3 from &lt;table&gt;'
-    ) as d (
-      col1 text, col2 text, col3 text
-    )
-  ) as b
-  on a.col1 = b.col2</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">select</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  a.<span class="op">*</span>, b.<span class="op">*</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">from</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  table1 <span class="kw">as</span> a</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">left</span> <span class="kw">join</span> (</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>      <span class="st">'dbname=&lt;database&gt;'</span>,</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>      <span class="st">'select col1, col2, col3 from &lt;table&gt;'</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>      col1 text, col2 text, col3 text</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="kw">as</span> b</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>  <span class="kw">on</span> a.col1 <span class="op">=</span> b.col2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="partitioning" class="level2">
 <h2 class="anchored" data-anchor-id="partitioning">Partitioning</h2>
-<p><code>{sql, eval=F, inclute=T, class.source='fold-show'} select * from (     select *, row_number() over(         partition by             col1, col2, col3         order by col1 desc     ) rowid     from sometable ) someid where rowid &gt; 1;</code></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> (</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span>, <span class="fu">row_number</span>() <span class="kw">over</span>(</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>        <span class="kw">partition</span> <span class="kw">by</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>            col1, col2, col3</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>        <span class="kw">order</span> <span class="kw">by</span> col1 <span class="kw">desc</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    ) <span class="dt">rowid</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">from</span> sometable</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>) someid</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="kw">where</span> <span class="dt">rowid</span> <span class="op">&gt;</span> <span class="dv">1</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="temporary-objects" class="level2">
 <h2 class="anchored" data-anchor-id="temporary-objects">Temporary Objects</h2>
-<p><code>{sql, eval=F, inclute=T, class.source='fold-show'} SELECT     n.nspname as SchemaName,     c.relname as RelationName,     CASE c.relkind         WHEN 'r' THEN 'table'         WHEN 'v' THEN 'view'         WHEN 'i' THEN 'index'         WHEN 'S' THEN 'sequence'         WHEN 's' THEN 'special'         END as RelationType,     pg_catalog.pg_get_userbyid(c.relowner) as RelationOwner,                  pg_size_pretty(pg_relation_size(n.nspname ||'.'|| c.relname)) as RelationSize FROM pg_catalog.pg_class c LEFT JOIN pg_catalog.pg_namespace AS n ON n.oid = c.relnamespace     WHERE  c.relkind IN ('r','s')      AND  (n.nspname !~ '^pg_toast' and nspname like 'pg_temp%') ORDER BY pg_relation_size(n.nspname ||'.'|| c.relname) DESC;</code></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    n.nspname <span class="kw">as</span> SchemaName,</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    c.relname <span class="kw">as</span> RelationName,</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">CASE</span> c.relkind</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">WHEN</span> <span class="st">'r'</span> <span class="cf">THEN</span> <span class="st">'table'</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">WHEN</span> <span class="st">'v'</span> <span class="cf">THEN</span> <span class="st">'view'</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">WHEN</span> <span class="st">'i'</span> <span class="cf">THEN</span> <span class="st">'index'</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">WHEN</span> <span class="st">'S'</span> <span class="cf">THEN</span> <span class="st">'sequence'</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">WHEN</span> <span class="st">'s'</span> <span class="cf">THEN</span> <span class="st">'special'</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">END</span> <span class="kw">as</span> RelationType,</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    pg_catalog.pg_get_userbyid(c.relowner) <span class="kw">as</span> RelationOwner,             </span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    pg_size_pretty(pg_relation_size(n.nspname <span class="op">||</span><span class="st">'.'</span><span class="op">||</span> c.relname)) <span class="kw">as</span> RelationSize</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> pg_catalog.pg_class c</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="kw">LEFT</span> <span class="kw">JOIN</span> pg_catalog.pg_namespace <span class="kw">AS</span> n <span class="kw">ON</span> n.<span class="kw">oid</span> <span class="op">=</span> c.relnamespace</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">WHERE</span>  c.relkind <span class="kw">IN</span> (<span class="st">'r'</span>,<span class="st">'s'</span>) </span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">AND</span>  (n.nspname !~ <span class="st">'^pg_toast'</span> <span class="kw">and</span> nspname <span class="kw">like</span> <span class="st">'pg_temp%'</span>)</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> pg_relation_size(n.nspname <span class="op">||</span><span class="st">'.'</span><span class="op">||</span> c.relname) <span class="kw">DESC</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="table-relationships" class="level2">
 <h2 class="anchored" data-anchor-id="table-relationships">Table Relationships</h2>
 <p><a href="https://dataedo.com/kb/query/postgresql/list-tables-with-most-relationships">https://dataedo.com/kb/query/postgresql/list-tables-with-most-relationships</a></p>
-<pre class="{sql}"><code>select * from
-(select relations.table_name as table_name, -- schema name and table name
-       count(relations.table_name) as relationships, -- number of table relationships
-       count(relations.referenced_tables) as foreign_keys, -- number of foreign keys in a table
-       count(relations.referencing_tables) as references, -- number of foreign keys that are refering to this table
-       count(distinct related_table) as related_tables, -- number of related tables
-       count(distinct relations.referenced_tables) as referenced_tables, -- number of different tables referenced with FKs (multiple FKs can refer to one table, so number of FKs might be different than number of referenced tables)
-       count(distinct relations.referencing_tables) as referencing_tables -- number of different tables that are refering to this table (similar to referenced_tables)
-from(
-     select pk_tco.table_schema || '.' || pk_tco.table_name as table_name,
-            fk_tco.table_schema || '.' || fk_tco.table_name as related_table,
-            fk_tco.table_name as referencing_tables,
-            null::varchar(100) as referenced_tables
-     from information_schema.referential_constraints rco
-     join information_schema.table_constraints fk_tco
-          on rco.constraint_name = fk_tco.constraint_name
-          and rco.constraint_schema = fk_tco.table_schema
-     join information_schema.table_constraints pk_tco
-          on rco.unique_constraint_name = pk_tco.constraint_name
-          and rco.unique_constraint_schema = pk_tco.table_schema
-    union all
-    select fk_tco.table_schema || '.' || fk_tco.table_name as table_name,
-           pk_tco.table_schema || '.' || pk_tco.table_name as related_table,
-           null as referencing_tables,
-           pk_tco.table_name as referenced_tables
-    from information_schema.referential_constraints rco
-    join information_schema.table_constraints fk_tco 
-         on rco.constraint_name = fk_tco.constraint_name
-         and rco.constraint_schema = fk_tco.table_schema
-    join information_schema.table_constraints pk_tco
-         on rco.unique_constraint_name = pk_tco.constraint_name
-         and rco.unique_constraint_schema = pk_tco.table_schema
-) relations
-group by table_name
-order by relationships asc) results
-
-where substring(table_name, 5, 2) = 'd_'; -- substring(string, start_position, length)</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>(<span class="kw">select</span> relations.table_name <span class="kw">as</span> table_name, <span class="co">-- schema name and table name</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">count</span>(relations.table_name) <span class="kw">as</span> relationships, <span class="co">-- number of table relationships</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>       <span class="fu">count</span>(relations.referenced_tables) <span class="kw">as</span> foreign_keys, <span class="co">-- number of foreign keys in a table</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>       <span class="fu">count</span>(relations.referencing_tables) <span class="kw">as</span> <span class="kw">references</span>, <span class="co">-- number of foreign keys that are refering to this table</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>       <span class="fu">count</span>(<span class="kw">distinct</span> related_table) <span class="kw">as</span> related_tables, <span class="co">-- number of related tables</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>       <span class="fu">count</span>(<span class="kw">distinct</span> relations.referenced_tables) <span class="kw">as</span> referenced_tables, <span class="co">-- number of different tables referenced with FKs (multiple FKs can refer to one table, so number of FKs might be different than number of referenced tables)</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>       <span class="fu">count</span>(<span class="kw">distinct</span> relations.referencing_tables) <span class="kw">as</span> referencing_tables <span class="co">-- number of different tables that are refering to this table (similar to referenced_tables)</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="kw">from</span>(</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>     <span class="kw">select</span> pk_tco.table_schema <span class="op">||</span> <span class="st">'.'</span> <span class="op">||</span> pk_tco.table_name <span class="kw">as</span> table_name,</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>            fk_tco.table_schema <span class="op">||</span> <span class="st">'.'</span> <span class="op">||</span> fk_tco.table_name <span class="kw">as</span> related_table,</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>            fk_tco.table_name <span class="kw">as</span> referencing_tables,</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>            <span class="kw">null</span>:<span class="ch">:varchar</span>(<span class="dv">100</span>) <span class="kw">as</span> referenced_tables</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>     <span class="kw">from</span> information_schema.referential_constraints rco</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>     <span class="kw">join</span> information_schema.table_constraints fk_tco</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>          <span class="kw">on</span> rco.constraint_name <span class="op">=</span> fk_tco.constraint_name</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>          <span class="kw">and</span> rco.constraint_schema <span class="op">=</span> fk_tco.table_schema</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>     <span class="kw">join</span> information_schema.table_constraints pk_tco</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>          <span class="kw">on</span> rco.unique_constraint_name <span class="op">=</span> pk_tco.constraint_name</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>          <span class="kw">and</span> rco.unique_constraint_schema <span class="op">=</span> pk_tco.table_schema</span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>    <span class="kw">union</span> <span class="kw">all</span></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> fk_tco.table_schema <span class="op">||</span> <span class="st">'.'</span> <span class="op">||</span> fk_tco.table_name <span class="kw">as</span> table_name,</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>           pk_tco.table_schema <span class="op">||</span> <span class="st">'.'</span> <span class="op">||</span> pk_tco.table_name <span class="kw">as</span> related_table,</span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>           <span class="kw">null</span> <span class="kw">as</span> referencing_tables,</span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>           pk_tco.table_name <span class="kw">as</span> referenced_tables</span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>    <span class="kw">from</span> information_schema.referential_constraints rco</span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>    <span class="kw">join</span> information_schema.table_constraints fk_tco </span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>         <span class="kw">on</span> rco.constraint_name <span class="op">=</span> fk_tco.constraint_name</span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>         <span class="kw">and</span> rco.constraint_schema <span class="op">=</span> fk_tco.table_schema</span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>    <span class="kw">join</span> information_schema.table_constraints pk_tco</span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>         <span class="kw">on</span> rco.unique_constraint_name <span class="op">=</span> pk_tco.constraint_name</span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>         <span class="kw">and</span> rco.unique_constraint_schema <span class="op">=</span> pk_tco.table_schema</span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>) relations</span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a><span class="kw">group</span> <span class="kw">by</span> table_name</span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a><span class="kw">order</span> <span class="kw">by</span> relationships <span class="kw">asc</span>) results</span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a><span class="kw">where</span> substring(table_name, <span class="dv">5</span>, <span class="dv">2</span>) <span class="op">=</span> <span class="st">'d_'</span>; <span class="co">-- substring(string, start_position, length)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="current-database" class="level2">
 <h2 class="anchored" data-anchor-id="current-database">Current Database</h2>
-<pre class="{sql}"><code>select * from pg_catalog.current_database()</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> pg_catalog.current_database()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="current-userrole" class="level2">
 <h2 class="anchored" data-anchor-id="current-userrole">Current user/role</h2>
-<pre class="{sql}"><code>select * from current_role
-select * from current_user</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> current_role</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> current_user</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="process-id" class="level2">
 <h2 class="anchored" data-anchor-id="process-id">Process ID</h2>
-<pre class="{sql}"><code>select * from pg_catalog.pg_backend_pid()</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> pg_catalog.pg_backend_pid()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="list-functionsdefsargs" class="level2">
 <h2 class="anchored" data-anchor-id="list-functionsdefsargs">List functions/defs/args</h2>
-<pre class="{sql}"><code>select 
-    pg_get_userbyid(p.proowner) as owner,
-    n.nspname as function_schema,
-    p.proname as function_name,
-    l.lanname as function_language,
-    case when l.lanname = 'internal' then p.prosrc
-        else pg_get_functiondef(p.oid)
-        end as definition,
-    pg_get_function_arguments(p.oid) as function_arguments,
-    t.typname as return_type
-from pg_proc p
-    left join pg_namespace n on p.pronamespace = n.oid
-    left join pg_language l on p.prolang = l.oid
-    left join pg_type t on t.oid = p.prorettype 
-where n.nspname not in ('pg_catalog', 'information_schema')
-and n.nspname = 'idb'
-order by function_schema, function_name;</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">select</span> </span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    pg_get_userbyid(p.proowner) <span class="kw">as</span> owner,</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    n.nspname <span class="kw">as</span> function_schema,</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    p.proname <span class="kw">as</span> function_name,</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    l.lanname <span class="kw">as</span> function_language,</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">case</span> <span class="cf">when</span> l.lanname <span class="op">=</span> <span class="st">'internal'</span> <span class="cf">then</span> p.prosrc</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span> pg_get_functiondef(p.<span class="kw">oid</span>)</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">end</span> <span class="kw">as</span> definition,</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    pg_get_function_arguments(p.<span class="kw">oid</span>) <span class="kw">as</span> function_arguments,</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    t.typname <span class="kw">as</span> return_type</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="kw">from</span> pg_proc p</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">left</span> <span class="kw">join</span> pg_namespace n <span class="kw">on</span> p.pronamespace <span class="op">=</span> n.<span class="kw">oid</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">left</span> <span class="kw">join</span> pg_language l <span class="kw">on</span> p.prolang <span class="op">=</span> l.<span class="kw">oid</span></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">left</span> <span class="kw">join</span> pg_type t <span class="kw">on</span> t.<span class="kw">oid</span> <span class="op">=</span> p.prorettype </span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="kw">where</span> n.nspname <span class="kw">not</span> <span class="kw">in</span> (<span class="st">'pg_catalog'</span>, <span class="st">'information_schema'</span>)</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a><span class="kw">and</span> n.nspname <span class="op">=</span> <span class="st">'idb'</span></span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a><span class="kw">order</span> <span class="kw">by</span> function_schema, function_name;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="whos-logged-in" class="level2">
 <h2 class="anchored" data-anchor-id="whos-logged-in">Whos logged in</h2>
-<pre class="{sql}"><code>select * from pg_stat_activity
-where usename != '' and usename != 'postgres'
-order by usename, pid</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> pg_stat_activity</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="kw">where</span> usename <span class="op">!=</span> <span class="st">''</span> <span class="kw">and</span> usename <span class="op">!=</span> <span class="st">'postgres'</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="kw">order</span> <span class="kw">by</span> usename, pid</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="aggregate-functions" class="level2">
 <h2 class="anchored" data-anchor-id="aggregate-functions">Aggregate Functions</h2>
 <p><a href="https://www.postgresql.org/docs/9.6/catalog-pg-aggregate.html">https://www.postgresql.org/docs/9.6/catalog-pg-aggregate.html</a></p>
-<pre class="{sql}"><code>-- pg_proc contains data for aggregate functions as well as plain functions
-select * from pg_proc
--- pg_aggregate is an extension of pg_proc.
-select * from pg_aggregate</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- pg_proc contains data for aggregate functions as well as plain functions</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> pg_proc</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co">-- pg_aggregate is an extension of pg_proc.</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> pg_aggregate</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="list-users" class="level2">
 <h2 class="anchored" data-anchor-id="list-users">List users</h2>
-<pre class="{sql}"><code>SELECT rolname FROM pg_roles;</code></pre>
+<div class="sourceCode" id="cb16"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> rolname <span class="kw">FROM</span> pg_roles;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="list-tables-in-database" class="level2">
 <h2 class="anchored" data-anchor-id="list-tables-in-database">List tables in database</h2>
-<pre class="{sql}"><code>SELECT table_schema,table_name FROM information_schema.tables ORDER BY table_schema,table_name;</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> table_schema,table_name <span class="kw">FROM</span> information_schema.<span class="kw">tables</span> <span class="kw">ORDER</span> <span class="kw">BY</span> table_schema,table_name;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="list-columns-in-table" class="level2">
 <h2 class="anchored" data-anchor-id="list-columns-in-table">List columns in table</h2>
-<pre class="{sql}"><code>SELECT column_name
-FROM   information_schema.columns
-WHERE  table_schema = 'schema'
-AND    table_name = 'table';</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> column_name</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span>   information_schema.<span class="kw">columns</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span>  table_schema <span class="op">=</span> <span class="st">'schema'</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="kw">AND</span>    table_name <span class="op">=</span> <span class="st">'table'</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="update-from" class="level2">
 <h2 class="anchored" data-anchor-id="update-from">Update From</h2>
-<pre class="{sql}"><code>UPDATE tablename
-SET columnname = someothervalue
-FROM ...
-WHERE ...</code></pre>
+<div class="sourceCode" id="cb19"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">UPDATE</span> tablename</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="kw">SET</span> columnname <span class="op">=</span> someothervalue</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> <span class="op">..</span>.</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> <span class="op">..</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="materialized-view" class="level2">
 <h2 class="anchored" data-anchor-id="materialized-view">Materialized View</h2>
 <p><a href="https://www.postgresqltutorial.com/postgresql-materialized-views/">Reference</a></p>
-<pre class="{sql}"><code>CREATE MATERIALIZED VIEW view_name
-AS
-query
-WITH [NO] DATA;</code></pre>
+<div class="sourceCode" id="cb20"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">MATERIALIZED</span> <span class="kw">VIEW</span> view_name</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="kw">AS</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="kw">query</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="kw">WITH</span> [<span class="kw">NO</span>] <span class="kw">DATA</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>When you refresh data for a materialized view, PostgreSQL locks the entire table therefore you cannot query data against it. To avoid this, you can use the CONCURRENTLY option.</p>
 <p>With CONCURRENTLY option, PostgreSQL creates a temporary updated version of the materialized view, compares two versions, and performs INSERT and UPDATE only the differences.</p>
-<pre class="{sql}"><code>REFRESH MATERIALIZED VIEW CONCURRENTLY view_name;</code></pre>
+<div class="sourceCode" id="cb21"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">REFRESH</span> <span class="kw">MATERIALIZED</span> <span class="kw">VIEW</span> CONCURRENTLY view_name;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="constants" class="level2">
 <h2 class="anchored" data-anchor-id="constants">Constants</h2>
-<pre class="{sql}"><code>WITH myconstants (analyte_search) as (
-   values ('%Hexachlorocyclopentadiene%')
-)
-
-SELECT *
-FROM e_analyte, myconstants
-WHERE analyte ilike analyte_search
-   OR full_name ilike analyte_search
-   OR aliases ilike analyte_search;</code></pre>
+<div class="sourceCode" id="cb22"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">WITH</span> myconstants (analyte_search) <span class="kw">as</span> (</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>   <span class="kw">values</span> (<span class="st">'%Hexachlorocyclopentadiene%'</span>)</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> e_analyte, myconstants</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> analyte ilike analyte_search</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>   <span class="kw">OR</span> full_name ilike analyte_search</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>   <span class="kw">OR</span> aliases ilike analyte_search;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="sequential-keys" class="level2">
 <h2 class="anchored" data-anchor-id="sequential-keys">Sequential Keys</h2>
-<pre class="{sql}"><code>seq_key bigint NOT NULL DEFAULT nextval('seq_key'::regclass)
-
-ALTER SEQUENCE seq_key RESTART WITH 3;</code></pre>
+<div class="sourceCode" id="cb23"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>seq_key bigint <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> nextval(<span class="st">'seq_key'</span>:<span class="ch">:regclass</span>)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="kw">ALTER</span> <span class="kw">SEQUENCE</span> seq_key RESTART <span class="kw">WITH</span> <span class="dv">3</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="cross-database-search" class="level2">
 <h2 class="anchored" data-anchor-id="cross-database-search">Cross-Database Search</h2>
 <p>This could be refined further by creating a function.</p>
-<pre class="{sql}"><code>with
-dbrows as (
-    select * from dblink(
-        'dbname=chemcrit',
-        'select analyte, full_name, chem_class, aliases, cas_rn from e_analyte'
-        ) as d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)
-  union
-    select * from dblink(
-        'dbname=ahtna',
-        'select analyte, full_name, chem_class, aliases, cas_rn from e_analyte'
-        ) as d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)
-  union
-    select * from dblink(
-    'dbname=arkema_ph',
-    'select analyte, full_name, chem_class, aliases, cas_rn from e_analyte'
-    ) as d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)
-  union
-    select * from dblink(
-    'dbname=bae_north',
-    'select analyte, full_name, chem_class, aliases, cas_rn from e_analyte'
-    ) as d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)
-  union
-    select * from dblink(
-    'dbname=bayer_ldw',
-    'select analyte, full_name, chem_class, aliases, cas_rn from e_analyte'
-    ) as d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)
-  union
-    select * from dblink(
-    'dbname=bcsa',
-    'select analyte, full_name, chem_class, aliases, cas_rn from e_analyte'
-    ) as d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)
-  union
-    select * from dblink(
-    'dbname=c840_livent',
-    'select analyte, full_name, chem_class, aliases, cas_rn from e_analyte'
-    ) as d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)
-  union
-    select * from dblink(
-    'dbname=cabotroad',
-    'select analyte, full_name, chem_class, aliases, cas_rn from e_analyte'
-    ) as d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)
-  union
-    select * from dblink(
-    'dbname=centralia',
-    'select analyte, full_name, chem_class, aliases, cas_rn from e_analyte'
-    ) as d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)
-  union
-    select * from dblink(
-    'dbname=centredale',
-    'select analyte, full_name, chem_class, aliases, cas_rn from e_analyte'
-    ) as d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)
-  union
-    select * from dblink(
-    'dbname=eos',
-    'select analyte, full_name, chem_class, aliases, cas_rn from e_analyte'
-    ) as d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)
-  union
-    select * from dblink(
-    'dbname=evraz_inwater',
-    'select analyte, full_name, chem_class, aliases, cas_rn from e_analyte'
-    ) as d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)
-  union
-    select * from dblink(
-    'dbname=frenchtown_mill',
-    'select analyte, full_name, chem_class, aliases, cas_rn from e_analyte'
-    ) as d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)
-  union
-    select * from dblink(
-    'dbname=gemt_columbus',
-    'select analyte, full_name, chem_class, aliases, cas_rn from e_analyte'
-    ) as d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)
-  union
-    select * from dblink(
-    'dbname=gemt_meridian',
-    'select analyte, full_name, chem_class, aliases, cas_rn from e_analyte'
-    ) as d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)
-  union
-    select * from dblink(
-    'dbname=gemt_springfield',
-    'select analyte, full_name, chem_class, aliases, cas_rn from e_analyte'
-    ) as d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)
-  union
-    select * from dblink(
-    'dbname=reddog',
-    'select analyte, full_name, chem_class, aliases, cas_rn from e_analyte'
-    ) as d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)
-  union
-    select * from dblink(
-    'dbname=shoreham',
-    'select analyte, full_name, chem_class, aliases, cas_rn from e_analyte'
-    ) as d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)
-  union
-    select * from dblink(
-    'dbname=solvay',
-    'select analyte, full_name, chem_class, aliases, cas_rn from e_analyte'
-    ) as d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)
-  union
-    select * from dblink(
-    'dbname=three_m_mb',
-    'select analyte, full_name, chem_class, aliases, cas_rn from e_analyte'
-    ) as d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)
-),
-const (param) as (
-    values ('%solid%')
-)
-select analyte, full_name, chem_class, cas_rn, aliases
-from dbrows, const
-where analyte ilike param
-or full_name ilike param
-or aliases ilike param
-order by chem_class, analyte;</code></pre>
+<div class="sourceCode" id="cb24"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="kw">with</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>dbrows <span class="kw">as</span> (</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">'dbname=chemcrit'</span>,</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn from e_analyte'</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>        ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">'dbname=ahtna'</span>,</span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn from e_analyte'</span></span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>        ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)</span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">'dbname=arkema_ph'</span>,</span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn from e_analyte'</span></span>
+<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)</span>
+<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
+<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
+<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">'dbname=bae_north'</span>,</span>
+<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a>    <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn from e_analyte'</span></span>
+<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)</span>
+<span id="cb24-22"><a href="#cb24-22" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
+<span id="cb24-23"><a href="#cb24-23" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
+<span id="cb24-24"><a href="#cb24-24" aria-hidden="true" tabindex="-1"></a>    <span class="st">'dbname=bayer_ldw'</span>,</span>
+<span id="cb24-25"><a href="#cb24-25" aria-hidden="true" tabindex="-1"></a>    <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn from e_analyte'</span></span>
+<span id="cb24-26"><a href="#cb24-26" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)</span>
+<span id="cb24-27"><a href="#cb24-27" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
+<span id="cb24-28"><a href="#cb24-28" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
+<span id="cb24-29"><a href="#cb24-29" aria-hidden="true" tabindex="-1"></a>    <span class="st">'dbname=bcsa'</span>,</span>
+<span id="cb24-30"><a href="#cb24-30" aria-hidden="true" tabindex="-1"></a>    <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn from e_analyte'</span></span>
+<span id="cb24-31"><a href="#cb24-31" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)</span>
+<span id="cb24-32"><a href="#cb24-32" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
+<span id="cb24-33"><a href="#cb24-33" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
+<span id="cb24-34"><a href="#cb24-34" aria-hidden="true" tabindex="-1"></a>    <span class="st">'dbname=c840_livent'</span>,</span>
+<span id="cb24-35"><a href="#cb24-35" aria-hidden="true" tabindex="-1"></a>    <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn from e_analyte'</span></span>
+<span id="cb24-36"><a href="#cb24-36" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)</span>
+<span id="cb24-37"><a href="#cb24-37" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
+<span id="cb24-38"><a href="#cb24-38" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
+<span id="cb24-39"><a href="#cb24-39" aria-hidden="true" tabindex="-1"></a>    <span class="st">'dbname=cabotroad'</span>,</span>
+<span id="cb24-40"><a href="#cb24-40" aria-hidden="true" tabindex="-1"></a>    <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn from e_analyte'</span></span>
+<span id="cb24-41"><a href="#cb24-41" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)</span>
+<span id="cb24-42"><a href="#cb24-42" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
+<span id="cb24-43"><a href="#cb24-43" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
+<span id="cb24-44"><a href="#cb24-44" aria-hidden="true" tabindex="-1"></a>    <span class="st">'dbname=centralia'</span>,</span>
+<span id="cb24-45"><a href="#cb24-45" aria-hidden="true" tabindex="-1"></a>    <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn from e_analyte'</span></span>
+<span id="cb24-46"><a href="#cb24-46" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)</span>
+<span id="cb24-47"><a href="#cb24-47" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
+<span id="cb24-48"><a href="#cb24-48" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
+<span id="cb24-49"><a href="#cb24-49" aria-hidden="true" tabindex="-1"></a>    <span class="st">'dbname=centredale'</span>,</span>
+<span id="cb24-50"><a href="#cb24-50" aria-hidden="true" tabindex="-1"></a>    <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn from e_analyte'</span></span>
+<span id="cb24-51"><a href="#cb24-51" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)</span>
+<span id="cb24-52"><a href="#cb24-52" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
+<span id="cb24-53"><a href="#cb24-53" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
+<span id="cb24-54"><a href="#cb24-54" aria-hidden="true" tabindex="-1"></a>    <span class="st">'dbname=eos'</span>,</span>
+<span id="cb24-55"><a href="#cb24-55" aria-hidden="true" tabindex="-1"></a>    <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn from e_analyte'</span></span>
+<span id="cb24-56"><a href="#cb24-56" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)</span>
+<span id="cb24-57"><a href="#cb24-57" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
+<span id="cb24-58"><a href="#cb24-58" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
+<span id="cb24-59"><a href="#cb24-59" aria-hidden="true" tabindex="-1"></a>    <span class="st">'dbname=evraz_inwater'</span>,</span>
+<span id="cb24-60"><a href="#cb24-60" aria-hidden="true" tabindex="-1"></a>    <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn from e_analyte'</span></span>
+<span id="cb24-61"><a href="#cb24-61" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)</span>
+<span id="cb24-62"><a href="#cb24-62" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
+<span id="cb24-63"><a href="#cb24-63" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
+<span id="cb24-64"><a href="#cb24-64" aria-hidden="true" tabindex="-1"></a>    <span class="st">'dbname=frenchtown_mill'</span>,</span>
+<span id="cb24-65"><a href="#cb24-65" aria-hidden="true" tabindex="-1"></a>    <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn from e_analyte'</span></span>
+<span id="cb24-66"><a href="#cb24-66" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)</span>
+<span id="cb24-67"><a href="#cb24-67" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
+<span id="cb24-68"><a href="#cb24-68" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
+<span id="cb24-69"><a href="#cb24-69" aria-hidden="true" tabindex="-1"></a>    <span class="st">'dbname=gemt_columbus'</span>,</span>
+<span id="cb24-70"><a href="#cb24-70" aria-hidden="true" tabindex="-1"></a>    <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn from e_analyte'</span></span>
+<span id="cb24-71"><a href="#cb24-71" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)</span>
+<span id="cb24-72"><a href="#cb24-72" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
+<span id="cb24-73"><a href="#cb24-73" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
+<span id="cb24-74"><a href="#cb24-74" aria-hidden="true" tabindex="-1"></a>    <span class="st">'dbname=gemt_meridian'</span>,</span>
+<span id="cb24-75"><a href="#cb24-75" aria-hidden="true" tabindex="-1"></a>    <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn from e_analyte'</span></span>
+<span id="cb24-76"><a href="#cb24-76" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)</span>
+<span id="cb24-77"><a href="#cb24-77" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
+<span id="cb24-78"><a href="#cb24-78" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
+<span id="cb24-79"><a href="#cb24-79" aria-hidden="true" tabindex="-1"></a>    <span class="st">'dbname=gemt_springfield'</span>,</span>
+<span id="cb24-80"><a href="#cb24-80" aria-hidden="true" tabindex="-1"></a>    <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn from e_analyte'</span></span>
+<span id="cb24-81"><a href="#cb24-81" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)</span>
+<span id="cb24-82"><a href="#cb24-82" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
+<span id="cb24-83"><a href="#cb24-83" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
+<span id="cb24-84"><a href="#cb24-84" aria-hidden="true" tabindex="-1"></a>    <span class="st">'dbname=reddog'</span>,</span>
+<span id="cb24-85"><a href="#cb24-85" aria-hidden="true" tabindex="-1"></a>    <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn from e_analyte'</span></span>
+<span id="cb24-86"><a href="#cb24-86" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)</span>
+<span id="cb24-87"><a href="#cb24-87" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
+<span id="cb24-88"><a href="#cb24-88" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
+<span id="cb24-89"><a href="#cb24-89" aria-hidden="true" tabindex="-1"></a>    <span class="st">'dbname=shoreham'</span>,</span>
+<span id="cb24-90"><a href="#cb24-90" aria-hidden="true" tabindex="-1"></a>    <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn from e_analyte'</span></span>
+<span id="cb24-91"><a href="#cb24-91" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)</span>
+<span id="cb24-92"><a href="#cb24-92" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
+<span id="cb24-93"><a href="#cb24-93" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
+<span id="cb24-94"><a href="#cb24-94" aria-hidden="true" tabindex="-1"></a>    <span class="st">'dbname=solvay'</span>,</span>
+<span id="cb24-95"><a href="#cb24-95" aria-hidden="true" tabindex="-1"></a>    <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn from e_analyte'</span></span>
+<span id="cb24-96"><a href="#cb24-96" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)</span>
+<span id="cb24-97"><a href="#cb24-97" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
+<span id="cb24-98"><a href="#cb24-98" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
+<span id="cb24-99"><a href="#cb24-99" aria-hidden="true" tabindex="-1"></a>    <span class="st">'dbname=three_m_mb'</span>,</span>
+<span id="cb24-100"><a href="#cb24-100" aria-hidden="true" tabindex="-1"></a>    <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn from e_analyte'</span></span>
+<span id="cb24-101"><a href="#cb24-101" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text)</span>
+<span id="cb24-102"><a href="#cb24-102" aria-hidden="true" tabindex="-1"></a>),</span>
+<span id="cb24-103"><a href="#cb24-103" aria-hidden="true" tabindex="-1"></a>const (param) <span class="kw">as</span> (</span>
+<span id="cb24-104"><a href="#cb24-104" aria-hidden="true" tabindex="-1"></a>    <span class="kw">values</span> (<span class="st">'%solid%'</span>)</span>
+<span id="cb24-105"><a href="#cb24-105" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb24-106"><a href="#cb24-106" aria-hidden="true" tabindex="-1"></a><span class="kw">select</span> analyte, full_name, chem_class, cas_rn, aliases</span>
+<span id="cb24-107"><a href="#cb24-107" aria-hidden="true" tabindex="-1"></a><span class="kw">from</span> dbrows, const</span>
+<span id="cb24-108"><a href="#cb24-108" aria-hidden="true" tabindex="-1"></a><span class="kw">where</span> analyte ilike param</span>
+<span id="cb24-109"><a href="#cb24-109" aria-hidden="true" tabindex="-1"></a><span class="kw">or</span> full_name ilike param</span>
+<span id="cb24-110"><a href="#cb24-110" aria-hidden="true" tabindex="-1"></a><span class="kw">or</span> aliases ilike param</span>
+<span id="cb24-111"><a href="#cb24-111" aria-hidden="true" tabindex="-1"></a><span class="kw">order</span> <span class="kw">by</span> chem_class, analyte;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
@@ -694,6 +962,121 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
