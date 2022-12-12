@@ -1,0 +1,262 @@
+---
+title: "Server"
+pagetitle: "Server"
+description: "Administration"
+image: "/static/server.png"
+format:
+    html:
+        # https://quarto.org/docs/output-formats/html-code.html
+        code-fold: true
+jupyter: python3
+execute:
+    echo: false
+---
+
+## Permissions
+
+General syntax: `_rwxrwxrwx 1 owner group`<br>
+
+`_ | rwx | rwx | rwx` <Special><Owner><Group><All Users>
+
+`r` = Read<br>
+`w` = Write<br>
+`x` = Execute
+
+`chown` = Change ownership<br>
+`chmod` = Change permissions<br>
+
+`sudo chown <user>:<group> <file>`
+
+`sudo chown 664 <file>`
+
+## Server Initialization
+
+Initial Linux server setup on Digital Ocean
+
+1. Login to server as root
+1. Create new admin user: `$ adduser <username>`
+1. Add user to sudo group: `usermod -aG sudo <username>`
+1. `$ exit`
+1. Reload SSH connection
+1. Login as new user
+1. `$ sudo vi /etc/ssh/sshd_config`
+  1. Configuration for putty/incoming SSH connections
+  1. Change `PermitRootLogin` to `no`
+1. `$ sudo reboot`
+1. On boot, can see linux kernel used for current build/image: `GNU/Linux 5.4.0-51-generic`
+1. Check for package updates `$ apt list --upgradable`
+1, Upgrade packages `$ sudo apt upgrade`
+1. Show system info: `$ uname -a`
+1. Even though you updated the kernel, need to reboot to take effect: `$ sudo reboot`
+1. Just to be sure: `$ sudo apt update & sudo apt upgrade`
+1. Uncomplicated firewall: `$ ufw status verbose`
+1. Allow SSH connections: `$ sudo ufw allow OpenSSH`
+  1. Can also do `$ sudo ufw allow 'Apache Full'` if web server needed. Opens port 80 and 443.
+1. Turn on firewall: `$ sudo ufw enable`
+1. Check: `$ sudo ufw status verbose`
+1. Shutdown for backup/snapshot `$ sudo shutdown -h now`
+1. Navigate to provider website and restart machine
+
+## Sharing
+
+1. Create a shared directory for users to access: `/share`
+
+1. Assign users to a common group (staff): `sudo usermod -a -G staff <user>`
+
+1. Verify user groups: `groups <user>`
+
+1. Create shared directory and assign permissions:
+
+    ```bash
+    sudo mkdir /share && \
+    sudo chgrp -R staff /share && \  # assign group
+    sudo chmod -R g+w /share && \  # permissions
+    sudo chmod -R +s /share  # inherit permissions for newly created files/folders
+    ```
+
+## Jupyter Server
+
+1. Create `jupyter` user
+
+    ```bash
+    sudo adduser jupyter && \ # passwd: !ntegral2022
+    sudo usermod -a -G staff jupyter
+    sudo su jupyter && \
+    ```
+
+1. Install Jupyter Lab
+
+    ```bash
+    source /home/jupyter/.venv/bin/activate && \
+    python -m pip install jupyterlab && \
+    jupyter-lab --generate-config
+    ```
+
+1. Configure Jupyter
+
+    ```python
+    c.NotebookApp.ip = '*'
+    c.NotebookApp.notebook_dir = '/home/jupyter/notebooks/'
+    c.NotebookApp.open_browser = False
+    c.NotebookApp.password = '' # hashed password
+    c.NotebookApp.port = 9999
+    ```
+
+1. Configure Apache:
+
+    ```apache
+    <VirtualHost *:80>
+        ServerName <DNS ENTRY>
+        ServerSignature Off
+
+        ErrorLog /var/log/apache2/redirect.error.log
+        LogLevel warn
+
+        ProxyPreserveHost On
+        ProxyPass "/" "http://localhost:9999/"
+        ProxyPassReverse "/" "http://localhost:9999/"
+
+        RewriteEngine on
+        RewriteCond %{SERVER_NAME} =<DNS ENTRY>
+        RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]
+    </VirtualHost>
+
+    <IfModule mod_ssl.c>
+        <VirtualHost *:443>
+            ServerName <DNS ENTRY>
+            ServerSignature Off
+
+            ErrorLog /var/log/apache2/redirect.error.log
+            LogLevel warn
+
+            ProxyPreserveHost On
+            ProxyPass "/" "http://localhost:9999/"
+            ProxyPassReverse "/" "http://localhost:9999/"
+
+        <Location "/api/kernels/">
+            ProxyPass        ws://localhost:9999/api/kernels/
+                ProxyPassReverse ws://localhost:9999/api/kernels/
+        </Location>
+
+            SSLCertificateFile /etc/letsencrypt/live/<DNS ENTRY>/fullchain.pem
+            SSLCertificateKeyFile /etc/letsencrypt/<DNS ENTRY>/privkey.pem
+            Include /etc/letsencrypt/options-ssl-apache.conf
+        </VirtualHost>
+    </IfModule>
+    ```
+
+1. Enable Apache modules
+
+    ```bash
+    sudo a2enmod proxy
+    sudo a2enmod proxy_http
+    sudo a2enmod proxy_wstunnel
+    ```
+
+1. Generate SSL certs
+
+    ```bash
+    sudo certbot --apache certonly
+    ```
+
+1. Enable the site
+
+    ```bash
+    sudo a2ensite jupyter.conf && \
+    sudo systemctl reload apache2 && \
+    sudo systemctl status apache2
+    ```
+
+1. Create the Jupyter service: `/lib/systemd/system/jupyter.service`
+
+    ```conf
+    # service name:     jupyter.service
+    # path:             /lib/systemd/system/jupyter.service
+
+    [Unit]
+    Description=Jupyter Notebook Server
+
+    [Service]
+    Type=simple
+    PIDFile=/run/jupyter.pid
+    ExecStart=/bin/bash -c "/home/jupyter/.venv/bin/jupyter lab --no-browser"
+    User=jupyter
+    Group=staff
+    WorkingDirectory=/home/jupyter/notebooks
+    Restart=always
+    RestartSec=30
+
+    [Install]
+    WantedBy=multi-user.target
+    ```
+
+1. Enable the service
+
+    ```bash
+    sudo systemctl daemon-reload && \
+    sudo systemctl start jupyter.service && \
+    sudo service jupyter status
+    ```
+
+## Rstudio Server
+
+1. Install:
+
+    ```bash
+    wget https://download2.rstudio.org/server/jammy/amd64/rstudio-server-2022.07.2-576-amd64.deb && \
+    sudo gdebi rstudio-server-2022.07.2-576-amd64.deb && \
+    rm rstudio-server-2022.07.2-576-amd64.deb && \
+    sudo adduser rstudio  # passwd: !ntegral2022
+    ```
+
+1. Apache config
+
+    ```apache
+    <VirtualHost *:80>
+        ServerName <DNS ENTRY>
+        ServerSignature Off
+
+        ErrorLog /var/log/apache2/redirect.error.log
+        LogLevel warn
+
+        ProxyPreserveHost On
+        ProxyPass "/" "http://localhost:8787/"
+        ProxyPassReverse "/" "http://localhost:8787/"
+
+        RewriteEngine on
+        RewriteCond %{SERVER_NAME} =<DNS ENTRY>
+        RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]
+    </VirtualHost>
+
+    <IfModule mod_ssl.c>
+        <VirtualHost *:443>
+            ServerName <DNS ENTRY>
+            ServerSignature Off
+
+            ErrorLog /var/log/apache2/redirect.error.log
+            LogLevel warn
+
+            ProxyPreserveHost On
+            ProxyPass "/" "http://localhost:8787/"
+            ProxyPassReverse "/" "http://localhost:8787/"
+
+            SSLCertificateFile /etc/letsencrypt/live/<DNS ENTRY>/fullchain.pem
+            SSLCertificateKeyFile /etc/letsencrypt/live/<DNS ENTRY>/privkey.pem
+            Include /etc/letsencrypt/options-ssl-apache.conf
+        </VirtualHost>
+    </IfModule>
+    ```
+
+1. Generate SSL certs
+
+    ```bash
+    sudo certbot --apache certonly
+    ```
+
+1. Enable the site
+
+    ```bash
+    sudo a2ensite rstudio.conf && \
+    sudo systemctl reload apache2 && \
+    sudo systemctl status apache2
+    ```

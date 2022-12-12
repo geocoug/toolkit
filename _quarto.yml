@@ -17,16 +17,18 @@ website:
     left:
       - text: "Development"
         menu:
-          - text: "R"
-            href: r.qmd
-          - text: "Python"
-            href: python.qmd
           - text: "Data Management"
             href: dm.qmd
-          - text: "CLI"
-            href: cli.qmd
           - text: "DBMS"
             href: dbms.qmd
+          - text: "Python"
+            href: python.qmd
+          - text: "R"
+            href: r.qmd
+          - text: "Server"
+            href: server.qmd
+          - text: "Tools"
+            href: tools.qmd
           - text: "Resources"
             href: resources.qmd
       - text: "Health & Fitness"

@@ -2,13 +2,14 @@
   {
     "listing": "/index.html",
     "items": [
-      "/cli.html",
       "/dbms.html",
       "/dm.html",
       "/food.html",
       "/python.html",
       "/r.html",
       "/resources.html",
+      "/server.html",
+      "/tools.html",
       "/workouts.html"
     ]
   }

@@ -1,187 +1,5 @@
 [
   {
-    "objectID": "cli.html",
-    "href": "cli.html",
-    "title": "CLI",
-    "section": "",
-    "text": "import pandas as pd\n\nf = \"./static/commands.xlsx\""
-  },
-  {
-    "objectID": "cli.html#general",
-    "href": "cli.html#general",
-    "title": "CLI",
-    "section": "General",
-    "text": "General\nSS64 Reference guide containing syntax and examples for the most prevalent computing commands (Database and Operating System).\n\nSSH\nssh <username>@<host ip>"
-  },
-  {
-    "objectID": "cli.html#mac",
-    "href": "cli.html#mac",
-    "title": "CLI",
-    "section": "Mac",
-    "text": "Mac\n\nMovie > Gif\nffmpeg -i file.mov -s 600x400 -pix_fmt rgb24 -r 20 -f gif - | gifsicle --optimize=3 --delay=3 > file.gif"
-  },
-  {
-    "objectID": "cli.html#windows",
-    "href": "cli.html#windows",
-    "title": "CLI",
-    "section": "Windows",
-    "text": "Windows\n\nCMD\nMicrosoft Docs Command line syntax\nSyntax: cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<b><f> | <f>}] [/e:{on | off}] [/f:{on | off}] [/v:{on | off}] [<string>]\nMultiple commands: \"<command1>&&<command2>&&<command3>\"\n\nParameters\n\nt1 = pd.read_excel(f, sheet_name=\"windows-commands\")\nt1.to_html(index=False)\n\n\n\n\n\n\n\n\n\nParameter\n\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\n\n/c\n\n\n\nCarries out the command specified by string and then stops.\n\n\n\n\n\n\n\n/k\n\n\n\nCarries out the command specified by string and continues.\n\n\n\n\n\n\n\n/s\n\n\n\nModifies the treatment of string after /c or /k.\n\n\n\n\n\n\n\n/q\n\n\n\nTurns the echo off.\n\n\n\n\n\n\n\n/d\n\n\n\nDisables execution of AutoRun commands.\n\n\n\n\n\n\n\n/a\n\n\n\nFormats internal command output to a pipe or a file as American National Standards Institute (ANSI).\n\n\n\n\n\n\n\n/u\n\n\n\nFormats internal command output to a pipe or a file as Unicode.\n\n\n\n\n\n\n\n/t:{<b><f> <f>}\n\n\n\nSets the background (b) and foreground (f) colors.\n\n\n\n\n\n\n\n/e:on\n\n\n\nEnables command extensions.\n\n\n\n\n\n\n\n/e:off\n\n\n\nDisables commands extensions.\n\n\n\n\n\n\n\n/f:on\n\n\n\nEnables file and directory name completion.\n\n\n\n\n\n\n\n/f:off\n\n\n\nDisables file and directory name completion.\n\n\n\n\n\n\n\n/v:on\n\n\n\nEnables delayed environment variable expansion.\n\n\n\n\n\n\n\n/v:off\n\n\n\nDisables delayed environment variable expansion.\n\n\n\n\n\n\n\n<string>\n\n\n\nSpecifies the command you want to carry out.\n\n\n\n\n\n\n\n/?\n\n\n\nDisplays help at the command prompt.\n\n\n\n\n\n\n\n\n\n\n\n\n\nPowershell\n\nr fa(\"hard-hat\") r fa(\"hammer\") Under construction…"
-  },
-  {
-    "objectID": "cli.html#linux",
-    "href": "cli.html#linux",
-    "title": "CLI",
-    "section": "Linux",
-    "text": "Linux\n\nCommands\n\nt2 = pd.read_excel(f, sheet_name=\"linux-commands\")\nt2.to_html(index=False)\n\n\n\n\n\n\n\n\n\nCommand\n\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\n\nsudo\n\n\n\nRun as administrator (superuser do)\n\n\n\n\n\n\n\napt-get\n\n\n\nInstall/uninstall programs\n\n\n\n\n\n\n\nclear\n\n\n\nClear terminal\n\n\n\n\n\n\n\npwd\n\n\n\nPrint working directory\n\n\n\n\n\n\n\ncd\n\n\n\nChange directory\n\n\n\n\n\n\n\ncd /\n\n\n\nChange directory to absolute path from root\n\n\n\n\n\n\n\ncd ~\n\n\n\nHome directory\n\n\n\n\n\n\n\ncd ./\n\n\n\nSame directory\n\n\n\n\n\n\n\ncd ~/Documents\n\n\n\n/home/<username>/Documents\n\n\n\n\n\n\n\nls\n\n\n\nList contents of directory\n\n\n\n\n\n\n\nls -l\n\n\n\nShows contents and their permissions\n\n\n\n\n\n\n\nls -p\n\n\n\nShows type of content\n\n\n\n\n\n\n\nls ~/Documents\n\n\n\nExample\n\n\n\n\n\n\n\nsu <username>\n\n\n\nSwitch user\n\n\n\n\n\n\n\nsudo su\n\n\n\nSwitch to root user (full control of everything)\n\n\n\n\n\n\n\nxdg-open .\n\n\n\nOpen default file manager in current directory\n\n\n\n\n\n\n\ncaja .\n\n\n\nOpen Caja in current directory\n\n\n\n\n\n\n\ncp [source] [destination]\n\n\n\nCopy file\n\n\n\n\n\n\n\ntouch <file>.<ext>\n\n\n\nCreate file\n\n\n\n\n\n\n\nmkdir\n\n\n\nMake directory\n\n\n\n\n\n\n\nmv <source> <destination>\n\n\n\nMove file\n\n\n\n\n\n\n\ncopy <source> <destination>\n\n\n\nCopy file\n\n\n\n\n\n\n\nfind <directory> -type f -name “*.txt”\n\n\n\nFind files with .py extension\n\n\n\n\n\n\n\ngrep\n\n\n\nsearch for content in file(s)\n\n\n\n\n\n\n\ngrep -n -I <file>\n\n\n\nsearch for content in files, list line number, ignore case\n\n\n\n\n\n\n\nfind <directory> -type f -name “*.txt” | grep “sometext”\n\n\n\nSearch for “.txt” files that contain “sometext” in them\n\n\n\n\n\n\n\nrm\n\n\n\nremove file\n\n\n\n\n\n\n\nrm -d\n\n\n\nremove empty directory\n\n\n\n\n\n\n\nrm -r\n\n\n\nremove directory and files\n\n\n\n\n\n\n\n\n\n\n\n\nFile System\n\nt3 = pd.read_excel(f, sheet_name=\"linux-filesystem\")\nt2.to_html(index=False)\n\n\n\n\n\n\n\n\n\nCommand\n\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\n\nsudo\n\n\n\nRun as administrator (superuser do)\n\n\n\n\n\n\n\napt-get\n\n\n\nInstall/uninstall programs\n\n\n\n\n\n\n\nclear\n\n\n\nClear terminal\n\n\n\n\n\n\n\npwd\n\n\n\nPrint working directory\n\n\n\n\n\n\n\ncd\n\n\n\nChange directory\n\n\n\n\n\n\n\ncd /\n\n\n\nChange directory to absolute path from root\n\n\n\n\n\n\n\ncd ~\n\n\n\nHome directory\n\n\n\n\n\n\n\ncd ./\n\n\n\nSame directory\n\n\n\n\n\n\n\ncd ~/Documents\n\n\n\n/home/<username>/Documents\n\n\n\n\n\n\n\nls\n\n\n\nList contents of directory\n\n\n\n\n\n\n\nls -l\n\n\n\nShows contents and their permissions\n\n\n\n\n\n\n\nls -p\n\n\n\nShows type of content\n\n\n\n\n\n\n\nls ~/Documents\n\n\n\nExample\n\n\n\n\n\n\n\nsu <username>\n\n\n\nSwitch user\n\n\n\n\n\n\n\nsudo su\n\n\n\nSwitch to root user (full control of everything)\n\n\n\n\n\n\n\nxdg-open .\n\n\n\nOpen default file manager in current directory\n\n\n\n\n\n\n\ncaja .\n\n\n\nOpen Caja in current directory\n\n\n\n\n\n\n\ncp [source] [destination]\n\n\n\nCopy file\n\n\n\n\n\n\n\ntouch <file>.<ext>\n\n\n\nCreate file\n\n\n\n\n\n\n\nmkdir\n\n\n\nMake directory\n\n\n\n\n\n\n\nmv <source> <destination>\n\n\n\nMove file\n\n\n\n\n\n\n\ncopy <source> <destination>\n\n\n\nCopy file\n\n\n\n\n\n\n\nfind <directory> -type f -name “*.txt”\n\n\n\nFind files with .py extension\n\n\n\n\n\n\n\ngrep\n\n\n\nsearch for content in file(s)\n\n\n\n\n\n\n\ngrep -n -I <file>\n\n\n\nsearch for content in files, list line number, ignore case\n\n\n\n\n\n\n\nfind <directory> -type f -name “*.txt” | grep “sometext”\n\n\n\nSearch for “.txt” files that contain “sometext” in them\n\n\n\n\n\n\n\nrm\n\n\n\nremove file\n\n\n\n\n\n\n\nrm -d\n\n\n\nremove empty directory\n\n\n\n\n\n\n\nrm -r\n\n\n\nremove directory and files\n\n\n\n\n\n\n\n\n\n\n\n\nPermissions\nGeneral syntax: _rwxrwxrwx 1 owner group\n_ | rwx | rwx | rwx \nr = Read w = Write x = Execute\nchown = Change ownership chmod = Change permissions\nsudo chown <user>:<group> <file>\nsudo chown 664 <file>\n\n\nPackage Manager\n\nt4 = pd.read_excel(f, sheet_name=\"linux-packages\")\n# Show all rows in table (no pagination)\nt4.to_html(index=False)\n\n\n\n\n\n\n\n\n\nCommand\n\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\n\napt-get\n\n\n\nPackage manager (works with .deb files)\n\n\n\n\n\n\n\napt-get install <program>\n\n\n\nInstall a program (if exists in apt-get repository)\n\n\n\n\n\n\n\napt-get remove\n\n\n\nRemove a program\n\n\n\n\n\n\n\napt-cache search <program>*\n\n\n\nSearch for a program in repository (* = wildcard)\n\n\n\n\n\n\n\napt-cache policy <program>\n\n\n\nCheck if program is installed\n\n\n\n\n\n\n\nsudo dpkg -i ~/Downloads/<package>.deb\n\n\n\nInstall .deb file/package\n\n\n\n\n\n\n\nsudo apt-get upgrade\n\n\n\nUpgrade all packages\n\n\n\n\n\n\n\n\n\n\n\n\nServer Setup\nInitial Linux server setup on Digital Ocean\n\nLogin to server as root\nCreate new admin user: $ adduser <username>\nAdd user to sudo group: usermod -aG sudo <username>\n$ exit\nReload SSH connection\nLogin as new user\n$ sudo vi /etc/ssh/sshd_config\nConfiguration for putty/incoming SSH connections\nChange PermitRootLogin to no\n$ sudo reboot\nOn boot, can see linux kernel used for current build/image: GNU/Linux 5.4.0-51-generic\nCheck for package updates $ apt list --upgradable 1, Upgrade packages $ sudo apt upgrade\nShow system info: $ uname -a\nEven though you updated the kernel, need to reboot to take effect: $ sudo reboot\nJust to be sure: $ sudo apt update & sudo apt upgrade\nUncomplicated firewall: $ ufw status verbose\nAllow SSH connections: $ sudo ufw allow OpenSSH\nCan also do $ sudo ufw allow 'Apache Full' if web server needed. Opens port 80 and 443.\nTurn on firewall: $ sudo ufw enable\nCheck: $ sudo ufw status verbose\nShutdown for backup/snapshot $ sudo shutdown -h now\nNavigate to provider website and restart machine"
-  },
-  {
-    "objectID": "cli.html#resources",
-    "href": "cli.html#resources",
-    "title": "CLI",
-    "section": "Resources",
-    "text": "Resources\n\nCheatSheet\nConvert Docker command to docker-compose.yml"
-  },
-  {
-    "objectID": "cli.html#image-vs.-container",
-    "href": "cli.html#image-vs.-container",
-    "title": "CLI",
-    "section": "Image vs. Container",
-    "text": "Image vs. Container\nImage - Application we want to run\nContainer - Instance of that image running as a process"
-  },
-  {
-    "objectID": "cli.html#docker-basics",
-    "href": "cli.html#docker-basics",
-    "title": "CLI",
-    "section": "Docker Basics",
-    "text": "Docker Basics\n\nCreate an Nginx container\ndocker run -p 80:80 -d --name webhost nginx\n\nDownloads Nginx from Docker Hub\nStarts new container from that image\nOpened port 80 on host IP\nRoutes port 80 traffic to the container IP, port 80\nView container at http://localhost:80\n\n\n\nOther examples\ndocker run -p 80:80 -d --name nginx nginx\ndocker run -p 8080:80 -d --name httpd httpd\ndocker run -p 3306:3306 --platform linux/amd64 -d --name mysql -e MYSQL_RANDOM_ROOT_PASSWORD=true mysql\nCreate a JupyterLab instance and attach your current directory as a volume: docker run -it --rm -p 8888:8888 -v $(PWD):/home/jovyan jupyter/pyspark-notebook\n\n\nProcesses and configurations\nCheck processes running inside a container: docker top <container>\nContainer configuration: docker <container> inspect\nCheck container stats (memory, cpu, network): docker stats <container>\n\n\nGetting a shell inside containers\nStart a new container interactively: docker run -it <container>\nRun commands in existing container: docker exec -it <container>\n\nExample: Start a container interactively and launch bash within it\n\nStart container and launch bash: docker run -it --name ubuntu ubuntu bash\nRun some bash command: apt-get install -y curl\nExit the container: exit\nStart and re-enter the container: docker start -ai ubuntu\n\n\n\nExample: Launch shell in running container\ndocker exec -it <container> bash\n\n\n\nPull an image from docker hub\ndocker pull <imagename>"
-  },
-  {
-    "objectID": "cli.html#docker-networks",
-    "href": "cli.html#docker-networks",
-    "title": "CLI",
-    "section": "Docker Networks",
-    "text": "Docker Networks\n\nEach container is connected to a private virtual network (called “bridge”).\nEach virtual network routes through NAT firewall on host IP.\nAll containers on a virtual network can talk to each other without -p\nBest practice: Create a new virtual network for each app.\nYou can skip virtual networks and use the host IP (--net=host).\n\nGet container IP: docker inspect --format '{{ .NetworkSettings.IPAddress }}' <container>\n\nPublishing (#:#)\nexample: 8080:80\nleft number: published/host port\nright number: listening/container port\nTraffic passing through port 8080 on the HOST will be directed to port 80 on the container.\n\n\nDNS\nDocker uses container names as host names.\nDont rely on IPs for inter-communication.\nBest Practice Always use custom networks.\n\nAssignment\nCheck different curl versions within current versions of Ubuntu and CentOS.\nRun “curl –version” on both operating systems.\n\nSteps\nubuntu: apt-get update && apt-get install curl\ncentos: yum update curl\nThen…\ncurl --version\nAlso:\nCheck out command docker --rm"
-  },
-  {
-    "objectID": "cli.html#dockerfiles",
-    "href": "cli.html#dockerfiles",
-    "title": "CLI",
-    "section": "Dockerfiles",
-    "text": "Dockerfiles\nRecipe for creating images\nEach Dockerfile stanza such as “RUN”, “CMD”, etc. are stored as a single image layer. Docker caches each layer by giving it a unique SHA (hash), so whenever the image is (re)built, it can check to see if a layer has changed, and if not, it will use the cached layer.\nDocker builds images top down, so it is best practice to structure the Dockerfile in such a way that lines which will change the most are at the bottom, and lines that will change the least are at the top. If a line is changed (ie. source code changes) Docker will rebuild that line, and thus each line after that will also need to be rebuilt."
-  },
-  {
-    "objectID": "cli.html#keeping-the-docker-system-clean",
-    "href": "cli.html#keeping-the-docker-system-clean",
-    "title": "CLI",
-    "section": "Keeping the Docker system clean",
-    "text": "Keeping the Docker system clean\ndocker system prune - all stopped containers - all networks not used by at least one container - all dangling images - all dangling build cache"
-  },
-  {
-    "objectID": "cli.html#volumes-an-bind-mounts",
-    "href": "cli.html#volumes-an-bind-mounts",
-    "title": "CLI",
-    "section": "Volumes an Bind Mounts",
-    "text": "Volumes an Bind Mounts\nVolumes - Special location outside of container UFS\nBind Mounts - Link container path to host path\nBuild an image and named volume (persistent): docker run -d --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=True -v mysql:/var/lib/mysql --platform linux/amd64 mysql"
-  },
-  {
-    "objectID": "cli.html#initialize",
-    "href": "cli.html#initialize",
-    "title": "CLI",
-    "section": "Initialize",
-    "text": "Initialize\n\nLaunch Git Bash\nNavigate to project directory\ninitialize git repository in the folder root: git init\ncreate new file in directory: touch filename.extension\nlist files in root: ls\ncheck which files git recognizes: git status"
-  },
-  {
-    "objectID": "cli.html#staging",
-    "href": "cli.html#staging",
-    "title": "CLI",
-    "section": "Staging",
-    "text": "Staging\nA commit is a record of what files you have changed since the last time you made a commit. Essentially, you make changes to your repo (for example, adding a file or modifying one) and then tell git to put those files into a commit. Commits make up the essence of your project and allow you to go back to the state of a project at any point.\nSo, how do you tell git which files to put into a commit? This is where the staging environment or index come in. When you make changes to your repo, git notices that a file has changed but won’t do anything with it (like adding it in a commit).\nTo add a file to a commit, you first need to add it to the staging environment. To do this, you can use the git add <filename> command.\nOnce you’ve used the git add command to add all the files you want to the staging environment, you can then tell git to package them into a commit using the git commit command. Note: The staging environment, also called ‘staging’, is the new preferred term for this, but you can also see it referred to as the ‘index’.\n\nAdd files to the staging environment: git add filename.extension\nCheck staging environment for new files: git status"
-  },
-  {
-    "objectID": "cli.html#commit-locally",
-    "href": "cli.html#commit-locally",
-    "title": "CLI",
-    "section": "Commit Locally",
-    "text": "Commit Locally\ngit commit -m \"Your message about the commit\""
-  },
-  {
-    "objectID": "cli.html#branches",
-    "href": "cli.html#branches",
-    "title": "CLI",
-    "section": "Branches",
-    "text": "Branches\nSay you want to make a new feature but are worried about making changes to the main project while developing the feature. This is where git branches come in.\nBranches allow you to move back and forth between ‘states’ of a project. For instance, if you want to add a new page to your website you can create a new branch just for that page without affecting the main part of the project. Once you’re done with the page, you can merge your changes from your branch into the master branch. When you create a new branch, Git keeps track of which commit your branch ‘branched’ off of, so it knows the history behind all the files.\n\ngit checkout -b <my branch name>\nShow list of branches: git branch"
-  },
-  {
-    "objectID": "cli.html#commit-to-github",
-    "href": "cli.html#commit-to-github",
-    "title": "CLI",
-    "section": "Commit to Github",
-    "text": "Commit to Github\n\nCreate new repo on GitHub\ngit remote add origin <url produced on github for new repo>\ngit push -u origin [master/main]"
-  },
-  {
-    "objectID": "cli.html#push-a-branch-to-github",
-    "href": "cli.html#push-a-branch-to-github",
-    "title": "CLI",
-    "section": "Push a Branch to Github",
-    "text": "Push a Branch to Github\ngit push origin <my-new-branch>\nYou might be wondering what that “origin” word means in the command above. What happens is that when you clone a remote repository to your local machine, git creates an alias for you. In nearly all cases this alias is called “origin.” It’s essentially shorthand for the remote repository’s URL. So, to push your changes to the remote repository, you could’ve used either the command: git push git@github.com:git/git.git yourbranchname or git push origin yourbranchname"
-  },
-  {
-    "objectID": "cli.html#pull-request",
-    "href": "cli.html#pull-request",
-    "title": "CLI",
-    "section": "Pull Request",
-    "text": "Pull Request\nA pull request (or PR) is a way to alert a repo’s owners that you want to make some changes to their code. It allows them to review the code and make sure it looks good before putting your changes on the master branch."
-  },
-  {
-    "objectID": "cli.html#get-changes-on-github",
-    "href": "cli.html#get-changes-on-github",
-    "title": "CLI",
-    "section": "Get Changes on Github",
-    "text": "Get Changes on Github\ngit pull origin master\ncheck all new commits: git log"
-  },
-  {
-    "objectID": "cli.html#view-differences",
-    "href": "cli.html#view-differences",
-    "title": "CLI",
-    "section": "View Differences",
-    "text": "View Differences\n\nrun: git diff"
-  },
-  {
-    "objectID": "cli.html#remove-a-branch",
-    "href": "cli.html#remove-a-branch",
-    "title": "CLI",
-    "section": "Remove a Branch",
-    "text": "Remove a Branch\n\nLocally\ngit branch -d <branch_name>\n\n\nRemote\ngit push <remote_name> --delete <branch_name>"
-  },
-  {
-    "objectID": "cli.html#remove-tracked-filedirectory",
-    "href": "cli.html#remove-tracked-filedirectory",
-    "title": "CLI",
-    "section": "Remove tracked file/directory",
-    "text": "Remove tracked file/directory\n\nFile\ngit rm --cached <file>\n\n\nDirectory\ngit rm --cahced -r dir/"
-  },
-  {
-    "objectID": "cli.html#export-table-to-csv",
-    "href": "cli.html#export-table-to-csv",
-    "title": "CLI",
-    "section": "Export table to CSV",
-    "text": "Export table to CSV\n\n\\copy table TO '<path>' CSV\n\\copy table(col1,col1) TO '<path>' CSV\n\\copy (SELECT...) TO '<path>' CSV"
-  },
-  {
-    "objectID": "cli.html#backup",
-    "href": "cli.html#backup",
-    "title": "CLI",
-    "section": "Backup",
-    "text": "Backup\nUse pg_dumpall to backup all databases\n$ pg_dumpall -U postgres > all.sql\nUse pg_dump to backup a database\n$ pg_dump -d mydb -f mydb_backup.sql\n\n  -a   Dump only the data, not the schema\n  -s   Dump only the schema, no data\n  -c   Drop database before recreating\n  -C   Create database before restoring\n  -t   Dump the named table(s) only\n  -F   Format (c: custom, d: directory, t: tar)\n\nUse pg_dump -? to get the full list of options"
-  },
-  {
-    "objectID": "cli.html#restore",
-    "href": "cli.html#restore",
-    "title": "CLI",
-    "section": "Restore",
-    "text": "Restore\n\npsql\n$ psql -U user mydb < mydb_backup.sql\n\n\npg_restore\n$ pg_restore -d mydb mydb_backup.sql -c\n\n-U   Specify a database user\n-c   Drop database before recreating\n-C   Create database before restoring\n-e   Exit if an error has encountered\n-F   Format (c: custom, d: directory, t: tar, p: plain text sql(default))\n\nUse pg_restore -? to get the full list of options"
-  },
-  {
     "objectID": "dbms.html",
     "href": "dbms.html",
     "title": "DBMS",
@@ -263,7 +81,7 @@
     "href": "index.html",
     "title": "Welcome",
     "section": "",
-    "text": "Welcome to geocoug’s resource toolkit. This site was built using quarto.\n\n\n\n\n\n\n\n\n\n\nCLI\n\n\nCommand Line Interface Tools\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDBMS\n\n\nDatabase tidbits & SQL snippets\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData Management\n\n\nData management guidelines and resources\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFood\n\n\nRecipies\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPython\n\n\nPython snippets and resources\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nR\n\n\nR and RStudio Reference Mateiral\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nResources\n\n\nResource references and links\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWorkouts\n\n\nWorkouts and routines\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Welcome to geocoug’s resource toolkit. This site was built using quarto.\n\n\n\n\n\n\n\n\n\n\nDBMS\n\n\nDatabase tidbits & SQL snippets\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData Management\n\n\nData management guidelines and resources\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFood\n\n\nRecipies\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPython\n\n\nPython snippets and resources\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nR\n\n\nR and RStudio Reference Mateiral\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nResources\n\n\nResource references and links\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nServer\n\n\nAdministration\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTools\n\n\nDevelopment Tools\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWorkouts\n\n\nWorkouts and routines\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "python.html",
@@ -355,6 +173,202 @@
     "title": "Resources",
     "section": "",
     "text": "Developer\n\ndevdocs.io - Searchable documentations\nss64 - CLI reference guide\nReadTheDocs - Create, host, and browse documentation\nexecsql - Run SQL with metacommands\nBootstrap - Web framework\npgAdmin - PostgreSQL sandbox\nRegex - Regular expressions\nGoogle Colab - Collaborative Python notebooks\ngeojson.io - Create, view, and share maps\nrepl.it - Collaborative in-browser IDE. 50+ languages\nIntegromat - Online scenario automation\nPostgreSQL cheatsheet - PostgreSQL cheatsheet\npython-utils - Playground for Python utilities\nSpektran - Collection of useful color tools\nObservable - JavaScript notebooks\nHTML Dog - HTML tutorials\nCrontab - Crontab scheduler\nMedia Library\nUTF-8 Character Debug - UTF-8 character debugging chart\nLaTeX Basics\nQuarto - Scientific and technical publishing system built on Pandoc\n\n\n\n\nGIS\n\nepsg.io - Spatial reference systems\nArcGIS - ArcGIS Python\n\n\n\n\nMusic\n\nSongsterr - Guitar tabs\nUltimate Guitar - Guitar tabs\nFlagrantior - Music theory\nmusictheory.net - Music theory\nTeoria - Music theory\nJustinGuitar - Guitar lessons\nHowToPlayPiano - Piano lessons\nSoundation - Broswer based music maker\n\n\n\n\ne-Books\n\nProject Gutenberg\nLibriVox\nStandard eBooks\n\n\n\n\nMiscellaneous\n\nFree Learning - List of free educational resources"
+  },
+  {
+    "objectID": "server.html",
+    "href": "server.html",
+    "title": "Server",
+    "section": "",
+    "text": "General syntax: _rwxrwxrwx 1 owner group\n_ | rwx | rwx | rwx \nr = Read w = Write x = Execute\nchown = Change ownership chmod = Change permissions\nsudo chown <user>:<group> <file>\nsudo chown 664 <file>"
+  },
+  {
+    "objectID": "server.html#server-initialization",
+    "href": "server.html#server-initialization",
+    "title": "Server",
+    "section": "Server Initialization",
+    "text": "Server Initialization\nInitial Linux server setup on Digital Ocean\n\nLogin to server as root\nCreate new admin user: $ adduser <username>\nAdd user to sudo group: usermod -aG sudo <username>\n$ exit\nReload SSH connection\nLogin as new user\n$ sudo vi /etc/ssh/sshd_config\nConfiguration for putty/incoming SSH connections\nChange PermitRootLogin to no\n$ sudo reboot\nOn boot, can see linux kernel used for current build/image: GNU/Linux 5.4.0-51-generic\nCheck for package updates $ apt list --upgradable 1, Upgrade packages $ sudo apt upgrade\nShow system info: $ uname -a\nEven though you updated the kernel, need to reboot to take effect: $ sudo reboot\nJust to be sure: $ sudo apt update & sudo apt upgrade\nUncomplicated firewall: $ ufw status verbose\nAllow SSH connections: $ sudo ufw allow OpenSSH\nCan also do $ sudo ufw allow 'Apache Full' if web server needed. Opens port 80 and 443.\nTurn on firewall: $ sudo ufw enable\nCheck: $ sudo ufw status verbose\nShutdown for backup/snapshot $ sudo shutdown -h now\nNavigate to provider website and restart machine"
+  },
+  {
+    "objectID": "server.html#sharing",
+    "href": "server.html#sharing",
+    "title": "Server",
+    "section": "Sharing",
+    "text": "Sharing\n\nCreate a shared directory for users to access: /share\nAssign users to a common group (staff): sudo usermod -a -G staff <user>\nVerify user groups: groups <user>\nCreate shared directory and assign permissions:\nsudo mkdir /share && \\\nsudo chgrp -R staff /share && \\  # assign group\nsudo chmod -R g+w /share && \\  # permissions\nsudo chmod -R +s /share  # inherit permissions for newly created files/folders"
+  },
+  {
+    "objectID": "server.html#jupyter-server",
+    "href": "server.html#jupyter-server",
+    "title": "Server",
+    "section": "Jupyter Server",
+    "text": "Jupyter Server\n\nCreate jupyter user\nsudo adduser jupyter && \\ # passwd: !ntegral2022\nsudo usermod -a -G staff jupyter\nsudo su jupyter && \\\nInstall Jupyter Lab\nsource /home/jupyter/.venv/bin/activate && \\\npython -m pip install jupyterlab && \\\njupyter-lab --generate-config\nConfigure Jupyter\nc.NotebookApp.ip = '*'\nc.NotebookApp.notebook_dir = '/home/jupyter/notebooks/'\nc.NotebookApp.open_browser = False\nc.NotebookApp.password = '' # hashed password\nc.NotebookApp.port = 9999\nConfigure Apache:\n<VirtualHost *:80>\n    ServerName <DNS ENTRY>\n    ServerSignature Off\n\n    ErrorLog /var/log/apache2/redirect.error.log\n    LogLevel warn\n\n    ProxyPreserveHost On\n    ProxyPass \"/\" \"http://localhost:9999/\"\n    ProxyPassReverse \"/\" \"http://localhost:9999/\"\n\n    RewriteEngine on\n    RewriteCond %{SERVER_NAME} =<DNS ENTRY>\n    RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]\n</VirtualHost>\n\n<IfModule mod_ssl.c>\n    <VirtualHost *:443>\n        ServerName <DNS ENTRY>\n        ServerSignature Off\n\n        ErrorLog /var/log/apache2/redirect.error.log\n        LogLevel warn\n\n        ProxyPreserveHost On\n        ProxyPass \"/\" \"http://localhost:9999/\"\n        ProxyPassReverse \"/\" \"http://localhost:9999/\"\n\n    <Location \"/api/kernels/\">\n        ProxyPass        ws://localhost:9999/api/kernels/\n            ProxyPassReverse ws://localhost:9999/api/kernels/\n    </Location>\n\n        SSLCertificateFile /etc/letsencrypt/live/<DNS ENTRY>/fullchain.pem\n        SSLCertificateKeyFile /etc/letsencrypt/<DNS ENTRY>/privkey.pem\n        Include /etc/letsencrypt/options-ssl-apache.conf\n    </VirtualHost>\n</IfModule>\nEnable Apache modules\nsudo a2enmod proxy\nsudo a2enmod proxy_http\nsudo a2enmod proxy_wstunnel\nGenerate SSL certs\nsudo certbot --apache certonly\nEnable the site\nsudo a2ensite jupyter.conf && \\\nsudo systemctl reload apache2 && \\\nsudo systemctl status apache2\nCreate the Jupyter service: /lib/systemd/system/jupyter.service\n# service name:     jupyter.service\n# path:             /lib/systemd/system/jupyter.service\n\n[Unit]\nDescription=Jupyter Notebook Server\n\n[Service]\nType=simple\nPIDFile=/run/jupyter.pid\nExecStart=/bin/bash -c \"/home/jupyter/.venv/bin/jupyter lab --no-browser\"\nUser=jupyter\nGroup=staff\nWorkingDirectory=/home/jupyter/notebooks\nRestart=always\nRestartSec=30\n\n[Install]\nWantedBy=multi-user.target\nEnable the service\nsudo systemctl daemon-reload && \\\nsudo systemctl start jupyter.service && \\\nsudo service jupyter status"
+  },
+  {
+    "objectID": "server.html#rstudio-server",
+    "href": "server.html#rstudio-server",
+    "title": "Server",
+    "section": "Rstudio Server",
+    "text": "Rstudio Server\n\nInstall:\nwget https://download2.rstudio.org/server/jammy/amd64/rstudio-server-2022.07.2-576-amd64.deb && \\\nsudo gdebi rstudio-server-2022.07.2-576-amd64.deb && \\\nrm rstudio-server-2022.07.2-576-amd64.deb && \\\nsudo adduser rstudio  # passwd: !ntegral2022\nApache config\n<VirtualHost *:80>\n    ServerName <DNS ENTRY>\n    ServerSignature Off\n\n    ErrorLog /var/log/apache2/redirect.error.log\n    LogLevel warn\n\n    ProxyPreserveHost On\n    ProxyPass \"/\" \"http://localhost:8787/\"\n    ProxyPassReverse \"/\" \"http://localhost:8787/\"\n\n    RewriteEngine on\n    RewriteCond %{SERVER_NAME} =<DNS ENTRY>\n    RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]\n</VirtualHost>\n\n<IfModule mod_ssl.c>\n    <VirtualHost *:443>\n        ServerName <DNS ENTRY>\n        ServerSignature Off\n\n        ErrorLog /var/log/apache2/redirect.error.log\n        LogLevel warn\n\n        ProxyPreserveHost On\n        ProxyPass \"/\" \"http://localhost:8787/\"\n        ProxyPassReverse \"/\" \"http://localhost:8787/\"\n\n        SSLCertificateFile /etc/letsencrypt/live/<DNS ENTRY>/fullchain.pem\n        SSLCertificateKeyFile /etc/letsencrypt/live/<DNS ENTRY>/privkey.pem\n        Include /etc/letsencrypt/options-ssl-apache.conf\n    </VirtualHost>\n</IfModule>\nGenerate SSL certs\nsudo certbot --apache certonly\nEnable the site\nsudo a2ensite rstudio.conf && \\\nsudo systemctl reload apache2 && \\\nsudo systemctl status apache2"
+  },
+  {
+    "objectID": "tools.html#movie-gif",
+    "href": "tools.html#movie-gif",
+    "title": "Tools",
+    "section": "Movie > Gif",
+    "text": "Movie > Gif\nffmpeg -i file.mov -s 600x400 -pix_fmt rgb24 -r 20 -f gif - | gifsicle --optimize=3 --delay=3 > file.gif"
+  },
+  {
+    "objectID": "tools.html#resources",
+    "href": "tools.html#resources",
+    "title": "Tools",
+    "section": "Resources",
+    "text": "Resources\n\nCheatSheet\nConvert Docker command to docker-compose.yml"
+  },
+  {
+    "objectID": "tools.html#image-vs.-container",
+    "href": "tools.html#image-vs.-container",
+    "title": "Tools",
+    "section": "Image vs. Container",
+    "text": "Image vs. Container\nImage - Application we want to run\nContainer - Instance of that image running as a process"
+  },
+  {
+    "objectID": "tools.html#docker-basics",
+    "href": "tools.html#docker-basics",
+    "title": "Tools",
+    "section": "Docker Basics",
+    "text": "Docker Basics\n\nCreate an Nginx container\ndocker run -p 80:80 -d --name webhost nginx\n\nDownloads Nginx from Docker Hub\nStarts new container from that image\nOpened port 80 on host IP\nRoutes port 80 traffic to the container IP, port 80\nView container at http://localhost:80\n\n\n\nOther examples\ndocker run -p 80:80 -d --name nginx nginx\ndocker run -p 8080:80 -d --name httpd httpd\ndocker run -p 3306:3306 --platform linux/amd64 -d --name mysql -e MYSQL_RANDOM_ROOT_PASSWORD=true mysql\nCreate a JupyterLab instance and attach your current directory as a volume: docker run -it --rm -p 8888:8888 -v $(PWD):/home/jovyan jupyter/pyspark-notebook\n\n\nProcesses and configurations\nCheck processes running inside a container: docker top <container>\nContainer configuration: docker <container> inspect\nCheck container stats (memory, cpu, network): docker stats <container>\n\n\nGetting a shell inside containers\nStart a new container interactively: docker run -it <container>\nRun commands in existing container: docker exec -it <container>\n\nExample: Start a container interactively and launch bash within it\n\nStart container and launch bash: docker run -it --name ubuntu ubuntu bash\nRun some bash command: apt-get install -y curl\nExit the container: exit\nStart and re-enter the container: docker start -ai ubuntu\n\n\n\nExample: Launch shell in running container\ndocker exec -it <container> bash\n\n\n\nPull an image from docker hub\ndocker pull <imagename>"
+  },
+  {
+    "objectID": "tools.html#docker-networks",
+    "href": "tools.html#docker-networks",
+    "title": "Tools",
+    "section": "Docker Networks",
+    "text": "Docker Networks\n\nEach container is connected to a private virtual network (called “bridge”).\nEach virtual network routes through NAT firewall on host IP.\nAll containers on a virtual network can talk to each other without -p\nBest practice: Create a new virtual network for each app.\nYou can skip virtual networks and use the host IP (--net=host).\n\nGet container IP: docker inspect --format '{{ .NetworkSettings.IPAddress }}' <container>\n\nPublishing (#:#)\nexample: 8080:80\nleft number: published/host port\nright number: listening/container port\nTraffic passing through port 8080 on the HOST will be directed to port 80 on the container.\n\n\nDNS\nDocker uses container names as host names.\nDont rely on IPs for inter-communication.\nBest Practice Always use custom networks.\n\nAssignment\nCheck different curl versions within current versions of Ubuntu and CentOS.\nRun “curl –version” on both operating systems.\n\nSteps\nubuntu: apt-get update && apt-get install curl\ncentos: yum update curl\nThen…\ncurl --version\nAlso:\nCheck out command docker --rm"
+  },
+  {
+    "objectID": "tools.html#dockerfiles",
+    "href": "tools.html#dockerfiles",
+    "title": "Tools",
+    "section": "Dockerfiles",
+    "text": "Dockerfiles\nRecipe for creating images\nEach Dockerfile stanza such as “RUN”, “CMD”, etc. are stored as a single image layer. Docker caches each layer by giving it a unique SHA (hash), so whenever the image is (re)built, it can check to see if a layer has changed, and if not, it will use the cached layer.\nDocker builds images top down, so it is best practice to structure the Dockerfile in such a way that lines which will change the most are at the bottom, and lines that will change the least are at the top. If a line is changed (ie. source code changes) Docker will rebuild that line, and thus each line after that will also need to be rebuilt."
+  },
+  {
+    "objectID": "tools.html#keeping-the-docker-system-clean",
+    "href": "tools.html#keeping-the-docker-system-clean",
+    "title": "Tools",
+    "section": "Keeping the Docker system clean",
+    "text": "Keeping the Docker system clean\ndocker system prune - all stopped containers - all networks not used by at least one container - all dangling images - all dangling build cache"
+  },
+  {
+    "objectID": "tools.html#volumes-an-bind-mounts",
+    "href": "tools.html#volumes-an-bind-mounts",
+    "title": "Tools",
+    "section": "Volumes an Bind Mounts",
+    "text": "Volumes an Bind Mounts\nVolumes - Special location outside of container UFS\nBind Mounts - Link container path to host path\nBuild an image and named volume (persistent): docker run -d --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=True -v mysql:/var/lib/mysql --platform linux/amd64 mysql"
+  },
+  {
+    "objectID": "tools.html#initialize",
+    "href": "tools.html#initialize",
+    "title": "Tools",
+    "section": "Initialize",
+    "text": "Initialize\n\nLaunch Git Bash\nNavigate to project directory\ninitialize git repository in the folder root: git init\ncreate new file in directory: touch filename.extension\nlist files in root: ls\ncheck which files git recognizes: git status"
+  },
+  {
+    "objectID": "tools.html#staging",
+    "href": "tools.html#staging",
+    "title": "Tools",
+    "section": "Staging",
+    "text": "Staging\nA commit is a record of what files you have changed since the last time you made a commit. Essentially, you make changes to your repo (for example, adding a file or modifying one) and then tell git to put those files into a commit. Commits make up the essence of your project and allow you to go back to the state of a project at any point.\nSo, how do you tell git which files to put into a commit? This is where the staging environment or index come in. When you make changes to your repo, git notices that a file has changed but won’t do anything with it (like adding it in a commit).\nTo add a file to a commit, you first need to add it to the staging environment. To do this, you can use the git add <filename> command.\nOnce you’ve used the git add command to add all the files you want to the staging environment, you can then tell git to package them into a commit using the git commit command. Note: The staging environment, also called ‘staging’, is the new preferred term for this, but you can also see it referred to as the ‘index’.\n\nAdd files to the staging environment: git add filename.extension\nCheck staging environment for new files: git status"
+  },
+  {
+    "objectID": "tools.html#commit-locally",
+    "href": "tools.html#commit-locally",
+    "title": "Tools",
+    "section": "Commit Locally",
+    "text": "Commit Locally\ngit commit -m \"Your message about the commit\""
+  },
+  {
+    "objectID": "tools.html#branches",
+    "href": "tools.html#branches",
+    "title": "Tools",
+    "section": "Branches",
+    "text": "Branches\nSay you want to make a new feature but are worried about making changes to the main project while developing the feature. This is where git branches come in.\nBranches allow you to move back and forth between ‘states’ of a project. For instance, if you want to add a new page to your website you can create a new branch just for that page without affecting the main part of the project. Once you’re done with the page, you can merge your changes from your branch into the master branch. When you create a new branch, Git keeps track of which commit your branch ‘branched’ off of, so it knows the history behind all the files.\n\ngit checkout -b <my branch name>\nShow list of branches: git branch"
+  },
+  {
+    "objectID": "tools.html#commit-to-github",
+    "href": "tools.html#commit-to-github",
+    "title": "Tools",
+    "section": "Commit to Github",
+    "text": "Commit to Github\n\nCreate new repo on GitHub\ngit remote add origin <url produced on github for new repo>\ngit push -u origin [master/main]"
+  },
+  {
+    "objectID": "tools.html#push-a-branch-to-github",
+    "href": "tools.html#push-a-branch-to-github",
+    "title": "Tools",
+    "section": "Push a Branch to Github",
+    "text": "Push a Branch to Github\ngit push origin <my-new-branch>\nYou might be wondering what that “origin” word means in the command above. What happens is that when you clone a remote repository to your local machine, git creates an alias for you. In nearly all cases this alias is called “origin.” It’s essentially shorthand for the remote repository’s URL. So, to push your changes to the remote repository, you could’ve used either the command: git push git@github.com:git/git.git yourbranchname or git push origin yourbranchname"
+  },
+  {
+    "objectID": "tools.html#pull-request",
+    "href": "tools.html#pull-request",
+    "title": "Tools",
+    "section": "Pull Request",
+    "text": "Pull Request\nA pull request (or PR) is a way to alert a repo’s owners that you want to make some changes to their code. It allows them to review the code and make sure it looks good before putting your changes on the master branch."
+  },
+  {
+    "objectID": "tools.html#get-changes-on-github",
+    "href": "tools.html#get-changes-on-github",
+    "title": "Tools",
+    "section": "Get Changes on Github",
+    "text": "Get Changes on Github\ngit pull origin master\ncheck all new commits: git log"
+  },
+  {
+    "objectID": "tools.html#view-differences",
+    "href": "tools.html#view-differences",
+    "title": "Tools",
+    "section": "View Differences",
+    "text": "View Differences\n\nrun: git diff"
+  },
+  {
+    "objectID": "tools.html#remove-a-branch",
+    "href": "tools.html#remove-a-branch",
+    "title": "Tools",
+    "section": "Remove a Branch",
+    "text": "Remove a Branch\n\nLocally\ngit branch -d <branch_name>\n\n\nRemote\ngit push <remote_name> --delete <branch_name>"
+  },
+  {
+    "objectID": "tools.html#remove-tracked-filedirectory",
+    "href": "tools.html#remove-tracked-filedirectory",
+    "title": "Tools",
+    "section": "Remove tracked file/directory",
+    "text": "Remove tracked file/directory\n\nFile\ngit rm --cached <file>\n\n\nDirectory\ngit rm --cahced -r dir/"
+  },
+  {
+    "objectID": "tools.html#pre-commit",
+    "href": "tools.html#pre-commit",
+    "title": "Tools",
+    "section": "pre-commit",
+    "text": "pre-commit\nPlease make sure to install our pre-commit hooks into your Git workflow. Pre-commit will help keep our code clean and make sure we are following best practices.\n\nInstall pre-commit hooks: python -m pre_commit install --install-hooks\nRun hooks on the entire codebase: python -m pre_commit run --all-files\n\nHooks will run on the current commit snapshot when executing a git commit. Pre-commit hooks allow us to check for potential issues and make sure we are applying standards to our code before pushing to GitHub.\nSee an example .pre-commit-config.yml"
+  },
+  {
+    "objectID": "tools.html#export-table-to-csv",
+    "href": "tools.html#export-table-to-csv",
+    "title": "Tools",
+    "section": "Export table to CSV",
+    "text": "Export table to CSV\n\n\\copy table TO '<path>' CSV\n\\copy table(col1,col1) TO '<path>' CSV\n\\copy (SELECT...) TO '<path>' CSV"
+  },
+  {
+    "objectID": "tools.html#backup",
+    "href": "tools.html#backup",
+    "title": "Tools",
+    "section": "Backup",
+    "text": "Backup\nUse pg_dumpall to backup all databases\n$ pg_dumpall -U postgres > all.sql\nUse pg_dump to backup a database\n$ pg_dump -d mydb -f mydb_backup.sql\n\n  -a   Dump only the data, not the schema\n  -s   Dump only the schema, no data\n  -c   Drop database before recreating\n  -C   Create database before restoring\n  -t   Dump the named table(s) only\n  -F   Format (c: custom, d: directory, t: tar)\n\nUse pg_dump -? to get the full list of options"
+  },
+  {
+    "objectID": "tools.html#restore",
+    "href": "tools.html#restore",
+    "title": "Tools",
+    "section": "Restore",
+    "text": "Restore\n\npsql\n$ psql -U user mydb < mydb_backup.sql\n\n\npg_restore\n$ pg_restore -d mydb mydb_backup.sql -c\n\n-U   Specify a database user\n-c   Drop database before recreating\n-C   Create database before restoring\n-e   Exit if an error has encountered\n-F   Format (c: custom, d: directory, t: tar, p: plain text sql(default))\n\nUse pg_restore -? to get the full list of options"
   },
   {
     "objectID": "workouts.html",
