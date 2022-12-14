@@ -200,7 +200,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="https://geocoug.github.io">
+    <a class="nav-link" href="https://github.com/geocoug">
  <span class="menu-text"><i class="fa-brands fa-github fa-xl" aria-label="github"></i></span></a>
   </li>  
   <li class="nav-item">
@@ -233,9 +233,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#permissions" id="toc-permissions" class="nav-link active" data-scroll-target="#permissions">Permissions</a></li>
+  <li><a href="#permissions" id="toc-permissions" class="nav-link active" data-scroll-target="#permissions">Permissions</a>
+  <ul class="collapse">
+  <li><a href="#syntax" id="toc-syntax" class="nav-link" data-scroll-target="#syntax">Syntax</a></li>
+  <li><a href="#commands" id="toc-commands" class="nav-link" data-scroll-target="#commands">Commands</a></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a></li>
+  </ul></li>
   <li><a href="#server-initialization" id="toc-server-initialization" class="nav-link" data-scroll-target="#server-initialization">Server Initialization</a></li>
-  <li><a href="#sharing" id="toc-sharing" class="nav-link" data-scroll-target="#sharing">Sharing</a></li>
+  <li><a href="#python-web-app" id="toc-python-web-app" class="nav-link" data-scroll-target="#python-web-app">Python Web App</a>
+  <ul class="collapse">
+  <li><a href="#flask-app-configuration" id="toc-flask-app-configuration" class="nav-link" data-scroll-target="#flask-app-configuration">Flask App Configuration</a></li>
+  <li><a href="#apache-configuration" id="toc-apache-configuration" class="nav-link" data-scroll-target="#apache-configuration">Apache Configuration</a></li>
+  </ul></li>
   <li><a href="#jupyter-server" id="toc-jupyter-server" class="nav-link" data-scroll-target="#jupyter-server">Jupyter Server</a></li>
   <li><a href="#rstudio-server" id="toc-rstudio-server" class="nav-link" data-scroll-target="#rstudio-server">Rstudio Server</a></li>
   </ul>
@@ -268,43 +277,45 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <section id="permissions" class="level2">
 <h2 class="anchored" data-anchor-id="permissions">Permissions</h2>
-<p>General syntax: <code>_rwxrwxrwx 1 owner group</code><br></p>
-<p><code>_ | rwx | rwx | rwx</code> <special><owner><group><all users=""></all></group></owner></special></p>
-<p><code>r</code> = Read<br> <code>w</code> = Write<br> <code>x</code> = Execute</p>
-<p><code>chown</code> = Change ownership<br> <code>chmod</code> = Change permissions<br></p>
-<p><code>sudo chown &lt;user&gt;:&lt;group&gt; &lt;file&gt;</code></p>
-<p><code>sudo chown 664 &lt;file&gt;</code></p>
+<section id="syntax" class="level3">
+<h3 class="anchored" data-anchor-id="syntax">Syntax</h3>
+<p>General: <code>_rwxrwxrwx 1 owner group</code></p>
+<p><code>_ | rwx | rwx | rwx</code> = Special | Owner | Group | All Users</p>
+<section id="shorthand" class="level4">
+<h4 class="anchored" data-anchor-id="shorthand">Shorthand</h4>
+<ul>
+<li><code>4</code> | <code>r</code> = Read</li>
+<li><code>2</code> | <code>w</code> = Write</li>
+<li><code>1</code> | <code>x</code> = Execute</li>
+</ul>
 </section>
-<section id="server-initialization" class="level2">
-<h2 class="anchored" data-anchor-id="server-initialization">Server Initialization</h2>
-<p>Initial Linux server setup on Digital Ocean</p>
-<ol type="1">
-<li>Login to server as root</li>
-<li>Create new admin user: <code>$ adduser &lt;username&gt;</code></li>
-<li>Add user to sudo group: <code>usermod -aG sudo &lt;username&gt;</code></li>
-<li><code>$ exit</code></li>
-<li>Reload SSH connection</li>
-<li>Login as new user</li>
-<li><code>$ sudo vi /etc/ssh/sshd_config</code></li>
-<li>Configuration for putty/incoming SSH connections</li>
-<li>Change <code>PermitRootLogin</code> to <code>no</code></li>
-<li><code>$ sudo reboot</code></li>
-<li>On boot, can see linux kernel used for current build/image: <code>GNU/Linux 5.4.0-51-generic</code></li>
-<li>Check for package updates <code>$ apt list --upgradable</code> 1, Upgrade packages <code>$ sudo apt upgrade</code></li>
-<li>Show system info: <code>$ uname -a</code></li>
-<li>Even though you updated the kernel, need to reboot to take effect: <code>$ sudo reboot</code></li>
-<li>Just to be sure: <code>$ sudo apt update &amp; sudo apt upgrade</code></li>
-<li>Uncomplicated firewall: <code>$ ufw status verbose</code></li>
-<li>Allow SSH connections: <code>$ sudo ufw allow OpenSSH</code></li>
-<li>Can also do <code>$ sudo ufw allow 'Apache Full'</code> if web server needed. Opens port 80 and 443.</li>
-<li>Turn on firewall: <code>$ sudo ufw enable</code></li>
-<li>Check: <code>$ sudo ufw status verbose</code></li>
-<li>Shutdown for backup/snapshot <code>$ sudo shutdown -h now</code></li>
-<li>Navigate to provider website and restart machine</li>
-</ol>
+<section id="detailed" class="level4">
+<h4 class="anchored" data-anchor-id="detailed">Detailed</h4>
+<ul>
+<li><code>0</code> = <code>---</code></li>
+<li><code>1</code> = <code>--x</code></li>
+<li><code>2</code> = <code>-w-</code></li>
+<li><code>3</code> = <code>-wx</code></li>
+<li><code>4</code> = <code>r-</code></li>
+<li><code>5</code> = <code>r-x</code></li>
+<li><code>6</code> = <code>rw-</code></li>
+<li><code>7</code> = <code>rwx</code></li>
+</ul>
 </section>
-<section id="sharing" class="level2">
-<h2 class="anchored" data-anchor-id="sharing">Sharing</h2>
+</section>
+<section id="commands" class="level3">
+<h3 class="anchored" data-anchor-id="commands">Commands</h3>
+<p><code>chgrp</code> = Change group</p>
+<p><em>Example</em>: <code>sudo chgrp -R &lt;group&gt; &lt;folder&gt;</code></p>
+<p><code>chown</code> = Change ownership</p>
+<p><em>Example</em>: <code>sudo chown -R &lt;user&gt;:&lt;group&gt; &lt;file/folder&gt;</code></p>
+<p><code>chmod</code> = Change permissions</p>
+<p><em>Example</em>: <code>sudo chmod -R 774 &lt;file/folder&gt;</code></p>
+<p>Make new files inherit the group: <code>sudo chmod g+s &lt;folder&gt;</code></p>
+</section>
+<section id="example" class="level3">
+<h3 class="anchored" data-anchor-id="example">Example</h3>
+<p>Create a shared directory for a group.</p>
 <ol type="1">
 <li><p>Create a shared directory for users to access: <code>/share</code></p></li>
 <li><p>Assign users to a common group (staff): <code>sudo usermod -a -G staff &lt;user&gt;</code></p></li>
@@ -316,145 +327,268 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> chmod <span class="at">-R</span> +s /share  <span class="co"># inherit permissions for newly created files/folders</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ol>
 </section>
+</section>
+<section id="server-initialization" class="level2">
+<h2 class="anchored" data-anchor-id="server-initialization">Server Initialization</h2>
+<p>Initial Linux server setup steps:</p>
+<ol type="1">
+<li>Login to server as root: <code>ssh root@&lt;ip&gt;</code></li>
+<li>Create new admin user: <code>sudo adduser &lt;user&gt;</code></li>
+<li>Add user to sudo group: <code>sudo usermod -aG sudo &lt;user&gt;</code></li>
+<li>Disable root login
+<ol type="1">
+<li>Open SSH configuration: <code>sudo vi /etc/ssh/sshd_config</code></li>
+<li>Set <code>PermitRootLogin</code> to <code>no</code></li>
+</ol></li>
+<li>Configure Uncomplicated Firewall (UFW)
+<ol type="1">
+<li>Allow SSH connections: <code>sudo ufw allow OpenSSH</code></li>
+<li>Open port 80 and 443 for Apache: <code>sudo ufw allow 'Apache Full'</code></li>
+<li>Turn on firewall: <code>sudo ufw enable</code></li>
+<li>Check: <code>sudo ufw status verbose</code></li>
+</ol></li>
+<li>Reboot the server: <code>sudo reboot</code></li>
+<li>Login as new user: <code>ssh &lt;user&gt;@&lt;ip&gt;</code></li>
+<li>Check for package updates <code>apt list --upgradable</code> 1, Upgrade packages <code>sudo apt upgrade</code></li>
+<li>Show system info: <code>uname -a</code></li>
+<li>Even though the kernel was updated, need to reboot to take effect: <code>sudo reboot</code></li>
+<li>Just to be sure: <code>sudo apt update &amp;&amp; sudo apt upgrade</code></li>
+<li>Shutdown for backup/snapshot <code>sudo shutdown -h now</code></li>
+<li>After snapshot, navigate to provider website and restart machine</li>
+</ol>
+</section>
+<section id="python-web-app" class="level2">
+<h2 class="anchored" data-anchor-id="python-web-app">Python Web App</h2>
+<section id="flask-app-configuration" class="level3">
+<h3 class="anchored" data-anchor-id="flask-app-configuration">Flask App Configuration</h3>
+<ol type="1">
+<li><p>Clone repository:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> mkdir /etc/local/webs <span class="kw">&amp;&amp;</span> <span class="dt">\</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /etc/local/webs <span class="kw">&amp;&amp;</span> <span class="dt">\</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> git clone https://github.com/app.git <span class="kw">&amp;&amp;</span> <span class="dt">\</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> chown <span class="at">-R</span> <span class="op">&lt;</span>user<span class="op">&gt;</span>:<span class="op">&lt;</span>user<span class="op">&gt;</span> app <span class="kw">&amp;&amp;</span> <span class="dt">\</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> app</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Create python virtual environment &amp; install dependencies:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> venv .venv <span class="kw">&amp;&amp;</span> <span class="dt">\</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> .venv/bin/activate <span class="kw">&amp;&amp;</span> <span class="dt">\</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> pip install <span class="at">-r</span> requirements.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Configure WSGI - <code>/usr/local/webs/app/app.wsgi</code>:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/usr/bin/python</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> logging</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>APP_DIR <span class="op">=</span> <span class="st">'/usr/local/webs/app'</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>os.environ[<span class="st">"APP_DIR"</span>] <span class="op">=</span> APP_DIR</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>logging.basicConfig(stream<span class="op">=</span>sys.stderr)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>sys.path.insert(<span class="dv">0</span>, APP_DIR)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> app <span class="im">import</span> app <span class="im">as</span> application</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Update owner:group</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /usr/local/web <span class="kw">&amp;&amp;</span> <span class="dt">\</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> chown <span class="at">-R</span> www-data:www-data cmat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ol>
+</section>
+<section id="apache-configuration" class="level3">
+<h3 class="anchored" data-anchor-id="apache-configuration">Apache Configuration</h3>
+<ol type="1">
+<li><p>Create custom Apache log directory:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> mkdir /usr/local/webs/apache-logs <span class="kw">&amp;&amp;</span> <span class="dt">\</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> touch /usr/local/webs/apache-logs/app/error.log <span class="kw">&amp;&amp;</span> <span class="dt">\</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> touch /usr/local/webs/apache-logs/app/access.log <span class="kw">&amp;&amp;</span> <span class="dt">\</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> chown <span class="at">-R</span> www-data:www-data /usr/local/webs/apache-logs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Create configuration file:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /etc/apache2/sites-available <span class="kw">&amp;&amp;</span> <span class="dt">\</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> vi app.conf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Configuration - <code>app.conf</code>:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode apache code-with-copy"><code class="sourceCode apache"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;VirtualHost</span><span class="at"> *:80</span><span class="fu">&gt;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    ServerName<span class="st"> {DNS}</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">ServerSignature</span><span class="ch"> </span><span class="kw">Off</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="ex">RewriteEngine</span><span class="ch"> </span><span class="kw">On</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    RewriteRule<span class="st"> ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    ErrorLog<span class="st"> /var/log/apache2/redirect.error.log</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    <span class="ex">LogLevel</span><span class="ch"> </span><span class="kw">warn</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;/VirtualHost&gt;</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;VirtualHost</span><span class="at"> *:443</span><span class="fu">&gt;</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    ServerAdmin<span class="st"> webmaster@localhost</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    ServerName<span class="st"> {DNS}</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>    DocumentRoot<span class="st"> /usr/local/webs/app</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>    WSGIDaemonProcess web-app threads=5 python-home=/usr/local/webs/app/.venv</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>    WSGIProcessGroup web-app</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>    WSGIScriptAlias / /usr/local/webs/app/app.wsgi</span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>    WSGIPassAuthorization On</span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">&lt;Directory</span><span class="at"> /usr/local/webs/app</span><span class="fu">&gt;</span></span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>            <span class="ex">Order</span><span class="ch"> </span><span class="kw">allow,deny</span></span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>            Allow<span class="st"> from all</span></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">&lt;/Directory&gt;</span></span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">&lt;Location</span><span class="at"> /</span><span class="fu">&gt;</span></span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>            Require<span class="st"> all granted</span></span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>    <span class="fu">&lt;/Location&gt;</span></span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>    ErrorLog<span class="st"> /usr/local/webs/apache-logs/app/error.log</span></span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a>    CustomLog<span class="st"> /usr/local/webs/apache-logs/app/access.log combined</span></span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a>    <span class="ex">SSLEngine</span><span class="ch"> </span><span class="kw">on</span></span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a>    SSLCertificateFile<span class="st"> /etc/letsencrypt/live/{DNS}/fullchain.pem</span></span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a>    SSLCertificateKeyFile<span class="st"> /etc/letsencrypt/live/{DNS}/privkey.pem</span></span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a>    Include<span class="st"> /etc/letsencrypt/options-ssl-apache.conf</span></span>
+<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;/VirtualHost&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Test configuration:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apache2ctl configtest</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Enable the site</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> a2ensite app.conf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Restart Apache service</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> systemctl restart apache2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ol>
+</section>
+</section>
 <section id="jupyter-server" class="level2">
 <h2 class="anchored" data-anchor-id="jupyter-server">Jupyter Server</h2>
 <ol type="1">
 <li><p>Create <code>jupyter</code> user</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> adduser jupyter <span class="kw">&amp;&amp;</span> <span class="ex">\ #</span> passwd: !ntegral2022</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> usermod <span class="at">-a</span> <span class="at">-G</span> staff jupyter</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> su jupyter <span class="kw">&amp;&amp;</span> <span class="dt">\</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> adduser jupyter <span class="kw">&amp;&amp;</span> <span class="dt">\</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> usermod <span class="at">-a</span> <span class="at">-G</span> staff jupyter</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> su jupyter <span class="kw">&amp;&amp;</span> <span class="dt">\</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>Install Jupyter Lab</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> /home/jupyter/.venv/bin/activate <span class="kw">&amp;&amp;</span> <span class="dt">\</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> pip install jupyterlab <span class="kw">&amp;&amp;</span> <span class="dt">\</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">jupyter-lab</span> <span class="at">--generate-config</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> /home/jupyter/.venv/bin/activate <span class="kw">&amp;&amp;</span> <span class="dt">\</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> pip install jupyterlab <span class="kw">&amp;&amp;</span> <span class="dt">\</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="ex">jupyter-lab</span> <span class="at">--generate-config</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>Configure Jupyter</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>c.NotebookApp.ip <span class="op">=</span> <span class="st">'*'</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>c.NotebookApp.notebook_dir <span class="op">=</span> <span class="st">'/home/jupyter/notebooks/'</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>c.NotebookApp.open_browser <span class="op">=</span> <span class="va">False</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>c.NotebookApp.password <span class="op">=</span> <span class="st">''</span> <span class="co"># hashed password</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>c.NotebookApp.port <span class="op">=</span> <span class="dv">9999</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>c.NotebookApp.ip <span class="op">=</span> <span class="st">'*'</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>c.NotebookApp.notebook_dir <span class="op">=</span> <span class="st">'/home/jupyter/notebooks/'</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>c.NotebookApp.open_browser <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>c.NotebookApp.password <span class="op">=</span> <span class="st">''</span> <span class="co"># hashed password</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>c.NotebookApp.port <span class="op">=</span> <span class="dv">9999</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>Configure Apache:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode apache code-with-copy"><code class="sourceCode apache"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;VirtualHost</span><span class="at"> *:80</span><span class="fu">&gt;</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    ServerName<span class="st"> &lt;DNS ENTRY&gt;</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">ServerSignature</span><span class="ch"> </span><span class="kw">Off</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    ErrorLog<span class="st"> /var/log/apache2/redirect.error.log</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="ex">LogLevel</span><span class="ch"> </span><span class="kw">warn</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="ex">ProxyPreserveHost</span><span class="ch"> </span><span class="kw">On</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    ProxyPass<span class="st"> "/" "http://localhost:9999/"</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    ProxyPassReverse<span class="st"> "/" "http://localhost:9999/"</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="ex">RewriteEngine</span><span class="ch"> </span><span class="kw">on</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    RewriteCond<span class="st"> %{SERVER_NAME} =&lt;DNS ENTRY&gt;</span></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    RewriteRule<span class="st"> ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]</span></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;/VirtualHost&gt;</span></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;IfModule</span><span class="at"> mod_ssl.c</span><span class="fu">&gt;</span></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">&lt;VirtualHost</span><span class="at"> *:443</span><span class="fu">&gt;</span></span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>        ServerName<span class="st"> &lt;DNS ENTRY&gt;</span></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>        <span class="ex">ServerSignature</span><span class="ch"> </span><span class="kw">Off</span></span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>        ErrorLog<span class="st"> /var/log/apache2/redirect.error.log</span></span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>        <span class="ex">LogLevel</span><span class="ch"> </span><span class="kw">warn</span></span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>        <span class="ex">ProxyPreserveHost</span><span class="ch"> </span><span class="kw">On</span></span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>        ProxyPass<span class="st"> "/" "http://localhost:9999/"</span></span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>        ProxyPassReverse<span class="st"> "/" "http://localhost:9999/"</span></span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">&lt;Location</span><span class="at"> "/api/kernels/"</span><span class="fu">&gt;</span></span>
-<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>        ProxyPass<span class="st">        ws://localhost:9999/api/kernels/</span></span>
-<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>            ProxyPassReverse<span class="st"> ws://localhost:9999/api/kernels/</span></span>
-<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>    <span class="fu">&lt;/Location&gt;</span></span>
-<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>        SSLCertificateFile<span class="st"> /etc/letsencrypt/live/&lt;DNS ENTRY&gt;/fullchain.pem</span></span>
-<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>        SSLCertificateKeyFile<span class="st"> /etc/letsencrypt/&lt;DNS ENTRY&gt;/privkey.pem</span></span>
-<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>        Include<span class="st"> /etc/letsencrypt/options-ssl-apache.conf</span></span>
-<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>    <span class="fu">&lt;/VirtualHost&gt;</span></span>
-<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;/IfModule&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb15"><pre class="sourceCode apache code-with-copy"><code class="sourceCode apache"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;VirtualHost</span><span class="at"> *:80</span><span class="fu">&gt;</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    ServerName<span class="st"> &lt;DNS ENTRY&gt;</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">ServerSignature</span><span class="ch"> </span><span class="kw">Off</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    ErrorLog<span class="st"> /var/log/apache2/redirect.error.log</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="ex">LogLevel</span><span class="ch"> </span><span class="kw">warn</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    <span class="ex">ProxyPreserveHost</span><span class="ch"> </span><span class="kw">On</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>    ProxyPass<span class="st"> "/" "http://localhost:9999/"</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>    ProxyPassReverse<span class="st"> "/" "http://localhost:9999/"</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>    <span class="ex">RewriteEngine</span><span class="ch"> </span><span class="kw">on</span></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>    RewriteCond<span class="st"> %{SERVER_NAME} =&lt;DNS ENTRY&gt;</span></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>    RewriteRule<span class="st"> ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]</span></span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;/VirtualHost&gt;</span></span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;IfModule</span><span class="at"> mod_ssl.c</span><span class="fu">&gt;</span></span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">&lt;VirtualHost</span><span class="at"> *:443</span><span class="fu">&gt;</span></span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>        ServerName<span class="st"> &lt;DNS ENTRY&gt;</span></span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>        <span class="ex">ServerSignature</span><span class="ch"> </span><span class="kw">Off</span></span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>        ErrorLog<span class="st"> /var/log/apache2/redirect.error.log</span></span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>        <span class="ex">LogLevel</span><span class="ch"> </span><span class="kw">warn</span></span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>        <span class="ex">ProxyPreserveHost</span><span class="ch"> </span><span class="kw">On</span></span>
+<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a>        ProxyPass<span class="st"> "/" "http://localhost:9999/"</span></span>
+<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a>        ProxyPassReverse<span class="st"> "/" "http://localhost:9999/"</span></span>
+<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">&lt;Location</span><span class="at"> "/api/kernels/"</span><span class="fu">&gt;</span></span>
+<span id="cb15-30"><a href="#cb15-30" aria-hidden="true" tabindex="-1"></a>        ProxyPass<span class="st">        ws://localhost:9999/api/kernels/</span></span>
+<span id="cb15-31"><a href="#cb15-31" aria-hidden="true" tabindex="-1"></a>            ProxyPassReverse<span class="st"> ws://localhost:9999/api/kernels/</span></span>
+<span id="cb15-32"><a href="#cb15-32" aria-hidden="true" tabindex="-1"></a>    <span class="fu">&lt;/Location&gt;</span></span>
+<span id="cb15-33"><a href="#cb15-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-34"><a href="#cb15-34" aria-hidden="true" tabindex="-1"></a>        SSLCertificateFile<span class="st"> /etc/letsencrypt/live/&lt;DNS ENTRY&gt;/fullchain.pem</span></span>
+<span id="cb15-35"><a href="#cb15-35" aria-hidden="true" tabindex="-1"></a>        SSLCertificateKeyFile<span class="st"> /etc/letsencrypt/&lt;DNS ENTRY&gt;/privkey.pem</span></span>
+<span id="cb15-36"><a href="#cb15-36" aria-hidden="true" tabindex="-1"></a>        Include<span class="st"> /etc/letsencrypt/options-ssl-apache.conf</span></span>
+<span id="cb15-37"><a href="#cb15-37" aria-hidden="true" tabindex="-1"></a>    <span class="fu">&lt;/VirtualHost&gt;</span></span>
+<span id="cb15-38"><a href="#cb15-38" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;/IfModule&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>Enable Apache modules</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> a2enmod proxy</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> a2enmod proxy_http</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> a2enmod proxy_wstunnel</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> a2enmod proxy</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> a2enmod proxy_http</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> a2enmod proxy_wstunnel</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>Generate SSL certs</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> certbot <span class="at">--apache</span> certonly</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> certbot <span class="at">--apache</span> certonly</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>Enable the site</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> a2ensite jupyter.conf <span class="kw">&amp;&amp;</span> <span class="dt">\</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> systemctl reload apache2 <span class="kw">&amp;&amp;</span> <span class="dt">\</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> systemctl status apache2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> a2ensite jupyter.conf <span class="kw">&amp;&amp;</span> <span class="dt">\</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> systemctl reload apache2 <span class="kw">&amp;&amp;</span> <span class="dt">\</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> systemctl status apache2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>Create the Jupyter service: <code>/lib/systemd/system/jupyter.service</code></p>
-<pre class="conf"><code># service name:     jupyter.service
-# path:             /lib/systemd/system/jupyter.service
-
-[Unit]
-Description=Jupyter Notebook Server
-
-[Service]
-Type=simple
-PIDFile=/run/jupyter.pid
-ExecStart=/bin/bash -c "/home/jupyter/.venv/bin/jupyter lab --no-browser"
-User=jupyter
-Group=staff
-WorkingDirectory=/home/jupyter/notebooks
-Restart=always
-RestartSec=30
-
-[Install]
-WantedBy=multi-user.target</code></pre></li>
+<div class="sourceCode" id="cb19"><pre class="sourceCode ini code-with-copy"><code class="sourceCode ini"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># service name:     jupyter.service</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co"># path:             /lib/systemd/system/jupyter.service</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="kw">[Unit]</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="dt">Description</span><span class="ot">=</span><span class="st">Jupyter Notebook Server</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="kw">[Service]</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="dt">Type</span><span class="ot">=</span><span class="st">simple</span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="dt">PIDFile</span><span class="ot">=</span><span class="st">/run/jupyter.pid</span></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a><span class="dt">ExecStart</span><span class="ot">=</span><span class="st">/bin/bash -c "/home/jupyter/.venv/bin/jupyter lab --no-browser"</span></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a><span class="dt">User</span><span class="ot">=</span><span class="st">jupyter</span></span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a><span class="dt">Group</span><span class="ot">=</span><span class="st">staff</span></span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a><span class="dt">WorkingDirectory</span><span class="ot">=</span><span class="st">/home/jupyter/notebooks</span></span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a><span class="dt">Restart</span><span class="ot">=</span><span class="st">always</span></span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a><span class="dt">RestartSec</span><span class="ot">=</span><span class="dv">30</span></span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a><span class="kw">[Install]</span></span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a><span class="dt">WantedBy</span><span class="ot">=</span><span class="st">multi-user.target</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>Enable the service</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> systemctl daemon-reload <span class="kw">&amp;&amp;</span> <span class="dt">\</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> systemctl start jupyter.service <span class="kw">&amp;&amp;</span> <span class="dt">\</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> service jupyter status</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> systemctl daemon-reload <span class="kw">&amp;&amp;</span> <span class="dt">\</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> systemctl start jupyter.service <span class="kw">&amp;&amp;</span> <span class="dt">\</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> service jupyter status</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ol>
 </section>
 <section id="rstudio-server" class="level2">
 <h2 class="anchored" data-anchor-id="rstudio-server">Rstudio Server</h2>
 <ol type="1">
 <li><p>Install:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://download2.rstudio.org/server/jammy/amd64/rstudio-server-2022.07.2-576-amd64.deb <span class="kw">&amp;&amp;</span> <span class="dt">\</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> gdebi rstudio-server-2022.07.2-576-amd64.deb <span class="kw">&amp;&amp;</span> <span class="dt">\</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> rstudio-server-2022.07.2-576-amd64.deb <span class="kw">&amp;&amp;</span> <span class="dt">\</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> adduser rstudio  <span class="co"># passwd: !ntegral2022</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://download2.rstudio.org/server/jammy/amd64/rstudio-server-2022.07.2-576-amd64.deb <span class="kw">&amp;&amp;</span> <span class="dt">\</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> gdebi rstudio-server-2022.07.2-576-amd64.deb <span class="kw">&amp;&amp;</span> <span class="dt">\</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> rstudio-server-2022.07.2-576-amd64.deb <span class="kw">&amp;&amp;</span> <span class="dt">\</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> adduser rstudio</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>Apache config</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode apache code-with-copy"><code class="sourceCode apache"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;VirtualHost</span><span class="at"> *:80</span><span class="fu">&gt;</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    ServerName<span class="st"> &lt;DNS ENTRY&gt;</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">ServerSignature</span><span class="ch"> </span><span class="kw">Off</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    ErrorLog<span class="st"> /var/log/apache2/redirect.error.log</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    <span class="ex">LogLevel</span><span class="ch"> </span><span class="kw">warn</span></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    <span class="ex">ProxyPreserveHost</span><span class="ch"> </span><span class="kw">On</span></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    ProxyPass<span class="st"> "/" "http://localhost:8787/"</span></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    ProxyPassReverse<span class="st"> "/" "http://localhost:8787/"</span></span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    <span class="ex">RewriteEngine</span><span class="ch"> </span><span class="kw">on</span></span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>    RewriteCond<span class="st"> %{SERVER_NAME} =&lt;DNS ENTRY&gt;</span></span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>    RewriteRule<span class="st"> ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]</span></span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;/VirtualHost&gt;</span></span>
-<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;IfModule</span><span class="at"> mod_ssl.c</span><span class="fu">&gt;</span></span>
-<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">&lt;VirtualHost</span><span class="at"> *:443</span><span class="fu">&gt;</span></span>
-<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>        ServerName<span class="st"> &lt;DNS ENTRY&gt;</span></span>
-<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>        <span class="ex">ServerSignature</span><span class="ch"> </span><span class="kw">Off</span></span>
-<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>        ErrorLog<span class="st"> /var/log/apache2/redirect.error.log</span></span>
-<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>        <span class="ex">LogLevel</span><span class="ch"> </span><span class="kw">warn</span></span>
-<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>        <span class="ex">ProxyPreserveHost</span><span class="ch"> </span><span class="kw">On</span></span>
-<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>        ProxyPass<span class="st"> "/" "http://localhost:8787/"</span></span>
-<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>        ProxyPassReverse<span class="st"> "/" "http://localhost:8787/"</span></span>
-<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a>        SSLCertificateFile<span class="st"> /etc/letsencrypt/live/&lt;DNS ENTRY&gt;/fullchain.pem</span></span>
-<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a>        SSLCertificateKeyFile<span class="st"> /etc/letsencrypt/live/&lt;DNS ENTRY&gt;/privkey.pem</span></span>
-<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a>        Include<span class="st"> /etc/letsencrypt/options-ssl-apache.conf</span></span>
-<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a>    <span class="fu">&lt;/VirtualHost&gt;</span></span>
-<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;/IfModule&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb22"><pre class="sourceCode apache code-with-copy"><code class="sourceCode apache"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;VirtualHost</span><span class="at"> *:80</span><span class="fu">&gt;</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    ServerName<span class="st"> &lt;DNS ENTRY&gt;</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">ServerSignature</span><span class="ch"> </span><span class="kw">Off</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>    ErrorLog<span class="st"> /var/log/apache2/redirect.error.log</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    <span class="ex">LogLevel</span><span class="ch"> </span><span class="kw">warn</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>    <span class="ex">ProxyPreserveHost</span><span class="ch"> </span><span class="kw">On</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>    ProxyPass<span class="st"> "/" "http://localhost:8787/"</span></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>    ProxyPassReverse<span class="st"> "/" "http://localhost:8787/"</span></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>    <span class="ex">RewriteEngine</span><span class="ch"> </span><span class="kw">on</span></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>    RewriteCond<span class="st"> %{SERVER_NAME} =&lt;DNS ENTRY&gt;</span></span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>    RewriteRule<span class="st"> ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]</span></span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;/VirtualHost&gt;</span></span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;IfModule</span><span class="at"> mod_ssl.c</span><span class="fu">&gt;</span></span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">&lt;VirtualHost</span><span class="at"> *:443</span><span class="fu">&gt;</span></span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>        ServerName<span class="st"> &lt;DNS ENTRY&gt;</span></span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a>        <span class="ex">ServerSignature</span><span class="ch"> </span><span class="kw">Off</span></span>
+<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a>        ErrorLog<span class="st"> /var/log/apache2/redirect.error.log</span></span>
+<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a>        <span class="ex">LogLevel</span><span class="ch"> </span><span class="kw">warn</span></span>
+<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a>        <span class="ex">ProxyPreserveHost</span><span class="ch"> </span><span class="kw">On</span></span>
+<span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a>        ProxyPass<span class="st"> "/" "http://localhost:8787/"</span></span>
+<span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a>        ProxyPassReverse<span class="st"> "/" "http://localhost:8787/"</span></span>
+<span id="cb22-28"><a href="#cb22-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-29"><a href="#cb22-29" aria-hidden="true" tabindex="-1"></a>        SSLCertificateFile<span class="st"> /etc/letsencrypt/live/&lt;DNS ENTRY&gt;/fullchain.pem</span></span>
+<span id="cb22-30"><a href="#cb22-30" aria-hidden="true" tabindex="-1"></a>        SSLCertificateKeyFile<span class="st"> /etc/letsencrypt/live/&lt;DNS ENTRY&gt;/privkey.pem</span></span>
+<span id="cb22-31"><a href="#cb22-31" aria-hidden="true" tabindex="-1"></a>        Include<span class="st"> /etc/letsencrypt/options-ssl-apache.conf</span></span>
+<span id="cb22-32"><a href="#cb22-32" aria-hidden="true" tabindex="-1"></a>    <span class="fu">&lt;/VirtualHost&gt;</span></span>
+<span id="cb22-33"><a href="#cb22-33" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;/IfModule&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>Generate SSL certs</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> certbot <span class="at">--apache</span> certonly</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> certbot <span class="at">--apache</span> certonly</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>Enable the site</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> a2ensite rstudio.conf <span class="kw">&amp;&amp;</span> <span class="dt">\</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> systemctl reload apache2 <span class="kw">&amp;&amp;</span> <span class="dt">\</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> systemctl status apache2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> a2ensite rstudio.conf <span class="kw">&amp;&amp;</span> <span class="dt">\</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> systemctl reload apache2 <span class="kw">&amp;&amp;</span> <span class="dt">\</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> systemctl status apache2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ol>
 
 

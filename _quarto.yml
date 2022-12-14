@@ -39,7 +39,7 @@ website:
             href: food.qmd
     right:
       - text: "{{< fa brands github size=xl >}}"
-        href: https://geocoug.github.io
+        href: https://github.com/geocoug
       - text: "{{< fa brands linkedin size=xl >}}"
         href: https://www.linkedin.com/in/caleb-grant-04b098101
       - text: "{{< fa brands python size=xl >}}"
