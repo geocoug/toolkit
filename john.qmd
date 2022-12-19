@@ -1,5 +1,6 @@
 ---
 title: "John's Workouts"
+pagetitle: "John's Workouts"
 description: "John's workout routine"
 image: "/static/workouts.png"
 format:
@@ -25,17 +26,17 @@ w3 = pd.read_excel(workouts, sheet_name=7)
 ## Push
 
 ```{python}
-w1.to_html(index=False)
+w1.to_html(index=False, render_links=True)
 ```
 
 ## Pull
 
 ```{python}
-w2.to_html(index=False)
+w2.to_html(index=False, render_links=True)
 ```
 
 ## Legs
 
 ```{python}
-w3.to_html(index=False)
+w3.to_html(index=False, render_links=True)
 ```
