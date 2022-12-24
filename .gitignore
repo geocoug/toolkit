@@ -6,3 +6,5 @@
 *.Rproj
 /.quarto/
 /.luarc.json
+.venv
+.env
