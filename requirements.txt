@@ -74,7 +74,6 @@ pbr==5.11.0
 pexpect==4.8.0
 pickleshare==0.7.5
 platformdirs==2.6.0
-pre-commit==2.20.0
 prometheus-client==0.15.0
 prompt-toolkit==3.0.36
 psutil==5.9.4
