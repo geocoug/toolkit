@@ -537,7 +537,9 @@ ALTER SEQUENCE seq_key RESTART WITH 3;
 
 ## Cross-Database Search
 
-This could be refined further by creating a function.
+These could be refined further by creating a function.
+
+### Analytes
 
 ```sql
 with
@@ -545,6 +547,8 @@ const (param) as (
     values ('%solid%')
 ),
 dbrows as (
+   select analyte, full_name, chem_class, aliases, cas_rn, current_database() as db from e_analyte
+  union
     select * from dblink(
         'dbname=chemcrit',
         'select analyte, full_name, chem_class, aliases, cas_rn, current_database() as db from e_analyte'
@@ -645,11 +649,132 @@ dbrows as (
 		'select analyte, full_name, chem_class, aliases, cas_rn, current_database() as db from e_analyte'     
 	) as d (analyte text, full_name text, chem_class text, aliases text, cas_rn text, db text)
 )
-select analyte, full_name, chem_class, cas_rn, aliases
+select 
+	analyte, full_name, chem_class, cas_rn, aliases, 
+	count(*) as num_instances, string_agg(db, '; ') as db
 from dbrows, const
 where analyte ilike param
-or full_name ilike param
-or aliases ilike param
-order by chem_class, analyte, db;
+   or full_name ilike param
+   or aliases ilike param
+group by analyte, full_name, chem_class, cas_rn, aliases
+order by chem_class, analyte;
+```
 
+### Analytical Methods
+
+```sql
+with
+const (param) as (
+    values ('%SW8260%')
+),
+dbrows as (
+   select method_code, description, lab_prep_method, lab_extraction_method, lab_anal_method, lab_leach_method, current_database() as db from e_analmethod
+  union
+    select * from dblink(
+        'dbname=ahtna',
+        'select method_code, description, lab_prep_method, lab_extraction_method, lab_anal_method, lab_leach_method, current_database() as db from e_analmethod'
+    ) as d (method_code text, description text, lab_prep_method text, lab_extraction_method text, lab_anal_method text, lab_leach_method text, db text)
+  union
+    select * from dblink(
+    	'dbname=arkema_ph',
+        'select method_code, description, lab_prep_method, lab_extraction_method, lab_anal_method, lab_leach_method, current_database() as db from e_analmethod'
+    ) as d (method_code text, description text, lab_prep_method text, lab_extraction_method text, lab_anal_method text, lab_leach_method text, db text)
+  union
+    select * from dblink(
+		'dbname=bae_north',
+        'select method_code, description, lab_prep_method, lab_extraction_method, lab_anal_method, lab_leach_method, current_database() as db from e_analmethod'
+    ) as d (method_code text, description text, lab_prep_method text, lab_extraction_method text, lab_anal_method text, lab_leach_method text, db text)
+  union
+    select * from dblink(
+		'dbname=bayer_ldw',
+        'select method_code, description, lab_prep_method, lab_extraction_method, lab_anal_method, lab_leach_method, current_database() as db from e_analmethod'
+    ) as d (method_code text, description text, lab_prep_method text, lab_extraction_method text, lab_anal_method text, lab_leach_method text, db text)
+  union
+    select * from dblink(
+		'dbname=bcsa',
+        'select method_code, description, lab_prep_method, lab_extraction_method, lab_anal_method, lab_leach_method, current_database() as db from e_analmethod'
+    ) as d (method_code text, description text, lab_prep_method text, lab_extraction_method text, lab_anal_method text, lab_leach_method text, db text)
+  union
+    select * from dblink(
+		'dbname=c840_livent',
+        'select method_code, description, lab_prep_method, lab_extraction_method, lab_anal_method, lab_leach_method, current_database() as db from e_analmethod'
+    ) as d (method_code text, description text, lab_prep_method text, lab_extraction_method text, lab_anal_method text, lab_leach_method text, db text)
+  union
+    select * from dblink(
+		'dbname=cabotroad',
+        'select method_code, description, lab_prep_method, lab_extraction_method, lab_anal_method, lab_leach_method, current_database() as db from e_analmethod'
+    ) as d (method_code text, description text, lab_prep_method text, lab_extraction_method text, lab_anal_method text, lab_leach_method text, db text)
+  union
+    select * from dblink(
+		'dbname=centralia',
+        'select method_code, description, lab_prep_method, lab_extraction_method, lab_anal_method, lab_leach_method, current_database() as db from e_analmethod'
+    ) as d (method_code text, description text, lab_prep_method text, lab_extraction_method text, lab_anal_method text, lab_leach_method text, db text)
+  union
+    select * from dblink(
+		'dbname=centredale',
+        'select method_code, description, lab_prep_method, lab_extraction_method, lab_anal_method, lab_leach_method, current_database() as db from e_analmethod'
+    ) as d (method_code text, description text, lab_prep_method text, lab_extraction_method text, lab_anal_method text, lab_leach_method text, db text)
+  union
+    select * from dblink(
+		'dbname=eos',
+        'select method_code, description, lab_prep_method, lab_extraction_method, lab_anal_method, lab_leach_method, current_database() as db from e_analmethod'
+    ) as d (method_code text, description text, lab_prep_method text, lab_extraction_method text, lab_anal_method text, lab_leach_method text, db text)
+  union
+    select * from dblink(
+		'dbname=evraz_inwater',
+        'select method_code, description, lab_prep_method, lab_extraction_method, lab_anal_method, lab_leach_method, current_database() as db from e_analmethod'
+    ) as d (method_code text, description text, lab_prep_method text, lab_extraction_method text, lab_anal_method text, lab_leach_method text, db text)
+  union
+    select * from dblink(
+		'dbname=frenchtown_mill',
+        'select method_code, description, lab_prep_method, lab_extraction_method, lab_anal_method, lab_leach_method, current_database() as db from e_analmethod'
+    ) as d (method_code text, description text, lab_prep_method text, lab_extraction_method text, lab_anal_method text, lab_leach_method text, db text)
+  union
+    select * from dblink(
+		'dbname=gemt_columbus',
+        'select method_code, description, lab_prep_method, lab_extraction_method, lab_anal_method, lab_leach_method, current_database() as db from e_analmethod'
+    ) as d (method_code text, description text, lab_prep_method text, lab_extraction_method text, lab_anal_method text, lab_leach_method text, db text)
+  union
+    select * from dblink(
+    	'dbname=gemt_meridian',
+        'select method_code, description, lab_prep_method, lab_extraction_method, lab_anal_method, lab_leach_method, current_database() as db from e_analmethod'
+    ) as d (method_code text, description text, lab_prep_method text, lab_extraction_method text, lab_anal_method text, lab_leach_method text, db text)
+  union
+    select * from dblink(
+		'dbname=gemt_springfield',
+        'select method_code, description, lab_prep_method, lab_extraction_method, lab_anal_method, lab_leach_method, current_database() as db from e_analmethod'
+    ) as d (method_code text, description text, lab_prep_method text, lab_extraction_method text, lab_anal_method text, lab_leach_method text, db text)
+  union
+    select * from dblink(
+		'dbname=reddog',
+        'select method_code, description, lab_prep_method, lab_extraction_method, lab_anal_method, lab_leach_method, current_database() as db from e_analmethod'
+    ) as d (method_code text, description text, lab_prep_method text, lab_extraction_method text, lab_anal_method text, lab_leach_method text, db text)
+  union
+    select * from dblink(
+		'dbname=shoreham',
+        'select method_code, description, lab_prep_method, lab_extraction_method, lab_anal_method, lab_leach_method, current_database() as db from e_analmethod'
+    ) as d (method_code text, description text, lab_prep_method text, lab_extraction_method text, lab_anal_method text, lab_leach_method text, db text)
+  union
+    select * from dblink(
+		'dbname=solvay',
+        'select method_code, description, lab_prep_method, lab_extraction_method, lab_anal_method, lab_leach_method, current_database() as db from e_analmethod'
+    ) as d (method_code text, description text, lab_prep_method text, lab_extraction_method text, lab_anal_method text, lab_leach_method text, db text)
+  union
+    select * from dblink(
+		'dbname=three_m_mb',
+        'select method_code, description, lab_prep_method, lab_extraction_method, lab_anal_method, lab_leach_method, current_database() as db from e_analmethod'
+    ) as d (method_code text, description text, lab_prep_method text, lab_extraction_method text, lab_anal_method text, lab_leach_method text, db text)
+)
+select 
+	method_code, description, lab_prep_method, lab_extraction_method, lab_anal_method, lab_leach_method,
+	count(*) as num_instances, string_agg(db, '; ') as db
+from dbrows, const
+where method_code ilike param
+   or description ilike param
+   or lab_prep_method ilike param
+   or lab_extraction_method ilike param
+   or lab_anal_method ilike param
+   or lab_leach_method ilike param
+group by method_code, description, lab_prep_method, lab_extraction_method, lab_anal_method, lab_leach_method
+order by method_code;
 ```
