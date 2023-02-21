@@ -77,7 +77,7 @@ execute:
 ```{python}
 import re
 
-text_string = '''
+text_string = """
 Hello world
 
 8001234567
@@ -87,15 +87,15 @@ Hello world
 some.email@email.com
 mycompany@company.net
 wierd-12-address-4@somedomain.blah
-'''
+"""
 
-pattern = re.compile(r'[0-9]{3}[.-]?[0-9]{3}[.-]?[0-9]{4}')
+pattern = re.compile(r"[0-9]{3}[.-]?[0-9]{3}[.-]?[0-9]{4}")
 matches = re.finditer(pattern, text_string)
 
 for match in matches:
-  print(match)
-  print(match.span())
-  print(text_string[match.start():match.end()])
+    print(match)
+    print(match.span())
+    print(text_string[match.start() : match.end()])
 ```
 
 # OOP Basics
@@ -141,6 +141,7 @@ class Employee:
         """Create representational object string"""
         return f"""Employee(first_name = {self.first_name}, last_name = {self.last_name}, position = {self.position}, years_employed = {self.years_employed})"""
 
+
 current_employees = [
     Employee("Geo", "Coug", "Developer", 6),
     Employee("Jane", "Doe", "HR", 4),
@@ -155,135 +156,11 @@ for e in current_employees:
     print("Salary: ${:,}\n".format(e.salary))
 ```
 
-# CSV Files
-
-## DB and File Objects
-
-```{python}
-import csv
-
-class CsvFile(object):
-    """CsvFile class automatically opens a file and creates a CSV reader, reads the first row containing column headers, and stores those headers so that they can be used to construct the INSERT statement."""
-
-    def __init__(self, filename):
-        self.fn = filename
-        self.f = None
-        self.open()
-        self.rdr = csv.reader(self.f)
-        self.headers = next(self.rdr)
-
-    def open(self):
-        if self.f is None:
-            mode = "rb" if sys.version_info < (3,) else "r"
-            self.f = open(self.fn, mode)
-
-    def reader(self):
-        return self.rdr
-
-    def close(self):
-        self.rdr = None
-        self.f.close()
-        self.f = None
-
-class Database(object):
-    """The Database class and subclasses provide a database connection for each type of DBMS, and a method to construct an INSERT statement for a given CsvFile object, using that DBMS's parameter substitution string.  The conn_info argument is a dictionary containing the host name, user name, and password."""
-
-    def __init__(self, conn_info):
-        self.paramstr = "%s"
-        self.conn = None
-
-    def insert_sql(self, tablename, csvfile):
-        return "insert into %s (%s) values (%s);" % (
-            tablename,
-            ",".join(csvfile.headers),
-            ",".join([self.paramstr] * len(csvfile.headers)),
-        )
-
-class PgDb(Database):
-    """Connection object for PostgreSQL"""
-
-    def __init__(self, conn_info):
-        self.db_type = "p"
-        import psycopg2
-
-        self.paramstr = "%s"
-        connstr = (
-            "host=%(server)s dbname=%(db)s user=%(user)s password=%(pw)s" % conn_info
-        )
-        self.conn = psycopg2.connect(connstr)
-
-class MariaDb(Database):
-    """Connection object for Maria DB"""
-
-    def __init__(self, conn_info):
-        self.db_type = "m"
-        import pymysql
-
-        self.paramstr = "%s"
-        self.conn = pymysql.connect(
-            host=conn_info["server"],
-            database=conn_info["db"],
-            port=3306,
-            user=conn_info["user"],
-            password=conn_info["pw"],
-        )
-```
-
-## Import Functions
-
-### Postgres COPY command
-
-```{python}
-def postgres_copy(csvfile, db):
-    curs = db.conn.cursor()
-    rf = open(csvfile.fn, "rt")
-    # Read and discard headers
-    hdrs = rf.readline()
-    copy_cmd = "copy copy_test from stdin with (format csv)"
-    curs.copy_expert(copy_cmd, rf)
-```
-
-### Row-by-row reading and writing
-
-```{python}
-def simple_copy(csvfile, db):
-    ins_sql = db.insert_sql('copy_test', csvfile)
-    curs = db.conn.cursor()
-    rdr = csvfile.reader()
-    for line in rdr:
-        curs.execute(ins_sql, clean_line(line))
-        db.conn.commit()
-```
-
-### Buffered reading and writing
-
-```{python}
-def buffer1_copy(csvfile, db, buflines):
-    ins_sql = db.insert_sql("copy_test", csvfile)
-    curs = db.conn.cursor()
-    rdr = csvfile.reader()
-    eof = False
-    while True:
-        b = []
-        for j in range(buflines):
-            try:
-                line = next(rdr)
-            except StopIteration:
-                eof = True
-            else:
-                b.append(clean_line(line))
-        if len(b) > 0:
-            curs.executemany(ins_sql, b)
-            if eof:
-                break
-    db.conn.commit()
-
-```
-
 # DBMS Data Types
 
 ```{python}
 import pandas as pd
+
 df = pd.read_csv("./static/data-types.csv")
 df.to_html(index=False)
 ```
@@ -299,7 +176,7 @@ df.to_html(index=False)
 
 # DB Table Dependencies
 
-```{python}
+```py
 def dependency_order(dep_list):
     rem_tables = list(set([t[0] for t in dep_list] + [t[1] for t in dep_list]))
     rem_dep = copy.copy(dep_list)
@@ -319,7 +196,7 @@ def dependency_order(dep_list):
 
 # CSV Sniffer
 
-```{python}
+```py
 import re
 
 class CsvDiagError(Exception):
@@ -690,3 +567,89 @@ def diagnose_delim(linestream, possible_delimiters=None, possible_quotechars=Non
     # Should never get here
     raise CsvDiagError("CSV diagnosis error: an untested set of conditions are present")
 ```
+
+# Import CSV to a Database
+
+```py
+
+class CsvFile(object):
+    """CsvFile class automatically opens a file and creates a CSV reader, reads the first row containing column headers, and stores those headers so that they can be used to construct the INSERT statement."""
+    def __init__(self, filename):
+        self.fn = filename
+        self.f = None
+        self.open()
+        self.rdr = csv.reader(self.f)
+        self.headers = next(self.rdr)
+    def open(self):
+        if self.f is None:
+            mode = "rb" if sys.version_info < (3,) else "r"
+            self.f = open(self.fn, mode)
+    def reader(self):
+        return self.rdr
+    def close(self):
+        self.rdr = None
+        self.f.close()
+        self.f = None
+
+
+class Database(object):
+    """The Database class and subclasses provide a database connection for each type of DBMS, and a method to construct an INSERT statement for a given CsvFile object, using that DBMS's parameter substitution string.  The conn_info argument is a dictionary containing the host name, user name, and password."""
+    def __init__(self, conn_info):
+        self.paramstr = '%s'
+        self.conn = None
+    def insert_sql(self, tablename, csvfile):
+        return "insert into %s (%s) values (%s);" % (
+                tablename,
+                ",".join(csvfile.headers),
+                ",".join([self.paramstr] * len(csvfile.headers))
+                )
+
+
+class PgDb(Database):
+    def __init__(self, conn_info):
+        self.db_type = "p"
+        import psycopg2
+        self.paramstr = "%s"
+        connstr = "host=%(server)s dbname=%(db)s user=%(user)s password=%(pw)s" % conn_info
+        self.conn = psycopg2.connect(connstr)
+
+    def postgres_copy(csvfile, db):
+        """Postgres COPY command. Fastest implementation"""
+        curs = db.conn.cursor()
+        rf = open(csvfile.fn, "rt")
+        # Read and discard headers
+        hdrs = rf.readline()
+        copy_cmd = "copy copy_test from stdin with (format csv)"
+        curs.copy_expert(copy_cmd, rf)
+
+    def simple_copy(csvfile, db):
+        """Row-by-row reading and writing"""
+        ins_sql = db.insert_sql("copy_test", csvfile)
+        curs = db.conn.cursor()
+        rdr = csvfile.reader()
+        for line in rdr:
+            curs.execute(ins_sql, clean_line(line))
+        db.conn.commit()
+
+    def buffer1_copy(csvfile, db, buflines):
+        """Buffered reading and writing"""
+        ins_sql = db.insert_sql("copy_test", csvfile)
+        curs = db.conn.cursor()
+        rdr = csvfile.reader()
+        eof = False
+        while True:
+            b = []
+            for j in range(buflines):
+                try:
+                    line = next(rdr)
+                except StopIteration:
+                    eof = True
+                else:
+                    b.append(clean_line(line))
+            if len(b) > 0:
+                curs.executemany(ins_sql, b)
+            if eof:
+                break
+        db.conn.commit()
+```
+
