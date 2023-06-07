@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.340">
+<meta name="generator" content="quarto-1.3.361">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -95,7 +95,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script src="site_libs/quarto-diagram/mermaid.min.js"></script>
@@ -242,6 +243,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#analytes" id="toc-analytes" class="nav-link" data-scroll-target="#analytes">Analytes</a></li>
   <li><a href="#analytical-methods" id="toc-analytical-methods" class="nav-link" data-scroll-target="#analytical-methods">Analytical Methods</a></li>
   </ul></li>
+  <li><a href="#wipe-schema-tables" id="toc-wipe-schema-tables" class="nav-link" data-scroll-target="#wipe-schema-tables">Wipe Schema Tables</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -1024,9 +1026,41 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb25-112"><a href="#cb25-112" aria-hidden="true" tabindex="-1"></a>   <span class="kw">or</span> lab_leach_method ilike param</span>
 <span id="cb25-113"><a href="#cb25-113" aria-hidden="true" tabindex="-1"></a><span class="kw">group</span> <span class="kw">by</span> method_code, description, lab_prep_method, lab_extraction_method, lab_anal_method, lab_leach_method</span>
 <span id="cb25-114"><a href="#cb25-114" aria-hidden="true" tabindex="-1"></a><span class="kw">order</span> <span class="kw">by</span> method_code;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-
 </section>
+</section>
+<section id="wipe-schema-tables" class="level2">
+<h2 class="anchored" data-anchor-id="wipe-schema-tables">Wipe Schema Tables</h2>
+<div class="sourceCode" id="cb26"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- DROP FUNCTION IF EXISTS idb.wipe_staging();</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">OR</span> <span class="kw">REPLACE</span> <span class="kw">FUNCTION</span> idb.wipe_staging()</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>RETURNS <span class="kw">TABLE</span>(staging_schema text, deleted_tables <span class="dt">integer</span>) </span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>LANGUAGE <span class="st">'plpgsql'</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="kw">COST</span> <span class="dv">100</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>VOLATILE <span class="kw">PARALLEL</span> UNSAFE</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="kw">ROWS</span> <span class="dv">1000</span></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a><span class="kw">AS</span> $BODY$</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>#variable_conflict use_column</span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a><span class="kw">DECLARE</span></span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>  staging_schema TEXT;</span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>  table_name TEXT;</span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>  deleted_tables <span class="dt">INTEGER</span> <span class="op">:=</span> <span class="dv">0</span>;</span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a><span class="cf">BEGIN</span></span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>staging_schema <span class="op">=</span> (<span class="kw">select</span> <span class="st">'stg_'</span> <span class="op">||</span> <span class="fu">user</span>):<span class="ch">:text</span>;</span>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a><span class="cf">FOR</span> table_name <span class="kw">IN</span> (</span>
+<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">SELECT</span> table_name </span>
+<span id="cb26-18"><a href="#cb26-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">FROM</span> information_schema.<span class="kw">tables</span></span>
+<span id="cb26-19"><a href="#cb26-19" aria-hidden="true" tabindex="-1"></a>    <span class="kw">WHERE</span> table_schema <span class="op">=</span> staging_schema</span>
+<span id="cb26-20"><a href="#cb26-20" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb26-21"><a href="#cb26-21" aria-hidden="true" tabindex="-1"></a><span class="cf">LOOP</span></span>
+<span id="cb26-22"><a href="#cb26-22" aria-hidden="true" tabindex="-1"></a><span class="kw">EXECUTE</span> format(<span class="st">'DROP TABLE %I.%I CASCADE'</span>, staging_schema, table_name );</span>
+<span id="cb26-23"><a href="#cb26-23" aria-hidden="true" tabindex="-1"></a>deleted_tables <span class="op">:=</span> deleted_tables <span class="op">+</span> <span class="dv">1</span>;</span>
+<span id="cb26-24"><a href="#cb26-24" aria-hidden="true" tabindex="-1"></a><span class="cf">END</span> <span class="cf">LOOP</span>;</span>
+<span id="cb26-25"><a href="#cb26-25" aria-hidden="true" tabindex="-1"></a><span class="kw">RETURN</span> <span class="kw">query</span> <span class="kw">select</span> staging_schema, deleted_tables;</span>
+<span id="cb26-26"><a href="#cb26-26" aria-hidden="true" tabindex="-1"></a><span class="cf">END</span>;</span>
+<span id="cb26-27"><a href="#cb26-27" aria-hidden="true" tabindex="-1"></a>$BODY$;</span>
+<span id="cb26-28"><a href="#cb26-28" aria-hidden="true" tabindex="-1"></a><span class="kw">ALTER</span> <span class="kw">FUNCTION</span> idb.wipe_staging()</span>
+<span id="cb26-29"><a href="#cb26-29" aria-hidden="true" tabindex="-1"></a>    OWNER <span class="kw">TO</span> envdb_dm;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+
 </section>
 </section>
 

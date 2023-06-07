@@ -778,3 +778,37 @@ where method_code ilike param
 group by method_code, description, lab_prep_method, lab_extraction_method, lab_anal_method, lab_leach_method
 order by method_code;
 ```
+
+## Wipe Schema Tables
+
+```sql
+-- DROP FUNCTION IF EXISTS idb.wipe_staging();
+CREATE OR REPLACE FUNCTION idb.wipe_staging()
+RETURNS TABLE(staging_schema text, deleted_tables integer) 
+LANGUAGE 'plpgsql'
+COST 100
+VOLATILE PARALLEL UNSAFE
+ROWS 1000
+AS $BODY$
+#variable_conflict use_column
+DECLARE
+  staging_schema TEXT;
+  table_name TEXT;
+  deleted_tables INTEGER := 0;
+BEGIN
+staging_schema = (select 'stg_' || user)::text;
+FOR table_name IN (
+    SELECT table_name 
+    FROM information_schema.tables
+    WHERE table_schema = staging_schema
+)
+LOOP
+EXECUTE format('DROP TABLE %I.%I CASCADE', staging_schema, table_name );
+deleted_tables := deleted_tables + 1;
+END LOOP;
+RETURN query select staging_schema, deleted_tables;
+END;
+$BODY$;
+ALTER FUNCTION idb.wipe_staging()
+    OWNER TO envdb_dm;
+```
