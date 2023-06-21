@@ -23,8 +23,8 @@ website:
             href: dbms.qmd
           - text: "Python"
             href: python.qmd
-          - text: "R"
-            href: r.qmd
+          # - text: "R"
+          #   href: r.qmd
           - text: "Server"
             href: server.qmd
           - text: "Tools"

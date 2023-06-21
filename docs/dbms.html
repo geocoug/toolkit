@@ -141,10 +141,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">Python</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./r.html" rel="" target="">
- <span class="dropdown-text">R</span></a>
-  </li>  
-        <li>
     <a class="dropdown-item" href="./server.html" rel="" target="">
  <span class="dropdown-text">Server</span></a>
   </li>  
@@ -244,6 +240,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#analytical-methods" id="toc-analytical-methods" class="nav-link" data-scroll-target="#analytical-methods">Analytical Methods</a></li>
   </ul></li>
   <li><a href="#wipe-schema-tables" id="toc-wipe-schema-tables" class="nav-link" data-scroll-target="#wipe-schema-tables">Wipe Schema Tables</a></li>
+  <li><a href="#create-a-read-only-user" id="toc-create-a-read-only-user" class="nav-link" data-scroll-target="#create-a-read-only-user">Create a read-only user</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -1059,6 +1056,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb26-27"><a href="#cb26-27" aria-hidden="true" tabindex="-1"></a>$BODY$;</span>
 <span id="cb26-28"><a href="#cb26-28" aria-hidden="true" tabindex="-1"></a><span class="kw">ALTER</span> <span class="kw">FUNCTION</span> idb.wipe_staging()</span>
 <span id="cb26-29"><a href="#cb26-29" aria-hidden="true" tabindex="-1"></a>    OWNER <span class="kw">TO</span> envdb_dm;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="create-a-read-only-user" class="level2">
+<h2 class="anchored" data-anchor-id="create-a-read-only-user">Create a read-only user</h2>
+<div class="sourceCode" id="cb27"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">grant</span> <span class="kw">connect</span> <span class="kw">on</span> <span class="kw">database</span> db_name <span class="kw">to</span> <span class="fu">user</span>;</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="kw">grant</span> <span class="kw">usage</span> <span class="kw">on</span> <span class="kw">schema</span> schema_name <span class="kw">to</span> <span class="fu">user</span>;</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="kw">grant</span> <span class="kw">select</span> <span class="kw">on</span> <span class="kw">all</span> <span class="kw">tables</span> <span class="kw">in</span> <span class="kw">schema</span> schema_name <span class="kw">to</span> <span class="fu">user</span>;</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="kw">alter</span> <span class="kw">default</span> <span class="kw">privileges</span> <span class="kw">in</span> <span class="kw">schema</span> schema_name <span class="kw">grant</span> <span class="kw">select</span> <span class="kw">on</span> <span class="kw">tables</span> <span class="kw">to</span> <span class="fu">user</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
