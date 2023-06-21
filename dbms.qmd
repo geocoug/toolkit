@@ -812,3 +812,12 @@ $BODY$;
 ALTER FUNCTION idb.wipe_staging()
     OWNER TO envdb_dm;
 ```
+
+## Create a read-only user
+
+```sql
+grant connect on database db_name to user;
+grant usage on schema schema_name to user;
+grant select on all tables in schema schema_name to user;
+alter default privileges in schema schema_name grant select on tables to user;
+```
