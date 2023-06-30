@@ -350,7 +350,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#analytical-methods" id="toc-analytical-methods" class="nav-link" data-scroll-target="#analytical-methods">Analytical Methods</a></li>
   </ul></li>
   <li><a href="#wipe-schema-tables" id="toc-wipe-schema-tables" class="nav-link" data-scroll-target="#wipe-schema-tables">Wipe Schema Tables</a></li>
-  <li><a href="#create-a-read-only-user-1" id="toc-create-a-read-only-user-1" class="nav-link" data-scroll-target="#create-a-read-only-user-1">Create a read-only user</a></li>
   <li><a href="#sandbox" id="toc-sandbox" class="nav-link" data-scroll-target="#sandbox">Sandbox</a>
   <ul class="collapse">
   <li><a href="#basic-table-joins" id="toc-basic-table-joins" class="nav-link" data-scroll-target="#basic-table-joins">Basic Table Joins</a></li>
@@ -556,23 +555,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-4" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-annotation="1" data-code-lines="1,2,3,4,5" data-code-cell="annotated-cell-4">Create a read-only user.</span>
+<span data-code-lines="1,2,3,4,5" data-code-cell="annotated-cell-4" data-code-annotation="1">Create a read-only user.</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-annotation="2" data-code-lines="7" data-code-cell="annotated-cell-4">Allow user to create database objects.</span>
+<span data-code-lines="7" data-code-cell="annotated-cell-4" data-code-annotation="2">Allow user to create database objects.</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-annotation="3" data-code-lines="9" data-code-cell="annotated-cell-4">Allow user to insert rows to any schema and table.</span>
+<span data-code-lines="9" data-code-cell="annotated-cell-4" data-code-annotation="3">Allow user to insert rows to any schema and table.</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-annotation="4" data-code-lines="11" data-code-cell="annotated-cell-4">Allow user to update rows in any schema and table.</span>
+<span data-code-lines="11" data-code-cell="annotated-cell-4" data-code-annotation="4">Allow user to update rows in any schema and table.</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-annotation="5" data-code-lines="13" data-code-cell="annotated-cell-4">Allow user to delete rows in any schema and table.</span>
+<span data-code-lines="13" data-code-cell="annotated-cell-4" data-code-annotation="5">Allow user to delete rows in any schema and table.</span>
 </dd>
 </dl>
 </section>
@@ -648,7 +647,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="kw">create</span> <span class="kw">schema</span> staging;</span>
 <span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a><span class="co">-- Add a unique constraint to e_analyte.full_name and e_analyte.cas_rn so that</span></span>
-<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a><span class="co">--  no full name or cas_rn can be used for more than one analyte</span></span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a><span class="co">-- no full name or cas_rn can be used for more than one analyte</span></span>
 <span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a><span class="co">-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
 <span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a><span class="kw">alter</span> <span class="kw">table</span> e_analyte</span>
 <span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>  <span class="kw">add</span> <span class="kw">constraint</span> uc_fullname <span class="kw">unique</span>(full_name),</span>
@@ -739,19 +738,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="list-functionsdefsargs" class="level2">
 <h2 class="anchored" data-anchor-id="list-functionsdefsargs">List functions/defs/args</h2>
 <div class="sourceCode" id="cb16"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">select</span> </span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    pg_get_userbyid(p.proowner) <span class="kw">as</span> owner,</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    n.nspname <span class="kw">as</span> function_schema,</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    p.proname <span class="kw">as</span> function_name,</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    l.lanname <span class="kw">as</span> function_language,</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">case</span> <span class="cf">when</span> l.lanname <span class="op">=</span> <span class="st">'internal'</span> <span class="cf">then</span> p.prosrc</span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span> pg_get_functiondef(p.<span class="kw">oid</span>)</span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">end</span> <span class="kw">as</span> definition,</span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>    pg_get_function_arguments(p.<span class="kw">oid</span>) <span class="kw">as</span> function_arguments,</span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>    t.typname <span class="kw">as</span> return_type</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a> pg_get_userbyid(p.proowner) <span class="kw">as</span> owner,</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a> n.nspname <span class="kw">as</span> function_schema,</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a> p.proname <span class="kw">as</span> function_name,</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a> l.lanname <span class="kw">as</span> function_language,</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a> <span class="cf">case</span> <span class="cf">when</span> l.lanname <span class="op">=</span> <span class="st">'internal'</span> <span class="cf">then</span> p.prosrc</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> pg_get_functiondef(p.<span class="kw">oid</span>)</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">end</span> <span class="kw">as</span> definition,</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a> pg_get_function_arguments(p.<span class="kw">oid</span>) <span class="kw">as</span> function_arguments,</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a> t.typname <span class="kw">as</span> return_type</span>
 <span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="kw">from</span> pg_proc p</span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">left</span> <span class="kw">join</span> pg_namespace n <span class="kw">on</span> p.pronamespace <span class="op">=</span> n.<span class="kw">oid</span></span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">left</span> <span class="kw">join</span> pg_language l <span class="kw">on</span> p.prolang <span class="op">=</span> l.<span class="kw">oid</span></span>
-<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">left</span> <span class="kw">join</span> pg_type t <span class="kw">on</span> t.<span class="kw">oid</span> <span class="op">=</span> p.prorettype </span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a> <span class="kw">left</span> <span class="kw">join</span> pg_namespace n <span class="kw">on</span> p.pronamespace <span class="op">=</span> n.<span class="kw">oid</span></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a> <span class="kw">left</span> <span class="kw">join</span> pg_language l <span class="kw">on</span> p.prolang <span class="op">=</span> l.<span class="kw">oid</span></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a> <span class="kw">left</span> <span class="kw">join</span> pg_type t <span class="kw">on</span> t.<span class="kw">oid</span> <span class="op">=</span> p.prorettype </span>
 <span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a><span class="kw">where</span> n.nspname <span class="kw">not</span> <span class="kw">in</span> (<span class="st">'pg_catalog'</span>, <span class="st">'information_schema'</span>)</span>
 <span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a><span class="kw">and</span> n.nspname <span class="op">=</span> <span class="st">'idb'</span></span>
 <span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a><span class="kw">order</span> <span class="kw">by</span> function_schema, function_name;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -833,98 +832,98 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a>        ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text, db text)</span>
 <span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
 <span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
-<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a>        <span class="st">'dbname=arkema_ph'</span>,</span>
-<span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a>        <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn, current_database() as db from e_analyte'</span></span>
-<span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text, db text)</span>
+<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a>     <span class="st">'dbname=arkema_ph'</span>,</span>
+<span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a>     <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn, current_database() as db from e_analyte'</span></span>
+<span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a> ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text, db text)</span>
 <span id="cb25-22"><a href="#cb25-22" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
 <span id="cb25-23"><a href="#cb25-23" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
-<span id="cb25-24"><a href="#cb25-24" aria-hidden="true" tabindex="-1"></a>        <span class="st">'dbname=bae_north'</span>,</span>
-<span id="cb25-25"><a href="#cb25-25" aria-hidden="true" tabindex="-1"></a>        <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn, current_database() as db from e_analyte'</span></span>
-<span id="cb25-26"><a href="#cb25-26" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text, db text)</span>
+<span id="cb25-24"><a href="#cb25-24" aria-hidden="true" tabindex="-1"></a>  <span class="st">'dbname=bae_north'</span>,</span>
+<span id="cb25-25"><a href="#cb25-25" aria-hidden="true" tabindex="-1"></a>  <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn, current_database() as db from e_analyte'</span></span>
+<span id="cb25-26"><a href="#cb25-26" aria-hidden="true" tabindex="-1"></a> ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text, db text)</span>
 <span id="cb25-27"><a href="#cb25-27" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
 <span id="cb25-28"><a href="#cb25-28" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
-<span id="cb25-29"><a href="#cb25-29" aria-hidden="true" tabindex="-1"></a>        <span class="st">'dbname=bayer_ldw'</span>,</span>
-<span id="cb25-30"><a href="#cb25-30" aria-hidden="true" tabindex="-1"></a>        <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn, current_database() as db from e_analyte'</span></span>
-<span id="cb25-31"><a href="#cb25-31" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text, db text)</span>
+<span id="cb25-29"><a href="#cb25-29" aria-hidden="true" tabindex="-1"></a>  <span class="st">'dbname=bayer_ldw'</span>,</span>
+<span id="cb25-30"><a href="#cb25-30" aria-hidden="true" tabindex="-1"></a>  <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn, current_database() as db from e_analyte'</span></span>
+<span id="cb25-31"><a href="#cb25-31" aria-hidden="true" tabindex="-1"></a> ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text, db text)</span>
 <span id="cb25-32"><a href="#cb25-32" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
 <span id="cb25-33"><a href="#cb25-33" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
-<span id="cb25-34"><a href="#cb25-34" aria-hidden="true" tabindex="-1"></a>        <span class="st">'dbname=bcsa'</span>,</span>
-<span id="cb25-35"><a href="#cb25-35" aria-hidden="true" tabindex="-1"></a>        <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn, current_database() as db from e_analyte'</span></span>
-<span id="cb25-36"><a href="#cb25-36" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text, db text)</span>
+<span id="cb25-34"><a href="#cb25-34" aria-hidden="true" tabindex="-1"></a>  <span class="st">'dbname=bcsa'</span>,</span>
+<span id="cb25-35"><a href="#cb25-35" aria-hidden="true" tabindex="-1"></a>  <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn, current_database() as db from e_analyte'</span></span>
+<span id="cb25-36"><a href="#cb25-36" aria-hidden="true" tabindex="-1"></a> ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text, db text)</span>
 <span id="cb25-37"><a href="#cb25-37" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
 <span id="cb25-38"><a href="#cb25-38" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
-<span id="cb25-39"><a href="#cb25-39" aria-hidden="true" tabindex="-1"></a>        <span class="st">'dbname=c840_livent'</span>,</span>
-<span id="cb25-40"><a href="#cb25-40" aria-hidden="true" tabindex="-1"></a>        <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn, current_database() as db from e_analyte'</span></span>
-<span id="cb25-41"><a href="#cb25-41" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text, db text)</span>
+<span id="cb25-39"><a href="#cb25-39" aria-hidden="true" tabindex="-1"></a>  <span class="st">'dbname=c840_livent'</span>,</span>
+<span id="cb25-40"><a href="#cb25-40" aria-hidden="true" tabindex="-1"></a>  <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn, current_database() as db from e_analyte'</span></span>
+<span id="cb25-41"><a href="#cb25-41" aria-hidden="true" tabindex="-1"></a> ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text, db text)</span>
 <span id="cb25-42"><a href="#cb25-42" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
 <span id="cb25-43"><a href="#cb25-43" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
-<span id="cb25-44"><a href="#cb25-44" aria-hidden="true" tabindex="-1"></a>        <span class="st">'dbname=cabotroad'</span>,</span>
-<span id="cb25-45"><a href="#cb25-45" aria-hidden="true" tabindex="-1"></a>        <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn, current_database() as db from e_analyte'</span></span>
-<span id="cb25-46"><a href="#cb25-46" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text, db text)</span>
+<span id="cb25-44"><a href="#cb25-44" aria-hidden="true" tabindex="-1"></a>  <span class="st">'dbname=cabotroad'</span>,</span>
+<span id="cb25-45"><a href="#cb25-45" aria-hidden="true" tabindex="-1"></a>  <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn, current_database() as db from e_analyte'</span></span>
+<span id="cb25-46"><a href="#cb25-46" aria-hidden="true" tabindex="-1"></a> ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text, db text)</span>
 <span id="cb25-47"><a href="#cb25-47" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
 <span id="cb25-48"><a href="#cb25-48" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
-<span id="cb25-49"><a href="#cb25-49" aria-hidden="true" tabindex="-1"></a>        <span class="st">'dbname=centralia'</span>,</span>
-<span id="cb25-50"><a href="#cb25-50" aria-hidden="true" tabindex="-1"></a>        <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn, current_database() as db from e_analyte'</span></span>
-<span id="cb25-51"><a href="#cb25-51" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text, db text)</span>
+<span id="cb25-49"><a href="#cb25-49" aria-hidden="true" tabindex="-1"></a>  <span class="st">'dbname=centralia'</span>,</span>
+<span id="cb25-50"><a href="#cb25-50" aria-hidden="true" tabindex="-1"></a>  <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn, current_database() as db from e_analyte'</span></span>
+<span id="cb25-51"><a href="#cb25-51" aria-hidden="true" tabindex="-1"></a> ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text, db text)</span>
 <span id="cb25-52"><a href="#cb25-52" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
 <span id="cb25-53"><a href="#cb25-53" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
-<span id="cb25-54"><a href="#cb25-54" aria-hidden="true" tabindex="-1"></a>        <span class="st">'dbname=centredale'</span>,</span>
-<span id="cb25-55"><a href="#cb25-55" aria-hidden="true" tabindex="-1"></a>        <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn, current_database() as db from e_analyte'</span></span>
-<span id="cb25-56"><a href="#cb25-56" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text, db text)</span>
+<span id="cb25-54"><a href="#cb25-54" aria-hidden="true" tabindex="-1"></a>  <span class="st">'dbname=centredale'</span>,</span>
+<span id="cb25-55"><a href="#cb25-55" aria-hidden="true" tabindex="-1"></a>  <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn, current_database() as db from e_analyte'</span></span>
+<span id="cb25-56"><a href="#cb25-56" aria-hidden="true" tabindex="-1"></a> ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text, db text)</span>
 <span id="cb25-57"><a href="#cb25-57" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
 <span id="cb25-58"><a href="#cb25-58" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
-<span id="cb25-59"><a href="#cb25-59" aria-hidden="true" tabindex="-1"></a>        <span class="st">'dbname=eos'</span>,</span>
-<span id="cb25-60"><a href="#cb25-60" aria-hidden="true" tabindex="-1"></a>        <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn, current_database() as db from e_analyte'</span></span>
-<span id="cb25-61"><a href="#cb25-61" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text, db text)</span>
+<span id="cb25-59"><a href="#cb25-59" aria-hidden="true" tabindex="-1"></a>  <span class="st">'dbname=eos'</span>,</span>
+<span id="cb25-60"><a href="#cb25-60" aria-hidden="true" tabindex="-1"></a>  <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn, current_database() as db from e_analyte'</span></span>
+<span id="cb25-61"><a href="#cb25-61" aria-hidden="true" tabindex="-1"></a> ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text, db text)</span>
 <span id="cb25-62"><a href="#cb25-62" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
 <span id="cb25-63"><a href="#cb25-63" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
-<span id="cb25-64"><a href="#cb25-64" aria-hidden="true" tabindex="-1"></a>        <span class="st">'dbname=evraz_inwater'</span>,</span>
-<span id="cb25-65"><a href="#cb25-65" aria-hidden="true" tabindex="-1"></a>        <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn, current_database() as db from e_analyte'</span></span>
-<span id="cb25-66"><a href="#cb25-66" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text, db text)</span>
+<span id="cb25-64"><a href="#cb25-64" aria-hidden="true" tabindex="-1"></a>  <span class="st">'dbname=evraz_inwater'</span>,</span>
+<span id="cb25-65"><a href="#cb25-65" aria-hidden="true" tabindex="-1"></a>  <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn, current_database() as db from e_analyte'</span></span>
+<span id="cb25-66"><a href="#cb25-66" aria-hidden="true" tabindex="-1"></a> ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text, db text)</span>
 <span id="cb25-67"><a href="#cb25-67" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
 <span id="cb25-68"><a href="#cb25-68" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
-<span id="cb25-69"><a href="#cb25-69" aria-hidden="true" tabindex="-1"></a>        <span class="st">'dbname=frenchtown_mill'</span>,</span>
-<span id="cb25-70"><a href="#cb25-70" aria-hidden="true" tabindex="-1"></a>        <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn, current_database() as db from e_analyte'</span></span>
-<span id="cb25-71"><a href="#cb25-71" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text, db text)</span>
+<span id="cb25-69"><a href="#cb25-69" aria-hidden="true" tabindex="-1"></a>  <span class="st">'dbname=frenchtown_mill'</span>,</span>
+<span id="cb25-70"><a href="#cb25-70" aria-hidden="true" tabindex="-1"></a>  <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn, current_database() as db from e_analyte'</span></span>
+<span id="cb25-71"><a href="#cb25-71" aria-hidden="true" tabindex="-1"></a> ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text, db text)</span>
 <span id="cb25-72"><a href="#cb25-72" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
 <span id="cb25-73"><a href="#cb25-73" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
-<span id="cb25-74"><a href="#cb25-74" aria-hidden="true" tabindex="-1"></a>        <span class="st">'dbname=gemt_columbus'</span>,</span>
-<span id="cb25-75"><a href="#cb25-75" aria-hidden="true" tabindex="-1"></a>        <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn, current_database() as db from e_analyte'</span></span>
-<span id="cb25-76"><a href="#cb25-76" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text, db text)</span>
+<span id="cb25-74"><a href="#cb25-74" aria-hidden="true" tabindex="-1"></a>  <span class="st">'dbname=gemt_columbus'</span>,</span>
+<span id="cb25-75"><a href="#cb25-75" aria-hidden="true" tabindex="-1"></a>  <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn, current_database() as db from e_analyte'</span></span>
+<span id="cb25-76"><a href="#cb25-76" aria-hidden="true" tabindex="-1"></a> ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text, db text)</span>
 <span id="cb25-77"><a href="#cb25-77" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
 <span id="cb25-78"><a href="#cb25-78" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
 <span id="cb25-79"><a href="#cb25-79" aria-hidden="true" tabindex="-1"></a>    <span class="st">'dbname=gemt_meridian'</span>,</span>
 <span id="cb25-80"><a href="#cb25-80" aria-hidden="true" tabindex="-1"></a>    <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn, current_database() as db from e_analyte'</span></span>
-<span id="cb25-81"><a href="#cb25-81" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text, db text)</span>
+<span id="cb25-81"><a href="#cb25-81" aria-hidden="true" tabindex="-1"></a> ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text, db text)</span>
 <span id="cb25-82"><a href="#cb25-82" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
 <span id="cb25-83"><a href="#cb25-83" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
-<span id="cb25-84"><a href="#cb25-84" aria-hidden="true" tabindex="-1"></a>        <span class="st">'dbname=gemt_springfield'</span>,</span>
-<span id="cb25-85"><a href="#cb25-85" aria-hidden="true" tabindex="-1"></a>        <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn, current_database() as db from e_analyte'</span></span>
-<span id="cb25-86"><a href="#cb25-86" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text, db text)</span>
+<span id="cb25-84"><a href="#cb25-84" aria-hidden="true" tabindex="-1"></a>  <span class="st">'dbname=gemt_springfield'</span>,</span>
+<span id="cb25-85"><a href="#cb25-85" aria-hidden="true" tabindex="-1"></a>  <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn, current_database() as db from e_analyte'</span></span>
+<span id="cb25-86"><a href="#cb25-86" aria-hidden="true" tabindex="-1"></a> ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text, db text)</span>
 <span id="cb25-87"><a href="#cb25-87" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
 <span id="cb25-88"><a href="#cb25-88" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
-<span id="cb25-89"><a href="#cb25-89" aria-hidden="true" tabindex="-1"></a>        <span class="st">'dbname=reddog'</span>,</span>
-<span id="cb25-90"><a href="#cb25-90" aria-hidden="true" tabindex="-1"></a>        <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn, current_database() as db from e_analyte'</span></span>
-<span id="cb25-91"><a href="#cb25-91" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text, db text)</span>
+<span id="cb25-89"><a href="#cb25-89" aria-hidden="true" tabindex="-1"></a>  <span class="st">'dbname=reddog'</span>,</span>
+<span id="cb25-90"><a href="#cb25-90" aria-hidden="true" tabindex="-1"></a>  <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn, current_database() as db from e_analyte'</span></span>
+<span id="cb25-91"><a href="#cb25-91" aria-hidden="true" tabindex="-1"></a> ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text, db text)</span>
 <span id="cb25-92"><a href="#cb25-92" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
 <span id="cb25-93"><a href="#cb25-93" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
-<span id="cb25-94"><a href="#cb25-94" aria-hidden="true" tabindex="-1"></a>        <span class="st">'dbname=shoreham'</span>,</span>
-<span id="cb25-95"><a href="#cb25-95" aria-hidden="true" tabindex="-1"></a>        <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn, current_database() as db from e_analyte'</span></span>
-<span id="cb25-96"><a href="#cb25-96" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text, db text)</span>
+<span id="cb25-94"><a href="#cb25-94" aria-hidden="true" tabindex="-1"></a>  <span class="st">'dbname=shoreham'</span>,</span>
+<span id="cb25-95"><a href="#cb25-95" aria-hidden="true" tabindex="-1"></a>  <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn, current_database() as db from e_analyte'</span></span>
+<span id="cb25-96"><a href="#cb25-96" aria-hidden="true" tabindex="-1"></a> ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text, db text)</span>
 <span id="cb25-97"><a href="#cb25-97" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
 <span id="cb25-98"><a href="#cb25-98" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
-<span id="cb25-99"><a href="#cb25-99" aria-hidden="true" tabindex="-1"></a>        <span class="st">'dbname=solvay'</span>,</span>
-<span id="cb25-100"><a href="#cb25-100" aria-hidden="true" tabindex="-1"></a>        <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn, current_database() as db from e_analyte'</span></span>
-<span id="cb25-101"><a href="#cb25-101" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text, db text)</span>
+<span id="cb25-99"><a href="#cb25-99" aria-hidden="true" tabindex="-1"></a>  <span class="st">'dbname=solvay'</span>,</span>
+<span id="cb25-100"><a href="#cb25-100" aria-hidden="true" tabindex="-1"></a>  <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn, current_database() as db from e_analyte'</span></span>
+<span id="cb25-101"><a href="#cb25-101" aria-hidden="true" tabindex="-1"></a> ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text, db text)</span>
 <span id="cb25-102"><a href="#cb25-102" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
 <span id="cb25-103"><a href="#cb25-103" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
-<span id="cb25-104"><a href="#cb25-104" aria-hidden="true" tabindex="-1"></a>        <span class="st">'dbname=three_m_mb'</span>,</span>
-<span id="cb25-105"><a href="#cb25-105" aria-hidden="true" tabindex="-1"></a>        <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn, current_database() as db from e_analyte'</span>     </span>
-<span id="cb25-106"><a href="#cb25-106" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text, db text)</span>
+<span id="cb25-104"><a href="#cb25-104" aria-hidden="true" tabindex="-1"></a>  <span class="st">'dbname=three_m_mb'</span>,</span>
+<span id="cb25-105"><a href="#cb25-105" aria-hidden="true" tabindex="-1"></a>  <span class="st">'select analyte, full_name, chem_class, aliases, cas_rn, current_database() as db from e_analyte'</span>     </span>
+<span id="cb25-106"><a href="#cb25-106" aria-hidden="true" tabindex="-1"></a> ) <span class="kw">as</span> d (analyte text, full_name text, chem_class text, aliases text, cas_rn text, db text)</span>
 <span id="cb25-107"><a href="#cb25-107" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb25-108"><a href="#cb25-108" aria-hidden="true" tabindex="-1"></a><span class="kw">select</span> </span>
-<span id="cb25-109"><a href="#cb25-109" aria-hidden="true" tabindex="-1"></a>    analyte, full_name, chem_class, cas_rn, aliases, </span>
-<span id="cb25-110"><a href="#cb25-110" aria-hidden="true" tabindex="-1"></a>    <span class="fu">count</span>(<span class="op">*</span>) <span class="kw">as</span> num_instances, string_agg(db, <span class="st">'; '</span>) <span class="kw">as</span> db</span>
+<span id="cb25-109"><a href="#cb25-109" aria-hidden="true" tabindex="-1"></a> analyte, full_name, chem_class, cas_rn, aliases, </span>
+<span id="cb25-110"><a href="#cb25-110" aria-hidden="true" tabindex="-1"></a> <span class="fu">count</span>(<span class="op">*</span>) <span class="kw">as</span> num_instances, string_agg(db, <span class="st">'; '</span>) <span class="kw">as</span> db</span>
 <span id="cb25-111"><a href="#cb25-111" aria-hidden="true" tabindex="-1"></a><span class="kw">from</span> dbrows, const</span>
 <span id="cb25-112"><a href="#cb25-112" aria-hidden="true" tabindex="-1"></a><span class="kw">where</span> analyte ilike param</span>
 <span id="cb25-113"><a href="#cb25-113" aria-hidden="true" tabindex="-1"></a>   <span class="kw">or</span> full_name ilike param</span>
@@ -947,98 +946,98 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (method_code text, description text, lab_prep_method text, lab_extraction_method text, lab_anal_method text, lab_leach_method text, db text)</span>
 <span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
 <span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
-<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>        <span class="st">'dbname=arkema_ph'</span>,</span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>     <span class="st">'dbname=arkema_ph'</span>,</span>
 <span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>        <span class="st">'select method_code, description, lab_prep_method, lab_extraction_method, lab_anal_method, lab_leach_method, current_database() as db from e_analmethod'</span></span>
 <span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (method_code text, description text, lab_prep_method text, lab_extraction_method text, lab_anal_method text, lab_leach_method text, db text)</span>
 <span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
 <span id="cb26-18"><a href="#cb26-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
-<span id="cb26-19"><a href="#cb26-19" aria-hidden="true" tabindex="-1"></a>        <span class="st">'dbname=bae_north'</span>,</span>
+<span id="cb26-19"><a href="#cb26-19" aria-hidden="true" tabindex="-1"></a>  <span class="st">'dbname=bae_north'</span>,</span>
 <span id="cb26-20"><a href="#cb26-20" aria-hidden="true" tabindex="-1"></a>        <span class="st">'select method_code, description, lab_prep_method, lab_extraction_method, lab_anal_method, lab_leach_method, current_database() as db from e_analmethod'</span></span>
 <span id="cb26-21"><a href="#cb26-21" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (method_code text, description text, lab_prep_method text, lab_extraction_method text, lab_anal_method text, lab_leach_method text, db text)</span>
 <span id="cb26-22"><a href="#cb26-22" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
 <span id="cb26-23"><a href="#cb26-23" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
-<span id="cb26-24"><a href="#cb26-24" aria-hidden="true" tabindex="-1"></a>        <span class="st">'dbname=bayer_ldw'</span>,</span>
+<span id="cb26-24"><a href="#cb26-24" aria-hidden="true" tabindex="-1"></a>  <span class="st">'dbname=bayer_ldw'</span>,</span>
 <span id="cb26-25"><a href="#cb26-25" aria-hidden="true" tabindex="-1"></a>        <span class="st">'select method_code, description, lab_prep_method, lab_extraction_method, lab_anal_method, lab_leach_method, current_database() as db from e_analmethod'</span></span>
 <span id="cb26-26"><a href="#cb26-26" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (method_code text, description text, lab_prep_method text, lab_extraction_method text, lab_anal_method text, lab_leach_method text, db text)</span>
 <span id="cb26-27"><a href="#cb26-27" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
 <span id="cb26-28"><a href="#cb26-28" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
-<span id="cb26-29"><a href="#cb26-29" aria-hidden="true" tabindex="-1"></a>        <span class="st">'dbname=bcsa'</span>,</span>
+<span id="cb26-29"><a href="#cb26-29" aria-hidden="true" tabindex="-1"></a>  <span class="st">'dbname=bcsa'</span>,</span>
 <span id="cb26-30"><a href="#cb26-30" aria-hidden="true" tabindex="-1"></a>        <span class="st">'select method_code, description, lab_prep_method, lab_extraction_method, lab_anal_method, lab_leach_method, current_database() as db from e_analmethod'</span></span>
 <span id="cb26-31"><a href="#cb26-31" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (method_code text, description text, lab_prep_method text, lab_extraction_method text, lab_anal_method text, lab_leach_method text, db text)</span>
 <span id="cb26-32"><a href="#cb26-32" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
 <span id="cb26-33"><a href="#cb26-33" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
-<span id="cb26-34"><a href="#cb26-34" aria-hidden="true" tabindex="-1"></a>        <span class="st">'dbname=c840_livent'</span>,</span>
+<span id="cb26-34"><a href="#cb26-34" aria-hidden="true" tabindex="-1"></a>  <span class="st">'dbname=c840_livent'</span>,</span>
 <span id="cb26-35"><a href="#cb26-35" aria-hidden="true" tabindex="-1"></a>        <span class="st">'select method_code, description, lab_prep_method, lab_extraction_method, lab_anal_method, lab_leach_method, current_database() as db from e_analmethod'</span></span>
 <span id="cb26-36"><a href="#cb26-36" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (method_code text, description text, lab_prep_method text, lab_extraction_method text, lab_anal_method text, lab_leach_method text, db text)</span>
 <span id="cb26-37"><a href="#cb26-37" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
 <span id="cb26-38"><a href="#cb26-38" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
-<span id="cb26-39"><a href="#cb26-39" aria-hidden="true" tabindex="-1"></a>        <span class="st">'dbname=cabotroad'</span>,</span>
+<span id="cb26-39"><a href="#cb26-39" aria-hidden="true" tabindex="-1"></a>  <span class="st">'dbname=cabotroad'</span>,</span>
 <span id="cb26-40"><a href="#cb26-40" aria-hidden="true" tabindex="-1"></a>        <span class="st">'select method_code, description, lab_prep_method, lab_extraction_method, lab_anal_method, lab_leach_method, current_database() as db from e_analmethod'</span></span>
 <span id="cb26-41"><a href="#cb26-41" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (method_code text, description text, lab_prep_method text, lab_extraction_method text, lab_anal_method text, lab_leach_method text, db text)</span>
 <span id="cb26-42"><a href="#cb26-42" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
 <span id="cb26-43"><a href="#cb26-43" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
-<span id="cb26-44"><a href="#cb26-44" aria-hidden="true" tabindex="-1"></a>        <span class="st">'dbname=centralia'</span>,</span>
+<span id="cb26-44"><a href="#cb26-44" aria-hidden="true" tabindex="-1"></a>  <span class="st">'dbname=centralia'</span>,</span>
 <span id="cb26-45"><a href="#cb26-45" aria-hidden="true" tabindex="-1"></a>        <span class="st">'select method_code, description, lab_prep_method, lab_extraction_method, lab_anal_method, lab_leach_method, current_database() as db from e_analmethod'</span></span>
 <span id="cb26-46"><a href="#cb26-46" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (method_code text, description text, lab_prep_method text, lab_extraction_method text, lab_anal_method text, lab_leach_method text, db text)</span>
 <span id="cb26-47"><a href="#cb26-47" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
 <span id="cb26-48"><a href="#cb26-48" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
-<span id="cb26-49"><a href="#cb26-49" aria-hidden="true" tabindex="-1"></a>        <span class="st">'dbname=centredale'</span>,</span>
+<span id="cb26-49"><a href="#cb26-49" aria-hidden="true" tabindex="-1"></a>  <span class="st">'dbname=centredale'</span>,</span>
 <span id="cb26-50"><a href="#cb26-50" aria-hidden="true" tabindex="-1"></a>        <span class="st">'select method_code, description, lab_prep_method, lab_extraction_method, lab_anal_method, lab_leach_method, current_database() as db from e_analmethod'</span></span>
 <span id="cb26-51"><a href="#cb26-51" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (method_code text, description text, lab_prep_method text, lab_extraction_method text, lab_anal_method text, lab_leach_method text, db text)</span>
 <span id="cb26-52"><a href="#cb26-52" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
 <span id="cb26-53"><a href="#cb26-53" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
-<span id="cb26-54"><a href="#cb26-54" aria-hidden="true" tabindex="-1"></a>        <span class="st">'dbname=eos'</span>,</span>
+<span id="cb26-54"><a href="#cb26-54" aria-hidden="true" tabindex="-1"></a>  <span class="st">'dbname=eos'</span>,</span>
 <span id="cb26-55"><a href="#cb26-55" aria-hidden="true" tabindex="-1"></a>        <span class="st">'select method_code, description, lab_prep_method, lab_extraction_method, lab_anal_method, lab_leach_method, current_database() as db from e_analmethod'</span></span>
 <span id="cb26-56"><a href="#cb26-56" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (method_code text, description text, lab_prep_method text, lab_extraction_method text, lab_anal_method text, lab_leach_method text, db text)</span>
 <span id="cb26-57"><a href="#cb26-57" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
 <span id="cb26-58"><a href="#cb26-58" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
-<span id="cb26-59"><a href="#cb26-59" aria-hidden="true" tabindex="-1"></a>        <span class="st">'dbname=evraz_inwater'</span>,</span>
+<span id="cb26-59"><a href="#cb26-59" aria-hidden="true" tabindex="-1"></a>  <span class="st">'dbname=evraz_inwater'</span>,</span>
 <span id="cb26-60"><a href="#cb26-60" aria-hidden="true" tabindex="-1"></a>        <span class="st">'select method_code, description, lab_prep_method, lab_extraction_method, lab_anal_method, lab_leach_method, current_database() as db from e_analmethod'</span></span>
 <span id="cb26-61"><a href="#cb26-61" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (method_code text, description text, lab_prep_method text, lab_extraction_method text, lab_anal_method text, lab_leach_method text, db text)</span>
 <span id="cb26-62"><a href="#cb26-62" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
 <span id="cb26-63"><a href="#cb26-63" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
-<span id="cb26-64"><a href="#cb26-64" aria-hidden="true" tabindex="-1"></a>        <span class="st">'dbname=frenchtown_mill'</span>,</span>
+<span id="cb26-64"><a href="#cb26-64" aria-hidden="true" tabindex="-1"></a>  <span class="st">'dbname=frenchtown_mill'</span>,</span>
 <span id="cb26-65"><a href="#cb26-65" aria-hidden="true" tabindex="-1"></a>        <span class="st">'select method_code, description, lab_prep_method, lab_extraction_method, lab_anal_method, lab_leach_method, current_database() as db from e_analmethod'</span></span>
 <span id="cb26-66"><a href="#cb26-66" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (method_code text, description text, lab_prep_method text, lab_extraction_method text, lab_anal_method text, lab_leach_method text, db text)</span>
 <span id="cb26-67"><a href="#cb26-67" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
 <span id="cb26-68"><a href="#cb26-68" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
-<span id="cb26-69"><a href="#cb26-69" aria-hidden="true" tabindex="-1"></a>        <span class="st">'dbname=gemt_columbus'</span>,</span>
+<span id="cb26-69"><a href="#cb26-69" aria-hidden="true" tabindex="-1"></a>  <span class="st">'dbname=gemt_columbus'</span>,</span>
 <span id="cb26-70"><a href="#cb26-70" aria-hidden="true" tabindex="-1"></a>        <span class="st">'select method_code, description, lab_prep_method, lab_extraction_method, lab_anal_method, lab_leach_method, current_database() as db from e_analmethod'</span></span>
 <span id="cb26-71"><a href="#cb26-71" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (method_code text, description text, lab_prep_method text, lab_extraction_method text, lab_anal_method text, lab_leach_method text, db text)</span>
 <span id="cb26-72"><a href="#cb26-72" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
 <span id="cb26-73"><a href="#cb26-73" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
-<span id="cb26-74"><a href="#cb26-74" aria-hidden="true" tabindex="-1"></a>        <span class="st">'dbname=gemt_meridian'</span>,</span>
+<span id="cb26-74"><a href="#cb26-74" aria-hidden="true" tabindex="-1"></a>     <span class="st">'dbname=gemt_meridian'</span>,</span>
 <span id="cb26-75"><a href="#cb26-75" aria-hidden="true" tabindex="-1"></a>        <span class="st">'select method_code, description, lab_prep_method, lab_extraction_method, lab_anal_method, lab_leach_method, current_database() as db from e_analmethod'</span></span>
 <span id="cb26-76"><a href="#cb26-76" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (method_code text, description text, lab_prep_method text, lab_extraction_method text, lab_anal_method text, lab_leach_method text, db text)</span>
 <span id="cb26-77"><a href="#cb26-77" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
 <span id="cb26-78"><a href="#cb26-78" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
-<span id="cb26-79"><a href="#cb26-79" aria-hidden="true" tabindex="-1"></a>        <span class="st">'dbname=gemt_springfield'</span>,</span>
+<span id="cb26-79"><a href="#cb26-79" aria-hidden="true" tabindex="-1"></a>  <span class="st">'dbname=gemt_springfield'</span>,</span>
 <span id="cb26-80"><a href="#cb26-80" aria-hidden="true" tabindex="-1"></a>        <span class="st">'select method_code, description, lab_prep_method, lab_extraction_method, lab_anal_method, lab_leach_method, current_database() as db from e_analmethod'</span></span>
 <span id="cb26-81"><a href="#cb26-81" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (method_code text, description text, lab_prep_method text, lab_extraction_method text, lab_anal_method text, lab_leach_method text, db text)</span>
 <span id="cb26-82"><a href="#cb26-82" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
 <span id="cb26-83"><a href="#cb26-83" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
-<span id="cb26-84"><a href="#cb26-84" aria-hidden="true" tabindex="-1"></a>        <span class="st">'dbname=reddog'</span>,</span>
+<span id="cb26-84"><a href="#cb26-84" aria-hidden="true" tabindex="-1"></a>  <span class="st">'dbname=reddog'</span>,</span>
 <span id="cb26-85"><a href="#cb26-85" aria-hidden="true" tabindex="-1"></a>        <span class="st">'select method_code, description, lab_prep_method, lab_extraction_method, lab_anal_method, lab_leach_method, current_database() as db from e_analmethod'</span></span>
 <span id="cb26-86"><a href="#cb26-86" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (method_code text, description text, lab_prep_method text, lab_extraction_method text, lab_anal_method text, lab_leach_method text, db text)</span>
 <span id="cb26-87"><a href="#cb26-87" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
 <span id="cb26-88"><a href="#cb26-88" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
-<span id="cb26-89"><a href="#cb26-89" aria-hidden="true" tabindex="-1"></a>        <span class="st">'dbname=shoreham'</span>,</span>
+<span id="cb26-89"><a href="#cb26-89" aria-hidden="true" tabindex="-1"></a>  <span class="st">'dbname=shoreham'</span>,</span>
 <span id="cb26-90"><a href="#cb26-90" aria-hidden="true" tabindex="-1"></a>        <span class="st">'select method_code, description, lab_prep_method, lab_extraction_method, lab_anal_method, lab_leach_method, current_database() as db from e_analmethod'</span></span>
 <span id="cb26-91"><a href="#cb26-91" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (method_code text, description text, lab_prep_method text, lab_extraction_method text, lab_anal_method text, lab_leach_method text, db text)</span>
 <span id="cb26-92"><a href="#cb26-92" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
 <span id="cb26-93"><a href="#cb26-93" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
-<span id="cb26-94"><a href="#cb26-94" aria-hidden="true" tabindex="-1"></a>        <span class="st">'dbname=solvay'</span>,</span>
+<span id="cb26-94"><a href="#cb26-94" aria-hidden="true" tabindex="-1"></a>  <span class="st">'dbname=solvay'</span>,</span>
 <span id="cb26-95"><a href="#cb26-95" aria-hidden="true" tabindex="-1"></a>        <span class="st">'select method_code, description, lab_prep_method, lab_extraction_method, lab_anal_method, lab_leach_method, current_database() as db from e_analmethod'</span></span>
 <span id="cb26-96"><a href="#cb26-96" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (method_code text, description text, lab_prep_method text, lab_extraction_method text, lab_anal_method text, lab_leach_method text, db text)</span>
 <span id="cb26-97"><a href="#cb26-97" aria-hidden="true" tabindex="-1"></a>  <span class="kw">union</span></span>
 <span id="cb26-98"><a href="#cb26-98" aria-hidden="true" tabindex="-1"></a>    <span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> dblink(</span>
-<span id="cb26-99"><a href="#cb26-99" aria-hidden="true" tabindex="-1"></a>        <span class="st">'dbname=three_m_mb'</span>,</span>
+<span id="cb26-99"><a href="#cb26-99" aria-hidden="true" tabindex="-1"></a>  <span class="st">'dbname=three_m_mb'</span>,</span>
 <span id="cb26-100"><a href="#cb26-100" aria-hidden="true" tabindex="-1"></a>        <span class="st">'select method_code, description, lab_prep_method, lab_extraction_method, lab_anal_method, lab_leach_method, current_database() as db from e_analmethod'</span></span>
 <span id="cb26-101"><a href="#cb26-101" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">as</span> d (method_code text, description text, lab_prep_method text, lab_extraction_method text, lab_anal_method text, lab_leach_method text, db text)</span>
 <span id="cb26-102"><a href="#cb26-102" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb26-103"><a href="#cb26-103" aria-hidden="true" tabindex="-1"></a><span class="kw">select</span> </span>
-<span id="cb26-104"><a href="#cb26-104" aria-hidden="true" tabindex="-1"></a>    method_code, description, lab_prep_method, lab_extraction_method, lab_anal_method, lab_leach_method,</span>
-<span id="cb26-105"><a href="#cb26-105" aria-hidden="true" tabindex="-1"></a>    <span class="fu">count</span>(<span class="op">*</span>) <span class="kw">as</span> num_instances, string_agg(db, <span class="st">'; '</span>) <span class="kw">as</span> db</span>
+<span id="cb26-104"><a href="#cb26-104" aria-hidden="true" tabindex="-1"></a> method_code, description, lab_prep_method, lab_extraction_method, lab_anal_method, lab_leach_method,</span>
+<span id="cb26-105"><a href="#cb26-105" aria-hidden="true" tabindex="-1"></a> <span class="fu">count</span>(<span class="op">*</span>) <span class="kw">as</span> num_instances, string_agg(db, <span class="st">'; '</span>) <span class="kw">as</span> db</span>
 <span id="cb26-106"><a href="#cb26-106" aria-hidden="true" tabindex="-1"></a><span class="kw">from</span> dbrows, const</span>
 <span id="cb26-107"><a href="#cb26-107" aria-hidden="true" tabindex="-1"></a><span class="kw">where</span> method_code ilike param</span>
 <span id="cb26-108"><a href="#cb26-108" aria-hidden="true" tabindex="-1"></a>   <span class="kw">or</span> description ilike param</span>
@@ -1082,32 +1081,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb27-28"><a href="#cb27-28" aria-hidden="true" tabindex="-1"></a><span class="kw">ALTER</span> <span class="kw">FUNCTION</span> idb.wipe_staging()</span>
 <span id="cb27-29"><a href="#cb27-29" aria-hidden="true" tabindex="-1"></a>    OWNER <span class="kw">TO</span> envdb_dm;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="create-a-read-only-user-1" class="level2">
-<h2 class="anchored" data-anchor-id="create-a-read-only-user-1">Create a read-only user</h2>
-<div class="sourceCode" id="cb28"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="kw">grant</span> <span class="kw">connect</span> <span class="kw">on</span> <span class="kw">database</span> db_name <span class="kw">to</span> <span class="fu">user</span>;</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="kw">grant</span> <span class="kw">usage</span> <span class="kw">on</span> <span class="kw">schema</span> schema_name <span class="kw">to</span> <span class="fu">user</span>;</span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="kw">grant</span> <span class="kw">select</span> <span class="kw">on</span> <span class="kw">all</span> <span class="kw">tables</span> <span class="kw">in</span> <span class="kw">schema</span> schema_name <span class="kw">to</span> <span class="fu">user</span>;</span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="kw">alter</span> <span class="kw">default</span> <span class="kw">privileges</span> <span class="kw">in</span> <span class="kw">schema</span> schema_name <span class="kw">grant</span> <span class="kw">select</span> <span class="kw">on</span> <span class="kw">tables</span> <span class="kw">to</span> <span class="fu">user</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
 <section id="sandbox" class="level2">
 <h2 class="anchored" data-anchor-id="sandbox">Sandbox</h2>
 <section id="basic-table-joins" class="level3">
 <h3 class="anchored" data-anchor-id="basic-table-joins">Basic Table Joins</h3>
 <div class="interactive-sql">
-<div class="sourceCode" id="cb29"><pre class="sourceCode sql interactive hr code-with-copy"><code class="sourceCode sql"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> </span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> regions </span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> countries <span class="kw">ON</span> regions.region_id<span class="op">=</span>countries.region_id </span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> locations <span class="kw">ON</span> countries.country_id<span class="op">=</span>locations.country_id;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode sql interactive hr code-with-copy"><code class="sourceCode sql"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> </span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> regions </span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> countries <span class="kw">ON</span> regions.region_id<span class="op">=</span>countries.region_id </span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> locations <span class="kw">ON</span> countries.country_id<span class="op">=</span>locations.country_id;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="aggregating-data" class="level3">
 <h3 class="anchored" data-anchor-id="aggregating-data">Aggregating Data</h3>
 <div class="interactive-sql">
-<div class="sourceCode" id="cb30"><pre class="sourceCode sql interactive hr code-with-copy"><code class="sourceCode sql"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> regions.region_name, <span class="fu">count</span>(<span class="kw">distinct</span> countries.country_id) <span class="kw">as</span> number_of_countries</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> regions </span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> countries <span class="kw">ON</span> regions.region_id<span class="op">=</span>countries.region_id </span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> locations <span class="kw">ON</span> countries.country_id<span class="op">=</span>locations.country_id</span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> regions.region_name;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode sql interactive hr code-with-copy"><code class="sourceCode sql"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> regions.region_name, <span class="fu">count</span>(<span class="kw">distinct</span> countries.country_id) <span class="kw">as</span> number_of_countries</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> regions </span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> countries <span class="kw">ON</span> regions.region_id<span class="op">=</span>countries.region_id </span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> locations <span class="kw">ON</span> countries.country_id<span class="op">=</span>locations.country_id</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> regions.region_name;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 

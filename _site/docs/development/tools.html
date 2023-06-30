@@ -285,19 +285,8 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
   <li><a href="#image-vs.-container" id="toc-image-vs.-container" class="nav-link" data-scroll-target="#image-vs.-container">Image vs.&nbsp;Container</a></li>
-  <li><a href="#docker-basics" id="toc-docker-basics" class="nav-link" data-scroll-target="#docker-basics">Docker Basics</a>
-  <ul class="collapse">
-  <li><a href="#create-an-nginx-container" id="toc-create-an-nginx-container" class="nav-link" data-scroll-target="#create-an-nginx-container">Create an Nginx container</a></li>
-  <li><a href="#other-examples" id="toc-other-examples" class="nav-link" data-scroll-target="#other-examples">Other examples</a></li>
-  <li><a href="#processes-and-configurations" id="toc-processes-and-configurations" class="nav-link" data-scroll-target="#processes-and-configurations">Processes and configurations</a></li>
-  <li><a href="#getting-a-shell-inside-containers" id="toc-getting-a-shell-inside-containers" class="nav-link" data-scroll-target="#getting-a-shell-inside-containers">Getting a shell inside containers</a></li>
-  <li><a href="#pull-an-image-from-docker-hub" id="toc-pull-an-image-from-docker-hub" class="nav-link" data-scroll-target="#pull-an-image-from-docker-hub">Pull an image from docker hub</a></li>
-  </ul></li>
-  <li><a href="#docker-networks" id="toc-docker-networks" class="nav-link" data-scroll-target="#docker-networks">Docker Networks</a>
-  <ul class="collapse">
-  <li><a href="#publishing" id="toc-publishing" class="nav-link" data-scroll-target="#publishing">Publishing (#:#)</a></li>
-  <li><a href="#dns" id="toc-dns" class="nav-link" data-scroll-target="#dns">DNS</a></li>
-  </ul></li>
+  <li><a href="#docker-basics" id="toc-docker-basics" class="nav-link" data-scroll-target="#docker-basics">Docker Basics</a></li>
+  <li><a href="#docker-networks" id="toc-docker-networks" class="nav-link" data-scroll-target="#docker-networks">Docker Networks</a></li>
   <li><a href="#dockerfiles" id="toc-dockerfiles" class="nav-link" data-scroll-target="#dockerfiles">Dockerfiles</a></li>
   <li><a href="#keeping-the-docker-system-clean" id="toc-keeping-the-docker-system-clean" class="nav-link" data-scroll-target="#keeping-the-docker-system-clean">Keeping the Docker system clean</a></li>
   <li><a href="#volumes-an-bind-mounts" id="toc-volumes-an-bind-mounts" class="nav-link" data-scroll-target="#volumes-an-bind-mounts">Volumes an Bind Mounts</a></li>
@@ -313,16 +302,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#pull-request" id="toc-pull-request" class="nav-link" data-scroll-target="#pull-request">Pull Request</a></li>
   <li><a href="#get-changes-on-github" id="toc-get-changes-on-github" class="nav-link" data-scroll-target="#get-changes-on-github">Get Changes on Github</a></li>
   <li><a href="#view-differences" id="toc-view-differences" class="nav-link" data-scroll-target="#view-differences">View Differences</a></li>
-  <li><a href="#remove-a-branch" id="toc-remove-a-branch" class="nav-link" data-scroll-target="#remove-a-branch">Remove a Branch</a>
-  <ul class="collapse">
-  <li><a href="#locally" id="toc-locally" class="nav-link" data-scroll-target="#locally">Locally</a></li>
-  <li><a href="#remote" id="toc-remote" class="nav-link" data-scroll-target="#remote">Remote</a></li>
-  </ul></li>
-  <li><a href="#remove-tracked-filedirectory" id="toc-remove-tracked-filedirectory" class="nav-link" data-scroll-target="#remove-tracked-filedirectory">Remove tracked file/directory</a>
-  <ul class="collapse">
-  <li><a href="#file" id="toc-file" class="nav-link" data-scroll-target="#file">File</a></li>
-  <li><a href="#directory" id="toc-directory" class="nav-link" data-scroll-target="#directory">Directory</a></li>
-  </ul></li>
+  <li><a href="#remove-a-branch" id="toc-remove-a-branch" class="nav-link" data-scroll-target="#remove-a-branch">Remove a Branch</a></li>
+  <li><a href="#remove-tracked-filedirectory" id="toc-remove-tracked-filedirectory" class="nav-link" data-scroll-target="#remove-tracked-filedirectory">Remove tracked file/directory</a></li>
   <li><a href="#pre-commit" id="toc-pre-commit" class="nav-link" data-scroll-target="#pre-commit">pre-commit</a></li>
   <li><a href="#merge" id="toc-merge" class="nav-link" data-scroll-target="#merge">Merge</a></li>
   </ul></li>
@@ -330,11 +311,7 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#export-table-to-csv" id="toc-export-table-to-csv" class="nav-link" data-scroll-target="#export-table-to-csv">Export table to CSV</a></li>
   <li><a href="#backup" id="toc-backup" class="nav-link" data-scroll-target="#backup">Backup</a></li>
-  <li><a href="#restore" id="toc-restore" class="nav-link" data-scroll-target="#restore">Restore</a>
-  <ul class="collapse">
-  <li><a href="#psql-1" id="toc-psql-1" class="nav-link" data-scroll-target="#psql-1">psql</a></li>
-  <li><a href="#pg_restore" id="toc-pg_restore" class="nav-link" data-scroll-target="#pg_restore">pg_restore</a></li>
-  </ul></li>
+  <li><a href="#restore" id="toc-restore" class="nav-link" data-scroll-target="#restore">Restore</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/geocoug/toolkit/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
@@ -364,34 +341,32 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<hr>
-<section id="utility-functions" class="level1">
-<h1>Utility Functions</h1>
-<section id="movie-gif" class="level2">
-<h2 class="anchored" data-anchor-id="movie-gif">Movie &gt; Gif</h2>
+<section id="utility-functions" class="level2">
+<h2 class="anchored" data-anchor-id="utility-functions">Utility Functions</h2>
+<section id="movie-gif" class="level3">
+<h3 class="anchored" data-anchor-id="movie-gif">Movie &gt; Gif</h3>
 <p><code>ffmpeg -i file.mov -s 600x400 -pix_fmt rgb24 -r 20 -f gif - | gifsicle --optimize=3 --delay=3 &gt; file.gif</code></p>
-<hr>
 </section>
 </section>
-<section id="docker" class="level1">
-<h1>Docker</h1>
-<section id="resources" class="level2">
-<h2 class="anchored" data-anchor-id="resources">Resources</h2>
+<section id="docker" class="level2">
+<h2 class="anchored" data-anchor-id="docker">Docker</h2>
+<section id="resources" class="level3">
+<h3 class="anchored" data-anchor-id="resources">Resources</h3>
 <ul>
 <li><a href="../../static/development/Docker-CheatSheet.pdf">CheatSheet</a></li>
 <li><a href="https://www.composerize.com/">Convert Docker command to docker-compose.yml</a></li>
 </ul>
 </section>
-<section id="image-vs.-container" class="level2">
-<h2 class="anchored" data-anchor-id="image-vs.-container">Image vs.&nbsp;Container</h2>
+<section id="image-vs.-container" class="level3">
+<h3 class="anchored" data-anchor-id="image-vs.-container">Image vs.&nbsp;Container</h3>
 <p><strong>Image</strong> - Application we want to run</p>
 <p><strong>Container</strong> - Instance of that image running as a process</p>
 <hr>
 </section>
-<section id="docker-basics" class="level2">
-<h2 class="anchored" data-anchor-id="docker-basics">Docker Basics</h2>
-<section id="create-an-nginx-container" class="level3">
-<h3 class="anchored" data-anchor-id="create-an-nginx-container">Create an Nginx container</h3>
+<section id="docker-basics" class="level3">
+<h3 class="anchored" data-anchor-id="docker-basics">Docker Basics</h3>
+<section id="create-an-nginx-container" class="level4">
+<h4 class="anchored" data-anchor-id="create-an-nginx-container">Create an Nginx container</h4>
 <p><code>docker run -p 80:80 -d --name webhost nginx</code></p>
 <ol type="1">
 <li>Downloads Nginx from Docker Hub</li>
@@ -401,25 +376,25 @@ ul.task-list li input[type="checkbox"] {
 <li>View container at <a href="http://localhost:80" class="uri">http://localhost:80</a></li>
 </ol>
 </section>
-<section id="other-examples" class="level3">
-<h3 class="anchored" data-anchor-id="other-examples">Other examples</h3>
+<section id="other-examples" class="level4">
+<h4 class="anchored" data-anchor-id="other-examples">Other examples</h4>
 <p><code>docker run -p 80:80 -d --name nginx nginx</code></p>
 <p><code>docker run -p 8080:80 -d --name httpd httpd</code></p>
 <p><code>docker run -p 3306:3306 --platform linux/amd64 -d --name mysql -e MYSQL_RANDOM_ROOT_PASSWORD=true mysql</code></p>
 <p>Create a JupyterLab instance and attach your current directory as a volume: <code>docker run -it --rm -p 8888:8888 -v $(PWD):/home/jovyan jupyter/pyspark-notebook</code></p>
 </section>
-<section id="processes-and-configurations" class="level3">
-<h3 class="anchored" data-anchor-id="processes-and-configurations">Processes and configurations</h3>
+<section id="processes-and-configurations" class="level4">
+<h4 class="anchored" data-anchor-id="processes-and-configurations">Processes and configurations</h4>
 <p>Check processes running inside a container: <code>docker top &lt;container&gt;</code></p>
 <p>Container configuration: <code>docker &lt;container&gt; inspect</code></p>
 <p>Check container stats (memory, cpu, network): <code>docker stats &lt;container&gt;</code></p>
 </section>
-<section id="getting-a-shell-inside-containers" class="level3">
-<h3 class="anchored" data-anchor-id="getting-a-shell-inside-containers">Getting a shell inside containers</h3>
+<section id="getting-a-shell-inside-containers" class="level4">
+<h4 class="anchored" data-anchor-id="getting-a-shell-inside-containers">Getting a shell inside containers</h4>
 <p>Start a new container interactively: <code>docker run -it &lt;container&gt;</code></p>
 <p>Run commands in existing container: <code>docker exec -it &lt;container&gt;</code></p>
-<section id="example-start-a-container-interactively-and-launch-bash-within-it" class="level4">
-<h4 class="anchored" data-anchor-id="example-start-a-container-interactively-and-launch-bash-within-it">Example: Start a container interactively and launch bash within it</h4>
+<section id="example-start-a-container-interactively-and-launch-bash-within-it" class="level5">
+<h5 class="anchored" data-anchor-id="example-start-a-container-interactively-and-launch-bash-within-it">Example: Start a container interactively and launch bash within it</h5>
 <ol type="1">
 <li>Start container and launch bash: <code>docker run -it --name ubuntu ubuntu bash</code></li>
 <li>Run some bash command: <code>apt-get install -y curl</code></li>
@@ -427,19 +402,18 @@ ul.task-list li input[type="checkbox"] {
 <li>Start and re-enter the container: <code>docker start -ai ubuntu</code></li>
 </ol>
 </section>
-<section id="example-launch-shell-in-running-container" class="level4">
-<h4 class="anchored" data-anchor-id="example-launch-shell-in-running-container">Example: Launch shell in running container</h4>
+<section id="example-launch-shell-in-running-container" class="level5">
+<h5 class="anchored" data-anchor-id="example-launch-shell-in-running-container">Example: Launch shell in running container</h5>
 <p><code>docker exec -it &lt;container&gt; bash</code></p>
 </section>
 </section>
-<section id="pull-an-image-from-docker-hub" class="level3">
-<h3 class="anchored" data-anchor-id="pull-an-image-from-docker-hub">Pull an image from docker hub</h3>
+<section id="pull-an-image-from-docker-hub" class="level4">
+<h4 class="anchored" data-anchor-id="pull-an-image-from-docker-hub">Pull an image from docker hub</h4>
 <p><code>docker pull &lt;imagename&gt;</code></p>
-<hr>
 </section>
 </section>
-<section id="docker-networks" class="level2">
-<h2 class="anchored" data-anchor-id="docker-networks">Docker Networks</h2>
+<section id="docker-networks" class="level3">
+<h3 class="anchored" data-anchor-id="docker-networks">Docker Networks</h3>
 <ul>
 <li>Each container is connected to a private virtual network (called “bridge”).</li>
 <li>Each virtual network routes through NAT firewall on host IP.</li>
@@ -448,24 +422,24 @@ ul.task-list li input[type="checkbox"] {
 <li>You can skip virtual networks and use the host IP (<code>--net=host</code>).</li>
 </ul>
 <p>Get container IP: <code>docker inspect --format '{{ .NetworkSettings.IPAddress }}' &lt;container&gt;</code></p>
-<section id="publishing" class="level3">
-<h3 class="anchored" data-anchor-id="publishing">Publishing (#:#)</h3>
+<section id="publishing" class="level4">
+<h4 class="anchored" data-anchor-id="publishing">Publishing (#:#)</h4>
 <p>example: 8080:80</p>
 <p><strong>left number</strong>: published/host port</p>
 <p><strong>right number</strong>: listening/container port</p>
 <p><em>Traffic passing through port 8080 on the HOST will be directed to port 80 on the container.</em></p>
 </section>
-<section id="dns" class="level3">
-<h3 class="anchored" data-anchor-id="dns">DNS</h3>
+<section id="dns" class="level4">
+<h4 class="anchored" data-anchor-id="dns">DNS</h4>
 <p>Docker uses container names as host names.</p>
 <p>Dont rely on IPs for inter-communication.</p>
 <p><strong><em>Best Practice</em></strong> Always use custom networks.</p>
-<section id="assignment" class="level4">
-<h4 class="anchored" data-anchor-id="assignment">Assignment</h4>
+<section id="assignment" class="level5">
+<h5 class="anchored" data-anchor-id="assignment">Assignment</h5>
 <p>Check different curl versions within current versions of Ubuntu and CentOS.</p>
 <p>Run “curl –version” on both operating systems.</p>
-<section id="steps" class="level5">
-<h5 class="anchored" data-anchor-id="steps">Steps</h5>
+<section id="steps" class="level6">
+<h6 class="anchored" data-anchor-id="steps">Steps</h6>
 <p><strong>ubuntu</strong>: <code>apt-get update &amp;&amp; apt-get install curl</code></p>
 <p><strong>centos</strong>: <code>yum update curl</code></p>
 <p>Then…</p>
@@ -476,32 +450,31 @@ ul.task-list li input[type="checkbox"] {
 </section>
 </section>
 </section>
-<section id="dockerfiles" class="level2">
-<h2 class="anchored" data-anchor-id="dockerfiles">Dockerfiles</h2>
+<section id="dockerfiles" class="level3">
+<h3 class="anchored" data-anchor-id="dockerfiles">Dockerfiles</h3>
 <p>Recipe for creating images</p>
 <p>Each Dockerfile stanza such as “RUN”, “CMD”, etc. are stored as a single image layer. Docker caches each layer by giving it a unique SHA (hash), so whenever the image is (re)built, it can check to see if a layer has changed, and if not, it will use the cached layer.</p>
 <p>Docker builds images top down, so it is best practice to structure the Dockerfile in such a way that lines which will change the most are at the bottom, and lines that will change the least are at the top. If a line is changed (ie. source code changes) Docker will rebuild that line, and thus each line after that will also need to be rebuilt.</p>
 </section>
-<section id="keeping-the-docker-system-clean" class="level2">
-<h2 class="anchored" data-anchor-id="keeping-the-docker-system-clean">Keeping the Docker system clean</h2>
+<section id="keeping-the-docker-system-clean" class="level3">
+<h3 class="anchored" data-anchor-id="keeping-the-docker-system-clean">Keeping the Docker system clean</h3>
 <p><code>docker system prune</code> - all stopped containers - all networks not used by at least one container - all dangling images - all dangling build cache</p>
 </section>
-<section id="volumes-an-bind-mounts" class="level2">
-<h2 class="anchored" data-anchor-id="volumes-an-bind-mounts">Volumes an Bind Mounts</h2>
+<section id="volumes-an-bind-mounts" class="level3">
+<h3 class="anchored" data-anchor-id="volumes-an-bind-mounts">Volumes an Bind Mounts</h3>
 <p><strong>Volumes</strong> - Special location outside of container UFS</p>
 <p><strong>Bind Mounts</strong> - Link container path to host path</p>
 <p>Build an image and <strong><em>named</em></strong> volume (persistent): <code>docker run -d --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=True -v mysql:/var/lib/mysql --platform linux/amd64 mysql</code></p>
-<hr>
 </section>
 </section>
-<section id="git" class="level1">
-<h1>Git</h1>
+<section id="git" class="level2">
+<h2 class="anchored" data-anchor-id="git">Git</h2>
 <ul>
 <li><a href="https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners" class="uri">https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners</a></li>
 <li><a href="https://docs.gitlab.com/ee/gitlab-basics/start-using-git.html" class="uri">https://docs.gitlab.com/ee/gitlab-basics/start-using-git.html</a></li>
 </ul>
-<section id="initialize" class="level2">
-<h2 class="anchored" data-anchor-id="initialize">Initialize</h2>
+<section id="initialize" class="level3">
+<h3 class="anchored" data-anchor-id="initialize">Initialize</h3>
 <ol type="1">
 <li>Launch Git Bash</li>
 <li>Navigate to project directory</li>
@@ -511,8 +484,8 @@ ul.task-list li input[type="checkbox"] {
 <li>check which files git recognizes: <code>git status</code></li>
 </ol>
 </section>
-<section id="staging" class="level2">
-<h2 class="anchored" data-anchor-id="staging">Staging</h2>
+<section id="staging" class="level3">
+<h3 class="anchored" data-anchor-id="staging">Staging</h3>
 <p>A commit is a record of what files you have changed since the last time you made a commit. Essentially, you make changes to your repo (for example, adding a file or modifying one) and then tell git to put those files into a commit. Commits make up the essence of your project and allow you to go back to the state of a project at any point.</p>
 <p>So, how do you tell git which files to put into a commit? This is where the staging environment or index come in. When you make changes to your repo, git notices that a file has changed but won’t do anything with it (like adding it in a commit).</p>
 <p>To add a file to a commit, you first need to add it to the staging environment. To do this, you can use the <code>git add &lt;filename&gt;</code> command.</p>
@@ -522,12 +495,12 @@ ul.task-list li input[type="checkbox"] {
 <li>Check staging environment for new files: <code>git status</code></li>
 </ol>
 </section>
-<section id="commit-locally" class="level2">
-<h2 class="anchored" data-anchor-id="commit-locally">Commit Locally</h2>
+<section id="commit-locally" class="level3">
+<h3 class="anchored" data-anchor-id="commit-locally">Commit Locally</h3>
 <p><code>git commit -m "Your message about the commit"</code></p>
 </section>
-<section id="branches" class="level2">
-<h2 class="anchored" data-anchor-id="branches">Branches</h2>
+<section id="branches" class="level3">
+<h3 class="anchored" data-anchor-id="branches">Branches</h3>
 <p>Say you want to make a new feature but are worried about making changes to the main project while developing the feature. This is where git branches come in.</p>
 <p>Branches allow you to move back and forth between ‘states’ of a project. For instance, if you want to add a new page to your website you can create a new branch just for that page without affecting the main part of the project. Once you’re done with the page, you can merge your changes from your branch into the master branch. When you create a new branch, Git keeps track of which commit your branch ‘branched’ off of, so it knows the history behind all the files.</p>
 <ol type="1">
@@ -535,58 +508,58 @@ ul.task-list li input[type="checkbox"] {
 <li>Show list of branches: <code>git branch</code></li>
 </ol>
 </section>
-<section id="commit-to-github" class="level2">
-<h2 class="anchored" data-anchor-id="commit-to-github">Commit to Github</h2>
+<section id="commit-to-github" class="level3">
+<h3 class="anchored" data-anchor-id="commit-to-github">Commit to Github</h3>
 <ol type="1">
 <li>Create new repo on GitHub</li>
 <li><code>git remote add origin &lt;url produced on github for new repo&gt;</code></li>
 <li><code>git push -u origin [master/main]</code></li>
 </ol>
 </section>
-<section id="push-a-branch-to-github" class="level2">
-<h2 class="anchored" data-anchor-id="push-a-branch-to-github">Push a Branch to Github</h2>
+<section id="push-a-branch-to-github" class="level3">
+<h3 class="anchored" data-anchor-id="push-a-branch-to-github">Push a Branch to Github</h3>
 <p><code>git push origin &lt;my-new-branch&gt;</code></p>
 <p>You might be wondering what that “origin” word means in the command above. What happens is that when you clone a remote repository to your local machine, git creates an alias for you. In nearly all cases this alias is called “origin.” It’s essentially shorthand for the remote repository’s URL. So, to push your changes to the remote repository, you could’ve used either the command: git push git@github.com:git/git.git yourbranchname or git push origin yourbranchname</p>
 </section>
-<section id="pull-request" class="level2">
-<h2 class="anchored" data-anchor-id="pull-request">Pull Request</h2>
+<section id="pull-request" class="level3">
+<h3 class="anchored" data-anchor-id="pull-request">Pull Request</h3>
 <p>A pull request (or PR) is a way to alert a repo’s owners that you want to make some changes to their code. It allows them to review the code and make sure it looks good before putting your changes on the master branch.</p>
 </section>
-<section id="get-changes-on-github" class="level2">
-<h2 class="anchored" data-anchor-id="get-changes-on-github">Get Changes on Github</h2>
+<section id="get-changes-on-github" class="level3">
+<h3 class="anchored" data-anchor-id="get-changes-on-github">Get Changes on Github</h3>
 <p><code>git pull origin master</code></p>
 <p>check all new commits: <code>git log</code></p>
 </section>
-<section id="view-differences" class="level2">
-<h2 class="anchored" data-anchor-id="view-differences">View Differences</h2>
+<section id="view-differences" class="level3">
+<h3 class="anchored" data-anchor-id="view-differences">View Differences</h3>
 <ol type="1">
 <li>run: <code>git diff</code></li>
 </ol>
 </section>
-<section id="remove-a-branch" class="level2">
-<h2 class="anchored" data-anchor-id="remove-a-branch">Remove a Branch</h2>
-<section id="locally" class="level3">
-<h3 class="anchored" data-anchor-id="locally">Locally</h3>
+<section id="remove-a-branch" class="level3">
+<h3 class="anchored" data-anchor-id="remove-a-branch">Remove a Branch</h3>
+<section id="locally" class="level4">
+<h4 class="anchored" data-anchor-id="locally">Locally</h4>
 <p><code>git branch -d &lt;branch_name&gt;</code></p>
 </section>
-<section id="remote" class="level3">
-<h3 class="anchored" data-anchor-id="remote">Remote</h3>
+<section id="remote" class="level4">
+<h4 class="anchored" data-anchor-id="remote">Remote</h4>
 <p><code>git push &lt;remote_name&gt; --delete &lt;branch_name&gt;</code></p>
 </section>
 </section>
-<section id="remove-tracked-filedirectory" class="level2">
-<h2 class="anchored" data-anchor-id="remove-tracked-filedirectory">Remove tracked file/directory</h2>
-<section id="file" class="level3">
-<h3 class="anchored" data-anchor-id="file">File</h3>
+<section id="remove-tracked-filedirectory" class="level3">
+<h3 class="anchored" data-anchor-id="remove-tracked-filedirectory">Remove tracked file/directory</h3>
+<section id="file" class="level4">
+<h4 class="anchored" data-anchor-id="file">File</h4>
 <p><code>git rm --cached &lt;file&gt;</code></p>
 </section>
-<section id="directory" class="level3">
-<h3 class="anchored" data-anchor-id="directory">Directory</h3>
+<section id="directory" class="level4">
+<h4 class="anchored" data-anchor-id="directory">Directory</h4>
 <p><code>git rm --cahced -r dir/</code></p>
 </section>
 </section>
-<section id="pre-commit" class="level2">
-<h2 class="anchored" data-anchor-id="pre-commit">pre-commit</h2>
+<section id="pre-commit" class="level3">
+<h3 class="anchored" data-anchor-id="pre-commit">pre-commit</h3>
 <p>Please make sure to install our <a href="https://pre-commit.com/">pre-commit</a> hooks into your Git workflow. Pre-commit will help keep our code clean and make sure we are following best practices.</p>
 <ul>
 <li>Install pre-commit hooks: <code>python -m pre_commit install --install-hooks</code></li>
@@ -595,8 +568,8 @@ ul.task-list li input[type="checkbox"] {
 <p>Hooks will run on the current commit snapshot when executing a <code>git commit</code>. Pre-commit hooks allow us to check for potential issues and make sure we are applying standards to our code before pushing to GitHub.</p>
 <p>See an example <a href="https://github.com/geocoug/python-app-template/blob/main/.pre-commit-config.yaml">.pre-commit-config.yml</a></p>
 </section>
-<section id="merge" class="level2">
-<h2 class="anchored" data-anchor-id="merge">Merge</h2>
+<section id="merge" class="level3">
+<h3 class="anchored" data-anchor-id="merge">Merge</h3>
 <p>The steps below can be used to merge two branches on your local machine. The braches used in this example are:</p>
 <ul>
 <li><code>main</code>: The authoritative or “production” code lives in this branch.</li>
@@ -628,11 +601,10 @@ ul.task-list li input[type="checkbox"] {
 <li><code>git push origin dev</code></li>
 </ol></li>
 </ol>
-<hr>
 </section>
 </section>
-<section id="psql" class="level1">
-<h1>psql</h1>
+<section id="psql" class="level2">
+<h2 class="anchored" data-anchor-id="psql">psql</h2>
 <p><a href="https://quickref.me/postgres">Cheat sheet</a></p>
 <div class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display" data-execution_count="2">
@@ -975,38 +947,35 @@ Export all results to file
 </table>
 </div>
 </div>
-<section id="export-table-to-csv" class="level2">
-<h2 class="anchored" data-anchor-id="export-table-to-csv">Export table to CSV</h2>
+<section id="export-table-to-csv" class="level3">
+<h3 class="anchored" data-anchor-id="export-table-to-csv">Export table to CSV</h3>
 <ul>
 <li><code>\copy table TO '&lt;path&gt;' CSV</code></li>
 <li><code>\copy table(col1,col1) TO '&lt;path&gt;' CSV</code></li>
 <li><code>\copy (SELECT...) TO '&lt;path&gt;' CSV</code></li>
 </ul>
 </section>
-<section id="backup" class="level2">
-<h2 class="anchored" data-anchor-id="backup">Backup</h2>
+<section id="backup" class="level3">
+<h3 class="anchored" data-anchor-id="backup">Backup</h3>
 <p>Use pg_dumpall to backup all databases</p>
 <p><code>$ pg_dumpall -U postgres &gt; all.sql</code></p>
 <p>Use pg_dump to backup a database</p>
 <p><code>$ pg_dump -d mydb -f mydb_backup.sql</code></p>
 <ul>
-<li>&nbsp; <code>-a</code> &nbsp; Dump only the data, not the schema</li>
-<li>&nbsp; <code>-s</code> &nbsp; Dump only the schema, no data</li>
-<li>&nbsp; <code>-c</code> &nbsp; Drop database before recreating</li>
-<li>&nbsp; <code>-C</code> &nbsp; Create database before restoring</li>
-<li>&nbsp; <code>-t</code> &nbsp; Dump the named table(s) only</li>
-<li>&nbsp; <code>-F</code> &nbsp; Format (<code>c</code>: custom, <code>d</code>: directory, <code>t</code>: tar)</li>
+<li><code>-a</code> &nbsp; Dump only the data, not the schema</li>
+<li><code>-s</code> &nbsp; Dump only the schema, no data</li>
+<li><code>-c</code> &nbsp; Drop database before recreating</li>
+<li><code>-C</code> &nbsp; Create database before restoring</li>
+<li><code>-t</code> &nbsp; Dump the named table(s) only</li>
+<li><code>-F</code> &nbsp; Format (<code>c</code>: custom, <code>d</code>: directory, <code>t</code>: tar)</li>
 </ul>
 <p>Use <code>pg_dump -?</code> to get the full list of options</p>
 </section>
-<section id="restore" class="level2">
-<h2 class="anchored" data-anchor-id="restore">Restore</h2>
-<section id="psql-1" class="level3">
-<h3 class="anchored" data-anchor-id="psql-1">psql</h3>
+<section id="restore" class="level3">
+<h3 class="anchored" data-anchor-id="restore">Restore</h3>
 <p><code>$ psql -U user mydb &lt; mydb_backup.sql</code></p>
-</section>
-<section id="pg_restore" class="level3">
-<h3 class="anchored" data-anchor-id="pg_restore">pg_restore</h3>
+<section id="pg_restore" class="level4">
+<h4 class="anchored" data-anchor-id="pg_restore">pg_restore</h4>
 <p><code>$ pg_restore -d mydb mydb_backup.sql -c</code></p>
 <ul>
 <li><code>-U   Specify a database user</code></li>

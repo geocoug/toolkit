@@ -223,7 +223,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#benefits-of-using-the-dqo-process" id="toc-benefits-of-using-the-dqo-process" class="nav-link" data-scroll-target="#benefits-of-using-the-dqo-process">Benefits of Using the DQO Process</a></li>
   <li><a href="#data-handling" id="toc-data-handling" class="nav-link" data-scroll-target="#data-handling">Data Handling</a>
   <ul class="collapse">
-  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
   <li><a href="#character-encoding" id="toc-character-encoding" class="nav-link" data-scroll-target="#character-encoding">Character Encoding</a></li>
   </ul></li>
   <li><a href="#analytical-chemistry" id="toc-analytical-chemistry" class="nav-link" data-scroll-target="#analytical-chemistry">Analytical Chemistry</a>
@@ -232,7 +231,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#chemistry" id="toc-chemistry" class="nav-link" data-scroll-target="#chemistry">Chemistry</a>
   <ul class="collapse">
-  <li><a href="#resources-1" id="toc-resources-1" class="nav-link" data-scroll-target="#resources-1">Resources</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
   <li><a href="#tefs" id="toc-tefs" class="nav-link" data-scroll-target="#tefs">TEFs</a></li>
   <li><a href="#chemical-groups" id="toc-chemical-groups" class="nav-link" data-scroll-target="#chemical-groups">Chemical Groups</a></li>
   <li><a href="#qualifiers" id="toc-qualifiers" class="nav-link" data-scroll-target="#qualifiers">Qualifiers</a></li>
@@ -274,7 +273,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="data-quality" class="level2">
 <h2 class="anchored" data-anchor-id="data-quality">Data Quality</h2>
 <p><a href="https://www.epa.gov/sites/default/files/2015-06/documents/g4-final.pdf">EPA Guidance on Systematic Planning Using the Data Quality Objectives Process</a></p>
-<hr>
 <section id="the-data-quality-objective-dqo-process" class="level3">
 <h3 class="anchored" data-anchor-id="the-data-quality-objective-dqo-process">The Data Quality Objective (DQO) Process</h3>
 <p><img src="../../static/resources/DQO_Process.png" class="img-fluid"></p>
@@ -288,7 +286,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>factors <span class="op">=</span> pd.read_excel(dqo, sheet_name<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<hr>
 </section>
 <section id="table-1.-elements-of-systematic-planning" class="level3">
 <h3 class="anchored" data-anchor-id="table-1.-elements-of-systematic-planning">Table 1. Elements of Systematic Planning</h3>
@@ -297,7 +294,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>elements.to_html(index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="6">
+<div class="cell-output cell-output-display" data-execution_count="2">
 
 <table class="dataframe table table-sm table-striped small">
 
@@ -424,7 +421,6 @@ Description of how the acquired data will be analyzed (either in the field or th
 <blockquote class="blockquote">
 <p>When specifying the project goal (element #2 in Table 1), a key activity is to determine the key questions which the study will address once data and information are properly collected and analyzed.</p>
 </blockquote>
-<hr>
 </section>
 <section id="table-2.-epa-general-assessment-factors" class="level3">
 <h3 class="anchored" data-anchor-id="table-2.-epa-general-assessment-factors">Table 2. EPA General Assessment Factors</h3>
@@ -433,7 +429,7 @@ Description of how the acquired data will be analyzed (either in the field or th
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>factors.to_html(index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="7">
+<div class="cell-output cell-output-display" data-execution_count="3">
 
 <table class="dataframe table table-sm table-striped small">
 
@@ -532,7 +528,6 @@ The extent of independent verification, validation, and peer review of the infor
 </ul>
 <p><img src="../../static/resources/Commonalities.png" class="img-fluid"></p>
 <p><img src="../../static/resources/Project_Life_Cycle.png" class="img-fluid"></p>
-<hr>
 </section>
 </section>
 <section id="benefits-of-using-the-dqo-process" class="level2">
@@ -547,25 +542,20 @@ The extent of independent verification, validation, and peer review of the infor
 <li>The DQO Process provides a method for defining performance requirements appropriate for the intended use of the data by considering the consequences of drawing incorrect conclusions and then placing tolerable limits on them.</li>
 <li>The DQO Process encourages good documentation for a model-based approach to investigate the objectives of a project, with discussion on how the key parameters were estimated or derived, and the robustness of the model to small perturbations. Upon implementing the DQO Process, your environmental programs can be strengthened</li>
 </ul>
-<hr>
 </section>
 <section id="data-handling" class="level2">
 <h2 class="anchored" data-anchor-id="data-handling">Data Handling</h2>
-<section id="resources" class="level3">
-<h3 class="anchored" data-anchor-id="resources">Resources</h3>
 <ul>
 <li><a href="https://execsql.osdn.io/">execSQL</a></li>
 <li><a href="https://www.postgresqltutorial.com/">PostgreSQL Tutorial</a></li>
 <li><a href="https://pgdash.io/blog/postgres-tips-and-tricks.html?">PostgreSQL Tips</a></li>
 <li><a href="https://devdocs.io/">DevDocs.io</a></li>
 </ul>
-</section>
 <section id="character-encoding" class="level3">
 <h3 class="anchored" data-anchor-id="character-encoding">Character Encoding</h3>
 <p>We deal with character encoding issues when importing data to databases all the time. All databases are encoded in UTF-8, and the most common non-ASCII, non-UTF-8 format is Microsoft’s custom encoding, which is CP-1252 (also known as win-1252 and a few other things). The character encoding of a file can’t necessarily be definitively determined by examination, but the Linux command-line tool file generally does a good job. If you want to change the encoding of a file rather than importing it in a known format, the Linux command-line tool iconv will do that for you. There’s a Python library on PyPI named chardet that will also diagnose file encodings.</p>
 <p>For data managers, the workflow is to first guess that encoding errors on data import are due to the file being cp-1252. That covers about 90% of cases. Our import tool also automatically diagnoses instances where a file starts with a byte order mark (BOM), which covers most of the rest of the cases. For the remainders, Geany is usually the quickest way to check the file encoding.</p>
 <p>Everything that comes out of our databases is always in UTF-8, so I, at least, don’t ordinarily have encoding issues when importing data to R. For those who use data from other sources, it is a good idea to document a recommended workflow and set of tools.</p>
-<hr>
 </section>
 </section>
 <section id="analytical-chemistry" class="level2">
@@ -574,10 +564,10 @@ The extent of independent verification, validation, and peer review of the infor
 <h3 class="anchored" data-anchor-id="summarization">Summarization</h3>
 <p>Chemistry data frequently is summarized for use in analyses or for presentation using tables or maps. Summarization is ordinarily performed when there are multiple concentration values measured for a sample, or for a specific location, date, and depth. Multiple concentration values result from field or laboratory replications, from field splits created for quality control evaluations, and sometimes from sample reanalyses. Although field splits and laboratory replicates are created to support data quality assessments, all of the valid results that are produced are informative, are ordinarily stored in the project database, and are used to produce the most accurate possible estimate of the true concentration in a sample. When there are replicate results for a sample, the data will be averaged in a stepwise, or hierarchical, fashion. Because each level of the hierarchy represents a different source of variation, all the results at a single level are averaged together before results are averaged across levels. The different levels of replication, and the source of variation that each represents, are as follows:</p>
 <ol type="1">
-<li>Average across lab replicates<br></li>
-<li>Average across multiple analyses (if they exist) for the same lab sample. This will average across multiple methods and reanalyses (different SDGs)<br></li>
-<li>Average across multiple lab samples (if they exist) for the same sample number (split) and lab. Multiple lab samples may exist for the same sample number if the laboratory has created new laboratory sample IDs for reanalyses.<br></li>
-<li>Average across multiple splits (if they exist) for the same lab and interpretive sample. Multiple sample numbers (splits) may exist for the same lab, or the same sample number may exist for different labs. Splits sent to different labs potentially have an additional source of variability in addition to variability between splits sent to the same lab.<br></li>
+<li>Average across lab replicates</li>
+<li>Average across multiple analyses (if they exist) for the same lab sample. This will average across multiple methods and reanalyses (different SDGs)</li>
+<li>Average across multiple lab samples (if they exist) for the same sample number (split) and lab. Multiple lab samples may exist for the same sample number if the laboratory has created new laboratory sample IDs for reanalyses.</li>
+<li>Average across multiple splits (if they exist) for the same lab and interpretive sample. Multiple sample numbers (splits) may exist for the same lab, or the same sample number may exist for different labs. Splits sent to different labs potentially have an additional source of variability in addition to variability between splits sent to the same lab.</li>
 <li>Average across laboratories for the same main sample. This summarizes data by main sample (sample_id), which is typically the lowest level of data summarization to be used for data interpretation.</li>
 </ol>
 <p>By default, data are summarized by successive averaging across these levels of replication, in the order given above. During the averaging process, data validation qualifiers and significant digits must be propagated. The rules for propagating the data validation qualifiers U (undetected), J (estimated), and R (rejected) are as follows:</p>
@@ -591,13 +581,12 @@ The extent of independent verification, validation, and peer review of the infor
 <p>These rules are built into custom aggregate functions in IDB that use the measurement_result data type.</p>
 <p>These default data handling rules will be applied if no project-specific alternate rules are specified. The project manager, project technical staff, and data manager should evaluate, at the start of a project, whether an alternative approach is needed. Alternate data summarization rules should be summarized in the project plan or in the data management plan, if it exists. (Data managers: if not documented elsewhere, record this information in the Data Manager’s Manual.)</p>
 <p>Note that the handling of nondetects during hierarchical averaging and the presentation of nondetects in data summaries may be different. Regardless of whether nondetects are taken at half the detection limit or the full detection limit when averaging, the summarized result may be presented with either the full detection limit or half the detection limit. Reporting nondetects at the full detection limit should ordinarily be done when preparing data tables for reports or other deliverables. Data analyses to be conducted by Integral may be carried out using either half or full detection limits. The method of reporting nondetects should be specified when requesting data summaries.</p>
-<hr>
 </section>
 </section>
 <section id="chemistry" class="level2">
 <h2 class="anchored" data-anchor-id="chemistry">Chemistry</h2>
-<section id="resources-1" class="level3">
-<h3 class="anchored" data-anchor-id="resources-1">Resources</h3>
+<section id="resources" class="level3">
+<h3 class="anchored" data-anchor-id="resources">Resources</h3>
 <ul>
 <li><a href="https://www.epa.gov/hw-sw846/sw-846-compendium">Hazardous Waste Test Methods</a></li>
 <li><a href="https://www.nemi.gov/home/">National Environmental Methods Index</a></li>
@@ -716,15 +705,9 @@ The extent of independent verification, validation, and peer review of the infor
 </section>
 <section id="duplicates" class="level3">
 <h3 class="anchored" data-anchor-id="duplicates">Duplicates</h3>
-<blockquote class="blockquote">
 <p>“Duplicate” is a somewhat ambiguous term, but in practice it most commonly refers to field duplicates, which we ordinarily refer to as splits to avoid that ambiguity. Some QC data, particularly spikes, are frequently duplicated, so when we have lab QC data we may have values for spikes and spike duplicates. When we receive lab results in one big flat table that includes both analytical results for natural samples and results of lab QC samples, the word or code “DUP” in a column header or table cell could mean a couple of different things. Without seeing the original data source, I’m not sure where the “DUP” code in the “labqc_samp” column of your “d_labsample” table came from. I’m going to assume that it refers to a field duplicate, and not a spike duplicate.</p>
-</blockquote>
-<blockquote class="blockquote">
 <p>Ideally, samples are submitted to the laboratory “blind” so that the laboratory does not know which field samples are duplicates of one another. This is to prevent them from seeing that there’s a lot of variation between some pair of duplicates and deciding to re-run one or both of them. If the lab is producing highly variable data, we don’t want them to be able to hide it. Unfortunately, many field sampling programs use a suffix of “-D” or “-DUP” or something like that on the sample ID, so the lab knows which samples are field duplicates. If they know, they may pass that information back in their EDD.</p>
-</blockquote>
-<blockquote class="blockquote">
 <p>Although field duplicates are used as a QC check on laboratory performance, they are not lab QC samples themselves. They are just normal field samples (which have been split), and don’t need to have a laboratory QC sample ID assigned to them. Thus, field duplicates should not be listed in the “d_labqcsamp” table, so that table looks fine as it appears below. The same is true for the “d_labresult” table.</p>
-</blockquote>
 <p>There are a couple of things to be changed about the “d_labsample” table as shown below:</p>
 <ul>
 <li>The values in the “labqc_samp” column should be identifiers that appear in the “d_labqcsamp” table, not codes. The codes for the lab QC type should be in the d_labqcsamp.qc_type column, and neither “Natural” nor “DUP” should be used there.</li>
@@ -733,12 +716,7 @@ The extent of independent verification, validation, and peer review of the infor
 </section>
 <section id="measurement-basis" class="level3">
 <h3 class="anchored" data-anchor-id="measurement-basis">Measurement Basis</h3>
-<section id="r-tool" class="level4">
-<h4 class="anchored" data-anchor-id="r-tool">R tool</h4>
 <p><a href="https://www.rdocumentation.org/packages/OrgMassSpecR/versions/0.5-3/topics/ConvertConcentration">OrgMassSpecR</a></p>
-</section>
-<section id="general-1" class="level4">
-<h4 class="anchored" data-anchor-id="general-1">General</h4>
 <ul>
 <li>Data for soil and sediment are almost always reported on a dry-weight basis. If there’s anything to indicate a different basis, that deserves a closer look. Almost the only legitimate reason for a different basis for soil or sediment samples is when a leaching procedure has been applied (e.g., the Toxicity Characteristic Leaching Procedure, or TCLP); in those cases the data may be reported as the concentration in the leachate, so the basis may be “Wet” or “Whole” or “Unfiltered” – anything indicating an unfractionated liquid sample.</li>
 <li>Data for tissues should ordinarily be reported in wet weight. Organisms’ homeostasis means that they maintain a nearly constant moisture content in their tissues, whereas the same is not true of materials like soil or sediment. If tissue data are reported in dry weight, check it carefully: labs can be sloppy about that.</li>
@@ -748,7 +726,6 @@ The extent of independent verification, validation, and peer review of the infor
 <li>There is an implicit association between measurement bases and units. For example, if the measurement basis is “Dry”, the units should not be “mg/L” because “…/L” implies a liquid, not a solid.</li>
 <li>The measurement basis refers to the form of the sample material, which is represented in the denominator of concentration units. So codes of “Sediment” “Arsenic”, “mg/kg”, “Dry” should be read as “mg of arsenic per kg of dry sediment.”</li>
 </ul>
-</section>
 <section id="wet-weight" class="level4">
 <h4 class="anchored" data-anchor-id="wet-weight">Wet Weight</h4>
 <blockquote class="blockquote">
@@ -782,20 +759,17 @@ The extent of independent verification, validation, and peer review of the infor
 <section id="organic-carbon-normalization" class="level4">
 <h4 class="anchored" data-anchor-id="organic-carbon-normalization">Organic Carbon Normalization</h4>
 <p><span class="math display">\[OCnorm = \frac{DryWt}{\frac{PercentTOC}{100}}\]</span></p>
-<center>
-<strong>DryWt &amp; WetWt</strong> = concentration<br> <strong>PercentSolids</strong> = percentage (no decimal)
-</center>
+<p><strong>DryWt &amp; WetWt</strong> = concentration</p>
+<p><strong>PercentSolids</strong> = percentage (no decimal)</p>
 </section>
 <section id="resource" class="level4">
 <h4 class="anchored" data-anchor-id="resource">Resource</h4>
-<center>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../../static/resources/mass_conv.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Calcs</figcaption>
 </figure>
 </div>
-</center>
 <hr>
 </section>
 </section>
@@ -820,7 +794,6 @@ The extent of independent verification, validation, and peer review of the infor
 <section id="diagram" class="level4">
 <h4 class="anchored" data-anchor-id="diagram">Diagram</h4>
 <p><img src="../../static/resources/blanks.PNG" class="img-fluid"></p>
-<hr>
 </section>
 </section>
 <section id="detection-limits" class="level3">

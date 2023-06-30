@@ -320,15 +320,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#references" id="toc-references" class="nav-link active" data-scroll-target="#references">References</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link active" data-scroll-target="#resources">Resources</a></li>
   <li><a href="#languages" id="toc-languages" class="nav-link" data-scroll-target="#languages">Languages</a>
   <ul class="collapse">
   <li><a href="#r" id="toc-r" class="nav-link" data-scroll-target="#r">R</a></li>
-  <li><a href="#sql" id="toc-sql" class="nav-link" data-scroll-target="#sql">SQL</a>
-  <ul class="collapse">
-  <li><a href="#option-1" id="toc-option-1" class="nav-link" data-scroll-target="#option-1">Option 1</a></li>
-  <li><a href="#option-2" id="toc-option-2" class="nav-link" data-scroll-target="#option-2">Option 2</a></li>
-  </ul></li>
+  <li><a href="#sql" id="toc-sql" class="nav-link" data-scroll-target="#sql">SQL</a></li>
   <li><a href="#python" id="toc-python" class="nav-link" data-scroll-target="#python">Python</a></li>
   </ul></li>
   <li><a href="#mapping" id="toc-mapping" class="nav-link" data-scroll-target="#mapping">Mapping</a>
@@ -367,7 +363,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<hr>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -397,8 +392,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>here <span class="ot">&lt;-</span> here<span class="sc">::</span>here</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<section id="references" class="level1">
-<h1>References</h1>
+<section id="resources" class="level2">
+<h2 class="anchored" data-anchor-id="resources">Resources</h2>
 <ul>
 <li><a href="https://rmarkdown.rstudio.com/authoring_basics.html">R Markdown Basics</a></li>
 <li><a href="https://bookdown.org/yihui/rmarkdown/">R Markdown Reference Guide</a></li>
@@ -407,10 +402,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <hr>
 </section>
-<section id="languages" class="level1">
-<h1>Languages</h1>
-<section id="r" class="level2">
-<h2 class="anchored" data-anchor-id="r">R</h2>
+<section id="languages" class="level2">
+<h2 class="anchored" data-anchor-id="languages">Languages</h2>
+<section id="r" class="level3">
+<h3 class="anchored" data-anchor-id="r">R</h3>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -422,20 +417,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="sql" class="level2">
-<h2 class="anchored" data-anchor-id="sql">SQL</h2>
+<section id="sql" class="level3">
+<h3 class="anchored" data-anchor-id="sql">SQL</h3>
 <p>There are a couple ways to connect to a database instance. These examples show how to connect to a local PostgreSQL instance, and how to use the connection information to query a database.</p>
-<section id="option-1" class="level3">
-<h3 class="anchored" data-anchor-id="option-1">Option 1</h3>
-<p>Create connection chunk, then call connection in each subsequent chunk. ```{.r connSQL, class.source=‘fold-show’} library(DBI)</p>
+<section id="option-1" class="level4">
+<h4 class="anchored" data-anchor-id="option-1">Option 1</h4>
+<p>Create connection chunk, then call connection in each subsequent chunk.</p>
+<p>```{.r connSQL, class.source=‘fold-show’} library(DBI)</p>
 <p>pass &lt;- readLines(“../../pwd.txt”) db = dbConnect( RPostgres::Postgres(), dbname = “personal”, host = “localhost”, port = 5432, user = “cgrant”, password = pass )</p>
 <pre><code>
 ```{.sql, connection=db, eval=F}
 select * from workouts limit 10;</code></pre>
 </section>
-<section id="option-2" class="level3">
-<h3 class="anchored" data-anchor-id="option-2">Option 2</h3>
-<p>Set default connection in the setup chunk (pretend its the setup chunk). ```{.r setup-v2, eval=F, class.source=‘fold-show’} library(DBI)</p>
+<section id="option-2" class="level4">
+<h4 class="anchored" data-anchor-id="option-2">Option 2</h4>
+<p>Set default connection in the setup chunk (pretend its the setup chunk).</p>
+<p>```{.r setup-v2, eval=F, class.source=‘fold-show’} library(DBI)</p>
 <p>db = dbConnect( RPostgres::Postgres(), dbname = “personal”, host = “localhost”, port = 5432, user = “cgrant”, password = pass ) knitr::opts_chunk$set(connection = “db”)</p>
 <pre><code>
 Now you dont have to specify the connection for each chunk.
@@ -444,12 +441,14 @@ Now you dont have to specify the connection for each chunk.
 select * from workouts limit 10;</code></pre>
 </section>
 </section>
-<section id="python" class="level2">
-<h2 class="anchored" data-anchor-id="python">Python</h2>
-<p>To use a Python engine, you need to call <code>library(reticulate)</code> <a href="https://rstudio.github.io/reticulate/">link</a> ```{.r, class.source=‘fold-show’} # install.packages(“reticulate”)</p>
+<section id="python" class="level3">
+<h3 class="anchored" data-anchor-id="python">Python</h3>
+<p>To use a Python engine, you need to call <code>library(reticulate)</code> <a href="https://rstudio.github.io/reticulate/">link</a></p>
+<p>```{.r, class.source=‘fold-show’} # install.packages(“reticulate”)</p>
 <p>Sys.setenv(RETICULATE_PYTHON = “/Users/cgrant/venvs/dev/bin/python”) library(reticulate) py_config()</p>
 <pre><code>
 Now you can run Python code
+
 
 ::: {.cell}
 
@@ -489,13 +488,12 @@ print(x)</code></pre>
 <pre><code>Error in crosstalk::is.SharedData(data): object 'py' not found</code></pre>
 </div>
 </div>
-<hr>
 </section>
 </section>
-<section id="mapping" class="level1">
-<h1>Mapping</h1>
-<section id="leaflet" class="level2">
-<h2 class="anchored" data-anchor-id="leaflet">Leaflet</h2>
+<section id="mapping" class="level2">
+<h2 class="anchored" data-anchor-id="mapping">Mapping</h2>
+<section id="leaflet" class="level3">
+<h3 class="anchored" data-anchor-id="leaflet">Leaflet</h3>
 <p>Use the leaflet map below to explore.</p>
 <div class="cell">
 <details>
@@ -509,16 +507,16 @@ print(x)</code></pre>
 <span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addMarkers</span>(<span class="at">lng=</span><span class="sc">-</span><span class="fl">122.90486</span>, <span class="at">lat=</span><span class="fl">47.03576</span>, <span class="at">popup=</span><span class="st">"WA State Capitol"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-3f1d2319d9a2fba15842" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-3f1d2319d9a2fba15842">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"setView":[[47.03576,-122.90486],16,[]],"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[47.03576,-122.90486,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"WA State Capitol",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[47.03576,47.03576],"lng":[-122.90486,-122.90486]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-b14d6fdea908a40be133" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-b14d6fdea908a40be133">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"setView":[[47.03576,-122.90486],16,[]],"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[47.03576,-122.90486,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"WA State Capitol",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[47.03576,47.03576],"lng":[-122.90486,-122.90486]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
 </section>
-<section id="plots" class="level1">
-<h1>Plots</h1>
-<section id="temperature" class="level2">
-<h2 class="anchored" data-anchor-id="temperature">Temperature</h2>
+<section id="plots" class="level2">
+<h2 class="anchored" data-anchor-id="plots">Plots</h2>
+<section id="temperature" class="level3">
+<h3 class="anchored" data-anchor-id="temperature">Temperature</h3>
 <p><a href="https://rstudio-pubs-static.s3.amazonaws.com/392197_d66db681e0fa4ab1b19b85f8ce38aacc.html">Reference</a> <a href="https://www.ncdc.noaa.gov/cdo-web/datasets/LCD/stations/WBAN:24233/detail">Source</a></p>
 <div class="cell">
 <details>
