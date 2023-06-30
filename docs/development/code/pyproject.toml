@@ -1,0 +1,4 @@
+# Configuration for the Black Python formatter
+# https://github.com/psf/black
+[tool.black]
+line-length = 88

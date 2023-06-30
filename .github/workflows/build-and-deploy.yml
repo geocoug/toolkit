@@ -1,0 +1,48 @@
+---
+name: ci/cd
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+      - name: Setup Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+      - name: Setup Pandoc
+        uses: r-lib/actions/setup-pandoc@v2
+      - name: Setup R
+        uses: r-lib/actions/setup-r@v2
+      - name: Install system dependencies for R packages
+        run: |
+          sudo apt-get install libcurl4-openssl-dev
+          sudo apt-get install libharfbuzz-dev  libfribidi-dev
+          sudo apt-get install gdal-bin libgdal-dev proj-bin
+      - name: Install R packages with renv
+        uses: r-lib/actions/setup-renv@v2
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+          cache: "pip"
+      - run: pip install -r requirements.txt
+      - name: Setup Julia
+        uses: julia-actions/setup-julia@v1
+      - run: julia --project -e 'using Pkg; Pkg.instantiate()'
+      - name: Render Quarto Project
+        uses: quarto-dev/quarto-actions/render@v2
+      - name: Install SSH Key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_KEY }}
+          known_hosts: "unnecessary"
+      - name: Adding Known Hosts
+        run: ssh-keyscan -H ${{ secrets.HOST }} >> ~/.ssh/known_hosts
+      - name: Deploy with rsync
+        run: rsync -avz --delete . ${{ secrets.USERNAME }}@${{ secrets.HOST }}:${{ secrets.TARGET_DIRECTORY }}

@@ -1,0 +1,16 @@
+---
+title: Resources
+description: Resources
+image: /static/resources/resources.jpg
+listing:
+  contents: "*.qmd"
+  type: table
+  page-size: 10
+  fields: [image, title, description, reading-time]
+  sort: 
+    - "date desc"
+    - "title"
+  feed: true
+page-layout: full
+---
+

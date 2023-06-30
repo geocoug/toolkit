@@ -1,0 +1,48 @@
+[
+  {
+    "listing": "/index.html",
+    "items": [
+      "/docs/resources/bookmarks.html",
+      "/docs/development/code/index.html",
+      "/docs/resources/data-management.html",
+      "/docs/development/index.html",
+      "/docs/resources/recipes.html",
+      "/docs/resources/index.html",
+      "/docs/development/server/index.html",
+      "/docs/resources/workouts.html"
+    ]
+  },
+  {
+    "listing": "/docs/development/code/index.html",
+    "items": [
+      "/docs/development/code/bash.html",
+      "/docs/development/code/cmd.html",
+      "/docs/development/code/html.html",
+      "/docs/development/code/javascript.html",
+      "/docs/development/code/julia.html",
+      "/docs/development/code/markdown.html",
+      "/docs/development/code/powershell.html",
+      "/docs/development/code/python.html",
+      "/docs/development/code/r.html",
+      "/docs/development/code/regex.html",
+      "/docs/development/code/rust.html",
+      "/docs/development/code/sql.html"
+    ]
+  },
+  {
+    "listing": "/docs/blog/index.html",
+    "items": [
+      "/docs/blog/posts/creating-a-post/index.html",
+      "/docs/blog/posts/accessing-quarto-variables/index.html"
+    ]
+  },
+  {
+    "listing": "/docs/resources/index.html",
+    "items": [
+      "/docs/resources/bookmarks.html",
+      "/docs/resources/data-management.html",
+      "/docs/resources/recipes.html",
+      "/docs/resources/workouts.html"
+    ]
+  }
+]

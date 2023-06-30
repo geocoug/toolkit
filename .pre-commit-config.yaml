@@ -1,0 +1,32 @@
+---
+exclude: |
+    (?x)(
+        ^_extensions/|
+        ^_site/|
+        ^_freeze/|
+        ^renv/|
+        ^static/
+    )
+
+repos:
+  # Supported base hooks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: check-case-conflict
+      - id: check-json
+      - id: check-yaml
+  # YAML linter
+  - repo: https://github.com/adrienverge/yamllint
+    rev: v1.32.0
+    hooks:
+      - id: yamllint
+        args: [--config-file, .github/linters/.yaml-lint.yml]
+  # Markdown lint
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.35.0
+    hooks:
+      - id: markdownlint
+        args: [-c, .github/linters/.markdown-lint.yml, -f]
+        types: [file]
+        files: .(md|qmd)$

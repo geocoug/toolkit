@@ -1,0 +1,65 @@
+---
+title: Rstudio Server
+description: Rstudio Server deployment
+---
+
+1. Install:
+
+    ```bash
+    wget https://download2.rstudio.org/server/jammy/amd64/rstudio-server-2022.07.2-576-amd64.deb && \
+    sudo gdebi rstudio-server-2022.07.2-576-amd64.deb && \
+    rm rstudio-server-2022.07.2-576-amd64.deb && \
+    sudo adduser rstudio
+    ```
+
+1. Apache config
+
+    ```apache
+    <VirtualHost *:80>
+        ServerName <DNS ENTRY>
+        ServerSignature Off
+
+        ErrorLog /var/log/apache2/redirect.error.log
+        LogLevel warn
+
+        ProxyPreserveHost On
+        ProxyPass "/" "http://localhost:8787/"
+        ProxyPassReverse "/" "http://localhost:8787/"
+
+        RewriteEngine on
+        RewriteCond %{SERVER_NAME} =<DNS ENTRY>
+        RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]
+    </VirtualHost>
+
+    <IfModule mod_ssl.c>
+        <VirtualHost *:443>
+            ServerName <DNS ENTRY>
+            ServerSignature Off
+
+            ErrorLog /var/log/apache2/redirect.error.log
+            LogLevel warn
+
+            ProxyPreserveHost On
+            ProxyPass "/" "http://localhost:8787/"
+            ProxyPassReverse "/" "http://localhost:8787/"
+
+            SSLCertificateFile /etc/letsencrypt/live/<DNS ENTRY>/fullchain.pem
+            SSLCertificateKeyFile /etc/letsencrypt/live/<DNS ENTRY>/privkey.pem
+            Include /etc/letsencrypt/options-ssl-apache.conf
+        </VirtualHost>
+    </IfModule>
+    ```
+
+1. Generate SSL certs
+
+    ```bash
+    sudo certbot --apache certonly
+    ```
+
+1. Enable the site
+
+    ```bash
+    sudo a2ensite rstudio.conf && \
+    sudo systemctl reload apache2 && \
+    sudo systemctl status apache2
+    ```

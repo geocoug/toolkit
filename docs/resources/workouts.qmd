@@ -1,0 +1,76 @@
+---
+title: Workouts
+description: Workouts and routines
+image: /static/resources/workouts.png
+---
+
+## Routines
+
+```{python}
+import pandas as pd
+
+workouts = "../../static/resources/workouts.xlsx"
+w1 = pd.read_excel(workouts, sheet_name=0)
+w2 = pd.read_excel(workouts, sheet_name=1)
+w3 = pd.read_excel(workouts, sheet_name=2)
+w4 = pd.read_excel(workouts, sheet_name=3)
+schedule = pd.read_excel(workouts, sheet_name=4)
+```
+
+The following regimen outlines a 4 week lift cycle. The routine is a slightly modified version of [this](https://jackedgorilla.com/chris-pratt-workout-routine/). Non-lift days should be supplemented with active recovery workouts.
+
+### Schedule
+
+```{python}
+schedule.to_html(index=False, render_links=True)
+```
+
+### Back & Biceps
+
+```{python}
+w1.to_html(index=False)
+```
+
+### Chest & Triceps
+
+```{python}
+w2.to_html(index=False)
+```
+
+### Legs
+
+```{python}
+w3.to_html(index=False)
+```
+
+### Shoulders & Traps
+
+```{python}
+w4.to_html(index=False)
+```
+
+## Introductory Routines
+
+```{python}
+w5 = pd.read_excel(workouts, sheet_name=5)
+w6 = pd.read_excel(workouts, sheet_name=6)
+w7 = pd.read_excel(workouts, sheet_name=7)
+```
+
+### Push Intro
+
+```{python}
+w5.to_html(index=False, render_links=True)
+```
+
+### Pull Intro
+
+```{python}
+w6.to_html(index=False, render_links=True)
+```
+
+### Legs Intro
+
+```{python}
+w6.to_html(index=False, render_links=True)
+```

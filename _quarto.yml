@@ -1,59 +1,107 @@
+---
+# Example: https://github.com/quarto-dev/quarto-web/blob/main/_quarto.yml
 project:
   type: website
-  output-dir: docs
+  output-dir: _site
+  preview:
+    port: 4200
+    browser: false
   resources:
     - "/.nojekyll"
     - "/static/*"
-    - "/lib/*"
   render:
     - "*.qmd"
 
+execute:
+  freeze: auto  # Re-compute previously generated computational output only in case their source file changes
+
 website:
   title: "Toolkit"
+  description: "Geocoug's Toolkit"
   favicon: /static/favicon.ico
+  site-url: http://toolkit.goecoug.com
+  page-navigation: true
+  back-to-top-navigation: true
+  repo-url: https://github.com/geocoug/toolkit
+  repo-actions: [issue]
+  search:
+    location: navbar
+    copy-button: true
+  page-footer:
+    left: "Caleb Grant, 2023"
+    background: light
+    right:
+      - icon: github
+        href: https://github.com/geocoug/toolkit
   navbar:
-    title: <a class="navbar-brand" href="index.html"><img src="static/logo.svg" width="32px" height="32px" class="d-inline-block align-text-top"></a>
-    type: default
+    title: false
+    logo: /static/logo.svg
+    collapse-below: lg
     left:
       - text: "Development"
-        menu:
-          - text: "Data Management"
-            href: dm.qmd
-          - text: "DBMS"
-            href: dbms.qmd
-          - text: "Python"
-            href: python.qmd
-          # - text: "R"
-          #   href: r.qmd
-          - text: "Server"
-            href: server.qmd
-          - text: "Tools"
-            href: tools.qmd
-          - text: "Resources"
-            href: resources.qmd
-      - text: "Health & Fitness"
-        menu:
-          - text: "Workouts"
-            href: workouts.qmd
-          - text: "Food"
-            href: food.qmd
+        href: docs/development/index.qmd
+      - text: "Resources"
+        href: docs/resources/index.qmd
+      - text: "Blog"
+        href: docs/blog/index.qmd
     right:
-      - text: "{{< fa brands github size=xl >}}"
+      - icon: linkedin
+        href: https://www.linkedin.com/in/c-grant/
+      - icon: github
         href: https://github.com/geocoug
-      - text: "{{< fa brands linkedin size=xl >}}"
-        href: https://www.linkedin.com/in/caleb-grant-04b098101
-      - text: "{{< fa brands python size=xl >}}"
-        href: https://jupyter.geocoug.com
-      - text: "{{< fa brands r-project size=xl >}}"
-        href: https://rstudio.geocoug.com
+
+  sidebar:
+    - id: development
+      collapse-level: 2
+      align: left
+      style: "docked"
+      contents:
+        - docs/development/index.qmd
+        - auto: "docs/development/*"
+        - section: "Code"
+          href: docs/development/code/index.qmd
+          contents:
+            - auto: "docs/development/code/*"
+        - section: "Server"
+          href: docs/development/server/index.qmd
+          contents:
+            - auto: "docs/development/server/*"
+    - id: resources
+      collapse-level: 2
+      align: left
+      style: "docked"
+      contents:
+        - docs/resources/index.qmd
+        - auto: "docs/resources/*"
 
 format:
   html:
     theme:
-      light: flatly
-      dark: darkly
+      light: [flatly, static/theme-light.scss]
+      dark: [darkly, static/theme-dark.scss]
+    css: static/styles.css
     toc: true
-    toc_float: true
-    includes:
-      in_header: /lib/header.html
-      after_body: /lib/footer.html
+    toc-depth: 3
+    code-copy: true
+    code-fold: true
+    code-overflow: scroll
+    code-line-numbers: false
+    code-annotations: below
+    highlight-style: github
+    link-external-newwindow: true
+    filters:
+      - black-formatter
+      - downloadthis
+    grid:
+      sidebar-width: 350px
+      body-width: 1000px
+      margin-width: 250px
+    include-in-header: 
+      - text: |
+          <script 
+            src="https://code.jquery.com/jquery-3.7.0.min.js" 
+            integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" 
+            crossorigin="anonymous">
+          </script>
+
+editor: visual

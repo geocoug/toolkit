@@ -1,0 +1,28 @@
+---
+title: CMD
+description: Command Prompt
+image: https://img.icons8.com/?size=512&id=8799&format=png
+---
+
+## Run an Execsql Script
+
+```bat
+@echo off
+cls
+
+@REM Set the path to the script root (using UNC path). Note the string is not quoted.
+set SCRIPT_DIR=\\integral-corp.com\data\<Project Number Range>\<Project Folder>\Working_Files\DataManagement\IDB\export\script
+
+@REM Name of the script to execute. Note the string is not quoted.
+set SCRIPT_NAME=export.sql
+
+@REM Prompt the user for their Postgres password
+@REM This allows for users to run the execsql script who might not have
+@REM a custom execsql.conf file specified with their username.
+set /p "DB_USER=Enter you PostgreSQL username: "
+
+@REM Run the execsql script
+PowerShell -NoProfile -ExecutionPolicy Bypass -Command "& Set-Location -Path %SCRIPT_DIR%; M:\DataManagement\bin\execsql.py -u %DB_USER% %SCRIPT_NAME%"
+
+pause
+```

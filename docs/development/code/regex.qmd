@@ -1,0 +1,11 @@
+---
+title: Regex
+description: Regular expressions
+image: https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/OOjs_UI_icon_regular-expression-progressive.svg/2560px-OOjs_UI_icon_regular-expression-progressive.svg.png
+---
+
+## Markdown link pattern
+
+```txt
+\[([^\]]+)\]\(([^\)]+)\)
+```

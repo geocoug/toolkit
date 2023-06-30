@@ -1,0 +1,126 @@
+---
+title: Jupyter Server
+description: Jupyter Server deployment
+---
+
+1. Create `jupyter` user
+
+    ```bash
+    sudo adduser jupyter && \
+    sudo usermod -a -G staff jupyter
+    sudo su jupyter && \
+    ```
+
+1. Install Jupyter Lab
+
+    ```bash
+    source /home/jupyter/.venv/bin/activate && \
+    python -m pip install jupyterlab && \
+    jupyter-lab --generate-config
+    ```
+
+1. Configure Jupyter
+
+    ```python
+    c.NotebookApp.ip = '*'
+    c.NotebookApp.notebook_dir = '/home/jupyter/notebooks/'
+    c.NotebookApp.open_browser = False
+    c.NotebookApp.password = '' # hashed password
+    c.NotebookApp.port = 9999
+    ```
+
+1. Configure Apache:
+
+    ```apache
+    <VirtualHost *:80>
+        ServerName <DNS ENTRY>
+        ServerSignature Off
+
+        ErrorLog /var/log/apache2/redirect.error.log
+        LogLevel warn
+
+        ProxyPreserveHost On
+        ProxyPass "/" "http://localhost:9999/"
+        ProxyPassReverse "/" "http://localhost:9999/"
+
+        RewriteEngine on
+        RewriteCond %{SERVER_NAME} =<DNS ENTRY>
+        RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]
+    </VirtualHost>
+
+    <IfModule mod_ssl.c>
+        <VirtualHost *:443>
+            ServerName <DNS ENTRY>
+            ServerSignature Off
+
+            ErrorLog /var/log/apache2/redirect.error.log
+            LogLevel warn
+
+            ProxyPreserveHost On
+            ProxyPass "/" "http://localhost:9999/"
+            ProxyPassReverse "/" "http://localhost:9999/"
+
+        <Location "/api/kernels/">
+            ProxyPass        ws://localhost:9999/api/kernels/
+                ProxyPassReverse ws://localhost:9999/api/kernels/
+        </Location>
+
+            SSLCertificateFile /etc/letsencrypt/live/<DNS ENTRY>/fullchain.pem
+            SSLCertificateKeyFile /etc/letsencrypt/<DNS ENTRY>/privkey.pem
+            Include /etc/letsencrypt/options-ssl-apache.conf
+        </VirtualHost>
+    </IfModule>
+    ```
+
+1. Enable Apache modules
+
+    ```bash
+    sudo a2enmod proxy
+    sudo a2enmod proxy_http
+    sudo a2enmod proxy_wstunnel
+    ```
+
+1. Generate SSL certs
+
+    ```bash
+    sudo certbot --apache certonly
+    ```
+
+1. Enable the site
+
+    ```bash
+    sudo a2ensite jupyter.conf && \
+    sudo systemctl reload apache2 && \
+    sudo systemctl status apache2
+    ```
+
+1. Create the Jupyter service: `/lib/systemd/system/jupyter.service`
+
+    ```ini
+    # service name:     jupyter.service
+    # path:             /lib/systemd/system/jupyter.service
+
+    [Unit]
+    Description=Jupyter Notebook Server
+
+    [Service]
+    Type=simple
+    PIDFile=/run/jupyter.pid
+    ExecStart=/bin/bash -c "/home/jupyter/.venv/bin/jupyter lab --no-browser"
+    User=jupyter
+    Group=staff
+    WorkingDirectory=/home/jupyter/notebooks
+    Restart=always
+    RestartSec=30
+
+    [Install]
+    WantedBy=multi-user.target
+    ```
+
+1. Enable the service
+
+    ```bash
+    sudo systemctl daemon-reload && \
+    sudo systemctl start jupyter.service && \
+    sudo service jupyter status
+    ```

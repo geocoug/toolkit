@@ -1,0 +1,2105 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Python programming language">
+
+<title>Toolkit - Python</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../docs/development/code/r.html" rel="next">
+<link href="../../../docs/development/code/powershell.html" rel="prev">
+<link href="../../..//static/favicon.ico" rel="icon">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": true,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous">
+</script>
+
+
+<link rel="stylesheet" href="../../../static/styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../static/logo.svg" alt="" class="navbar-logo">
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="../../../docs/development/index.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Development</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../docs/resources/index.html" rel="" target="">
+ <span class="menu-text">Resources</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../docs/blog/index.html" rel="" target="">
+ <span class="menu-text">Blog</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/c-grant/" rel="" target=""><i class="bi bi-linkedin" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/geocoug" rel="" target=""><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../docs/development/code/index.html">Code</a></li><li class="breadcrumb-item"><a href="../../../docs/development/code/python.html">Python</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/development/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Development</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/development/tools.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tools</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../docs/development/code/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Code</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/development/code/bash.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bash</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/development/code/cmd.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">CMD</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/development/code/html.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HTML</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/development/code/javascript.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">JavaScript</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/development/code/julia.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Julia</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/development/code/markdown.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Markdown</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/development/code/powershell.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">PowerShell</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/development/code/python.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/development/code/r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/development/code/regex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Regex</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/development/code/rust.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Rust</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/development/code/sql.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SQL</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../docs/development/server/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Server</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/development/server/docker.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Docker</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/development/server/jupyter-server.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Jupyter Server</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/development/server/python-web-app.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python Web App</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/development/server/rstudio-server.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Rstudio Server</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#batch-file-rename" id="toc-batch-file-rename" class="nav-link active" data-scroll-target="#batch-file-rename">Batch File Rename</a></li>
+  <li><a href="#logging-basics" id="toc-logging-basics" class="nav-link" data-scroll-target="#logging-basics">Logging Basics</a></li>
+  <li><a href="#sending-http-requests" id="toc-sending-http-requests" class="nav-link" data-scroll-target="#sending-http-requests">Sending HTTP Requests</a></li>
+  <li><a href="#regular-expressions" id="toc-regular-expressions" class="nav-link" data-scroll-target="#regular-expressions">Regular Expressions</a>
+  <ul class="collapse">
+  <li><a href="#metacharacters-need-to-be-escaped" id="toc-metacharacters-need-to-be-escaped" class="nav-link" data-scroll-target="#metacharacters-need-to-be-escaped">MetaCharacters (Need to be escaped)</a></li>
+  <li><a href="#characters" id="toc-characters" class="nav-link" data-scroll-target="#characters">Characters</a></li>
+  <li><a href="#character-classes" id="toc-character-classes" class="nav-link" data-scroll-target="#character-classes">Character Classes</a></li>
+  <li><a href="#quantifiers" id="toc-quantifiers" class="nav-link" data-scroll-target="#quantifiers">Quantifiers</a></li>
+  <li><a href="#anchors-boundaries" id="toc-anchors-boundaries" class="nav-link" data-scroll-target="#anchors-boundaries">Anchors &amp; Boundaries</a></li>
+  <li><a href="#logic" id="toc-logic" class="nav-link" data-scroll-target="#logic">Logic</a></li>
+  <li><a href="#white-space" id="toc-white-space" class="nav-link" data-scroll-target="#white-space">White-space</a></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a></li>
+  </ul></li>
+  <li><a href="#oop-basics" id="toc-oop-basics" class="nav-link" data-scroll-target="#oop-basics">OOP Basics</a></li>
+  <li><a href="#dbms-data-types" id="toc-dbms-data-types" class="nav-link" data-scroll-target="#dbms-data-types">DBMS Data Types</a></li>
+  <li><a href="#dbms-libraries" id="toc-dbms-libraries" class="nav-link" data-scroll-target="#dbms-libraries">DBMS Libraries</a></li>
+  <li><a href="#db-table-dependencies" id="toc-db-table-dependencies" class="nav-link" data-scroll-target="#db-table-dependencies">DB Table Dependencies</a></li>
+  <li><a href="#csv-sniffer" id="toc-csv-sniffer" class="nav-link" data-scroll-target="#csv-sniffer">CSV Sniffer</a></li>
+  <li><a href="#import-csv-to-a-database" id="toc-import-csv-to-a-database" class="nav-link" data-scroll-target="#import-csv-to-a-database">Import CSV to a Database</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/geocoug/toolkit/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Python</h1>
+</div>
+
+<div>
+  <div class="description">
+    Python programming language
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="batch-file-rename" class="level2">
+<h2 class="anchored" data-anchor-id="batch-file-rename">Batch File Rename</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode py code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> glob</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> filename <span class="kw">in</span> glob.glob(<span class="st">"./**/*.ext"</span>, recursive<span class="op">=</span><span class="va">True</span>):</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    new_name <span class="op">=</span> <span class="st">"-"</span>.join(filename.split(<span class="st">"_"</span>))</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    os.rename(filename, new_name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="logging-basics" class="level2">
+<h2 class="anchored" data-anchor-id="logging-basics">Logging Basics</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode py code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> argparse</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> logging</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datetime <span class="im">import</span> datetime</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Do not specify __name__ to use root log level</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>logger <span class="op">=</span> logging.getLogger(<span class="va">__name__</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>logger.setLevel(logging.INFO)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>formatter <span class="op">=</span> logging.Formatter(</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"</span><span class="sc">%(asctime)s</span><span class="st"> : </span><span class="sc">%(msecs)04d</span><span class="st"> : </span><span class="sc">%(name)s</span><span class="st"> : </span><span class="sc">%(levelname)s</span><span class="st"> : </span><span class="sc">%(message)s</span><span class="st">"</span>,</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    datefmt<span class="op">=</span><span class="st">"%Y-%m-</span><span class="sc">%d</span><span class="st"> %H:%M:%S"</span>,</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>log_file <span class="op">=</span> (</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f"</span><span class="sc">{</span>os<span class="sc">.</span>path<span class="sc">.</span>splitext(<span class="va">__file__</span>)[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">_</span><span class="sc">{</span>datetime<span class="sc">.</span>now()<span class="sc">.</span>strftime(<span class="st">'%Y-%m-</span><span class="sc">%d</span><span class="st">_%H%M%S'</span>)<span class="sc">}</span><span class="ss">.log"</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>stream_handler <span class="op">=</span> logging.StreamHandler()</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>stream_handler.setFormatter(formatter)</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> clparser() <span class="op">-&gt;</span> argparse.ArgumentParser:</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Create a parser to handle input arguments and displaying a help message."""</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    desc_msg <span class="op">=</span> <span class="st">"""My logging program."""</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    parser <span class="op">=</span> argparse.ArgumentParser(description<span class="op">=</span>desc_msg)</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    parser.add_argument(</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>        <span class="st">"-l"</span>,</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>        <span class="st">"--logfile"</span>,</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>        action<span class="op">=</span><span class="st">"store_true"</span>,</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>        <span class="bu">help</span><span class="op">=</span><span class="st">"Write log messages to a file."</span>,</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>    parser.add_argument(</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>        <span class="st">"-v"</span>,</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>        <span class="st">"--verbose"</span>,</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>        action<span class="op">=</span><span class="st">"store_true"</span>,</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>        <span class="bu">help</span><span class="op">=</span><span class="st">"Control the amount of information to display."</span>,</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> parser</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>    args <span class="op">=</span> clparser().parse_args()</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> args.verbose:</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>        logger.addHandler(stream_handler)</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> args.logfile:</span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>        file_handler <span class="op">=</span> logging.FileHandler(filename<span class="op">=</span>log_file)</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>        file_handler.setFormatter(formatter)</span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>        logger.addHandler(file_handler)</span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>    logger.info(<span class="st">"Begin my test module"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="sending-http-requests" class="level2">
+<h2 class="anchored" data-anchor-id="sending-http-requests">Sending HTTP Requests</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode py code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> logging</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>logger <span class="op">=</span> logging.getLogger(<span class="va">__name__</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> send_request(request_type: <span class="bu">str</span>, url: <span class="bu">str</span>, <span class="op">**</span>kwargs) <span class="op">-&gt;</span> requests.Response:</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Send an HTTP request.</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co">    Args:</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co">    ----</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co">        request_type (str): Accepts "GET" or "POST"</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co">        url (str): Request URL</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="co">    -------</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co">        requests.Response: Request response.</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    valid_methods <span class="op">=</span> (<span class="st">"GET"</span>, <span class="st">"POST"</span>)</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> request_type.upper() <span class="kw">not</span> <span class="kw">in</span> valid_methods:</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="ss">f"Invalid request type. Supported types: </span><span class="sc">{</span>valid_methods<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>        response <span class="op">=</span> requests.request(request_type.upper(), url, <span class="op">**</span>kwargs)</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>        response.raise_for_status()  <span class="co"># Raises an exception if status code &gt;= 400</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> response</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> requests.exceptions.RequestException <span class="im">as</span> err:</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>        logger.error(<span class="ss">f"</span><span class="sc">{</span>err<span class="sc">}</span><span class="ss">. Request type: </span><span class="sc">{</span>request_type<span class="sc">}</span><span class="ss">. URL: </span><span class="sc">{</span>url<span class="sc">}</span><span class="ss">. Args: </span><span class="sc">{</span>kwargs<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> err</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Example GET request</span></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> send_request(<span class="st">"GET"</span>, <span class="st">"https://api.publicapis.org/entries"</span>, timeout<span class="op">=</span><span class="dv">5</span>)</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>logger.info(response.json())</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Example POST request</span></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> send_request(<span class="st">"POST"</span>, <span class="st">"https://someurl.com"</span>, headers<span class="op">=</span>{}, timeout<span class="op">=</span><span class="dv">5</span>)</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>logger.info(response.json())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="regular-expressions" class="level2">
+<h2 class="anchored" data-anchor-id="regular-expressions">Regular Expressions</h2>
+<ul>
+<li><a href="https://www.rexegg.com/regex-quickstart.html">Quickstart</a></li>
+<li><a href="https://regex101.com/">Regex101</a></li>
+</ul>
+<section id="metacharacters-need-to-be-escaped" class="level3">
+<h3 class="anchored" data-anchor-id="metacharacters-need-to-be-escaped">MetaCharacters (Need to be escaped)</h3>
+<p><code>. ^ $ * + ? { } [ ] \ | ( )</code></p>
+</section>
+<section id="characters" class="level3">
+<h3 class="anchored" data-anchor-id="characters">Characters</h3>
+<p><code>.</code> - Any Character Except New Line<br> <code>\d</code> - Digit (0-9)<br> <code>\D</code> - Not a Digit (0-9)<br> <code>\w</code> - Word Character (a-z, A-Z, 0-9, _)<br> <code>\W</code> - Not a Word Character<br> <code>\s</code> - Whitespace (space, tab, newline)<br> <code>\S</code> - Not Whitespace (space, tab, newline)<br></p>
+</section>
+<section id="character-classes" class="level3">
+<h3 class="anchored" data-anchor-id="character-classes">Character Classes</h3>
+<p><code>[]</code> - Matches Characters in brackets<br> <code>[^ ]</code> - Matches Characters NOT in brackets<br> <code>[a-z]</code> - Any lowercase character between a and z<br> <code>[A-Z]</code> - Any UPPERCASE character between A and Z<br></p>
+</section>
+<section id="quantifiers" class="level3">
+<h3 class="anchored" data-anchor-id="quantifiers">Quantifiers</h3>
+<p><code>*</code> - 0 or More<br> <code>+</code> - 1 or More<br> <code>?</code> - 0 or One<br> <code>{3}</code> - Exact Number<br> <code>{3,4}</code> - Range of Numbers (Minimum, Maximum)<br> <code>{3,}</code> - At least 3<br></p>
+</section>
+<section id="anchors-boundaries" class="level3">
+<h3 class="anchored" data-anchor-id="anchors-boundaries">Anchors &amp; Boundaries</h3>
+<p><code>\b</code> - Word Boundary<br> <code>\B</code> - Not a Word Boundary<br> <code>^</code> - Beginning of a String<br> <code>$</code> - End of a String<br></p>
+</section>
+<section id="logic" class="level3">
+<h3 class="anchored" data-anchor-id="logic">Logic</h3>
+<p><code>|</code> - Either Or<br> <code>( )</code> - Group<br> <code>\1</code> - Contents of group 1<br></p>
+</section>
+<section id="white-space" class="level3">
+<h3 class="anchored" data-anchor-id="white-space">White-space</h3>
+<p><code>\t</code> - Tab<br> <code>\r</code> - Carriage return<br> <code>\n</code> - New line<br></p>
+</section>
+<section id="example" class="level3">
+<h3 class="anchored" data-anchor-id="example">Example</h3>
+<div class="cell" data-execution_count="1">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>text_string <span class="op">=</span> <span class="st">"""</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="st">Hello world</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="st">8001234567</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="st">800-321-7654</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="st">900.987.6543</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="st">some.email@email.com</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="st">mycompany@company.net</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="st">wierd-12-address-4@somedomain.blah</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>pattern <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r"[0-9]</span><span class="sc">{3}</span><span class="vs">[.-]?[0-9]</span><span class="sc">{3}</span><span class="vs">[.-]?[0-9]</span><span class="sc">{4}</span><span class="vs">"</span>)</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>matches <span class="op">=</span> re.finditer(pattern, text_string)</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> match <span class="kw">in</span> matches:</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(match)</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(match.span())</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(text_string[match.start() : match.end()])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;re.Match object; span=(14, 24), match='8001234567'&gt;
+(14, 24)
+8001234567
+&lt;re.Match object; span=(25, 37), match='800-321-7654'&gt;
+(25, 37)
+800-321-7654
+&lt;re.Match object; span=(38, 50), match='900.987.6543'&gt;
+(38, 50)
+900.987.6543</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="oop-basics" class="level2">
+<h2 class="anchored" data-anchor-id="oop-basics">OOP Basics</h2>
+<div class="cell" data-execution_count="2">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Employee:</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Create an employee object with relevant attributes."""</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    annual_raise_pct <span class="op">=</span> <span class="fl">0.04</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    employee_no <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, first_name, last_name, position, years_employed<span class="op">=</span><span class="dv">1</span>):</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Function called when new object is initiated."""</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.first_name <span class="op">=</span> first_name</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.last_name <span class="op">=</span> last_name</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.position <span class="op">=</span> position</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.years_employed <span class="op">=</span> years_employed</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.employee_number <span class="op">=</span> Employee.employee_no</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.email <span class="op">=</span> <span class="va">self</span>.first_name <span class="op">+</span> <span class="st">"."</span> <span class="op">+</span> <span class="va">self</span>.last_name <span class="op">+</span> <span class="st">"@company.com"</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.salary <span class="op">=</span> <span class="va">self</span>.calculate_salary()</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>        Employee.employee_no <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> starting_salary(<span class="va">self</span>):</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Return the starting salary for each position at company"""</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="va">self</span>.position <span class="op">==</span> <span class="st">"HR"</span>:</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="dv">25000</span></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> <span class="va">self</span>.position <span class="op">==</span> <span class="st">"Management"</span>:</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="dv">50000</span></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> <span class="va">self</span>.position <span class="op">==</span> <span class="st">"Developer"</span>:</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="dv">100000</span></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> <span class="va">self</span>.position <span class="op">==</span> <span class="st">"CEO"</span>:</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="dv">200000</span></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="va">None</span></span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> calculate_salary(<span class="va">self</span>):</span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>        salary <span class="op">=</span> <span class="va">self</span>.starting_salary()</span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> year <span class="kw">in</span> <span class="bu">range</span>(<span class="va">self</span>.years_employed):</span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>            salary <span class="op">=</span> <span class="bu">int</span>(salary <span class="op">+</span> (salary <span class="op">*</span> Employee.annual_raise_pct))</span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> salary</span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__repr__</span>(<span class="va">self</span>):</span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Create representational object string"""</span></span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"""Employee(first_name = </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>first_name<span class="sc">}</span><span class="ss">, last_name = </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>last_name<span class="sc">}</span><span class="ss">, position = </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>position<span class="sc">}</span><span class="ss">, years_employed = </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>years_employed<span class="sc">}</span><span class="ss">)"""</span></span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a>current_employees <span class="op">=</span> [</span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a>    Employee(<span class="st">"Geo"</span>, <span class="st">"Coug"</span>, <span class="st">"Developer"</span>, <span class="dv">6</span>),</span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a>    Employee(<span class="st">"Jane"</span>, <span class="st">"Doe"</span>, <span class="st">"HR"</span>, <span class="dv">4</span>),</span>
+<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a>    Employee(<span class="st">"John"</span>, <span class="st">"Doe"</span>, <span class="st">"Management"</span>, <span class="dv">15</span>),</span>
+<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a>    Employee(<span class="st">"Bob"</span>, <span class="st">"Loblaw"</span>, <span class="st">"CEO"</span>, <span class="dv">24</span>),</span>
+<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> e <span class="kw">in</span> current_employees:</span>
+<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Employee Number: </span><span class="sc">{</span>e<span class="sc">.</span>employee_number<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb6-51"><a href="#cb6-51" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(e)</span>
+<span id="cb6-52"><a href="#cb6-52" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Email:"</span>, e.email)</span>
+<span id="cb6-53"><a href="#cb6-53" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Salary: ${:,}</span><span class="ch">\n</span><span class="st">"</span>.<span class="bu">format</span>(e.salary))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Employee Number: 1
+Employee(first_name = Geo, last_name = Coug, position = Developer, years_employed = 6)
+Email: Geo.Coug@company.com
+Salary: $126,530
+
+Employee Number: 2
+Employee(first_name = Jane, last_name = Doe, position = HR, years_employed = 4)
+Email: Jane.Doe@company.com
+Salary: $29,245
+
+Employee Number: 3
+Employee(first_name = John, last_name = Doe, position = Management, years_employed = 15)
+Email: John.Doe@company.com
+Salary: $90,039
+
+Employee Number: 4
+Employee(first_name = Bob, last_name = Loblaw, position = CEO, years_employed = 24)
+Email: Bob.Loblaw@company.com
+Salary: $512,645
+</code></pre>
+</div>
+</div>
+</section>
+<section id="dbms-data-types" class="level2">
+<h2 class="anchored" data-anchor-id="dbms-data-types">DBMS Data Types</h2>
+<div class="cell" data-execution_count="3">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"../../../static/development/data-types.csv"</span>)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>df.to_html(index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="3">
+
+<table class="dataframe table table-sm table-striped small">
+
+<thead>
+
+<tr>
+
+<th>
+Data Type
+</th>
+
+<th>
+Postgres
+</th>
+
+<th>
+MariaDB
+</th>
+
+<th>
+SQL Server
+</th>
+
+<th>
+Firebird
+</th>
+
+<th>
+MS-Access
+</th>
+
+<th>
+SQLite
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>
+Timestamp with time zone
+</td>
+
+<td>
+1184.0
+</td>
+
+<td>
+NaN
+</td>
+
+<td>
+NaN
+</td>
+
+<td>
+NaN
+</td>
+
+<td>
+NaN
+</td>
+
+<td>
+NaN
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Timestamp
+</td>
+
+<td>
+1184.0
+</td>
+
+<td>
+7
+</td>
+
+<td>
+NaN
+</td>
+
+<td>
+type ‘datetime.datetime’
+</td>
+
+<td>
+NaN
+</td>
+
+<td>
+NaN
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Datetime
+</td>
+
+<td>
+NaN
+</td>
+
+<td>
+12
+</td>
+
+<td>
+class ‘datetime.datetime’
+</td>
+
+<td>
+NaN
+</td>
+
+<td>
+class ‘datetime.datetime’
+</td>
+
+<td>
+NaN
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Date
+</td>
+
+<td>
+1082.0
+</td>
+
+<td>
+10
+</td>
+
+<td>
+class ‘datetime.date’
+</td>
+
+<td>
+type ‘datetime.date’
+</td>
+
+<td>
+class ‘datetime.datetime’
+</td>
+
+<td>
+NaN
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Time
+</td>
+
+<td>
+1083.0
+</td>
+
+<td>
+11
+</td>
+
+<td>
+class ‘datetime.time’
+</td>
+
+<td>
+type ‘datetime.time’
+</td>
+
+<td>
+class ‘datetime.datetime’
+</td>
+
+<td>
+NaN
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Boolean
+</td>
+
+<td>
+16.0
+</td>
+
+<td>
+16
+</td>
+
+<td>
+class ‘bool’
+</td>
+
+<td>
+NaN
+</td>
+
+<td>
+class ‘bool’
+</td>
+
+<td>
+NaN
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Small integer
+</td>
+
+<td>
+21.0
+</td>
+
+<td>
+1
+</td>
+
+<td>
+class ‘int’
+</td>
+
+<td>
+NaN
+</td>
+
+<td>
+class ‘int’
+</td>
+
+<td>
+NaN
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Integer
+</td>
+
+<td>
+23.0
+</td>
+
+<td>
+2
+</td>
+
+<td>
+class ‘int’
+</td>
+
+<td>
+type ‘int’
+</td>
+
+<td>
+class ‘int’
+</td>
+
+<td>
+NaN
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Long integer
+</td>
+
+<td>
+20.0
+</td>
+
+<td>
+3
+</td>
+
+<td>
+class ‘int’
+</td>
+
+<td>
+type ‘long’
+</td>
+
+<td>
+NaN
+</td>
+
+<td>
+NaN
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Single
+</td>
+
+<td>
+701.0
+</td>
+
+<td>
+4
+</td>
+
+<td>
+class ‘float’
+</td>
+
+<td>
+type ‘float’
+</td>
+
+<td>
+class ‘float’
+</td>
+
+<td>
+NaN
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Double precision
+</td>
+
+<td>
+701.0
+</td>
+
+<td>
+5
+</td>
+
+<td>
+class ‘float’
+</td>
+
+<td>
+type ‘float’
+</td>
+
+<td>
+class ‘float’
+</td>
+
+<td>
+NaN
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Decimal
+</td>
+
+<td>
+1700.0
+</td>
+
+<td>
+0
+</td>
+
+<td>
+class ‘decimal.Decimal’
+</td>
+
+<td>
+class ‘decimal.Decimal’
+</td>
+
+<td>
+NaN
+</td>
+
+<td>
+NaN
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Currency
+</td>
+
+<td>
+790.0
+</td>
+
+<td>
+NaN
+</td>
+
+<td>
+NaN
+</td>
+
+<td>
+class ‘decimal.Decimal’
+</td>
+
+<td>
+class ‘decimal.Decimal’
+</td>
+
+<td>
+NaN
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Character
+</td>
+
+<td>
+1042.0
+</td>
+
+<td>
+NaN
+</td>
+
+<td>
+class ‘str’
+</td>
+
+<td>
+type ‘str’
+</td>
+
+<td>
+class ‘str’
+</td>
+
+<td>
+NaN
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Character varying
+</td>
+
+<td>
+1043.0
+</td>
+
+<td>
+15
+</td>
+
+<td>
+class ‘str’
+</td>
+
+<td>
+type ‘str’
+</td>
+
+<td>
+class ‘str’
+</td>
+
+<td>
+NaN
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Text
+</td>
+
+<td>
+25.0
+</td>
+
+<td>
+NaN
+</td>
+
+<td>
+class ‘str’
+</td>
+
+<td>
+type ‘str’
+</td>
+
+<td>
+class ‘str’
+</td>
+
+<td>
+NaN
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Binary / BLOB
+</td>
+
+<td>
+17.0
+</td>
+
+<td>
+249,250,251,252
+</td>
+
+<td>
+class ‘bytearray’
+</td>
+
+<td>
+type ‘str’
+</td>
+
+<td>
+type ‘bytearray’
+</td>
+
+<td>
+NaN
+</td>
+
+</tr>
+
+</tbody>
+
+
+</table>
+</div>
+</div>
+</section>
+<section id="dbms-libraries" class="level2">
+<h2 class="anchored" data-anchor-id="dbms-libraries">DBMS Libraries</h2>
+<ul>
+<li>Postgres: <code>psycopg2</code></li>
+<li>MariaDB: <code>pymysql</code></li>
+<li>SQL Server: <code>pyodbc</code></li>
+<li>Firebird: <code>fdb</code></li>
+<li>MS-Access: <code>pyodbc</code></li>
+<li>SQLite: <code>sqlite3</code></li>
+</ul>
+</section>
+<section id="db-table-dependencies" class="level2">
+<h2 class="anchored" data-anchor-id="db-table-dependencies">DB Table Dependencies</h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode py code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dependency_order(dep_list):</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    rem_tables <span class="op">=</span> <span class="bu">list</span>(<span class="bu">set</span>([t[<span class="dv">0</span>] <span class="cf">for</span> t <span class="kw">in</span> dep_list] <span class="op">+</span> [t[<span class="dv">1</span>] <span class="cf">for</span> t <span class="kw">in</span> dep_list]))</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    rem_dep <span class="op">=</span> copy.copy(dep_list)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    sortkey <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    ret_list <span class="op">=</span> []</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="bu">len</span>(rem_dep) <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>        tbls <span class="op">=</span> [tbl <span class="cf">for</span> tbl <span class="kw">in</span> rem_tables <span class="cf">if</span> tbl <span class="kw">not</span> <span class="kw">in</span> [dep[<span class="dv">0</span>] <span class="cf">for</span> dep <span class="kw">in</span> rem_dep]]</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>        ret_list.extend([(tb, sortkey) <span class="cf">for</span> tb <span class="kw">in</span> tbls])</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>        rem_tables <span class="op">=</span> [tbl <span class="cf">for</span> tbl <span class="kw">in</span> rem_tables <span class="cf">if</span> tbl <span class="kw">not</span> <span class="kw">in</span> tbls]</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>        rem_dep <span class="op">=</span> [dep <span class="cf">for</span> dep <span class="kw">in</span> rem_dep <span class="cf">if</span> dep[<span class="dv">1</span>] <span class="kw">not</span> <span class="kw">in</span> tbls]</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>        sortkey <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(rem_tables) <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>        ret_list.extend([(tb, sortkey) <span class="cf">for</span> tb <span class="kw">in</span> rem_tables])</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>    ret_list.sort(<span class="bu">cmp</span><span class="op">=</span><span class="kw">lambda</span> x, y: <span class="bu">cmp</span>(x[<span class="dv">1</span>], y[<span class="dv">1</span>]))</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> [item[<span class="dv">0</span>] <span class="cf">for</span> item <span class="kw">in</span> ret_list]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="csv-sniffer" class="level2">
+<h2 class="anchored" data-anchor-id="csv-sniffer">CSV Sniffer</h2>
+<div class="sourceCode" id="cb10"><pre class="sourceCode py code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> CsvDiagError(<span class="pp">Exception</span>):</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, msg):</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.value <span class="op">=</span> msg</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.value</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> CsvLine:</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>    escchar <span class="op">=</span> <span class="st">"</span><span class="ch">\\</span><span class="st">"</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, line_text):</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.text <span class="op">=</span> line_text</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.delim_counts <span class="op">=</span> {}</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.item_errors <span class="op">=</span> []  <span class="co"># A list of error messages.</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"; "</span>.join(</span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>            [</span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>                <span class="st">"Text: &lt;&lt;</span><span class="sc">%s</span><span class="st">&gt;&gt;"</span> <span class="op">%</span> <span class="va">self</span>.text,</span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>                <span class="st">"Delimiter counts: &lt;&lt;</span><span class="sc">%s</span><span class="st">&gt;&gt;"</span></span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>                <span class="op">%</span> <span class="st">", "</span>.join(</span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>                    [</span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"</span><span class="sc">%s</span><span class="st">: </span><span class="sc">%d</span><span class="st">"</span> <span class="op">%</span> (k, <span class="va">self</span>.delim_counts[k])</span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>                        <span class="cf">for</span> k <span class="kw">in</span> <span class="va">self</span>.delim_counts.keys()</span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>                    ]</span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>                ),</span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a>            ]</span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> count_delim(<span class="va">self</span>, delim):</span>
+<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a>        <span class="co"># If the delimiter is a space, consider multiple spaces to be equivalent</span></span>
+<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a>        <span class="co"># to a single delimiter, split on the space(s), and consider the delimiter</span></span>
+<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a>        <span class="co"># count to be one fewer than the items returned.</span></span>
+<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> delim <span class="op">==</span> <span class="st">" "</span>:</span>
+<span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.delim_counts[delim] <span class="op">=</span> <span class="bu">max</span>(<span class="dv">0</span>, <span class="bu">len</span>(re.split(<span class="vs">r" +"</span>, <span class="va">self</span>.text)) <span class="op">-</span> <span class="dv">1</span>)</span>
+<span id="cb10-38"><a href="#cb10-38" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb10-39"><a href="#cb10-39" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.delim_counts[delim] <span class="op">=</span> <span class="va">self</span>.text.count(delim)</span>
+<span id="cb10-40"><a href="#cb10-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-41"><a href="#cb10-41" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> delim_count(<span class="va">self</span>, delim):</span>
+<span id="cb10-42"><a href="#cb10-42" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.delim_counts[delim]</span>
+<span id="cb10-43"><a href="#cb10-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-44"><a href="#cb10-44" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> _well_quoted(<span class="va">self</span>, element, qchar):</span>
+<span id="cb10-45"><a href="#cb10-45" aria-hidden="true" tabindex="-1"></a>        <span class="co"># A well-quoted element has either no quotes, a quote on each end and none</span></span>
+<span id="cb10-46"><a href="#cb10-46" aria-hidden="true" tabindex="-1"></a>        <span class="co"># in the middle, or quotes on both ends and every internal quote is either</span></span>
+<span id="cb10-47"><a href="#cb10-47" aria-hidden="true" tabindex="-1"></a>        <span class="co"># doubled or escaped.</span></span>
+<span id="cb10-48"><a href="#cb10-48" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Returns a tuple of three booleans; the first indicates whether the element is</span></span>
+<span id="cb10-49"><a href="#cb10-49" aria-hidden="true" tabindex="-1"></a>        <span class="co"># well-quoted, the second indicates whether the quote character is used</span></span>
+<span id="cb10-50"><a href="#cb10-50" aria-hidden="true" tabindex="-1"></a>        <span class="co"># at all, and the third indicates whether the escape character is used.</span></span>
+<span id="cb10-51"><a href="#cb10-51" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> qchar <span class="kw">not</span> <span class="kw">in</span> element:</span>
+<span id="cb10-52"><a href="#cb10-52" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> (<span class="va">True</span>, <span class="va">False</span>, <span class="va">False</span>)</span>
+<span id="cb10-53"><a href="#cb10-53" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="bu">len</span>(element) <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb10-54"><a href="#cb10-54" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> (<span class="va">True</span>, <span class="va">False</span>, <span class="va">False</span>)</span>
+<span id="cb10-55"><a href="#cb10-55" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> element[<span class="dv">0</span>] <span class="op">==</span> qchar <span class="kw">and</span> element[<span class="op">-</span><span class="dv">1</span>] <span class="op">==</span> qchar <span class="kw">and</span> qchar <span class="kw">not</span> <span class="kw">in</span> element[<span class="dv">1</span>:<span class="op">-</span><span class="dv">1</span>]:</span>
+<span id="cb10-56"><a href="#cb10-56" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> (<span class="va">True</span>, <span class="va">True</span>, <span class="va">False</span>)</span>
+<span id="cb10-57"><a href="#cb10-57" aria-hidden="true" tabindex="-1"></a>        <span class="co"># The element has quotes; if it doesn't have one on each end, it is not well-quoted.</span></span>
+<span id="cb10-58"><a href="#cb10-58" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="kw">not</span> (element[<span class="dv">0</span>] <span class="op">==</span> qchar <span class="kw">and</span> element[<span class="op">-</span><span class="dv">1</span>] <span class="op">==</span> qchar):</span>
+<span id="cb10-59"><a href="#cb10-59" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> (<span class="va">False</span>, <span class="va">True</span>, <span class="va">False</span>)</span>
+<span id="cb10-60"><a href="#cb10-60" aria-hidden="true" tabindex="-1"></a>        e <span class="op">=</span> element[<span class="dv">1</span>:<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb10-61"><a href="#cb10-61" aria-hidden="true" tabindex="-1"></a>        <span class="co"># If there are no quotes left after removing doubled quotes, this is well-quoted.</span></span>
+<span id="cb10-62"><a href="#cb10-62" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> qchar <span class="kw">not</span> <span class="kw">in</span> e.replace(qchar <span class="op">+</span> qchar, <span class="st">""</span>):</span>
+<span id="cb10-63"><a href="#cb10-63" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> (<span class="va">True</span>, <span class="va">True</span>, <span class="va">False</span>)</span>
+<span id="cb10-64"><a href="#cb10-64" aria-hidden="true" tabindex="-1"></a>        <span class="co"># if there are no quotes left after removing escaped quotes, this is well-quoted.</span></span>
+<span id="cb10-65"><a href="#cb10-65" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> qchar <span class="kw">not</span> <span class="kw">in</span> e.replace(<span class="va">self</span>.escchar <span class="op">+</span> qchar, <span class="st">""</span>):</span>
+<span id="cb10-66"><a href="#cb10-66" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> (<span class="va">True</span>, <span class="va">True</span>, <span class="va">True</span>)</span>
+<span id="cb10-67"><a href="#cb10-67" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> (<span class="va">False</span>, <span class="va">True</span>, <span class="va">False</span>)</span>
+<span id="cb10-68"><a href="#cb10-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-69"><a href="#cb10-69" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> record_format_error(<span class="va">self</span>, pos_no, errmsg):</span>
+<span id="cb10-70"><a href="#cb10-70" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.item_errors.append(<span class="st">"</span><span class="sc">%s</span><span class="st"> in position </span><span class="sc">%d</span><span class="st">."</span> <span class="op">%</span> (errmsg, pos_no))</span>
+<span id="cb10-71"><a href="#cb10-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-72"><a href="#cb10-72" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> items(<span class="va">self</span>, delim, qchar):</span>
+<span id="cb10-73"><a href="#cb10-73" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Parses the line into a list of items, breaking it at delimiters that are not</span></span>
+<span id="cb10-74"><a href="#cb10-74" aria-hidden="true" tabindex="-1"></a>        <span class="co"># within quoted stretches.  (This is a almost CSV parser, for valid delim and qchar,</span></span>
+<span id="cb10-75"><a href="#cb10-75" aria-hidden="true" tabindex="-1"></a>        <span class="co"># except that it does not eliminate quote characters or reduce escaped quotes.)</span></span>
+<span id="cb10-76"><a href="#cb10-76" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.item_errors <span class="op">=</span> []</span>
+<span id="cb10-77"><a href="#cb10-77" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> qchar <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb10-78"><a href="#cb10-78" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> delim <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb10-79"><a href="#cb10-79" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> <span class="va">self</span>.text</span>
+<span id="cb10-80"><a href="#cb10-80" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb10-81"><a href="#cb10-81" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> delim <span class="op">==</span> <span class="st">" "</span>:</span>
+<span id="cb10-82"><a href="#cb10-82" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">return</span> re.split(<span class="vs">r" +"</span>, <span class="va">self</span>.text)</span>
+<span id="cb10-83"><a href="#cb10-83" aria-hidden="true" tabindex="-1"></a>                <span class="cf">else</span>:</span>
+<span id="cb10-84"><a href="#cb10-84" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">return</span> <span class="va">self</span>.text.split(delim)</span>
+<span id="cb10-85"><a href="#cb10-85" aria-hidden="true" tabindex="-1"></a>        elements <span class="op">=</span> []  <span class="co"># The list of items on the line that will be returned.</span></span>
+<span id="cb10-86"><a href="#cb10-86" aria-hidden="true" tabindex="-1"></a>        eat_multiple_delims <span class="op">=</span> delim <span class="op">==</span> <span class="st">" "</span></span>
+<span id="cb10-87"><a href="#cb10-87" aria-hidden="true" tabindex="-1"></a>        <span class="co"># States of the FSM:</span></span>
+<span id="cb10-88"><a href="#cb10-88" aria-hidden="true" tabindex="-1"></a>        <span class="co"># _IN_QUOTED: An opening quote has been seen, but no closing quote encountered.</span></span>
+<span id="cb10-89"><a href="#cb10-89" aria-hidden="true" tabindex="-1"></a>        <span class="co">#  Actions / transition:</span></span>
+<span id="cb10-90"><a href="#cb10-90" aria-hidden="true" tabindex="-1"></a>        <span class="co">#   quote: save char in escape buffer / _ESCAPED</span></span>
+<span id="cb10-91"><a href="#cb10-91" aria-hidden="true" tabindex="-1"></a>        <span class="co">#   esc_char : save char in escape buffer / _ESCAPED</span></span>
+<span id="cb10-92"><a href="#cb10-92" aria-hidden="true" tabindex="-1"></a>        <span class="co">#   delimiter: save char in element buffer / _IN_QUOTED</span></span>
+<span id="cb10-93"><a href="#cb10-93" aria-hidden="true" tabindex="-1"></a>        <span class="co">#   other: save char in element buffer / _IN_QUOTED</span></span>
+<span id="cb10-94"><a href="#cb10-94" aria-hidden="true" tabindex="-1"></a>        <span class="co"># _ESCAPED: An escape character has been seen while _IN_QUOTED (and is in the escape buffer).</span></span>
+<span id="cb10-95"><a href="#cb10-95" aria-hidden="true" tabindex="-1"></a>        <span class="co">#  Actions / transitions</span></span>
+<span id="cb10-96"><a href="#cb10-96" aria-hidden="true" tabindex="-1"></a>        <span class="co">#   quote: save escape buffer in element buffer, empty escape buffer,</span></span>
+<span id="cb10-97"><a href="#cb10-97" aria-hidden="true" tabindex="-1"></a>        <span class="co">#    save char in element buffer / _IN_QUOTED</span></span>
+<span id="cb10-98"><a href="#cb10-98" aria-hidden="true" tabindex="-1"></a>        <span class="co">#   delimiter: save escape buffer in element buffer, empty escape buffer,</span></span>
+<span id="cb10-99"><a href="#cb10-99" aria-hidden="true" tabindex="-1"></a>        <span class="co">#    save element buffer, empty element buffer / _BETWEEN</span></span>
+<span id="cb10-100"><a href="#cb10-100" aria-hidden="true" tabindex="-1"></a>        <span class="co">#   other: save escape buffer in element buffer, empty escape buffer,</span></span>
+<span id="cb10-101"><a href="#cb10-101" aria-hidden="true" tabindex="-1"></a>        <span class="co">#    save char in element buffer / _IN_QUOTED</span></span>
+<span id="cb10-102"><a href="#cb10-102" aria-hidden="true" tabindex="-1"></a>        <span class="co"># _QUOTE_IN_QUOTED: A quote has been seen while _IN_QUOTED (and is in the escape buffer).</span></span>
+<span id="cb10-103"><a href="#cb10-103" aria-hidden="true" tabindex="-1"></a>        <span class="co">#  Actions / transitions</span></span>
+<span id="cb10-104"><a href="#cb10-104" aria-hidden="true" tabindex="-1"></a>        <span class="co">#   quote: save escape buffer in element buffer, empty escape buffer,</span></span>
+<span id="cb10-105"><a href="#cb10-105" aria-hidden="true" tabindex="-1"></a>        <span class="co">#    save char in element buffer / _IN_QUOTED</span></span>
+<span id="cb10-106"><a href="#cb10-106" aria-hidden="true" tabindex="-1"></a>        <span class="co">#   delimiter: save escape buffer in element buffer, empty escape buffer,</span></span>
+<span id="cb10-107"><a href="#cb10-107" aria-hidden="true" tabindex="-1"></a>        <span class="co">#    save element buffer, empty element buffer / _DELIMITED</span></span>
+<span id="cb10-108"><a href="#cb10-108" aria-hidden="true" tabindex="-1"></a>        <span class="co">#   other: save escape buffer in element buffer, empty escape buffer,</span></span>
+<span id="cb10-109"><a href="#cb10-109" aria-hidden="true" tabindex="-1"></a>        <span class="co">#    save char in element buffer / _IN_QUOTED</span></span>
+<span id="cb10-110"><a href="#cb10-110" aria-hidden="true" tabindex="-1"></a>        <span class="co">#     (An 'other' character in this position represents a bad format:</span></span>
+<span id="cb10-111"><a href="#cb10-111" aria-hidden="true" tabindex="-1"></a>        <span class="co">#     a quote not followed by another quote or a delimiter.)</span></span>
+<span id="cb10-112"><a href="#cb10-112" aria-hidden="true" tabindex="-1"></a>        <span class="co"># _IN_UNQUOTED: A non-delimiter, non-quote has been seen.</span></span>
+<span id="cb10-113"><a href="#cb10-113" aria-hidden="true" tabindex="-1"></a>        <span class="co">#  Actions / transitions</span></span>
+<span id="cb10-114"><a href="#cb10-114" aria-hidden="true" tabindex="-1"></a>        <span class="co">#   quote: save char in element buffer / _IN_UNQUOTED</span></span>
+<span id="cb10-115"><a href="#cb10-115" aria-hidden="true" tabindex="-1"></a>        <span class="co">#    (This represents a bad format.)</span></span>
+<span id="cb10-116"><a href="#cb10-116" aria-hidden="true" tabindex="-1"></a>        <span class="co">#   delimiter: save element buffer, empty element buffer / _DELIMITED</span></span>
+<span id="cb10-117"><a href="#cb10-117" aria-hidden="true" tabindex="-1"></a>        <span class="co">#   other: save char in element buffer / _IN_UNQUOTED</span></span>
+<span id="cb10-118"><a href="#cb10-118" aria-hidden="true" tabindex="-1"></a>        <span class="co"># _BETWEEN: Not in an element, and a delimiter not seen.  This is the starting state,</span></span>
+<span id="cb10-119"><a href="#cb10-119" aria-hidden="true" tabindex="-1"></a>        <span class="co">#   and the state following a closing quote but before a delimiter is seen.</span></span>
+<span id="cb10-120"><a href="#cb10-120" aria-hidden="true" tabindex="-1"></a>        <span class="co">#  Actions / transition:</span></span>
+<span id="cb10-121"><a href="#cb10-121" aria-hidden="true" tabindex="-1"></a>        <span class="co">#   quote: save char in element buffer / _IN_QUOTED</span></span>
+<span id="cb10-122"><a href="#cb10-122" aria-hidden="true" tabindex="-1"></a>        <span class="co">#   delimiter: save element buffer, empty element buffer / _DELIMITED</span></span>
+<span id="cb10-123"><a href="#cb10-123" aria-hidden="true" tabindex="-1"></a>        <span class="co">#    (The element buffer should be empty, representing a null data item.)</span></span>
+<span id="cb10-124"><a href="#cb10-124" aria-hidden="true" tabindex="-1"></a>        <span class="co">#   other: save char in element buffer / _IN_UNQUOTED</span></span>
+<span id="cb10-125"><a href="#cb10-125" aria-hidden="true" tabindex="-1"></a>        <span class="co"># _DELIMITED: A delimiter has been seen while not in a quoted item.</span></span>
+<span id="cb10-126"><a href="#cb10-126" aria-hidden="true" tabindex="-1"></a>        <span class="co">#  Actions / transition:</span></span>
+<span id="cb10-127"><a href="#cb10-127" aria-hidden="true" tabindex="-1"></a>        <span class="co">#   quote: save char in element buffer / _IN_QUOTED</span></span>
+<span id="cb10-128"><a href="#cb10-128" aria-hidden="true" tabindex="-1"></a>        <span class="co">#   delimiter: if eat_multiple: no action / _DELIMITED</span></span>
+<span id="cb10-129"><a href="#cb10-129" aria-hidden="true" tabindex="-1"></a>        <span class="co">#     if not eat_multiple: save element buffer, empty element buffer / _DELIMITED</span></span>
+<span id="cb10-130"><a href="#cb10-130" aria-hidden="true" tabindex="-1"></a>        <span class="co">#   other: save char in element buffer / _IN_UNQUOTED</span></span>
+<span id="cb10-131"><a href="#cb10-131" aria-hidden="true" tabindex="-1"></a>        <span class="co"># At end of line: save escape buffer in element buffer, save element buffer.  For a well-formed</span></span>
+<span id="cb10-132"><a href="#cb10-132" aria-hidden="true" tabindex="-1"></a>        <span class="co"># line, these should be empty, but they may not be.</span></span>
+<span id="cb10-133"><a href="#cb10-133" aria-hidden="true" tabindex="-1"></a>        <span class="co">#</span></span>
+<span id="cb10-134"><a href="#cb10-134" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Define the state constants, which will also be used as indexes into an execution vector.</span></span>
+<span id="cb10-135"><a href="#cb10-135" aria-hidden="true" tabindex="-1"></a>        (</span>
+<span id="cb10-136"><a href="#cb10-136" aria-hidden="true" tabindex="-1"></a>            _IN_QUOTED,</span>
+<span id="cb10-137"><a href="#cb10-137" aria-hidden="true" tabindex="-1"></a>            _ESCAPED,</span>
+<span id="cb10-138"><a href="#cb10-138" aria-hidden="true" tabindex="-1"></a>            _QUOTE_IN_QUOTED,</span>
+<span id="cb10-139"><a href="#cb10-139" aria-hidden="true" tabindex="-1"></a>            _IN_UNQUOTED,</span>
+<span id="cb10-140"><a href="#cb10-140" aria-hidden="true" tabindex="-1"></a>            _BETWEEN,</span>
+<span id="cb10-141"><a href="#cb10-141" aria-hidden="true" tabindex="-1"></a>            _DELIMITED,</span>
+<span id="cb10-142"><a href="#cb10-142" aria-hidden="true" tabindex="-1"></a>        ) <span class="op">=</span> <span class="bu">range</span>(<span class="dv">6</span>)</span>
+<span id="cb10-143"><a href="#cb10-143" aria-hidden="true" tabindex="-1"></a>        <span class="co">#</span></span>
+<span id="cb10-144"><a href="#cb10-144" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Because of Python 2.7's scoping rules:</span></span>
+<span id="cb10-145"><a href="#cb10-145" aria-hidden="true" tabindex="-1"></a>        <span class="co"># * The escape buffer and current element are defined as mutable objects that will have their</span></span>
+<span id="cb10-146"><a href="#cb10-146" aria-hidden="true" tabindex="-1"></a>        <span class="co">#  first elements modified, rather than as string variables.  (Python 2.x does not allow</span></span>
+<span id="cb10-147"><a href="#cb10-147" aria-hidden="true" tabindex="-1"></a>        <span class="co">#  modification of a variable in an enclosing scope that is not the global scope, but</span></span>
+<span id="cb10-148"><a href="#cb10-148" aria-hidden="true" tabindex="-1"></a>        <span class="co">#  mutable objects like lists can be altered.  Another approach would be to implement this</span></span>
+<span id="cb10-149"><a href="#cb10-149" aria-hidden="true" tabindex="-1"></a>        <span class="co">#  as a class and use instance variables.)</span></span>
+<span id="cb10-150"><a href="#cb10-150" aria-hidden="true" tabindex="-1"></a>        <span class="co"># * The action functions return the next state rather than assigning it directly to the 'state' variable.</span></span>
+<span id="cb10-151"><a href="#cb10-151" aria-hidden="true" tabindex="-1"></a>        esc_buf <span class="op">=</span> [<span class="st">""</span>]</span>
+<span id="cb10-152"><a href="#cb10-152" aria-hidden="true" tabindex="-1"></a>        current_element <span class="op">=</span> [<span class="st">""</span>]</span>
+<span id="cb10-153"><a href="#cb10-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-154"><a href="#cb10-154" aria-hidden="true" tabindex="-1"></a>        <span class="kw">def</span> in_quoted():</span>
+<span id="cb10-155"><a href="#cb10-155" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> c <span class="op">==</span> <span class="va">self</span>.escchar:</span>
+<span id="cb10-156"><a href="#cb10-156" aria-hidden="true" tabindex="-1"></a>                esc_buf[<span class="dv">0</span>] <span class="op">=</span> c</span>
+<span id="cb10-157"><a href="#cb10-157" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> _ESCAPED</span>
+<span id="cb10-158"><a href="#cb10-158" aria-hidden="true" tabindex="-1"></a>            <span class="cf">elif</span> c <span class="op">==</span> qchar:</span>
+<span id="cb10-159"><a href="#cb10-159" aria-hidden="true" tabindex="-1"></a>                esc_buf[<span class="dv">0</span>] <span class="op">=</span> c</span>
+<span id="cb10-160"><a href="#cb10-160" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> _QUOTE_IN_QUOTED</span>
+<span id="cb10-161"><a href="#cb10-161" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb10-162"><a href="#cb10-162" aria-hidden="true" tabindex="-1"></a>                current_element[<span class="dv">0</span>] <span class="op">+=</span> c</span>
+<span id="cb10-163"><a href="#cb10-163" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> _IN_QUOTED</span>
+<span id="cb10-164"><a href="#cb10-164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-165"><a href="#cb10-165" aria-hidden="true" tabindex="-1"></a>        <span class="kw">def</span> escaped():</span>
+<span id="cb10-166"><a href="#cb10-166" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> c <span class="op">==</span> delim:</span>
+<span id="cb10-167"><a href="#cb10-167" aria-hidden="true" tabindex="-1"></a>                current_element[<span class="dv">0</span>] <span class="op">+=</span> esc_buf[<span class="dv">0</span>]</span>
+<span id="cb10-168"><a href="#cb10-168" aria-hidden="true" tabindex="-1"></a>                esc_buf[<span class="dv">0</span>] <span class="op">=</span> <span class="st">""</span></span>
+<span id="cb10-169"><a href="#cb10-169" aria-hidden="true" tabindex="-1"></a>                elements.append(current_element[<span class="dv">0</span>])</span>
+<span id="cb10-170"><a href="#cb10-170" aria-hidden="true" tabindex="-1"></a>                current_element[<span class="dv">0</span>] <span class="op">=</span> <span class="st">""</span></span>
+<span id="cb10-171"><a href="#cb10-171" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> _BETWEEN</span>
+<span id="cb10-172"><a href="#cb10-172" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb10-173"><a href="#cb10-173" aria-hidden="true" tabindex="-1"></a>                current_element[<span class="dv">0</span>] <span class="op">+=</span> esc_buf[<span class="dv">0</span>]</span>
+<span id="cb10-174"><a href="#cb10-174" aria-hidden="true" tabindex="-1"></a>                esc_buf[<span class="dv">0</span>] <span class="op">=</span> <span class="st">""</span></span>
+<span id="cb10-175"><a href="#cb10-175" aria-hidden="true" tabindex="-1"></a>                current_element[<span class="dv">0</span>] <span class="op">+=</span> c</span>
+<span id="cb10-176"><a href="#cb10-176" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> _IN_QUOTED</span>
+<span id="cb10-177"><a href="#cb10-177" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-178"><a href="#cb10-178" aria-hidden="true" tabindex="-1"></a>        <span class="kw">def</span> quote_in_quoted():</span>
+<span id="cb10-179"><a href="#cb10-179" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> c <span class="op">==</span> qchar:</span>
+<span id="cb10-180"><a href="#cb10-180" aria-hidden="true" tabindex="-1"></a>                current_element[<span class="dv">0</span>] <span class="op">+=</span> esc_buf[<span class="dv">0</span>]</span>
+<span id="cb10-181"><a href="#cb10-181" aria-hidden="true" tabindex="-1"></a>                esc_buf[<span class="dv">0</span>] <span class="op">=</span> <span class="st">""</span></span>
+<span id="cb10-182"><a href="#cb10-182" aria-hidden="true" tabindex="-1"></a>                current_element[<span class="dv">0</span>] <span class="op">+=</span> c</span>
+<span id="cb10-183"><a href="#cb10-183" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> _IN_QUOTED</span>
+<span id="cb10-184"><a href="#cb10-184" aria-hidden="true" tabindex="-1"></a>            <span class="cf">elif</span> c <span class="op">==</span> delim:</span>
+<span id="cb10-185"><a href="#cb10-185" aria-hidden="true" tabindex="-1"></a>                current_element[<span class="dv">0</span>] <span class="op">+=</span> esc_buf[<span class="dv">0</span>]</span>
+<span id="cb10-186"><a href="#cb10-186" aria-hidden="true" tabindex="-1"></a>                esc_buf[<span class="dv">0</span>] <span class="op">=</span> <span class="st">""</span></span>
+<span id="cb10-187"><a href="#cb10-187" aria-hidden="true" tabindex="-1"></a>                elements.append(current_element[<span class="dv">0</span>])</span>
+<span id="cb10-188"><a href="#cb10-188" aria-hidden="true" tabindex="-1"></a>                current_element[<span class="dv">0</span>] <span class="op">=</span> <span class="st">""</span></span>
+<span id="cb10-189"><a href="#cb10-189" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> _DELIMITED</span>
+<span id="cb10-190"><a href="#cb10-190" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb10-191"><a href="#cb10-191" aria-hidden="true" tabindex="-1"></a>                current_element[<span class="dv">0</span>] <span class="op">+=</span> esc_buf[<span class="dv">0</span>]</span>
+<span id="cb10-192"><a href="#cb10-192" aria-hidden="true" tabindex="-1"></a>                esc_buf[<span class="dv">0</span>] <span class="op">=</span> <span class="st">""</span></span>
+<span id="cb10-193"><a href="#cb10-193" aria-hidden="true" tabindex="-1"></a>                current_element[<span class="dv">0</span>] <span class="op">+=</span> c</span>
+<span id="cb10-194"><a href="#cb10-194" aria-hidden="true" tabindex="-1"></a>                <span class="va">self</span>.record_format_error(</span>
+<span id="cb10-195"><a href="#cb10-195" aria-hidden="true" tabindex="-1"></a>                    i <span class="op">+</span> <span class="dv">1</span>, <span class="st">"Unexpected character following a closing quote"</span></span>
+<span id="cb10-196"><a href="#cb10-196" aria-hidden="true" tabindex="-1"></a>                )</span>
+<span id="cb10-197"><a href="#cb10-197" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> _IN_QUOTED</span>
+<span id="cb10-198"><a href="#cb10-198" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-199"><a href="#cb10-199" aria-hidden="true" tabindex="-1"></a>        <span class="kw">def</span> in_unquoted():</span>
+<span id="cb10-200"><a href="#cb10-200" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> c <span class="op">==</span> delim:</span>
+<span id="cb10-201"><a href="#cb10-201" aria-hidden="true" tabindex="-1"></a>                elements.append(current_element[<span class="dv">0</span>])</span>
+<span id="cb10-202"><a href="#cb10-202" aria-hidden="true" tabindex="-1"></a>                current_element[<span class="dv">0</span>] <span class="op">=</span> <span class="st">""</span></span>
+<span id="cb10-203"><a href="#cb10-203" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> _DELIMITED</span>
+<span id="cb10-204"><a href="#cb10-204" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb10-205"><a href="#cb10-205" aria-hidden="true" tabindex="-1"></a>                current_element[<span class="dv">0</span>] <span class="op">+=</span> c</span>
+<span id="cb10-206"><a href="#cb10-206" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> _IN_UNQUOTED</span>
+<span id="cb10-207"><a href="#cb10-207" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-208"><a href="#cb10-208" aria-hidden="true" tabindex="-1"></a>        <span class="kw">def</span> between():</span>
+<span id="cb10-209"><a href="#cb10-209" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> c <span class="op">==</span> qchar:</span>
+<span id="cb10-210"><a href="#cb10-210" aria-hidden="true" tabindex="-1"></a>                current_element[<span class="dv">0</span>] <span class="op">+=</span> c</span>
+<span id="cb10-211"><a href="#cb10-211" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> _IN_QUOTED</span>
+<span id="cb10-212"><a href="#cb10-212" aria-hidden="true" tabindex="-1"></a>            <span class="cf">elif</span> c <span class="op">==</span> delim:</span>
+<span id="cb10-213"><a href="#cb10-213" aria-hidden="true" tabindex="-1"></a>                elements.append(current_element[<span class="dv">0</span>])</span>
+<span id="cb10-214"><a href="#cb10-214" aria-hidden="true" tabindex="-1"></a>                current_element[<span class="dv">0</span>] <span class="op">=</span> <span class="st">""</span></span>
+<span id="cb10-215"><a href="#cb10-215" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> _DELIMITED</span>
+<span id="cb10-216"><a href="#cb10-216" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb10-217"><a href="#cb10-217" aria-hidden="true" tabindex="-1"></a>                current_element[<span class="dv">0</span>] <span class="op">+=</span> c</span>
+<span id="cb10-218"><a href="#cb10-218" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> _IN_UNQUOTED</span>
+<span id="cb10-219"><a href="#cb10-219" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-220"><a href="#cb10-220" aria-hidden="true" tabindex="-1"></a>        <span class="kw">def</span> delimited():</span>
+<span id="cb10-221"><a href="#cb10-221" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> c <span class="op">==</span> qchar:</span>
+<span id="cb10-222"><a href="#cb10-222" aria-hidden="true" tabindex="-1"></a>                current_element[<span class="dv">0</span>] <span class="op">+=</span> c</span>
+<span id="cb10-223"><a href="#cb10-223" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> _IN_QUOTED</span>
+<span id="cb10-224"><a href="#cb10-224" aria-hidden="true" tabindex="-1"></a>            <span class="cf">elif</span> c <span class="op">==</span> delim:</span>
+<span id="cb10-225"><a href="#cb10-225" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> <span class="kw">not</span> eat_multiple_delims:</span>
+<span id="cb10-226"><a href="#cb10-226" aria-hidden="true" tabindex="-1"></a>                    elements.append(current_element[<span class="dv">0</span>])</span>
+<span id="cb10-227"><a href="#cb10-227" aria-hidden="true" tabindex="-1"></a>                    current_element[<span class="dv">0</span>] <span class="op">=</span> <span class="st">""</span></span>
+<span id="cb10-228"><a href="#cb10-228" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> _DELIMITED</span>
+<span id="cb10-229"><a href="#cb10-229" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb10-230"><a href="#cb10-230" aria-hidden="true" tabindex="-1"></a>                current_element[<span class="dv">0</span>] <span class="op">+=</span> c</span>
+<span id="cb10-231"><a href="#cb10-231" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> _IN_UNQUOTED</span>
+<span id="cb10-232"><a href="#cb10-232" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-233"><a href="#cb10-233" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Functions in the execution vector must be ordered identically to the</span></span>
+<span id="cb10-234"><a href="#cb10-234" aria-hidden="true" tabindex="-1"></a>        <span class="co"># indexes represented by the state constants.</span></span>
+<span id="cb10-235"><a href="#cb10-235" aria-hidden="true" tabindex="-1"></a>        exec_vector <span class="op">=</span> [</span>
+<span id="cb10-236"><a href="#cb10-236" aria-hidden="true" tabindex="-1"></a>            in_quoted,</span>
+<span id="cb10-237"><a href="#cb10-237" aria-hidden="true" tabindex="-1"></a>            escaped,</span>
+<span id="cb10-238"><a href="#cb10-238" aria-hidden="true" tabindex="-1"></a>            quote_in_quoted,</span>
+<span id="cb10-239"><a href="#cb10-239" aria-hidden="true" tabindex="-1"></a>            in_unquoted,</span>
+<span id="cb10-240"><a href="#cb10-240" aria-hidden="true" tabindex="-1"></a>            between,</span>
+<span id="cb10-241"><a href="#cb10-241" aria-hidden="true" tabindex="-1"></a>            delimited,</span>
+<span id="cb10-242"><a href="#cb10-242" aria-hidden="true" tabindex="-1"></a>        ]</span>
+<span id="cb10-243"><a href="#cb10-243" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Set the starting state.</span></span>
+<span id="cb10-244"><a href="#cb10-244" aria-hidden="true" tabindex="-1"></a>        state <span class="op">=</span> _BETWEEN</span>
+<span id="cb10-245"><a href="#cb10-245" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Process the line of text.</span></span>
+<span id="cb10-246"><a href="#cb10-246" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> i, c <span class="kw">in</span> <span class="bu">enumerate</span>(<span class="va">self</span>.text):</span>
+<span id="cb10-247"><a href="#cb10-247" aria-hidden="true" tabindex="-1"></a>            state <span class="op">=</span> exec_vector[state]()</span>
+<span id="cb10-248"><a href="#cb10-248" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Process the end-of-line condition.</span></span>
+<span id="cb10-249"><a href="#cb10-249" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="bu">len</span>(esc_buf[<span class="dv">0</span>]) <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb10-250"><a href="#cb10-250" aria-hidden="true" tabindex="-1"></a>            current_element[<span class="dv">0</span>] <span class="op">+=</span> esc_buf[<span class="dv">0</span>]</span>
+<span id="cb10-251"><a href="#cb10-251" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="bu">len</span>(current_element[<span class="dv">0</span>]) <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb10-252"><a href="#cb10-252" aria-hidden="true" tabindex="-1"></a>            elements.append(current_element[<span class="dv">0</span>])</span>
+<span id="cb10-253"><a href="#cb10-253" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> elements</span>
+<span id="cb10-254"><a href="#cb10-254" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-255"><a href="#cb10-255" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> well_quoted_line(<span class="va">self</span>, delim, qchar):</span>
+<span id="cb10-256"><a href="#cb10-256" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Returns a tuple of boolean, int, and boolean, indicating: 1) whether the line is</span></span>
+<span id="cb10-257"><a href="#cb10-257" aria-hidden="true" tabindex="-1"></a>        <span class="co"># well-quoted, 2) the number of elements for which the quote character is used,</span></span>
+<span id="cb10-258"><a href="#cb10-258" aria-hidden="true" tabindex="-1"></a>        <span class="co"># and 3) whether the escape character is used.</span></span>
+<span id="cb10-259"><a href="#cb10-259" aria-hidden="true" tabindex="-1"></a>        wq <span class="op">=</span> [<span class="va">self</span>._well_quoted(el, qchar) <span class="cf">for</span> el <span class="kw">in</span> <span class="va">self</span>.items(delim, qchar)]</span>
+<span id="cb10-260"><a href="#cb10-260" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> (</span>
+<span id="cb10-261"><a href="#cb10-261" aria-hidden="true" tabindex="-1"></a>            <span class="bu">all</span>([b[<span class="dv">0</span>] <span class="cf">for</span> b <span class="kw">in</span> wq]),</span>
+<span id="cb10-262"><a href="#cb10-262" aria-hidden="true" tabindex="-1"></a>            <span class="bu">sum</span>([b[<span class="dv">1</span>] <span class="cf">for</span> b <span class="kw">in</span> wq]),</span>
+<span id="cb10-263"><a href="#cb10-263" aria-hidden="true" tabindex="-1"></a>            <span class="bu">any</span>([b[<span class="dv">2</span>] <span class="cf">for</span> b <span class="kw">in</span> wq]),</span>
+<span id="cb10-264"><a href="#cb10-264" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb10-265"><a href="#cb10-265" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-266"><a href="#cb10-266" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> diagnose_delim(linestream, possible_delimiters<span class="op">=</span><span class="va">None</span>, possible_quotechars<span class="op">=</span><span class="va">None</span>):</span>
+<span id="cb10-267"><a href="#cb10-267" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Returns a tuple consisting of the delimiter, quote character, and escape</span></span>
+<span id="cb10-268"><a href="#cb10-268" aria-hidden="true" tabindex="-1"></a>    <span class="co"># character for quote characters within elements of a line.  All may be None.</span></span>
+<span id="cb10-269"><a href="#cb10-269" aria-hidden="true" tabindex="-1"></a>    <span class="co"># If the escape character is not None, it will be u"\".</span></span>
+<span id="cb10-270"><a href="#cb10-270" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Arguments:</span></span>
+<span id="cb10-271"><a href="#cb10-271" aria-hidden="true" tabindex="-1"></a>    <span class="co"># * linestream: An iterable file-like object with a 'next()' method that returns lines of text</span></span>
+<span id="cb10-272"><a href="#cb10-272" aria-hidden="true" tabindex="-1"></a>    <span class="co">#  as bytes or unicode.</span></span>
+<span id="cb10-273"><a href="#cb10-273" aria-hidden="true" tabindex="-1"></a>    <span class="co"># * possible_delimiters: A list of single characters that might be used to separate items on</span></span>
+<span id="cb10-274"><a href="#cb10-274" aria-hidden="true" tabindex="-1"></a>    <span class="co">#  a line.  If not specified, the default consists of tab, comma, semicolon, and vertical rule.</span></span>
+<span id="cb10-275"><a href="#cb10-275" aria-hidden="true" tabindex="-1"></a>    <span class="co">#  If a space character is included, multiple space characters will be treated as a single</span></span>
+<span id="cb10-276"><a href="#cb10-276" aria-hidden="true" tabindex="-1"></a>    <span class="co">#  delimiter--so it's best if there are no missing values on space-delimited lines, though</span></span>
+<span id="cb10-277"><a href="#cb10-277" aria-hidden="true" tabindex="-1"></a>    <span class="co">#  that is not necessarily a fatal flaw unless there is a very high fraction of missing values.</span></span>
+<span id="cb10-278"><a href="#cb10-278" aria-hidden="true" tabindex="-1"></a>    <span class="co"># * possible_quotechars: A list of single characters that might be used to quote items on</span></span>
+<span id="cb10-279"><a href="#cb10-279" aria-hidden="true" tabindex="-1"></a>    <span class="co">#  a line.  If not specified, the default consists of single and double quotes.</span></span>
+<span id="cb10-280"><a href="#cb10-280" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> possible_delimiters:</span>
+<span id="cb10-281"><a href="#cb10-281" aria-hidden="true" tabindex="-1"></a>        possible_delimiters <span class="op">=</span> [<span class="st">"</span><span class="ch">\t</span><span class="st">"</span>, <span class="st">","</span>, <span class="st">";"</span>, <span class="st">"|"</span>]</span>
+<span id="cb10-282"><a href="#cb10-282" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> possible_quotechars:</span>
+<span id="cb10-283"><a href="#cb10-283" aria-hidden="true" tabindex="-1"></a>        possible_quotechars <span class="op">=</span> [<span class="st">'"'</span>, <span class="st">"'"</span>]</span>
+<span id="cb10-284"><a href="#cb10-284" aria-hidden="true" tabindex="-1"></a>    lines <span class="op">=</span> []</span>
+<span id="cb10-285"><a href="#cb10-285" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100</span>):</span>
+<span id="cb10-286"><a href="#cb10-286" aria-hidden="true" tabindex="-1"></a>        <span class="cf">try</span>:</span>
+<span id="cb10-287"><a href="#cb10-287" aria-hidden="true" tabindex="-1"></a>            ln <span class="op">=</span> linestream.<span class="bu">next</span>()</span>
+<span id="cb10-288"><a href="#cb10-288" aria-hidden="true" tabindex="-1"></a>        <span class="cf">except</span> <span class="pp">StopIteration</span>:</span>
+<span id="cb10-289"><a href="#cb10-289" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span></span>
+<span id="cb10-290"><a href="#cb10-290" aria-hidden="true" tabindex="-1"></a>        <span class="cf">except</span>:</span>
+<span id="cb10-291"><a href="#cb10-291" aria-hidden="true" tabindex="-1"></a>            <span class="cf">raise</span></span>
+<span id="cb10-292"><a href="#cb10-292" aria-hidden="true" tabindex="-1"></a>        <span class="cf">while</span> <span class="bu">len</span>(ln) <span class="op">&gt;</span> <span class="dv">0</span> <span class="kw">and</span> ln[<span class="op">-</span><span class="dv">1</span>] <span class="kw">in</span> (<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>, <span class="st">"</span><span class="ch">\r</span><span class="st">"</span>):</span>
+<span id="cb10-293"><a href="#cb10-293" aria-hidden="true" tabindex="-1"></a>            ln <span class="op">=</span> ln[:<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb10-294"><a href="#cb10-294" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="bu">len</span>(ln) <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb10-295"><a href="#cb10-295" aria-hidden="true" tabindex="-1"></a>            lines.append(CsvLine(ln))</span>
+<span id="cb10-296"><a href="#cb10-296" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(lines) <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb10-297"><a href="#cb10-297" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> CsvDiagError(<span class="st">"CSV diagnosis error: no lines read"</span>)</span>
+<span id="cb10-298"><a href="#cb10-298" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> ln <span class="kw">in</span> lines:</span>
+<span id="cb10-299"><a href="#cb10-299" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> d <span class="kw">in</span> possible_delimiters:</span>
+<span id="cb10-300"><a href="#cb10-300" aria-hidden="true" tabindex="-1"></a>            ln.count_delim(d)</span>
+<span id="cb10-301"><a href="#cb10-301" aria-hidden="true" tabindex="-1"></a>    <span class="co"># For each delimiter, find the minimum number of delimiters found on any line, and the number of lines</span></span>
+<span id="cb10-302"><a href="#cb10-302" aria-hidden="true" tabindex="-1"></a>    <span class="co"># with that minimum number</span></span>
+<span id="cb10-303"><a href="#cb10-303" aria-hidden="true" tabindex="-1"></a>    delim_stats <span class="op">=</span> {}</span>
+<span id="cb10-304"><a href="#cb10-304" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> d <span class="kw">in</span> possible_delimiters:</span>
+<span id="cb10-305"><a href="#cb10-305" aria-hidden="true" tabindex="-1"></a>        dcounts <span class="op">=</span> [ln.delim_count(d) <span class="cf">for</span> ln <span class="kw">in</span> lines]</span>
+<span id="cb10-306"><a href="#cb10-306" aria-hidden="true" tabindex="-1"></a>        min_count <span class="op">=</span> <span class="bu">min</span>(dcounts)</span>
+<span id="cb10-307"><a href="#cb10-307" aria-hidden="true" tabindex="-1"></a>        delim_stats[d] <span class="op">=</span> (min_count, dcounts.count(min_count))</span>
+<span id="cb10-308"><a href="#cb10-308" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Remove delimiters that were never found.</span></span>
+<span id="cb10-309"><a href="#cb10-309" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> k <span class="kw">in</span> delim_stats.keys():</span>
+<span id="cb10-310"><a href="#cb10-310" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> delim_stats[k][<span class="dv">0</span>] <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb10-311"><a href="#cb10-311" aria-hidden="true" tabindex="-1"></a>            <span class="kw">del</span> delim_stats[k]</span>
+<span id="cb10-312"><a href="#cb10-312" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-313"><a href="#cb10-313" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> all_well_quoted(delim, qchar):</span>
+<span id="cb10-314"><a href="#cb10-314" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Returns a tuple of boolean, int, and boolean indicating: 1) whether the line is</span></span>
+<span id="cb10-315"><a href="#cb10-315" aria-hidden="true" tabindex="-1"></a>        <span class="co"># well-quoted, 2) the total number of lines and elements for which the quote character</span></span>
+<span id="cb10-316"><a href="#cb10-316" aria-hidden="true" tabindex="-1"></a>        <span class="co"># is used, and 3) the escape character used.</span></span>
+<span id="cb10-317"><a href="#cb10-317" aria-hidden="true" tabindex="-1"></a>        wq <span class="op">=</span> [l.well_quoted_line(delim, qchar) <span class="cf">for</span> l <span class="kw">in</span> lines]</span>
+<span id="cb10-318"><a href="#cb10-318" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> (</span>
+<span id="cb10-319"><a href="#cb10-319" aria-hidden="true" tabindex="-1"></a>            <span class="bu">all</span>([b[<span class="dv">0</span>] <span class="cf">for</span> b <span class="kw">in</span> wq]),</span>
+<span id="cb10-320"><a href="#cb10-320" aria-hidden="true" tabindex="-1"></a>            <span class="bu">sum</span>([b[<span class="dv">1</span>] <span class="cf">for</span> b <span class="kw">in</span> wq]),</span>
+<span id="cb10-321"><a href="#cb10-321" aria-hidden="true" tabindex="-1"></a>            CsvLine.escchar <span class="cf">if</span> <span class="bu">any</span>([b[<span class="dv">2</span>] <span class="cf">for</span> b <span class="kw">in</span> wq]) <span class="cf">else</span> <span class="va">None</span>,</span>
+<span id="cb10-322"><a href="#cb10-322" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb10-323"><a href="#cb10-323" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-324"><a href="#cb10-324" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> eval_quotes(delim):</span>
+<span id="cb10-325"><a href="#cb10-325" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Returns a tuple of the form to be returned by 'diagnose_delim()'.</span></span>
+<span id="cb10-326"><a href="#cb10-326" aria-hidden="true" tabindex="-1"></a>        ok_quotes <span class="op">=</span> {}</span>
+<span id="cb10-327"><a href="#cb10-327" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> q <span class="kw">in</span> possible_quotechars:</span>
+<span id="cb10-328"><a href="#cb10-328" aria-hidden="true" tabindex="-1"></a>            allwq <span class="op">=</span> all_well_quoted(delim, q)</span>
+<span id="cb10-329"><a href="#cb10-329" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> allwq[<span class="dv">0</span>]:</span>
+<span id="cb10-330"><a href="#cb10-330" aria-hidden="true" tabindex="-1"></a>                ok_quotes[q] <span class="op">=</span> (allwq[<span class="dv">1</span>], allwq[<span class="dv">2</span>])</span>
+<span id="cb10-331"><a href="#cb10-331" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="bu">len</span>(ok_quotes) <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb10-332"><a href="#cb10-332" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> (delim, <span class="va">None</span>, <span class="va">None</span>)  <span class="co"># No quotes, no escapechar</span></span>
+<span id="cb10-333"><a href="#cb10-333" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb10-334"><a href="#cb10-334" aria-hidden="true" tabindex="-1"></a>            max_use <span class="op">=</span> <span class="bu">max</span>([v[<span class="dv">0</span>] <span class="cf">for</span> v <span class="kw">in</span> ok_quotes.values()])</span>
+<span id="cb10-335"><a href="#cb10-335" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> max_use <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb10-336"><a href="#cb10-336" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> (delim, <span class="va">None</span>, <span class="va">None</span>)</span>
+<span id="cb10-337"><a href="#cb10-337" aria-hidden="true" tabindex="-1"></a>            <span class="co"># If multiple quote characters have the same usage, return (arbitrarily) the first one.</span></span>
+<span id="cb10-338"><a href="#cb10-338" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> q <span class="kw">in</span> ok_quotes.keys():</span>
+<span id="cb10-339"><a href="#cb10-339" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> ok_quotes[q][<span class="dv">0</span>] <span class="op">==</span> max_use:</span>
+<span id="cb10-340"><a href="#cb10-340" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">return</span> (delim, q, ok_quotes[q][<span class="dv">1</span>])</span>
+<span id="cb10-341"><a href="#cb10-341" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-342"><a href="#cb10-342" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(delim_stats) <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb10-343"><a href="#cb10-343" aria-hidden="true" tabindex="-1"></a>        <span class="co"># None of the delimiters were found.  Some other delimiter may apply,</span></span>
+<span id="cb10-344"><a href="#cb10-344" aria-hidden="true" tabindex="-1"></a>        <span class="co"># or the input may contain a single value on each line.</span></span>
+<span id="cb10-345"><a href="#cb10-345" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Identify possible quote characters.</span></span>
+<span id="cb10-346"><a href="#cb10-346" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> eval_quotes(<span class="va">None</span>)</span>
+<span id="cb10-347"><a href="#cb10-347" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb10-348"><a href="#cb10-348" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="bu">len</span>(delim_stats) <span class="op">&gt;</span> <span class="dv">1</span>:</span>
+<span id="cb10-349"><a href="#cb10-349" aria-hidden="true" tabindex="-1"></a>            <span class="co"># If one of them is a space, prefer the non-space</span></span>
+<span id="cb10-350"><a href="#cb10-350" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> <span class="st">" "</span> <span class="kw">in</span> delim_stats.keys():</span>
+<span id="cb10-351"><a href="#cb10-351" aria-hidden="true" tabindex="-1"></a>                <span class="kw">del</span> delim_stats[<span class="st">" "</span>]</span>
+<span id="cb10-352"><a href="#cb10-352" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="bu">len</span>(delim_stats) <span class="op">==</span> <span class="dv">1</span>:</span>
+<span id="cb10-353"><a href="#cb10-353" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> eval_quotes(delim_stats.keys()[<span class="dv">0</span>])</span>
+<span id="cb10-354"><a href="#cb10-354" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Assign weights to the delimiters.  The weight is the square of the minimum number of delimiters</span></span>
+<span id="cb10-355"><a href="#cb10-355" aria-hidden="true" tabindex="-1"></a>        <span class="co"># on a line times the number of lines with that delimiter.</span></span>
+<span id="cb10-356"><a href="#cb10-356" aria-hidden="true" tabindex="-1"></a>        delim_wts <span class="op">=</span> {}</span>
+<span id="cb10-357"><a href="#cb10-357" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> d <span class="kw">in</span> delim_stats.keys():</span>
+<span id="cb10-358"><a href="#cb10-358" aria-hidden="true" tabindex="-1"></a>            delim_wts[d] <span class="op">=</span> delim_stats[d][<span class="dv">0</span>] <span class="op">**</span> <span class="dv">2</span> <span class="op">*</span> delim_stats[d][<span class="dv">1</span>]</span>
+<span id="cb10-359"><a href="#cb10-359" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Evaluate quote usage for each delimiter, from most heavily weighted to least.</span></span>
+<span id="cb10-360"><a href="#cb10-360" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Return the first good pair where the quote character is used.</span></span>
+<span id="cb10-361"><a href="#cb10-361" aria-hidden="true" tabindex="-1"></a>        delim_order <span class="op">=</span> <span class="bu">sorted</span>(delim_wts, key<span class="op">=</span>delim_wts.get, reverse<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb10-362"><a href="#cb10-362" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> d <span class="kw">in</span> delim_order:</span>
+<span id="cb10-363"><a href="#cb10-363" aria-hidden="true" tabindex="-1"></a>            quote_check <span class="op">=</span> eval_quotes(d)</span>
+<span id="cb10-364"><a href="#cb10-364" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> quote_check[<span class="dv">0</span>] <span class="kw">and</span> quote_check[<span class="dv">1</span>]:</span>
+<span id="cb10-365"><a href="#cb10-365" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> quote_check</span>
+<span id="cb10-366"><a href="#cb10-366" aria-hidden="true" tabindex="-1"></a>        <span class="co"># There are no delimiters for which quotes are OK.</span></span>
+<span id="cb10-367"><a href="#cb10-367" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> (delim_order[<span class="dv">0</span>], <span class="va">None</span>, <span class="va">None</span>)</span>
+<span id="cb10-368"><a href="#cb10-368" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Should never get here</span></span>
+<span id="cb10-369"><a href="#cb10-369" aria-hidden="true" tabindex="-1"></a>    <span class="cf">raise</span> CsvDiagError(<span class="st">"CSV diagnosis error: an untested set of conditions are present"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="import-csv-to-a-database" class="level2">
+<h2 class="anchored" data-anchor-id="import-csv-to-a-database">Import CSV to a Database</h2>
+<div class="sourceCode" id="cb11"><pre class="sourceCode py code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> CsvFile(<span class="bu">object</span>):</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""CsvFile class automatically opens a file and creates a CSV reader, reads the first row containing column headers, and stores those headers so that they can be used to construct the INSERT statement."""</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, filename):</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.fn <span class="op">=</span> filename</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.f <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.<span class="bu">open</span>()</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.rdr <span class="op">=</span> csv.reader(<span class="va">self</span>.f)</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.headers <span class="op">=</span> <span class="bu">next</span>(<span class="va">self</span>.rdr)</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="bu">open</span>(<span class="va">self</span>):</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="va">self</span>.f <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>            mode <span class="op">=</span> <span class="st">"rb"</span> <span class="cf">if</span> sys.version_info <span class="op">&lt;</span> (<span class="dv">3</span>,) <span class="cf">else</span> <span class="st">"r"</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.f <span class="op">=</span> <span class="bu">open</span>(<span class="va">self</span>.fn, mode)</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> reader(<span class="va">self</span>):</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.rdr</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> close(<span class="va">self</span>):</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.rdr <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.f.close()</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.f <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Database(<span class="bu">object</span>):</span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""The Database class and subclasses provide a database connection for each type of DBMS, and a method to construct an INSERT statement for a given CsvFile object, using that DBMS's parameter substitution string.  The conn_info argument is a dictionary containing the host name, user name, and password."""</span></span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, conn_info):</span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.paramstr <span class="op">=</span> <span class="st">'</span><span class="sc">%s</span><span class="st">'</span></span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.conn <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> insert_sql(<span class="va">self</span>, tablename, csvfile):</span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"insert into </span><span class="sc">%s</span><span class="st"> (</span><span class="sc">%s</span><span class="st">) values (</span><span class="sc">%s</span><span class="st">);"</span> <span class="op">%</span> (</span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>                tablename,</span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>                <span class="st">","</span>.join(csvfile.headers),</span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>                <span class="st">","</span>.join([<span class="va">self</span>.paramstr] <span class="op">*</span> <span class="bu">len</span>(csvfile.headers))</span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a>                )</span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> PgDb(Database):</span>
+<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, conn_info):</span>
+<span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.db_type <span class="op">=</span> <span class="st">"p"</span></span>
+<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a>        <span class="im">import</span> psycopg2</span>
+<span id="cb11-38"><a href="#cb11-38" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.paramstr <span class="op">=</span> <span class="st">"</span><span class="sc">%s</span><span class="st">"</span></span>
+<span id="cb11-39"><a href="#cb11-39" aria-hidden="true" tabindex="-1"></a>        connstr <span class="op">=</span> <span class="st">"host=</span><span class="sc">%(server)s</span><span class="st"> dbname=</span><span class="sc">%(db)s</span><span class="st"> user=</span><span class="sc">%(user)s</span><span class="st"> password=</span><span class="sc">%(pw)s</span><span class="st">"</span> <span class="op">%</span> conn_info</span>
+<span id="cb11-40"><a href="#cb11-40" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.conn <span class="op">=</span> psycopg2.<span class="ex">connect</span>(connstr)</span>
+<span id="cb11-41"><a href="#cb11-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-42"><a href="#cb11-42" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> postgres_copy(csvfile, db):</span>
+<span id="cb11-43"><a href="#cb11-43" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Postgres COPY command. Fastest implementation"""</span></span>
+<span id="cb11-44"><a href="#cb11-44" aria-hidden="true" tabindex="-1"></a>        curs <span class="op">=</span> db.conn.cursor()</span>
+<span id="cb11-45"><a href="#cb11-45" aria-hidden="true" tabindex="-1"></a>        rf <span class="op">=</span> <span class="bu">open</span>(csvfile.fn, <span class="st">"rt"</span>)</span>
+<span id="cb11-46"><a href="#cb11-46" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Read and discard headers</span></span>
+<span id="cb11-47"><a href="#cb11-47" aria-hidden="true" tabindex="-1"></a>        hdrs <span class="op">=</span> rf.readline()</span>
+<span id="cb11-48"><a href="#cb11-48" aria-hidden="true" tabindex="-1"></a>        copy_cmd <span class="op">=</span> <span class="st">"copy copy_test from stdin with (format csv)"</span></span>
+<span id="cb11-49"><a href="#cb11-49" aria-hidden="true" tabindex="-1"></a>        curs.copy_expert(copy_cmd, rf)</span>
+<span id="cb11-50"><a href="#cb11-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-51"><a href="#cb11-51" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> simple_copy(csvfile, db):</span>
+<span id="cb11-52"><a href="#cb11-52" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Row-by-row reading and writing"""</span></span>
+<span id="cb11-53"><a href="#cb11-53" aria-hidden="true" tabindex="-1"></a>        ins_sql <span class="op">=</span> db.insert_sql(<span class="st">"copy_test"</span>, csvfile)</span>
+<span id="cb11-54"><a href="#cb11-54" aria-hidden="true" tabindex="-1"></a>        curs <span class="op">=</span> db.conn.cursor()</span>
+<span id="cb11-55"><a href="#cb11-55" aria-hidden="true" tabindex="-1"></a>        rdr <span class="op">=</span> csvfile.reader()</span>
+<span id="cb11-56"><a href="#cb11-56" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> line <span class="kw">in</span> rdr:</span>
+<span id="cb11-57"><a href="#cb11-57" aria-hidden="true" tabindex="-1"></a>            curs.execute(ins_sql, clean_line(line))</span>
+<span id="cb11-58"><a href="#cb11-58" aria-hidden="true" tabindex="-1"></a>        db.conn.commit()</span>
+<span id="cb11-59"><a href="#cb11-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-60"><a href="#cb11-60" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> buffer1_copy(csvfile, db, buflines):</span>
+<span id="cb11-61"><a href="#cb11-61" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Buffered reading and writing"""</span></span>
+<span id="cb11-62"><a href="#cb11-62" aria-hidden="true" tabindex="-1"></a>        ins_sql <span class="op">=</span> db.insert_sql(<span class="st">"copy_test"</span>, csvfile)</span>
+<span id="cb11-63"><a href="#cb11-63" aria-hidden="true" tabindex="-1"></a>        curs <span class="op">=</span> db.conn.cursor()</span>
+<span id="cb11-64"><a href="#cb11-64" aria-hidden="true" tabindex="-1"></a>        rdr <span class="op">=</span> csvfile.reader()</span>
+<span id="cb11-65"><a href="#cb11-65" aria-hidden="true" tabindex="-1"></a>        eof <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb11-66"><a href="#cb11-66" aria-hidden="true" tabindex="-1"></a>        <span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb11-67"><a href="#cb11-67" aria-hidden="true" tabindex="-1"></a>            b <span class="op">=</span> []</span>
+<span id="cb11-68"><a href="#cb11-68" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(buflines):</span>
+<span id="cb11-69"><a href="#cb11-69" aria-hidden="true" tabindex="-1"></a>                <span class="cf">try</span>:</span>
+<span id="cb11-70"><a href="#cb11-70" aria-hidden="true" tabindex="-1"></a>                    line <span class="op">=</span> <span class="bu">next</span>(rdr)</span>
+<span id="cb11-71"><a href="#cb11-71" aria-hidden="true" tabindex="-1"></a>                <span class="cf">except</span> <span class="pp">StopIteration</span>:</span>
+<span id="cb11-72"><a href="#cb11-72" aria-hidden="true" tabindex="-1"></a>                    eof <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb11-73"><a href="#cb11-73" aria-hidden="true" tabindex="-1"></a>                <span class="cf">else</span>:</span>
+<span id="cb11-74"><a href="#cb11-74" aria-hidden="true" tabindex="-1"></a>                    b.append(clean_line(line))</span>
+<span id="cb11-75"><a href="#cb11-75" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> <span class="bu">len</span>(b) <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb11-76"><a href="#cb11-76" aria-hidden="true" tabindex="-1"></a>                curs.executemany(ins_sql, b)</span>
+<span id="cb11-77"><a href="#cb11-77" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> eof:</span>
+<span id="cb11-78"><a href="#cb11-78" aria-hidden="true" tabindex="-1"></a>                <span class="cf">break</span></span>
+<span id="cb11-79"><a href="#cb11-79" aria-hidden="true" tabindex="-1"></a>        db.conn.commit()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp("http:\/\/toolkit\.goecoug\.com");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../../docs/development/code/powershell.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">PowerShell</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../../docs/development/code/r.html" class="pagination-link">
+        <span class="nav-page-text">R</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Caleb Grant, 2023</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/geocoug/toolkit">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>

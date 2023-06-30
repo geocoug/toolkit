@@ -1,14 +1,21 @@
 ---
 title: "Welcome"
 pagetitle: "Toolkit"
-listing: 
+listing:
     type: grid
     contents: 
-        - "!john.qmd"
-        - "*.qmd"
+        - "docs/resources/*.qmd"
+        - "docs/development/index.qmd"
+        - "docs/development/code/index.qmd"
+        - "docs/development/server/index.qmd"
+format:
+  html:
+    page-layout: full
 ---
 
-Welcome to [geocoug's](https://github.com/geocoug) resource toolkit. This site was built using [quarto](https://quarto.org/).
+Welcome to [geocoug](https://github.com/geocoug)'s resource toolkit. This site was built using [Quarto](https://quarto.org/).
+
+## Quick Links
 
 ::: {#listing}
 :::

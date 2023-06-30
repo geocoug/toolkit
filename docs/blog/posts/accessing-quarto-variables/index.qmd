@@ -1,0 +1,11 @@
+---
+title: Accessing Quarto Variables
+description: Access quarto variables in a document.
+date: 2023-06-15
+author: Caleb Grant
+categories: [Quarto, Variables]
+---
+
+You can [access dynamic variables](https://quarto.org/docs/authoring/variables.html) within documents, which can be useful for externalizing content that varies depending on context. As an example, you can reference file metadata using the syntax `{< meta title >}`, which would include the title of this article: **{{< meta title >}}**.
+
+Isn't that cool?  {{< fa face-smile >}}

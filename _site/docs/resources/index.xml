@@ -1,0 +1,2802 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Toolkit</title>
+<link>http://toolkit.goecoug.com/docs/resources/index.html</link>
+<atom:link href="http://toolkit.goecoug.com/docs/resources/index.xml" rel="self" type="application/rss+xml"/>
+<description>Resources</description>
+<image>
+<url>http://toolkit.goecoug.com/static/resources/resources.jpg</url>
+<title>Toolkit</title>
+<link>http://toolkit.goecoug.com/docs/resources/index.html</link>
+</image>
+<generator>quarto-1.3.433</generator>
+<lastBuildDate>Fri, 30 Jun 2023 01:46:13 GMT</lastBuildDate>
+<item>
+  <title>Bookmarks</title>
+  <link>http://toolkit.goecoug.com/docs/resources/bookmarks.html</link>
+  <description><![CDATA[ 
+
+
+
+<section id="developer" class="level2">
+<h2 class="anchored" data-anchor-id="developer">Developer</h2>
+<ul>
+<li><a href="https://devdocs.io/">devdocs.io</a> - Searchable documentations</li>
+<li><a href="https://ss64.com/">ss64</a> - CLI reference guide</li>
+<li><a href="https://readthedocs.org/">ReadTheDocs</a> - Create, host, and browse documentation</li>
+<li><a href="http://execsql.osdn.io/">execsql</a> - Run SQL with metacommands</li>
+<li><a href="https://getbootstrap.com/docs/4.5/getting-started/introduction/">Bootstrap</a> - Web framework</li>
+<li><a href="https://www.pgadmin.org/try/">pgAdmin</a> - PostgreSQL sandbox</li>
+<li><a href="https://www.rexegg.com/regex-quickstart.html">Regex</a> - Regular expressions</li>
+<li><a href="https://colab.research.google.com/notebooks/intro.ipynb">Google Colab</a> - Collaborative Python notebooks</li>
+<li><a href="https://geojson.io">geojson.io</a> - Create, view, and share maps</li>
+<li><a href="https://repl.it">repl.it</a> - Collaborative in-browser IDE. 50+ languages</li>
+<li><a href="https://www.integromat.com">Integromat</a> - Online scenario automation</li>
+<li><a href="https://karloespiritu.github.io/cheatsheets/postgresql/">PostgreSQL cheatsheet</a> - PostgreSQL cheatsheet</li>
+<li><a href="https://www.python-utils.com/">python-utils</a> - Playground for Python utilities</li>
+<li><a href="https://spektran.com/">Spektran</a> - Collection of useful color tools</li>
+<li><a href="https://observablehq.com/">Observable</a> - JavaScript notebooks</li>
+<li><a href="https://www.htmldog.com/">HTML Dog</a> - HTML tutorials</li>
+<li><a href="https://crontab.tech/">Crontab</a> - Crontab scheduler</li>
+<li><a href="https://ian.umces.edu/media-library/">Media Library</a></li>
+<li><a href="https://www.i18nqa.com/debug/utf8-debug.html">UTF-8 Character Debug</a> - UTF-8 character debugging chart</li>
+<li><a href="https://en.wikibooks.org/wiki/LaTeX/Basics#Compilation">LaTeX Basics</a></li>
+<li><a href="https://quarto.org/">Quarto</a> - Scientific and technical publishing system built on Pandoc</li>
+</ul>
+</section>
+<section id="gis" class="level2">
+<h2 class="anchored" data-anchor-id="gis">GIS</h2>
+<ul>
+<li><a href="epsg.io">epsg.io</a> - Spatial reference systems</li>
+<li><a href="https://pro.arcgis.com/en/pro-app/2.8/arcpy/get-started/installing-python-for-arcgis-pro.htm">ArcGIS</a> - ArcGIS Python</li>
+</ul>
+</section>
+<section id="music" class="level2">
+<h2 class="anchored" data-anchor-id="music">Music</h2>
+<ul>
+<li><a href="https://flagrantior.art/">Songsterr</a> - Guitar tabs</li>
+<li><a href="https://www.ultimate-guitar.com/explore">Ultimate Guitar</a> - Guitar tabs</li>
+<li><a href="https://flagrantior.art/">Flagrantior</a> - Music theory</li>
+<li><a href="https://www.musictheory.net/">musictheory.net</a> - Music theory</li>
+<li><a href="https://www.teoria.com/">Teoria</a> - Music theory</li>
+<li><a href="https://www.justinguitar.com/">JustinGuitar</a> - Guitar lessons</li>
+<li><a href="https://howtoplaypiano.ca/">HowToPlayPiano</a> - Piano lessons</li>
+<li><a href="https://soundation.com/">Soundation</a> - Broswer based music maker</li>
+</ul>
+</section>
+<section id="e-books" class="level2">
+<h2 class="anchored" data-anchor-id="e-books">e-Books</h2>
+<ul>
+<li><a href="https://www.gutenberg.org/">Project Gutenberg</a></li>
+<li><a href="https://librivox.org/search?primary_key=0&amp;search_category=title&amp;search_page=1&amp;search_form=get_results">LibriVox</a></li>
+<li><a href="https://standardebooks.org/">Standard eBooks</a></li>
+</ul>
+</section>
+<section id="miscellaneous" class="level2">
+<h2 class="anchored" data-anchor-id="miscellaneous">Miscellaneous</h2>
+<ul>
+<li><a href="https://freelearninglist.org/">Free Learning</a> - List of free educational resources</li>
+</ul>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
+  <guid>http://toolkit.goecoug.com/docs/resources/bookmarks.html</guid>
+  <pubDate>Fri, 30 Jun 2023 01:46:13 GMT</pubDate>
+  <media:content url="http://toolkit.goecoug.com/static/resources/bookmark.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>Data Management</title>
+  <link>http://toolkit.goecoug.com/docs/resources/data-management.html</link>
+  <description><![CDATA[ 
+
+
+
+<section id="data-quality" class="level2">
+<h2 class="anchored" data-anchor-id="data-quality">Data Quality</h2>
+<p><a href="https://www.epa.gov/sites/default/files/2015-06/documents/g4-final.pdf">EPA Guidance on Systematic Planning Using the Data Quality Objectives Process</a></p>
+<hr>
+<section id="the-data-quality-objective-dqo-process" class="level3">
+<h3 class="anchored" data-anchor-id="the-data-quality-objective-dqo-process">The Data Quality Objective (DQO) Process</h3>
+<p><img src="http://toolkit.goecoug.com/static/resources/DQO_Process.png" class="img-fluid"></p>
+<div class="cell" data-execution_count="1">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> pandas <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> pd</span>
+<span id="cb1-2"></span>
+<span id="cb1-3">dqo <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"../../static/resources/DQO.xlsx"</span></span>
+<span id="cb1-4">elements <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.read_excel(dqo, sheet_name<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>)</span>
+<span id="cb1-5">factors <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.read_excel(dqo, sheet_name<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>)</span></code></pre></div>
+</details>
+</div>
+<hr>
+</section>
+<section id="table-1.-elements-of-systematic-planning" class="level3">
+<h3 class="anchored" data-anchor-id="table-1.-elements-of-systematic-planning">Table 1. Elements of Systematic Planning</h3>
+<div class="cell" data-execution_count="2">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1">elements.to_html(index<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">False</span>)</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="6">
+
+<table class="dataframe table table-sm table-striped small">
+
+<thead>
+
+<tr>
+
+<th>
+Element
+</th>
+
+<th>
+Description
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>
+Organization
+</td>
+
+<td>
+Identification and involvement of the project manager, sponsoring organization and responsible official, project personnel, stakeholders, scientific experts, etc. (e.g., all customers and suppliers).
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Project Goal
+</td>
+
+<td>
+Description of the project goal, objectives, and study questions and issues.
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Schedule
+</td>
+
+<td>
+Identification of project schedule, resources (including budget), milestones, and any applicable requirements (e.g., regulatory requirements, contractual requirements).
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Data Needs
+</td>
+
+<td>
+Identification of the type of data needed and how the data will be used to support the project’s objectives.
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Criteria
+</td>
+
+<td>
+Determination of the quantity of data needed and specification of performance criteria for measuring quality.
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Data Collection
+</td>
+
+<td>
+Description of how and where the data will be obtained (including existing data) and identification of any constraints on data collection.
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Quality Assurance (QA)
+</td>
+
+<td>
+Specification of needed QA and quality control (QC) activities to assess the quality performance criteria (e.g., QC samples for both field and laboratory, audits, technical assessments, performance evaluations, etc.).
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Analysis
+</td>
+
+<td>
+Description of how the acquired data will be analyzed (either in the field or the laboratory), evaluated (i.e., QA review/verification/validation), and assessed against its intended use and the quality performance criteria.
+</td>
+
+</tr>
+
+</tbody>
+
+
+</table>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>When specifying the project goal (element #2 in Table 1), a key activity is to determine the key questions which the study will address once data and information are properly collected and analyzed.</p>
+</blockquote>
+<hr>
+</section>
+<section id="table-2.-epa-general-assessment-factors" class="level3">
+<h3 class="anchored" data-anchor-id="table-2.-epa-general-assessment-factors">Table 2. EPA General Assessment Factors</h3>
+<div class="cell" data-execution_count="3">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1">factors.to_html(index<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">False</span>)</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="7">
+
+<table class="dataframe table table-sm table-striped small">
+
+<thead>
+
+<tr>
+
+<th>
+Factor
+</th>
+
+<th>
+Description
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>
+Soundness
+</td>
+
+<td>
+The extent to which the scientific and technical procedures, measures, methods or models employed to generate the information are reasonable for, and consistent with, the intended application.
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Applicability and Utility
+</td>
+
+<td>
+The extent to which the information is relevant for the Agency’s intended use.
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Clarity and Completeness
+</td>
+
+<td>
+The degree of clarity and completeness with which the data, assumptions, methods, quality assurance, sponsoring organizations and analyses employed to generate the information are documented.
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Uncertainty and Variability
+</td>
+
+<td>
+The extent to which the variability and uncertainty (quantitative and qualitative) in the information or the procedures, measures, methods or models are evaluated and characterized.
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Evaluation and Review
+</td>
+
+<td>
+The extent of independent verification, validation, and peer review of the information or of the procedures, measures, methods or models.
+</td>
+
+</tr>
+
+</tbody>
+
+
+</table>
+</div>
+</div>
+</section>
+<section id="systematic-planning-gaf-commonalities" class="level3">
+<h3 class="anchored" data-anchor-id="systematic-planning-gaf-commonalities">Systematic Planning &amp; GAF Commonalities</h3>
+<ul>
+<li>Achieving clarity in a project’s development becomes straightforward when using systematic planning, as almost every element of the planning process contributes to understanding how the project’s assumptions, methods, and proposed analyses will be conducted.</li>
+<li>Planning for analyzing the data and information before collection clearly meets the intent of the GAFs.</li>
+<li>Clear statements on the goals of the project developed through systematic planning leads to a better understanding of purpose and credibility of the results.</li>
+<li>Systematic planning leads to a clear statement of information needs and how the information will be collected, and leads to transparency in data quality.</li>
+</ul>
+<p><img src="http://toolkit.goecoug.com/static/resources/Commonalities.png" class="img-fluid"></p>
+<p><img src="http://toolkit.goecoug.com/static/resources/Project_Life_Cycle.png" class="img-fluid"></p>
+<hr>
+</section>
+</section>
+<section id="benefits-of-using-the-dqo-process" class="level2">
+<h2 class="anchored" data-anchor-id="benefits-of-using-the-dqo-process">Benefits of Using the DQO Process</h2>
+<blockquote class="blockquote">
+<p>The interaction amongst a multidisplinary team results in a clear understanding of the problem and the options available. Organizations that have used the DQO Process have found the structured format facilitated good communicaitons, documentation, and data collection design, all of which facilitated rapid peer review and approval.</p>
+</blockquote>
+<ul>
+<li>The structure of the DQO Process provides a convenient way to document activities and decisions and to communicate the data collection design to others.</li>
+<li>The DQO Process is an effective planning tool that can save resources by making data collection operations more resource-effective.</li>
+<li>The DQO Process enables data users and technical experts to participate collectively in planning and to specify their needs prior to data collection. The DQO Process helps to focus studies by encouraging data users to clarify vague objectives and document clearly how scientific theory motivating this project is applicable to the intended use of the data.</li>
+<li>The DQO Process provides a method for defining performance requirements appropriate for the intended use of the data by considering the consequences of drawing incorrect conclusions and then placing tolerable limits on them.</li>
+<li>The DQO Process encourages good documentation for a model-based approach to investigate the objectives of a project, with discussion on how the key parameters were estimated or derived, and the robustness of the model to small perturbations. Upon implementing the DQO Process, your environmental programs can be strengthened</li>
+</ul>
+<hr>
+</section>
+<section id="data-handling" class="level2">
+<h2 class="anchored" data-anchor-id="data-handling">Data Handling</h2>
+<section id="resources" class="level3">
+<h3 class="anchored" data-anchor-id="resources">Resources</h3>
+<ul>
+<li><a href="https://execsql.osdn.io/">execSQL</a></li>
+<li><a href="https://www.postgresqltutorial.com/">PostgreSQL Tutorial</a></li>
+<li><a href="https://pgdash.io/blog/postgres-tips-and-tricks.html?">PostgreSQL Tips</a></li>
+<li><a href="https://devdocs.io/">DevDocs.io</a></li>
+</ul>
+</section>
+<section id="character-encoding" class="level3">
+<h3 class="anchored" data-anchor-id="character-encoding">Character Encoding</h3>
+<p>We deal with character encoding issues when importing data to databases all the time. All databases are encoded in UTF-8, and the most common non-ASCII, non-UTF-8 format is Microsoft’s custom encoding, which is CP-1252 (also known as win-1252 and a few other things). The character encoding of a file can’t necessarily be definitively determined by examination, but the Linux command-line tool file generally does a good job. If you want to change the encoding of a file rather than importing it in a known format, the Linux command-line tool iconv will do that for you. There’s a Python library on PyPI named chardet that will also diagnose file encodings.</p>
+<p>For data managers, the workflow is to first guess that encoding errors on data import are due to the file being cp-1252. That covers about 90% of cases. Our import tool also automatically diagnoses instances where a file starts with a byte order mark (BOM), which covers most of the rest of the cases. For the remainders, Geany is usually the quickest way to check the file encoding.</p>
+<p>Everything that comes out of our databases is always in UTF-8, so I, at least, don’t ordinarily have encoding issues when importing data to R. For those who use data from other sources, it is a good idea to document a recommended workflow and set of tools.</p>
+<hr>
+</section>
+</section>
+<section id="analytical-chemistry" class="level2">
+<h2 class="anchored" data-anchor-id="analytical-chemistry">Analytical Chemistry</h2>
+<section id="summarization" class="level3">
+<h3 class="anchored" data-anchor-id="summarization">Summarization</h3>
+<p>Chemistry data frequently is summarized for use in analyses or for presentation using tables or maps. Summarization is ordinarily performed when there are multiple concentration values measured for a sample, or for a specific location, date, and depth. Multiple concentration values result from field or laboratory replications, from field splits created for quality control evaluations, and sometimes from sample reanalyses. Although field splits and laboratory replicates are created to support data quality assessments, all of the valid results that are produced are informative, are ordinarily stored in the project database, and are used to produce the most accurate possible estimate of the true concentration in a sample. When there are replicate results for a sample, the data will be averaged in a stepwise, or hierarchical, fashion. Because each level of the hierarchy represents a different source of variation, all the results at a single level are averaged together before results are averaged across levels. The different levels of replication, and the source of variation that each represents, are as follows:</p>
+<ol type="1">
+<li>Average across lab replicates<br></li>
+<li>Average across multiple analyses (if they exist) for the same lab sample. This will average across multiple methods and reanalyses (different SDGs)<br></li>
+<li>Average across multiple lab samples (if they exist) for the same sample number (split) and lab. Multiple lab samples may exist for the same sample number if the laboratory has created new laboratory sample IDs for reanalyses.<br></li>
+<li>Average across multiple splits (if they exist) for the same lab and interpretive sample. Multiple sample numbers (splits) may exist for the same lab, or the same sample number may exist for different labs. Splits sent to different labs potentially have an additional source of variability in addition to variability between splits sent to the same lab.<br></li>
+<li>Average across laboratories for the same main sample. This summarizes data by main sample (sample_id), which is typically the lowest level of data summarization to be used for data interpretation.</li>
+</ol>
+<p>By default, data are summarized by successive averaging across these levels of replication, in the order given above. During the averaging process, data validation qualifiers and significant digits must be propagated. The rules for propagating the data validation qualifiers U (undetected), J (estimated), and R (rejected) are as follows:</p>
+<ul>
+<li>If both detected and undetected data are to be averaged, then undetected data lower than the highest detected value will be taken at one-half the detection limit and averaged with the detected data, and the result will be identified as detected. Non-detects that are higher than the highest detected value will be omitted from the average.</li>
+<li>If all data to be averaged are undetected, the result will be taken to be the lowest detection limit, and will be identified as undetected.</li>
+<li>If J-qualified data are averaged with non-J-qualified data, the result will be J-qualified.</li>
+<li>If R-qualified data are averaged with non-R-qualified data, the result will be R-qualified.</li>
+</ul>
+<p>Significant digits are propagated so that the place (in the sense of one’s place, ten’s place, etc.) of the least significant digit of the average is equal to the highest place of the least significant digit of any of the values that are averaged.</p>
+<p>These rules are built into custom aggregate functions in IDB that use the measurement_result data type.</p>
+<p>These default data handling rules will be applied if no project-specific alternate rules are specified. The project manager, project technical staff, and data manager should evaluate, at the start of a project, whether an alternative approach is needed. Alternate data summarization rules should be summarized in the project plan or in the data management plan, if it exists. (Data managers: if not documented elsewhere, record this information in the Data Manager’s Manual.)</p>
+<p>Note that the handling of nondetects during hierarchical averaging and the presentation of nondetects in data summaries may be different. Regardless of whether nondetects are taken at half the detection limit or the full detection limit when averaging, the summarized result may be presented with either the full detection limit or half the detection limit. Reporting nondetects at the full detection limit should ordinarily be done when preparing data tables for reports or other deliverables. Data analyses to be conducted by Integral may be carried out using either half or full detection limits. The method of reporting nondetects should be specified when requesting data summaries.</p>
+<hr>
+</section>
+</section>
+<section id="chemistry" class="level2">
+<h2 class="anchored" data-anchor-id="chemistry">Chemistry</h2>
+<section id="resources-1" class="level3">
+<h3 class="anchored" data-anchor-id="resources-1">Resources</h3>
+<ul>
+<li><a href="https://www.epa.gov/hw-sw846/sw-846-compendium">Hazardous Waste Test Methods</a></li>
+<li><a href="https://www.nemi.gov/home/">National Environmental Methods Index</a></li>
+<li><a href="https://iaspub.epa.gov/sor_internet/registry/substreg/LandingPage.do">Substance Registry Service</a></li>
+<li><a href="https://apps.ecology.wa.gov/eim/help/ValidValues">EIM Valid Values</a></li>
+<li><a href="https://www.epa.gov/sites/production/files/2015-06/documents/g8-final.pdf">Verification and Validation</a></li>
+<li><a href="https://apps.ecology.wa.gov/eim/help/ValidValues/DataQualifiers">Qualifiers</a></li>
+<li><a href="https://www.epa.gov/clp/superfund-clp-national-functional-guidelines-data-review">Data Review</a></li>
+<li><a href="../../static/resources/Chemical_Lists.xls">Chemical Lists</a></li>
+<li><a href="https://www.epa.gov/pcbs/learn-about-polychlorinated-biphenyls-pcbs">PCBs</a></li>
+<li><a href="https://pubs.usgs.gov/wdr/WDR-WA-03-1/pdf/ADR_N.pdf">Washington Water Resources Data Defs</a></li>
+<li><a href="../../static/resources/EFH-REFS_CHPT10.pdf">Measurement Basis Conversions</a></li>
+<li><a href="https://pubs.usgs.gov/wdr/WDR-WA-03-1/pdf/ADR_N.pdf">https://pubs.usgs.gov/wdr/WDR-WA-03-1/pdf/ADR_N.pdf</a></li>
+<li><a href="http://www.eccsmobilelab.com/resources/literature/?Id=117">http://www.eccsmobilelab.com/resources/literature/?Id=117</a></li>
+<li><a href="../../static/resources/EFH-REFS_CHPT10.pdf">Conversions</a></li>
+</ul>
+<div class="cell" data-execution_count="4">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> pandas <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> pd</span>
+<span id="cb4-2"></span>
+<span id="cb4-3">wb <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"../../static/resources/Chemical_Lists.xls"</span></span>
+<span id="cb4-4"></span>
+<span id="cb4-5">chem_lists <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.read_excel(wb, sheet_name<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>)</span>
+<span id="cb4-6">cwa <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.read_excel(wb, sheet_name<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>)</span>
+<span id="cb4-7">pfas <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.read_excel(wb, sheet_name<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>)</span>
+<span id="cb4-8">pesticides <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.read_excel(wb, sheet_name<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>)</span>
+<span id="cb4-9">pcb <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.read_excel(wb, sheet_name<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>)</span>
+<span id="cb4-10">pah <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.read_excel(wb, sheet_name<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>)</span>
+<span id="cb4-11">fertilizers <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.read_excel(wb, sheet_name<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>)</span>
+<span id="cb4-12">dioxfuran <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.read_excel(wb, sheet_name<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">7</span>)</span>
+<span id="cb4-13">pbde <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.read_excel(wb, sheet_name<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">8</span>)</span></code></pre></div>
+</details>
+</div>
+</section>
+<section id="tefs" class="level3">
+<h3 class="anchored" data-anchor-id="tefs">TEFs</h3>
+<ul>
+<li><a href="../../static/resources/TEFs Van den Berg.pdf">Van den Berg source document</a></li>
+<li><a href="../../static/resources/TEFs_VanDenBerg.xlsx">Van den Berg TEF table</a></li>
+</ul>
+</section>
+<section id="chemical-groups" class="level3">
+<h3 class="anchored" data-anchor-id="chemical-groups">Chemical Groups</h3>
+<section id="dioxin-furans" class="level4">
+<h4 class="anchored" data-anchor-id="dioxin-furans">Dioxin &amp; Furans</h4>
+<p><a href="https://www.eurofins.com/media/312559/dioxine_ts_eng.pdf">Reference</a></p>
+</section>
+<section id="pcbs" class="level4">
+<h4 class="anchored" data-anchor-id="pcbs">PCBs</h4>
+<p><a href="https://www.epa.gov/pcbs/learn-about-polychlorinated-biphenyls-pcbs">Learn about PCBs</a></p>
+<section id="general" class="level5">
+<h5 class="anchored" data-anchor-id="general">General</h5>
+<p>PCBs are a group of man-made organic chemicals consisting of carbon, hydrogen and chlorine atoms. The number of chlorine atoms and their location in a PCB molecule determine many of its physical and chemical properties. PCBs have no known taste or smell, and range in consistency from an oil to a waxy solid.</p>
+<p>PCBs belong to a broad family of man-made organic chemicals known as chlorinated hydrocarbons. PCBs were domestically manufactured from 1929 until manufacturing was banned in 1979. They have a range of toxicity and vary in consistency from thin, light-colored liquids to yellow or black waxy solids. Due to their non-flammability, chemical stability, high boiling point and electrical insulating properties, PCBs were used in hundreds of industrial and commercial applications including:</p>
+<ul>
+<li>Electrical, heat transfer and hydraulic equipment</li>
+<li>Plasticizers in paints, plastics and rubber products</li>
+<li>Pigments, dyes and carbonless copy paper</li>
+<li>Other industrial applications</li>
+</ul>
+<p><strong>Commercial Uses for PCBs</strong></p>
+<p>Although no longer commercially produced in the United States, PCBs may be present in products and materials produced before the 1979 PCB ban. Products that may contain PCBs include:</p>
+<ul>
+<li>Transformers and capacitors</li>
+<li>Electrical equipment including voltage regulators, switches, re-closers, bushings, and electromagnets</li>
+<li>Oil used in motors and hydraulic systems</li>
+<li>Old electrical devices or appliances containing PCB capacitors</li>
+<li>Fluorescent light ballasts</li>
+<li>Cable insulation</li>
+<li>Thermal insulation material including fiberglass, felt, foam, and cork</li>
+<li>Adhesives and tapes</li>
+<li>Oil-based paint</li>
+<li>Caulking</li>
+<li>Plastics</li>
+<li>Carbonless copy paper</li>
+<li>Floor finish</li>
+</ul>
+<p>The PCBs used in these products were chemical mixtures made up of a variety of individual chlorinated biphenyl components known as congeners. Most commercial PCB mixtures are known in the United States by their industrial trade names, the most common being Arochlor.</p>
+<p><strong>Release and Exposure of PCBs</strong></p>
+<p>Today, PCBs can still be released into the environment from:</p>
+<ul>
+<li>Poorly maintained hazardous waste sites that contain PCBs</li>
+<li>Illegal or improper dumping of PCB wastes</li>
+<li>Leaks or releases from electrical transformers containing PCBs</li>
+<li>Disposal of PCB-containing consumer products into municipal or other landfills not designed to handle hazardous waste</li>
+<li>Burning some wastes in municipal and industrial incinerators</li>
+</ul>
+<p>PCBs do not readily break down once in the environment. They can remain for long periods cycling between air, water and soil. PCBs can be carried long distances and have been found in snow and sea water in areas far from where they were released into the environment. As a consequence, they are found all over the world. In general, the lighter the form of PCB, the further it can be transported from the source of contamination.</p>
+<p>PCBs can accumulate in the leaves and above-ground parts of plants and food crops. They are also taken up into the bodies of small organisms and fish. As a result, people who ingest fish may be exposed to PCBs that have bioaccumulated in the fish they are ingesting.</p>
+<p>The National Center for Health Statistics, a division of the Centers for Disease Control and Prevention, conducts the National Health and Nutrition Examination Surveys (NHANES). NHANES is a series of U.S. national surveys on the health and nutrition status of the noninstitutionalized civilian population, which includes data collection on selected chemicals. Interviews and physical examinations are conducted with approximately 10,000 people in each two-year survey cycle. PCBs are one of the chemicals where data are available from the NHANES surveys.</p>
+</section>
+<section id="pcb-congeners" class="level5">
+<h5 class="anchored" data-anchor-id="pcb-congeners">PCB Congeners</h5>
+<p>A PCB congener is any single, unique well-defined chemical compound in the PCB category. The name of a congener specifies the total number of chlorine substituents, and the position of each chlorine. For example: 4,4’-Dichlorobiphenyl is a congener comprising the biphenyl structure with two chlorine substituents - one on each of the #4 carbons of the two rings. In 1980, a numbering system was developed which assigned a sequential number to each of the 209 PCB congeners.</p>
+</section>
+<section id="pcb-homologs" class="level5">
+<h5 class="anchored" data-anchor-id="pcb-homologs">PCB Homologs</h5>
+<p>Homologs are subcategories of PCB congeners that have equal numbers of chlorine substituents. For example, the tetrachlorobiphenyls are all PCB congeners with exactly 4 chlorine substituents that can be in any arrangement.</p>
+</section>
+<section id="pcb-aroclor" class="level5">
+<h5 class="anchored" data-anchor-id="pcb-aroclor">PCB Aroclor</h5>
+<p>Aroclor is a PCB mixture produced from approximately 1930 to 1979. It is one of the most commonly known trade names for PCB mixtures. There are many types of Aroclors and each has a distinguishing suffix number that indicates the degree of chlorination. The numbering standard for the different Aroclors is as follows:</p>
+<ul>
+<li>The first two digits usually refer to the number of carbon atoms in the phenyl rings (for PCBs this is 12)</li>
+<li>The second two numbers indicate the percentage of chlorine by mass in the mixture. For example, the name Aroclor 1254 means that the mixture contains approximately 54% chlorine by weight.</li>
+</ul>
+</section>
+</section>
+</section>
+<section id="qualifiers" class="level3">
+<h3 class="anchored" data-anchor-id="qualifiers">Qualifiers</h3>
+<blockquote class="blockquote">
+<p>Labs may apply whatever flags they want to a result. Some data qualifiers are defined by EPA’s Functional Guidelines documents, which describe how data validation is to be conducted, and the use and interpretation of U, J, and R qualifiers is pretty universal (but older standards for Puget Sound data used E instead of J). Because the U, J, and R qualifiers are pretty universal and have implications for data usability, they are the only ones that are represented as Boolean fields in the meas_value column. All lab flags are put into the lab_flags column, and there is no lookup table for them, and there is no defined use for them. Similarly, the validator qualifiers (U, J, R, and possibly others) are put in the validator_flags column. If any of those three common qualifiers is in the validator_flags column, then the corresponding flags in meas_value should be set. The lab_conc_qual column is something of a relic, left over from the days when data were commonly provided in EPA’s Contract Laboratory Program (CLP) data format, which had a corresponding column. The lab_conc_qual column was meant to either contain “U” or be null. We don’t ordinarily use that column any more. Of the qualifiers you listed above, other than U, J, and R, N is commonly used to flag a tentatively identified compound, which means that the analyte code itself is uncertain. The d_labresult.tic column is meant to hold that information. The tic column is not part of the measurement_result data type because it is not used in any way during data aggregation (averaging or summing). I see that Jerry added other flags and qualifiers to the e_concqual table, but needn’t—really shouldn’t—be there. The e_concqual dictionary should have only “U” defined. It may seem odd to define a lookup table for only one value when a check constraint on the concentration qualifier columns could be used instead, but it’s easier to check relational constraints than to check check constraints programmatically.</p>
+</blockquote>
+</section>
+<section id="duplicates" class="level3">
+<h3 class="anchored" data-anchor-id="duplicates">Duplicates</h3>
+<blockquote class="blockquote">
+<p>“Duplicate” is a somewhat ambiguous term, but in practice it most commonly refers to field duplicates, which we ordinarily refer to as splits to avoid that ambiguity. Some QC data, particularly spikes, are frequently duplicated, so when we have lab QC data we may have values for spikes and spike duplicates. When we receive lab results in one big flat table that includes both analytical results for natural samples and results of lab QC samples, the word or code “DUP” in a column header or table cell could mean a couple of different things. Without seeing the original data source, I’m not sure where the “DUP” code in the “labqc_samp” column of your “d_labsample” table came from. I’m going to assume that it refers to a field duplicate, and not a spike duplicate.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Ideally, samples are submitted to the laboratory “blind” so that the laboratory does not know which field samples are duplicates of one another. This is to prevent them from seeing that there’s a lot of variation between some pair of duplicates and deciding to re-run one or both of them. If the lab is producing highly variable data, we don’t want them to be able to hide it. Unfortunately, many field sampling programs use a suffix of “-D” or “-DUP” or something like that on the sample ID, so the lab knows which samples are field duplicates. If they know, they may pass that information back in their EDD.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Although field duplicates are used as a QC check on laboratory performance, they are not lab QC samples themselves. They are just normal field samples (which have been split), and don’t need to have a laboratory QC sample ID assigned to them. Thus, field duplicates should not be listed in the “d_labqcsamp” table, so that table looks fine as it appears below. The same is true for the “d_labresult” table.</p>
+</blockquote>
+<p>There are a couple of things to be changed about the “d_labsample” table as shown below:</p>
+<ul>
+<li>The values in the “labqc_samp” column should be identifiers that appear in the “d_labqcsamp” table, not codes. The codes for the lab QC type should be in the d_labqcsamp.qc_type column, and neither “Natural” nor “DUP” should be used there.</li>
+<li>The “d_labsample” table should have values in the “study_id” and “sample_no” columns, or a value in the “labqc_samp” column, but not both. There are other invalid combinations of columns also. The “d_labsample” table may have any one of the following tables as a parent: d_sampsplit, d_fldqcsplit, d_labqcsamp, d_bioaccum_samp, d_samptreatsplit, or d_bioasrepsamp. The “ck_one_sample” check constraint on the table enforces this rule. Check constraints like this are not run by the upsert scripts, so a set of staged data may pass all the checks performed by the upsert script and yet the INSERT into d_labsample will fail.</li>
+</ul>
+</section>
+<section id="measurement-basis" class="level3">
+<h3 class="anchored" data-anchor-id="measurement-basis">Measurement Basis</h3>
+<section id="r-tool" class="level4">
+<h4 class="anchored" data-anchor-id="r-tool">R tool</h4>
+<p><a href="https://www.rdocumentation.org/packages/OrgMassSpecR/versions/0.5-3/topics/ConvertConcentration">OrgMassSpecR</a></p>
+</section>
+<section id="general-1" class="level4">
+<h4 class="anchored" data-anchor-id="general-1">General</h4>
+<ul>
+<li>Data for soil and sediment are almost always reported on a dry-weight basis. If there’s anything to indicate a different basis, that deserves a closer look. Almost the only legitimate reason for a different basis for soil or sediment samples is when a leaching procedure has been applied (e.g., the Toxicity Characteristic Leaching Procedure, or TCLP); in those cases the data may be reported as the concentration in the leachate, so the basis may be “Wet” or “Whole” or “Unfiltered” – anything indicating an unfractionated liquid sample.</li>
+<li>Data for tissues should ordinarily be reported in wet weight. Organisms’ homeostasis means that they maintain a nearly constant moisture content in their tissues, whereas the same is not true of materials like soil or sediment. If tissue data are reported in dry weight, check it carefully: labs can be sloppy about that.</li>
+<li>Water data are where things can be complex, because often water samples are filtered or centrifuged to remove particulates, which results in the water samples have a ‘dissolved’ basis. If the particulates are analyzed, and the results are then expressed in terms of the volume of the original sample, then the data will have a ‘particulate’ basis. Unfiltered, or whole, water, should have a basis of ‘Unfilt’, ‘Whole’, or sometimes ‘Wet’. Either of the first two of these are preferred, “Wet” is better used as a counterpart to “Dry” for soil, sediment, or tissue samples.</li>
+<li>There are variations in the way things have been done in different databases. You may find that the measurement basis code for whole water samples differs from one to another, as in the third bullet above.</li>
+<li>IDB v.8 now has the “fraction” code, which is intended to be used to distinguish dissolved, particulate, and whole fractions of a water sample. In IDB v.8, the measurement basis for water samples will almost always be ‘Whole’. Sometimes sediment or soil samples are fractionated too, e.g., by sieving, and the fraction code should be used in those cases too, so the measurement basis will always be ‘dry’ in those cases.</li>
+<li>There is an implicit association between measurement bases and units. For example, if the measurement basis is “Dry”, the units should not be “mg/L” because “…/L” implies a liquid, not a solid.</li>
+<li>The measurement basis refers to the form of the sample material, which is represented in the denominator of concentration units. So codes of “Sediment” “Arsenic”, “mg/kg”, “Dry” should be read as “mg of arsenic per kg of dry sediment.”</li>
+</ul>
+</section>
+<section id="wet-weight" class="level4">
+<h4 class="anchored" data-anchor-id="wet-weight">Wet Weight</h4>
+<blockquote class="blockquote">
+<p>Wet weight (or as-is) basis means no calculation has been made to compensate for the moisture content of a sample. Wet weight refers to the weight of animal tissue or other substance including its contained water. (See also “Dry weight”)</p>
+</blockquote>
+</section>
+<section id="dry-weight" class="level4">
+<h4 class="anchored" data-anchor-id="dry-weight">Dry Weight</h4>
+<blockquote class="blockquote">
+<p>Dry weight basis means the lab has measured moisture content of a sample and calculated concentrations based on the percent solids present. Dry weight refers to the weight of animal tissue after it has been dried in an oven at 65°C until a constant weight is achieved. Dry weight represents total organic and inorganic matter in the tissue. (See also “Wet weight”).</p>
+</blockquote>
+</section>
+<section id="lipid" class="level4">
+<h4 class="anchored" data-anchor-id="lipid">Lipid</h4>
+<blockquote class="blockquote">
+<p>Lipid is any one of a family of compounds that are insoluble in water and that make up one of the principal components of living cells. Lipids include fats, oils, waxes, and steroids. Many environmental contaminants such as organochlorine pesticides are lipophilic.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="conversions" class="level3">
+<h3 class="anchored" data-anchor-id="conversions">Conversions</h3>
+<section id="wet-to-dry" class="level4">
+<h4 class="anchored" data-anchor-id="wet-to-dry">Wet to Dry</h4>
+<p><img src="https://latex.codecogs.com/png.latex?DryWt%20=%20%5Cfrac%7BWetWt%7D%7BPercent%20Solids%7D%20*%20100"></p>
+</section>
+<section id="dry-to-wet" class="level4">
+<h4 class="anchored" data-anchor-id="dry-to-wet">Dry to Wet</h4>
+<p><img src="https://latex.codecogs.com/png.latex?WetWt%20=%20DryWt%20*%20%5Cfrac%7BPercentSolids%7D%7B100%7D"></p>
+</section>
+<section id="organic-carbon-normalization" class="level4">
+<h4 class="anchored" data-anchor-id="organic-carbon-normalization">Organic Carbon Normalization</h4>
+<p><img src="https://latex.codecogs.com/png.latex?OCnorm%20=%20%5Cfrac%7BDryWt%7D%7B%5Cfrac%7BPercentTOC%7D%7B100%7D%7D"></p>
+<center>
+<strong>DryWt &amp; WetWt</strong> = concentration<br> <strong>PercentSolids</strong> = percentage (no decimal)
+</center>
+</section>
+<section id="resource" class="level4">
+<h4 class="anchored" data-anchor-id="resource">Resource</h4>
+<center>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="http://toolkit.goecoug.com/static/resources/mass_conv.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Calcs</figcaption>
+</figure>
+</div>
+</center>
+<hr>
+</section>
+</section>
+<section id="analytical-blanks" class="level3">
+<h3 class="anchored" data-anchor-id="analytical-blanks">Analytical Blanks</h3>
+</section>
+<section id="trip-blank" class="level3">
+<h3 class="anchored" data-anchor-id="trip-blank">Trip Blank</h3>
+<p>The trip blank is designed to identify levels of contamination from the exposure of the reagent or sorbent bed to the same atmospheres exposed to the analyte reagent or sorbent bed. The trip blank is prepared in the laboratory with the other reagents or adsorbents prior to shipping to the field. However, the trip blank is never exposed to the field atmospheres. It is simply sent along with the field samples to and from the site. The trip blank identified areas of exposure such as shipping temperatures and pressures, laboratory preparation of field samples and laboratory preparation of field samples for analysis.</p>
+<section id="field-blank" class="level4">
+<h4 class="anchored" data-anchor-id="field-blank">Field Blank</h4>
+<p>The field blank is similar to the trip blank in that it is also prepared during the preparation of the field reagents or adsorbents. However, the field blank is exposed to the same atmospheres in the field as the field samples. This means that the field blank is opened during the charging of impingers or sorbents in the sample train. The field blank is also exposed during the exchanging of cartridges in SW-846, Method 0030 or when field reagents are being exchanged during a test run. In summary, field blanks consist of additional sample collection media (e.g., sorbent tubes, reagents, filters) which are transported to the monitoring site, exposed briefly at the site when the samples are exposed (but no stack gas is actually pulled through these blanks), and transported back to the laboratory for analysis, similar to a field sample. At least one field blank should be collected and analyzed for each test series.</p>
+</section>
+<section id="laboratory-blank" class="level4">
+<h4 class="anchored" data-anchor-id="laboratory-blank">Laboratory Blank</h4>
+<p>The laboratory blank is a sample of the reagents or sorbents used during the sample train reagent preparation or recovery. The laboratory blank is a sample of the extraction solvent, the rinses used during sample recovery, or a sample from the batch of sorbent used to preparing sampling cartridges. Laboratory blanks include both method blanks and instrument blanks. Method blanks are carried through all steps of the measurement process (from extraction through analysis). A method blank is typically analyzed with each sample batch. Instrument blanks are used to demonstrate that an instrument system is free of contamination. Instrument blanks are typically analyzed prior to sample analysis and following the analysis of highly contaminated samples.</p>
+</section>
+<section id="reagent-blank" class="level4">
+<h4 class="anchored" data-anchor-id="reagent-blank">Reagent Blank</h4>
+<p>The reagent blank is a sample of the solvents used during recovery of the sample train after the test is completed. You recall, reagent blanks for both multi-metal and chromium +6 require that the reagent blank be the same volume as the renses used to recover the samples, from probe to impinger. This is because the blank value is substracted from the sample to obtain a final concentration.</p>
+</section>
+<section id="diagram" class="level4">
+<h4 class="anchored" data-anchor-id="diagram">Diagram</h4>
+<p><img src="http://toolkit.goecoug.com/static/resources/blanks.PNG" class="img-fluid"></p>
+<hr>
+</section>
+</section>
+<section id="detection-limits" class="level3">
+<h3 class="anchored" data-anchor-id="detection-limits">Detection Limits</h3>
+<p><a href="../../static/resources/DLs_Demystified.pptx">Presentation</a></p>
+<section id="what-affects-detection-limits" class="level4">
+<h4 class="anchored" data-anchor-id="what-affects-detection-limits">What affects detection limits?</h4>
+<ul>
+<li>Sample size</li>
+<li>Concentration of other constituents</li>
+<li>Sample clean-up</li>
+<li>Methodology</li>
+<li>Lab Performance
+<ul>
+<li>Experience</li>
+<li>Extraction technique</li>
+<li>Instrument type and maintenance</li>
+</ul></li>
+</ul>
+<p><strong>detection_limit</strong> - the lowest possible value an instrument/method can sense a compound is present (think of it like a whisper - you can barely hear it, but know its there). This is better known as the “method detection limit”</p>
+<p><strong>quantification_limit</strong> - the limit in which an instrument/method can actually start to quantify the amount of something which is present. If the result is between the detection_limit and the quantification_limit, the result is estimated, because the instrument/method cant confidently identify the amount of something until it reaches the quantification_limit.</p>
+<p><strong>reporting_limit</strong> - usually project or dataset specific. this limit is used for data analysis/statistics. the reporting_limit is equal to either the detection_limit or quantification_limit. This is better known as the “reporting detection limit”.</p>
+</section>
+<section id="method-detection-limit-mdl" class="level4">
+<h4 class="anchored" data-anchor-id="method-detection-limit-mdl">Method Detection Limit (MDL)</h4>
+<ul>
+<li>Statistically determined</li>
+<li>The minimum concentration that can be measured with 99% confidence that the concentration is greater than zero</li>
+<li>Concentrations near MDL are estimates</li>
+<li>Laboratory, instrument, matrix, method, and analyte specific</li>
+<li>Concentrations at MDL expected to be a false positive 1% of the time, but false negatives 50% of the time</li>
+</ul>
+</section>
+<section id="method-reporting-limit-mrl" class="level4">
+<h4 class="anchored" data-anchor-id="method-reporting-limit-mrl">Method Reporting Limit (MRL)</h4>
+<ul>
+<li>May also be referred to as QL (quantitation limit), sample quantitation limit, or just RL (reporting limit)​</li>
+<li>Determined by the lowest point of the calibration​</li>
+<li>Not as specific as MDL, labs can adust​</li>
+<li>Concentrations at MRL can be reliably quantified​</li>
+<li>MRL &gt; MDL​</li>
+<li>Also laboratory, instrument, matrix, method, &amp; analyte specific</li>
+</ul>
+</section>
+<section id="mdl-mrl-relationship" class="level4">
+<h4 class="anchored" data-anchor-id="mdl-mrl-relationship">MDL &amp; MRL Relationship</h4>
+<p><img src="http://toolkit.goecoug.com/static/resources/MDL_v_MRL.png" class="img-fluid"></p>
+</section>
+<section id="other-detection-limits" class="level4">
+<h4 class="anchored" data-anchor-id="other-detection-limits">Other Detection Limits</h4>
+<section id="pql" class="level5">
+<h5 class="anchored" data-anchor-id="pql">PQL</h5>
+<ul>
+<li>Considered to be lowest concentration that can be reliably quantified by a method</li>
+<li>Limit of Detection (LOD); Lowest concentration that can be detected with a 1% false negative rate.
+<ul>
+<li>Generally 2x to 3X MDL</li>
+</ul></li>
+<li>Limit of Quantitation (LOQ); similar to MRL</li>
+</ul>
+</section>
+<section id="pcddf-pcb-specific" class="level5">
+<h5 class="anchored" data-anchor-id="pcddf-pcb-specific">PCDD/F &amp; PCB specific</h5>
+<p>2.5 times signal to noise</p>
+<ul>
+<li><strong>EQL</strong>: Estimated Quantitation Limit</li>
+<li><strong>EDL</strong>: Estimated Detection Limit</li>
+<li><strong>SDL</strong>: Sample Detection Limit</li>
+<li><strong>EMPC</strong>
+<ul>
+<li>Estimated Maximum Possible Concentration (EMPC)</li>
+<li>Peak present but not all of the identification criteria is met</li>
+<li>Always greater than MDL, may be greater than MRL</li>
+<li>Generally treated a non-detect in TEQ calculations</li>
+<li>EMPCs can present data management difficulties and need to be reviewed in QC checks</li>
+</ul></li>
+</ul>
+
+
+</section>
+</section>
+</section>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
+  <guid>http://toolkit.goecoug.com/docs/resources/data-management.html</guid>
+  <pubDate>Fri, 30 Jun 2023 01:46:13 GMT</pubDate>
+  <media:content url="http://toolkit.goecoug.com/static/resources/datamanagement.png" medium="image" type="image/png" height="137" width="144"/>
+</item>
+<item>
+  <title>Recipes</title>
+  <link>http://toolkit.goecoug.com/docs/resources/recipes.html</link>
+  <description><![CDATA[ 
+
+
+
+<section id="sourdough-bread" class="level2">
+<h2 class="anchored" data-anchor-id="sourdough-bread">Sourdough Bread</h2>
+<p>Typical schedule for baking sourdough bread. Timing could change based on room temperature.</p>
+<table class="table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Time</th>
+<th>Step</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>8:00am</td>
+<td>Feed starter</td>
+<td>Discard all but at least 2 tbsp</td>
+</tr>
+<tr class="even">
+<td>12:00pm</td>
+<td>Autolyse</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>1:00pm</td>
+<td>Add starter &amp; salt</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>1:30pm</td>
+<td>Stretch &amp; fold</td>
+<td>Every 30 min for 2-2.5 hours</td>
+</tr>
+<tr class="odd">
+<td>3:30pm</td>
+<td>Bulk rise</td>
+<td>1-3 hours, should rise 30-50%</td>
+</tr>
+<tr class="even">
+<td>8:30pm</td>
+<td>Pre shape &amp; bench rest</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>9:00pm</td>
+<td>Final shaping &amp; proof</td>
+<td>Place in proofing baskets, cover, place in fridge overnight</td>
+</tr>
+<tr class="even">
+<td>9:00am</td>
+<td>Bake</td>
+<td>500 F in dutch oven, 20 min lid on, lower to 450, 15-30 min lid off</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="greek-yogurt-protein-smoothie" class="level2">
+<h2 class="anchored" data-anchor-id="greek-yogurt-protein-smoothie">Greek Yogurt Protein Smoothie</h2>
+<ul>
+<li>1-2 scoops protein powder</li>
+<li>1/2 cup greek yogurt</li>
+<li>1 banana</li>
+<li>1/3 cup berries</li>
+<li>1/2 tbsp flaxseed</li>
+<li>1/3 tbsp chia seed</li>
+<li>1 tbsp honey</li>
+<li>ice &amp; water for desired consistency</li>
+</ul>
+</section>
+<section id="overnight-protein-oats" class="level2">
+<h2 class="anchored" data-anchor-id="overnight-protein-oats">Overnight Protein Oats</h2>
+<ul>
+<li>1-2 scoops protein powder</li>
+<li>90 grams oats</li>
+<li>90 grams greek yogurt</li>
+<li>140 grams milk</li>
+<li>5 grams chia and/or flaxseed</li>
+<li>15 grams honey</li>
+</ul>
+<p>Stir or shake to combine. Refrigerate overnight.</p>
+</section>
+<section id="buffalo-cauliflower" class="level2">
+<h2 class="anchored" data-anchor-id="buffalo-cauliflower">Buffalo Cauliflower</h2>
+<ol type="1">
+<li>Preheat oven to 450 F</li>
+<li><strong>Batter</strong>:
+<ul>
+<li>3/4 cup flour</li>
+<li>1 tsp paprika</li>
+<li>2 tsp garlic powder</li>
+<li>1 tsp salt</li>
+<li>1/2 tsp black pepper</li>
+<li>3/4 cup milk</li>
+</ul></li>
+<li><strong>Sauce</strong>:
+<ul>
+<li>1/4 cup buffalo sauce</li>
+<li>1 tbsp Honey</li>
+<li>1/2 tsp black pepper</li>
+</ul></li>
+<li>Split cauliflower into florets and mix in batter</li>
+<li>Bake for 20 minutes, flip after 10.</li>
+<li>Brush sauce onto cauliflower, bake 10 minutes.</li>
+<li>Flip cauliflower and brush again with sauce, bake 10 minutes.</li>
+</ol>
+</section>
+<section id="quinoa-cucumber-salad" class="level2">
+<h2 class="anchored" data-anchor-id="quinoa-cucumber-salad">Quinoa &amp; Cucumber Salad</h2>
+<ul>
+<li><strong>Salad</strong>:
+<ul>
+<li>2 cups cucumber, spiralized or julienned</li>
+<li>2 cups chopped tomatoes</li>
+<li>2 large avocados, diced</li>
+<li>1 red onion, sliced</li>
+<li>2 cups cooked quinoa</li>
+<li>1 handful chopped parsley (or cilantro)</li>
+</ul></li>
+<li><strong>Dressing</strong> - blend the following:
+<ul>
+<li>1 ripe avocado</li>
+<li>1/4 cup white wine vinegar</li>
+<li>Juice of one lime</li>
+<li>Salt and fresh cracked pepper, to taste</li>
+<li>3/4 cup olive oil</li>
+</ul></li>
+</ul>
+</section>
+<section id="cougar-gold-mac-cheese" class="level2">
+<h2 class="anchored" data-anchor-id="cougar-gold-mac-cheese">Cougar Gold Mac &amp; Cheese</h2>
+<ul>
+<li>6 cups water</li>
+<li>2 1/2 cups pasta</li>
+<li>2 tbsp butter</li>
+<li>2 tbsp all-purpose flour</li>
+<li>1 1/3 cups milk</li>
+<li>1 1/3 cups heavy cream</li>
+<li>1 1/2 cups Cougar Gold, grated</li>
+<li>1 1/2 cups Crimson Fire, grated</li>
+<li>1/2 cup ricotta</li>
+<li>1/2 tbsp chicken bouillon</li>
+<li>ground black pepper, paprika to taste</li>
+<li>1/2 cup fresh breadcrumbs (optional)</li>
+</ul>
+<p>Preheat oven to 350° F.</p>
+<p>Bring the water, salt and pasta to a rolling boil in a medium saucepan. Cook just until tender. Drain pasta, put into prepared baking dish and set aside. Meanwhile prepare the sauce. In a saucepan over medium-low heat, melt 2 tablespoons of butter. While whisking, gradually add the flour. Whisk for about 2 minutes or until golden and bubbling. Very slowly add the milk, whisking constantly to avoid developing lumps. Simmer for 15 minutes until thickened (alfredo sauce consistency), stirring often to prevent mixture from burning. Remove from heat and stir in Cougar cheese, ricotta, chicken bouillon, paprika and black pepper to taste. Pour sauce onto cooked pasta (do not stir). Optionally top with breadcrumbs tossed in melted butter. Bake for 30 minutes until browned and bubbling.</p>
+</section>
+<section id="lemon-dill-sauce" class="level2">
+<h2 class="anchored" data-anchor-id="lemon-dill-sauce">Lemon Dill Sauce</h2>
+<ul>
+<li>1/2 lemon</li>
+<li>1 tsp dill</li>
+<li>4 tbsp olive oil</li>
+<li>1 tsp honey</li>
+<li>1-2 tsp dijon mustard</li>
+<li>1 clove garlic finely minced</li>
+<li>paprika &amp; ground black pepper to taste</li>
+</ul>
+</section>
+<section id="salad-dressing" class="level2">
+<h2 class="anchored" data-anchor-id="salad-dressing">Salad Dressing</h2>
+<ul>
+<li>1/2 cup extra virgin olive oil</li>
+<li>1/3 cup apple cider vinegar</li>
+<li>1/4 cup honey, use maple syrup for vegan</li>
+<li>2 teaspoons balsamic vinegar</li>
+<li>1 teaspoon dijon mustard</li>
+<li>2 cloves garlic finely minced</li>
+<li>pinch of sea salt</li>
+</ul>
+</section>
+<section id="rice-pilaf" class="level2">
+<h2 class="anchored" data-anchor-id="rice-pilaf">Rice Pilaf</h2>
+<ul>
+<li>1 cup rice</li>
+<li>1/8 cup spaghetti noodle broken into 1/4 inch pieces</li>
+<li>1.5 tbsp butter</li>
+<li>1 tsp chicken bouillon</li>
+<li>2 cups water</li>
+</ul>
+<p>Heat the butter in a sauce pan then add rice and noodle. Add boillon to the water and mix to combine then add to sauce pan. Cook on high for 1 minute then cover and simmer for 40 minutes.</p>
+</section>
+<section id="egg-protein-bars" class="level2">
+<h2 class="anchored" data-anchor-id="egg-protein-bars">Egg Protein Bars</h2>
+<ul>
+<li>1.5 lbs sausage</li>
+<li>15 eggs</li>
+<li>10 button mushrooms</li>
+<li>20 cherry tomatoes</li>
+<li>5 ounce container baby spinach</li>
+<li>2 cups cheddar cheese</li>
+<li>Salt and pepper</li>
+</ul>
+<ol type="1">
+<li>Preheat your oven to 350 degrees.</li>
+<li>Heat a large sautee pan on high heat and brown the sausage. Add the mushrooms and sautee until browned, about 3 minutes. Add the spinach and cook for an additional minute, until slightly browned, then add sliced cherry tomatoes, stir, and take off the heat.</li>
+<li>Whisk eggs, salt and pepper, and cheese together, then toss in your sausage and vegetables and whisk.</li>
+<li>Line a deep baking dish with parchment paper, then pour egg mixture on top, and bake at 350 degrees for 40 minutes, until cooked.</li>
+<li>Remove from oven, allow to cool for 20 minutes, then turn over, cut into 5 portions, and wrap.</li>
+</ol>
+</section>
+<section id="buffalo-chicken-meatballs" class="level2">
+<h2 class="anchored" data-anchor-id="buffalo-chicken-meatballs">Buffalo Chicken Meatballs</h2>
+<ul>
+<li>3 lbs ground turkey</li>
+<li>0.75 cup breadcrumbs</li>
+<li>1 tsp salt</li>
+<li>6 ounces crumbled blue cheese</li>
+<li>0.5 cup buffalo sauce</li>
+<li>1 bunch scallions</li>
+<li>3 eggs</li>
+<li>3 garlic cloves</li>
+<li>Amoroso hoagie roll</li>
+<li>Shrettuce</li>
+<li>Sliced tomato</li>
+<li>Pickles</li>
+<li>Ranch</li>
+</ul>
+<ol type="1">
+<li>Add ground turkey, blue cheese, salt, and breadcrumbs to a large bowl.</li>
+<li>Add eggs, buffalo sauce, scallions, and garlic to a blender and blend. Add the wet ingredients to the meat and mix.</li>
+<li>Use an ice cream scoop to scoop out the meatballs onto a parchment lined baking sheet, and bake at 550 degrees for 12 minutes.</li>
+<li>Douse in buffalo sauce and toss.</li>
+<li>Slice a hoagie roll in half, add ranch, lettuce, tomato, and meatballs, and eat.</li>
+</ol>
+</section>
+<section id="others" class="level2">
+<h2 class="anchored" data-anchor-id="others">Others</h2>
+<ul>
+<li><a href="https://www.simplyrecipes.com/recipes/steak_diane/">Steak Diane</a></li>
+<li><a href="https://www.eatwell101.com/cilantro-lime-shrimp-with-zucchini-noodles">Cilantro Lime Shrimp with Zucchini Noodles</a></li>
+</ul>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
+  <guid>http://toolkit.goecoug.com/docs/resources/recipes.html</guid>
+  <pubDate>Fri, 30 Jun 2023 01:46:13 GMT</pubDate>
+  <media:content url="http://toolkit.goecoug.com/static/resources/food.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>Workouts</title>
+  <link>http://toolkit.goecoug.com/docs/resources/workouts.html</link>
+  <description><![CDATA[ 
+
+
+
+<section id="routines" class="level2">
+<h2 class="anchored" data-anchor-id="routines">Routines</h2>
+<div class="cell" data-execution_count="1">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> pandas <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> pd</span>
+<span id="cb1-2"></span>
+<span id="cb1-3">workouts <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"../../static/resources/workouts.xlsx"</span></span>
+<span id="cb1-4">w1 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.read_excel(workouts, sheet_name<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>)</span>
+<span id="cb1-5">w2 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.read_excel(workouts, sheet_name<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>)</span>
+<span id="cb1-6">w3 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.read_excel(workouts, sheet_name<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>)</span>
+<span id="cb1-7">w4 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.read_excel(workouts, sheet_name<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>)</span>
+<span id="cb1-8">schedule <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.read_excel(workouts, sheet_name<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>)</span></code></pre></div>
+</details>
+</div>
+<p>The following regimen outlines a 4 week lift cycle. The routine is a slightly modified version of <a href="https://jackedgorilla.com/chris-pratt-workout-routine/">this</a>. Non-lift days should be supplemented with active recovery workouts.</p>
+<section id="schedule" class="level3">
+<h3 class="anchored" data-anchor-id="schedule">Schedule</h3>
+<div class="cell" data-execution_count="2">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1">schedule.to_html(index<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">False</span>, render_links<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">True</span>)</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="2">
+
+<table class="dataframe table table-sm table-striped small">
+
+<thead>
+
+<tr>
+
+<th>
+Week
+</th>
+
+<th>
+Sunday
+</th>
+
+<th>
+Monday
+</th>
+
+<th>
+Tuesday
+</th>
+
+<th>
+Wednesday
+</th>
+
+<th>
+Thursday
+</th>
+
+<th>
+Friday
+</th>
+
+<th>
+Saturday
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>
+1
+</td>
+
+<td>
+Cardio
+</td>
+
+<td>
+Chest &amp; Triceps, Run
+</td>
+
+<td>
+Back &amp; Biceps
+</td>
+
+<td>
+Shoulders &amp; Traps, Run
+</td>
+
+<td>
+Legs
+</td>
+
+<td>
+Chest &amp; Triceps, Run
+</td>
+
+<td>
+Cardio
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+2
+</td>
+
+<td>
+Cardio
+</td>
+
+<td>
+Shoulders &amp; Traps, Run
+</td>
+
+<td>
+Chest &amp; Triceps
+</td>
+
+<td>
+Back &amp; Biceps, Run
+</td>
+
+<td>
+Legs
+</td>
+
+<td>
+Shoulders &amp; Traps, Run
+</td>
+
+<td>
+Cardio
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+3
+</td>
+
+<td>
+Cardio
+</td>
+
+<td>
+Back &amp; Biceps, Run
+</td>
+
+<td>
+Shoulders &amp; Traps
+</td>
+
+<td>
+Chest &amp; Triceps, Run
+</td>
+
+<td>
+Legs
+</td>
+
+<td>
+Back &amp; Biceps, Run
+</td>
+
+<td>
+Cardio
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+4
+</td>
+
+<td>
+Cardio
+</td>
+
+<td>
+Chest &amp; Triceps, Run
+</td>
+
+<td>
+Legs
+</td>
+
+<td>
+Shoulders &amp; Traps, Run
+</td>
+
+<td>
+Legs
+</td>
+
+<td>
+Back &amp; Biceps, Run
+</td>
+
+<td>
+Cardio
+</td>
+
+</tr>
+
+</tbody>
+
+
+</table>
+</div>
+</div>
+</section>
+<section id="back-biceps" class="level3">
+<h3 class="anchored" data-anchor-id="back-biceps">Back &amp; Biceps</h3>
+<div class="cell" data-execution_count="3">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1">w1.to_html(index<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">False</span>)</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="3">
+
+<table class="dataframe table table-sm table-striped small">
+
+<thead>
+
+<tr>
+
+<th>
+Lift
+</th>
+
+<th>
+Sets
+</th>
+
+<th>
+Reps
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>
+Deadlift
+</td>
+
+<td>
+4
+</td>
+
+<td>
+10, 8, 5, 3
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Pull-Ups
+</td>
+
+<td>
+4
+</td>
+
+<td>
+10
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Lat Pull Downs
+</td>
+
+<td>
+4
+</td>
+
+<td>
+10
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Rows
+</td>
+
+<td>
+4
+</td>
+
+<td>
+12
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Face Pulls
+</td>
+
+<td>
+4
+</td>
+
+<td>
+12
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Dumbbell Rows
+</td>
+
+<td>
+4
+</td>
+
+<td>
+12
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Hammer Curls
+</td>
+
+<td>
+3
+</td>
+
+<td>
+12
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Barbell Curls
+</td>
+
+<td>
+3
+</td>
+
+<td>
+12
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Back Hyperextension
+</td>
+
+<td>
+4
+</td>
+
+<td>
+12
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Planks
+</td>
+
+<td>
+3
+</td>
+
+<td>
+60 seconds
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Leg Raises
+</td>
+
+<td>
+3
+</td>
+
+<td>
+15
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Sit Ups
+</td>
+
+<td>
+3
+</td>
+
+<td>
+25
+</td>
+
+</tr>
+
+</tbody>
+
+
+</table>
+</div>
+</div>
+</section>
+<section id="chest-triceps" class="level3">
+<h3 class="anchored" data-anchor-id="chest-triceps">Chest &amp; Triceps</h3>
+<div class="cell" data-execution_count="4">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1">w2.to_html(index<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">False</span>)</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="4">
+
+<table class="dataframe table table-sm table-striped small">
+
+<thead>
+
+<tr>
+
+<th>
+Lift
+</th>
+
+<th>
+Sets
+</th>
+
+<th>
+Reps
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>
+Bench Press
+</td>
+
+<td>
+4
+</td>
+
+<td>
+10, 8, 5, 3
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Incline Press
+</td>
+
+<td>
+4
+</td>
+
+<td>
+12
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Flys
+</td>
+
+<td>
+4
+</td>
+
+<td>
+12
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Dips
+</td>
+
+<td>
+3
+</td>
+
+<td>
+Failure
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Tricep Pushdowns
+</td>
+
+<td>
+4
+</td>
+
+<td>
+12
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Dumbbell Press
+</td>
+
+<td>
+4
+</td>
+
+<td>
+12
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Ab Roller
+</td>
+
+<td>
+3
+</td>
+
+<td>
+10
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Sitting Twists
+</td>
+
+<td>
+3
+</td>
+
+<td>
+30
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Wipers
+</td>
+
+<td>
+3
+</td>
+
+<td>
+12
+</td>
+
+</tr>
+
+</tbody>
+
+
+</table>
+</div>
+</div>
+</section>
+<section id="legs" class="level3">
+<h3 class="anchored" data-anchor-id="legs">Legs</h3>
+<div class="cell" data-execution_count="5">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1">w3.to_html(index<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">False</span>)</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="5">
+
+<table class="dataframe table table-sm table-striped small">
+
+<thead>
+
+<tr>
+
+<th>
+Lift
+</th>
+
+<th>
+Sets
+</th>
+
+<th>
+Reps
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>
+Back Squat
+</td>
+
+<td>
+4
+</td>
+
+<td>
+10, 8, 5, 3
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Front Squat
+</td>
+
+<td>
+4
+</td>
+
+<td>
+6
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Lunges
+</td>
+
+<td>
+3
+</td>
+
+<td>
+12
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Kettelbell Deadlift
+</td>
+
+<td>
+3
+</td>
+
+<td>
+12
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Leg Kickbacks
+</td>
+
+<td>
+3
+</td>
+
+<td>
+12
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Back Hyperextension
+</td>
+
+<td>
+4
+</td>
+
+<td>
+12
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Calf Raises
+</td>
+
+<td>
+4
+</td>
+
+<td>
+12
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Glute Bridges
+</td>
+
+<td>
+3
+</td>
+
+<td>
+10
+</td>
+
+</tr>
+
+</tbody>
+
+
+</table>
+</div>
+</div>
+</section>
+<section id="shoulders-traps" class="level3">
+<h3 class="anchored" data-anchor-id="shoulders-traps">Shoulders &amp; Traps</h3>
+<div class="cell" data-execution_count="6">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1">w4.to_html(index<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">False</span>)</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="6">
+
+<table class="dataframe table table-sm table-striped small">
+
+<thead>
+
+<tr>
+
+<th>
+Lift
+</th>
+
+<th>
+Sets
+</th>
+
+<th>
+Reps
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>
+Military Press
+</td>
+
+<td>
+4
+</td>
+
+<td>
+12, 8, 5, 3
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Lateral Raises
+</td>
+
+<td>
+4
+</td>
+
+<td>
+12
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Rear Delt Flys
+</td>
+
+<td>
+4
+</td>
+
+<td>
+12
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Front Raises
+</td>
+
+<td>
+3
+</td>
+
+<td>
+10
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Barbell Shrugs
+</td>
+
+<td>
+4
+</td>
+
+<td>
+10
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+One Arm Dumbbell Snatch
+</td>
+
+<td>
+3
+</td>
+
+<td>
+10
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Upright Rows
+</td>
+
+<td>
+3
+</td>
+
+<td>
+10
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Kettlebell Swing
+</td>
+
+<td>
+3
+</td>
+
+<td>
+10
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Farmers Carry
+</td>
+
+<td>
+3
+</td>
+
+<td>
+Failure
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Scissor Kicks
+</td>
+
+<td>
+3
+</td>
+
+<td>
+30 seconds
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+L-sit
+</td>
+
+<td>
+3
+</td>
+
+<td>
+Failure
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Toe Taps
+</td>
+
+<td>
+3
+</td>
+
+<td>
+20
+</td>
+
+</tr>
+
+</tbody>
+
+
+</table>
+</div>
+</div>
+</section>
+</section>
+<section id="introductory-routines" class="level2">
+<h2 class="anchored" data-anchor-id="introductory-routines">Introductory Routines</h2>
+<div class="cell" data-execution_count="7">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1">w5 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.read_excel(workouts, sheet_name<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>)</span>
+<span id="cb7-2">w6 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.read_excel(workouts, sheet_name<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>)</span>
+<span id="cb7-3">w7 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.read_excel(workouts, sheet_name<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">7</span>)</span></code></pre></div>
+</details>
+</div>
+<section id="push" class="level3">
+<h3 class="anchored" data-anchor-id="push">Push</h3>
+<div class="cell" data-execution_count="8">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1">w5.to_html(index<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">False</span>, render_links<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">True</span>)</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="8">
+
+<table class="dataframe table table-sm table-striped small">
+
+<thead>
+
+<tr>
+
+<th>
+Lift
+</th>
+
+<th>
+Sets
+</th>
+
+<th>
+Reps
+</th>
+
+<th>
+How-To
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>
+Dumbbell Bench Press
+</td>
+
+<td>
+3
+</td>
+
+<td>
+10
+</td>
+
+<td>
+<a href="https://weighttraining.guide/exercises/dumbbell-bench-press/">View</a>
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Dumbell Incline Press
+</td>
+
+<td>
+3
+</td>
+
+<td>
+10
+</td>
+
+<td>
+<a href="https://weighttraining.guide/exercises/incline-dumbbell-bench-press/">View</a>
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Dumbbell Flys
+</td>
+
+<td>
+3
+</td>
+
+<td>
+10
+</td>
+
+<td>
+<a href="https://weighttraining.guide/exercises/dumbbell-fly/">View</a>
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Lateral Raises
+</td>
+
+<td>
+3
+</td>
+
+<td>
+10
+</td>
+
+<td>
+<a href="https://weighttraining.guide/exercises/cable-one-arm-lateral-raise/">View</a>
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Front Raises
+</td>
+
+<td>
+3
+</td>
+
+<td>
+10
+</td>
+
+<td>
+<a href="https://weighttraining.guide/exercises/seated-dumbbell-front-raise/">View</a>
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Tricep Push Down
+</td>
+
+<td>
+3
+</td>
+
+<td>
+10
+</td>
+
+<td>
+<a href="https://weighttraining.guide/exercises/triceps-push-down/">View</a>
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Planks
+</td>
+
+<td>
+3
+</td>
+
+<td>
+Failure
+</td>
+
+<td>
+<a href="https://weighttraining.guide/exercises/front-plank/">View</a>
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Sit-ups
+</td>
+
+<td>
+3
+</td>
+
+<td>
+12
+</td>
+
+<td>
+<a href="https://weighttraining.guide/exercises/sit-up/">View</a>
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Leg Raises
+</td>
+
+<td>
+3
+</td>
+
+<td>
+10
+</td>
+
+<td>
+<a href="https://weighttraining.guide/exercises/seated-knee-raise/">View</a>
+</td>
+
+</tr>
+
+</tbody>
+
+
+</table>
+</div>
+</div>
+</section>
+<section id="pull" class="level3">
+<h3 class="anchored" data-anchor-id="pull">Pull</h3>
+<div class="cell" data-execution_count="9">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1">w6.to_html(index<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">False</span>, render_links<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">True</span>)</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="9">
+
+<table class="dataframe table table-sm table-striped small">
+
+<thead>
+
+<tr>
+
+<th>
+Lift
+</th>
+
+<th>
+Sets
+</th>
+
+<th>
+Reps
+</th>
+
+<th>
+How-To
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>
+Cable Rows
+</td>
+
+<td>
+3
+</td>
+
+<td>
+10
+</td>
+
+<td>
+<a href="https://weighttraining.guide/exercises/straight-back-seated-cable-row/">View</a>
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Dumbbell Rows
+</td>
+
+<td>
+3
+</td>
+
+<td>
+10
+</td>
+
+<td>
+<a href="https://weighttraining.guide/exercises/bent-over-dumbbell-row/">View</a>
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Upright Rows
+</td>
+
+<td>
+3
+</td>
+
+<td>
+10
+</td>
+
+<td>
+<a href="https://weighttraining.guide/exercises/dumbbell-wide-grip-upright-row/">View</a>
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Dumbbell Curls
+</td>
+
+<td>
+3
+</td>
+
+<td>
+10
+</td>
+
+<td>
+<a href="https://weighttraining.guide/exercises/seated-alternating-dumbbell-curl/">View</a>
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Hammer Curls
+</td>
+
+<td>
+3
+</td>
+
+<td>
+10
+</td>
+
+<td>
+<a href="https://weighttraining.guide/exercises/dumbbell-hammer-curl/">View</a>
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Farmer Carry
+</td>
+
+<td>
+3
+</td>
+
+<td>
+10
+</td>
+
+<td>
+<a href="https://weighttraining.guide/exercises/dumbbell-farmers-walk/">View</a>
+</td>
+
+</tr>
+
+</tbody>
+
+
+</table>
+</div>
+</div>
+</section>
+<section id="legs-1" class="level3">
+<h3 class="anchored" data-anchor-id="legs-1">Legs</h3>
+<div class="cell" data-execution_count="10">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1">w6.to_html(index<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">False</span>, render_links<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">True</span>)</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="10">
+
+<table class="dataframe table table-sm table-striped small">
+
+<thead>
+
+<tr>
+
+<th>
+Lift
+</th>
+
+<th>
+Sets
+</th>
+
+<th>
+Reps
+</th>
+
+<th>
+How-To
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>
+Cable Rows
+</td>
+
+<td>
+3
+</td>
+
+<td>
+10
+</td>
+
+<td>
+<a href="https://weighttraining.guide/exercises/straight-back-seated-cable-row/">View</a>
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Dumbbell Rows
+</td>
+
+<td>
+3
+</td>
+
+<td>
+10
+</td>
+
+<td>
+<a href="https://weighttraining.guide/exercises/bent-over-dumbbell-row/">View</a>
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Upright Rows
+</td>
+
+<td>
+3
+</td>
+
+<td>
+10
+</td>
+
+<td>
+<a href="https://weighttraining.guide/exercises/dumbbell-wide-grip-upright-row/">View</a>
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Dumbbell Curls
+</td>
+
+<td>
+3
+</td>
+
+<td>
+10
+</td>
+
+<td>
+<a href="https://weighttraining.guide/exercises/seated-alternating-dumbbell-curl/">View</a>
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Hammer Curls
+</td>
+
+<td>
+3
+</td>
+
+<td>
+10
+</td>
+
+<td>
+<a href="https://weighttraining.guide/exercises/dumbbell-hammer-curl/">View</a>
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Farmer Carry
+</td>
+
+<td>
+3
+</td>
+
+<td>
+10
+</td>
+
+<td>
+<a href="https://weighttraining.guide/exercises/dumbbell-farmers-walk/">View</a>
+</td>
+
+</tr>
+
+</tbody>
+
+
+</table>
+</div>
+</div>
+
+
+</section>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
+  <guid>http://toolkit.goecoug.com/docs/resources/workouts.html</guid>
+  <pubDate>Fri, 30 Jun 2023 01:46:13 GMT</pubDate>
+  <media:content url="http://toolkit.goecoug.com/static/resources/workouts.png" medium="image" type="image/png" height="144" width="144"/>
+</item>
+</channel>
+</rss>

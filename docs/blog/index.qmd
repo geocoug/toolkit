@@ -1,0 +1,17 @@
+---
+title: Blog
+description: Space for tips, commentary, and miscellaneous content.
+image: https://resilienteducator.com/wp-content/uploads/2015/09/Revising-With-Pictures-How-Word-Clouds-Help-Students-Become-Better-Writers.jpg
+listing:
+  contents: "posts/*/index.qmd"
+  type: table
+  categories: true
+  page-size: 20
+  # https://quarto.org/docs/websites/website-listings.html#listing-fields
+  fields: [image, date, title, description, author, reading-time, categories]
+  sort: 
+    - "date desc"
+    - "title"
+  feed: true
+page-layout: full
+---

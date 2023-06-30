@@ -1,0 +1,14 @@
+---
+title: Code
+listing:
+  id: code-listings
+  type: grid
+  grid-columns: 4
+  contents:
+    - "*.qmd"
+---
+
+## Code Pages
+
+::: {#code-listings}
+:::

@@ -1,0 +1,62 @@
+---
+title: Docker
+description: Docker installation and snippets
+---
+
+## Docker
+
+Check out additional Docker examples [here](https://github.com/geocoug/docker-files).
+
+### Installation (Ubuntu)
+
+Steps are pulled from a [Digital Ocean tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04).
+
+1. Update list of packages and install prerequisites.
+
+    ```sh
+    sudo apt update && \
+    sudo apt install apt-transport-https ca-certificates curl software-properties-common
+    ```
+
+1. Add the GPG key for the official Docker repository.
+
+    ```sh
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+    ```
+
+1. Add the Docker repository to APT sources and update package list from the new repo.
+
+    ```sh
+    sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+    ```
+
+1. Make sure install is pulling from Docker repo instead of default Ubuntu.
+
+    ```sh
+    apt-cache policy docker-ce
+    ```
+
+1. Install Docker.
+
+    ```sh
+    sudo apt install docker-ce
+    ```
+
+1. Check that Docker is running.
+
+    ```sh
+    sudo systemctl status docker
+    ```
+
+1. Execute Docker commands without sudo.
+
+    ```sh
+    sudo usermod -aG docker ${USER} && \
+    su - ${USER}
+    ```
+
+1. Verify user is now aded to the docker group.
+
+    ```sh
+    groups
+    ```

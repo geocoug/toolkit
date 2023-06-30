@@ -1,0 +1,1422 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Development Tools">
+
+<title>Tools</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../docs/development/code/index.html" rel="next">
+<link href="../../docs/development/index.html" rel="prev">
+<link href="../..//static/favicon.ico" rel="icon">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": true,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous">
+</script>
+
+
+<link rel="stylesheet" href="../../static/styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../static/logo.svg" alt="" class="navbar-logo">
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="../../docs/development/index.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Development</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../docs/resources/index.html" rel="" target="">
+ <span class="menu-text">Resources</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../docs/blog/index.html" rel="" target="">
+ <span class="menu-text">Blog</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/c-grant/" rel="" target=""><i class="bi bi-linkedin" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/geocoug" rel="" target=""><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../docs/development/tools.html">Tools</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/development/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Development</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/development/tools.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Tools</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../docs/development/code/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Code</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/development/code/bash.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bash</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/development/code/cmd.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">CMD</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/development/code/html.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HTML</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/development/code/javascript.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">JavaScript</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/development/code/julia.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Julia</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/development/code/markdown.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Markdown</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/development/code/powershell.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">PowerShell</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/development/code/python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/development/code/r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/development/code/regex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Regex</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/development/code/rust.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Rust</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/development/code/sql.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SQL</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../docs/development/server/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Server</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/development/server/docker.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Docker</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/development/server/jupyter-server.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Jupyter Server</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/development/server/python-web-app.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python Web App</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/development/server/rstudio-server.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Rstudio Server</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#utility-functions" id="toc-utility-functions" class="nav-link active" data-scroll-target="#utility-functions">Utility Functions</a>
+  <ul class="collapse">
+  <li><a href="#movie-gif" id="toc-movie-gif" class="nav-link" data-scroll-target="#movie-gif">Movie &gt; Gif</a></li>
+  </ul></li>
+  <li><a href="#docker" id="toc-docker" class="nav-link" data-scroll-target="#docker">Docker</a>
+  <ul class="collapse">
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
+  <li><a href="#image-vs.-container" id="toc-image-vs.-container" class="nav-link" data-scroll-target="#image-vs.-container">Image vs.&nbsp;Container</a></li>
+  <li><a href="#docker-basics" id="toc-docker-basics" class="nav-link" data-scroll-target="#docker-basics">Docker Basics</a>
+  <ul class="collapse">
+  <li><a href="#create-an-nginx-container" id="toc-create-an-nginx-container" class="nav-link" data-scroll-target="#create-an-nginx-container">Create an Nginx container</a></li>
+  <li><a href="#other-examples" id="toc-other-examples" class="nav-link" data-scroll-target="#other-examples">Other examples</a></li>
+  <li><a href="#processes-and-configurations" id="toc-processes-and-configurations" class="nav-link" data-scroll-target="#processes-and-configurations">Processes and configurations</a></li>
+  <li><a href="#getting-a-shell-inside-containers" id="toc-getting-a-shell-inside-containers" class="nav-link" data-scroll-target="#getting-a-shell-inside-containers">Getting a shell inside containers</a></li>
+  <li><a href="#pull-an-image-from-docker-hub" id="toc-pull-an-image-from-docker-hub" class="nav-link" data-scroll-target="#pull-an-image-from-docker-hub">Pull an image from docker hub</a></li>
+  </ul></li>
+  <li><a href="#docker-networks" id="toc-docker-networks" class="nav-link" data-scroll-target="#docker-networks">Docker Networks</a>
+  <ul class="collapse">
+  <li><a href="#publishing" id="toc-publishing" class="nav-link" data-scroll-target="#publishing">Publishing (#:#)</a></li>
+  <li><a href="#dns" id="toc-dns" class="nav-link" data-scroll-target="#dns">DNS</a></li>
+  </ul></li>
+  <li><a href="#dockerfiles" id="toc-dockerfiles" class="nav-link" data-scroll-target="#dockerfiles">Dockerfiles</a></li>
+  <li><a href="#keeping-the-docker-system-clean" id="toc-keeping-the-docker-system-clean" class="nav-link" data-scroll-target="#keeping-the-docker-system-clean">Keeping the Docker system clean</a></li>
+  <li><a href="#volumes-an-bind-mounts" id="toc-volumes-an-bind-mounts" class="nav-link" data-scroll-target="#volumes-an-bind-mounts">Volumes an Bind Mounts</a></li>
+  </ul></li>
+  <li><a href="#git" id="toc-git" class="nav-link" data-scroll-target="#git">Git</a>
+  <ul class="collapse">
+  <li><a href="#initialize" id="toc-initialize" class="nav-link" data-scroll-target="#initialize">Initialize</a></li>
+  <li><a href="#staging" id="toc-staging" class="nav-link" data-scroll-target="#staging">Staging</a></li>
+  <li><a href="#commit-locally" id="toc-commit-locally" class="nav-link" data-scroll-target="#commit-locally">Commit Locally</a></li>
+  <li><a href="#branches" id="toc-branches" class="nav-link" data-scroll-target="#branches">Branches</a></li>
+  <li><a href="#commit-to-github" id="toc-commit-to-github" class="nav-link" data-scroll-target="#commit-to-github">Commit to Github</a></li>
+  <li><a href="#push-a-branch-to-github" id="toc-push-a-branch-to-github" class="nav-link" data-scroll-target="#push-a-branch-to-github">Push a Branch to Github</a></li>
+  <li><a href="#pull-request" id="toc-pull-request" class="nav-link" data-scroll-target="#pull-request">Pull Request</a></li>
+  <li><a href="#get-changes-on-github" id="toc-get-changes-on-github" class="nav-link" data-scroll-target="#get-changes-on-github">Get Changes on Github</a></li>
+  <li><a href="#view-differences" id="toc-view-differences" class="nav-link" data-scroll-target="#view-differences">View Differences</a></li>
+  <li><a href="#remove-a-branch" id="toc-remove-a-branch" class="nav-link" data-scroll-target="#remove-a-branch">Remove a Branch</a>
+  <ul class="collapse">
+  <li><a href="#locally" id="toc-locally" class="nav-link" data-scroll-target="#locally">Locally</a></li>
+  <li><a href="#remote" id="toc-remote" class="nav-link" data-scroll-target="#remote">Remote</a></li>
+  </ul></li>
+  <li><a href="#remove-tracked-filedirectory" id="toc-remove-tracked-filedirectory" class="nav-link" data-scroll-target="#remove-tracked-filedirectory">Remove tracked file/directory</a>
+  <ul class="collapse">
+  <li><a href="#file" id="toc-file" class="nav-link" data-scroll-target="#file">File</a></li>
+  <li><a href="#directory" id="toc-directory" class="nav-link" data-scroll-target="#directory">Directory</a></li>
+  </ul></li>
+  <li><a href="#pre-commit" id="toc-pre-commit" class="nav-link" data-scroll-target="#pre-commit">pre-commit</a></li>
+  <li><a href="#merge" id="toc-merge" class="nav-link" data-scroll-target="#merge">Merge</a></li>
+  </ul></li>
+  <li><a href="#psql" id="toc-psql" class="nav-link" data-scroll-target="#psql">psql</a>
+  <ul class="collapse">
+  <li><a href="#export-table-to-csv" id="toc-export-table-to-csv" class="nav-link" data-scroll-target="#export-table-to-csv">Export table to CSV</a></li>
+  <li><a href="#backup" id="toc-backup" class="nav-link" data-scroll-target="#backup">Backup</a></li>
+  <li><a href="#restore" id="toc-restore" class="nav-link" data-scroll-target="#restore">Restore</a>
+  <ul class="collapse">
+  <li><a href="#psql-1" id="toc-psql-1" class="nav-link" data-scroll-target="#psql-1">psql</a></li>
+  <li><a href="#pg_restore" id="toc-pg_restore" class="nav-link" data-scroll-target="#pg_restore">pg_restore</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/geocoug/toolkit/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Tools</h1>
+</div>
+
+<div>
+  <div class="description">
+    Development Tools
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<hr>
+<section id="utility-functions" class="level1">
+<h1>Utility Functions</h1>
+<section id="movie-gif" class="level2">
+<h2 class="anchored" data-anchor-id="movie-gif">Movie &gt; Gif</h2>
+<p><code>ffmpeg -i file.mov -s 600x400 -pix_fmt rgb24 -r 20 -f gif - | gifsicle --optimize=3 --delay=3 &gt; file.gif</code></p>
+<hr>
+</section>
+</section>
+<section id="docker" class="level1">
+<h1>Docker</h1>
+<section id="resources" class="level2">
+<h2 class="anchored" data-anchor-id="resources">Resources</h2>
+<ul>
+<li><a href="../../static/development/Docker-CheatSheet.pdf">CheatSheet</a></li>
+<li><a href="https://www.composerize.com/">Convert Docker command to docker-compose.yml</a></li>
+</ul>
+</section>
+<section id="image-vs.-container" class="level2">
+<h2 class="anchored" data-anchor-id="image-vs.-container">Image vs.&nbsp;Container</h2>
+<p><strong>Image</strong> - Application we want to run</p>
+<p><strong>Container</strong> - Instance of that image running as a process</p>
+<hr>
+</section>
+<section id="docker-basics" class="level2">
+<h2 class="anchored" data-anchor-id="docker-basics">Docker Basics</h2>
+<section id="create-an-nginx-container" class="level3">
+<h3 class="anchored" data-anchor-id="create-an-nginx-container">Create an Nginx container</h3>
+<p><code>docker run -p 80:80 -d --name webhost nginx</code></p>
+<ol type="1">
+<li>Downloads Nginx from Docker Hub</li>
+<li>Starts new container from that image</li>
+<li>Opened port 80 on host IP</li>
+<li>Routes port 80 traffic to the container IP, port 80</li>
+<li>View container at <a href="http://localhost:80" class="uri">http://localhost:80</a></li>
+</ol>
+</section>
+<section id="other-examples" class="level3">
+<h3 class="anchored" data-anchor-id="other-examples">Other examples</h3>
+<p><code>docker run -p 80:80 -d --name nginx nginx</code></p>
+<p><code>docker run -p 8080:80 -d --name httpd httpd</code></p>
+<p><code>docker run -p 3306:3306 --platform linux/amd64 -d --name mysql -e MYSQL_RANDOM_ROOT_PASSWORD=true mysql</code></p>
+<p>Create a JupyterLab instance and attach your current directory as a volume: <code>docker run -it --rm -p 8888:8888 -v $(PWD):/home/jovyan jupyter/pyspark-notebook</code></p>
+</section>
+<section id="processes-and-configurations" class="level3">
+<h3 class="anchored" data-anchor-id="processes-and-configurations">Processes and configurations</h3>
+<p>Check processes running inside a container: <code>docker top &lt;container&gt;</code></p>
+<p>Container configuration: <code>docker &lt;container&gt; inspect</code></p>
+<p>Check container stats (memory, cpu, network): <code>docker stats &lt;container&gt;</code></p>
+</section>
+<section id="getting-a-shell-inside-containers" class="level3">
+<h3 class="anchored" data-anchor-id="getting-a-shell-inside-containers">Getting a shell inside containers</h3>
+<p>Start a new container interactively: <code>docker run -it &lt;container&gt;</code></p>
+<p>Run commands in existing container: <code>docker exec -it &lt;container&gt;</code></p>
+<section id="example-start-a-container-interactively-and-launch-bash-within-it" class="level4">
+<h4 class="anchored" data-anchor-id="example-start-a-container-interactively-and-launch-bash-within-it">Example: Start a container interactively and launch bash within it</h4>
+<ol type="1">
+<li>Start container and launch bash: <code>docker run -it --name ubuntu ubuntu bash</code></li>
+<li>Run some bash command: <code>apt-get install -y curl</code></li>
+<li>Exit the container: <code>exit</code></li>
+<li>Start and re-enter the container: <code>docker start -ai ubuntu</code></li>
+</ol>
+</section>
+<section id="example-launch-shell-in-running-container" class="level4">
+<h4 class="anchored" data-anchor-id="example-launch-shell-in-running-container">Example: Launch shell in running container</h4>
+<p><code>docker exec -it &lt;container&gt; bash</code></p>
+</section>
+</section>
+<section id="pull-an-image-from-docker-hub" class="level3">
+<h3 class="anchored" data-anchor-id="pull-an-image-from-docker-hub">Pull an image from docker hub</h3>
+<p><code>docker pull &lt;imagename&gt;</code></p>
+<hr>
+</section>
+</section>
+<section id="docker-networks" class="level2">
+<h2 class="anchored" data-anchor-id="docker-networks">Docker Networks</h2>
+<ul>
+<li>Each container is connected to a private virtual network (called “bridge”).</li>
+<li>Each virtual network routes through NAT firewall on host IP.</li>
+<li>All containers on a virtual network can talk to each other without <code>-p</code></li>
+<li><strong><em>Best practice</em></strong>: Create a new virtual network for each app.</li>
+<li>You can skip virtual networks and use the host IP (<code>--net=host</code>).</li>
+</ul>
+<p>Get container IP: <code>docker inspect --format '{{ .NetworkSettings.IPAddress }}' &lt;container&gt;</code></p>
+<section id="publishing" class="level3">
+<h3 class="anchored" data-anchor-id="publishing">Publishing (#:#)</h3>
+<p>example: 8080:80</p>
+<p><strong>left number</strong>: published/host port</p>
+<p><strong>right number</strong>: listening/container port</p>
+<p><em>Traffic passing through port 8080 on the HOST will be directed to port 80 on the container.</em></p>
+</section>
+<section id="dns" class="level3">
+<h3 class="anchored" data-anchor-id="dns">DNS</h3>
+<p>Docker uses container names as host names.</p>
+<p>Dont rely on IPs for inter-communication.</p>
+<p><strong><em>Best Practice</em></strong> Always use custom networks.</p>
+<section id="assignment" class="level4">
+<h4 class="anchored" data-anchor-id="assignment">Assignment</h4>
+<p>Check different curl versions within current versions of Ubuntu and CentOS.</p>
+<p>Run “curl –version” on both operating systems.</p>
+<section id="steps" class="level5">
+<h5 class="anchored" data-anchor-id="steps">Steps</h5>
+<p><strong>ubuntu</strong>: <code>apt-get update &amp;&amp; apt-get install curl</code></p>
+<p><strong>centos</strong>: <code>yum update curl</code></p>
+<p>Then…</p>
+<p><code>curl --version</code></p>
+<p>Also:</p>
+<p>Check out command <code>docker --rm</code></p>
+</section>
+</section>
+</section>
+</section>
+<section id="dockerfiles" class="level2">
+<h2 class="anchored" data-anchor-id="dockerfiles">Dockerfiles</h2>
+<p>Recipe for creating images</p>
+<p>Each Dockerfile stanza such as “RUN”, “CMD”, etc. are stored as a single image layer. Docker caches each layer by giving it a unique SHA (hash), so whenever the image is (re)built, it can check to see if a layer has changed, and if not, it will use the cached layer.</p>
+<p>Docker builds images top down, so it is best practice to structure the Dockerfile in such a way that lines which will change the most are at the bottom, and lines that will change the least are at the top. If a line is changed (ie. source code changes) Docker will rebuild that line, and thus each line after that will also need to be rebuilt.</p>
+</section>
+<section id="keeping-the-docker-system-clean" class="level2">
+<h2 class="anchored" data-anchor-id="keeping-the-docker-system-clean">Keeping the Docker system clean</h2>
+<p><code>docker system prune</code> - all stopped containers - all networks not used by at least one container - all dangling images - all dangling build cache</p>
+</section>
+<section id="volumes-an-bind-mounts" class="level2">
+<h2 class="anchored" data-anchor-id="volumes-an-bind-mounts">Volumes an Bind Mounts</h2>
+<p><strong>Volumes</strong> - Special location outside of container UFS</p>
+<p><strong>Bind Mounts</strong> - Link container path to host path</p>
+<p>Build an image and <strong><em>named</em></strong> volume (persistent): <code>docker run -d --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=True -v mysql:/var/lib/mysql --platform linux/amd64 mysql</code></p>
+<hr>
+</section>
+</section>
+<section id="git" class="level1">
+<h1>Git</h1>
+<ul>
+<li><a href="https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners" class="uri">https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners</a></li>
+<li><a href="https://docs.gitlab.com/ee/gitlab-basics/start-using-git.html" class="uri">https://docs.gitlab.com/ee/gitlab-basics/start-using-git.html</a></li>
+</ul>
+<section id="initialize" class="level2">
+<h2 class="anchored" data-anchor-id="initialize">Initialize</h2>
+<ol type="1">
+<li>Launch Git Bash</li>
+<li>Navigate to project directory</li>
+<li>initialize git repository in the folder root: <code>git init</code></li>
+<li>create new file in directory: <code>touch filename.extension</code></li>
+<li>list files in root: <code>ls</code></li>
+<li>check which files git recognizes: <code>git status</code></li>
+</ol>
+</section>
+<section id="staging" class="level2">
+<h2 class="anchored" data-anchor-id="staging">Staging</h2>
+<p>A commit is a record of what files you have changed since the last time you made a commit. Essentially, you make changes to your repo (for example, adding a file or modifying one) and then tell git to put those files into a commit. Commits make up the essence of your project and allow you to go back to the state of a project at any point.</p>
+<p>So, how do you tell git which files to put into a commit? This is where the staging environment or index come in. When you make changes to your repo, git notices that a file has changed but won’t do anything with it (like adding it in a commit).</p>
+<p>To add a file to a commit, you first need to add it to the staging environment. To do this, you can use the <code>git add &lt;filename&gt;</code> command.</p>
+<p>Once you’ve used the git add command to add all the files you want to the staging environment, you can then tell git to package them into a commit using the git commit command. Note: The staging environment, also called ‘staging’, is the new preferred term for this, but you can also see it referred to as the ‘index’.</p>
+<ol type="1">
+<li>Add files to the staging environment: <code>git add filename.extension</code></li>
+<li>Check staging environment for new files: <code>git status</code></li>
+</ol>
+</section>
+<section id="commit-locally" class="level2">
+<h2 class="anchored" data-anchor-id="commit-locally">Commit Locally</h2>
+<p><code>git commit -m "Your message about the commit"</code></p>
+</section>
+<section id="branches" class="level2">
+<h2 class="anchored" data-anchor-id="branches">Branches</h2>
+<p>Say you want to make a new feature but are worried about making changes to the main project while developing the feature. This is where git branches come in.</p>
+<p>Branches allow you to move back and forth between ‘states’ of a project. For instance, if you want to add a new page to your website you can create a new branch just for that page without affecting the main part of the project. Once you’re done with the page, you can merge your changes from your branch into the master branch. When you create a new branch, Git keeps track of which commit your branch ‘branched’ off of, so it knows the history behind all the files.</p>
+<ol type="1">
+<li><code>git checkout -b &lt;my branch name&gt;</code></li>
+<li>Show list of branches: <code>git branch</code></li>
+</ol>
+</section>
+<section id="commit-to-github" class="level2">
+<h2 class="anchored" data-anchor-id="commit-to-github">Commit to Github</h2>
+<ol type="1">
+<li>Create new repo on GitHub</li>
+<li><code>git remote add origin &lt;url produced on github for new repo&gt;</code></li>
+<li><code>git push -u origin [master/main]</code></li>
+</ol>
+</section>
+<section id="push-a-branch-to-github" class="level2">
+<h2 class="anchored" data-anchor-id="push-a-branch-to-github">Push a Branch to Github</h2>
+<p><code>git push origin &lt;my-new-branch&gt;</code></p>
+<p>You might be wondering what that “origin” word means in the command above. What happens is that when you clone a remote repository to your local machine, git creates an alias for you. In nearly all cases this alias is called “origin.” It’s essentially shorthand for the remote repository’s URL. So, to push your changes to the remote repository, you could’ve used either the command: git push git@github.com:git/git.git yourbranchname or git push origin yourbranchname</p>
+</section>
+<section id="pull-request" class="level2">
+<h2 class="anchored" data-anchor-id="pull-request">Pull Request</h2>
+<p>A pull request (or PR) is a way to alert a repo’s owners that you want to make some changes to their code. It allows them to review the code and make sure it looks good before putting your changes on the master branch.</p>
+</section>
+<section id="get-changes-on-github" class="level2">
+<h2 class="anchored" data-anchor-id="get-changes-on-github">Get Changes on Github</h2>
+<p><code>git pull origin master</code></p>
+<p>check all new commits: <code>git log</code></p>
+</section>
+<section id="view-differences" class="level2">
+<h2 class="anchored" data-anchor-id="view-differences">View Differences</h2>
+<ol type="1">
+<li>run: <code>git diff</code></li>
+</ol>
+</section>
+<section id="remove-a-branch" class="level2">
+<h2 class="anchored" data-anchor-id="remove-a-branch">Remove a Branch</h2>
+<section id="locally" class="level3">
+<h3 class="anchored" data-anchor-id="locally">Locally</h3>
+<p><code>git branch -d &lt;branch_name&gt;</code></p>
+</section>
+<section id="remote" class="level3">
+<h3 class="anchored" data-anchor-id="remote">Remote</h3>
+<p><code>git push &lt;remote_name&gt; --delete &lt;branch_name&gt;</code></p>
+</section>
+</section>
+<section id="remove-tracked-filedirectory" class="level2">
+<h2 class="anchored" data-anchor-id="remove-tracked-filedirectory">Remove tracked file/directory</h2>
+<section id="file" class="level3">
+<h3 class="anchored" data-anchor-id="file">File</h3>
+<p><code>git rm --cached &lt;file&gt;</code></p>
+</section>
+<section id="directory" class="level3">
+<h3 class="anchored" data-anchor-id="directory">Directory</h3>
+<p><code>git rm --cahced -r dir/</code></p>
+</section>
+</section>
+<section id="pre-commit" class="level2">
+<h2 class="anchored" data-anchor-id="pre-commit">pre-commit</h2>
+<p>Please make sure to install our <a href="https://pre-commit.com/">pre-commit</a> hooks into your Git workflow. Pre-commit will help keep our code clean and make sure we are following best practices.</p>
+<ul>
+<li>Install pre-commit hooks: <code>python -m pre_commit install --install-hooks</code></li>
+<li>Run hooks on the entire codebase: <code>python -m pre_commit run --all-files</code></li>
+</ul>
+<p>Hooks will run on the current commit snapshot when executing a <code>git commit</code>. Pre-commit hooks allow us to check for potential issues and make sure we are applying standards to our code before pushing to GitHub.</p>
+<p>See an example <a href="https://github.com/geocoug/python-app-template/blob/main/.pre-commit-config.yaml">.pre-commit-config.yml</a></p>
+</section>
+<section id="merge" class="level2">
+<h2 class="anchored" data-anchor-id="merge">Merge</h2>
+<p>The steps below can be used to merge two branches on your local machine. The braches used in this example are:</p>
+<ul>
+<li><code>main</code>: The authoritative or “production” code lives in this branch.</li>
+<li><code>dev</code>: This branch is split from the <code>main</code> branch and a new feature or update is coded with the intent to merge changes back into the <code>main</code> branch.</li>
+</ul>
+<ol type="1">
+<li><p>Pull <code>main</code> and <code>dev</code> branches so local repo is up to date with the remote.</p>
+<ol type="1">
+<li><code>git checkout main</code></li>
+<li><code>git pull origin main</code></li>
+<li><code>git checkout dev</code></li>
+<li><code>git pull origin dev</code></li>
+</ol></li>
+<li><p>Checkout the main branch so we can merge the <code>dev</code> branch into <code>main</code></p>
+<ol type="1">
+<li><code>git checkout main</code></li>
+<li><code>git merge dev</code></li>
+</ol>
+<img src="../../static/development/git-merge.png" class="img-fluid" alt="git-merge"></li>
+<li><p>Check the branch status: <code>git status</code></p>
+<img src="../../static/development/git-status.png" class="img-fluid" alt="git-status"></li>
+<li><p>Evaluate the two files with a conflict (ie. <code>.gitignore</code> and <code>requirements.txt</code>) and reconcile issues, then <code>git add</code> when ready.</p></li>
+<li><p>Commit the changes: <code>git commit -m "merge @tnelson-integral dev branch with main"</code></p></li>
+<li><p>Push changes to the remote on GitHub: <code>git push origin main</code></p></li>
+<li><p>Check out the <code>dev</code> branch locally and pull the <code>main</code> branch changes into it so <code>dev</code> can be up-to-date with <code>main</code></p>
+<ol type="1">
+<li><code>git checkout dev</code></li>
+<li><code>git pull origin main</code></li>
+<li><code>git push origin dev</code></li>
+</ol></li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="psql" class="level1">
+<h1>psql</h1>
+<p><a href="https://quickref.me/postgres">Cheat sheet</a></p>
+<div class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="2">
+
+<table class="dataframe table table-sm table-striped small">
+
+<thead>
+
+<tr>
+
+<th>
+Command
+</th>
+
+<th>
+Detail
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>
+sudo -s postgres psql
+</td>
+
+<td>
+Connect to PostgreSQL as admin
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# \l
+</td>
+
+<td>
+List all databases
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# \c postgres
+</td>
+
+<td>
+Connect to the database named postgres
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# \q
+</td>
+
+<td>
+Disconnect
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# -d mydb
+</td>
+
+<td>
+Connecting to database
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# -U john mydb
+</td>
+
+<td>
+Connecting as a specific user
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# -h localhost -p 5432 mydb
+</td>
+
+<td>
+Connecting to a host/port
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# -U admin -h 192.168.1.5 -p 2506 -d mydb
+</td>
+
+<td>
+Connect remote PostgreSQL
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# -W mydb
+</td>
+
+<td>
+Force password
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# -c '\c postgres' -c '\dt'
+</td>
+
+<td>
+Execute a SQL query or command
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# -c “\l+” -H postgres &gt; database.html
+</td>
+
+<td>
+Generate HTML report
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# -l
+</td>
+
+<td>
+List all databases
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# \dt
+</td>
+
+<td>
+Show all tables in a database
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# mydb -f file.sql
+</td>
+
+<td>
+Execute commands from a file
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# -V
+</td>
+
+<td>
+Print the psql version
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# \df &lt;schema&gt;
+</td>
+
+<td>
+List functions in schema
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# \du
+</td>
+
+<td>
+Show current user permission
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# \d &lt;table&gt;
+</td>
+
+<td>
+Describe table
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# \d+ &lt;table&gt;
+</td>
+
+<td>
+Describe table with details
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# \di
+</td>
+
+<td>
+List indexes
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# \du
+</td>
+
+<td>
+List roles
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# \ds
+</td>
+
+<td>
+List sequences
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# \copy …
+</td>
+
+<td>
+Import/export table
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# \echo [string]
+</td>
+
+<td>
+Print string
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# \i <a href="#file">file</a>
+</td>
+
+<td>
+Execute file
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# \o <a href="#file">file</a>
+</td>
+
+<td>
+Export all results to file
+</td>
+
+</tr>
+
+</tbody>
+
+
+</table>
+</div>
+</div>
+<section id="export-table-to-csv" class="level2">
+<h2 class="anchored" data-anchor-id="export-table-to-csv">Export table to CSV</h2>
+<ul>
+<li><code>\copy table TO '&lt;path&gt;' CSV</code></li>
+<li><code>\copy table(col1,col1) TO '&lt;path&gt;' CSV</code></li>
+<li><code>\copy (SELECT...) TO '&lt;path&gt;' CSV</code></li>
+</ul>
+</section>
+<section id="backup" class="level2">
+<h2 class="anchored" data-anchor-id="backup">Backup</h2>
+<p>Use pg_dumpall to backup all databases</p>
+<p><code>$ pg_dumpall -U postgres &gt; all.sql</code></p>
+<p>Use pg_dump to backup a database</p>
+<p><code>$ pg_dump -d mydb -f mydb_backup.sql</code></p>
+<ul>
+<li>&nbsp; <code>-a</code> &nbsp; Dump only the data, not the schema</li>
+<li>&nbsp; <code>-s</code> &nbsp; Dump only the schema, no data</li>
+<li>&nbsp; <code>-c</code> &nbsp; Drop database before recreating</li>
+<li>&nbsp; <code>-C</code> &nbsp; Create database before restoring</li>
+<li>&nbsp; <code>-t</code> &nbsp; Dump the named table(s) only</li>
+<li>&nbsp; <code>-F</code> &nbsp; Format (<code>c</code>: custom, <code>d</code>: directory, <code>t</code>: tar)</li>
+</ul>
+<p>Use <code>pg_dump -?</code> to get the full list of options</p>
+</section>
+<section id="restore" class="level2">
+<h2 class="anchored" data-anchor-id="restore">Restore</h2>
+<section id="psql-1" class="level3">
+<h3 class="anchored" data-anchor-id="psql-1">psql</h3>
+<p><code>$ psql -U user mydb &lt; mydb_backup.sql</code></p>
+</section>
+<section id="pg_restore" class="level3">
+<h3 class="anchored" data-anchor-id="pg_restore">pg_restore</h3>
+<p><code>$ pg_restore -d mydb mydb_backup.sql -c</code></p>
+<ul>
+<li><code>-U   Specify a database user</code></li>
+<li><code>-c   Drop database before recreating</code></li>
+<li><code>-C   Create database before restoring</code></li>
+<li><code>-e   Exit if an error has encountered</code></li>
+<li><code>-F   Format (c: custom, d: directory, t: tar, p: plain text sql(default))</code></li>
+</ul>
+<p>Use pg_restore -? to get the full list of options</p>
+
+
+</section>
+</section>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp("http:\/\/toolkit\.goecoug\.com");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../docs/development/index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Development</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../docs/development/code/index.html" class="pagination-link">
+        <span class="nav-page-text">Code</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Caleb Grant, 2023</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/geocoug/toolkit">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>

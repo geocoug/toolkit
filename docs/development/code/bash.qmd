@@ -1,0 +1,11 @@
+---
+title: Bash
+description: Bourne Again SHell
+image: https://img.icons8.com/?size=512&id=50ZQHdJTmPqw&format=png
+---
+
+## Mount a Share
+
+```sh
+sudo mount -t cifs //10.10.145.5/SourceDir /home/<user>/mnt/destination -o username=<user>,password="",uid=1000
+```
