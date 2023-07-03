@@ -1,0 +1,189 @@
+---
+title: Docker
+---
+
+## Installation
+
+Steps are pulled from a [Digital Ocean tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04).
+
+1. Update list of packages and install prerequisites.
+
+    ```sh
+    sudo apt update && \
+    sudo apt install apt-transport-https ca-certificates curl software-properties-common
+    ```
+
+1. Add the GPG key for the official Docker repository.
+
+    ```sh
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+    ```
+
+1. Add the Docker repository to APT sources and update package list from the new repo.
+
+    ```sh
+    sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+    ```
+
+1. Make sure install is pulling from Docker repo instead of default Ubuntu.
+
+    ```sh
+    apt-cache policy docker-ce
+    ```
+
+1. Install Docker.
+
+    ```sh
+    sudo apt install docker-ce
+    ```
+
+1. Check that Docker is running.
+
+    ```sh
+    sudo systemctl status docker
+    ```
+
+1. Execute Docker commands without sudo.
+
+    ```sh
+    sudo usermod -aG docker ${USER} && \
+    su - ${USER}
+    ```
+
+1. Verify user is now aded to the docker group.
+
+    ```sh
+    groups
+    ```
+
+## Resources
+
+- [CheatSheet](../../static/development/Docker-CheatSheet.pdf)
+- [Convert Docker command to docker-compose.yml](https://www.composerize.com/)
+
+## Image vs. Container
+
+**Image** - Application we want to run
+
+**Container** - Instance of that image running as a process
+
+------------------------------------------------------------------------
+
+## Docker Basics
+
+### Create an Nginx container
+
+`docker run -p 80:80 -d --name webhost nginx`
+
+1. Downloads Nginx from Docker Hub
+2. Starts new container from that image
+3. Opened port 80 on host IP
+4. Routes port 80 traffic to the container IP, port 80
+5. View container at <http://localhost:80>
+
+### Other examples
+
+`docker run -p 80:80 -d --name nginx nginx`
+
+`docker run -p 8080:80 -d --name httpd httpd`
+
+`docker run -p 3306:3306 --platform linux/amd64 -d --name mysql -e MYSQL_RANDOM_ROOT_PASSWORD=true mysql`
+
+Create a JupyterLab instance and attach your current directory as a volume: `docker run -it --rm -p 8888:8888 -v $(PWD):/home/jovyan jupyter/pyspark-notebook`
+
+### Processes and configurations
+
+Check processes running inside a container: `docker top <container>`
+
+Container configuration: `docker <container> inspect`
+
+Check container stats (memory, cpu, network): `docker stats <container>`
+
+### Getting a shell inside containers
+
+Start a new container interactively: `docker run -it <container>`
+
+Run commands in existing container: `docker exec -it <container>`
+
+#### Example: Start a container interactively and launch bash within it
+
+1. Start container and launch bash: `docker run -it --name ubuntu ubuntu bash`
+2. Run some bash command: `apt-get install -y curl`
+3. Exit the container: `exit`
+4. Start and re-enter the container: `docker start -ai ubuntu`
+
+#### Example: Launch shell in running container
+
+`docker exec -it <container> bash`
+
+### Pull an image from docker hub
+
+`docker pull <imagename>`
+
+## Docker Networks
+
+- Each container is connected to a private virtual network (called "bridge").
+- Each virtual network routes through NAT firewall on host IP.
+- All containers on a virtual network can talk to each other without `-p`
+- ***Best practice***: Create a new virtual network for each app.
+- You can skip virtual networks and use the host IP (`--net=host`).
+
+Get container IP: `docker inspect --format '{{ .NetworkSettings.IPAddress }}' <container>`
+
+### Publishing (#:#)
+
+example: 8080:80
+
+**left number**: published/host port
+
+**right number**: listening/container port
+
+*Traffic passing through port 8080 on the HOST will be directed to port 80 on the container.*
+
+### DNS
+
+Docker uses container names as host names.
+
+Dont rely on IPs for inter-communication.
+
+***Best Practice*** Always use custom networks.
+
+#### Assignment
+
+Check different curl versions within current versions of Ubuntu and CentOS.
+
+Run "curl --version" on both operating systems.
+
+##### Steps
+
+**ubuntu**: `apt-get update && apt-get install curl`
+
+**centos**: `yum update curl`
+
+Then...
+
+`curl --version`
+
+Also:
+
+Check out command `docker --rm`
+
+## Dockerfiles
+
+Recipe for creating images
+
+Each Dockerfile stanza such as "RUN", "CMD", etc. are stored as a single image layer. Docker caches each layer by giving it a unique SHA (hash), so whenever the image is (re)built, it can check to see if a layer has changed, and if not, it will use the cached layer.
+
+Docker builds images top down, so it is best practice to structure the Dockerfile in such a way that lines which will change the most are at the bottom, and lines that will change the least are at the top. If a line is changed (ie. source code changes) Docker will rebuild that line, and thus each line after that will also need to be rebuilt.
+
+## Keeping the Docker system clean
+
+`docker system prune` - all stopped containers - all networks not used by at least one container - all dangling images - all dangling build cache
+
+## Volumes an Bind Mounts
+
+**Volumes** - Special location outside of container UFS
+
+**Bind Mounts** - Link container path to host path
+
+Build an image and ***named*** volume (persistent): `docker run -d --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=True -v mysql:/var/lib/mysql --platform linux/amd64 mysql`

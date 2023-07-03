@@ -13,6 +13,23 @@
     ]
   },
   {
+    "listing": "/docs/development/tools/index.html",
+    "items": [
+      "/docs/development/tools/docker.html",
+      "/docs/development/tools/git.html",
+      "/docs/development/tools/github.html",
+      "/docs/development/tools/miscellaneous.html",
+      "/docs/development/tools/psql.html"
+    ]
+  },
+  {
+    "listing": "/docs/blog/index.html",
+    "items": [
+      "/docs/blog/posts/creating-a-post/index.html",
+      "/docs/blog/posts/accessing-quarto-variables/index.html"
+    ]
+  },
+  {
     "listing": "/docs/development/code/index.html",
     "items": [
       "/docs/development/code/bash.html",
@@ -25,15 +42,7 @@
       "/docs/development/code/python.html",
       "/docs/development/code/r.html",
       "/docs/development/code/regex.html",
-      "/docs/development/code/rust.html",
       "/docs/development/code/sql.html"
-    ]
-  },
-  {
-    "listing": "/docs/blog/index.html",
-    "items": [
-      "/docs/blog/posts/creating-a-post/index.html",
-      "/docs/blog/posts/accessing-quarto-variables/index.html"
     ]
   },
   {

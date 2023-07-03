@@ -1,0 +1,16 @@
+---
+title: "Tools"
+pagetitle: "Tools"
+description: "Development Tools"
+image: "/static/dev-tools.jpg"
+listing:
+  id: tool-listings
+  type: table
+  contents:
+    - "*.qmd"
+  page-size: 15
+  fields: [title, description, reading-time]
+  sort: 
+    - "title"
+---
+

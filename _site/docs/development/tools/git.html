@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Python web application deployment">
 
-<title>Toolkit - Python Web App</title>
+<title>Toolkit - Git</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -65,8 +30,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../">
-<link href="../../../docs/development/server/rstudio-server.html" rel="next">
-<link href="../../../docs/development/server/jupyter-server.html" rel="prev">
+<link href="../../../docs/development/tools/github.html" rel="next">
+<link href="../../../docs/development/tools/docker.html" rel="prev">
 <link href="../../..//static/favicon.ico" rel="icon">
 <script src="../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
@@ -159,7 +124,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../docs/development/server/index.html">Server</a></li><li class="breadcrumb-item"><a href="../../../docs/development/server/python-web-app.html">Python Web App</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../docs/development/tools/index.html">Tools</a></li><li class="breadcrumb-item"><a href="../../../docs/development/tools/git.html">Git</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -271,7 +236,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../docs/development/tools/git.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../docs/development/tools/git.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Git</span></a>
   </div>
 </li>
@@ -312,7 +277,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../docs/development/server/python-web-app.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../docs/development/server/python-web-app.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Python Web App</span></a>
   </div>
 </li>
@@ -334,8 +299,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#flask-app-configuration" id="toc-flask-app-configuration" class="nav-link active" data-scroll-target="#flask-app-configuration">Flask App Configuration</a></li>
-  <li><a href="#apache-configuration" id="toc-apache-configuration" class="nav-link" data-scroll-target="#apache-configuration">Apache Configuration</a></li>
+  <li><a href="#initialize" id="toc-initialize" class="nav-link active" data-scroll-target="#initialize">Initialize</a></li>
+  <li><a href="#staging" id="toc-staging" class="nav-link" data-scroll-target="#staging">Staging</a></li>
+  <li><a href="#commit-locally" id="toc-commit-locally" class="nav-link" data-scroll-target="#commit-locally">Commit Locally</a></li>
+  <li><a href="#branches" id="toc-branches" class="nav-link" data-scroll-target="#branches">Branches</a></li>
+  <li><a href="#commit-to-github" id="toc-commit-to-github" class="nav-link" data-scroll-target="#commit-to-github">Commit to Github</a></li>
+  <li><a href="#push-a-branch-to-github" id="toc-push-a-branch-to-github" class="nav-link" data-scroll-target="#push-a-branch-to-github">Push a Branch to Github</a></li>
+  <li><a href="#pull-request" id="toc-pull-request" class="nav-link" data-scroll-target="#pull-request">Pull Request</a></li>
+  <li><a href="#get-changes-on-github" id="toc-get-changes-on-github" class="nav-link" data-scroll-target="#get-changes-on-github">Get Changes on Github</a></li>
+  <li><a href="#view-differences" id="toc-view-differences" class="nav-link" data-scroll-target="#view-differences">View Differences</a></li>
+  <li><a href="#remove-a-branch" id="toc-remove-a-branch" class="nav-link" data-scroll-target="#remove-a-branch">Remove a Branch</a></li>
+  <li><a href="#remove-tracked-filedirectory" id="toc-remove-tracked-filedirectory" class="nav-link" data-scroll-target="#remove-tracked-filedirectory">Remove tracked file/directory</a></li>
+  <li><a href="#pre-commit" id="toc-pre-commit" class="nav-link" data-scroll-target="#pre-commit">pre-commit</a></li>
+  <li><a href="#merge" id="toc-merge" class="nav-link" data-scroll-target="#merge">Merge</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/geocoug/toolkit/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -344,14 +320,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Python Web App</h1>
+<h1 class="title">Git</h1>
 </div>
 
-<div>
-  <div class="description">
-    Python web application deployment
-  </div>
-</div>
 
 
 <div class="quarto-title-meta">
@@ -364,94 +335,137 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="flask-app-configuration" class="level2">
-<h2 class="anchored" data-anchor-id="flask-app-configuration">Flask App Configuration</h2>
+<ul>
+<li><a href="https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners" class="uri">https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners</a></li>
+<li><a href="https://docs.gitlab.com/ee/gitlab-basics/start-using-git.html" class="uri">https://docs.gitlab.com/ee/gitlab-basics/start-using-git.html</a></li>
+</ul>
+<section id="initialize" class="level3">
+<h3 class="anchored" data-anchor-id="initialize">Initialize</h3>
 <ol type="1">
-<li><p>Clone repository:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> mkdir /etc/local/webs <span class="kw">&amp;&amp;</span> <span class="dt">\</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /etc/local/webs <span class="kw">&amp;&amp;</span> <span class="dt">\</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> git clone https://github.com/app.git <span class="kw">&amp;&amp;</span> <span class="dt">\</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> chown <span class="at">-R</span> <span class="op">&lt;</span>user<span class="op">&gt;</span>:<span class="op">&lt;</span>user<span class="op">&gt;</span> app <span class="kw">&amp;&amp;</span> <span class="dt">\</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> app</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Create python virtual environment &amp; install dependencies:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> venv .venv <span class="kw">&amp;&amp;</span> <span class="dt">\</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> .venv/bin/activate <span class="kw">&amp;&amp;</span> <span class="dt">\</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> pip install <span class="at">-r</span> requirements.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Configure WSGI - <code>/usr/local/webs/app/app.wsgi</code>:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/usr/bin/python</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> logging</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>APP_DIR <span class="op">=</span> <span class="st">"/usr/local/webs/app"</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>os.environ[<span class="st">"APP_DIR"</span>] <span class="op">=</span> APP_DIR</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>logging.basicConfig(stream<span class="op">=</span>sys.stderr)</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>sys.path.insert(<span class="dv">0</span>, APP_DIR)</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> app <span class="im">import</span> app <span class="im">as</span> application</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Update owner:group</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /usr/local/web <span class="kw">&amp;&amp;</span> <span class="dt">\</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> chown <span class="at">-R</span> www-data:www-data cmat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li>Launch Git Bash</li>
+<li>Navigate to project directory</li>
+<li>initialize git repository in the folder root: <code>git init</code></li>
+<li>create new file in directory: <code>touch filename.extension</code></li>
+<li>list files in root: <code>ls</code></li>
+<li>check which files git recognizes: <code>git status</code></li>
 </ol>
 </section>
-<section id="apache-configuration" class="level2">
-<h2 class="anchored" data-anchor-id="apache-configuration">Apache Configuration</h2>
+<section id="staging" class="level3">
+<h3 class="anchored" data-anchor-id="staging">Staging</h3>
+<p>A commit is a record of what files you have changed since the last time you made a commit. Essentially, you make changes to your repo (for example, adding a file or modifying one) and then tell git to put those files into a commit. Commits make up the essence of your project and allow you to go back to the state of a project at any point.</p>
+<p>So, how do you tell git which files to put into a commit? This is where the staging environment or index come in. When you make changes to your repo, git notices that a file has changed but won’t do anything with it (like adding it in a commit).</p>
+<p>To add a file to a commit, you first need to add it to the staging environment. To do this, you can use the <code>git add &lt;filename&gt;</code> command.</p>
+<p>Once you’ve used the git add command to add all the files you want to the staging environment, you can then tell git to package them into a commit using the git commit command. Note: The staging environment, also called ‘staging’, is the new preferred term for this, but you can also see it referred to as the ‘index’.</p>
 <ol type="1">
-<li><p>Create custom Apache log directory:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> mkdir /usr/local/webs/apache-logs <span class="kw">&amp;&amp;</span> <span class="dt">\</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> touch /usr/local/webs/apache-logs/app/error.log <span class="kw">&amp;&amp;</span> <span class="dt">\</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> touch /usr/local/webs/apache-logs/app/access.log <span class="kw">&amp;&amp;</span> <span class="dt">\</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> chown <span class="at">-R</span> www-data:www-data /usr/local/webs/apache-logs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Create configuration file:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /etc/apache2/sites-available <span class="kw">&amp;&amp;</span> <span class="dt">\</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> vi app.conf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Configuration - <code>app.conf</code>:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode apache code-with-copy"><code class="sourceCode apache"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;VirtualHost</span><span class="at"> *:80</span><span class="fu">&gt;</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    ServerName<span class="st"> {DNS}</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">ServerSignature</span><span class="ch"> </span><span class="kw">Off</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="ex">RewriteEngine</span><span class="ch"> </span><span class="kw">On</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    RewriteRule<span class="st"> ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    ErrorLog<span class="st"> /var/log/apache2/redirect.error.log</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="ex">LogLevel</span><span class="ch"> </span><span class="kw">warn</span></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;/VirtualHost&gt;</span></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;VirtualHost</span><span class="at"> *:443</span><span class="fu">&gt;</span></span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    ServerAdmin<span class="st"> webmaster@localhost</span></span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    ServerName<span class="st"> {DNS}</span></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>    DocumentRoot<span class="st"> /usr/local/webs/app</span></span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>    WSGIDaemonProcess web-app threads=5 python-home=/usr/local/webs/app/.venv</span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>    WSGIProcessGroup web-app</span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>    WSGIScriptAlias / /usr/local/webs/app/app.wsgi</span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>    WSGIPassAuthorization On</span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">&lt;Directory</span><span class="at"> /usr/local/webs/app</span><span class="fu">&gt;</span></span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>            <span class="ex">Order</span><span class="ch"> </span><span class="kw">allow,deny</span></span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>            Allow<span class="st"> from all</span></span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">&lt;/Directory&gt;</span></span>
-<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">&lt;Location</span><span class="at"> /</span><span class="fu">&gt;</span></span>
-<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>            Require<span class="st"> all granted</span></span>
-<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>    <span class="fu">&lt;/Location&gt;</span></span>
-<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>    ErrorLog<span class="st"> /usr/local/webs/apache-logs/app/error.log</span></span>
-<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>    CustomLog<span class="st"> /usr/local/webs/apache-logs/app/access.log combined</span></span>
-<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>    <span class="ex">SSLEngine</span><span class="ch"> </span><span class="kw">on</span></span>
-<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>    SSLCertificateFile<span class="st"> /etc/letsencrypt/live/{DNS}/fullchain.pem</span></span>
-<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>    SSLCertificateKeyFile<span class="st"> /etc/letsencrypt/live/{DNS}/privkey.pem</span></span>
-<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a>    Include<span class="st"> /etc/letsencrypt/options-ssl-apache.conf</span></span>
-<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;/VirtualHost&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Test configuration:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apache2ctl configtest</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Enable the site</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> a2ensite app.conf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Restart Apache service</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> systemctl restart apache2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li>Add files to the staging environment: <code>git add filename.extension</code></li>
+<li>Check staging environment for new files: <code>git status</code></li>
+</ol>
+</section>
+<section id="commit-locally" class="level3">
+<h3 class="anchored" data-anchor-id="commit-locally">Commit Locally</h3>
+<p><code>git commit -m "Your message about the commit"</code></p>
+</section>
+<section id="branches" class="level3">
+<h3 class="anchored" data-anchor-id="branches">Branches</h3>
+<p>Say you want to make a new feature but are worried about making changes to the main project while developing the feature. This is where git branches come in.</p>
+<p>Branches allow you to move back and forth between ‘states’ of a project. For instance, if you want to add a new page to your website you can create a new branch just for that page without affecting the main part of the project. Once you’re done with the page, you can merge your changes from your branch into the master branch. When you create a new branch, Git keeps track of which commit your branch ‘branched’ off of, so it knows the history behind all the files.</p>
+<ol type="1">
+<li><code>git checkout -b &lt;my branch name&gt;</code></li>
+<li>Show list of branches: <code>git branch</code></li>
+</ol>
+</section>
+<section id="commit-to-github" class="level3">
+<h3 class="anchored" data-anchor-id="commit-to-github">Commit to Github</h3>
+<ol type="1">
+<li>Create new repo on GitHub</li>
+<li><code>git remote add origin &lt;url produced on github for new repo&gt;</code></li>
+<li><code>git push -u origin [master/main]</code></li>
+</ol>
+</section>
+<section id="push-a-branch-to-github" class="level3">
+<h3 class="anchored" data-anchor-id="push-a-branch-to-github">Push a Branch to Github</h3>
+<p><code>git push origin &lt;my-new-branch&gt;</code></p>
+<p>You might be wondering what that “origin” word means in the command above. What happens is that when you clone a remote repository to your local machine, git creates an alias for you. In nearly all cases this alias is called “origin.” It’s essentially shorthand for the remote repository’s URL. So, to push your changes to the remote repository, you could’ve used either the command: git push git@github.com:git/git.git yourbranchname or git push origin yourbranchname</p>
+</section>
+<section id="pull-request" class="level3">
+<h3 class="anchored" data-anchor-id="pull-request">Pull Request</h3>
+<p>A pull request (or PR) is a way to alert a repo’s owners that you want to make some changes to their code. It allows them to review the code and make sure it looks good before putting your changes on the master branch.</p>
+</section>
+<section id="get-changes-on-github" class="level3">
+<h3 class="anchored" data-anchor-id="get-changes-on-github">Get Changes on Github</h3>
+<p><code>git pull origin master</code></p>
+<p>check all new commits: <code>git log</code></p>
+</section>
+<section id="view-differences" class="level3">
+<h3 class="anchored" data-anchor-id="view-differences">View Differences</h3>
+<ol type="1">
+<li>run: <code>git diff</code></li>
+</ol>
+</section>
+<section id="remove-a-branch" class="level3">
+<h3 class="anchored" data-anchor-id="remove-a-branch">Remove a Branch</h3>
+<section id="locally" class="level4">
+<h4 class="anchored" data-anchor-id="locally">Locally</h4>
+<p><code>git branch -d &lt;branch_name&gt;</code></p>
+</section>
+<section id="remote" class="level4">
+<h4 class="anchored" data-anchor-id="remote">Remote</h4>
+<p><code>git push &lt;remote_name&gt; --delete &lt;branch_name&gt;</code></p>
+</section>
+</section>
+<section id="remove-tracked-filedirectory" class="level3">
+<h3 class="anchored" data-anchor-id="remove-tracked-filedirectory">Remove tracked file/directory</h3>
+<section id="file" class="level4">
+<h4 class="anchored" data-anchor-id="file">File</h4>
+<p><code>git rm --cached &lt;file&gt;</code></p>
+</section>
+<section id="directory" class="level4">
+<h4 class="anchored" data-anchor-id="directory">Directory</h4>
+<p><code>git rm --cahced -r dir/</code></p>
+</section>
+</section>
+<section id="pre-commit" class="level3">
+<h3 class="anchored" data-anchor-id="pre-commit">pre-commit</h3>
+<p>Please make sure to install our <a href="https://pre-commit.com/">pre-commit</a> hooks into your Git workflow. Pre-commit will help keep our code clean and make sure we are following best practices.</p>
+<ul>
+<li>Install pre-commit hooks: <code>python -m pre_commit install --install-hooks</code></li>
+<li>Run hooks on the entire codebase: <code>python -m pre_commit run --all-files</code></li>
+</ul>
+<p>Hooks will run on the current commit snapshot when executing a <code>git commit</code>. Pre-commit hooks allow us to check for potential issues and make sure we are applying standards to our code before pushing to GitHub.</p>
+<p>See an example <a href="https://github.com/geocoug/python-app-template/blob/main/.pre-commit-config.yaml">.pre-commit-config.yml</a></p>
+</section>
+<section id="merge" class="level3">
+<h3 class="anchored" data-anchor-id="merge">Merge</h3>
+<p>The steps below can be used to merge two branches on your local machine. The braches used in this example are:</p>
+<ul>
+<li><code>main</code>: The authoritative or “production” code lives in this branch.</li>
+<li><code>dev</code>: This branch is split from the <code>main</code> branch and a new feature or update is coded with the intent to merge changes back into the <code>main</code> branch.</li>
+</ul>
+<ol type="1">
+<li><p>Pull <code>main</code> and <code>dev</code> branches so local repo is up to date with the remote.</p>
+<ol type="1">
+<li><code>git checkout main</code></li>
+<li><code>git pull origin main</code></li>
+<li><code>git checkout dev</code></li>
+<li><code>git pull origin dev</code></li>
+</ol></li>
+<li><p>Checkout the main branch so we can merge the <code>dev</code> branch into <code>main</code></p>
+<ol type="1">
+<li><code>git checkout main</code></li>
+<li><code>git merge dev</code></li>
+</ol>
+<img src="../../static/development/git-merge.png" class="img-fluid" alt="git-merge"></li>
+<li><p>Check the branch status: <code>git status</code></p>
+<img src="../../static/development/git-status.png" class="img-fluid" alt="git-status"></li>
+<li><p>Evaluate the two files with a conflict (ie. <code>.gitignore</code> and <code>requirements.txt</code>) and reconcile issues, then <code>git add</code> when ready.</p></li>
+<li><p>Commit the changes: <code>git commit -m "merge @tnelson-integral dev branch with main"</code></p></li>
+<li><p>Push changes to the remote on GitHub: <code>git push origin main</code></p></li>
+<li><p>Check out the <code>dev</code> branch locally and pull the <code>main</code> branch changes into it so <code>dev</code> can be up-to-date with <code>main</code></p>
+<ol type="1">
+<li><code>git checkout dev</code></li>
+<li><code>git pull origin main</code></li>
+<li><code>git push origin dev</code></li>
+</ol></li>
 </ol>
 
 
@@ -822,13 +836,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../../docs/development/server/jupyter-server.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Jupyter Server</span>
+      <a href="../../../docs/development/tools/docker.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Docker</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../../docs/development/server/rstudio-server.html" class="pagination-link">
-        <span class="nav-page-text">Rstudio Server</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../../docs/development/tools/github.html" class="pagination-link">
+        <span class="nav-page-text">GitHub</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

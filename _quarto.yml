@@ -62,6 +62,10 @@ website:
           href: docs/development/code/index.qmd
           contents:
             - auto: "docs/development/code/*"
+        - section: "Tools"
+          href: docs/development/tools/index.qmd
+          contents:
+            - auto: "docs/development/tools/*"
         - section: "Server"
           href: docs/development/server/index.qmd
           contents:
@@ -84,7 +88,7 @@ format:
     toc-depth: 3
     code-copy: true
     code-fold: true
-    code-overflow: scroll
+    code-overflow: wrap
     code-line-numbers: false
     code-annotations: below
     highlight-style: github

@@ -9,3 +9,15 @@ image: https://img.icons8.com/?size=512&id=50ZQHdJTmPqw&format=png
 ```sh
 sudo mount -t cifs //10.10.145.5/SourceDir /home/<user>/mnt/destination -o username=<user>,password="",uid=1000
 ```
+
+## Generating an SSH Key
+
+```sh
+cd ~/.ssh
+# Generate the Key
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+# Copy th ekey
+cat gh_actions.pub >> ~/.ssh/authorized_keys
+# Copy the key:
+cat ~/.ssh/gh_actions
+```

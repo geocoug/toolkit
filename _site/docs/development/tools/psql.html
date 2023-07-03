@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Rust programming language">
 
-<title>Toolkit - Rust</title>
+<title>Toolkit - psql</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -31,8 +64,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../">
-<link href="../../../docs/development/code/sql.html" rel="next">
-<link href="../../../docs/development/code/regex.html" rel="prev">
+<link href="../../../docs/development/server/index.html" rel="next">
+<link href="../../../docs/development/tools/miscellaneous.html" rel="prev">
 <link href="../../..//static/favicon.ico" rel="icon">
 <script src="../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
@@ -125,7 +158,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../docs/development/code/index.html">Code</a></li><li class="breadcrumb-item"><a href="../../../docs/development/code/rust.html">Rust</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../docs/development/tools/index.html">Tools</a></li><li class="breadcrumb-item"><a href="../../../docs/development/tools/psql.html">psql</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -141,12 +174,6 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="../../../docs/development/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Development</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/development/tools.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Tools</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -220,12 +247,6 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../docs/development/code/rust.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Rust</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../../../docs/development/code/sql.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">SQL</span></a>
   </div>
@@ -234,8 +255,8 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../docs/development/server/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Server</span></a>
+            <a href="../../../docs/development/tools/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tools</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -243,10 +264,45 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../docs/development/server/docker.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../docs/development/tools/docker.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Docker</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/development/tools/git.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Git</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/development/tools/github.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">GitHub</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/development/tools/miscellaneous.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Miscellaneous</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/development/tools/psql.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">psql</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../docs/development/server/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Server</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../docs/development/server/jupyter-server.html" class="sidebar-item-text sidebar-link">
@@ -273,21 +329,24 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#export-table-to-csv" id="toc-export-table-to-csv" class="nav-link active" data-scroll-target="#export-table-to-csv">Export table to CSV</a></li>
+  <li><a href="#backup" id="toc-backup" class="nav-link" data-scroll-target="#backup">Backup</a></li>
+  <li><a href="#restore" id="toc-restore" class="nav-link" data-scroll-target="#restore">Restore</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/geocoug/toolkit/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Rust</h1>
+<h1 class="title">psql</h1>
 </div>
 
-<div>
-  <div class="description">
-    Rust programming language
-  </div>
-</div>
 
 
 <div class="quarto-title-meta">
@@ -300,8 +359,399 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<p><a href="https://quickref.me/postgres">Cheat sheet</a></p>
+<div class="cell" data-execution_count="1">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> <span class="st">"../../../static/development/commands.xlsx"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>t4 <span class="op">=</span> pd.read_excel(f, sheet_name<span class="op">=</span><span class="st">"psql-commands"</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>t4.to_html(index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="1">
+
+<table class="dataframe table table-sm table-striped small">
+
+<thead>
+
+<tr>
+
+<th>
+Command
+</th>
+
+<th>
+Detail
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>
+sudo -s postgres psql
+</td>
+
+<td>
+Connect to PostgreSQL as admin
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# \l
+</td>
+
+<td>
+List all databases
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# \c postgres
+</td>
+
+<td>
+Connect to the database named postgres
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# \q
+</td>
+
+<td>
+Disconnect
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# -d mydb
+</td>
+
+<td>
+Connecting to database
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# -U john mydb
+</td>
+
+<td>
+Connecting as a specific user
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# -h localhost -p 5432 mydb
+</td>
+
+<td>
+Connecting to a host/port
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# -U admin -h 192.168.1.5 -p 2506 -d mydb
+</td>
+
+<td>
+Connect remote PostgreSQL
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# -W mydb
+</td>
+
+<td>
+Force password
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# -c '\c postgres' -c '\dt'
+</td>
+
+<td>
+Execute a SQL query or command
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# -c “\l+” -H postgres &gt; database.html
+</td>
+
+<td>
+Generate HTML report
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# -l
+</td>
+
+<td>
+List all databases
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# \dt
+</td>
+
+<td>
+Show all tables in a database
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# mydb -f file.sql
+</td>
+
+<td>
+Execute commands from a file
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# -V
+</td>
+
+<td>
+Print the psql version
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# \df &lt;schema&gt;
+</td>
+
+<td>
+List functions in schema
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# \du
+</td>
+
+<td>
+Show current user permission
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# \d &lt;table&gt;
+</td>
+
+<td>
+Describe table
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# \d+ &lt;table&gt;
+</td>
+
+<td>
+Describe table with details
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# \di
+</td>
+
+<td>
+List indexes
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# \du
+</td>
+
+<td>
+List roles
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# \ds
+</td>
+
+<td>
+List sequences
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# \copy …
+</td>
+
+<td>
+Import/export table
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# \echo [string]
+</td>
+
+<td>
+Print string
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# \i [file]
+</td>
+
+<td>
+Execute file
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+postgres=# \o [file]
+</td>
+
+<td>
+Export all results to file
+</td>
+
+</tr>
+
+</tbody>
 
 
+</table>
+</div>
+</div>
+<section id="export-table-to-csv" class="level3">
+<h3 class="anchored" data-anchor-id="export-table-to-csv">Export table to CSV</h3>
+<ul>
+<li><code>\copy table TO '&lt;path&gt;' CSV</code></li>
+<li><code>\copy table(col1,col1) TO '&lt;path&gt;' CSV</code></li>
+<li><code>\copy (SELECT...) TO '&lt;path&gt;' CSV</code></li>
+</ul>
+</section>
+<section id="backup" class="level3">
+<h3 class="anchored" data-anchor-id="backup">Backup</h3>
+<p>Use pg_dumpall to backup all databases</p>
+<p><code>$ pg_dumpall -U postgres &gt; all.sql</code></p>
+<p>Use pg_dump to backup a database</p>
+<p><code>$ pg_dump -d mydb -f mydb_backup.sql</code></p>
+<ul>
+<li><code>-a</code> &nbsp; Dump only the data, not the schema</li>
+<li><code>-s</code> &nbsp; Dump only the schema, no data</li>
+<li><code>-c</code> &nbsp; Drop database before recreating</li>
+<li><code>-C</code> &nbsp; Create database before restoring</li>
+<li><code>-t</code> &nbsp; Dump the named table(s) only</li>
+<li><code>-F</code> &nbsp; Format (<code>c</code>: custom, <code>d</code>: directory, <code>t</code>: tar)</li>
+</ul>
+<p>Use <code>pg_dump -?</code> to get the full list of options</p>
+</section>
+<section id="restore" class="level3">
+<h3 class="anchored" data-anchor-id="restore">Restore</h3>
+<p><code>$ psql -U user mydb &lt; mydb_backup.sql</code></p>
+<section id="pg_restore" class="level4">
+<h4 class="anchored" data-anchor-id="pg_restore">pg_restore</h4>
+<p><code>$ pg_restore -d mydb mydb_backup.sql -c</code></p>
+<ul>
+<li><code>-U   Specify a database user</code></li>
+<li><code>-c   Drop database before recreating</code></li>
+<li><code>-C   Create database before restoring</code></li>
+<li><code>-e   Exit if an error has encountered</code></li>
+<li><code>-F   Format (c: custom, d: directory, t: tar, p: plain text sql(default))</code></li>
+</ul>
+<p>Use pg_restore -? to get the full list of options</p>
+
+
+</section>
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -668,13 +1118,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../../docs/development/code/regex.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Regex</span>
+      <a href="../../../docs/development/tools/miscellaneous.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Miscellaneous</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../../docs/development/code/sql.html" class="pagination-link">
-        <span class="nav-page-text">SQL</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../../docs/development/server/index.html" class="pagination-link">
+        <span class="nav-page-text">Server</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -684,7 +1134,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">Caleb Grant, 2023</div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/geocoug/toolkit/issues/new" class="toc-action">Report an issue</a></p></div></div></div>
+    </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">

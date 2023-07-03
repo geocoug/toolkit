@@ -65,8 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../">
-<link href="../../../docs/development/server/index.html" rel="next">
-<link href="../../../docs/development/code/rust.html" rel="prev">
+<link href="../../../docs/development/tools/index.html" rel="next">
+<link href="../../../docs/development/code/regex.html" rel="prev">
 <link href="../../..//static/favicon.ico" rel="icon">
 <script src="../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
@@ -181,12 +181,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Development</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/development/tools.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Tools</span></a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../../../docs/development/code/index.html" class="sidebar-item-text sidebar-link">
@@ -258,12 +252,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../docs/development/code/rust.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Rust</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../../../docs/development/code/sql.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">SQL</span></a>
   </div>
@@ -272,8 +260,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../docs/development/server/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Server</span></a>
+            <a href="../../../docs/development/tools/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tools</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -281,10 +269,45 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../docs/development/server/docker.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../docs/development/tools/docker.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Docker</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/development/tools/git.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Git</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/development/tools/github.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">GitHub</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/development/tools/miscellaneous.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Miscellaneous</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../docs/development/tools/psql.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">psql</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../docs/development/server/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Server</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../docs/development/server/jupyter-server.html" class="sidebar-item-text sidebar-link">
@@ -555,23 +578,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-4" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-lines="1,2,3,4,5" data-code-cell="annotated-cell-4" data-code-annotation="1">Create a read-only user.</span>
+<span data-code-lines="1,2,3,4,5" data-code-annotation="1" data-code-cell="annotated-cell-4">Create a read-only user.</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-lines="7" data-code-cell="annotated-cell-4" data-code-annotation="2">Allow user to create database objects.</span>
+<span data-code-lines="7" data-code-annotation="2" data-code-cell="annotated-cell-4">Allow user to create database objects.</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-lines="9" data-code-cell="annotated-cell-4" data-code-annotation="3">Allow user to insert rows to any schema and table.</span>
+<span data-code-lines="9" data-code-annotation="3" data-code-cell="annotated-cell-4">Allow user to insert rows to any schema and table.</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-lines="11" data-code-cell="annotated-cell-4" data-code-annotation="4">Allow user to update rows in any schema and table.</span>
+<span data-code-lines="11" data-code-annotation="4" data-code-cell="annotated-cell-4">Allow user to update rows in any schema and table.</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-lines="13" data-code-cell="annotated-cell-4" data-code-annotation="5">Allow user to delete rows in any schema and table.</span>
+<span data-code-lines="13" data-code-annotation="5" data-code-cell="annotated-cell-4">Allow user to delete rows in any schema and table.</span>
 </dd>
 </dl>
 </section>
@@ -1473,13 +1496,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../../docs/development/code/rust.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Rust</span>
+      <a href="../../../docs/development/code/regex.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Regex</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../../docs/development/server/index.html" class="pagination-link">
-        <span class="nav-page-text">Server</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../../docs/development/tools/index.html" class="pagination-link">
+        <span class="nav-page-text">Tools</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
