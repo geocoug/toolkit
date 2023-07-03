@@ -25,6 +25,7 @@
   {
     "listing": "/docs/blog/index.html",
     "items": [
+      "/docs/blog/posts/quarto-tabsets/index.html",
       "/docs/blog/posts/creating-a-post/index.html",
       "/docs/blog/posts/accessing-quarto-variables/index.html"
     ]
@@ -36,8 +37,6 @@
       "/docs/development/code/cmd.html",
       "/docs/development/code/html.html",
       "/docs/development/code/javascript.html",
-      "/docs/development/code/julia.html",
-      "/docs/development/code/markdown.html",
       "/docs/development/code/powershell.html",
       "/docs/development/code/python.html",
       "/docs/development/code/r.html",

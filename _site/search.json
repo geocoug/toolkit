@@ -354,7 +354,7 @@
     "href": "docs/blog/index.html",
     "title": "Blog",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nDescription\n\n\nAuthor\n\n\nReading Time\n\n\nCategories\n\n\n\n\n\n\n\n\n\nJun 29, 2023\n\n\nCreating a Blog Post\n\n\nThis is an example of how to create a new blog post.\n\n\nCaleb Grant\n\n\n1 min\n\n\nQuarto,Blog,Example\n\n\n\n\n\n\n\nJun 15, 2023\n\n\nAccessing Quarto Variables\n\n\nAccess quarto variables in a document.\n\n\nCaleb Grant\n\n\n1 min\n\n\nQuarto,Variables\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nDescription\n\n\nAuthor\n\n\nReading Time\n\n\nCategories\n\n\n\n\n\n\n\n\n\nJul 3, 2023\n\n\nQuarto Tabsets\n\n\nCreating tabsets with Quarto\n\n\nCaleb Grant\n\n\n1 min\n\n\nQuarto\n\n\n\n\n\n\n\nJun 29, 2023\n\n\nCreating a Blog Post\n\n\nThis is an example of how to create a new blog post.\n\n\nCaleb Grant\n\n\n1 min\n\n\nQuarto,Blog,Example\n\n\n\n\n\n\n\nJun 15, 2023\n\n\nAccessing Quarto Variables\n\n\nAccess quarto variables in a document.\n\n\nCaleb Grant\n\n\n1 min\n\n\nQuarto,Variables\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "docs/blog/posts/creating-a-post/index.html",
@@ -382,14 +382,14 @@
     "href": "docs/development/code/index.html",
     "title": "Code",
     "section": "",
-    "text": "Bourne Again SHell\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCommand Prompt\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHyperText Markup Language\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJavaScript programming language\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJulia Programming Language\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLightweight markup language\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMicrosoft PowerShell\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPython programming language\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nR programming language\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRegular expressions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStructured Query Language\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Bourne Again SHell\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCommand Prompt\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHyperText Markup Language\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJavaScript programming language\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMicrosoft PowerShell\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPython programming language\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nR programming language\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRegular expressions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStructured Query Language\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "docs/development/code/index.html#code-pages",
     "href": "docs/development/code/index.html#code-pages",
     "title": "Code",
     "section": "",
-    "text": "Bourne Again SHell\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCommand Prompt\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHyperText Markup Language\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJavaScript programming language\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJulia Programming Language\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLightweight markup language\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMicrosoft PowerShell\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPython programming language\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nR programming language\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRegular expressions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStructured Query Language\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Bourne Again SHell\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCommand Prompt\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHyperText Markup Language\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJavaScript programming language\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMicrosoft PowerShell\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPython programming language\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nR programming language\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRegular expressions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStructured Query Language\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "docs/development/code/julia.html",
@@ -845,5 +845,33 @@
     "title": "Workouts",
     "section": "Introductory Routines",
     "text": "Introductory Routines\n\n\nCode\nw5 = pd.read_excel(workouts, sheet_name=5)\nw6 = pd.read_excel(workouts, sheet_name=6)\nw7 = pd.read_excel(workouts, sheet_name=7)\n\n\n\nPush Intro\n\n\nCode\nw5.to_html(index=False, render_links=True)\n\n\n\n\n\n\n\n\n\n\nLift\n\n\n\nSets\n\n\n\nReps\n\n\n\nHow-To\n\n\n\n\n\n\n\n\n\n\n\nDumbbell Bench Press\n\n\n\n3\n\n\n\n10\n\n\n\nView\n\n\n\n\n\n\n\nDumbell Incline Press\n\n\n\n3\n\n\n\n10\n\n\n\nView\n\n\n\n\n\n\n\nDumbbell Flys\n\n\n\n3\n\n\n\n10\n\n\n\nView\n\n\n\n\n\n\n\nLateral Raises\n\n\n\n3\n\n\n\n10\n\n\n\nView\n\n\n\n\n\n\n\nFront Raises\n\n\n\n3\n\n\n\n10\n\n\n\nView\n\n\n\n\n\n\n\nTricep Push Down\n\n\n\n3\n\n\n\n10\n\n\n\nView\n\n\n\n\n\n\n\nPlanks\n\n\n\n3\n\n\n\nFailure\n\n\n\nView\n\n\n\n\n\n\n\nSit-ups\n\n\n\n3\n\n\n\n12\n\n\n\nView\n\n\n\n\n\n\n\nLeg Raises\n\n\n\n3\n\n\n\n10\n\n\n\nView\n\n\n\n\n\n\n\n\n\n\n\n\nPull Intro\n\n\nCode\nw6.to_html(index=False, render_links=True)\n\n\n\n\n\n\n\n\n\n\nLift\n\n\n\nSets\n\n\n\nReps\n\n\n\nHow-To\n\n\n\n\n\n\n\n\n\n\n\nCable Rows\n\n\n\n3\n\n\n\n10\n\n\n\nView\n\n\n\n\n\n\n\nDumbbell Rows\n\n\n\n3\n\n\n\n10\n\n\n\nView\n\n\n\n\n\n\n\nUpright Rows\n\n\n\n3\n\n\n\n10\n\n\n\nView\n\n\n\n\n\n\n\nDumbbell Curls\n\n\n\n3\n\n\n\n10\n\n\n\nView\n\n\n\n\n\n\n\nHammer Curls\n\n\n\n3\n\n\n\n10\n\n\n\nView\n\n\n\n\n\n\n\nFarmer Carry\n\n\n\n3\n\n\n\n10\n\n\n\nView\n\n\n\n\n\n\n\n\n\n\n\n\nLegs Intro\n\n\nCode\nw6.to_html(index=False, render_links=True)\n\n\n\n\n\n\n\n\n\n\nLift\n\n\n\nSets\n\n\n\nReps\n\n\n\nHow-To\n\n\n\n\n\n\n\n\n\n\n\nCable Rows\n\n\n\n3\n\n\n\n10\n\n\n\nView\n\n\n\n\n\n\n\nDumbbell Rows\n\n\n\n3\n\n\n\n10\n\n\n\nView\n\n\n\n\n\n\n\nUpright Rows\n\n\n\n3\n\n\n\n10\n\n\n\nView\n\n\n\n\n\n\n\nDumbbell Curls\n\n\n\n3\n\n\n\n10\n\n\n\nView\n\n\n\n\n\n\n\nHammer Curls\n\n\n\n3\n\n\n\n10\n\n\n\nView\n\n\n\n\n\n\n\nFarmer Carry\n\n\n\n3\n\n\n\n10\n\n\n\nView"
+  },
+  {
+    "objectID": "docs/development/code/cmd.html#run-a-python-script",
+    "href": "docs/development/code/cmd.html#run-a-python-script",
+    "title": "CMD",
+    "section": "",
+    "text": "@echo off\ncls\n\n@REM Set the path to the script root (using UNC path). Note the string is not quoted.\nset SCRIPT_DIR=\\\\integral-corp.com\\data\\&lt;Project Number Range&gt;\\&lt;Project Folder&gt;\\Working_Files\\DataManagement\\IDB\\export\\script\n\n@REM Name of the script to execute. Note the string is not quoted.\nset SCRIPT_NAME=export.sql\n\n@REM Prompt the user for their Postgres password\n@REM This allows for users to run the execsql script who might not have\n@REM a custom execsql.conf file specified with their username.\nset /p \"DB_USER=Enter you PostgreSQL username: \"\n\n@REM Run the execsql script\nPowerShell -NoProfile -ExecutionPolicy Bypass -Command \"& Set-Location -Path %SCRIPT_DIR%; M:\\DataManagement\\bin\\execsql.py -u %DB_USER% %SCRIPT_NAME%\"\n\npause"
+  },
+  {
+    "objectID": "docs/blog/posts/quarto-tabsets/index.html",
+    "href": "docs/blog/posts/quarto-tabsets/index.html",
+    "title": "Quarto Tabsets",
+    "section": "",
+    "text": "PythonJavaScript\n\n\nMarkup:\n```{py}\nprint(\"Hello World\")\n```\nOutput:\nprint(\"Hello World\")\n\n\nMarkup:\n```{js}\nconsole.log(\"Hello World\");\n```\nOutput:\nconsole.log(\"Hello World\");\n\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "docs/blog/posts/quarto-tabsets/index.html#javascript",
+    "href": "docs/blog/posts/quarto-tabsets/index.html#javascript",
+    "title": "Quarto Tabsets",
+    "section": "JavaScript",
+    "text": "JavaScript\nMarkup:\n```{js}\nconsole.log(\"Hello World\");\n```\nOutput:\nconsole.log(\"Hello World\");\n:::"
+  },
+  {
+    "objectID": "docs/blog/posts/quarto-tabsets/index.html#javascript-1",
+    "href": "docs/blog/posts/quarto-tabsets/index.html#javascript-1",
+    "title": "Quarto Tabsets",
+    "section": "JavaScript",
+    "text": "JavaScript\nMarkup:\n```{js}\nconsole.log(\"Hello World\");\n```\nOutput:\nconsole.log(\"Hello World\");\n::: ```"
   }
 ]

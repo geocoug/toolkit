@@ -6,19 +6,19 @@
   </url>
   <url>
     <loc>http://toolkit.goecoug.com/docs/resources/recipes.html</loc>
-    <lastmod>2023-07-03T00:57:01.231Z</lastmod>
+    <lastmod>2023-07-03T18:02:54.724Z</lastmod>
   </url>
   <url>
     <loc>http://toolkit.goecoug.com/docs/resources/data-management.html</loc>
-    <lastmod>2023-07-03T00:57:00.207Z</lastmod>
+    <lastmod>2023-07-03T18:02:45.929Z</lastmod>
   </url>
   <url>
     <loc>http://toolkit.goecoug.com/docs/development/tools/psql.html</loc>
-    <lastmod>2023-07-03T00:56:57.473Z</lastmod>
+    <lastmod>2023-07-03T17:58:46.511Z</lastmod>
   </url>
   <url>
     <loc>http://toolkit.goecoug.com/docs/development/tools/index.html</loc>
-    <lastmod>2023-07-03T00:56:56.185Z</lastmod>
+    <lastmod>2023-07-03T17:58:28.064Z</lastmod>
   </url>
   <url>
     <loc>http://toolkit.goecoug.com/docs/development/tools/git.html</loc>
@@ -50,7 +50,7 @@
   </url>
   <url>
     <loc>http://toolkit.goecoug.com/docs/development/code/javascript.html</loc>
-    <lastmod>2023-07-03T00:56:46.969Z</lastmod>
+    <lastmod>2023-07-03T17:58:38.227Z</lastmod>
   </url>
   <url>
     <loc>http://toolkit.goecoug.com/docs/development/code/html.html</loc>
@@ -66,7 +66,7 @@
   </url>
   <url>
     <loc>http://toolkit.goecoug.com/docs/blog/index.html</loc>
-    <lastmod>2023-07-03T00:56:43.718Z</lastmod>
+    <lastmod>2023-07-03T18:05:17.455Z</lastmod>
   </url>
   <url>
     <loc>http://toolkit.goecoug.com/docs/blog/posts/creating-a-post/index.html</loc>
@@ -74,11 +74,11 @@
   </url>
   <url>
     <loc>http://toolkit.goecoug.com/docs/development/code/cmd.html</loc>
-    <lastmod>2023-07-03T00:56:45.605Z</lastmod>
+    <lastmod>2023-07-03T17:58:25.080Z</lastmod>
   </url>
   <url>
     <loc>http://toolkit.goecoug.com/docs/development/code/index.html</loc>
-    <lastmod>2023-07-03T00:56:46.639Z</lastmod>
+    <lastmod>2023-07-03T17:58:27.659Z</lastmod>
   </url>
   <url>
     <loc>http://toolkit.goecoug.com/docs/development/code/julia.html</loc>
@@ -86,7 +86,7 @@
   </url>
   <url>
     <loc>http://toolkit.goecoug.com/docs/development/code/powershell.html</loc>
-    <lastmod>2023-07-03T00:56:48.276Z</lastmod>
+    <lastmod>2023-07-03T17:58:39.165Z</lastmod>
   </url>
   <url>
     <loc>http://toolkit.goecoug.com/docs/development/code/r.html</loc>
@@ -106,15 +106,15 @@
   </url>
   <url>
     <loc>http://toolkit.goecoug.com/docs/development/tools/docker.html</loc>
-    <lastmod>2023-07-03T00:56:54.959Z</lastmod>
+    <lastmod>2023-07-03T17:58:25.853Z</lastmod>
   </url>
   <url>
     <loc>http://toolkit.goecoug.com/docs/development/tools/github.html</loc>
-    <lastmod>2023-07-03T00:56:55.783Z</lastmod>
+    <lastmod>2023-07-03T17:58:26.196Z</lastmod>
   </url>
   <url>
     <loc>http://toolkit.goecoug.com/docs/development/tools/miscellaneous.html</loc>
-    <lastmod>2023-07-03T00:56:56.516Z</lastmod>
+    <lastmod>2023-07-03T17:58:26.544Z</lastmod>
   </url>
   <url>
     <loc>http://toolkit.goecoug.com/docs/resources/bookmarks.html</loc>
@@ -122,10 +122,14 @@
   </url>
   <url>
     <loc>http://toolkit.goecoug.com/docs/resources/index.html</loc>
-    <lastmod>2023-07-03T00:57:00.612Z</lastmod>
+    <lastmod>2023-07-03T18:02:34.740Z</lastmod>
   </url>
   <url>
     <loc>http://toolkit.goecoug.com/docs/resources/workouts.html</loc>
-    <lastmod>2023-07-03T00:57:04.135Z</lastmod>
+    <lastmod>2023-07-03T18:03:03.492Z</lastmod>
+  </url>
+  <url>
+    <loc>http://toolkit.goecoug.com/docs/blog/posts/quarto-tabsets/index.html</loc>
+    <lastmod>2023-07-03T18:05:16.979Z</lastmod>
   </url>
 </urlset>

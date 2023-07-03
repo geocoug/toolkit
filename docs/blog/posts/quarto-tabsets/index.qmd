@@ -1,0 +1,39 @@
+---
+title: Quarto Tabsets
+description: Creating tabsets with Quarto
+date: 2023-07-03
+author: Caleb Grant
+categories: [Quarto]
+---
+
+:::{.panel-tabset}
+
+## Python
+
+**Markup**:
+
+    ```{{py}}
+    print("Hello World")
+    ```
+
+**Output**:
+
+```py
+print("Hello World")
+```
+
+## JavaScript
+
+**Markup**:
+
+    ```{{js}}
+    console.log("Hello World");
+    ```
+
+**Output**:
+
+```js
+console.log("Hello World");
+```
+
+:::
