@@ -1,9 +1,0 @@
----
-title: Creating a Blog Post
-description: This is an example of how to create a new blog post.
-date: 2023-06-29
-author: Caleb Grant
-categories: [Quarto, Blog, Example]
----
-
-To add a post, create a copy of `docs/blog/posts/_template`, modify the folder name with the title of the post, then update the `index.qmd` with your content. New posts under `docs/blog/posts` will show up in the [blog listings](/docs/blog/index.qmd) when the site is rendered.

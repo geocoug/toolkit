@@ -1,56 +1,43 @@
 [
   {
-    "listing": "/index.html",
+    "listing": "/resources/index.html",
     "items": [
-      "/docs/resources/bookmarks.html",
-      "/docs/development/code/index.html",
-      "/docs/resources/data-management.html",
-      "/docs/development/index.html",
-      "/docs/resources/recipes.html",
-      "/docs/resources/index.html",
-      "/docs/development/server/index.html",
-      "/docs/resources/workouts.html"
+      "/resources/bookmarks.html",
+      "/resources/data-management.html",
+      "/resources/recipes.html",
+      "/resources/workouts.html"
     ]
   },
   {
-    "listing": "/docs/development/tools/index.html",
+    "listing": "/development/tools/index.html",
     "items": [
-      "/docs/development/tools/docker.html",
-      "/docs/development/tools/git.html",
-      "/docs/development/tools/github.html",
-      "/docs/development/tools/miscellaneous.html",
-      "/docs/development/tools/psql.html"
+      "/development/tools/docker.html",
+      "/development/tools/git.html",
+      "/development/tools/github.html",
+      "/development/tools/miscellaneous.html",
+      "/development/tools/psql.html"
     ]
   },
   {
-    "listing": "/docs/blog/index.html",
+    "listing": "/blog/index.html",
     "items": [
-      "/docs/blog/posts/quarto-tabsets/index.html",
-      "/docs/blog/posts/creating-a-post/index.html",
-      "/docs/blog/posts/accessing-quarto-variables/index.html"
+      "/blog/posts/quarto-tabsets/index.html",
+      "/blog/posts/creating-a-post/index.html",
+      "/blog/posts/accessing-quarto-variables/index.html"
     ]
   },
   {
-    "listing": "/docs/development/code/index.html",
+    "listing": "/development/code/index.html",
     "items": [
-      "/docs/development/code/bash.html",
-      "/docs/development/code/cmd.html",
-      "/docs/development/code/html.html",
-      "/docs/development/code/javascript.html",
-      "/docs/development/code/powershell.html",
-      "/docs/development/code/python.html",
-      "/docs/development/code/r.html",
-      "/docs/development/code/regex.html",
-      "/docs/development/code/sql.html"
-    ]
-  },
-  {
-    "listing": "/docs/resources/index.html",
-    "items": [
-      "/docs/resources/bookmarks.html",
-      "/docs/resources/data-management.html",
-      "/docs/resources/recipes.html",
-      "/docs/resources/workouts.html"
+      "/development/code/bash.html",
+      "/development/code/cmd.html",
+      "/development/code/html.html",
+      "/development/code/javascript.html",
+      "/development/code/powershell.html",
+      "/development/code/python.html",
+      "/development/code/r.html",
+      "/development/code/regex.html",
+      "/development/code/sql.html"
     ]
   }
 ]

@@ -1,21 +1,19 @@
 ---
-title: "Welcome"
-pagetitle: "Toolkit"
-listing:
-    type: grid
-    contents: 
-        - "docs/resources/*.qmd"
-        - "docs/development/index.qmd"
-        - "docs/development/code/index.qmd"
-        - "docs/development/server/index.qmd"
-format:
-  html:
-    page-layout: full
+title: Welcome
+pagetitle: Toolkit
+toc: false
+about:
+  template: jolla
+  image: https://avatars.githubusercontent.com/u/48339519?v=4
+  links:
+    - icon: linkedin
+      text: LinkedIn
+      href: https://linkedin.com/in/c-grant
+    - icon: github
+      text: Github
+      href: https://github.com/geocoug
 ---
 
-Welcome to [geocoug](https://github.com/geocoug)'s resource toolkit. This site was built using [Quarto](https://quarto.org/).
+My name is Caleb Grant and I have over 6 years of experience in Python, SQL, Web Design, and Data Engineering. My expertise lies in working with environmental data, enabling myself and my colleagues to gain meaningful insights about our planet.
 
-## Quick Links
-
-::: {#listing}
-:::
+This site is designed to be my personal curated toolkit. It is where I store useful information, tools, and code snippets I use on a regular basis.

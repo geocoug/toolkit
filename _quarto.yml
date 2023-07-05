@@ -39,16 +39,11 @@ website:
     collapse-below: lg
     left:
       - text: "Development"
-        href: docs/development/index.qmd
+        href: development/index.qmd
       - text: "Resources"
-        href: docs/resources/index.qmd
+        href: resources/index.qmd
       - text: "Blog"
-        href: docs/blog/index.qmd
-    right:
-      - icon: linkedin
-        href: https://www.linkedin.com/in/c-grant/
-      - icon: github
-        href: https://github.com/geocoug
+        href: blog/index.qmd
 
   sidebar:
     - id: development
@@ -56,27 +51,27 @@ website:
       align: left
       style: "docked"
       contents:
-        - docs/development/index.qmd
-        - auto: "docs/development/*"
+        - development/index.qmd
+        - auto: "development/*"
         - section: "Code"
-          href: docs/development/code/index.qmd
+          href: development/code/index.qmd
           contents:
-            - auto: "docs/development/code/*"
+            - auto: "development/code/*"
         - section: "Tools"
-          href: docs/development/tools/index.qmd
+          href: development/tools/index.qmd
           contents:
-            - auto: "docs/development/tools/*"
+            - auto: "development/tools/*"
         - section: "Server"
-          href: docs/development/server/index.qmd
+          href: development/server/index.qmd
           contents:
-            - auto: "docs/development/server/*"
+            - auto: "development/server/*"
     - id: resources
       collapse-level: 2
       align: left
       style: "docked"
       contents:
-        - docs/resources/index.qmd
-        - auto: "docs/resources/*"
+        - resources/index.qmd
+        - auto: "resources/*"
 
 format:
   html:
