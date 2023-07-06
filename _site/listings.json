@@ -21,7 +21,10 @@
   {
     "listing": "/blog/index.html",
     "items": [
+      "/blog/posts/mounting-a-windows-share/index.html",
       "/blog/posts/quarto-tabsets/index.html",
+      "/blog/posts/git-merge/index.html",
+      "/blog/posts/linux-permissions/index.html",
       "/blog/posts/creating-a-post/index.html",
       "/blog/posts/accessing-quarto-variables/index.html"
     ]

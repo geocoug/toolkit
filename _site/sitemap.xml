@@ -2,126 +2,138 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://toolkit.goecoug.com/resources/workouts.html</loc>
-    <lastmod>2023-07-05T15:17:21.612Z</lastmod>
+    <lastmod>2023-07-06T19:18:58.874Z</lastmod>
   </url>
   <url>
     <loc>http://toolkit.goecoug.com/resources/index.html</loc>
-    <lastmod>2023-07-05T15:17:17.869Z</lastmod>
+    <lastmod>2023-07-06T19:18:55.534Z</lastmod>
   </url>
   <url>
     <loc>http://toolkit.goecoug.com/resources/bookmarks.html</loc>
-    <lastmod>2023-07-05T15:17:14.987Z</lastmod>
+    <lastmod>2023-07-06T19:18:52.829Z</lastmod>
   </url>
   <url>
     <loc>http://toolkit.goecoug.com/development/tools/psql.html</loc>
-    <lastmod>2023-07-05T15:17:14.201Z</lastmod>
+    <lastmod>2023-07-06T19:18:49.494Z</lastmod>
   </url>
   <url>
     <loc>http://toolkit.goecoug.com/development/tools/index.html</loc>
-    <lastmod>2023-07-05T15:17:12.827Z</lastmod>
+    <lastmod>2023-07-06T19:18:48.213Z</lastmod>
   </url>
   <url>
     <loc>http://toolkit.goecoug.com/development/tools/git.html</loc>
-    <lastmod>2023-07-05T15:17:12.092Z</lastmod>
+    <lastmod>2023-07-06T19:18:47.515Z</lastmod>
   </url>
   <url>
     <loc>http://toolkit.goecoug.com/development/server/rstudio-server.html</loc>
-    <lastmod>2023-07-05T15:17:10.803Z</lastmod>
+    <lastmod>2023-07-06T19:18:46.307Z</lastmod>
   </url>
   <url>
     <loc>http://toolkit.goecoug.com/development/server/jupyter-server.html</loc>
-    <lastmod>2023-07-05T15:17:09.959Z</lastmod>
+    <lastmod>2023-07-06T19:18:45.539Z</lastmod>
   </url>
   <url>
     <loc>http://toolkit.goecoug.com/development/index.html</loc>
-    <lastmod>2023-07-05T15:17:08.979Z</lastmod>
+    <lastmod>2023-07-06T19:18:44.589Z</lastmod>
   </url>
   <url>
     <loc>http://toolkit.goecoug.com/development/code/regex.html</loc>
-    <lastmod>2023-07-05T15:17:07.981Z</lastmod>
+    <lastmod>2023-07-06T19:18:43.579Z</lastmod>
   </url>
   <url>
     <loc>http://toolkit.goecoug.com/development/code/python.html</loc>
-    <lastmod>2023-07-05T15:17:06.647Z</lastmod>
+    <lastmod>2023-07-06T19:18:42.312Z</lastmod>
   </url>
   <url>
     <loc>http://toolkit.goecoug.com/development/code/javascript.html</loc>
-    <lastmod>2023-07-05T15:17:04.355Z</lastmod>
+    <lastmod>2023-07-06T19:18:40.125Z</lastmod>
   </url>
   <url>
     <loc>http://toolkit.goecoug.com/development/code/html.html</loc>
-    <lastmod>2023-07-05T15:17:03.390Z</lastmod>
+    <lastmod>2023-07-06T19:18:39.234Z</lastmod>
   </url>
   <url>
     <loc>http://toolkit.goecoug.com/development/code/bash.html</loc>
-    <lastmod>2023-07-05T15:17:02.426Z</lastmod>
+    <lastmod>2023-07-06T19:18:38.352Z</lastmod>
   </url>
   <url>
-    <loc>http://toolkit.goecoug.com/blog/posts/creating-a-post/index.html</loc>
-    <lastmod>2023-07-05T15:17:01.220Z</lastmod>
+    <loc>http://toolkit.goecoug.com/blog/posts/mounting-a-windows-share/index.html</loc>
+    <lastmod>2023-07-06T19:18:37.269Z</lastmod>
   </url>
   <url>
-    <loc>http://toolkit.goecoug.com/blog/index.html</loc>
-    <lastmod>2023-07-05T15:17:00.459Z</lastmod>
+    <loc>http://toolkit.goecoug.com/blog/posts/git-merge/index.html</loc>
+    <lastmod>2023-07-06T19:18:36.333Z</lastmod>
   </url>
   <url>
     <loc>http://toolkit.goecoug.com/blog/posts/accessing-quarto-variables/index.html</loc>
-    <lastmod>2023-07-05T15:17:00.847Z</lastmod>
+    <lastmod>2023-07-06T19:18:35.686Z</lastmod>
+  </url>
+  <url>
+    <loc>http://toolkit.goecoug.com/blog/index.html</loc>
+    <lastmod>2023-07-06T19:18:35.345Z</lastmod>
+  </url>
+  <url>
+    <loc>http://toolkit.goecoug.com/blog/posts/creating-a-post/index.html</loc>
+    <lastmod>2023-07-06T19:18:35.990Z</lastmod>
+  </url>
+  <url>
+    <loc>http://toolkit.goecoug.com/blog/posts/linux-permissions/index.html</loc>
+    <lastmod>2023-07-06T19:18:36.700Z</lastmod>
   </url>
   <url>
     <loc>http://toolkit.goecoug.com/blog/posts/quarto-tabsets/index.html</loc>
-    <lastmod>2023-07-05T15:17:01.866Z</lastmod>
+    <lastmod>2023-07-06T19:18:37.809Z</lastmod>
   </url>
   <url>
     <loc>http://toolkit.goecoug.com/development/code/cmd.html</loc>
-    <lastmod>2023-07-05T15:17:03.029Z</lastmod>
+    <lastmod>2023-07-06T19:18:38.906Z</lastmod>
   </url>
   <url>
     <loc>http://toolkit.goecoug.com/development/code/index.html</loc>
-    <lastmod>2023-07-05T15:17:04.029Z</lastmod>
+    <lastmod>2023-07-06T19:18:39.818Z</lastmod>
   </url>
   <url>
     <loc>http://toolkit.goecoug.com/development/code/powershell.html</loc>
-    <lastmod>2023-07-05T15:17:04.702Z</lastmod>
+    <lastmod>2023-07-06T19:18:40.429Z</lastmod>
   </url>
   <url>
     <loc>http://toolkit.goecoug.com/development/code/r.html</loc>
-    <lastmod>2023-07-05T15:17:07.394Z</lastmod>
+    <lastmod>2023-07-06T19:18:43.054Z</lastmod>
   </url>
   <url>
     <loc>http://toolkit.goecoug.com/development/code/sql.html</loc>
-    <lastmod>2023-07-05T15:17:08.628Z</lastmod>
+    <lastmod>2023-07-06T19:18:44.168Z</lastmod>
   </url>
   <url>
     <loc>http://toolkit.goecoug.com/development/server/index.html</loc>
-    <lastmod>2023-07-05T15:17:09.420Z</lastmod>
+    <lastmod>2023-07-06T19:18:45.027Z</lastmod>
   </url>
   <url>
     <loc>http://toolkit.goecoug.com/development/server/python-web-app.html</loc>
-    <lastmod>2023-07-05T15:17:10.431Z</lastmod>
+    <lastmod>2023-07-06T19:18:45.991Z</lastmod>
   </url>
   <url>
     <loc>http://toolkit.goecoug.com/development/tools/docker.html</loc>
-    <lastmod>2023-07-05T15:17:11.575Z</lastmod>
+    <lastmod>2023-07-06T19:18:47.052Z</lastmod>
   </url>
   <url>
     <loc>http://toolkit.goecoug.com/development/tools/github.html</loc>
-    <lastmod>2023-07-05T15:17:12.436Z</lastmod>
+    <lastmod>2023-07-06T19:18:47.828Z</lastmod>
   </url>
   <url>
     <loc>http://toolkit.goecoug.com/development/tools/miscellaneous.html</loc>
-    <lastmod>2023-07-05T15:17:13.175Z</lastmod>
+    <lastmod>2023-07-06T19:18:48.520Z</lastmod>
   </url>
   <url>
     <loc>http://toolkit.goecoug.com/index.html</loc>
-    <lastmod>2023-07-05T15:17:14.562Z</lastmod>
+    <lastmod>2023-07-06T19:18:52.454Z</lastmod>
   </url>
   <url>
     <loc>http://toolkit.goecoug.com/resources/data-management.html</loc>
-    <lastmod>2023-07-05T15:17:17.439Z</lastmod>
+    <lastmod>2023-07-06T19:18:55.107Z</lastmod>
   </url>
   <url>
     <loc>http://toolkit.goecoug.com/resources/recipes.html</loc>
-    <lastmod>2023-07-05T15:17:18.539Z</lastmod>
+    <lastmod>2023-07-06T19:18:56.111Z</lastmod>
   </url>
 </urlset>

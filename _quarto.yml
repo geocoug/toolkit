@@ -38,11 +38,14 @@ website:
     logo: /static/logo.svg
     collapse-below: lg
     left:
-      - text: "Development"
+      - icon: code-slash
+        text: "Development"
         href: development/index.qmd
-      - text: "Resources"
+      - icon: tools
+        text: "Resources"
         href: resources/index.qmd
-      - text: "Blog"
+      - icon: rss
+        text: "Blog"
         href: blog/index.qmd
 
   sidebar:

@@ -25,7 +25,7 @@
     "href": "resources/index.html",
     "title": "Resources",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nTitle\n\n\nDescription\n\n\nReading Time\n\n\n\n\n\n\n\n\n\nBookmarks\n\n\nBookmarks to miscellaneous sites.\n\n\n1 min\n\n\n\n\n\n\n\nData Management\n\n\nData management guidelines and resources\n\n\n23 min\n\n\n\n\n\n\n\nRecipes\n\n\nRecipies\n\n\n5 min\n\n\n\n\n\n\n\nWorkouts\n\n\nWorkouts and routines\n\n\n1 min\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Bookmarks\n\n\n1 min\n\n\nBookmarks to miscellaneous sites.\n\n\n\n\n\n\n\n\n\n\n\n\n\nData Management\n\n\n23 min\n\n\nData management guidelines and resources\n\n\n\n\n\n\n\n\n\n\n\n\n\nRecipes\n\n\n5 min\n\n\nRecipies\n\n\n\n\n\n\n\n\n\n\n\n\n\nWorkouts\n\n\n1 min\n\n\nWorkouts and routines\n\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "resources/bookmarks.html",
@@ -109,7 +109,14 @@
     "href": "development/index.html",
     "title": "Development",
     "section": "",
-    "text": "Note\n\n\n\nTBD\n\n\n\n\n\n Back to top"
+    "text": "General coding best practices are a set of guidelines and recommendations that help developers write clean, efficient, and maintainable code. While specific practices may vary depending on the programming language and the project’s requirements, here are some general coding best practices:\n\nConsistent and meaningful naming: Use descriptive names for variables, functions, classes, and other entities to make the code self-explanatory. Maintain consistency in naming conventions throughout the codebase.\nCode readability: Write code that is easy to read and understand. Use proper indentation, spacing, and formatting. Add comments to explain complex logic or important details.\nModular and reusable code: Break down the code into smaller, logical modules or functions that perform specific tasks. This improves code maintainability, readability, and allows for code reuse.\nDon’t repeat yourself (DRY): Avoid duplicating code. Instead, create reusable functions or abstractions to eliminate redundancy. This reduces the chances of introducing bugs and makes code maintenance easier.\nKeep functions and methods small: Aim for small, focused functions or methods that perform a single task. This improves code readability, testability, and makes it easier to reason about the behavior of the code.\nFollow the Single Responsibility Principle (SRP): Each module, class, or function should have a single responsibility. Separating concerns helps in maintaining and modifying code without impacting other parts of the system.\nError handling and validation: Implement proper error handling and input validation to make the code more robust. Validate user inputs, handle exceptions gracefully, and provide meaningful error messages.\nUse version control: Utilize a version control system (e.g., Git) to track changes to the codebase, collaborate with others, and easily revert or review code changes when needed.\nCode reviews: Encourage peer code reviews to catch bugs, ensure adherence to best practices, and maintain code quality. Reviews provide an opportunity to share knowledge and improve the overall quality of the codebase.\nTesting: Write automated tests to validate the behavior and correctness of the code. Unit tests, integration tests, and other testing techniques help catch bugs early, ensure code stability, and facilitate refactoring.\nPerformance optimization: Optimize code for performance when necessary. Identify bottlenecks, use appropriate data structures and algorithms, and minimize unnecessary computations or operations.\nSecurity considerations: Follow security best practices to protect against common vulnerabilities. Sanitize user inputs, use prepared statements or parameterized queries to prevent SQL injection, and encrypt sensitive data.\nDocumentation: Document the code to provide insights into its functionality, usage, and any specific requirements. Use inline comments, README files, and documentation tools to make it easier for others to understand and use the code.\nKeep up with best practices: Stay updated with the latest best practices, coding standards, and programming language conventions. Regularly learn and improve your coding skills to write better code over time.\n\nRemember that best practices may vary depending on the specific programming language, domain, and project requirements. It’s important to adapt and adjust these practices as needed for each situation."
+  },
+  {
+    "objectID": "development/index.html#best-practices",
+    "href": "development/index.html#best-practices",
+    "title": "Development",
+    "section": "",
+    "text": "General coding best practices are a set of guidelines and recommendations that help developers write clean, efficient, and maintainable code. While specific practices may vary depending on the programming language and the project’s requirements, here are some general coding best practices:\n\nConsistent and meaningful naming: Use descriptive names for variables, functions, classes, and other entities to make the code self-explanatory. Maintain consistency in naming conventions throughout the codebase.\nCode readability: Write code that is easy to read and understand. Use proper indentation, spacing, and formatting. Add comments to explain complex logic or important details.\nModular and reusable code: Break down the code into smaller, logical modules or functions that perform specific tasks. This improves code maintainability, readability, and allows for code reuse.\nDon’t repeat yourself (DRY): Avoid duplicating code. Instead, create reusable functions or abstractions to eliminate redundancy. This reduces the chances of introducing bugs and makes code maintenance easier.\nKeep functions and methods small: Aim for small, focused functions or methods that perform a single task. This improves code readability, testability, and makes it easier to reason about the behavior of the code.\nFollow the Single Responsibility Principle (SRP): Each module, class, or function should have a single responsibility. Separating concerns helps in maintaining and modifying code without impacting other parts of the system.\nError handling and validation: Implement proper error handling and input validation to make the code more robust. Validate user inputs, handle exceptions gracefully, and provide meaningful error messages.\nUse version control: Utilize a version control system (e.g., Git) to track changes to the codebase, collaborate with others, and easily revert or review code changes when needed.\nCode reviews: Encourage peer code reviews to catch bugs, ensure adherence to best practices, and maintain code quality. Reviews provide an opportunity to share knowledge and improve the overall quality of the codebase.\nTesting: Write automated tests to validate the behavior and correctness of the code. Unit tests, integration tests, and other testing techniques help catch bugs early, ensure code stability, and facilitate refactoring.\nPerformance optimization: Optimize code for performance when necessary. Identify bottlenecks, use appropriate data structures and algorithms, and minimize unnecessary computations or operations.\nSecurity considerations: Follow security best practices to protect against common vulnerabilities. Sanitize user inputs, use prepared statements or parameterized queries to prevent SQL injection, and encrypt sensitive data.\nDocumentation: Document the code to provide insights into its functionality, usage, and any specific requirements. Use inline comments, README files, and documentation tools to make it easier for others to understand and use the code.\nKeep up with best practices: Stay updated with the latest best practices, coding standards, and programming language conventions. Regularly learn and improve your coding skills to write better code over time.\n\nRemember that best practices may vary depending on the specific programming language, domain, and project requirements. It’s important to adapt and adjust these practices as needed for each situation."
   },
   {
     "objectID": "development/code/regex.html",
@@ -245,18 +252,32 @@
     "text": "Generating an SSH Key\ncd ~/.ssh\n# Generate the Key\nssh-keygen -t rsa -b 4096 -C \"your_email@example.com\"\n# Copy th ekey\ncat gh_actions.pub &gt;&gt; ~/.ssh/authorized_keys\n# Copy the key:\ncat ~/.ssh/gh_actions"
   },
   {
-    "objectID": "blog/posts/creating-a-post/index.html",
-    "href": "blog/posts/creating-a-post/index.html",
-    "title": "Creating a Blog Post",
+    "objectID": "blog/posts/mounting-a-windows-share/index.html",
+    "href": "blog/posts/mounting-a-windows-share/index.html",
+    "title": "Mounting a Windows Share",
     "section": "",
-    "text": "To add a post, create a copy of blog/posts/_template, modify the folder name with the title of the post, then update the index.qmd with your content. New posts under blog/posts will show up in the blog listings when the site is rendered.\n\n\n\n Back to top"
+    "text": "The command below can be used to create a temporary mount point although the mount will disassociate on next server reboot.\nmkdir /home/&lt;user&gt;/mnt/DataManagement && \\\nsudo mount -t cifs //10.10.145.5/DataManagement /home/&lt;user&gt;/mnt/DataManagement -o username=&lt;user&gt;,password=\"\",uid=1000"
   },
   {
-    "objectID": "blog/index.html",
-    "href": "blog/index.html",
-    "title": "Blog",
+    "objectID": "blog/posts/mounting-a-windows-share/index.html#quick-reference",
+    "href": "blog/posts/mounting-a-windows-share/index.html#quick-reference",
+    "title": "Mounting a Windows Share",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nDescription\n\n\nAuthor\n\n\nReading Time\n\n\nCategories\n\n\n\n\n\n\n\n\n\nJul 3, 2023\n\n\nQuarto Tabsets\n\n\nCreating tabsets with Quarto\n\n\nCaleb Grant\n\n\n1 min\n\n\nQuarto\n\n\n\n\n\n\n\nJun 29, 2023\n\n\nCreating a Blog Post\n\n\nThis is an example of how to create a new blog post.\n\n\nCaleb Grant\n\n\n1 min\n\n\nQuarto,Blog,Example\n\n\n\n\n\n\n\nJun 15, 2023\n\n\nAccessing Quarto Variables\n\n\nAccess quarto variables in a document.\n\n\nCaleb Grant\n\n\n1 min\n\n\nQuarto,Variables\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "The command below can be used to create a temporary mount point although the mount will disassociate on next server reboot.\nmkdir /home/&lt;user&gt;/mnt/DataManagement && \\\nsudo mount -t cifs //10.10.145.5/DataManagement /home/&lt;user&gt;/mnt/DataManagement -o username=&lt;user&gt;,password=\"\",uid=1000"
+  },
+  {
+    "objectID": "blog/posts/mounting-a-windows-share/index.html#persistent-mounts",
+    "href": "blog/posts/mounting-a-windows-share/index.html#persistent-mounts",
+    "title": "Mounting a Windows Share",
+    "section": "Persistent Mounts",
+    "text": "Persistent Mounts\n\nCreate a mount point to a Windows share name (e.g. Q): sudo mkdir /mnt/share/Q\nAppend the following similar line to /etc/fstab– to associate the mount automatically upon machine boot:\n//192.168.50.19/Transfer /mnt/share/Q cifs credentials=/home/DatamanBU/.smbpasswd,uid=1011,gid=1005,dir_mode=0775,file_mode=0775,rw 0 0\nNotes:\n\nuid=1011: mount as user username. Find UID with id -u &lt;username&gt;\ngid=1005: mount as group datamgrs\ndir_mode=0775, file_mode=0775: readable/writeable by any users that are members of datamgrs group\nThe credentials file /home/DatamanBU/.smpbasswd must already exist (or be created) by root. It contains 2 lines:\nusername=DatamanBU\npassword=password\nMake the credentials file only readable by root: sudo chmod 700 /home/DatamanBU/.smbpasswd\n\nAssociate the mount immediately: sudo mount -a -v -t cifs"
+  },
+  {
+    "objectID": "blog/posts/git-merge/index.html",
+    "href": "blog/posts/git-merge/index.html",
+    "title": "Git Merge",
+    "section": "",
+    "text": "The steps below can be used to merge two branches on your local machine. The braches used in this example are:\n\nmain: The authoritative or “production” code lives in this branch.\ndev: This branch is split from the main branch and a new feature or update is coded with the intent to merge changes back into the main branch.\n\n\nPull main and dev branches so local repo is up to date with the remote.\n\ngit checkout main\ngit pull origin main\ngit checkout dev\ngit pull origin dev\n\nCheckout the main branch so we can merge the dev branch into main\n\ngit checkout main\ngit merge dev\n\n\nCheck the branch status: git status\n\nEvaluate the two files with a conflict (ie. .gitignore and requirements.txt) and reconcile issues, then git add when ready.\nCommit the changes: git commit -m \"merge @tnelson-integral dev branch with main\"\nPush changes to the remote on GitHub: git push origin main\nCheck out the dev branch locally and pull the main branch changes into it so dev can be up-to-date with main\n\ngit checkout dev\ngit pull origin main\ngit push origin dev\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "blog/posts/accessing-quarto-variables/index.html",
@@ -264,6 +285,41 @@
     "title": "Accessing Quarto Variables",
     "section": "",
     "text": "You can access dynamic variables within documents, which can be useful for externalizing content that varies depending on context. As an example, you can reference file metadata using the syntax {&lt; meta title &gt;}, which would include the title of this article: Accessing Quarto Variables.\nIsn’t that cool? \n\n\n\n Back to top"
+  },
+  {
+    "objectID": "blog/index.html",
+    "href": "blog/index.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nDescription\n\n\nAuthor\n\n\nReading Time\n\n\nCategories\n\n\n\n\n\n\n\n\n\nJul 5, 2023\n\n\nMounting a Windows Share\n\n\nMount a windows share drive to a Linux machine\n\n\nCaleb Grant\n\n\n2 min\n\n\nLinux\n\n\n\n\n\n\n\nJul 3, 2023\n\n\nQuarto Tabsets\n\n\nCreating tabsets with Quarto\n\n\nCaleb Grant\n\n\n1 min\n\n\nQuarto\n\n\n\n\n\n\n\nJun 30, 2023\n\n\nGit Merge\n\n\nMerging git branches locally\n\n\nCaleb Grant\n\n\n2 min\n\n\nGit\n\n\n\n\n\n\n\nJun 30, 2023\n\n\nLinux Permissions\n\n\nLinux permission cheatsheet and examples\n\n\nCaleb Grant\n\n\n1 min\n\n\nLinux\n\n\n\n\n\n\n\nJun 29, 2023\n\n\nCreating a Blog Post\n\n\nThis is an example of how to create a new blog post.\n\n\nCaleb Grant\n\n\n1 min\n\n\nQuarto,Blog\n\n\n\n\n\n\n\nJun 15, 2023\n\n\nAccessing Quarto Variables\n\n\nAccess quarto variables in a document.\n\n\nCaleb Grant\n\n\n1 min\n\n\nQuarto,Variables\n\n\n\n\n\n\nNo matching items\n\n\n\n RSS\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "blog/posts/creating-a-post/index.html",
+    "href": "blog/posts/creating-a-post/index.html",
+    "title": "Creating a Blog Post",
+    "section": "",
+    "text": "To add a post, create a copy of blog/posts/_template, modify the folder name with the title of the post, then update the index.qmd with your content. New posts under blog/posts will show up in the blog listings when the site is rendered.\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "blog/posts/linux-permissions/index.html",
+    "href": "blog/posts/linux-permissions/index.html",
+    "title": "Linux Permissions",
+    "section": "",
+    "text": "General: _rwxrwxrwx 1 owner group\n_ | rwx | rwx | rwx = Special | Owner | Group | All Users\n\n\n\n4 | r = Read\n2 | w = Write\n1 | x = Execute\n\n\n\n\n\n0 = ---\n1 = --x\n2 = -w-\n3 = -wx\n4 = r-\n5 = r-x\n6 = rw-\n7 = rwx"
+  },
+  {
+    "objectID": "blog/posts/linux-permissions/index.html#syntax",
+    "href": "blog/posts/linux-permissions/index.html#syntax",
+    "title": "Linux Permissions",
+    "section": "",
+    "text": "General: _rwxrwxrwx 1 owner group\n_ | rwx | rwx | rwx = Special | Owner | Group | All Users\n\n\n\n4 | r = Read\n2 | w = Write\n1 | x = Execute\n\n\n\n\n\n0 = ---\n1 = --x\n2 = -w-\n3 = -wx\n4 = r-\n5 = r-x\n6 = rw-\n7 = rwx"
+  },
+  {
+    "objectID": "blog/posts/linux-permissions/index.html#commands",
+    "href": "blog/posts/linux-permissions/index.html#commands",
+    "title": "Linux Permissions",
+    "section": "Commands",
+    "text": "Commands\nchgrp = Change group\nExample: sudo chgrp -R &lt;group&gt; &lt;folder&gt;\nchown = Change ownership\nExample: sudo chown -R &lt;user&gt;:&lt;group&gt; &lt;file/folder&gt;\nchmod = Change permissions\nExample: sudo chmod -R 774 &lt;file/folder&gt;\nMake new files inherit the group: sudo chmod g+s &lt;folder&gt;\n\nExample\nCreate a shared directory for a group.1. Create a shared directory for users to access: /share\n\nAssign users to a common group (staff): sudo usermod -a -G staff &lt;user&gt;\nVerify user groups: groups &lt;user&gt;\nCreate shared directory and assign permissions:\n\nsudo mkdir /share && \\\nsudo chgrp -R staff /share && \\ # assign group\nsudo chmod -R g+w /share && \\ # permissions\nsudo chmod -R +s /share # inherit permissions for newly created files/folders"
   },
   {
     "objectID": "blog/posts/quarto-tabsets/index.html",
@@ -672,18 +728,25 @@
     "text": "ffmpeg -i file.mov -s 600x400 -pix_fmt rgb24 -r 20 -f gif - | gifsicle --optimize=3 --delay=3 &gt; file.gif"
   },
   {
-    "objectID": "development/tools/miscellaneous.html#utility-functions",
-    "href": "development/tools/miscellaneous.html#utility-functions",
+    "objectID": "development/tools/miscellaneous.html#convert-.mov-to-.gif",
+    "href": "development/tools/miscellaneous.html#convert-.mov-to-.gif",
     "title": "Miscellaneous",
     "section": "",
     "text": "ffmpeg -i file.mov -s 600x400 -pix_fmt rgb24 -r 20 -f gif - | gifsicle --optimize=3 --delay=3 &gt; file.gif"
+  },
+  {
+    "objectID": "development/tools/miscellaneous.html#convert-.svg-to-.ico",
+    "href": "development/tools/miscellaneous.html#convert-.svg-to-.ico",
+    "title": "Miscellaneous",
+    "section": "Convert .SVG to .ICO",
+    "text": "Convert .SVG to .ICO\nUses the imagemagick utility.\nconvert -background none logo.svg -define icon:auto-size favicon.ico"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Welcome",
     "section": "",
-    "text": "My name is Caleb Grant and I have over 6 years of experience in Python, SQL, Web Design, and Data Engineering. My expertise lies in working with environmental data, enabling myself and my colleagues to gain meaningful insights about our planet.\nThis site is designed to be my personal curated toolkit. It is where I store useful information, tools, and code snippets I use on a regular basis.\n\n\n Back to top"
+    "text": "This site is designed to be my personal curated toolkit. It is where I store useful information, tools, and code snippets I use on a regular basis.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "resources/data-management.html",

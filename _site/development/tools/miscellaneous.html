@@ -89,15 +89,18 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../../development/index.html" rel="" target="" aria-current="page">
+    <a class="nav-link active" href="../../development/index.html" rel="" target="" aria-current="page"><i class="bi bi-code-slash" role="img">
+</i> 
  <span class="menu-text">Development</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../resources/index.html" rel="" target="">
+    <a class="nav-link" href="../../resources/index.html" rel="" target=""><i class="bi bi-tools" role="img">
+</i> 
  <span class="menu-text">Resources</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../blog/index.html" rel="" target="">
+    <a class="nav-link" href="../../blog/index.html" rel="" target=""><i class="bi bi-rss" role="img">
+</i> 
  <span class="menu-text">Blog</span></a>
   </li>  
 </ul>
@@ -275,10 +278,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#utility-functions" id="toc-utility-functions" class="nav-link active" data-scroll-target="#utility-functions">Utility Functions</a>
-  <ul class="collapse">
-  <li><a href="#movie-gif" id="toc-movie-gif" class="nav-link" data-scroll-target="#movie-gif">Movie &gt; Gif</a></li>
-  </ul></li>
+  <li><a href="#convert-.mov-to-.gif" id="toc-convert-.mov-to-.gif" class="nav-link active" data-scroll-target="#convert-.mov-to-.gif">Convert .MOV to .GIF</a></li>
+  <li><a href="#convert-.svg-to-.ico" id="toc-convert-.svg-to-.ico" class="nav-link" data-scroll-target="#convert-.svg-to-.ico">Convert .SVG to .ICO</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/geocoug/toolkit/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -302,14 +303,16 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="utility-functions" class="level2">
-<h2 class="anchored" data-anchor-id="utility-functions">Utility Functions</h2>
-<section id="movie-gif" class="level3">
-<h3 class="anchored" data-anchor-id="movie-gif">Movie &gt; Gif</h3>
+<section id="convert-.mov-to-.gif" class="level2">
+<h2 class="anchored" data-anchor-id="convert-.mov-to-.gif">Convert .MOV to .GIF</h2>
 <p><code>ffmpeg -i file.mov -s 600x400 -pix_fmt rgb24 -r 20 -f gif - | gifsicle --optimize=3 --delay=3 &gt; file.gif</code></p>
-
-
 </section>
+<section id="convert-.svg-to-.ico" class="level2">
+<h2 class="anchored" data-anchor-id="convert-.svg-to-.ico">Convert .SVG to .ICO</h2>
+<p>Uses the <a href="https://imagemagick.org/index.php">imagemagick</a> utility.</p>
+<p><code>convert -background none logo.svg -define icon:auto-size favicon.ico</code></p>
+
+
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->

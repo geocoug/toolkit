@@ -1,0 +1,39 @@
+---
+title: Git Merge
+description: Merging git branches locally
+author: Caleb Grant
+date: 2023-06-30
+categories: [Git]
+---
+
+The steps below can be used to merge two branches on your local machine. The braches used in this example are:
+
+* `main`: The authoritative or "production" code lives in this branch.
+* `dev`: This branch is split from the `main` branch and a new feature or update is coded with the intent to merge changes back into the `main` branch.
+
+1. Pull `main` and `dev` branches so local repo is up to date with the remote.
+    1. `git checkout main`
+    1. `git pull origin main`
+    1. `git checkout dev`
+    1. `git pull origin dev`
+
+2. Checkout the main branch so we can merge the `dev` branch into `main`
+    1. `git checkout main`
+    1. `git merge dev`
+
+    ![img](./merge.png)
+
+3. Check the branch status: `git status`
+
+    ![img](./status.png)
+
+4. Evaluate the two files with a conflict (ie. `.gitignore` and `requirements.txt`) and reconcile issues, then `git add` when ready.
+
+5. Commit the changes: `git commit -m "merge @tnelson-integral dev branch with main"`
+
+6. Push changes to the remote on GitHub: `git push origin main`
+
+7. Check out the `dev` branch locally and pull the `main` branch changes into it so `dev` can be up-to-date with `main`
+    1. `git checkout dev`
+    1. `git pull origin main`
+    1. `git push origin dev`

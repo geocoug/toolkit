@@ -45,6 +45,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": true,
@@ -68,7 +70,7 @@ ul.task-list li input[type="checkbox"] {
 <script>
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    const listingTargetEl = window.document.querySelector('#listing-blog-listing .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
@@ -81,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+    window['quarto-listings']['listing-blog-listing'] = new List('listing-blog-listing', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -138,15 +140,18 @@ background: #EDF3F9;
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../development/index.html" rel="" target="">
+    <a class="nav-link" href="../development/index.html" rel="" target=""><i class="bi bi-code-slash" role="img">
+</i> 
  <span class="menu-text">Development</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../resources/index.html" rel="" target="">
+    <a class="nav-link" href="../resources/index.html" rel="" target=""><i class="bi bi-tools" role="img">
+</i> 
  <span class="menu-text">Resources</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../blog/index.html" rel="" target="" aria-current="page">
+    <a class="nav-link active" href="../blog/index.html" rel="" target="" aria-current="page"><i class="bi bi-rss" role="img">
+</i> 
  <span class="menu-text">Blog</span></a>
   </li>  
 </ul>
@@ -184,22 +189,18 @@ background: #EDF3F9;
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Blog">Blog <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Example">Example <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Quarto">Quarto <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Variables">Variables <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(6)</span></div><div class="category" data-category="Blog">Blog <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Git">Git <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Linux">Linux <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Quarto">Quarto <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Variables">Variables <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
 
 
 
-
-
-
-
-<div class="quarto-listing quarto-listing-container-table" id="listing-listing">
+<div id="listing-blog-listing" class="quarto-listing quarto-listing-container-table">
 <div class="listing-actions-group">
    <div class="input-group input-group-sm quarto-listing-sort">
      <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-     <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+     <select id="listing-blog-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-blog-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
        <option value="" disabled="" selected="" hidden="">Order By</option>
        <option value="index" data-direction="asc">Default</option>
          <option value="listing-date-sort" data-direction="asc">
@@ -248,9 +249,32 @@ Categories
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-categories="Quarto" data-listing-date-sort="1688367600000" data-listing-file-modified-sort="1688407516289" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Quarto Tabsets" data-listing-filename-sort="index.qmd">
+<tr data-index="0" data-categories="Linux" data-listing-date-sort="1688540400000" data-listing-file-modified-sort="1688671110402" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-title-sort="Mounting a Windows Share" data-listing-filename-sort="index.qmd">
 <td>
-<span class="listing-image"><img src="../static/logo-dark.svg" style="height: 40px;"></span>
+<span class="listing-image"><img src="../static/logo.svg" style="height: 40px;"></span>
+</td>
+<td>
+<span class="listing-date">Jul 5, 2023</span>
+</td>
+<td>
+<a href="../blog/posts/mounting-a-windows-share/index.html" class="title listing-title">Mounting a Windows Share</a>
+</td>
+<td>
+<span class="listing-description">Mount a windows share drive to a Linux machine</span>
+</td>
+<td>
+<span class="listing-author">Caleb Grant</span>
+</td>
+<td>
+<span class="listing-reading-time">2 min</span>
+</td>
+<td>
+<span class="listing-categories">Linux</span>
+</td>
+</tr>
+<tr data-index="1" data-categories="Quarto" data-listing-date-sort="1688367600000" data-listing-file-modified-sort="1688407516289" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Quarto Tabsets" data-listing-filename-sort="index.qmd">
+<td>
+<span class="listing-image"><img src="../static/logo.svg" style="height: 40px;"></span>
 </td>
 <td>
 <span class="listing-date">Jul 3, 2023</span>
@@ -271,9 +295,55 @@ Categories
 <span class="listing-categories">Quarto</span>
 </td>
 </tr>
-<tr data-index="1" data-categories="Quarto,Blog,Example" data-listing-date-sort="1688022000000" data-listing-file-modified-sort="1688570216761" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Creating a Blog Post" data-listing-filename-sort="index.qmd">
+<tr data-index="2" data-categories="Git" data-listing-date-sort="1688108400000" data-listing-file-modified-sort="1688605574802" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-title-sort="Git Merge" data-listing-filename-sort="index.qmd">
 <td>
-<span class="listing-image"><img src="../static/logo-dark.svg" style="height: 40px;"></span>
+<span class="listing-image"><img src="../static/logo.svg" style="height: 40px;"></span>
+</td>
+<td>
+<span class="listing-date">Jun 30, 2023</span>
+</td>
+<td>
+<a href="../blog/posts/git-merge/index.html" class="title listing-title">Git Merge</a>
+</td>
+<td>
+<span class="listing-description">Merging git branches locally</span>
+</td>
+<td>
+<span class="listing-author">Caleb Grant</span>
+</td>
+<td>
+<span class="listing-reading-time">2 min</span>
+</td>
+<td>
+<span class="listing-categories">Git</span>
+</td>
+</tr>
+<tr data-index="3" data-categories="Linux" data-listing-date-sort="1688108400000" data-listing-file-modified-sort="1688605569855" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Linux Permissions" data-listing-filename-sort="index.qmd">
+<td>
+<span class="listing-image"><img src="../static/logo.svg" style="height: 40px;"></span>
+</td>
+<td>
+<span class="listing-date">Jun 30, 2023</span>
+</td>
+<td>
+<a href="../blog/posts/linux-permissions/index.html" class="title listing-title">Linux Permissions</a>
+</td>
+<td>
+<span class="listing-description">Linux permission cheatsheet and examples</span>
+</td>
+<td>
+<span class="listing-author">Caleb Grant</span>
+</td>
+<td>
+<span class="listing-reading-time">1 min</span>
+</td>
+<td>
+<span class="listing-categories">Linux</span>
+</td>
+</tr>
+<tr data-index="4" data-categories="Quarto,Blog" data-listing-date-sort="1688022000000" data-listing-file-modified-sort="1688605916031" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Creating a Blog Post" data-listing-filename-sort="index.qmd">
+<td>
+<span class="listing-image"><img src="../static/logo.svg" style="height: 40px;"></span>
 </td>
 <td>
 <span class="listing-date">Jun 29, 2023</span>
@@ -291,12 +361,12 @@ Categories
 <span class="listing-reading-time">1 min</span>
 </td>
 <td>
-<span class="listing-categories">Quarto,Blog,Example</span>
+<span class="listing-categories">Quarto,Blog</span>
 </td>
 </tr>
-<tr data-index="2" data-categories="Quarto,Variables" data-listing-date-sort="1686812400000" data-listing-file-modified-sort="1688060245808" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Accessing Quarto Variables" data-listing-filename-sort="index.qmd">
+<tr data-index="5" data-categories="Quarto,Variables" data-listing-date-sort="1686812400000" data-listing-file-modified-sort="1688060245808" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Accessing Quarto Variables" data-listing-filename-sort="index.qmd">
 <td>
-<span class="listing-image"><img src="../static/logo-dark.svg" style="height: 40px;"></span>
+<span class="listing-image"><img src="../static/logo.svg" style="height: 40px;"></span>
 </td>
 <td>
 <span class="listing-date">Jun 15, 2023</span>
@@ -323,7 +393,15 @@ Categories
 <div class="listing-no-matching d-none">
 No matching items
 </div>
-</div><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+</div>
+<div class="text-center">
+<p><a class="btn btn-outline-primary btn-sm" href="index.xml" role="button"><i class="fa-solid fa-rss" aria-label="rss"></i> RSS</a></p>
+</div>
+
+
+
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

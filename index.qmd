@@ -12,8 +12,53 @@ about:
     - icon: github
       text: Github
       href: https://github.com/geocoug
+    - icon: person-fill
+      text: Portfolio
+      href: https://geocoug.com
 ---
 
-My name is Caleb Grant and I have over 6 years of experience in Python, SQL, Web Design, and Data Engineering. My expertise lies in working with environmental data, enabling myself and my colleagues to gain meaningful insights about our planet.
-
 This site is designed to be my personal curated toolkit. It is where I store useful information, tools, and code snippets I use on a regular basis.
+
+::: {.grid}
+::: {.g-col-2 .d-flex .align-items-center .justify-content-center}
+![](/static/svgs/wsu.svg){fig-align="center" height=80px}
+:::
+::: {.g-col-2 .d-flex .align-items-center .justify-content-center}
+![](/static/svgs/kraken.svg){fig-align="center" height=80px}
+:::
+::: {.g-col-4}
+
+```{python}
+# | echo: false
+# | height: 80px
+from ipyleaflet import (
+    Map,
+    Marker,
+    basemaps,
+    basemap_to_tiles,
+)
+from ipywidgets import Layout
+
+m = Map(
+    basemap=basemap_to_tiles(basemaps.OpenStreetMap.Mapnik),
+    center=(47.169722472687916, -122.60208720946943),
+    zoom=12,
+    layout=Layout(width="100%", height="160px"),
+)
+marker = Marker(
+    location=(47.169722472687916, -122.60208720946943),
+    draggable=False,
+    title="Steilacoon, WA",
+)
+m.add_layer(marker)
+m
+```
+
+:::
+::: {.g-col-2 .d-flex .align-items-center .justify-content-center}
+![](/static/svgs/mariners.svg){fig-align="center" height=80px}
+:::
+::: {.g-col-2 .d-flex .align-items-center .justify-content-center}
+![](/static/svgs/seahawks.svg){fig-align="center" height=100px}
+:::
+:::

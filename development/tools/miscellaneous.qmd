@@ -2,8 +2,12 @@
 title: Miscellaneous
 ---
 
-## Utility Functions
-
-### Movie \> Gif
+## Convert .MOV to .GIF
 
 `ffmpeg -i file.mov -s 600x400 -pix_fmt rgb24 -r 20 -f gif - | gifsicle --optimize=3 --delay=3 > file.gif`
+
+## Convert .SVG to .ICO
+
+Uses the [imagemagick](https://imagemagick.org/index.php) utility.
+
+`convert -background none logo.svg -define icon:auto-size favicon.ico`

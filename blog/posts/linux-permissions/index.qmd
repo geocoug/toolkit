@@ -1,0 +1,61 @@
+---
+title: Linux Permissions
+description: Linux permission cheatsheet and examples
+author: Caleb Grant
+date: 2023-06-30          
+categories: [Linux]
+---
+
+## Syntax
+
+General: `_rwxrwxrwx 1 owner group`
+
+`_ | rwx | rwx | rwx` = Special | Owner | Group | All Users
+
+### Shorthand
+
+- `4` | `r` = Read
+- `2` | `w` = Write
+- `1` | `x` = Execute
+
+### Detailed
+
+- `0` = `---`
+- `1` = `--x`
+- `2` = `-w-`
+- `3` = `-wx`
+- `4` = `r-`
+- `5` = `r-x`
+- `6` = `rw-`
+- `7` = `rwx`
+
+## Commands
+
+`chgrp` = Change group
+
+_Example_: `sudo chgrp -R <group> <folder>`
+
+`chown` = Change ownership
+
+_Example_: `sudo chown -R <user>:<group> <file/folder>`
+
+`chmod` = Change permissions
+
+_Example_: `sudo chmod -R 774 <file/folder>`
+
+Make new files inherit the group: `sudo chmod g+s <folder>`
+
+### Example
+
+Create a shared directory for a group.1. Create a shared directory for users to access: `/share`
+
+1. Assign users to a common group (staff): `sudo usermod -a -G staff <user>`
+2. Verify user groups: `groups <user>`
+3. Create shared directory and assign permissions:
+
+```bash
+sudo mkdir /share && \
+sudo chgrp -R staff /share && \ # assign group
+sudo chmod -R g+w /share && \ # permissions
+sudo chmod -R +s /share # inherit permissions for newly created files/folders
+```

@@ -1,0 +1,45 @@
+---
+title: Mounting a Windows Share
+description: Mount a windows share drive to a Linux machine
+author: Caleb Grant
+date: 2023-07-05
+categories: [Linux]
+format:
+  html:
+    code-overflow: wrap
+    code-line-numbers: false
+---
+
+## Quick Reference
+
+The command below can be used to create a temporary mount point although the mount will disassociate on next server reboot.
+
+```sh
+mkdir /home/<user>/mnt/DataManagement && \
+sudo mount -t cifs //10.10.145.5/DataManagement /home/<user>/mnt/DataManagement -o username=<user>,password="",uid=1000
+```
+  
+## Persistent Mounts
+
+1. Create a mount point to a Windows share name (e.g. Q):  `sudo mkdir /mnt/share/Q`
+2. Append the following similar line to `/etc/fstab`-- to associate the mount automatically upon machine boot:
+
+    ```sh
+    //192.168.50.19/Transfer /mnt/share/Q cifs credentials=/home/DatamanBU/.smbpasswd,uid=1011,gid=1005,dir_mode=0775,file_mode=0775,rw 0 0
+    ```
+  
+    Notes:
+
+    - `uid=1011`: mount as user `username`. Find UID with `id -u <username>`
+    - `gid=1005`: mount as group `datamgrs`
+    - `dir_mode=0775`, `file_mode=0775`: readable/writeable by any users that are members of datamgrs group
+    - The credentials file `/home/DatamanBU/.smpbasswd` must already exist (or be created) by root. It contains 2 lines:
+
+        ```txt
+        username=DatamanBU
+        password=password
+        ```
+
+    - Make the credentials file only readable by root:  `sudo chmod 700 /home/DatamanBU/.smbpasswd`
+
+3. Associate the mount immediately:  `sudo mount -a -v -t cifs`
