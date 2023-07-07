@@ -6,9 +6,8 @@ listing:
   contents: "*.qmd"
   type: grid
   page-size: 10
-  fields: [image, title, description, reading-time]
+  fields: [image, title, description]
   sort: 
-    - "date desc"
     - "title"
   feed: true
 page-layout: full

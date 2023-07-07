@@ -61,7 +61,6 @@ website:
           contents:
             - auto: "development/code/*"
         - section: "Tools"
-          href: development/tools/index.qmd
           contents:
             - auto: "development/tools/*"
         - section: "Server"

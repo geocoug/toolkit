@@ -20,17 +20,18 @@ about:
 This site is designed to be my personal curated toolkit. It is where I store useful information, tools, and code snippets I use on a regular basis.
 
 ::: {.grid}
-::: {.g-col-2 .d-flex .align-items-center .justify-content-center}
-![](/static/svgs/wsu.svg){fig-align="center" height=80px}
+::: {.g-col-md-2 .g-col-6 .d-flex .align-items-center .justify-content-center}
+![](/static/wsu.svg){fig-align="center" height=80px}
 :::
-::: {.g-col-2 .d-flex .align-items-center .justify-content-center}
-![](/static/svgs/kraken.svg){fig-align="center" height=80px}
+::: {.g-col-md-2 .g-col-6 .d-flex .align-items-center .justify-content-center}
+![](/static/kraken.svg){fig-align="center" height=80px}
 :::
-::: {.g-col-4}
+::: {.g-col-md-4 .g-col-12}
 
 ```{python}
 # | echo: false
 # | height: 80px
+# | fig-align: center
 from ipyleaflet import (
     Map,
     Marker,
@@ -55,10 +56,10 @@ m
 ```
 
 :::
-::: {.g-col-2 .d-flex .align-items-center .justify-content-center}
-![](/static/svgs/mariners.svg){fig-align="center" height=80px}
+::: {.g-col-md-2 .g-col-6 .d-flex .align-items-center .justify-content-center}
+![](/static/mariners.svg){fig-align="center" height=80px}
 :::
-::: {.g-col-2 .d-flex .align-items-center .justify-content-center}
-![](/static/svgs/seahawks.svg){fig-align="center" height=100px}
+::: {.g-col-md-2 .g-col-6 .d-flex .align-items-center .justify-content-center}
+![](/static/seahawks.svg){fig-align="center" height=100px}
 :::
 :::

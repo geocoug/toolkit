@@ -187,3 +187,7 @@ Docker builds images top down, so it is best practice to structure the Dockerfil
 **Bind Mounts** - Link container path to host path
 
 Build an image and ***named*** volume (persistent): `docker run -d --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=True -v mysql:/var/lib/mysql --platform linux/amd64 mysql`
+
+## Rebuilding a Compose Service
+
+`docker compose up -d --no-deps --build <service_name>`

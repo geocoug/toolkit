@@ -5,7 +5,7 @@ title: Git
 - <https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners>
 - <https://docs.gitlab.com/ee/gitlab-basics/start-using-git.html>
 
-### Initialize
+## Initialize
 
 1. Launch Git Bash
 2. Navigate to project directory
@@ -14,7 +14,7 @@ title: Git
 5. list files in root: `ls`
 6. check which files git recognizes: `git status`
 
-### Staging
+## Staging
 
 A commit is a record of what files you have changed since the last time you made a commit. Essentially, you make changes to your repo (for example, adding a file or modifying one) and then tell git to put those files into a commit. Commits make up the essence of your project and allow you to go back to the state of a project at any point.
 
@@ -27,11 +27,11 @@ Once you've used the git add command to add all the files you want to the stagin
 1. Add files to the staging environment: `git add filename.extension`
 2. Check staging environment for new files: `git status`
 
-### Commit Locally
+## Commit Locally
 
 `git commit -m "Your message about the commit"`
 
-### Branches
+## Branches
 
 Say you want to make a new feature but are worried about making changes to the main project while developing the feature. This is where git branches come in.
 
@@ -40,53 +40,53 @@ Branches allow you to move back and forth between 'states' of a project. For ins
 1. `git checkout -b <my branch name>`
 2. Show list of branches: `git branch`
 
-### Commit to Github
+## Commit to Github
 
 1. Create new repo on GitHub
 2. `git remote add origin <url produced on github for new repo>`
 3. `git push -u origin [master/main]`
 
-### Push a Branch to Github
+## Push a Branch to Github
 
 `git push origin <my-new-branch>`
 
 You might be wondering what that "origin" word means in the command above. What happens is that when you clone a remote repository to your local machine, git creates an alias for you. In nearly all cases this alias is called "origin." It's essentially shorthand for the remote repository's URL. So, to push your changes to the remote repository, you could've used either the command: git push git\@github.com:git/git.git yourbranchname or git push origin yourbranchname
 
-### Pull Request
+## Pull Request
 
 A pull request (or PR) is a way to alert a repo's owners that you want to make some changes to their code. It allows them to review the code and make sure it looks good before putting your changes on the master branch.
 
-### Get Changes on Github
+## Get Changes on Github
 
 `git pull origin master`
 
 check all new commits: `git log`
 
-### View Differences
+## View Differences
 
 1. run: `git diff`
 
-### Remove a Branch
+## Remove a Branch
 
-#### Locally
+### Locally
 
 `git branch -d <branch_name>`
 
-#### Remote
+### Remote
 
 `git push <remote_name> --delete <branch_name>`
 
-### Remove tracked file/directory
+## Remove tracked file/directory
 
-#### File
+### File
 
 `git rm --cached <file>`
 
-#### Directory
+### Directory
 
 `git rm --cahced -r dir/`
 
-### pre-commit
+## pre-commit
 
 Please make sure to install our [pre-commit](https://pre-commit.com/) hooks into your Git workflow. Pre-commit will help keep our code clean and make sure we are following best practices.
 
@@ -97,7 +97,7 @@ Hooks will run on the current commit snapshot when executing a `git commit`. Pre
 
 See an example [.pre-commit-config.yml](https://github.com/geocoug/python-app-template/blob/main/.pre-commit-config.yaml)
 
-### Merge
+## Merge
 
 The steps below can be used to merge two branches on your local machine. The braches used in this example are:
 

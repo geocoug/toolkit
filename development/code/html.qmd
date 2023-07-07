@@ -6,7 +6,7 @@ image: https://img.icons8.com/?size=512&id=59916&format=png
 
 ## Document Header
 
-Below is an example of a basic document header that includes local [javascript](javascript.qmd) and css document resources, plus hosted [Bootstrap](https://getbootstrap.com/) and [jQuery](https://jquery.com/) libraries.
+Below is an example of a basic document header that includes local javascript and css document resources, plus hosted [Bootstrap](https://getbootstrap.com/) and [jQuery](https://jquery.com/) libraries.
 
 ```html
 <!DOCTYPE html>

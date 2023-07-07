@@ -25,7 +25,7 @@
     "href": "resources/index.html",
     "title": "Resources",
     "section": "",
-    "text": "Bookmarks\n\n\n1 min\n\n\nBookmarks to miscellaneous sites.\n\n\n\n\n\n\n\n\n\n\n\n\n\nData Management\n\n\n23 min\n\n\nData management guidelines and resources\n\n\n\n\n\n\n\n\n\n\n\n\n\nRecipes\n\n\n5 min\n\n\nRecipies\n\n\n\n\n\n\n\n\n\n\n\n\n\nWorkouts\n\n\n1 min\n\n\nWorkouts and routines\n\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Bookmarks\n\n\nBookmarks to miscellaneous sites.\n\n\n\n\n\n\n\n\n\n\n\n\n\nData Management\n\n\nData management guidelines and resources\n\n\n\n\n\n\n\n\n\n\n\n\n\nRecipes\n\n\nRecipies\n\n\n\n\n\n\n\n\n\n\n\n\n\nWorkouts\n\n\nWorkouts and routines\n\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "resources/bookmarks.html",
@@ -77,326 +77,123 @@
     "text": "Cheat sheet\n\n\nCode\nimport pandas as pd\n\nf = \"../../static/development/commands.xlsx\"\n\nt4 = pd.read_excel(f, sheet_name=\"psql-commands\")\nt4.to_html(index=False)\n\n\n\n\n\n\n\n\n\n\nCommand\n\n\n\nDetail\n\n\n\n\n\n\n\n\n\n\n\nsudo -s postgres psql\n\n\n\nConnect to PostgreSQL as admin\n\n\n\n\n\n\n\npostgres=# \\l\n\n\n\nList all databases\n\n\n\n\n\n\n\npostgres=# \\c postgres\n\n\n\nConnect to the database named postgres\n\n\n\n\n\n\n\npostgres=# \\q\n\n\n\nDisconnect\n\n\n\n\n\n\n\npostgres=# -d mydb\n\n\n\nConnecting to database\n\n\n\n\n\n\n\npostgres=# -U john mydb\n\n\n\nConnecting as a specific user\n\n\n\n\n\n\n\npostgres=# -h localhost -p 5432 mydb\n\n\n\nConnecting to a host/port\n\n\n\n\n\n\n\npostgres=# -U admin -h 192.168.1.5 -p 2506 -d mydb\n\n\n\nConnect remote PostgreSQL\n\n\n\n\n\n\n\npostgres=# -W mydb\n\n\n\nForce password\n\n\n\n\n\n\n\npostgres=# -c '\\c postgres' -c '\\dt'\n\n\n\nExecute a SQL query or command\n\n\n\n\n\n\n\npostgres=# -c “\\l+” -H postgres &gt; database.html\n\n\n\nGenerate HTML report\n\n\n\n\n\n\n\npostgres=# -l\n\n\n\nList all databases\n\n\n\n\n\n\n\npostgres=# \\dt\n\n\n\nShow all tables in a database\n\n\n\n\n\n\n\npostgres=# mydb -f file.sql\n\n\n\nExecute commands from a file\n\n\n\n\n\n\n\npostgres=# -V\n\n\n\nPrint the psql version\n\n\n\n\n\n\n\npostgres=# \\df &lt;schema&gt;\n\n\n\nList functions in schema\n\n\n\n\n\n\n\npostgres=# \\du\n\n\n\nShow current user permission\n\n\n\n\n\n\n\npostgres=# \\d &lt;table&gt;\n\n\n\nDescribe table\n\n\n\n\n\n\n\npostgres=# \\d+ &lt;table&gt;\n\n\n\nDescribe table with details\n\n\n\n\n\n\n\npostgres=# \\di\n\n\n\nList indexes\n\n\n\n\n\n\n\npostgres=# \\du\n\n\n\nList roles\n\n\n\n\n\n\n\npostgres=# \\ds\n\n\n\nList sequences\n\n\n\n\n\n\n\npostgres=# \\copy …\n\n\n\nImport/export table\n\n\n\n\n\n\n\npostgres=# \\echo [string]\n\n\n\nPrint string\n\n\n\n\n\n\n\npostgres=# \\i [file]\n\n\n\nExecute file\n\n\n\n\n\n\n\npostgres=# \\o [file]\n\n\n\nExport all results to file\n\n\n\n\n\n\n\n\n\n\n\nExport table to CSV\n\n\\copy table TO '&lt;path&gt;' CSV\n\\copy table(col1,col1) TO '&lt;path&gt;' CSV\n\\copy (SELECT...) TO '&lt;path&gt;' CSV\n\n\n\nBackup\nUse pg_dumpall to backup all databases\n$ pg_dumpall -U postgres &gt; all.sql\nUse pg_dump to backup a database\n$ pg_dump -d mydb -f mydb_backup.sql\n\n-a   Dump only the data, not the schema\n-s   Dump only the schema, no data\n-c   Drop database before recreating\n-C   Create database before restoring\n-t   Dump the named table(s) only\n-F   Format (c: custom, d: directory, t: tar)\n\nUse pg_dump -? to get the full list of options\n\n\nRestore\n$ psql -U user mydb &lt; mydb_backup.sql\n\npg_restore\n$ pg_restore -d mydb mydb_backup.sql -c\n\n-U   Specify a database user\n-c   Drop database before recreating\n-C   Create database before restoring\n-e   Exit if an error has encountered\n-F   Format (c: custom, d: directory, t: tar, p: plain text sql(default))\n\nUse pg_restore -? to get the full list of options\n\n\n\n\n\n Back to top"
   },
   {
-    "objectID": "development/tools/index.html",
-    "href": "development/tools/index.html",
-    "title": "Tools",
+    "objectID": "development/tools/github.html",
+    "href": "development/tools/github.html",
+    "title": "GitHub",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\nDescription\n\n\nReading Time\n\n\n\n\n\n\nDocker\n\n\n\n\n\n4 min\n\n\n\n\nGit\n\n\n\n\n\n5 min\n\n\n\n\nGitHub\n\n\n\n\n\n1 min\n\n\n\n\nMiscellaneous\n\n\n\n\n\n1 min\n\n\n\n\npsql\n\n\n\n\n\n1 min\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Action to push app/site to remote host: https://claritydev.net/blog/automate-deployment-workflow-nextjs-digitalocean-github-actions\n\n\n\n Back to top"
   },
   {
-    "objectID": "development/tools/git.html",
-    "href": "development/tools/git.html",
-    "title": "Git",
+    "objectID": "development/tools/docker.html",
+    "href": "development/tools/docker.html",
+    "title": "Docker",
     "section": "",
-    "text": "https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners\nhttps://docs.gitlab.com/ee/gitlab-basics/start-using-git.html\n\n\nInitialize\n\nLaunch Git Bash\nNavigate to project directory\ninitialize git repository in the folder root: git init\ncreate new file in directory: touch filename.extension\nlist files in root: ls\ncheck which files git recognizes: git status\n\n\n\nStaging\nA commit is a record of what files you have changed since the last time you made a commit. Essentially, you make changes to your repo (for example, adding a file or modifying one) and then tell git to put those files into a commit. Commits make up the essence of your project and allow you to go back to the state of a project at any point.\nSo, how do you tell git which files to put into a commit? This is where the staging environment or index come in. When you make changes to your repo, git notices that a file has changed but won’t do anything with it (like adding it in a commit).\nTo add a file to a commit, you first need to add it to the staging environment. To do this, you can use the git add &lt;filename&gt; command.\nOnce you’ve used the git add command to add all the files you want to the staging environment, you can then tell git to package them into a commit using the git commit command. Note: The staging environment, also called ‘staging’, is the new preferred term for this, but you can also see it referred to as the ‘index’.\n\nAdd files to the staging environment: git add filename.extension\nCheck staging environment for new files: git status\n\n\n\nCommit Locally\ngit commit -m \"Your message about the commit\"\n\n\nBranches\nSay you want to make a new feature but are worried about making changes to the main project while developing the feature. This is where git branches come in.\nBranches allow you to move back and forth between ‘states’ of a project. For instance, if you want to add a new page to your website you can create a new branch just for that page without affecting the main part of the project. Once you’re done with the page, you can merge your changes from your branch into the master branch. When you create a new branch, Git keeps track of which commit your branch ‘branched’ off of, so it knows the history behind all the files.\n\ngit checkout -b &lt;my branch name&gt;\nShow list of branches: git branch\n\n\n\nCommit to Github\n\nCreate new repo on GitHub\ngit remote add origin &lt;url produced on github for new repo&gt;\ngit push -u origin [master/main]\n\n\n\nPush a Branch to Github\ngit push origin &lt;my-new-branch&gt;\nYou might be wondering what that “origin” word means in the command above. What happens is that when you clone a remote repository to your local machine, git creates an alias for you. In nearly all cases this alias is called “origin.” It’s essentially shorthand for the remote repository’s URL. So, to push your changes to the remote repository, you could’ve used either the command: git push git@github.com:git/git.git yourbranchname or git push origin yourbranchname\n\n\nPull Request\nA pull request (or PR) is a way to alert a repo’s owners that you want to make some changes to their code. It allows them to review the code and make sure it looks good before putting your changes on the master branch.\n\n\nGet Changes on Github\ngit pull origin master\ncheck all new commits: git log\n\n\nView Differences\n\nrun: git diff\n\n\n\nRemove a Branch\n\nLocally\ngit branch -d &lt;branch_name&gt;\n\n\nRemote\ngit push &lt;remote_name&gt; --delete &lt;branch_name&gt;\n\n\n\nRemove tracked file/directory\n\nFile\ngit rm --cached &lt;file&gt;\n\n\nDirectory\ngit rm --cahced -r dir/\n\n\n\npre-commit\nPlease make sure to install our pre-commit hooks into your Git workflow. Pre-commit will help keep our code clean and make sure we are following best practices.\n\nInstall pre-commit hooks: python -m pre_commit install --install-hooks\nRun hooks on the entire codebase: python -m pre_commit run --all-files\n\nHooks will run on the current commit snapshot when executing a git commit. Pre-commit hooks allow us to check for potential issues and make sure we are applying standards to our code before pushing to GitHub.\nSee an example .pre-commit-config.yml\n\n\nMerge\nThe steps below can be used to merge two branches on your local machine. The braches used in this example are:\n\nmain: The authoritative or “production” code lives in this branch.\ndev: This branch is split from the main branch and a new feature or update is coded with the intent to merge changes back into the main branch.\n\n\nPull main and dev branches so local repo is up to date with the remote.\n\ngit checkout main\ngit pull origin main\ngit checkout dev\ngit pull origin dev\n\nCheckout the main branch so we can merge the dev branch into main\n\ngit checkout main\ngit merge dev\n\n\nCheck the branch status: git status\n\nEvaluate the two files with a conflict (ie. .gitignore and requirements.txt) and reconcile issues, then git add when ready.\nCommit the changes: git commit -m \"merge @tnelson-integral dev branch with main\"\nPush changes to the remote on GitHub: git push origin main\nCheck out the dev branch locally and pull the main branch changes into it so dev can be up-to-date with main\n\ngit checkout dev\ngit pull origin main\ngit push origin dev\n\n\n\n\n\n\n Back to top"
+    "text": "Steps are pulled from a Digital Ocean tutorial.\n\nUpdate list of packages and install prerequisites.\nsudo apt update && \\\nsudo apt install apt-transport-https ca-certificates curl software-properties-common\nAdd the GPG key for the official Docker repository.\ncurl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -\nAdd the Docker repository to APT sources and update package list from the new repo.\nsudo add-apt-repository \"deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable\"\nMake sure install is pulling from Docker repo instead of default Ubuntu.\napt-cache policy docker-ce\nInstall Docker.\nsudo apt install docker-ce\nCheck that Docker is running.\nsudo systemctl status docker\nExecute Docker commands without sudo.\nsudo usermod -aG docker ${USER} && \\\nsu - ${USER}\nVerify user is now aded to the docker group.\ngroups"
   },
   {
-    "objectID": "development/server/rstudio-server.html",
-    "href": "development/server/rstudio-server.html",
-    "title": "Rstudio Server",
+    "objectID": "development/tools/docker.html#installation",
+    "href": "development/tools/docker.html#installation",
+    "title": "Docker",
     "section": "",
-    "text": "Install:\nwget https://download2.rstudio.org/server/jammy/amd64/rstudio-server-2022.07.2-576-amd64.deb && \\\nsudo gdebi rstudio-server-2022.07.2-576-amd64.deb && \\\nrm rstudio-server-2022.07.2-576-amd64.deb && \\\nsudo adduser rstudio\nApache config\n&lt;VirtualHost *:80&gt;\n    ServerName &lt;DNS ENTRY&gt;\n    ServerSignature Off\n\n    ErrorLog /var/log/apache2/redirect.error.log\n    LogLevel warn\n\n    ProxyPreserveHost On\n    ProxyPass \"/\" \"http://localhost:8787/\"\n    ProxyPassReverse \"/\" \"http://localhost:8787/\"\n\n    RewriteEngine on\n    RewriteCond %{SERVER_NAME} =&lt;DNS ENTRY&gt;\n    RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]\n&lt;/VirtualHost&gt;\n\n&lt;IfModule mod_ssl.c&gt;\n    &lt;VirtualHost *:443&gt;\n        ServerName &lt;DNS ENTRY&gt;\n        ServerSignature Off\n\n        ErrorLog /var/log/apache2/redirect.error.log\n        LogLevel warn\n\n        ProxyPreserveHost On\n        ProxyPass \"/\" \"http://localhost:8787/\"\n        ProxyPassReverse \"/\" \"http://localhost:8787/\"\n\n        SSLCertificateFile /etc/letsencrypt/live/&lt;DNS ENTRY&gt;/fullchain.pem\n        SSLCertificateKeyFile /etc/letsencrypt/live/&lt;DNS ENTRY&gt;/privkey.pem\n        Include /etc/letsencrypt/options-ssl-apache.conf\n    &lt;/VirtualHost&gt;\n&lt;/IfModule&gt;\nGenerate SSL certs\nsudo certbot --apache certonly\nEnable the site\nsudo a2ensite rstudio.conf && \\\nsudo systemctl reload apache2 && \\\nsudo systemctl status apache2\n\n\n\n\n Back to top"
+    "text": "Steps are pulled from a Digital Ocean tutorial.\n\nUpdate list of packages and install prerequisites.\nsudo apt update && \\\nsudo apt install apt-transport-https ca-certificates curl software-properties-common\nAdd the GPG key for the official Docker repository.\ncurl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -\nAdd the Docker repository to APT sources and update package list from the new repo.\nsudo add-apt-repository \"deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable\"\nMake sure install is pulling from Docker repo instead of default Ubuntu.\napt-cache policy docker-ce\nInstall Docker.\nsudo apt install docker-ce\nCheck that Docker is running.\nsudo systemctl status docker\nExecute Docker commands without sudo.\nsudo usermod -aG docker ${USER} && \\\nsu - ${USER}\nVerify user is now aded to the docker group.\ngroups"
   },
   {
-    "objectID": "development/server/jupyter-server.html",
-    "href": "development/server/jupyter-server.html",
-    "title": "Jupyter Server",
-    "section": "",
-    "text": "Create jupyter user\nsudo adduser jupyter && \\\nsudo usermod -a -G staff jupyter\nsudo su jupyter && \\\nInstall Jupyter Lab\nsource /home/jupyter/.venv/bin/activate && \\\npython -m pip install jupyterlab && \\\njupyter-lab --generate-config\nConfigure Jupyter\nc.NotebookApp.ip = \"*\"\nc.NotebookApp.notebook_dir = \"/home/jupyter/notebooks/\"\nc.NotebookApp.open_browser = False\nc.NotebookApp.password = \"\"  # hashed password\nc.NotebookApp.port = 9999\nConfigure Apache:\n&lt;VirtualHost *:80&gt;\n    ServerName &lt;DNS ENTRY&gt;\n    ServerSignature Off\n\n    ErrorLog /var/log/apache2/redirect.error.log\n    LogLevel warn\n\n    ProxyPreserveHost On\n    ProxyPass \"/\" \"http://localhost:9999/\"\n    ProxyPassReverse \"/\" \"http://localhost:9999/\"\n\n    RewriteEngine on\n    RewriteCond %{SERVER_NAME} =&lt;DNS ENTRY&gt;\n    RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]\n&lt;/VirtualHost&gt;\n\n&lt;IfModule mod_ssl.c&gt;\n    &lt;VirtualHost *:443&gt;\n        ServerName &lt;DNS ENTRY&gt;\n        ServerSignature Off\n\n        ErrorLog /var/log/apache2/redirect.error.log\n        LogLevel warn\n\n        ProxyPreserveHost On\n        ProxyPass \"/\" \"http://localhost:9999/\"\n        ProxyPassReverse \"/\" \"http://localhost:9999/\"\n\n    &lt;Location \"/api/kernels/\"&gt;\n        ProxyPass        ws://localhost:9999/api/kernels/\n            ProxyPassReverse ws://localhost:9999/api/kernels/\n    &lt;/Location&gt;\n\n        SSLCertificateFile /etc/letsencrypt/live/&lt;DNS ENTRY&gt;/fullchain.pem\n        SSLCertificateKeyFile /etc/letsencrypt/&lt;DNS ENTRY&gt;/privkey.pem\n        Include /etc/letsencrypt/options-ssl-apache.conf\n    &lt;/VirtualHost&gt;\n&lt;/IfModule&gt;\nEnable Apache modules\nsudo a2enmod proxy\nsudo a2enmod proxy_http\nsudo a2enmod proxy_wstunnel\nGenerate SSL certs\nsudo certbot --apache certonly\nEnable the site\nsudo a2ensite jupyter.conf && \\\nsudo systemctl reload apache2 && \\\nsudo systemctl status apache2\nCreate the Jupyter service: /lib/systemd/system/jupyter.service\n# service name:     jupyter.service\n# path:             /lib/systemd/system/jupyter.service\n\n[Unit]\nDescription=Jupyter Notebook Server\n\n[Service]\nType=simple\nPIDFile=/run/jupyter.pid\nExecStart=/bin/bash -c \"/home/jupyter/.venv/bin/jupyter lab --no-browser\"\nUser=jupyter\nGroup=staff\nWorkingDirectory=/home/jupyter/notebooks\nRestart=always\nRestartSec=30\n\n[Install]\nWantedBy=multi-user.target\nEnable the service\nsudo systemctl daemon-reload && \\\nsudo systemctl start jupyter.service && \\\nsudo service jupyter status\n\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "development/index.html",
-    "href": "development/index.html",
-    "title": "Development",
-    "section": "",
-    "text": "General coding best practices are a set of guidelines and recommendations that help developers write clean, efficient, and maintainable code. While specific practices may vary depending on the programming language and the project’s requirements, here are some general coding best practices:\n\nConsistent and meaningful naming: Use descriptive names for variables, functions, classes, and other entities to make the code self-explanatory. Maintain consistency in naming conventions throughout the codebase.\nCode readability: Write code that is easy to read and understand. Use proper indentation, spacing, and formatting. Add comments to explain complex logic or important details.\nModular and reusable code: Break down the code into smaller, logical modules or functions that perform specific tasks. This improves code maintainability, readability, and allows for code reuse.\nDon’t repeat yourself (DRY): Avoid duplicating code. Instead, create reusable functions or abstractions to eliminate redundancy. This reduces the chances of introducing bugs and makes code maintenance easier.\nKeep functions and methods small: Aim for small, focused functions or methods that perform a single task. This improves code readability, testability, and makes it easier to reason about the behavior of the code.\nFollow the Single Responsibility Principle (SRP): Each module, class, or function should have a single responsibility. Separating concerns helps in maintaining and modifying code without impacting other parts of the system.\nError handling and validation: Implement proper error handling and input validation to make the code more robust. Validate user inputs, handle exceptions gracefully, and provide meaningful error messages.\nUse version control: Utilize a version control system (e.g., Git) to track changes to the codebase, collaborate with others, and easily revert or review code changes when needed.\nCode reviews: Encourage peer code reviews to catch bugs, ensure adherence to best practices, and maintain code quality. Reviews provide an opportunity to share knowledge and improve the overall quality of the codebase.\nTesting: Write automated tests to validate the behavior and correctness of the code. Unit tests, integration tests, and other testing techniques help catch bugs early, ensure code stability, and facilitate refactoring.\nPerformance optimization: Optimize code for performance when necessary. Identify bottlenecks, use appropriate data structures and algorithms, and minimize unnecessary computations or operations.\nSecurity considerations: Follow security best practices to protect against common vulnerabilities. Sanitize user inputs, use prepared statements or parameterized queries to prevent SQL injection, and encrypt sensitive data.\nDocumentation: Document the code to provide insights into its functionality, usage, and any specific requirements. Use inline comments, README files, and documentation tools to make it easier for others to understand and use the code.\nKeep up with best practices: Stay updated with the latest best practices, coding standards, and programming language conventions. Regularly learn and improve your coding skills to write better code over time.\n\nRemember that best practices may vary depending on the specific programming language, domain, and project requirements. It’s important to adapt and adjust these practices as needed for each situation."
-  },
-  {
-    "objectID": "development/index.html#best-practices",
-    "href": "development/index.html#best-practices",
-    "title": "Development",
-    "section": "",
-    "text": "General coding best practices are a set of guidelines and recommendations that help developers write clean, efficient, and maintainable code. While specific practices may vary depending on the programming language and the project’s requirements, here are some general coding best practices:\n\nConsistent and meaningful naming: Use descriptive names for variables, functions, classes, and other entities to make the code self-explanatory. Maintain consistency in naming conventions throughout the codebase.\nCode readability: Write code that is easy to read and understand. Use proper indentation, spacing, and formatting. Add comments to explain complex logic or important details.\nModular and reusable code: Break down the code into smaller, logical modules or functions that perform specific tasks. This improves code maintainability, readability, and allows for code reuse.\nDon’t repeat yourself (DRY): Avoid duplicating code. Instead, create reusable functions or abstractions to eliminate redundancy. This reduces the chances of introducing bugs and makes code maintenance easier.\nKeep functions and methods small: Aim for small, focused functions or methods that perform a single task. This improves code readability, testability, and makes it easier to reason about the behavior of the code.\nFollow the Single Responsibility Principle (SRP): Each module, class, or function should have a single responsibility. Separating concerns helps in maintaining and modifying code without impacting other parts of the system.\nError handling and validation: Implement proper error handling and input validation to make the code more robust. Validate user inputs, handle exceptions gracefully, and provide meaningful error messages.\nUse version control: Utilize a version control system (e.g., Git) to track changes to the codebase, collaborate with others, and easily revert or review code changes when needed.\nCode reviews: Encourage peer code reviews to catch bugs, ensure adherence to best practices, and maintain code quality. Reviews provide an opportunity to share knowledge and improve the overall quality of the codebase.\nTesting: Write automated tests to validate the behavior and correctness of the code. Unit tests, integration tests, and other testing techniques help catch bugs early, ensure code stability, and facilitate refactoring.\nPerformance optimization: Optimize code for performance when necessary. Identify bottlenecks, use appropriate data structures and algorithms, and minimize unnecessary computations or operations.\nSecurity considerations: Follow security best practices to protect against common vulnerabilities. Sanitize user inputs, use prepared statements or parameterized queries to prevent SQL injection, and encrypt sensitive data.\nDocumentation: Document the code to provide insights into its functionality, usage, and any specific requirements. Use inline comments, README files, and documentation tools to make it easier for others to understand and use the code.\nKeep up with best practices: Stay updated with the latest best practices, coding standards, and programming language conventions. Regularly learn and improve your coding skills to write better code over time.\n\nRemember that best practices may vary depending on the specific programming language, domain, and project requirements. It’s important to adapt and adjust these practices as needed for each situation."
-  },
-  {
-    "objectID": "development/code/regex.html",
-    "href": "development/code/regex.html",
-    "title": "Regex",
-    "section": "",
-    "text": "\\[([^\\]]+)\\]\\(([^\\)]+)\\)"
-  },
-  {
-    "objectID": "development/code/regex.html#markdown-link-pattern",
-    "href": "development/code/regex.html#markdown-link-pattern",
-    "title": "Regex",
-    "section": "",
-    "text": "\\[([^\\]]+)\\]\\(([^\\)]+)\\)"
-  },
-  {
-    "objectID": "development/code/python.html",
-    "href": "development/code/python.html",
-    "title": "Python",
-    "section": "",
-    "text": "import glob\nimport os\n\nfor filename in glob.glob(\"./**/*.ext\", recursive=True):\n    new_name = \"-\".join(filename.split(\"_\"))\n    os.rename(filename, new_name)"
-  },
-  {
-    "objectID": "development/code/python.html#batch-file-rename",
-    "href": "development/code/python.html#batch-file-rename",
-    "title": "Python",
-    "section": "",
-    "text": "import glob\nimport os\n\nfor filename in glob.glob(\"./**/*.ext\", recursive=True):\n    new_name = \"-\".join(filename.split(\"_\"))\n    os.rename(filename, new_name)"
-  },
-  {
-    "objectID": "development/code/python.html#logging-basics",
-    "href": "development/code/python.html#logging-basics",
-    "title": "Python",
-    "section": "Logging Basics",
-    "text": "Logging Basics\nimport argparse\nimport logging\nimport os\nfrom datetime import datetime\n\n# Do not specify __name__ to use root log level\nlogger = logging.getLogger(__name__)\nlogger.setLevel(logging.INFO)\nformatter = logging.Formatter(\n    \"%(asctime)s : %(msecs)04d : %(name)s : %(levelname)s : %(message)s\",\n    datefmt=\"%Y-%m-%d %H:%M:%S\",\n)\nlog_file = (\n    f\"{os.path.splitext(__file__)[0]}_{datetime.now().strftime('%Y-%m-%d_%H%M%S')}.log\"\n)\nstream_handler = logging.StreamHandler()\nstream_handler.setFormatter(formatter)\n\n\ndef clparser() -&gt; argparse.ArgumentParser:\n    \"\"\"Create a parser to handle input arguments and displaying a help message.\"\"\"\n    desc_msg = \"\"\"My logging program.\"\"\"\n    parser = argparse.ArgumentParser(description=desc_msg)\n    parser.add_argument(\n        \"-l\",\n        \"--logfile\",\n        action=\"store_true\",\n        help=\"Write log messages to a file.\",\n    )\n    parser.add_argument(\n        \"-v\",\n        \"--verbose\",\n        action=\"store_true\",\n        help=\"Control the amount of information to display.\",\n    )\n    return parser\n\n\nif __name__ == \"__main__\":\n    args = clparser().parse_args()\n    if args.verbose:\n        logger.addHandler(stream_handler)\n    if args.logfile:\n        file_handler = logging.FileHandler(filename=log_file)\n        file_handler.setFormatter(formatter)\n        logger.addHandler(file_handler)\n    logger.info(\"Begin my test module\")"
-  },
-  {
-    "objectID": "development/code/python.html#sending-http-requests",
-    "href": "development/code/python.html#sending-http-requests",
-    "title": "Python",
-    "section": "Sending HTTP Requests",
-    "text": "Sending HTTP Requests\nimport logging\n\nimport requests\n\nlogger = logging.getLogger(__name__)\n\n\ndef send_request(request_type: str, url: str, **kwargs) -&gt; requests.Response:\n    \"\"\"Send an HTTP request.\n\n    Args:\n    ----\n        request_type (str): Accepts \"GET\" or \"POST\"\n        url (str): Request URL\n\n    Returns:\n    -------\n        requests.Response: Request response.\n    \"\"\"\n    valid_methods = (\"GET\", \"POST\")\n    if request_type.upper() not in valid_methods:\n        raise ValueError(f\"Invalid request type. Supported types: {valid_methods}\")\n    try:\n        response = requests.request(request_type.upper(), url, **kwargs)\n        response.raise_for_status()  # Raises an exception if status code &gt;= 400\n        return response\n    except requests.exceptions.RequestException as err:\n        logger.error(f\"{err}. Request type: {request_type}. URL: {url}. Args: {kwargs}\")\n        raise err\n\n# Example GET request\nresponse = send_request(\"GET\", \"https://api.publicapis.org/entries\", timeout=5)\nlogger.info(response.json())\n\n# Example POST request\nresponse = send_request(\"POST\", \"https://someurl.com\", headers={}, timeout=5)\nlogger.info(response.json())"
-  },
-  {
-    "objectID": "development/code/python.html#regular-expressions",
-    "href": "development/code/python.html#regular-expressions",
-    "title": "Python",
-    "section": "Regular Expressions",
-    "text": "Regular Expressions\n\nQuickstart\nRegex101\n\n\nMetaCharacters (Need to be escaped)\n. ^ $ * + ? { } [ ] \\ | ( )\n\n\nCharacters\n. - Any Character Except New Line \\d - Digit (0-9) \\D - Not a Digit (0-9) \\w - Word Character (a-z, A-Z, 0-9, _) \\W - Not a Word Character \\s - Whitespace (space, tab, newline) \\S - Not Whitespace (space, tab, newline)\n\n\nCharacter Classes\n[] - Matches Characters in brackets [^ ] - Matches Characters NOT in brackets [a-z] - Any lowercase character between a and z [A-Z] - Any UPPERCASE character between A and Z\n\n\nQuantifiers\n* - 0 or More + - 1 or More ? - 0 or One {3} - Exact Number {3,4} - Range of Numbers (Minimum, Maximum) {3,} - At least 3\n\n\nAnchors & Boundaries\n\\b - Word Boundary \\B - Not a Word Boundary ^ - Beginning of a String $ - End of a String\n\n\nLogic\n| - Either Or ( ) - Group \\1 - Contents of group 1\n\n\nWhite-space\n\\t - Tab \\r - Carriage return \\n - New line\n\n\nExample\n\n\nCode\nimport re\n\ntext_string = \"\"\"\nHello world\n\n8001234567\n800-321-7654\n900.987.6543\n\nsome.email@email.com\nmycompany@company.net\nwierd-12-address-4@somedomain.blah\n\"\"\"\n\npattern = re.compile(r\"[0-9]{3}[.-]?[0-9]{3}[.-]?[0-9]{4}\")\nmatches = re.finditer(pattern, text_string)\n\nfor match in matches:\n    print(match)\n    print(match.span())\n    print(text_string[match.start() : match.end()])\n\n\n&lt;re.Match object; span=(14, 24), match='8001234567'&gt;\n(14, 24)\n8001234567\n&lt;re.Match object; span=(25, 37), match='800-321-7654'&gt;\n(25, 37)\n800-321-7654\n&lt;re.Match object; span=(38, 50), match='900.987.6543'&gt;\n(38, 50)\n900.987.6543"
-  },
-  {
-    "objectID": "development/code/python.html#oop-basics",
-    "href": "development/code/python.html#oop-basics",
-    "title": "Python",
-    "section": "OOP Basics",
-    "text": "OOP Basics\n\n\nCode\nclass Employee:\n    \"\"\"Create an employee object with relevant attributes.\"\"\"\n\n    annual_raise_pct = 0.04\n    employee_no = 1\n\n    def __init__(self, first_name, last_name, position, years_employed=1):\n        \"\"\"Function called when new object is initiated.\"\"\"\n        self.first_name = first_name\n        self.last_name = last_name\n        self.position = position\n        self.years_employed = years_employed\n        self.employee_number = Employee.employee_no\n        self.email = self.first_name + \".\" + self.last_name + \"@company.com\"\n        self.salary = self.calculate_salary()\n        Employee.employee_no += 1\n\n    def starting_salary(self):\n        \"\"\"Return the starting salary for each position at company\"\"\"\n        if self.position == \"HR\":\n            return 25000\n        elif self.position == \"Management\":\n            return 50000\n        elif self.position == \"Developer\":\n            return 100000\n        elif self.position == \"CEO\":\n            return 200000\n        else:\n            return None\n\n    def calculate_salary(self):\n        salary = self.starting_salary()\n        for year in range(self.years_employed):\n            salary = int(salary + (salary * Employee.annual_raise_pct))\n        return salary\n\n    def __repr__(self):\n        \"\"\"Create representational object string\"\"\"\n        return f\"\"\"Employee(first_name = {self.first_name}, last_name = {self.last_name}, position = {self.position}, years_employed = {self.years_employed})\"\"\"\n\n\ncurrent_employees = [\n    Employee(\"Geo\", \"Coug\", \"Developer\", 6),\n    Employee(\"Jane\", \"Doe\", \"HR\", 4),\n    Employee(\"John\", \"Doe\", \"Management\", 15),\n    Employee(\"Bob\", \"Loblaw\", \"CEO\", 24),\n]\n\nfor e in current_employees:\n    print(f\"Employee Number: {e.employee_number}\")\n    print(e)\n    print(\"Email:\", e.email)\n    print(\"Salary: ${:,}\\n\".format(e.salary))\n\n\nEmployee Number: 1\nEmployee(first_name = Geo, last_name = Coug, position = Developer, years_employed = 6)\nEmail: Geo.Coug@company.com\nSalary: $126,530\n\nEmployee Number: 2\nEmployee(first_name = Jane, last_name = Doe, position = HR, years_employed = 4)\nEmail: Jane.Doe@company.com\nSalary: $29,245\n\nEmployee Number: 3\nEmployee(first_name = John, last_name = Doe, position = Management, years_employed = 15)\nEmail: John.Doe@company.com\nSalary: $90,039\n\nEmployee Number: 4\nEmployee(first_name = Bob, last_name = Loblaw, position = CEO, years_employed = 24)\nEmail: Bob.Loblaw@company.com\nSalary: $512,645"
-  },
-  {
-    "objectID": "development/code/python.html#dbms-data-types",
-    "href": "development/code/python.html#dbms-data-types",
-    "title": "Python",
-    "section": "DBMS Data Types",
-    "text": "DBMS Data Types\n\n\nCode\nimport pandas as pd\n\ndf = pd.read_csv(\"../../static/development/data-types.csv\")\ndf.to_html(index=False)\n\n\n\n\n\n\n\n\n\n\nData Type\n\n\n\nPostgres\n\n\n\nMariaDB\n\n\n\nSQL Server\n\n\n\nFirebird\n\n\n\nMS-Access\n\n\n\nSQLite\n\n\n\n\n\n\n\n\n\n\n\nTimestamp with time zone\n\n\n\n1184.0\n\n\n\nNaN\n\n\n\nNaN\n\n\n\nNaN\n\n\n\nNaN\n\n\n\nNaN\n\n\n\n\n\n\n\nTimestamp\n\n\n\n1184.0\n\n\n\n7\n\n\n\nNaN\n\n\n\ntype ‘datetime.datetime’\n\n\n\nNaN\n\n\n\nNaN\n\n\n\n\n\n\n\nDatetime\n\n\n\nNaN\n\n\n\n12\n\n\n\nclass ‘datetime.datetime’\n\n\n\nNaN\n\n\n\nclass ‘datetime.datetime’\n\n\n\nNaN\n\n\n\n\n\n\n\nDate\n\n\n\n1082.0\n\n\n\n10\n\n\n\nclass ‘datetime.date’\n\n\n\ntype ‘datetime.date’\n\n\n\nclass ‘datetime.datetime’\n\n\n\nNaN\n\n\n\n\n\n\n\nTime\n\n\n\n1083.0\n\n\n\n11\n\n\n\nclass ‘datetime.time’\n\n\n\ntype ‘datetime.time’\n\n\n\nclass ‘datetime.datetime’\n\n\n\nNaN\n\n\n\n\n\n\n\nBoolean\n\n\n\n16.0\n\n\n\n16\n\n\n\nclass ‘bool’\n\n\n\nNaN\n\n\n\nclass ‘bool’\n\n\n\nNaN\n\n\n\n\n\n\n\nSmall integer\n\n\n\n21.0\n\n\n\n1\n\n\n\nclass ‘int’\n\n\n\nNaN\n\n\n\nclass ‘int’\n\n\n\nNaN\n\n\n\n\n\n\n\nInteger\n\n\n\n23.0\n\n\n\n2\n\n\n\nclass ‘int’\n\n\n\ntype ‘int’\n\n\n\nclass ‘int’\n\n\n\nNaN\n\n\n\n\n\n\n\nLong integer\n\n\n\n20.0\n\n\n\n3\n\n\n\nclass ‘int’\n\n\n\ntype ‘long’\n\n\n\nNaN\n\n\n\nNaN\n\n\n\n\n\n\n\nSingle\n\n\n\n701.0\n\n\n\n4\n\n\n\nclass ‘float’\n\n\n\ntype ‘float’\n\n\n\nclass ‘float’\n\n\n\nNaN\n\n\n\n\n\n\n\nDouble precision\n\n\n\n701.0\n\n\n\n5\n\n\n\nclass ‘float’\n\n\n\ntype ‘float’\n\n\n\nclass ‘float’\n\n\n\nNaN\n\n\n\n\n\n\n\nDecimal\n\n\n\n1700.0\n\n\n\n0\n\n\n\nclass ‘decimal.Decimal’\n\n\n\nclass ‘decimal.Decimal’\n\n\n\nNaN\n\n\n\nNaN\n\n\n\n\n\n\n\nCurrency\n\n\n\n790.0\n\n\n\nNaN\n\n\n\nNaN\n\n\n\nclass ‘decimal.Decimal’\n\n\n\nclass ‘decimal.Decimal’\n\n\n\nNaN\n\n\n\n\n\n\n\nCharacter\n\n\n\n1042.0\n\n\n\nNaN\n\n\n\nclass ‘str’\n\n\n\ntype ‘str’\n\n\n\nclass ‘str’\n\n\n\nNaN\n\n\n\n\n\n\n\nCharacter varying\n\n\n\n1043.0\n\n\n\n15\n\n\n\nclass ‘str’\n\n\n\ntype ‘str’\n\n\n\nclass ‘str’\n\n\n\nNaN\n\n\n\n\n\n\n\nText\n\n\n\n25.0\n\n\n\nNaN\n\n\n\nclass ‘str’\n\n\n\ntype ‘str’\n\n\n\nclass ‘str’\n\n\n\nNaN\n\n\n\n\n\n\n\nBinary / BLOB\n\n\n\n17.0\n\n\n\n249,250,251,252\n\n\n\nclass ‘bytearray’\n\n\n\ntype ‘str’\n\n\n\ntype ‘bytearray’\n\n\n\nNaN"
-  },
-  {
-    "objectID": "development/code/python.html#dbms-libraries",
-    "href": "development/code/python.html#dbms-libraries",
-    "title": "Python",
-    "section": "DBMS Libraries",
-    "text": "DBMS Libraries\n\nPostgres: psycopg2\nMariaDB: pymysql\nSQL Server: pyodbc\nFirebird: fdb\nMS-Access: pyodbc\nSQLite: sqlite3"
-  },
-  {
-    "objectID": "development/code/python.html#db-table-dependencies",
-    "href": "development/code/python.html#db-table-dependencies",
-    "title": "Python",
-    "section": "DB Table Dependencies",
-    "text": "DB Table Dependencies\ndef dependency_order(dep_list):\n    rem_tables = list(set([t[0] for t in dep_list] + [t[1] for t in dep_list]))\n    rem_dep = copy.copy(dep_list)\n    sortkey = 1\n    ret_list = []\n    while len(rem_dep) &gt; 0:\n        tbls = [tbl for tbl in rem_tables if tbl not in [dep[0] for dep in rem_dep]]\n        ret_list.extend([(tb, sortkey) for tb in tbls])\n        rem_tables = [tbl for tbl in rem_tables if tbl not in tbls]\n        rem_dep = [dep for dep in rem_dep if dep[1] not in tbls]\n        sortkey += 1\n    if len(rem_tables) &gt; 0:\n        ret_list.extend([(tb, sortkey) for tb in rem_tables])\n    ret_list.sort(cmp=lambda x, y: cmp(x[1], y[1]))\n    return [item[0] for item in ret_list]"
-  },
-  {
-    "objectID": "development/code/python.html#csv-sniffer",
-    "href": "development/code/python.html#csv-sniffer",
-    "title": "Python",
-    "section": "CSV Sniffer",
-    "text": "CSV Sniffer\nimport re\n\nclass CsvDiagError(Exception):\n    def __init__(self, msg):\n        self.value = msg\n\n    def __str__(self):\n        return self.value\n\nclass CsvLine:\n    escchar = \"\\\\\"\n\n    def __init__(self, line_text):\n        self.text = line_text\n        self.delim_counts = {}\n        self.item_errors = []  # A list of error messages.\n\n    def __str__(self):\n        return \"; \".join(\n            [\n                \"Text: &lt;&lt;%s&gt;&gt;\" % self.text,\n                \"Delimiter counts: &lt;&lt;%s&gt;&gt;\"\n                % \", \".join(\n                    [\n                        \"%s: %d\" % (k, self.delim_counts[k])\n                        for k in self.delim_counts.keys()\n                    ]\n                ),\n            ]\n        )\n\n    def count_delim(self, delim):\n        # If the delimiter is a space, consider multiple spaces to be equivalent\n        # to a single delimiter, split on the space(s), and consider the delimiter\n        # count to be one fewer than the items returned.\n        if delim == \" \":\n            self.delim_counts[delim] = max(0, len(re.split(r\" +\", self.text)) - 1)\n        else:\n            self.delim_counts[delim] = self.text.count(delim)\n\n    def delim_count(self, delim):\n        return self.delim_counts[delim]\n\n    def _well_quoted(self, element, qchar):\n        # A well-quoted element has either no quotes, a quote on each end and none\n        # in the middle, or quotes on both ends and every internal quote is either\n        # doubled or escaped.\n        # Returns a tuple of three booleans; the first indicates whether the element is\n        # well-quoted, the second indicates whether the quote character is used\n        # at all, and the third indicates whether the escape character is used.\n        if qchar not in element:\n            return (True, False, False)\n        if len(element) == 0:\n            return (True, False, False)\n        if element[0] == qchar and element[-1] == qchar and qchar not in element[1:-1]:\n            return (True, True, False)\n        # The element has quotes; if it doesn't have one on each end, it is not well-quoted.\n        if not (element[0] == qchar and element[-1] == qchar):\n            return (False, True, False)\n        e = element[1:-1]\n        # If there are no quotes left after removing doubled quotes, this is well-quoted.\n        if qchar not in e.replace(qchar + qchar, \"\"):\n            return (True, True, False)\n        # if there are no quotes left after removing escaped quotes, this is well-quoted.\n        if qchar not in e.replace(self.escchar + qchar, \"\"):\n            return (True, True, True)\n        return (False, True, False)\n\n    def record_format_error(self, pos_no, errmsg):\n        self.item_errors.append(\"%s in position %d.\" % (errmsg, pos_no))\n\n    def items(self, delim, qchar):\n        # Parses the line into a list of items, breaking it at delimiters that are not\n        # within quoted stretches.  (This is a almost CSV parser, for valid delim and qchar,\n        # except that it does not eliminate quote characters or reduce escaped quotes.)\n        self.item_errors = []\n        if qchar is None:\n            if delim is None:\n                return self.text\n            else:\n                if delim == \" \":\n                    return re.split(r\" +\", self.text)\n                else:\n                    return self.text.split(delim)\n        elements = []  # The list of items on the line that will be returned.\n        eat_multiple_delims = delim == \" \"\n        # States of the FSM:\n        # _IN_QUOTED: An opening quote has been seen, but no closing quote encountered.\n        #  Actions / transition:\n        #   quote: save char in escape buffer / _ESCAPED\n        #   esc_char : save char in escape buffer / _ESCAPED\n        #   delimiter: save char in element buffer / _IN_QUOTED\n        #   other: save char in element buffer / _IN_QUOTED\n        # _ESCAPED: An escape character has been seen while _IN_QUOTED (and is in the escape buffer).\n        #  Actions / transitions\n        #   quote: save escape buffer in element buffer, empty escape buffer,\n        #    save char in element buffer / _IN_QUOTED\n        #   delimiter: save escape buffer in element buffer, empty escape buffer,\n        #    save element buffer, empty element buffer / _BETWEEN\n        #   other: save escape buffer in element buffer, empty escape buffer,\n        #    save char in element buffer / _IN_QUOTED\n        # _QUOTE_IN_QUOTED: A quote has been seen while _IN_QUOTED (and is in the escape buffer).\n        #  Actions / transitions\n        #   quote: save escape buffer in element buffer, empty escape buffer,\n        #    save char in element buffer / _IN_QUOTED\n        #   delimiter: save escape buffer in element buffer, empty escape buffer,\n        #    save element buffer, empty element buffer / _DELIMITED\n        #   other: save escape buffer in element buffer, empty escape buffer,\n        #    save char in element buffer / _IN_QUOTED\n        #     (An 'other' character in this position represents a bad format:\n        #     a quote not followed by another quote or a delimiter.)\n        # _IN_UNQUOTED: A non-delimiter, non-quote has been seen.\n        #  Actions / transitions\n        #   quote: save char in element buffer / _IN_UNQUOTED\n        #    (This represents a bad format.)\n        #   delimiter: save element buffer, empty element buffer / _DELIMITED\n        #   other: save char in element buffer / _IN_UNQUOTED\n        # _BETWEEN: Not in an element, and a delimiter not seen.  This is the starting state,\n        #   and the state following a closing quote but before a delimiter is seen.\n        #  Actions / transition:\n        #   quote: save char in element buffer / _IN_QUOTED\n        #   delimiter: save element buffer, empty element buffer / _DELIMITED\n        #    (The element buffer should be empty, representing a null data item.)\n        #   other: save char in element buffer / _IN_UNQUOTED\n        # _DELIMITED: A delimiter has been seen while not in a quoted item.\n        #  Actions / transition:\n        #   quote: save char in element buffer / _IN_QUOTED\n        #   delimiter: if eat_multiple: no action / _DELIMITED\n        #     if not eat_multiple: save element buffer, empty element buffer / _DELIMITED\n        #   other: save char in element buffer / _IN_UNQUOTED\n        # At end of line: save escape buffer in element buffer, save element buffer.  For a well-formed\n        # line, these should be empty, but they may not be.\n        #\n        # Define the state constants, which will also be used as indexes into an execution vector.\n        (\n            _IN_QUOTED,\n            _ESCAPED,\n            _QUOTE_IN_QUOTED,\n            _IN_UNQUOTED,\n            _BETWEEN,\n            _DELIMITED,\n        ) = range(6)\n        #\n        # Because of Python 2.7's scoping rules:\n        # * The escape buffer and current element are defined as mutable objects that will have their\n        #  first elements modified, rather than as string variables.  (Python 2.x does not allow\n        #  modification of a variable in an enclosing scope that is not the global scope, but\n        #  mutable objects like lists can be altered.  Another approach would be to implement this\n        #  as a class and use instance variables.)\n        # * The action functions return the next state rather than assigning it directly to the 'state' variable.\n        esc_buf = [\"\"]\n        current_element = [\"\"]\n\n        def in_quoted():\n            if c == self.escchar:\n                esc_buf[0] = c\n                return _ESCAPED\n            elif c == qchar:\n                esc_buf[0] = c\n                return _QUOTE_IN_QUOTED\n            else:\n                current_element[0] += c\n                return _IN_QUOTED\n\n        def escaped():\n            if c == delim:\n                current_element[0] += esc_buf[0]\n                esc_buf[0] = \"\"\n                elements.append(current_element[0])\n                current_element[0] = \"\"\n                return _BETWEEN\n            else:\n                current_element[0] += esc_buf[0]\n                esc_buf[0] = \"\"\n                current_element[0] += c\n                return _IN_QUOTED\n\n        def quote_in_quoted():\n            if c == qchar:\n                current_element[0] += esc_buf[0]\n                esc_buf[0] = \"\"\n                current_element[0] += c\n                return _IN_QUOTED\n            elif c == delim:\n                current_element[0] += esc_buf[0]\n                esc_buf[0] = \"\"\n                elements.append(current_element[0])\n                current_element[0] = \"\"\n                return _DELIMITED\n            else:\n                current_element[0] += esc_buf[0]\n                esc_buf[0] = \"\"\n                current_element[0] += c\n                self.record_format_error(\n                    i + 1, \"Unexpected character following a closing quote\"\n                )\n                return _IN_QUOTED\n\n        def in_unquoted():\n            if c == delim:\n                elements.append(current_element[0])\n                current_element[0] = \"\"\n                return _DELIMITED\n            else:\n                current_element[0] += c\n                return _IN_UNQUOTED\n\n        def between():\n            if c == qchar:\n                current_element[0] += c\n                return _IN_QUOTED\n            elif c == delim:\n                elements.append(current_element[0])\n                current_element[0] = \"\"\n                return _DELIMITED\n            else:\n                current_element[0] += c\n                return _IN_UNQUOTED\n\n        def delimited():\n            if c == qchar:\n                current_element[0] += c\n                return _IN_QUOTED\n            elif c == delim:\n                if not eat_multiple_delims:\n                    elements.append(current_element[0])\n                    current_element[0] = \"\"\n                return _DELIMITED\n            else:\n                current_element[0] += c\n                return _IN_UNQUOTED\n\n        # Functions in the execution vector must be ordered identically to the\n        # indexes represented by the state constants.\n        exec_vector = [\n            in_quoted,\n            escaped,\n            quote_in_quoted,\n            in_unquoted,\n            between,\n            delimited,\n        ]\n        # Set the starting state.\n        state = _BETWEEN\n        # Process the line of text.\n        for i, c in enumerate(self.text):\n            state = exec_vector[state]()\n        # Process the end-of-line condition.\n        if len(esc_buf[0]) &gt; 0:\n            current_element[0] += esc_buf[0]\n        if len(current_element[0]) &gt; 0:\n            elements.append(current_element[0])\n        return elements\n\n    def well_quoted_line(self, delim, qchar):\n        # Returns a tuple of boolean, int, and boolean, indicating: 1) whether the line is\n        # well-quoted, 2) the number of elements for which the quote character is used,\n        # and 3) whether the escape character is used.\n        wq = [self._well_quoted(el, qchar) for el in self.items(delim, qchar)]\n        return (\n            all([b[0] for b in wq]),\n            sum([b[1] for b in wq]),\n            any([b[2] for b in wq]),\n        )\n\ndef diagnose_delim(linestream, possible_delimiters=None, possible_quotechars=None):\n    # Returns a tuple consisting of the delimiter, quote character, and escape\n    # character for quote characters within elements of a line.  All may be None.\n    # If the escape character is not None, it will be u\"\\\".\n    # Arguments:\n    # * linestream: An iterable file-like object with a 'next()' method that returns lines of text\n    #  as bytes or unicode.\n    # * possible_delimiters: A list of single characters that might be used to separate items on\n    #  a line.  If not specified, the default consists of tab, comma, semicolon, and vertical rule.\n    #  If a space character is included, multiple space characters will be treated as a single\n    #  delimiter--so it's best if there are no missing values on space-delimited lines, though\n    #  that is not necessarily a fatal flaw unless there is a very high fraction of missing values.\n    # * possible_quotechars: A list of single characters that might be used to quote items on\n    #  a line.  If not specified, the default consists of single and double quotes.\n    if not possible_delimiters:\n        possible_delimiters = [\"\\t\", \",\", \";\", \"|\"]\n    if not possible_quotechars:\n        possible_quotechars = ['\"', \"'\"]\n    lines = []\n    for i in range(100):\n        try:\n            ln = linestream.next()\n        except StopIteration:\n            break\n        except:\n            raise\n        while len(ln) &gt; 0 and ln[-1] in (\"\\n\", \"\\r\"):\n            ln = ln[:-1]\n        if len(ln) &gt; 0:\n            lines.append(CsvLine(ln))\n    if len(lines) == 0:\n        raise CsvDiagError(\"CSV diagnosis error: no lines read\")\n    for ln in lines:\n        for d in possible_delimiters:\n            ln.count_delim(d)\n    # For each delimiter, find the minimum number of delimiters found on any line, and the number of lines\n    # with that minimum number\n    delim_stats = {}\n    for d in possible_delimiters:\n        dcounts = [ln.delim_count(d) for ln in lines]\n        min_count = min(dcounts)\n        delim_stats[d] = (min_count, dcounts.count(min_count))\n    # Remove delimiters that were never found.\n    for k in delim_stats.keys():\n        if delim_stats[k][0] == 0:\n            del delim_stats[k]\n\n    def all_well_quoted(delim, qchar):\n        # Returns a tuple of boolean, int, and boolean indicating: 1) whether the line is\n        # well-quoted, 2) the total number of lines and elements for which the quote character\n        # is used, and 3) the escape character used.\n        wq = [l.well_quoted_line(delim, qchar) for l in lines]\n        return (\n            all([b[0] for b in wq]),\n            sum([b[1] for b in wq]),\n            CsvLine.escchar if any([b[2] for b in wq]) else None,\n        )\n\n    def eval_quotes(delim):\n        # Returns a tuple of the form to be returned by 'diagnose_delim()'.\n        ok_quotes = {}\n        for q in possible_quotechars:\n            allwq = all_well_quoted(delim, q)\n            if allwq[0]:\n                ok_quotes[q] = (allwq[1], allwq[2])\n        if len(ok_quotes) == 0:\n            return (delim, None, None)  # No quotes, no escapechar\n        else:\n            max_use = max([v[0] for v in ok_quotes.values()])\n            if max_use == 0:\n                return (delim, None, None)\n            # If multiple quote characters have the same usage, return (arbitrarily) the first one.\n            for q in ok_quotes.keys():\n                if ok_quotes[q][0] == max_use:\n                    return (delim, q, ok_quotes[q][1])\n\n    if len(delim_stats) == 0:\n        # None of the delimiters were found.  Some other delimiter may apply,\n        # or the input may contain a single value on each line.\n        # Identify possible quote characters.\n        return eval_quotes(None)\n    else:\n        if len(delim_stats) &gt; 1:\n            # If one of them is a space, prefer the non-space\n            if \" \" in delim_stats.keys():\n                del delim_stats[\" \"]\n        if len(delim_stats) == 1:\n            return eval_quotes(delim_stats.keys()[0])\n        # Assign weights to the delimiters.  The weight is the square of the minimum number of delimiters\n        # on a line times the number of lines with that delimiter.\n        delim_wts = {}\n        for d in delim_stats.keys():\n            delim_wts[d] = delim_stats[d][0] ** 2 * delim_stats[d][1]\n        # Evaluate quote usage for each delimiter, from most heavily weighted to least.\n        # Return the first good pair where the quote character is used.\n        delim_order = sorted(delim_wts, key=delim_wts.get, reverse=True)\n        for d in delim_order:\n            quote_check = eval_quotes(d)\n            if quote_check[0] and quote_check[1]:\n                return quote_check\n        # There are no delimiters for which quotes are OK.\n        return (delim_order[0], None, None)\n    # Should never get here\n    raise CsvDiagError(\"CSV diagnosis error: an untested set of conditions are present\")"
-  },
-  {
-    "objectID": "development/code/python.html#import-csv-to-a-database",
-    "href": "development/code/python.html#import-csv-to-a-database",
-    "title": "Python",
-    "section": "Import CSV to a Database",
-    "text": "Import CSV to a Database\nclass CsvFile(object):\n    \"\"\"CsvFile class automatically opens a file and creates a CSV reader, reads the first row containing column headers, and stores those headers so that they can be used to construct the INSERT statement.\"\"\"\n    def __init__(self, filename):\n        self.fn = filename\n        self.f = None\n        self.open()\n        self.rdr = csv.reader(self.f)\n        self.headers = next(self.rdr)\n    def open(self):\n        if self.f is None:\n            mode = \"rb\" if sys.version_info &lt; (3,) else \"r\"\n            self.f = open(self.fn, mode)\n    def reader(self):\n        return self.rdr\n    def close(self):\n        self.rdr = None\n        self.f.close()\n        self.f = None\n\n\nclass Database(object):\n    \"\"\"The Database class and subclasses provide a database connection for each type of DBMS, and a method to construct an INSERT statement for a given CsvFile object, using that DBMS's parameter substitution string.  The conn_info argument is a dictionary containing the host name, user name, and password.\"\"\"\n    def __init__(self, conn_info):\n        self.paramstr = '%s'\n        self.conn = None\n    def insert_sql(self, tablename, csvfile):\n        return \"insert into %s (%s) values (%s);\" % (\n                tablename,\n                \",\".join(csvfile.headers),\n                \",\".join([self.paramstr] * len(csvfile.headers))\n                )\n\n\nclass PgDb(Database):\n    def __init__(self, conn_info):\n        self.db_type = \"p\"\n        import psycopg2\n        self.paramstr = \"%s\"\n        connstr = \"host=%(server)s dbname=%(db)s user=%(user)s password=%(pw)s\" % conn_info\n        self.conn = psycopg2.connect(connstr)\n\n    def postgres_copy(csvfile, db):\n        \"\"\"Postgres COPY command. Fastest implementation\"\"\"\n        curs = db.conn.cursor()\n        rf = open(csvfile.fn, \"rt\")\n        # Read and discard headers\n        hdrs = rf.readline()\n        copy_cmd = \"copy copy_test from stdin with (format csv)\"\n        curs.copy_expert(copy_cmd, rf)\n\n    def simple_copy(csvfile, db):\n        \"\"\"Row-by-row reading and writing\"\"\"\n        ins_sql = db.insert_sql(\"copy_test\", csvfile)\n        curs = db.conn.cursor()\n        rdr = csvfile.reader()\n        for line in rdr:\n            curs.execute(ins_sql, clean_line(line))\n        db.conn.commit()\n\n    def buffer1_copy(csvfile, db, buflines):\n        \"\"\"Buffered reading and writing\"\"\"\n        ins_sql = db.insert_sql(\"copy_test\", csvfile)\n        curs = db.conn.cursor()\n        rdr = csvfile.reader()\n        eof = False\n        while True:\n            b = []\n            for j in range(buflines):\n                try:\n                    line = next(rdr)\n                except StopIteration:\n                    eof = True\n                else:\n                    b.append(clean_line(line))\n            if len(b) &gt; 0:\n                curs.executemany(ins_sql, b)\n            if eof:\n                break\n        db.conn.commit()"
-  },
-  {
-    "objectID": "development/code/javascript.html",
-    "href": "development/code/javascript.html",
-    "title": "JavaScript",
-    "section": "",
-    "text": "Back to top"
-  },
-  {
-    "objectID": "development/code/html.html",
-    "href": "development/code/html.html",
-    "title": "HTML",
-    "section": "",
-    "text": "Below is an example of a basic document header that includes local javascript and css document resources, plus hosted Bootstrap and jQuery libraries.\n&lt;!DOCTYPE html&gt;\n&lt;html lang=\"en\" dir=\"ltr\"&gt;\n\n    &lt;head&gt;\n        &lt;meta charset=\"utf-8\" /&gt;\n        &lt;title&gt;Bootstrap 5&lt;/title&gt;\n        &lt;!-- Bootstrap CSS --&gt;\n        &lt;link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC\" crossorigin=\"anonymous\" /&gt;\n        &lt;!-- Local assets --&gt;\n        &lt;link rel=\"stylesheet\" type=\"text/css\" href=\"assets/css/main.css\" /&gt;\n        &lt;!-- Favicon --&gt;\n        &lt;link rel=\"shortcut icon\" type=\"image/x-icon\" href=\"\" /&gt;\n        &lt;!-- jQuery --&gt;\n        &lt;script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js\"&gt;&lt;/script&gt;\n        &lt;!-- Bootstrap JS and Popper --&gt;\n        &lt;script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM\" crossorigin=\"anonymous\"&gt;&lt;/script&gt;\n        &lt;!-- Local scripts --&gt;\n        &lt;script type=\"text/javascript\" src=\"assets/js/main.js\"&gt;&lt;/script&gt;\n    &lt;/head&gt;\n\n    &lt;body&gt;\n    &lt;/body&gt;\n&lt;/html&gt;"
-  },
-  {
-    "objectID": "development/code/html.html#document-header",
-    "href": "development/code/html.html#document-header",
-    "title": "HTML",
-    "section": "",
-    "text": "Below is an example of a basic document header that includes local javascript and css document resources, plus hosted Bootstrap and jQuery libraries.\n&lt;!DOCTYPE html&gt;\n&lt;html lang=\"en\" dir=\"ltr\"&gt;\n\n    &lt;head&gt;\n        &lt;meta charset=\"utf-8\" /&gt;\n        &lt;title&gt;Bootstrap 5&lt;/title&gt;\n        &lt;!-- Bootstrap CSS --&gt;\n        &lt;link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC\" crossorigin=\"anonymous\" /&gt;\n        &lt;!-- Local assets --&gt;\n        &lt;link rel=\"stylesheet\" type=\"text/css\" href=\"assets/css/main.css\" /&gt;\n        &lt;!-- Favicon --&gt;\n        &lt;link rel=\"shortcut icon\" type=\"image/x-icon\" href=\"\" /&gt;\n        &lt;!-- jQuery --&gt;\n        &lt;script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js\"&gt;&lt;/script&gt;\n        &lt;!-- Bootstrap JS and Popper --&gt;\n        &lt;script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM\" crossorigin=\"anonymous\"&gt;&lt;/script&gt;\n        &lt;!-- Local scripts --&gt;\n        &lt;script type=\"text/javascript\" src=\"assets/js/main.js\"&gt;&lt;/script&gt;\n    &lt;/head&gt;\n\n    &lt;body&gt;\n    &lt;/body&gt;\n&lt;/html&gt;"
-  },
-  {
-    "objectID": "development/code/bash.html",
-    "href": "development/code/bash.html",
-    "title": "Bash",
-    "section": "",
-    "text": "sudo mount -t cifs //10.10.145.5/SourceDir /home/&lt;user&gt;/mnt/destination -o username=&lt;user&gt;,password=\"\",uid=1000"
-  },
-  {
-    "objectID": "development/code/bash.html#mount-a-share",
-    "href": "development/code/bash.html#mount-a-share",
-    "title": "Bash",
-    "section": "",
-    "text": "sudo mount -t cifs //10.10.145.5/SourceDir /home/&lt;user&gt;/mnt/destination -o username=&lt;user&gt;,password=\"\",uid=1000"
-  },
-  {
-    "objectID": "development/code/bash.html#generating-an-ssh-key",
-    "href": "development/code/bash.html#generating-an-ssh-key",
-    "title": "Bash",
-    "section": "Generating an SSH Key",
-    "text": "Generating an SSH Key\ncd ~/.ssh\n# Generate the Key\nssh-keygen -t rsa -b 4096 -C \"your_email@example.com\"\n# Copy th ekey\ncat gh_actions.pub &gt;&gt; ~/.ssh/authorized_keys\n# Copy the key:\ncat ~/.ssh/gh_actions"
-  },
-  {
-    "objectID": "blog/posts/mounting-a-windows-share/index.html",
-    "href": "blog/posts/mounting-a-windows-share/index.html",
-    "title": "Mounting a Windows Share",
-    "section": "",
-    "text": "The command below can be used to create a temporary mount point although the mount will disassociate on next server reboot.\nmkdir /home/&lt;user&gt;/mnt/DataManagement && \\\nsudo mount -t cifs //10.10.145.5/DataManagement /home/&lt;user&gt;/mnt/DataManagement -o username=&lt;user&gt;,password=\"\",uid=1000"
-  },
-  {
-    "objectID": "blog/posts/mounting-a-windows-share/index.html#quick-reference",
-    "href": "blog/posts/mounting-a-windows-share/index.html#quick-reference",
-    "title": "Mounting a Windows Share",
-    "section": "",
-    "text": "The command below can be used to create a temporary mount point although the mount will disassociate on next server reboot.\nmkdir /home/&lt;user&gt;/mnt/DataManagement && \\\nsudo mount -t cifs //10.10.145.5/DataManagement /home/&lt;user&gt;/mnt/DataManagement -o username=&lt;user&gt;,password=\"\",uid=1000"
-  },
-  {
-    "objectID": "blog/posts/mounting-a-windows-share/index.html#persistent-mounts",
-    "href": "blog/posts/mounting-a-windows-share/index.html#persistent-mounts",
-    "title": "Mounting a Windows Share",
-    "section": "Persistent Mounts",
-    "text": "Persistent Mounts\n\nCreate a mount point to a Windows share name (e.g. Q): sudo mkdir /mnt/share/Q\nAppend the following similar line to /etc/fstab– to associate the mount automatically upon machine boot:\n//192.168.50.19/Transfer /mnt/share/Q cifs credentials=/home/DatamanBU/.smbpasswd,uid=1011,gid=1005,dir_mode=0775,file_mode=0775,rw 0 0\nNotes:\n\nuid=1011: mount as user username. Find UID with id -u &lt;username&gt;\ngid=1005: mount as group datamgrs\ndir_mode=0775, file_mode=0775: readable/writeable by any users that are members of datamgrs group\nThe credentials file /home/DatamanBU/.smpbasswd must already exist (or be created) by root. It contains 2 lines:\nusername=DatamanBU\npassword=password\nMake the credentials file only readable by root: sudo chmod 700 /home/DatamanBU/.smbpasswd\n\nAssociate the mount immediately: sudo mount -a -v -t cifs"
-  },
-  {
-    "objectID": "blog/posts/git-merge/index.html",
-    "href": "blog/posts/git-merge/index.html",
-    "title": "Git Merge",
-    "section": "",
-    "text": "The steps below can be used to merge two branches on your local machine. The braches used in this example are:\n\nmain: The authoritative or “production” code lives in this branch.\ndev: This branch is split from the main branch and a new feature or update is coded with the intent to merge changes back into the main branch.\n\n\nPull main and dev branches so local repo is up to date with the remote.\n\ngit checkout main\ngit pull origin main\ngit checkout dev\ngit pull origin dev\n\nCheckout the main branch so we can merge the dev branch into main\n\ngit checkout main\ngit merge dev\n\n\nCheck the branch status: git status\n\nEvaluate the two files with a conflict (ie. .gitignore and requirements.txt) and reconcile issues, then git add when ready.\nCommit the changes: git commit -m \"merge @tnelson-integral dev branch with main\"\nPush changes to the remote on GitHub: git push origin main\nCheck out the dev branch locally and pull the main branch changes into it so dev can be up-to-date with main\n\ngit checkout dev\ngit pull origin main\ngit push origin dev\n\n\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "blog/posts/accessing-quarto-variables/index.html",
-    "href": "blog/posts/accessing-quarto-variables/index.html",
-    "title": "Accessing Quarto Variables",
-    "section": "",
-    "text": "You can access dynamic variables within documents, which can be useful for externalizing content that varies depending on context. As an example, you can reference file metadata using the syntax {&lt; meta title &gt;}, which would include the title of this article: Accessing Quarto Variables.\nIsn’t that cool? \n\n\n\n Back to top"
-  },
-  {
-    "objectID": "blog/index.html",
-    "href": "blog/index.html",
-    "title": "Blog",
-    "section": "",
-    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nDescription\n\n\nAuthor\n\n\nReading Time\n\n\nCategories\n\n\n\n\n\n\n\n\n\nJul 5, 2023\n\n\nMounting a Windows Share\n\n\nMount a windows share drive to a Linux machine\n\n\nCaleb Grant\n\n\n2 min\n\n\nLinux\n\n\n\n\n\n\n\nJul 3, 2023\n\n\nQuarto Tabsets\n\n\nCreating tabsets with Quarto\n\n\nCaleb Grant\n\n\n1 min\n\n\nQuarto\n\n\n\n\n\n\n\nJun 30, 2023\n\n\nGit Merge\n\n\nMerging git branches locally\n\n\nCaleb Grant\n\n\n2 min\n\n\nGit\n\n\n\n\n\n\n\nJun 30, 2023\n\n\nLinux Permissions\n\n\nLinux permission cheatsheet and examples\n\n\nCaleb Grant\n\n\n1 min\n\n\nLinux\n\n\n\n\n\n\n\nJun 29, 2023\n\n\nCreating a Blog Post\n\n\nThis is an example of how to create a new blog post.\n\n\nCaleb Grant\n\n\n1 min\n\n\nQuarto,Blog\n\n\n\n\n\n\n\nJun 15, 2023\n\n\nAccessing Quarto Variables\n\n\nAccess quarto variables in a document.\n\n\nCaleb Grant\n\n\n1 min\n\n\nQuarto,Variables\n\n\n\n\n\n\nNo matching items\n\n\n\n RSS\n\n\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "blog/posts/creating-a-post/index.html",
-    "href": "blog/posts/creating-a-post/index.html",
-    "title": "Creating a Blog Post",
-    "section": "",
-    "text": "To add a post, create a copy of blog/posts/_template, modify the folder name with the title of the post, then update the index.qmd with your content. New posts under blog/posts will show up in the blog listings when the site is rendered.\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "blog/posts/linux-permissions/index.html",
-    "href": "blog/posts/linux-permissions/index.html",
-    "title": "Linux Permissions",
-    "section": "",
-    "text": "General: _rwxrwxrwx 1 owner group\n_ | rwx | rwx | rwx = Special | Owner | Group | All Users\n\n\n\n4 | r = Read\n2 | w = Write\n1 | x = Execute\n\n\n\n\n\n0 = ---\n1 = --x\n2 = -w-\n3 = -wx\n4 = r-\n5 = r-x\n6 = rw-\n7 = rwx"
-  },
-  {
-    "objectID": "blog/posts/linux-permissions/index.html#syntax",
-    "href": "blog/posts/linux-permissions/index.html#syntax",
-    "title": "Linux Permissions",
-    "section": "",
-    "text": "General: _rwxrwxrwx 1 owner group\n_ | rwx | rwx | rwx = Special | Owner | Group | All Users\n\n\n\n4 | r = Read\n2 | w = Write\n1 | x = Execute\n\n\n\n\n\n0 = ---\n1 = --x\n2 = -w-\n3 = -wx\n4 = r-\n5 = r-x\n6 = rw-\n7 = rwx"
-  },
-  {
-    "objectID": "blog/posts/linux-permissions/index.html#commands",
-    "href": "blog/posts/linux-permissions/index.html#commands",
-    "title": "Linux Permissions",
-    "section": "Commands",
-    "text": "Commands\nchgrp = Change group\nExample: sudo chgrp -R &lt;group&gt; &lt;folder&gt;\nchown = Change ownership\nExample: sudo chown -R &lt;user&gt;:&lt;group&gt; &lt;file/folder&gt;\nchmod = Change permissions\nExample: sudo chmod -R 774 &lt;file/folder&gt;\nMake new files inherit the group: sudo chmod g+s &lt;folder&gt;\n\nExample\nCreate a shared directory for a group.1. Create a shared directory for users to access: /share\n\nAssign users to a common group (staff): sudo usermod -a -G staff &lt;user&gt;\nVerify user groups: groups &lt;user&gt;\nCreate shared directory and assign permissions:\n\nsudo mkdir /share && \\\nsudo chgrp -R staff /share && \\ # assign group\nsudo chmod -R g+w /share && \\ # permissions\nsudo chmod -R +s /share # inherit permissions for newly created files/folders"
-  },
-  {
-    "objectID": "blog/posts/quarto-tabsets/index.html",
-    "href": "blog/posts/quarto-tabsets/index.html",
-    "title": "Quarto Tabsets",
-    "section": "",
-    "text": "PythonJavaScript\n\n\nMarkup:\n```{py}\nprint(\"Hello World\")\n```\nOutput:\nprint(\"Hello World\")\n\n\nMarkup:\n```{js}\nconsole.log(\"Hello World\");\n```\nOutput:\nconsole.log(\"Hello World\");\n\n\n\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "development/code/cmd.html",
-    "href": "development/code/cmd.html",
-    "title": "CMD",
-    "section": "",
-    "text": "@echo off\ncls\n\n@REM Set the path to the script root (using UNC path). Note the string is not quoted.\nset SCRIPT_DIR=\\\\integral-corp.com\\data\\&lt;Project Number Range&gt;\\&lt;Project Folder&gt;\\Working_Files\\DataManagement\\IDB\\export\\script\n\n@REM Name of the script to execute. Note the string is not quoted.\nset SCRIPT_NAME=export.sql\n\n@REM Prompt the user for their Postgres password\n@REM This allows for users to run the execsql script who might not have\n@REM a custom execsql.conf file specified with their username.\nset /p \"DB_USER=Enter you PostgreSQL username: \"\n\n@REM Run the execsql script\nPowerShell -NoProfile -ExecutionPolicy Bypass -Command \"& Set-Location -Path %SCRIPT_DIR%; M:\\DataManagement\\bin\\execsql.py -u %DB_USER% %SCRIPT_NAME%\"\n\npause"
-  },
-  {
-    "objectID": "development/code/cmd.html#run-a-python-script",
-    "href": "development/code/cmd.html#run-a-python-script",
-    "title": "CMD",
-    "section": "",
-    "text": "@echo off\ncls\n\n@REM Set the path to the script root (using UNC path). Note the string is not quoted.\nset SCRIPT_DIR=\\\\integral-corp.com\\data\\&lt;Project Number Range&gt;\\&lt;Project Folder&gt;\\Working_Files\\DataManagement\\IDB\\export\\script\n\n@REM Name of the script to execute. Note the string is not quoted.\nset SCRIPT_NAME=export.sql\n\n@REM Prompt the user for their Postgres password\n@REM This allows for users to run the execsql script who might not have\n@REM a custom execsql.conf file specified with their username.\nset /p \"DB_USER=Enter you PostgreSQL username: \"\n\n@REM Run the execsql script\nPowerShell -NoProfile -ExecutionPolicy Bypass -Command \"& Set-Location -Path %SCRIPT_DIR%; M:\\DataManagement\\bin\\execsql.py -u %DB_USER% %SCRIPT_NAME%\"\n\npause"
-  },
-  {
-    "objectID": "development/code/index.html",
-    "href": "development/code/index.html",
-    "title": "Code",
-    "section": "",
-    "text": "Bourne Again SHell\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCommand Prompt\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHyperText Markup Language\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJavaScript programming language\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMicrosoft PowerShell\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPython programming language\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nR programming language\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRegular expressions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStructured Query Language\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "development/code/index.html#code-pages",
-    "href": "development/code/index.html#code-pages",
-    "title": "Code",
-    "section": "",
-    "text": "Bourne Again SHell\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCommand Prompt\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHyperText Markup Language\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJavaScript programming language\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMicrosoft PowerShell\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPython programming language\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nR programming language\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRegular expressions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStructured Query Language\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "development/code/powershell.html",
-    "href": "development/code/powershell.html",
-    "title": "PowerShell",
-    "section": "",
-    "text": "Back to top"
-  },
-  {
-    "objectID": "development/code/r.html",
-    "href": "development/code/r.html",
-    "title": "R",
-    "section": "",
-    "text": "Code\nif (!require(librarian)){\n  remotes::install_github(\"DesiQuintans/librarian\")\n  library(librarian)\n}\nshelf(\n  # database\n  DBI, RPostgres,\n  # spatial\n  ggmap, leaflet, ggplot2, plotly,\n  r-spatial/mapview,\n  sf, sp,\n  lwgeom,\n  # tidyverse\n  dplyr, purrr, readr, tibble, tidyr,\n  reticulate,\n  # todo: use these\n  # googledrive,\n  # report\n  DT, gt, htmltools, htmlwidgets, kableExtra, knitr, \n  markdown, shiny, webshot,\n  # utility\n  fs, glue, here, png, scales, stringr, urltools)\n\nhere &lt;- here::here"
-  },
-  {
-    "objectID": "development/code/r.html#resources",
-    "href": "development/code/r.html#resources",
-    "title": "R",
+    "objectID": "development/tools/docker.html#resources",
+    "href": "development/tools/docker.html#resources",
+    "title": "Docker",
     "section": "Resources",
-    "text": "Resources\n\nR Markdown Basics\nR Markdown Reference Guide\nFlexdashboard\nAwesome public datasets"
+    "text": "Resources\n\nCheatSheet\nConvert Docker command to docker-compose.yml"
   },
   {
-    "objectID": "development/code/r.html#languages",
-    "href": "development/code/r.html#languages",
-    "title": "R",
-    "section": "Languages",
-    "text": "Languages\n\nR\n\n\nCode\nx &lt;- 5 * 5\nx\n\n\n[1] 25\n\n\n\n\nSQL\nThere are a couple ways to connect to a database instance. These examples show how to connect to a local PostgreSQL instance, and how to use the connection information to query a database.\n\nOption 1\nCreate connection chunk, then call connection in each subsequent chunk.\n```{.r connSQL, class.source=‘fold-show’} library(DBI)\npass &lt;- readLines(“../../pwd.txt”) db = dbConnect( RPostgres::Postgres(), dbname = “personal”, host = “localhost”, port = 5432, user = “cgrant”, password = pass )\n\n```{.sql, connection=db, eval=F}\nselect * from workouts limit 10;\n\n\nOption 2\nSet default connection in the setup chunk (pretend its the setup chunk).\n```{.r setup-v2, eval=F, class.source=‘fold-show’} library(DBI)\ndb = dbConnect( RPostgres::Postgres(), dbname = “personal”, host = “localhost”, port = 5432, user = “cgrant”, password = pass ) knitr::opts_chunk$set(connection = “db”)\n\nNow you dont have to specify the connection for each chunk.\n\n```{.sql, eval=F}\nselect * from workouts limit 10;\n\n\n\nPython\nTo use a Python engine, you need to call library(reticulate) link\n```{.r, class.source=‘fold-show’} # install.packages(“reticulate”)\nSys.setenv(RETICULATE_PYTHON = “/Users/cgrant/venvs/dev/bin/python”) library(reticulate) py_config()\n\nNow you can run Python code\n\n\n::: {.cell}\n\n```{.python .fold-show .cell-code}\nx = 4 * 4\nprint(x)\n\n16\n\n:::\nYou can import libraries as normal\n\n\nCode\nimport pandas as pd\n\nvals = {\"col1\": [\"a\", \"b\", \"c\", \"d\"], \"col2\": [1, 10, 100, 1000]}\ndf = pd.DataFrame(vals)\nprint(df)\n\n\n  col1  col2\n0    a     1\n1    b    10\n2    c   100\n3    d  1000\n\n\nAccess objects created within Python chunks from R using py$&lt;var&gt;\n\n\nCode\nlibrary(DT)\ndatatable(py$df)\n\n\nError in crosstalk::is.SharedData(data): object 'py' not found"
+    "objectID": "development/tools/docker.html#image-vs.-container",
+    "href": "development/tools/docker.html#image-vs.-container",
+    "title": "Docker",
+    "section": "Image vs. Container",
+    "text": "Image vs. Container\nImage - Application we want to run\nContainer - Instance of that image running as a process"
   },
   {
-    "objectID": "development/code/r.html#mapping",
-    "href": "development/code/r.html#mapping",
-    "title": "R",
-    "section": "Mapping",
-    "text": "Mapping\n\nLeaflet\nUse the leaflet map below to explore.\n\n\nCode\nlibrary(leaflet)\nlibrary(dplyr)\n\nleaflet() %&gt;% \n  setView(lng=-122.90486, lat=47.03576, zoom=16) %&gt;% \n  addTiles() %&gt;% \n  addMarkers(lng=-122.90486, lat=47.03576, popup=\"WA State Capitol\")"
+    "objectID": "development/tools/docker.html#docker-basics",
+    "href": "development/tools/docker.html#docker-basics",
+    "title": "Docker",
+    "section": "Docker Basics",
+    "text": "Docker Basics\n\nCreate an Nginx container\ndocker run -p 80:80 -d --name webhost nginx\n\nDownloads Nginx from Docker Hub\nStarts new container from that image\nOpened port 80 on host IP\nRoutes port 80 traffic to the container IP, port 80\nView container at http://localhost:80\n\n\n\nOther examples\ndocker run -p 80:80 -d --name nginx nginx\ndocker run -p 8080:80 -d --name httpd httpd\ndocker run -p 3306:3306 --platform linux/amd64 -d --name mysql -e MYSQL_RANDOM_ROOT_PASSWORD=true mysql\nCreate a JupyterLab instance and attach your current directory as a volume: docker run -it --rm -p 8888:8888 -v $(PWD):/home/jovyan jupyter/pyspark-notebook\n\n\nProcesses and configurations\nCheck processes running inside a container: docker top &lt;container&gt;\nContainer configuration: docker &lt;container&gt; inspect\nCheck container stats (memory, cpu, network): docker stats &lt;container&gt;\n\n\nGetting a shell inside containers\nStart a new container interactively: docker run -it &lt;container&gt;\nRun commands in existing container: docker exec -it &lt;container&gt;\n\nExample: Start a container interactively and launch bash within it\n\nStart container and launch bash: docker run -it --name ubuntu ubuntu bash\nRun some bash command: apt-get install -y curl\nExit the container: exit\nStart and re-enter the container: docker start -ai ubuntu\n\n\n\nExample: Launch shell in running container\ndocker exec -it &lt;container&gt; bash\n\n\n\nPull an image from docker hub\ndocker pull &lt;imagename&gt;"
   },
   {
-    "objectID": "development/code/r.html#plots",
-    "href": "development/code/r.html#plots",
-    "title": "R",
-    "section": "Plots",
-    "text": "Plots\n\nTemperature\nReference Source\n\n\nCode\nlibrary(leaflet)\nlibrary(dplyr)\n\nf &lt;- \"./static/NOAA-SeaTac_cleaned.csv\"\ndt &lt;- read.csv(f)\n\n\nError in file(file, \"rt\"): cannot open the connection\n\n\nCode\ndf &lt;- as.data.frame(dt)\n\n\nError in as.data.frame.default(dt): cannot coerce class '\"function\"' to a data.frame\n\n\nCode\nupdatemenus &lt;- list(\n  list(\n    active = 0,\n    x = -.125,\n    type= 'buttons',\n    buttons = list(\n      list(\n        label = \"Wet Bulb\",\n        method = \"update\",\n        args = list(list(visible = c(TRUE, \"legendonly\")))),\n      list(\n        label = \"Dry Bulb\",\n        method = \"update\",\n        args = list(list(visible = c(\"legendonly\", TRUE))))\n    )\n  )\n)\n\nplt &lt;- plot_ly(data = df) %&gt;%\n  add_markers(x=as.Date(df$Timestamp), y=df$HourlyWetBulbTemperature, name=\"Wet Bulb\") %&gt;%\n  add_markers(x=as.Date(df$Timestamp), y=df$HourlyDryBulbTemperature, name=\"Dry Bulb\", visible=\"legendonly\") %&gt;%\n  layout(title = \"SeaTac 2020 Temperature Data\", \n         showlegend=FALSE,\n         xaxis=list(zeroline = FALSE,title=\"Date\"),\n         yaxis=list(zeroline = FALSE,title=\"Temperature (F)\"),\n         updatemenus=updatemenus)\n\n\nError in layout(., title = \"SeaTac 2020 Temperature Data\", showlegend = FALSE, : unused arguments (title = \"SeaTac 2020 Temperature Data\", showlegend = FALSE, xaxis = list(zeroline = FALSE, title = \"Date\"), yaxis = list(zeroline = FALSE, title = \"Temperature (F)\"), updatemenus = updatemenus)\n\n\nCode\nplt\n\n\nError in eval(expr, envir, enclos): object 'plt' not found"
+    "objectID": "development/tools/docker.html#docker-networks",
+    "href": "development/tools/docker.html#docker-networks",
+    "title": "Docker",
+    "section": "Docker Networks",
+    "text": "Docker Networks\n\nEach container is connected to a private virtual network (called “bridge”).\nEach virtual network routes through NAT firewall on host IP.\nAll containers on a virtual network can talk to each other without -p\nBest practice: Create a new virtual network for each app.\nYou can skip virtual networks and use the host IP (--net=host).\n\nGet container IP: docker inspect --format '{{ .NetworkSettings.IPAddress }}' &lt;container&gt;\n\nPublishing (#:#)\nexample: 8080:80\nleft number: published/host port\nright number: listening/container port\nTraffic passing through port 8080 on the HOST will be directed to port 80 on the container.\n\n\nDNS\nDocker uses container names as host names.\nDont rely on IPs for inter-communication.\nBest Practice Always use custom networks.\n\nAssignment\nCheck different curl versions within current versions of Ubuntu and CentOS.\nRun “curl –version” on both operating systems.\n\nSteps\nubuntu: apt-get update && apt-get install curl\ncentos: yum update curl\nThen…\ncurl --version\nAlso:\nCheck out command docker --rm"
+  },
+  {
+    "objectID": "development/tools/docker.html#dockerfiles",
+    "href": "development/tools/docker.html#dockerfiles",
+    "title": "Docker",
+    "section": "Dockerfiles",
+    "text": "Dockerfiles\nRecipe for creating images\nEach Dockerfile stanza such as “RUN”, “CMD”, etc. are stored as a single image layer. Docker caches each layer by giving it a unique SHA (hash), so whenever the image is (re)built, it can check to see if a layer has changed, and if not, it will use the cached layer.\nDocker builds images top down, so it is best practice to structure the Dockerfile in such a way that lines which will change the most are at the bottom, and lines that will change the least are at the top. If a line is changed (ie. source code changes) Docker will rebuild that line, and thus each line after that will also need to be rebuilt."
+  },
+  {
+    "objectID": "development/tools/docker.html#keeping-the-docker-system-clean",
+    "href": "development/tools/docker.html#keeping-the-docker-system-clean",
+    "title": "Docker",
+    "section": "Keeping the Docker system clean",
+    "text": "Keeping the Docker system clean\ndocker system prune - all stopped containers - all networks not used by at least one container - all dangling images - all dangling build cache"
+  },
+  {
+    "objectID": "development/tools/docker.html#volumes-an-bind-mounts",
+    "href": "development/tools/docker.html#volumes-an-bind-mounts",
+    "title": "Docker",
+    "section": "Volumes an Bind Mounts",
+    "text": "Volumes an Bind Mounts\nVolumes - Special location outside of container UFS\nBind Mounts - Link container path to host path\nBuild an image and named volume (persistent): docker run -d --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=True -v mysql:/var/lib/mysql --platform linux/amd64 mysql"
+  },
+  {
+    "objectID": "development/tools/docker.html#rebuilding-a-compose-service",
+    "href": "development/tools/docker.html#rebuilding-a-compose-service",
+    "title": "Docker",
+    "section": "Rebuilding a Compose Service",
+    "text": "Rebuilding a Compose Service\ndocker compose up -d --no-deps --build &lt;service_name&gt;"
+  },
+  {
+    "objectID": "development/server/python-web-app.html",
+    "href": "development/server/python-web-app.html",
+    "title": "Python Web App",
+    "section": "",
+    "text": "Clone repository:\nsudo mkdir /etc/local/webs && \\\ncd /etc/local/webs && \\\nsudo git clone https://github.com/app.git && \\\nsudo chown -R &lt;user&gt;:&lt;user&gt; app && \\\ncd app\nCreate python virtual environment & install dependencies:\npython -m venv .venv && \\\nsource .venv/bin/activate && \\\npython -m pip install -r requirements.txt\nConfigure WSGI - /usr/local/webs/app/app.wsgi:\n#!/usr/bin/python\nimport sys\nimport logging\nimport os\n\nAPP_DIR = \"/usr/local/webs/app\"\nos.environ[\"APP_DIR\"] = APP_DIR\n\nlogging.basicConfig(stream=sys.stderr)\nsys.path.insert(0, APP_DIR)\n\nfrom app import app as application\nUpdate owner:group\ncd /usr/local/web && \\\nsudo chown -R www-data:www-data cmat"
+  },
+  {
+    "objectID": "development/server/python-web-app.html#flask-app-configuration",
+    "href": "development/server/python-web-app.html#flask-app-configuration",
+    "title": "Python Web App",
+    "section": "",
+    "text": "Clone repository:\nsudo mkdir /etc/local/webs && \\\ncd /etc/local/webs && \\\nsudo git clone https://github.com/app.git && \\\nsudo chown -R &lt;user&gt;:&lt;user&gt; app && \\\ncd app\nCreate python virtual environment & install dependencies:\npython -m venv .venv && \\\nsource .venv/bin/activate && \\\npython -m pip install -r requirements.txt\nConfigure WSGI - /usr/local/webs/app/app.wsgi:\n#!/usr/bin/python\nimport sys\nimport logging\nimport os\n\nAPP_DIR = \"/usr/local/webs/app\"\nos.environ[\"APP_DIR\"] = APP_DIR\n\nlogging.basicConfig(stream=sys.stderr)\nsys.path.insert(0, APP_DIR)\n\nfrom app import app as application\nUpdate owner:group\ncd /usr/local/web && \\\nsudo chown -R www-data:www-data cmat"
+  },
+  {
+    "objectID": "development/server/python-web-app.html#apache-configuration",
+    "href": "development/server/python-web-app.html#apache-configuration",
+    "title": "Python Web App",
+    "section": "Apache Configuration",
+    "text": "Apache Configuration\n\nCreate custom Apache log directory:\nsudo mkdir /usr/local/webs/apache-logs && \\\nsudo touch /usr/local/webs/apache-logs/app/error.log && \\\nsudo touch /usr/local/webs/apache-logs/app/access.log && \\\nsudo chown -R www-data:www-data /usr/local/webs/apache-logs\nCreate configuration file:\ncd /etc/apache2/sites-available && \\\nsudo vi app.conf\nConfiguration - app.conf:\n&lt;VirtualHost *:80&gt;\n    ServerName {DNS}\n\n    ServerSignature Off\n\n    RewriteEngine On\n    RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]\n\n    ErrorLog /var/log/apache2/redirect.error.log\n    LogLevel warn\n&lt;/VirtualHost&gt;\n\n&lt;VirtualHost *:443&gt;\n    ServerAdmin webmaster@localhost\n    ServerName {DNS}\n\n    DocumentRoot /usr/local/webs/app\n\n    WSGIDaemonProcess web-app threads=5 python-home=/usr/local/webs/app/.venv\n    WSGIProcessGroup web-app\n    WSGIScriptAlias / /usr/local/webs/app/app.wsgi\n    WSGIPassAuthorization On\n    &lt;Directory /usr/local/webs/app&gt;\n            Order allow,deny\n            Allow from all\n    &lt;/Directory&gt;\n\n    &lt;Location /&gt;\n            Require all granted\n    &lt;/Location&gt;\n\n    ErrorLog /usr/local/webs/apache-logs/app/error.log\n    CustomLog /usr/local/webs/apache-logs/app/access.log combined\n\n    SSLEngine on\n    SSLCertificateFile /etc/letsencrypt/live/{DNS}/fullchain.pem\n    SSLCertificateKeyFile /etc/letsencrypt/live/{DNS}/privkey.pem\n    Include /etc/letsencrypt/options-ssl-apache.conf\n&lt;/VirtualHost&gt;\nTest configuration:\nsudo apache2ctl configtest\nEnable the site\nsudo a2ensite app.conf\nRestart Apache service\nsudo systemctl restart apache2"
+  },
+  {
+    "objectID": "development/server/index.html",
+    "href": "development/server/index.html",
+    "title": "Server",
+    "section": "",
+    "text": "Initial Linux server setup steps:\n\nLogin to server as root: ssh root@&lt;ip&gt;\nCreate new admin user: sudo adduser &lt;user&gt;\nAdd user to sudo group: sudo usermod -aG sudo &lt;user&gt;\nDisable root login\n\nOpen SSH configuration: sudo vi /etc/ssh/sshd_config\nSet PermitRootLogin to no\n\nConfigure Uncomplicated Firewall (UFW)\n\nAllow SSH connections: sudo ufw allow OpenSSH\nOpen port 80 and 443 for Apache: sudo ufw allow 'Apache Full'\nTurn on firewall: sudo ufw enable\nCheck: sudo ufw status verbose\n\nReboot the server: sudo reboot\nLogin as new user: ssh &lt;user&gt;@&lt;ip&gt;\nCheck for package updates apt list --upgradable 1, Upgrade packages sudo apt upgrade\nShow system info: uname -a\nEven though the kernel was updated, need to reboot to take effect: sudo reboot\nJust to be sure: sudo apt update && sudo apt upgrade\nShutdown for backup/snapshot sudo shutdown -h now\nAfter snapshot, navigate to provider website and restart machine"
+  },
+  {
+    "objectID": "development/server/index.html#server-initialization",
+    "href": "development/server/index.html#server-initialization",
+    "title": "Server",
+    "section": "",
+    "text": "Initial Linux server setup steps:\n\nLogin to server as root: ssh root@&lt;ip&gt;\nCreate new admin user: sudo adduser &lt;user&gt;\nAdd user to sudo group: sudo usermod -aG sudo &lt;user&gt;\nDisable root login\n\nOpen SSH configuration: sudo vi /etc/ssh/sshd_config\nSet PermitRootLogin to no\n\nConfigure Uncomplicated Firewall (UFW)\n\nAllow SSH connections: sudo ufw allow OpenSSH\nOpen port 80 and 443 for Apache: sudo ufw allow 'Apache Full'\nTurn on firewall: sudo ufw enable\nCheck: sudo ufw status verbose\n\nReboot the server: sudo reboot\nLogin as new user: ssh &lt;user&gt;@&lt;ip&gt;\nCheck for package updates apt list --upgradable 1, Upgrade packages sudo apt upgrade\nShow system info: uname -a\nEven though the kernel was updated, need to reboot to take effect: sudo reboot\nJust to be sure: sudo apt update && sudo apt upgrade\nShutdown for backup/snapshot sudo shutdown -h now\nAfter snapshot, navigate to provider website and restart machine"
+  },
+  {
+    "objectID": "development/server/index.html#permissions",
+    "href": "development/server/index.html#permissions",
+    "title": "Server",
+    "section": "Permissions",
+    "text": "Permissions\n\nSyntax\nGeneral: _rwxrwxrwx 1 owner group\n_ | rwx | rwx | rwx = Special | Owner | Group | All Users\n\nShorthand\n\n4 | r = Read\n2 | w = Write\n1 | x = Execute\n\n\n\nDetailed\n\n0 = ---\n1 = --x\n2 = -w-\n3 = -wx\n4 = r-\n5 = r-x\n6 = rw-\n7 = rwx\n\n\n\n\nCommands\nchgrp = Change group\nExample: sudo chgrp -R &lt;group&gt; &lt;folder&gt;\nchown = Change ownership\nExample: sudo chown -R &lt;user&gt;:&lt;group&gt; &lt;file/folder&gt;\nchmod = Change permissions\nExample: sudo chmod -R 774 &lt;file/folder&gt;\nMake new files inherit the group: sudo chmod g+s &lt;folder&gt;\n\n\nExample\nCreate a shared directory for a group.\n\nCreate a shared directory for users to access: /share\nAssign users to a common group (staff): sudo usermod -a -G staff &lt;user&gt;\nVerify user groups: groups &lt;user&gt;\nCreate shared directory and assign permissions:\nsudo mkdir /share && \\\nsudo chgrp -R staff /share && \\  # assign group\nsudo chmod -R g+w /share && \\  # permissions\nsudo chmod -R +s /share  # inherit permissions for newly created files/folders"
   },
   {
     "objectID": "development/code/sql.html",
@@ -609,116 +406,361 @@
     "text": "Sandbox\n\nBasic Table Joins\n\nSELECT * \nFROM regions \nINNER JOIN countries ON regions.region_id=countries.region_id \nINNER JOIN locations ON countries.country_id=locations.country_id;\n\n\n\nAggregating Data\n\nSELECT regions.region_name, count(distinct countries.country_id) as number_of_countries\nFROM regions \nINNER JOIN countries ON regions.region_id=countries.region_id \nINNER JOIN locations ON countries.country_id=locations.country_id\nGROUP BY regions.region_name;"
   },
   {
-    "objectID": "development/server/index.html",
-    "href": "development/server/index.html",
-    "title": "Server",
+    "objectID": "development/code/python.html",
+    "href": "development/code/python.html",
+    "title": "Python",
     "section": "",
-    "text": "Initial Linux server setup steps:\n\nLogin to server as root: ssh root@&lt;ip&gt;\nCreate new admin user: sudo adduser &lt;user&gt;\nAdd user to sudo group: sudo usermod -aG sudo &lt;user&gt;\nDisable root login\n\nOpen SSH configuration: sudo vi /etc/ssh/sshd_config\nSet PermitRootLogin to no\n\nConfigure Uncomplicated Firewall (UFW)\n\nAllow SSH connections: sudo ufw allow OpenSSH\nOpen port 80 and 443 for Apache: sudo ufw allow 'Apache Full'\nTurn on firewall: sudo ufw enable\nCheck: sudo ufw status verbose\n\nReboot the server: sudo reboot\nLogin as new user: ssh &lt;user&gt;@&lt;ip&gt;\nCheck for package updates apt list --upgradable 1, Upgrade packages sudo apt upgrade\nShow system info: uname -a\nEven though the kernel was updated, need to reboot to take effect: sudo reboot\nJust to be sure: sudo apt update && sudo apt upgrade\nShutdown for backup/snapshot sudo shutdown -h now\nAfter snapshot, navigate to provider website and restart machine"
+    "text": "import glob\nimport os\n\nfor filename in glob.glob(\"./**/*.ext\", recursive=True):\n    new_name = \"-\".join(filename.split(\"_\"))\n    os.rename(filename, new_name)"
   },
   {
-    "objectID": "development/server/index.html#server-initialization",
-    "href": "development/server/index.html#server-initialization",
-    "title": "Server",
+    "objectID": "development/code/python.html#batch-file-rename",
+    "href": "development/code/python.html#batch-file-rename",
+    "title": "Python",
     "section": "",
-    "text": "Initial Linux server setup steps:\n\nLogin to server as root: ssh root@&lt;ip&gt;\nCreate new admin user: sudo adduser &lt;user&gt;\nAdd user to sudo group: sudo usermod -aG sudo &lt;user&gt;\nDisable root login\n\nOpen SSH configuration: sudo vi /etc/ssh/sshd_config\nSet PermitRootLogin to no\n\nConfigure Uncomplicated Firewall (UFW)\n\nAllow SSH connections: sudo ufw allow OpenSSH\nOpen port 80 and 443 for Apache: sudo ufw allow 'Apache Full'\nTurn on firewall: sudo ufw enable\nCheck: sudo ufw status verbose\n\nReboot the server: sudo reboot\nLogin as new user: ssh &lt;user&gt;@&lt;ip&gt;\nCheck for package updates apt list --upgradable 1, Upgrade packages sudo apt upgrade\nShow system info: uname -a\nEven though the kernel was updated, need to reboot to take effect: sudo reboot\nJust to be sure: sudo apt update && sudo apt upgrade\nShutdown for backup/snapshot sudo shutdown -h now\nAfter snapshot, navigate to provider website and restart machine"
+    "text": "import glob\nimport os\n\nfor filename in glob.glob(\"./**/*.ext\", recursive=True):\n    new_name = \"-\".join(filename.split(\"_\"))\n    os.rename(filename, new_name)"
   },
   {
-    "objectID": "development/server/index.html#permissions",
-    "href": "development/server/index.html#permissions",
-    "title": "Server",
-    "section": "Permissions",
-    "text": "Permissions\n\nSyntax\nGeneral: _rwxrwxrwx 1 owner group\n_ | rwx | rwx | rwx = Special | Owner | Group | All Users\n\nShorthand\n\n4 | r = Read\n2 | w = Write\n1 | x = Execute\n\n\n\nDetailed\n\n0 = ---\n1 = --x\n2 = -w-\n3 = -wx\n4 = r-\n5 = r-x\n6 = rw-\n7 = rwx\n\n\n\n\nCommands\nchgrp = Change group\nExample: sudo chgrp -R &lt;group&gt; &lt;folder&gt;\nchown = Change ownership\nExample: sudo chown -R &lt;user&gt;:&lt;group&gt; &lt;file/folder&gt;\nchmod = Change permissions\nExample: sudo chmod -R 774 &lt;file/folder&gt;\nMake new files inherit the group: sudo chmod g+s &lt;folder&gt;\n\n\nExample\nCreate a shared directory for a group.\n\nCreate a shared directory for users to access: /share\nAssign users to a common group (staff): sudo usermod -a -G staff &lt;user&gt;\nVerify user groups: groups &lt;user&gt;\nCreate shared directory and assign permissions:\nsudo mkdir /share && \\\nsudo chgrp -R staff /share && \\  # assign group\nsudo chmod -R g+w /share && \\  # permissions\nsudo chmod -R +s /share  # inherit permissions for newly created files/folders"
+    "objectID": "development/code/python.html#logging-basics",
+    "href": "development/code/python.html#logging-basics",
+    "title": "Python",
+    "section": "Logging Basics",
+    "text": "Logging Basics\nimport argparse\nimport logging\nimport os\nfrom datetime import datetime\n\n# Do not specify __name__ to use root log level\nlogger = logging.getLogger(__name__)\nlogger.setLevel(logging.INFO)\nformatter = logging.Formatter(\n    \"%(asctime)s : %(msecs)04d : %(name)s : %(levelname)s : %(message)s\",\n    datefmt=\"%Y-%m-%d %H:%M:%S\",\n)\nlog_file = (\n    f\"{os.path.splitext(__file__)[0]}_{datetime.now().strftime('%Y-%m-%d_%H%M%S')}.log\"\n)\nstream_handler = logging.StreamHandler()\nstream_handler.setFormatter(formatter)\n\n\ndef clparser() -&gt; argparse.ArgumentParser:\n    \"\"\"Create a parser to handle input arguments and displaying a help message.\"\"\"\n    desc_msg = \"\"\"My logging program.\"\"\"\n    parser = argparse.ArgumentParser(description=desc_msg)\n    parser.add_argument(\n        \"-l\",\n        \"--logfile\",\n        action=\"store_true\",\n        help=\"Write log messages to a file.\",\n    )\n    parser.add_argument(\n        \"-v\",\n        \"--verbose\",\n        action=\"store_true\",\n        help=\"Control the amount of information to display.\",\n    )\n    return parser\n\n\nif __name__ == \"__main__\":\n    args = clparser().parse_args()\n    if args.verbose:\n        logger.addHandler(stream_handler)\n    if args.logfile:\n        file_handler = logging.FileHandler(filename=log_file)\n        file_handler.setFormatter(formatter)\n        logger.addHandler(file_handler)\n    logger.info(\"Begin my test module\")"
   },
   {
-    "objectID": "development/server/python-web-app.html",
-    "href": "development/server/python-web-app.html",
-    "title": "Python Web App",
+    "objectID": "development/code/python.html#sending-http-requests",
+    "href": "development/code/python.html#sending-http-requests",
+    "title": "Python",
+    "section": "Sending HTTP Requests",
+    "text": "Sending HTTP Requests\nimport logging\n\nimport requests\n\nlogger = logging.getLogger(__name__)\n\n\ndef send_request(request_type: str, url: str, **kwargs) -&gt; requests.Response:\n    \"\"\"Send an HTTP request.\n\n    Args:\n    ----\n        request_type (str): Accepts \"GET\" or \"POST\"\n        url (str): Request URL\n\n    Returns:\n    -------\n        requests.Response: Request response.\n    \"\"\"\n    valid_methods = (\"GET\", \"POST\")\n    if request_type.upper() not in valid_methods:\n        raise ValueError(f\"Invalid request type. Supported types: {valid_methods}\")\n    try:\n        response = requests.request(request_type.upper(), url, **kwargs)\n        response.raise_for_status()  # Raises an exception if status code &gt;= 400\n        return response\n    except requests.exceptions.RequestException as err:\n        logger.error(f\"{err}. Request type: {request_type}. URL: {url}. Args: {kwargs}\")\n        raise err\n\n# Example GET request\nresponse = send_request(\"GET\", \"https://api.publicapis.org/entries\", timeout=5)\nlogger.info(response.json())\n\n# Example POST request\nresponse = send_request(\"POST\", \"https://someurl.com\", headers={}, timeout=5)\nlogger.info(response.json())"
+  },
+  {
+    "objectID": "development/code/python.html#regular-expressions",
+    "href": "development/code/python.html#regular-expressions",
+    "title": "Python",
+    "section": "Regular Expressions",
+    "text": "Regular Expressions\n\nQuickstart\nRegex101\n\n\nMetaCharacters (Need to be escaped)\n. ^ $ * + ? { } [ ] \\ | ( )\n\n\nCharacters\n. - Any Character Except New Line \\d - Digit (0-9) \\D - Not a Digit (0-9) \\w - Word Character (a-z, A-Z, 0-9, _) \\W - Not a Word Character \\s - Whitespace (space, tab, newline) \\S - Not Whitespace (space, tab, newline)\n\n\nCharacter Classes\n[] - Matches Characters in brackets [^ ] - Matches Characters NOT in brackets [a-z] - Any lowercase character between a and z [A-Z] - Any UPPERCASE character between A and Z\n\n\nQuantifiers\n* - 0 or More + - 1 or More ? - 0 or One {3} - Exact Number {3,4} - Range of Numbers (Minimum, Maximum) {3,} - At least 3\n\n\nAnchors & Boundaries\n\\b - Word Boundary \\B - Not a Word Boundary ^ - Beginning of a String $ - End of a String\n\n\nLogic\n| - Either Or ( ) - Group \\1 - Contents of group 1\n\n\nWhite-space\n\\t - Tab \\r - Carriage return \\n - New line\n\n\nExample\n\n\nCode\nimport re\n\ntext_string = \"\"\"\nHello world\n\n8001234567\n800-321-7654\n900.987.6543\n\nsome.email@email.com\nmycompany@company.net\nwierd-12-address-4@somedomain.blah\n\"\"\"\n\npattern = re.compile(r\"[0-9]{3}[.-]?[0-9]{3}[.-]?[0-9]{4}\")\nmatches = re.finditer(pattern, text_string)\n\nfor match in matches:\n    print(match)\n    print(match.span())\n    print(text_string[match.start() : match.end()])\n\n\n&lt;re.Match object; span=(14, 24), match='8001234567'&gt;\n(14, 24)\n8001234567\n&lt;re.Match object; span=(25, 37), match='800-321-7654'&gt;\n(25, 37)\n800-321-7654\n&lt;re.Match object; span=(38, 50), match='900.987.6543'&gt;\n(38, 50)\n900.987.6543"
+  },
+  {
+    "objectID": "development/code/python.html#oop-basics",
+    "href": "development/code/python.html#oop-basics",
+    "title": "Python",
+    "section": "OOP Basics",
+    "text": "OOP Basics\n\n\nCode\nclass Employee:\n    \"\"\"Create an employee object with relevant attributes.\"\"\"\n\n    annual_raise_pct = 0.04\n    employee_no = 1\n\n    def __init__(self, first_name, last_name, position, years_employed=1):\n        \"\"\"Function called when new object is initiated.\"\"\"\n        self.first_name = first_name\n        self.last_name = last_name\n        self.position = position\n        self.years_employed = years_employed\n        self.employee_number = Employee.employee_no\n        self.email = self.first_name + \".\" + self.last_name + \"@company.com\"\n        self.salary = self.calculate_salary()\n        Employee.employee_no += 1\n\n    def starting_salary(self):\n        \"\"\"Return the starting salary for each position at company\"\"\"\n        if self.position == \"HR\":\n            return 25000\n        elif self.position == \"Management\":\n            return 50000\n        elif self.position == \"Developer\":\n            return 100000\n        elif self.position == \"CEO\":\n            return 200000\n        else:\n            return None\n\n    def calculate_salary(self):\n        salary = self.starting_salary()\n        for year in range(self.years_employed):\n            salary = int(salary + (salary * Employee.annual_raise_pct))\n        return salary\n\n    def __repr__(self):\n        \"\"\"Create representational object string\"\"\"\n        return f\"\"\"Employee(first_name = {self.first_name}, last_name = {self.last_name}, position = {self.position}, years_employed = {self.years_employed})\"\"\"\n\n\ncurrent_employees = [\n    Employee(\"Geo\", \"Coug\", \"Developer\", 6),\n    Employee(\"Jane\", \"Doe\", \"HR\", 4),\n    Employee(\"John\", \"Doe\", \"Management\", 15),\n    Employee(\"Bob\", \"Loblaw\", \"CEO\", 24),\n]\n\nfor e in current_employees:\n    print(f\"Employee Number: {e.employee_number}\")\n    print(e)\n    print(\"Email:\", e.email)\n    print(\"Salary: ${:,}\\n\".format(e.salary))\n\n\nEmployee Number: 1\nEmployee(first_name = Geo, last_name = Coug, position = Developer, years_employed = 6)\nEmail: Geo.Coug@company.com\nSalary: $126,530\n\nEmployee Number: 2\nEmployee(first_name = Jane, last_name = Doe, position = HR, years_employed = 4)\nEmail: Jane.Doe@company.com\nSalary: $29,245\n\nEmployee Number: 3\nEmployee(first_name = John, last_name = Doe, position = Management, years_employed = 15)\nEmail: John.Doe@company.com\nSalary: $90,039\n\nEmployee Number: 4\nEmployee(first_name = Bob, last_name = Loblaw, position = CEO, years_employed = 24)\nEmail: Bob.Loblaw@company.com\nSalary: $512,645"
+  },
+  {
+    "objectID": "development/code/python.html#dbms-data-types",
+    "href": "development/code/python.html#dbms-data-types",
+    "title": "Python",
+    "section": "DBMS Data Types",
+    "text": "DBMS Data Types\n\n\nCode\nimport pandas as pd\n\ndf = pd.read_csv(\"../../static/development/data-types.csv\")\ndf.to_html(index=False)\n\n\n\n\n\n\n\n\n\n\nData Type\n\n\n\nPostgres\n\n\n\nMariaDB\n\n\n\nSQL Server\n\n\n\nFirebird\n\n\n\nMS-Access\n\n\n\nSQLite\n\n\n\n\n\n\n\n\n\n\n\nTimestamp with time zone\n\n\n\n1184.0\n\n\n\nNaN\n\n\n\nNaN\n\n\n\nNaN\n\n\n\nNaN\n\n\n\nNaN\n\n\n\n\n\n\n\nTimestamp\n\n\n\n1184.0\n\n\n\n7\n\n\n\nNaN\n\n\n\ntype ‘datetime.datetime’\n\n\n\nNaN\n\n\n\nNaN\n\n\n\n\n\n\n\nDatetime\n\n\n\nNaN\n\n\n\n12\n\n\n\nclass ‘datetime.datetime’\n\n\n\nNaN\n\n\n\nclass ‘datetime.datetime’\n\n\n\nNaN\n\n\n\n\n\n\n\nDate\n\n\n\n1082.0\n\n\n\n10\n\n\n\nclass ‘datetime.date’\n\n\n\ntype ‘datetime.date’\n\n\n\nclass ‘datetime.datetime’\n\n\n\nNaN\n\n\n\n\n\n\n\nTime\n\n\n\n1083.0\n\n\n\n11\n\n\n\nclass ‘datetime.time’\n\n\n\ntype ‘datetime.time’\n\n\n\nclass ‘datetime.datetime’\n\n\n\nNaN\n\n\n\n\n\n\n\nBoolean\n\n\n\n16.0\n\n\n\n16\n\n\n\nclass ‘bool’\n\n\n\nNaN\n\n\n\nclass ‘bool’\n\n\n\nNaN\n\n\n\n\n\n\n\nSmall integer\n\n\n\n21.0\n\n\n\n1\n\n\n\nclass ‘int’\n\n\n\nNaN\n\n\n\nclass ‘int’\n\n\n\nNaN\n\n\n\n\n\n\n\nInteger\n\n\n\n23.0\n\n\n\n2\n\n\n\nclass ‘int’\n\n\n\ntype ‘int’\n\n\n\nclass ‘int’\n\n\n\nNaN\n\n\n\n\n\n\n\nLong integer\n\n\n\n20.0\n\n\n\n3\n\n\n\nclass ‘int’\n\n\n\ntype ‘long’\n\n\n\nNaN\n\n\n\nNaN\n\n\n\n\n\n\n\nSingle\n\n\n\n701.0\n\n\n\n4\n\n\n\nclass ‘float’\n\n\n\ntype ‘float’\n\n\n\nclass ‘float’\n\n\n\nNaN\n\n\n\n\n\n\n\nDouble precision\n\n\n\n701.0\n\n\n\n5\n\n\n\nclass ‘float’\n\n\n\ntype ‘float’\n\n\n\nclass ‘float’\n\n\n\nNaN\n\n\n\n\n\n\n\nDecimal\n\n\n\n1700.0\n\n\n\n0\n\n\n\nclass ‘decimal.Decimal’\n\n\n\nclass ‘decimal.Decimal’\n\n\n\nNaN\n\n\n\nNaN\n\n\n\n\n\n\n\nCurrency\n\n\n\n790.0\n\n\n\nNaN\n\n\n\nNaN\n\n\n\nclass ‘decimal.Decimal’\n\n\n\nclass ‘decimal.Decimal’\n\n\n\nNaN\n\n\n\n\n\n\n\nCharacter\n\n\n\n1042.0\n\n\n\nNaN\n\n\n\nclass ‘str’\n\n\n\ntype ‘str’\n\n\n\nclass ‘str’\n\n\n\nNaN\n\n\n\n\n\n\n\nCharacter varying\n\n\n\n1043.0\n\n\n\n15\n\n\n\nclass ‘str’\n\n\n\ntype ‘str’\n\n\n\nclass ‘str’\n\n\n\nNaN\n\n\n\n\n\n\n\nText\n\n\n\n25.0\n\n\n\nNaN\n\n\n\nclass ‘str’\n\n\n\ntype ‘str’\n\n\n\nclass ‘str’\n\n\n\nNaN\n\n\n\n\n\n\n\nBinary / BLOB\n\n\n\n17.0\n\n\n\n249,250,251,252\n\n\n\nclass ‘bytearray’\n\n\n\ntype ‘str’\n\n\n\ntype ‘bytearray’\n\n\n\nNaN"
+  },
+  {
+    "objectID": "development/code/python.html#dbms-libraries",
+    "href": "development/code/python.html#dbms-libraries",
+    "title": "Python",
+    "section": "DBMS Libraries",
+    "text": "DBMS Libraries\n\nPostgres: psycopg2\nMariaDB: pymysql\nSQL Server: pyodbc\nFirebird: fdb\nMS-Access: pyodbc\nSQLite: sqlite3"
+  },
+  {
+    "objectID": "development/code/python.html#db-table-dependencies",
+    "href": "development/code/python.html#db-table-dependencies",
+    "title": "Python",
+    "section": "DB Table Dependencies",
+    "text": "DB Table Dependencies\ndef dependency_order(dep_list):\n    rem_tables = list(set([t[0] for t in dep_list] + [t[1] for t in dep_list]))\n    rem_dep = copy.copy(dep_list)\n    sortkey = 1\n    ret_list = []\n    while len(rem_dep) &gt; 0:\n        tbls = [tbl for tbl in rem_tables if tbl not in [dep[0] for dep in rem_dep]]\n        ret_list.extend([(tb, sortkey) for tb in tbls])\n        rem_tables = [tbl for tbl in rem_tables if tbl not in tbls]\n        rem_dep = [dep for dep in rem_dep if dep[1] not in tbls]\n        sortkey += 1\n    if len(rem_tables) &gt; 0:\n        ret_list.extend([(tb, sortkey) for tb in rem_tables])\n    ret_list.sort(cmp=lambda x, y: cmp(x[1], y[1]))\n    return [item[0] for item in ret_list]"
+  },
+  {
+    "objectID": "development/code/python.html#csv-sniffer",
+    "href": "development/code/python.html#csv-sniffer",
+    "title": "Python",
+    "section": "CSV Sniffer",
+    "text": "CSV Sniffer\nimport re\n\nclass CsvDiagError(Exception):\n    def __init__(self, msg):\n        self.value = msg\n\n    def __str__(self):\n        return self.value\n\nclass CsvLine:\n    escchar = \"\\\\\"\n\n    def __init__(self, line_text):\n        self.text = line_text\n        self.delim_counts = {}\n        self.item_errors = []  # A list of error messages.\n\n    def __str__(self):\n        return \"; \".join(\n            [\n                \"Text: &lt;&lt;%s&gt;&gt;\" % self.text,\n                \"Delimiter counts: &lt;&lt;%s&gt;&gt;\"\n                % \", \".join(\n                    [\n                        \"%s: %d\" % (k, self.delim_counts[k])\n                        for k in self.delim_counts.keys()\n                    ]\n                ),\n            ]\n        )\n\n    def count_delim(self, delim):\n        # If the delimiter is a space, consider multiple spaces to be equivalent\n        # to a single delimiter, split on the space(s), and consider the delimiter\n        # count to be one fewer than the items returned.\n        if delim == \" \":\n            self.delim_counts[delim] = max(0, len(re.split(r\" +\", self.text)) - 1)\n        else:\n            self.delim_counts[delim] = self.text.count(delim)\n\n    def delim_count(self, delim):\n        return self.delim_counts[delim]\n\n    def _well_quoted(self, element, qchar):\n        # A well-quoted element has either no quotes, a quote on each end and none\n        # in the middle, or quotes on both ends and every internal quote is either\n        # doubled or escaped.\n        # Returns a tuple of three booleans; the first indicates whether the element is\n        # well-quoted, the second indicates whether the quote character is used\n        # at all, and the third indicates whether the escape character is used.\n        if qchar not in element:\n            return (True, False, False)\n        if len(element) == 0:\n            return (True, False, False)\n        if element[0] == qchar and element[-1] == qchar and qchar not in element[1:-1]:\n            return (True, True, False)\n        # The element has quotes; if it doesn't have one on each end, it is not well-quoted.\n        if not (element[0] == qchar and element[-1] == qchar):\n            return (False, True, False)\n        e = element[1:-1]\n        # If there are no quotes left after removing doubled quotes, this is well-quoted.\n        if qchar not in e.replace(qchar + qchar, \"\"):\n            return (True, True, False)\n        # if there are no quotes left after removing escaped quotes, this is well-quoted.\n        if qchar not in e.replace(self.escchar + qchar, \"\"):\n            return (True, True, True)\n        return (False, True, False)\n\n    def record_format_error(self, pos_no, errmsg):\n        self.item_errors.append(\"%s in position %d.\" % (errmsg, pos_no))\n\n    def items(self, delim, qchar):\n        # Parses the line into a list of items, breaking it at delimiters that are not\n        # within quoted stretches.  (This is a almost CSV parser, for valid delim and qchar,\n        # except that it does not eliminate quote characters or reduce escaped quotes.)\n        self.item_errors = []\n        if qchar is None:\n            if delim is None:\n                return self.text\n            else:\n                if delim == \" \":\n                    return re.split(r\" +\", self.text)\n                else:\n                    return self.text.split(delim)\n        elements = []  # The list of items on the line that will be returned.\n        eat_multiple_delims = delim == \" \"\n        # States of the FSM:\n        # _IN_QUOTED: An opening quote has been seen, but no closing quote encountered.\n        #  Actions / transition:\n        #   quote: save char in escape buffer / _ESCAPED\n        #   esc_char : save char in escape buffer / _ESCAPED\n        #   delimiter: save char in element buffer / _IN_QUOTED\n        #   other: save char in element buffer / _IN_QUOTED\n        # _ESCAPED: An escape character has been seen while _IN_QUOTED (and is in the escape buffer).\n        #  Actions / transitions\n        #   quote: save escape buffer in element buffer, empty escape buffer,\n        #    save char in element buffer / _IN_QUOTED\n        #   delimiter: save escape buffer in element buffer, empty escape buffer,\n        #    save element buffer, empty element buffer / _BETWEEN\n        #   other: save escape buffer in element buffer, empty escape buffer,\n        #    save char in element buffer / _IN_QUOTED\n        # _QUOTE_IN_QUOTED: A quote has been seen while _IN_QUOTED (and is in the escape buffer).\n        #  Actions / transitions\n        #   quote: save escape buffer in element buffer, empty escape buffer,\n        #    save char in element buffer / _IN_QUOTED\n        #   delimiter: save escape buffer in element buffer, empty escape buffer,\n        #    save element buffer, empty element buffer / _DELIMITED\n        #   other: save escape buffer in element buffer, empty escape buffer,\n        #    save char in element buffer / _IN_QUOTED\n        #     (An 'other' character in this position represents a bad format:\n        #     a quote not followed by another quote or a delimiter.)\n        # _IN_UNQUOTED: A non-delimiter, non-quote has been seen.\n        #  Actions / transitions\n        #   quote: save char in element buffer / _IN_UNQUOTED\n        #    (This represents a bad format.)\n        #   delimiter: save element buffer, empty element buffer / _DELIMITED\n        #   other: save char in element buffer / _IN_UNQUOTED\n        # _BETWEEN: Not in an element, and a delimiter not seen.  This is the starting state,\n        #   and the state following a closing quote but before a delimiter is seen.\n        #  Actions / transition:\n        #   quote: save char in element buffer / _IN_QUOTED\n        #   delimiter: save element buffer, empty element buffer / _DELIMITED\n        #    (The element buffer should be empty, representing a null data item.)\n        #   other: save char in element buffer / _IN_UNQUOTED\n        # _DELIMITED: A delimiter has been seen while not in a quoted item.\n        #  Actions / transition:\n        #   quote: save char in element buffer / _IN_QUOTED\n        #   delimiter: if eat_multiple: no action / _DELIMITED\n        #     if not eat_multiple: save element buffer, empty element buffer / _DELIMITED\n        #   other: save char in element buffer / _IN_UNQUOTED\n        # At end of line: save escape buffer in element buffer, save element buffer.  For a well-formed\n        # line, these should be empty, but they may not be.\n        #\n        # Define the state constants, which will also be used as indexes into an execution vector.\n        (\n            _IN_QUOTED,\n            _ESCAPED,\n            _QUOTE_IN_QUOTED,\n            _IN_UNQUOTED,\n            _BETWEEN,\n            _DELIMITED,\n        ) = range(6)\n        #\n        # Because of Python 2.7's scoping rules:\n        # * The escape buffer and current element are defined as mutable objects that will have their\n        #  first elements modified, rather than as string variables.  (Python 2.x does not allow\n        #  modification of a variable in an enclosing scope that is not the global scope, but\n        #  mutable objects like lists can be altered.  Another approach would be to implement this\n        #  as a class and use instance variables.)\n        # * The action functions return the next state rather than assigning it directly to the 'state' variable.\n        esc_buf = [\"\"]\n        current_element = [\"\"]\n\n        def in_quoted():\n            if c == self.escchar:\n                esc_buf[0] = c\n                return _ESCAPED\n            elif c == qchar:\n                esc_buf[0] = c\n                return _QUOTE_IN_QUOTED\n            else:\n                current_element[0] += c\n                return _IN_QUOTED\n\n        def escaped():\n            if c == delim:\n                current_element[0] += esc_buf[0]\n                esc_buf[0] = \"\"\n                elements.append(current_element[0])\n                current_element[0] = \"\"\n                return _BETWEEN\n            else:\n                current_element[0] += esc_buf[0]\n                esc_buf[0] = \"\"\n                current_element[0] += c\n                return _IN_QUOTED\n\n        def quote_in_quoted():\n            if c == qchar:\n                current_element[0] += esc_buf[0]\n                esc_buf[0] = \"\"\n                current_element[0] += c\n                return _IN_QUOTED\n            elif c == delim:\n                current_element[0] += esc_buf[0]\n                esc_buf[0] = \"\"\n                elements.append(current_element[0])\n                current_element[0] = \"\"\n                return _DELIMITED\n            else:\n                current_element[0] += esc_buf[0]\n                esc_buf[0] = \"\"\n                current_element[0] += c\n                self.record_format_error(\n                    i + 1, \"Unexpected character following a closing quote\"\n                )\n                return _IN_QUOTED\n\n        def in_unquoted():\n            if c == delim:\n                elements.append(current_element[0])\n                current_element[0] = \"\"\n                return _DELIMITED\n            else:\n                current_element[0] += c\n                return _IN_UNQUOTED\n\n        def between():\n            if c == qchar:\n                current_element[0] += c\n                return _IN_QUOTED\n            elif c == delim:\n                elements.append(current_element[0])\n                current_element[0] = \"\"\n                return _DELIMITED\n            else:\n                current_element[0] += c\n                return _IN_UNQUOTED\n\n        def delimited():\n            if c == qchar:\n                current_element[0] += c\n                return _IN_QUOTED\n            elif c == delim:\n                if not eat_multiple_delims:\n                    elements.append(current_element[0])\n                    current_element[0] = \"\"\n                return _DELIMITED\n            else:\n                current_element[0] += c\n                return _IN_UNQUOTED\n\n        # Functions in the execution vector must be ordered identically to the\n        # indexes represented by the state constants.\n        exec_vector = [\n            in_quoted,\n            escaped,\n            quote_in_quoted,\n            in_unquoted,\n            between,\n            delimited,\n        ]\n        # Set the starting state.\n        state = _BETWEEN\n        # Process the line of text.\n        for i, c in enumerate(self.text):\n            state = exec_vector[state]()\n        # Process the end-of-line condition.\n        if len(esc_buf[0]) &gt; 0:\n            current_element[0] += esc_buf[0]\n        if len(current_element[0]) &gt; 0:\n            elements.append(current_element[0])\n        return elements\n\n    def well_quoted_line(self, delim, qchar):\n        # Returns a tuple of boolean, int, and boolean, indicating: 1) whether the line is\n        # well-quoted, 2) the number of elements for which the quote character is used,\n        # and 3) whether the escape character is used.\n        wq = [self._well_quoted(el, qchar) for el in self.items(delim, qchar)]\n        return (\n            all([b[0] for b in wq]),\n            sum([b[1] for b in wq]),\n            any([b[2] for b in wq]),\n        )\n\ndef diagnose_delim(linestream, possible_delimiters=None, possible_quotechars=None):\n    # Returns a tuple consisting of the delimiter, quote character, and escape\n    # character for quote characters within elements of a line.  All may be None.\n    # If the escape character is not None, it will be u\"\\\".\n    # Arguments:\n    # * linestream: An iterable file-like object with a 'next()' method that returns lines of text\n    #  as bytes or unicode.\n    # * possible_delimiters: A list of single characters that might be used to separate items on\n    #  a line.  If not specified, the default consists of tab, comma, semicolon, and vertical rule.\n    #  If a space character is included, multiple space characters will be treated as a single\n    #  delimiter--so it's best if there are no missing values on space-delimited lines, though\n    #  that is not necessarily a fatal flaw unless there is a very high fraction of missing values.\n    # * possible_quotechars: A list of single characters that might be used to quote items on\n    #  a line.  If not specified, the default consists of single and double quotes.\n    if not possible_delimiters:\n        possible_delimiters = [\"\\t\", \",\", \";\", \"|\"]\n    if not possible_quotechars:\n        possible_quotechars = ['\"', \"'\"]\n    lines = []\n    for i in range(100):\n        try:\n            ln = linestream.next()\n        except StopIteration:\n            break\n        except:\n            raise\n        while len(ln) &gt; 0 and ln[-1] in (\"\\n\", \"\\r\"):\n            ln = ln[:-1]\n        if len(ln) &gt; 0:\n            lines.append(CsvLine(ln))\n    if len(lines) == 0:\n        raise CsvDiagError(\"CSV diagnosis error: no lines read\")\n    for ln in lines:\n        for d in possible_delimiters:\n            ln.count_delim(d)\n    # For each delimiter, find the minimum number of delimiters found on any line, and the number of lines\n    # with that minimum number\n    delim_stats = {}\n    for d in possible_delimiters:\n        dcounts = [ln.delim_count(d) for ln in lines]\n        min_count = min(dcounts)\n        delim_stats[d] = (min_count, dcounts.count(min_count))\n    # Remove delimiters that were never found.\n    for k in delim_stats.keys():\n        if delim_stats[k][0] == 0:\n            del delim_stats[k]\n\n    def all_well_quoted(delim, qchar):\n        # Returns a tuple of boolean, int, and boolean indicating: 1) whether the line is\n        # well-quoted, 2) the total number of lines and elements for which the quote character\n        # is used, and 3) the escape character used.\n        wq = [l.well_quoted_line(delim, qchar) for l in lines]\n        return (\n            all([b[0] for b in wq]),\n            sum([b[1] for b in wq]),\n            CsvLine.escchar if any([b[2] for b in wq]) else None,\n        )\n\n    def eval_quotes(delim):\n        # Returns a tuple of the form to be returned by 'diagnose_delim()'.\n        ok_quotes = {}\n        for q in possible_quotechars:\n            allwq = all_well_quoted(delim, q)\n            if allwq[0]:\n                ok_quotes[q] = (allwq[1], allwq[2])\n        if len(ok_quotes) == 0:\n            return (delim, None, None)  # No quotes, no escapechar\n        else:\n            max_use = max([v[0] for v in ok_quotes.values()])\n            if max_use == 0:\n                return (delim, None, None)\n            # If multiple quote characters have the same usage, return (arbitrarily) the first one.\n            for q in ok_quotes.keys():\n                if ok_quotes[q][0] == max_use:\n                    return (delim, q, ok_quotes[q][1])\n\n    if len(delim_stats) == 0:\n        # None of the delimiters were found.  Some other delimiter may apply,\n        # or the input may contain a single value on each line.\n        # Identify possible quote characters.\n        return eval_quotes(None)\n    else:\n        if len(delim_stats) &gt; 1:\n            # If one of them is a space, prefer the non-space\n            if \" \" in delim_stats.keys():\n                del delim_stats[\" \"]\n        if len(delim_stats) == 1:\n            return eval_quotes(delim_stats.keys()[0])\n        # Assign weights to the delimiters.  The weight is the square of the minimum number of delimiters\n        # on a line times the number of lines with that delimiter.\n        delim_wts = {}\n        for d in delim_stats.keys():\n            delim_wts[d] = delim_stats[d][0] ** 2 * delim_stats[d][1]\n        # Evaluate quote usage for each delimiter, from most heavily weighted to least.\n        # Return the first good pair where the quote character is used.\n        delim_order = sorted(delim_wts, key=delim_wts.get, reverse=True)\n        for d in delim_order:\n            quote_check = eval_quotes(d)\n            if quote_check[0] and quote_check[1]:\n                return quote_check\n        # There are no delimiters for which quotes are OK.\n        return (delim_order[0], None, None)\n    # Should never get here\n    raise CsvDiagError(\"CSV diagnosis error: an untested set of conditions are present\")"
+  },
+  {
+    "objectID": "development/code/python.html#import-csv-to-a-database",
+    "href": "development/code/python.html#import-csv-to-a-database",
+    "title": "Python",
+    "section": "Import CSV to a Database",
+    "text": "Import CSV to a Database\nclass CsvFile(object):\n    \"\"\"CsvFile class automatically opens a file and creates a CSV reader, reads the first row containing column headers, and stores those headers so that they can be used to construct the INSERT statement.\"\"\"\n    def __init__(self, filename):\n        self.fn = filename\n        self.f = None\n        self.open()\n        self.rdr = csv.reader(self.f)\n        self.headers = next(self.rdr)\n    def open(self):\n        if self.f is None:\n            mode = \"rb\" if sys.version_info &lt; (3,) else \"r\"\n            self.f = open(self.fn, mode)\n    def reader(self):\n        return self.rdr\n    def close(self):\n        self.rdr = None\n        self.f.close()\n        self.f = None\n\n\nclass Database(object):\n    \"\"\"The Database class and subclasses provide a database connection for each type of DBMS, and a method to construct an INSERT statement for a given CsvFile object, using that DBMS's parameter substitution string.  The conn_info argument is a dictionary containing the host name, user name, and password.\"\"\"\n    def __init__(self, conn_info):\n        self.paramstr = '%s'\n        self.conn = None\n    def insert_sql(self, tablename, csvfile):\n        return \"insert into %s (%s) values (%s);\" % (\n                tablename,\n                \",\".join(csvfile.headers),\n                \",\".join([self.paramstr] * len(csvfile.headers))\n                )\n\n\nclass PgDb(Database):\n    def __init__(self, conn_info):\n        self.db_type = \"p\"\n        import psycopg2\n        self.paramstr = \"%s\"\n        connstr = \"host=%(server)s dbname=%(db)s user=%(user)s password=%(pw)s\" % conn_info\n        self.conn = psycopg2.connect(connstr)\n\n    def postgres_copy(csvfile, db):\n        \"\"\"Postgres COPY command. Fastest implementation\"\"\"\n        curs = db.conn.cursor()\n        rf = open(csvfile.fn, \"rt\")\n        # Read and discard headers\n        hdrs = rf.readline()\n        copy_cmd = \"copy copy_test from stdin with (format csv)\"\n        curs.copy_expert(copy_cmd, rf)\n\n    def simple_copy(csvfile, db):\n        \"\"\"Row-by-row reading and writing\"\"\"\n        ins_sql = db.insert_sql(\"copy_test\", csvfile)\n        curs = db.conn.cursor()\n        rdr = csvfile.reader()\n        for line in rdr:\n            curs.execute(ins_sql, clean_line(line))\n        db.conn.commit()\n\n    def buffer1_copy(csvfile, db, buflines):\n        \"\"\"Buffered reading and writing\"\"\"\n        ins_sql = db.insert_sql(\"copy_test\", csvfile)\n        curs = db.conn.cursor()\n        rdr = csvfile.reader()\n        eof = False\n        while True:\n            b = []\n            for j in range(buflines):\n                try:\n                    line = next(rdr)\n                except StopIteration:\n                    eof = True\n                else:\n                    b.append(clean_line(line))\n            if len(b) &gt; 0:\n                curs.executemany(ins_sql, b)\n            if eof:\n                break\n        db.conn.commit()"
+  },
+  {
+    "objectID": "development/code/html.html",
+    "href": "development/code/html.html",
+    "title": "HTML",
     "section": "",
-    "text": "Clone repository:\nsudo mkdir /etc/local/webs && \\\ncd /etc/local/webs && \\\nsudo git clone https://github.com/app.git && \\\nsudo chown -R &lt;user&gt;:&lt;user&gt; app && \\\ncd app\nCreate python virtual environment & install dependencies:\npython -m venv .venv && \\\nsource .venv/bin/activate && \\\npython -m pip install -r requirements.txt\nConfigure WSGI - /usr/local/webs/app/app.wsgi:\n#!/usr/bin/python\nimport sys\nimport logging\nimport os\n\nAPP_DIR = \"/usr/local/webs/app\"\nos.environ[\"APP_DIR\"] = APP_DIR\n\nlogging.basicConfig(stream=sys.stderr)\nsys.path.insert(0, APP_DIR)\n\nfrom app import app as application\nUpdate owner:group\ncd /usr/local/web && \\\nsudo chown -R www-data:www-data cmat"
+    "text": "Below is an example of a basic document header that includes local javascript and css document resources, plus hosted Bootstrap and jQuery libraries.\n&lt;!DOCTYPE html&gt;\n&lt;html lang=\"en\" dir=\"ltr\"&gt;\n\n    &lt;head&gt;\n        &lt;meta charset=\"utf-8\" /&gt;\n        &lt;title&gt;Bootstrap 5&lt;/title&gt;\n        &lt;!-- Bootstrap CSS --&gt;\n        &lt;link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC\" crossorigin=\"anonymous\" /&gt;\n        &lt;!-- Local assets --&gt;\n        &lt;link rel=\"stylesheet\" type=\"text/css\" href=\"assets/css/main.css\" /&gt;\n        &lt;!-- Favicon --&gt;\n        &lt;link rel=\"shortcut icon\" type=\"image/x-icon\" href=\"\" /&gt;\n        &lt;!-- jQuery --&gt;\n        &lt;script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js\"&gt;&lt;/script&gt;\n        &lt;!-- Bootstrap JS and Popper --&gt;\n        &lt;script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM\" crossorigin=\"anonymous\"&gt;&lt;/script&gt;\n        &lt;!-- Local scripts --&gt;\n        &lt;script type=\"text/javascript\" src=\"assets/js/main.js\"&gt;&lt;/script&gt;\n    &lt;/head&gt;\n\n    &lt;body&gt;\n    &lt;/body&gt;\n&lt;/html&gt;"
   },
   {
-    "objectID": "development/server/python-web-app.html#flask-app-configuration",
-    "href": "development/server/python-web-app.html#flask-app-configuration",
-    "title": "Python Web App",
+    "objectID": "development/code/html.html#document-header",
+    "href": "development/code/html.html#document-header",
+    "title": "HTML",
     "section": "",
-    "text": "Clone repository:\nsudo mkdir /etc/local/webs && \\\ncd /etc/local/webs && \\\nsudo git clone https://github.com/app.git && \\\nsudo chown -R &lt;user&gt;:&lt;user&gt; app && \\\ncd app\nCreate python virtual environment & install dependencies:\npython -m venv .venv && \\\nsource .venv/bin/activate && \\\npython -m pip install -r requirements.txt\nConfigure WSGI - /usr/local/webs/app/app.wsgi:\n#!/usr/bin/python\nimport sys\nimport logging\nimport os\n\nAPP_DIR = \"/usr/local/webs/app\"\nos.environ[\"APP_DIR\"] = APP_DIR\n\nlogging.basicConfig(stream=sys.stderr)\nsys.path.insert(0, APP_DIR)\n\nfrom app import app as application\nUpdate owner:group\ncd /usr/local/web && \\\nsudo chown -R www-data:www-data cmat"
+    "text": "Below is an example of a basic document header that includes local javascript and css document resources, plus hosted Bootstrap and jQuery libraries.\n&lt;!DOCTYPE html&gt;\n&lt;html lang=\"en\" dir=\"ltr\"&gt;\n\n    &lt;head&gt;\n        &lt;meta charset=\"utf-8\" /&gt;\n        &lt;title&gt;Bootstrap 5&lt;/title&gt;\n        &lt;!-- Bootstrap CSS --&gt;\n        &lt;link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC\" crossorigin=\"anonymous\" /&gt;\n        &lt;!-- Local assets --&gt;\n        &lt;link rel=\"stylesheet\" type=\"text/css\" href=\"assets/css/main.css\" /&gt;\n        &lt;!-- Favicon --&gt;\n        &lt;link rel=\"shortcut icon\" type=\"image/x-icon\" href=\"\" /&gt;\n        &lt;!-- jQuery --&gt;\n        &lt;script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js\"&gt;&lt;/script&gt;\n        &lt;!-- Bootstrap JS and Popper --&gt;\n        &lt;script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM\" crossorigin=\"anonymous\"&gt;&lt;/script&gt;\n        &lt;!-- Local scripts --&gt;\n        &lt;script type=\"text/javascript\" src=\"assets/js/main.js\"&gt;&lt;/script&gt;\n    &lt;/head&gt;\n\n    &lt;body&gt;\n    &lt;/body&gt;\n&lt;/html&gt;"
   },
   {
-    "objectID": "development/server/python-web-app.html#apache-configuration",
-    "href": "development/server/python-web-app.html#apache-configuration",
-    "title": "Python Web App",
-    "section": "Apache Configuration",
-    "text": "Apache Configuration\n\nCreate custom Apache log directory:\nsudo mkdir /usr/local/webs/apache-logs && \\\nsudo touch /usr/local/webs/apache-logs/app/error.log && \\\nsudo touch /usr/local/webs/apache-logs/app/access.log && \\\nsudo chown -R www-data:www-data /usr/local/webs/apache-logs\nCreate configuration file:\ncd /etc/apache2/sites-available && \\\nsudo vi app.conf\nConfiguration - app.conf:\n&lt;VirtualHost *:80&gt;\n    ServerName {DNS}\n\n    ServerSignature Off\n\n    RewriteEngine On\n    RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]\n\n    ErrorLog /var/log/apache2/redirect.error.log\n    LogLevel warn\n&lt;/VirtualHost&gt;\n\n&lt;VirtualHost *:443&gt;\n    ServerAdmin webmaster@localhost\n    ServerName {DNS}\n\n    DocumentRoot /usr/local/webs/app\n\n    WSGIDaemonProcess web-app threads=5 python-home=/usr/local/webs/app/.venv\n    WSGIProcessGroup web-app\n    WSGIScriptAlias / /usr/local/webs/app/app.wsgi\n    WSGIPassAuthorization On\n    &lt;Directory /usr/local/webs/app&gt;\n            Order allow,deny\n            Allow from all\n    &lt;/Directory&gt;\n\n    &lt;Location /&gt;\n            Require all granted\n    &lt;/Location&gt;\n\n    ErrorLog /usr/local/webs/apache-logs/app/error.log\n    CustomLog /usr/local/webs/apache-logs/app/access.log combined\n\n    SSLEngine on\n    SSLCertificateFile /etc/letsencrypt/live/{DNS}/fullchain.pem\n    SSLCertificateKeyFile /etc/letsencrypt/live/{DNS}/privkey.pem\n    Include /etc/letsencrypt/options-ssl-apache.conf\n&lt;/VirtualHost&gt;\nTest configuration:\nsudo apache2ctl configtest\nEnable the site\nsudo a2ensite app.conf\nRestart Apache service\nsudo systemctl restart apache2"
-  },
-  {
-    "objectID": "development/tools/docker.html",
-    "href": "development/tools/docker.html",
-    "title": "Docker",
+    "objectID": "development/code/bash.html",
+    "href": "development/code/bash.html",
+    "title": "Bash",
     "section": "",
-    "text": "Steps are pulled from a Digital Ocean tutorial.\n\nUpdate list of packages and install prerequisites.\nsudo apt update && \\\nsudo apt install apt-transport-https ca-certificates curl software-properties-common\nAdd the GPG key for the official Docker repository.\ncurl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -\nAdd the Docker repository to APT sources and update package list from the new repo.\nsudo add-apt-repository \"deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable\"\nMake sure install is pulling from Docker repo instead of default Ubuntu.\napt-cache policy docker-ce\nInstall Docker.\nsudo apt install docker-ce\nCheck that Docker is running.\nsudo systemctl status docker\nExecute Docker commands without sudo.\nsudo usermod -aG docker ${USER} && \\\nsu - ${USER}\nVerify user is now aded to the docker group.\ngroups"
+    "text": "sudo mount -t cifs //10.10.145.5/SourceDir /home/&lt;user&gt;/mnt/destination -o username=&lt;user&gt;,password=\"\",uid=1000"
   },
   {
-    "objectID": "development/tools/docker.html#installation",
-    "href": "development/tools/docker.html#installation",
-    "title": "Docker",
+    "objectID": "development/code/bash.html#mount-a-share",
+    "href": "development/code/bash.html#mount-a-share",
+    "title": "Bash",
     "section": "",
-    "text": "Steps are pulled from a Digital Ocean tutorial.\n\nUpdate list of packages and install prerequisites.\nsudo apt update && \\\nsudo apt install apt-transport-https ca-certificates curl software-properties-common\nAdd the GPG key for the official Docker repository.\ncurl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -\nAdd the Docker repository to APT sources and update package list from the new repo.\nsudo add-apt-repository \"deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable\"\nMake sure install is pulling from Docker repo instead of default Ubuntu.\napt-cache policy docker-ce\nInstall Docker.\nsudo apt install docker-ce\nCheck that Docker is running.\nsudo systemctl status docker\nExecute Docker commands without sudo.\nsudo usermod -aG docker ${USER} && \\\nsu - ${USER}\nVerify user is now aded to the docker group.\ngroups"
+    "text": "sudo mount -t cifs //10.10.145.5/SourceDir /home/&lt;user&gt;/mnt/destination -o username=&lt;user&gt;,password=\"\",uid=1000"
   },
   {
-    "objectID": "development/tools/docker.html#resources",
-    "href": "development/tools/docker.html#resources",
-    "title": "Docker",
-    "section": "Resources",
-    "text": "Resources\n\nCheatSheet\nConvert Docker command to docker-compose.yml"
+    "objectID": "development/code/bash.html#generating-an-ssh-key",
+    "href": "development/code/bash.html#generating-an-ssh-key",
+    "title": "Bash",
+    "section": "Generating an SSH Key",
+    "text": "Generating an SSH Key\ncd ~/.ssh\n# Generate the Key\nssh-keygen -t rsa -b 4096 -C \"your_email@example.com\"\n# Copy th ekey\ncat gh_actions.pub &gt;&gt; ~/.ssh/authorized_keys\n# Copy the key:\ncat ~/.ssh/gh_actions"
   },
   {
-    "objectID": "development/tools/docker.html#image-vs.-container",
-    "href": "development/tools/docker.html#image-vs.-container",
-    "title": "Docker",
-    "section": "Image vs. Container",
-    "text": "Image vs. Container\nImage - Application we want to run\nContainer - Instance of that image running as a process"
-  },
-  {
-    "objectID": "development/tools/docker.html#docker-basics",
-    "href": "development/tools/docker.html#docker-basics",
-    "title": "Docker",
-    "section": "Docker Basics",
-    "text": "Docker Basics\n\nCreate an Nginx container\ndocker run -p 80:80 -d --name webhost nginx\n\nDownloads Nginx from Docker Hub\nStarts new container from that image\nOpened port 80 on host IP\nRoutes port 80 traffic to the container IP, port 80\nView container at http://localhost:80\n\n\n\nOther examples\ndocker run -p 80:80 -d --name nginx nginx\ndocker run -p 8080:80 -d --name httpd httpd\ndocker run -p 3306:3306 --platform linux/amd64 -d --name mysql -e MYSQL_RANDOM_ROOT_PASSWORD=true mysql\nCreate a JupyterLab instance and attach your current directory as a volume: docker run -it --rm -p 8888:8888 -v $(PWD):/home/jovyan jupyter/pyspark-notebook\n\n\nProcesses and configurations\nCheck processes running inside a container: docker top &lt;container&gt;\nContainer configuration: docker &lt;container&gt; inspect\nCheck container stats (memory, cpu, network): docker stats &lt;container&gt;\n\n\nGetting a shell inside containers\nStart a new container interactively: docker run -it &lt;container&gt;\nRun commands in existing container: docker exec -it &lt;container&gt;\n\nExample: Start a container interactively and launch bash within it\n\nStart container and launch bash: docker run -it --name ubuntu ubuntu bash\nRun some bash command: apt-get install -y curl\nExit the container: exit\nStart and re-enter the container: docker start -ai ubuntu\n\n\n\nExample: Launch shell in running container\ndocker exec -it &lt;container&gt; bash\n\n\n\nPull an image from docker hub\ndocker pull &lt;imagename&gt;"
-  },
-  {
-    "objectID": "development/tools/docker.html#docker-networks",
-    "href": "development/tools/docker.html#docker-networks",
-    "title": "Docker",
-    "section": "Docker Networks",
-    "text": "Docker Networks\n\nEach container is connected to a private virtual network (called “bridge”).\nEach virtual network routes through NAT firewall on host IP.\nAll containers on a virtual network can talk to each other without -p\nBest practice: Create a new virtual network for each app.\nYou can skip virtual networks and use the host IP (--net=host).\n\nGet container IP: docker inspect --format '{{ .NetworkSettings.IPAddress }}' &lt;container&gt;\n\nPublishing (#:#)\nexample: 8080:80\nleft number: published/host port\nright number: listening/container port\nTraffic passing through port 8080 on the HOST will be directed to port 80 on the container.\n\n\nDNS\nDocker uses container names as host names.\nDont rely on IPs for inter-communication.\nBest Practice Always use custom networks.\n\nAssignment\nCheck different curl versions within current versions of Ubuntu and CentOS.\nRun “curl –version” on both operating systems.\n\nSteps\nubuntu: apt-get update && apt-get install curl\ncentos: yum update curl\nThen…\ncurl --version\nAlso:\nCheck out command docker --rm"
-  },
-  {
-    "objectID": "development/tools/docker.html#dockerfiles",
-    "href": "development/tools/docker.html#dockerfiles",
-    "title": "Docker",
-    "section": "Dockerfiles",
-    "text": "Dockerfiles\nRecipe for creating images\nEach Dockerfile stanza such as “RUN”, “CMD”, etc. are stored as a single image layer. Docker caches each layer by giving it a unique SHA (hash), so whenever the image is (re)built, it can check to see if a layer has changed, and if not, it will use the cached layer.\nDocker builds images top down, so it is best practice to structure the Dockerfile in such a way that lines which will change the most are at the bottom, and lines that will change the least are at the top. If a line is changed (ie. source code changes) Docker will rebuild that line, and thus each line after that will also need to be rebuilt."
-  },
-  {
-    "objectID": "development/tools/docker.html#keeping-the-docker-system-clean",
-    "href": "development/tools/docker.html#keeping-the-docker-system-clean",
-    "title": "Docker",
-    "section": "Keeping the Docker system clean",
-    "text": "Keeping the Docker system clean\ndocker system prune - all stopped containers - all networks not used by at least one container - all dangling images - all dangling build cache"
-  },
-  {
-    "objectID": "development/tools/docker.html#volumes-an-bind-mounts",
-    "href": "development/tools/docker.html#volumes-an-bind-mounts",
-    "title": "Docker",
-    "section": "Volumes an Bind Mounts",
-    "text": "Volumes an Bind Mounts\nVolumes - Special location outside of container UFS\nBind Mounts - Link container path to host path\nBuild an image and named volume (persistent): docker run -d --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=True -v mysql:/var/lib/mysql --platform linux/amd64 mysql"
-  },
-  {
-    "objectID": "development/tools/github.html",
-    "href": "development/tools/github.html",
-    "title": "GitHub",
+    "objectID": "blog/posts/mounting-a-windows-share/index.html",
+    "href": "blog/posts/mounting-a-windows-share/index.html",
+    "title": "Mounting a Windows Share",
     "section": "",
-    "text": "Action to push app/site to remote host: https://claritydev.net/blog/automate-deployment-workflow-nextjs-digitalocean-github-actions\n\n\n\n Back to top"
+    "text": "The command below can be used to create a temporary mount point although the mount will disassociate on next server reboot.\nmkdir /home/&lt;user&gt;/mnt/DataManagement && \\\nsudo mount -t cifs //10.10.145.5/DataManagement /home/&lt;user&gt;/mnt/DataManagement -o username=&lt;user&gt;,password=\"\",uid=1000"
+  },
+  {
+    "objectID": "blog/posts/mounting-a-windows-share/index.html#quick-reference",
+    "href": "blog/posts/mounting-a-windows-share/index.html#quick-reference",
+    "title": "Mounting a Windows Share",
+    "section": "",
+    "text": "The command below can be used to create a temporary mount point although the mount will disassociate on next server reboot.\nmkdir /home/&lt;user&gt;/mnt/DataManagement && \\\nsudo mount -t cifs //10.10.145.5/DataManagement /home/&lt;user&gt;/mnt/DataManagement -o username=&lt;user&gt;,password=\"\",uid=1000"
+  },
+  {
+    "objectID": "blog/posts/mounting-a-windows-share/index.html#persistent-mounts",
+    "href": "blog/posts/mounting-a-windows-share/index.html#persistent-mounts",
+    "title": "Mounting a Windows Share",
+    "section": "Persistent Mounts",
+    "text": "Persistent Mounts\n\nCreate a mount point to a Windows share name (e.g. Q): sudo mkdir /mnt/share/Q\nAppend the following similar line to /etc/fstab– to associate the mount automatically upon machine boot:\n//192.168.50.19/Transfer /mnt/share/Q cifs credentials=/home/DatamanBU/.smbpasswd,uid=1011,gid=1005,dir_mode=0775,file_mode=0775,rw 0 0\nNotes:\n\nuid=1011: mount as user username. Find UID with id -u &lt;username&gt;\ngid=1005: mount as group datamgrs\ndir_mode=0775, file_mode=0775: readable/writeable by any users that are members of datamgrs group\nThe credentials file /home/DatamanBU/.smpbasswd must already exist (or be created) by root. It contains 2 lines:\nusername=DatamanBU\npassword=password\nMake the credentials file only readable by root: sudo chmod 700 /home/DatamanBU/.smbpasswd\n\nAssociate the mount immediately: sudo mount -a -v -t cifs"
+  },
+  {
+    "objectID": "blog/posts/git-merge/index.html",
+    "href": "blog/posts/git-merge/index.html",
+    "title": "Git Merge",
+    "section": "",
+    "text": "The steps below can be used to merge two branches on your local machine. The braches used in this example are:\n\nmain: The authoritative or “production” code lives in this branch.\ndev: This branch is split from the main branch and a new feature or update is coded with the intent to merge changes back into the main branch.\n\n\nPull main and dev branches so local repo is up to date with the remote.\n\ngit checkout main\ngit pull origin main\ngit checkout dev\ngit pull origin dev\n\nCheckout the main branch so we can merge the dev branch into main\n\ngit checkout main\ngit merge dev\n\n\nCheck the branch status: git status\n\nEvaluate the two files with a conflict (ie. .gitignore and requirements.txt) and reconcile issues, then git add when ready.\nCommit the changes: git commit -m \"merge @tnelson-integral dev branch with main\"\nPush changes to the remote on GitHub: git push origin main\nCheck out the dev branch locally and pull the main branch changes into it so dev can be up-to-date with main\n\ngit checkout dev\ngit pull origin main\ngit push origin dev\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "blog/posts/accessing-quarto-variables/index.html",
+    "href": "blog/posts/accessing-quarto-variables/index.html",
+    "title": "Accessing Quarto Variables",
+    "section": "",
+    "text": "You can access dynamic variables within documents, which can be useful for externalizing content that varies depending on context. As an example, you can reference file metadata using the syntax {&lt; meta title &gt;}, which would include the title of this article: Accessing Quarto Variables.\nIsn’t that cool? \n\n\n\n Back to top"
+  },
+  {
+    "objectID": "blog/index.html",
+    "href": "blog/index.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nDescription\n\n\nAuthor\n\n\nReading Time\n\n\nCategories\n\n\n\n\n\n\n\n\n\nJul 5, 2023\n\n\nMounting a Windows Share\n\n\nMount a windows share drive to a Linux machine\n\n\nCaleb Grant\n\n\n2 min\n\n\nLinux\n\n\n\n\n\n\n\nJul 3, 2023\n\n\nQuarto Tabsets\n\n\nCreating tabsets with Quarto\n\n\nCaleb Grant\n\n\n1 min\n\n\nQuarto\n\n\n\n\n\n\n\nJun 30, 2023\n\n\nGit Merge\n\n\nMerging git branches locally\n\n\nCaleb Grant\n\n\n2 min\n\n\nGit\n\n\n\n\n\n\n\nJun 30, 2023\n\n\nLinux Permissions\n\n\nLinux permission cheatsheet and examples\n\n\nCaleb Grant\n\n\n1 min\n\n\nLinux\n\n\n\n\n\n\n\nJun 29, 2023\n\n\nCreating a Blog Post\n\n\nThis is an example of how to create a new blog post.\n\n\nCaleb Grant\n\n\n1 min\n\n\nQuarto,Blog\n\n\n\n\n\n\n\nJun 15, 2023\n\n\nAccessing Quarto Variables\n\n\nAccess quarto variables in a document.\n\n\nCaleb Grant\n\n\n1 min\n\n\nQuarto,Variables\n\n\n\n\n\n\nNo matching items\n\n\n\n RSS\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "blog/posts/creating-a-post/index.html",
+    "href": "blog/posts/creating-a-post/index.html",
+    "title": "Creating a Blog Post",
+    "section": "",
+    "text": "To add a post, create a copy of blog/posts/_template, modify the folder name with the title of the post, then update the index.qmd with your content. New posts under blog/posts will show up in the blog listings when the site is rendered.\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "blog/posts/linux-permissions/index.html",
+    "href": "blog/posts/linux-permissions/index.html",
+    "title": "Linux Permissions",
+    "section": "",
+    "text": "General: _rwxrwxrwx 1 owner group\n_ | rwx | rwx | rwx = Special | Owner | Group | All Users\n\n\n\n4 | r = Read\n2 | w = Write\n1 | x = Execute\n\n\n\n\n\n0 = ---\n1 = --x\n2 = -w-\n3 = -wx\n4 = r-\n5 = r-x\n6 = rw-\n7 = rwx"
+  },
+  {
+    "objectID": "blog/posts/linux-permissions/index.html#syntax",
+    "href": "blog/posts/linux-permissions/index.html#syntax",
+    "title": "Linux Permissions",
+    "section": "",
+    "text": "General: _rwxrwxrwx 1 owner group\n_ | rwx | rwx | rwx = Special | Owner | Group | All Users\n\n\n\n4 | r = Read\n2 | w = Write\n1 | x = Execute\n\n\n\n\n\n0 = ---\n1 = --x\n2 = -w-\n3 = -wx\n4 = r-\n5 = r-x\n6 = rw-\n7 = rwx"
+  },
+  {
+    "objectID": "blog/posts/linux-permissions/index.html#commands",
+    "href": "blog/posts/linux-permissions/index.html#commands",
+    "title": "Linux Permissions",
+    "section": "Commands",
+    "text": "Commands\nchgrp = Change group\nExample: sudo chgrp -R &lt;group&gt; &lt;folder&gt;\nchown = Change ownership\nExample: sudo chown -R &lt;user&gt;:&lt;group&gt; &lt;file/folder&gt;\nchmod = Change permissions\nExample: sudo chmod -R 774 &lt;file/folder&gt;\nMake new files inherit the group: sudo chmod g+s &lt;folder&gt;\n\nExample\nCreate a shared directory for a group.1. Create a shared directory for users to access: /share\n\nAssign users to a common group (staff): sudo usermod -a -G staff &lt;user&gt;\nVerify user groups: groups &lt;user&gt;\nCreate shared directory and assign permissions:\n\nsudo mkdir /share && \\\nsudo chgrp -R staff /share && \\ # assign group\nsudo chmod -R g+w /share && \\ # permissions\nsudo chmod -R +s /share # inherit permissions for newly created files/folders"
+  },
+  {
+    "objectID": "blog/posts/quarto-tabsets/index.html",
+    "href": "blog/posts/quarto-tabsets/index.html",
+    "title": "Quarto Tabsets",
+    "section": "",
+    "text": "PythonJavaScript\n\n\nMarkup:\n```{py}\nprint(\"Hello World\")\n```\nOutput:\nprint(\"Hello World\")\n\n\nMarkup:\n```{js}\nconsole.log(\"Hello World\");\n```\nOutput:\nconsole.log(\"Hello World\");\n\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "development/code/cmd.html",
+    "href": "development/code/cmd.html",
+    "title": "CMD",
+    "section": "",
+    "text": "@echo off\ncls\n\n@REM Set the path to the script root (using UNC path). Note the string is not quoted.\nset SCRIPT_DIR=\\\\integral-corp.com\\data\\&lt;Project Number Range&gt;\\&lt;Project Folder&gt;\\Working_Files\\DataManagement\\IDB\\export\\script\n\n@REM Name of the script to execute. Note the string is not quoted.\nset SCRIPT_NAME=export.sql\n\n@REM Prompt the user for their Postgres password\n@REM This allows for users to run the execsql script who might not have\n@REM a custom execsql.conf file specified with their username.\nset /p \"DB_USER=Enter you PostgreSQL username: \"\n\n@REM Run the execsql script\nPowerShell -NoProfile -ExecutionPolicy Bypass -Command \"& Set-Location -Path %SCRIPT_DIR%; M:\\DataManagement\\bin\\execsql.py -u %DB_USER% %SCRIPT_NAME%\"\n\npause"
+  },
+  {
+    "objectID": "development/code/cmd.html#run-a-python-script",
+    "href": "development/code/cmd.html#run-a-python-script",
+    "title": "CMD",
+    "section": "",
+    "text": "@echo off\ncls\n\n@REM Set the path to the script root (using UNC path). Note the string is not quoted.\nset SCRIPT_DIR=\\\\integral-corp.com\\data\\&lt;Project Number Range&gt;\\&lt;Project Folder&gt;\\Working_Files\\DataManagement\\IDB\\export\\script\n\n@REM Name of the script to execute. Note the string is not quoted.\nset SCRIPT_NAME=export.sql\n\n@REM Prompt the user for their Postgres password\n@REM This allows for users to run the execsql script who might not have\n@REM a custom execsql.conf file specified with their username.\nset /p \"DB_USER=Enter you PostgreSQL username: \"\n\n@REM Run the execsql script\nPowerShell -NoProfile -ExecutionPolicy Bypass -Command \"& Set-Location -Path %SCRIPT_DIR%; M:\\DataManagement\\bin\\execsql.py -u %DB_USER% %SCRIPT_NAME%\"\n\npause"
+  },
+  {
+    "objectID": "development/code/index.html",
+    "href": "development/code/index.html",
+    "title": "Code",
+    "section": "",
+    "text": "Bourne Again SHell\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCommand Prompt\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHyperText Markup Language\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPython programming language\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRegular expressions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStructured Query Language\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "development/code/index.html#code-pages",
+    "href": "development/code/index.html#code-pages",
+    "title": "Code",
+    "section": "",
+    "text": "Bourne Again SHell\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCommand Prompt\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHyperText Markup Language\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPython programming language\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRegular expressions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStructured Query Language\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "development/code/regex.html",
+    "href": "development/code/regex.html",
+    "title": "Regex",
+    "section": "",
+    "text": "\\[([^\\]]+)\\]\\(([^\\)]+)\\)"
+  },
+  {
+    "objectID": "development/code/regex.html#markdown-link-pattern",
+    "href": "development/code/regex.html#markdown-link-pattern",
+    "title": "Regex",
+    "section": "",
+    "text": "\\[([^\\]]+)\\]\\(([^\\)]+)\\)"
+  },
+  {
+    "objectID": "development/index.html",
+    "href": "development/index.html",
+    "title": "Development",
+    "section": "",
+    "text": "General coding best practices are a set of guidelines and recommendations that help developers write clean, efficient, and maintainable code. While specific practices may vary depending on the programming language and the project’s requirements, here are some general coding best practices:\n\nConsistent and meaningful naming: Use descriptive names for variables, functions, classes, and other entities to make the code self-explanatory. Maintain consistency in naming conventions throughout the codebase.\nCode readability: Write code that is easy to read and understand. Use proper indentation, spacing, and formatting. Add comments to explain complex logic or important details.\nModular and reusable code: Break down the code into smaller, logical modules or functions that perform specific tasks. This improves code maintainability, readability, and allows for code reuse.\nDon’t repeat yourself (DRY): Avoid duplicating code. Instead, create reusable functions or abstractions to eliminate redundancy. This reduces the chances of introducing bugs and makes code maintenance easier.\nKeep functions and methods small: Aim for small, focused functions or methods that perform a single task. This improves code readability, testability, and makes it easier to reason about the behavior of the code.\nFollow the Single Responsibility Principle (SRP): Each module, class, or function should have a single responsibility. Separating concerns helps in maintaining and modifying code without impacting other parts of the system.\nError handling and validation: Implement proper error handling and input validation to make the code more robust. Validate user inputs, handle exceptions gracefully, and provide meaningful error messages.\nUse version control: Utilize a version control system (e.g., Git) to track changes to the codebase, collaborate with others, and easily revert or review code changes when needed.\nCode reviews: Encourage peer code reviews to catch bugs, ensure adherence to best practices, and maintain code quality. Reviews provide an opportunity to share knowledge and improve the overall quality of the codebase.\nTesting: Write automated tests to validate the behavior and correctness of the code. Unit tests, integration tests, and other testing techniques help catch bugs early, ensure code stability, and facilitate refactoring.\nPerformance optimization: Optimize code for performance when necessary. Identify bottlenecks, use appropriate data structures and algorithms, and minimize unnecessary computations or operations.\nSecurity considerations: Follow security best practices to protect against common vulnerabilities. Sanitize user inputs, use prepared statements or parameterized queries to prevent SQL injection, and encrypt sensitive data.\nDocumentation: Document the code to provide insights into its functionality, usage, and any specific requirements. Use inline comments, README files, and documentation tools to make it easier for others to understand and use the code.\nKeep up with best practices: Stay updated with the latest best practices, coding standards, and programming language conventions. Regularly learn and improve your coding skills to write better code over time.\n\nRemember that best practices may vary depending on the specific programming language, domain, and project requirements. It’s important to adapt and adjust these practices as needed for each situation."
+  },
+  {
+    "objectID": "development/index.html#best-practices",
+    "href": "development/index.html#best-practices",
+    "title": "Development",
+    "section": "",
+    "text": "General coding best practices are a set of guidelines and recommendations that help developers write clean, efficient, and maintainable code. While specific practices may vary depending on the programming language and the project’s requirements, here are some general coding best practices:\n\nConsistent and meaningful naming: Use descriptive names for variables, functions, classes, and other entities to make the code self-explanatory. Maintain consistency in naming conventions throughout the codebase.\nCode readability: Write code that is easy to read and understand. Use proper indentation, spacing, and formatting. Add comments to explain complex logic or important details.\nModular and reusable code: Break down the code into smaller, logical modules or functions that perform specific tasks. This improves code maintainability, readability, and allows for code reuse.\nDon’t repeat yourself (DRY): Avoid duplicating code. Instead, create reusable functions or abstractions to eliminate redundancy. This reduces the chances of introducing bugs and makes code maintenance easier.\nKeep functions and methods small: Aim for small, focused functions or methods that perform a single task. This improves code readability, testability, and makes it easier to reason about the behavior of the code.\nFollow the Single Responsibility Principle (SRP): Each module, class, or function should have a single responsibility. Separating concerns helps in maintaining and modifying code without impacting other parts of the system.\nError handling and validation: Implement proper error handling and input validation to make the code more robust. Validate user inputs, handle exceptions gracefully, and provide meaningful error messages.\nUse version control: Utilize a version control system (e.g., Git) to track changes to the codebase, collaborate with others, and easily revert or review code changes when needed.\nCode reviews: Encourage peer code reviews to catch bugs, ensure adherence to best practices, and maintain code quality. Reviews provide an opportunity to share knowledge and improve the overall quality of the codebase.\nTesting: Write automated tests to validate the behavior and correctness of the code. Unit tests, integration tests, and other testing techniques help catch bugs early, ensure code stability, and facilitate refactoring.\nPerformance optimization: Optimize code for performance when necessary. Identify bottlenecks, use appropriate data structures and algorithms, and minimize unnecessary computations or operations.\nSecurity considerations: Follow security best practices to protect against common vulnerabilities. Sanitize user inputs, use prepared statements or parameterized queries to prevent SQL injection, and encrypt sensitive data.\nDocumentation: Document the code to provide insights into its functionality, usage, and any specific requirements. Use inline comments, README files, and documentation tools to make it easier for others to understand and use the code.\nKeep up with best practices: Stay updated with the latest best practices, coding standards, and programming language conventions. Regularly learn and improve your coding skills to write better code over time.\n\nRemember that best practices may vary depending on the specific programming language, domain, and project requirements. It’s important to adapt and adjust these practices as needed for each situation."
+  },
+  {
+    "objectID": "development/server/jupyter-server.html",
+    "href": "development/server/jupyter-server.html",
+    "title": "Jupyter Server",
+    "section": "",
+    "text": "Create jupyter user\nsudo adduser jupyter && \\\nsudo usermod -a -G staff jupyter\nsudo su jupyter && \\\nInstall Jupyter Lab\nsource /home/jupyter/.venv/bin/activate && \\\npython -m pip install jupyterlab && \\\njupyter-lab --generate-config\nConfigure Jupyter\nc.NotebookApp.ip = \"*\"\nc.NotebookApp.notebook_dir = \"/home/jupyter/notebooks/\"\nc.NotebookApp.open_browser = False\nc.NotebookApp.password = \"\"  # hashed password\nc.NotebookApp.port = 9999\nConfigure Apache:\n&lt;VirtualHost *:80&gt;\n    ServerName &lt;DNS ENTRY&gt;\n    ServerSignature Off\n\n    ErrorLog /var/log/apache2/redirect.error.log\n    LogLevel warn\n\n    ProxyPreserveHost On\n    ProxyPass \"/\" \"http://localhost:9999/\"\n    ProxyPassReverse \"/\" \"http://localhost:9999/\"\n\n    RewriteEngine on\n    RewriteCond %{SERVER_NAME} =&lt;DNS ENTRY&gt;\n    RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]\n&lt;/VirtualHost&gt;\n\n&lt;IfModule mod_ssl.c&gt;\n    &lt;VirtualHost *:443&gt;\n        ServerName &lt;DNS ENTRY&gt;\n        ServerSignature Off\n\n        ErrorLog /var/log/apache2/redirect.error.log\n        LogLevel warn\n\n        ProxyPreserveHost On\n        ProxyPass \"/\" \"http://localhost:9999/\"\n        ProxyPassReverse \"/\" \"http://localhost:9999/\"\n\n    &lt;Location \"/api/kernels/\"&gt;\n        ProxyPass        ws://localhost:9999/api/kernels/\n            ProxyPassReverse ws://localhost:9999/api/kernels/\n    &lt;/Location&gt;\n\n        SSLCertificateFile /etc/letsencrypt/live/&lt;DNS ENTRY&gt;/fullchain.pem\n        SSLCertificateKeyFile /etc/letsencrypt/&lt;DNS ENTRY&gt;/privkey.pem\n        Include /etc/letsencrypt/options-ssl-apache.conf\n    &lt;/VirtualHost&gt;\n&lt;/IfModule&gt;\nEnable Apache modules\nsudo a2enmod proxy\nsudo a2enmod proxy_http\nsudo a2enmod proxy_wstunnel\nGenerate SSL certs\nsudo certbot --apache certonly\nEnable the site\nsudo a2ensite jupyter.conf && \\\nsudo systemctl reload apache2 && \\\nsudo systemctl status apache2\nCreate the Jupyter service: /lib/systemd/system/jupyter.service\n# service name:     jupyter.service\n# path:             /lib/systemd/system/jupyter.service\n\n[Unit]\nDescription=Jupyter Notebook Server\n\n[Service]\nType=simple\nPIDFile=/run/jupyter.pid\nExecStart=/bin/bash -c \"/home/jupyter/.venv/bin/jupyter lab --no-browser\"\nUser=jupyter\nGroup=staff\nWorkingDirectory=/home/jupyter/notebooks\nRestart=always\nRestartSec=30\n\n[Install]\nWantedBy=multi-user.target\nEnable the service\nsudo systemctl daemon-reload && \\\nsudo systemctl start jupyter.service && \\\nsudo service jupyter status\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "development/server/rstudio-server.html",
+    "href": "development/server/rstudio-server.html",
+    "title": "Rstudio Server",
+    "section": "",
+    "text": "Install:\nwget https://download2.rstudio.org/server/jammy/amd64/rstudio-server-2022.07.2-576-amd64.deb && \\\nsudo gdebi rstudio-server-2022.07.2-576-amd64.deb && \\\nrm rstudio-server-2022.07.2-576-amd64.deb && \\\nsudo adduser rstudio\nApache config\n&lt;VirtualHost *:80&gt;\n    ServerName &lt;DNS ENTRY&gt;\n    ServerSignature Off\n\n    ErrorLog /var/log/apache2/redirect.error.log\n    LogLevel warn\n\n    ProxyPreserveHost On\n    ProxyPass \"/\" \"http://localhost:8787/\"\n    ProxyPassReverse \"/\" \"http://localhost:8787/\"\n\n    RewriteEngine on\n    RewriteCond %{SERVER_NAME} =&lt;DNS ENTRY&gt;\n    RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]\n&lt;/VirtualHost&gt;\n\n&lt;IfModule mod_ssl.c&gt;\n    &lt;VirtualHost *:443&gt;\n        ServerName &lt;DNS ENTRY&gt;\n        ServerSignature Off\n\n        ErrorLog /var/log/apache2/redirect.error.log\n        LogLevel warn\n\n        ProxyPreserveHost On\n        ProxyPass \"/\" \"http://localhost:8787/\"\n        ProxyPassReverse \"/\" \"http://localhost:8787/\"\n\n        SSLCertificateFile /etc/letsencrypt/live/&lt;DNS ENTRY&gt;/fullchain.pem\n        SSLCertificateKeyFile /etc/letsencrypt/live/&lt;DNS ENTRY&gt;/privkey.pem\n        Include /etc/letsencrypt/options-ssl-apache.conf\n    &lt;/VirtualHost&gt;\n&lt;/IfModule&gt;\nGenerate SSL certs\nsudo certbot --apache certonly\nEnable the site\nsudo a2ensite rstudio.conf && \\\nsudo systemctl reload apache2 && \\\nsudo systemctl status apache2\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "development/tools/git.html",
+    "href": "development/tools/git.html",
+    "title": "Git",
+    "section": "",
+    "text": "https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners\nhttps://docs.gitlab.com/ee/gitlab-basics/start-using-git.html"
+  },
+  {
+    "objectID": "development/tools/git.html#initialize",
+    "href": "development/tools/git.html#initialize",
+    "title": "Git",
+    "section": "Initialize",
+    "text": "Initialize\n\nLaunch Git Bash\nNavigate to project directory\ninitialize git repository in the folder root: git init\ncreate new file in directory: touch filename.extension\nlist files in root: ls\ncheck which files git recognizes: git status"
+  },
+  {
+    "objectID": "development/tools/git.html#staging",
+    "href": "development/tools/git.html#staging",
+    "title": "Git",
+    "section": "Staging",
+    "text": "Staging\nA commit is a record of what files you have changed since the last time you made a commit. Essentially, you make changes to your repo (for example, adding a file or modifying one) and then tell git to put those files into a commit. Commits make up the essence of your project and allow you to go back to the state of a project at any point.\nSo, how do you tell git which files to put into a commit? This is where the staging environment or index come in. When you make changes to your repo, git notices that a file has changed but won’t do anything with it (like adding it in a commit).\nTo add a file to a commit, you first need to add it to the staging environment. To do this, you can use the git add &lt;filename&gt; command.\nOnce you’ve used the git add command to add all the files you want to the staging environment, you can then tell git to package them into a commit using the git commit command. Note: The staging environment, also called ‘staging’, is the new preferred term for this, but you can also see it referred to as the ‘index’.\n\nAdd files to the staging environment: git add filename.extension\nCheck staging environment for new files: git status"
+  },
+  {
+    "objectID": "development/tools/git.html#commit-locally",
+    "href": "development/tools/git.html#commit-locally",
+    "title": "Git",
+    "section": "Commit Locally",
+    "text": "Commit Locally\ngit commit -m \"Your message about the commit\""
+  },
+  {
+    "objectID": "development/tools/git.html#branches",
+    "href": "development/tools/git.html#branches",
+    "title": "Git",
+    "section": "Branches",
+    "text": "Branches\nSay you want to make a new feature but are worried about making changes to the main project while developing the feature. This is where git branches come in.\nBranches allow you to move back and forth between ‘states’ of a project. For instance, if you want to add a new page to your website you can create a new branch just for that page without affecting the main part of the project. Once you’re done with the page, you can merge your changes from your branch into the master branch. When you create a new branch, Git keeps track of which commit your branch ‘branched’ off of, so it knows the history behind all the files.\n\ngit checkout -b &lt;my branch name&gt;\nShow list of branches: git branch"
+  },
+  {
+    "objectID": "development/tools/git.html#commit-to-github",
+    "href": "development/tools/git.html#commit-to-github",
+    "title": "Git",
+    "section": "Commit to Github",
+    "text": "Commit to Github\n\nCreate new repo on GitHub\ngit remote add origin &lt;url produced on github for new repo&gt;\ngit push -u origin [master/main]"
+  },
+  {
+    "objectID": "development/tools/git.html#push-a-branch-to-github",
+    "href": "development/tools/git.html#push-a-branch-to-github",
+    "title": "Git",
+    "section": "Push a Branch to Github",
+    "text": "Push a Branch to Github\ngit push origin &lt;my-new-branch&gt;\nYou might be wondering what that “origin” word means in the command above. What happens is that when you clone a remote repository to your local machine, git creates an alias for you. In nearly all cases this alias is called “origin.” It’s essentially shorthand for the remote repository’s URL. So, to push your changes to the remote repository, you could’ve used either the command: git push git@github.com:git/git.git yourbranchname or git push origin yourbranchname"
+  },
+  {
+    "objectID": "development/tools/git.html#pull-request",
+    "href": "development/tools/git.html#pull-request",
+    "title": "Git",
+    "section": "Pull Request",
+    "text": "Pull Request\nA pull request (or PR) is a way to alert a repo’s owners that you want to make some changes to their code. It allows them to review the code and make sure it looks good before putting your changes on the master branch."
+  },
+  {
+    "objectID": "development/tools/git.html#get-changes-on-github",
+    "href": "development/tools/git.html#get-changes-on-github",
+    "title": "Git",
+    "section": "Get Changes on Github",
+    "text": "Get Changes on Github\ngit pull origin master\ncheck all new commits: git log"
+  },
+  {
+    "objectID": "development/tools/git.html#view-differences",
+    "href": "development/tools/git.html#view-differences",
+    "title": "Git",
+    "section": "View Differences",
+    "text": "View Differences\n\nrun: git diff"
+  },
+  {
+    "objectID": "development/tools/git.html#remove-a-branch",
+    "href": "development/tools/git.html#remove-a-branch",
+    "title": "Git",
+    "section": "Remove a Branch",
+    "text": "Remove a Branch\n\nLocally\ngit branch -d &lt;branch_name&gt;\n\n\nRemote\ngit push &lt;remote_name&gt; --delete &lt;branch_name&gt;"
+  },
+  {
+    "objectID": "development/tools/git.html#remove-tracked-filedirectory",
+    "href": "development/tools/git.html#remove-tracked-filedirectory",
+    "title": "Git",
+    "section": "Remove tracked file/directory",
+    "text": "Remove tracked file/directory\n\nFile\ngit rm --cached &lt;file&gt;\n\n\nDirectory\ngit rm --cahced -r dir/"
+  },
+  {
+    "objectID": "development/tools/git.html#pre-commit",
+    "href": "development/tools/git.html#pre-commit",
+    "title": "Git",
+    "section": "pre-commit",
+    "text": "pre-commit\nPlease make sure to install our pre-commit hooks into your Git workflow. Pre-commit will help keep our code clean and make sure we are following best practices.\n\nInstall pre-commit hooks: python -m pre_commit install --install-hooks\nRun hooks on the entire codebase: python -m pre_commit run --all-files\n\nHooks will run on the current commit snapshot when executing a git commit. Pre-commit hooks allow us to check for potential issues and make sure we are applying standards to our code before pushing to GitHub.\nSee an example .pre-commit-config.yml"
+  },
+  {
+    "objectID": "development/tools/git.html#merge",
+    "href": "development/tools/git.html#merge",
+    "title": "Git",
+    "section": "Merge",
+    "text": "Merge\nThe steps below can be used to merge two branches on your local machine. The braches used in this example are:\n\nmain: The authoritative or “production” code lives in this branch.\ndev: This branch is split from the main branch and a new feature or update is coded with the intent to merge changes back into the main branch.\n\n\nPull main and dev branches so local repo is up to date with the remote.\n\ngit checkout main\ngit pull origin main\ngit checkout dev\ngit pull origin dev\n\nCheckout the main branch so we can merge the dev branch into main\n\ngit checkout main\ngit merge dev\n\n\nCheck the branch status: git status\n\nEvaluate the two files with a conflict (ie. .gitignore and requirements.txt) and reconcile issues, then git add when ready.\nCommit the changes: git commit -m \"merge @tnelson-integral dev branch with main\"\nPush changes to the remote on GitHub: git push origin main\nCheck out the dev branch locally and pull the main branch changes into it so dev can be up-to-date with main\n\ngit checkout dev\ngit pull origin main\ngit push origin dev"
   },
   {
     "objectID": "development/tools/miscellaneous.html",

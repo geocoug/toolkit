@@ -115,7 +115,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../development/tools/index.html">Tools</a></li><li class="breadcrumb-item"><a href="../../development/tools/git.html">Git</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../development/tools/docker.html">Tools</a></li><li class="breadcrumb-item"><a href="../../development/tools/git.html">Git</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -162,26 +162,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../development/code/javascript.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">JavaScript</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../development/code/powershell.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">PowerShell</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../../development/code/python.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Python</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../development/code/r.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">R</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -200,7 +182,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../development/tools/index.html" class="sidebar-item-text sidebar-link">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
  <span class="menu-text">Tools</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -287,8 +269,16 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#pull-request" id="toc-pull-request" class="nav-link" data-scroll-target="#pull-request">Pull Request</a></li>
   <li><a href="#get-changes-on-github" id="toc-get-changes-on-github" class="nav-link" data-scroll-target="#get-changes-on-github">Get Changes on Github</a></li>
   <li><a href="#view-differences" id="toc-view-differences" class="nav-link" data-scroll-target="#view-differences">View Differences</a></li>
-  <li><a href="#remove-a-branch" id="toc-remove-a-branch" class="nav-link" data-scroll-target="#remove-a-branch">Remove a Branch</a></li>
-  <li><a href="#remove-tracked-filedirectory" id="toc-remove-tracked-filedirectory" class="nav-link" data-scroll-target="#remove-tracked-filedirectory">Remove tracked file/directory</a></li>
+  <li><a href="#remove-a-branch" id="toc-remove-a-branch" class="nav-link" data-scroll-target="#remove-a-branch">Remove a Branch</a>
+  <ul class="collapse">
+  <li><a href="#locally" id="toc-locally" class="nav-link" data-scroll-target="#locally">Locally</a></li>
+  <li><a href="#remote" id="toc-remote" class="nav-link" data-scroll-target="#remote">Remote</a></li>
+  </ul></li>
+  <li><a href="#remove-tracked-filedirectory" id="toc-remove-tracked-filedirectory" class="nav-link" data-scroll-target="#remove-tracked-filedirectory">Remove tracked file/directory</a>
+  <ul class="collapse">
+  <li><a href="#file" id="toc-file" class="nav-link" data-scroll-target="#file">File</a></li>
+  <li><a href="#directory" id="toc-directory" class="nav-link" data-scroll-target="#directory">Directory</a></li>
+  </ul></li>
   <li><a href="#pre-commit" id="toc-pre-commit" class="nav-link" data-scroll-target="#pre-commit">pre-commit</a></li>
   <li><a href="#merge" id="toc-merge" class="nav-link" data-scroll-target="#merge">Merge</a></li>
   </ul>
@@ -318,8 +308,8 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners" class="uri">https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners</a></li>
 <li><a href="https://docs.gitlab.com/ee/gitlab-basics/start-using-git.html" class="uri">https://docs.gitlab.com/ee/gitlab-basics/start-using-git.html</a></li>
 </ul>
-<section id="initialize" class="level3">
-<h3 class="anchored" data-anchor-id="initialize">Initialize</h3>
+<section id="initialize" class="level2">
+<h2 class="anchored" data-anchor-id="initialize">Initialize</h2>
 <ol type="1">
 <li>Launch Git Bash</li>
 <li>Navigate to project directory</li>
@@ -329,8 +319,8 @@ ul.task-list li input[type="checkbox"] {
 <li>check which files git recognizes: <code>git status</code></li>
 </ol>
 </section>
-<section id="staging" class="level3">
-<h3 class="anchored" data-anchor-id="staging">Staging</h3>
+<section id="staging" class="level2">
+<h2 class="anchored" data-anchor-id="staging">Staging</h2>
 <p>A commit is a record of what files you have changed since the last time you made a commit. Essentially, you make changes to your repo (for example, adding a file or modifying one) and then tell git to put those files into a commit. Commits make up the essence of your project and allow you to go back to the state of a project at any point.</p>
 <p>So, how do you tell git which files to put into a commit? This is where the staging environment or index come in. When you make changes to your repo, git notices that a file has changed but won’t do anything with it (like adding it in a commit).</p>
 <p>To add a file to a commit, you first need to add it to the staging environment. To do this, you can use the <code>git add &lt;filename&gt;</code> command.</p>
@@ -340,12 +330,12 @@ ul.task-list li input[type="checkbox"] {
 <li>Check staging environment for new files: <code>git status</code></li>
 </ol>
 </section>
-<section id="commit-locally" class="level3">
-<h3 class="anchored" data-anchor-id="commit-locally">Commit Locally</h3>
+<section id="commit-locally" class="level2">
+<h2 class="anchored" data-anchor-id="commit-locally">Commit Locally</h2>
 <p><code>git commit -m "Your message about the commit"</code></p>
 </section>
-<section id="branches" class="level3">
-<h3 class="anchored" data-anchor-id="branches">Branches</h3>
+<section id="branches" class="level2">
+<h2 class="anchored" data-anchor-id="branches">Branches</h2>
 <p>Say you want to make a new feature but are worried about making changes to the main project while developing the feature. This is where git branches come in.</p>
 <p>Branches allow you to move back and forth between ‘states’ of a project. For instance, if you want to add a new page to your website you can create a new branch just for that page without affecting the main part of the project. Once you’re done with the page, you can merge your changes from your branch into the master branch. When you create a new branch, Git keeps track of which commit your branch ‘branched’ off of, so it knows the history behind all the files.</p>
 <ol type="1">
@@ -353,58 +343,58 @@ ul.task-list li input[type="checkbox"] {
 <li>Show list of branches: <code>git branch</code></li>
 </ol>
 </section>
-<section id="commit-to-github" class="level3">
-<h3 class="anchored" data-anchor-id="commit-to-github">Commit to Github</h3>
+<section id="commit-to-github" class="level2">
+<h2 class="anchored" data-anchor-id="commit-to-github">Commit to Github</h2>
 <ol type="1">
 <li>Create new repo on GitHub</li>
 <li><code>git remote add origin &lt;url produced on github for new repo&gt;</code></li>
 <li><code>git push -u origin [master/main]</code></li>
 </ol>
 </section>
-<section id="push-a-branch-to-github" class="level3">
-<h3 class="anchored" data-anchor-id="push-a-branch-to-github">Push a Branch to Github</h3>
+<section id="push-a-branch-to-github" class="level2">
+<h2 class="anchored" data-anchor-id="push-a-branch-to-github">Push a Branch to Github</h2>
 <p><code>git push origin &lt;my-new-branch&gt;</code></p>
 <p>You might be wondering what that “origin” word means in the command above. What happens is that when you clone a remote repository to your local machine, git creates an alias for you. In nearly all cases this alias is called “origin.” It’s essentially shorthand for the remote repository’s URL. So, to push your changes to the remote repository, you could’ve used either the command: git push git@github.com:git/git.git yourbranchname or git push origin yourbranchname</p>
 </section>
-<section id="pull-request" class="level3">
-<h3 class="anchored" data-anchor-id="pull-request">Pull Request</h3>
+<section id="pull-request" class="level2">
+<h2 class="anchored" data-anchor-id="pull-request">Pull Request</h2>
 <p>A pull request (or PR) is a way to alert a repo’s owners that you want to make some changes to their code. It allows them to review the code and make sure it looks good before putting your changes on the master branch.</p>
 </section>
-<section id="get-changes-on-github" class="level3">
-<h3 class="anchored" data-anchor-id="get-changes-on-github">Get Changes on Github</h3>
+<section id="get-changes-on-github" class="level2">
+<h2 class="anchored" data-anchor-id="get-changes-on-github">Get Changes on Github</h2>
 <p><code>git pull origin master</code></p>
 <p>check all new commits: <code>git log</code></p>
 </section>
-<section id="view-differences" class="level3">
-<h3 class="anchored" data-anchor-id="view-differences">View Differences</h3>
+<section id="view-differences" class="level2">
+<h2 class="anchored" data-anchor-id="view-differences">View Differences</h2>
 <ol type="1">
 <li>run: <code>git diff</code></li>
 </ol>
 </section>
-<section id="remove-a-branch" class="level3">
-<h3 class="anchored" data-anchor-id="remove-a-branch">Remove a Branch</h3>
-<section id="locally" class="level4">
-<h4 class="anchored" data-anchor-id="locally">Locally</h4>
+<section id="remove-a-branch" class="level2">
+<h2 class="anchored" data-anchor-id="remove-a-branch">Remove a Branch</h2>
+<section id="locally" class="level3">
+<h3 class="anchored" data-anchor-id="locally">Locally</h3>
 <p><code>git branch -d &lt;branch_name&gt;</code></p>
 </section>
-<section id="remote" class="level4">
-<h4 class="anchored" data-anchor-id="remote">Remote</h4>
+<section id="remote" class="level3">
+<h3 class="anchored" data-anchor-id="remote">Remote</h3>
 <p><code>git push &lt;remote_name&gt; --delete &lt;branch_name&gt;</code></p>
 </section>
 </section>
-<section id="remove-tracked-filedirectory" class="level3">
-<h3 class="anchored" data-anchor-id="remove-tracked-filedirectory">Remove tracked file/directory</h3>
-<section id="file" class="level4">
-<h4 class="anchored" data-anchor-id="file">File</h4>
+<section id="remove-tracked-filedirectory" class="level2">
+<h2 class="anchored" data-anchor-id="remove-tracked-filedirectory">Remove tracked file/directory</h2>
+<section id="file" class="level3">
+<h3 class="anchored" data-anchor-id="file">File</h3>
 <p><code>git rm --cached &lt;file&gt;</code></p>
 </section>
-<section id="directory" class="level4">
-<h4 class="anchored" data-anchor-id="directory">Directory</h4>
+<section id="directory" class="level3">
+<h3 class="anchored" data-anchor-id="directory">Directory</h3>
 <p><code>git rm --cahced -r dir/</code></p>
 </section>
 </section>
-<section id="pre-commit" class="level3">
-<h3 class="anchored" data-anchor-id="pre-commit">pre-commit</h3>
+<section id="pre-commit" class="level2">
+<h2 class="anchored" data-anchor-id="pre-commit">pre-commit</h2>
 <p>Please make sure to install our <a href="https://pre-commit.com/">pre-commit</a> hooks into your Git workflow. Pre-commit will help keep our code clean and make sure we are following best practices.</p>
 <ul>
 <li>Install pre-commit hooks: <code>python -m pre_commit install --install-hooks</code></li>
@@ -413,8 +403,8 @@ ul.task-list li input[type="checkbox"] {
 <p>Hooks will run on the current commit snapshot when executing a <code>git commit</code>. Pre-commit hooks allow us to check for potential issues and make sure we are applying standards to our code before pushing to GitHub.</p>
 <p>See an example <a href="https://github.com/geocoug/python-app-template/blob/main/.pre-commit-config.yaml">.pre-commit-config.yml</a></p>
 </section>
-<section id="merge" class="level3">
-<h3 class="anchored" data-anchor-id="merge">Merge</h3>
+<section id="merge" class="level2">
+<h2 class="anchored" data-anchor-id="merge">Merge</h2>
 <p>The steps below can be used to merge two branches on your local machine. The braches used in this example are:</p>
 <ul>
 <li><code>main</code>: The authoritative or “production” code lives in this branch.</li>
@@ -444,6 +434,7 @@ ul.task-list li input[type="checkbox"] {
 <li><code>git checkout dev</code></li>
 <li><code>git pull origin main</code></li>
 <li><code>git push origin dev</code></li>
+<li></li>
 </ol></li>
 </ol>
 

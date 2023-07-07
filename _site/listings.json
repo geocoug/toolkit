@@ -9,16 +9,6 @@
     ]
   },
   {
-    "listing": "/development/tools/index.html",
-    "items": [
-      "/development/tools/docker.html",
-      "/development/tools/git.html",
-      "/development/tools/github.html",
-      "/development/tools/miscellaneous.html",
-      "/development/tools/psql.html"
-    ]
-  },
-  {
     "listing": "/blog/index.html",
     "items": [
       "/blog/posts/mounting-a-windows-share/index.html",
@@ -35,10 +25,7 @@
       "/development/code/bash.html",
       "/development/code/cmd.html",
       "/development/code/html.html",
-      "/development/code/javascript.html",
-      "/development/code/powershell.html",
       "/development/code/python.html",
-      "/development/code/r.html",
       "/development/code/regex.html",
       "/development/code/sql.html"
     ]
