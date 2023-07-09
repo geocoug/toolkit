@@ -61,10 +61,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
-<script src="https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous">
 </script>
 
@@ -89,19 +85,35 @@ ul.task-list li input[type="checkbox"] {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="./development/index.html" rel="" target=""><i class="bi bi-code-slash" role="img">
-</i> 
- <span class="menu-text">Development</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-development" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Development</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-development">    
+        <li>
+    <a class="dropdown-item" href="./development/index.html" rel="" target="">
+ <span class="dropdown-text">Best Practices</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./development/code/index.html" rel="" target="">
+ <span class="dropdown-text">Code</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./development/server/index.html" rel="" target="">
+ <span class="dropdown-text">Server</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./development/tools/index.html" rel="" target="">
+ <span class="dropdown-text">Tools</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
-    <a class="nav-link" href="./resources/index.html" rel="" target=""><i class="bi bi-tools" role="img">
-</i> 
+    <a class="nav-link" href="./resources/index.html" rel="" target="">
  <span class="menu-text">Resources</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./blog/index.html" rel="" target=""><i class="bi bi-rss" role="img">
-</i> 
+    <a class="nav-link" href="./blog/index.html" rel="" target="">
  <span class="menu-text">Blog</span></a>
   </li>  
 </ul>
@@ -118,61 +130,16 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<div class="quarto-about-jolla">
-  <img src="https://avatars.githubusercontent.com/u/48339519?v=4" class="about-image
-  round " style="height: 15em; width: 15em;">
- <header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-about-solana column-body">
+  <div class="about-entity">
+    <div class="entity-contents">
+      <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Welcome</h1>
 </div>
 <div class="quarto-title-meta">
   </div>
-</header><main class="content" id="quarto-document-content">
-<p>This site is designed to be my personal curated toolkit. It is where I store useful information, tools, and code snippets I use on a regular basis.</p>
-<div class="grid">
-<div class="g-col-md-2 g-col-6 d-flex align-items-center justify-content-center">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="./static/wsu.svg" height="80" class="figure-img"></p>
-</figure>
-</div>
-</div>
-<div class="g-col-md-2 g-col-6 d-flex align-items-center justify-content-center">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="./static/kraken.svg" height="80" class="figure-img"></p>
-</figure>
-</div>
-</div>
-<div class="g-col-md-4 g-col-12">
-<div class="cell" height="80px" data-execution_count="1">
-<div class="cell-output cell-output-display" data-execution_count="1">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"0964ec91eda9408091dfed7824990977","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
-</script>
-</div>
-</div>
-</div>
-<div class="g-col-md-2 g-col-6 d-flex align-items-center justify-content-center">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="./static/mariners.svg" height="80" class="figure-img"></p>
-</figure>
-</div>
-</div>
-<div class="g-col-md-2 g-col-6 d-flex align-items-center justify-content-center">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="./static/seahawks.svg" height="100" class="figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-
-
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> 
-  <hr class="about-sep">
-   <div class="about-links">
+</header> <div class="about-links">
   <a href="https://linkedin.com/in/c-grant" class="about-link" rel="" target="">
     <i class="bi bi-linkedin"></i>
      <span class="about-link-text">LinkedIn</span>
@@ -186,11 +153,70 @@ ul.task-list li input[type="checkbox"] {
      <span class="about-link-text">Portfolio</span>
   </a>
 </div>
+      <div class="about-contents"><main class="content" id="quarto-document-content">
+<p>This site is designed to be my personal curated toolkit. It is where I store useful information, resources, tools, and code snippets I use on a regular basis.</p>
+<hr>
+<!-- 
+from ipyleaflet import (
+    Map,
+    Marker,
+    basemaps,
+    basemap_to_tiles,
+)
+from ipywidgets import Layout
+m = Map(
+    basemap=basemap_to_tiles(basemaps.OpenStreetMap.Mapnik),
+    center=(47.169722472687916, -122.60208720946943),
+    zoom=12,
+    layout=Layout(width="100%", height="160px"),
+)
+marker = Marker(
+    location=(47.169722472687916, -122.60208720946943),
+    draggable=False,
+    title="Steilacoon, WA",
+)
+m.add_layer(marker)
+m
+``` -->
+<div class="grid">
+<div class="g-col-md-3 g-col-6 d-flex align-items-center justify-content-center">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./static/wsu.svg" height="80" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="g-col-md-3 g-col-6 d-flex align-items-center justify-content-center">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./static/kraken.svg" height="80" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="g-col-md-3 g-col-6 d-flex align-items-center justify-content-center">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./static/mariners.svg" height="80" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="g-col-md-3 g-col-6 d-flex align-items-center justify-content-center">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./static/seahawks.svg" height="100" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main></div>
+    </div>
+    <img src="https://avatars.githubusercontent.com/u/48339519?v=4" class="about-image
+  rounded " style="width: 15em;">
+  </div>
 </div>
  <!-- /main -->
-<script type="application/vnd.jupyter.widget-state+json">
-{"state":{"08100192e7ef4bf5b00862e2f7131c56":{"model_module":"jupyter-leaflet","model_module_version":"^0.17","model_name":"LeafletMapStyleModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.17","_model_name":"LeafletMapStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"StyleView","cursor":"grab"}},"0964ec91eda9408091dfed7824990977":{"model_module":"jupyter-leaflet","model_module_version":"^0.17","model_name":"LeafletMapModel","state":{"_dom_classes":[],"_model_module":"jupyter-leaflet","_model_module_version":"^0.17","_model_name":"LeafletMapModel","_view_count":null,"_view_module":"jupyter-leaflet","_view_module_version":"^0.17","_view_name":"LeafletMapView","bottom":0,"bounce_at_zoom_limits":true,"box_zoom":true,"center":[47.169722472687916,-122.60208720946943],"close_popup_on_click":true,"controls":["IPY_MODEL_24151b2714ce45a3a1353bcb07615489","IPY_MODEL_754e2f94e33b4541a46894cd8440ca14"],"crs":{"custom":false,"name":"EPSG3857"},"default_style":"IPY_MODEL_7a7fd7b2aa334e85b48b1c86f5dc88e5","double_click_zoom":true,"dragging":true,"dragging_style":"IPY_MODEL_0a3d3be14bd74906ba01de80087e22b6","east":0,"fullscreen":false,"inertia":true,"inertia_deceleration":3000,"inertia_max_speed":1500,"interpolation":"bilinear","keyboard":true,"keyboard_pan_offset":80,"keyboard_zoom_offset":1,"layers":["IPY_MODEL_da9f4054838b4050b1d00a480d0fe296","IPY_MODEL_37b9a0c4cac6444b86675c886c99df25"],"layout":"IPY_MODEL_f1d62377043948dba51884793ccb6ff4","left":9007199254740991,"max_zoom":null,"min_zoom":null,"modisdate":"2023-07-06","north":0,"options":["bounce_at_zoom_limits","box_zoom","center","close_popup_on_click","double_click_zoom","dragging","fullscreen","inertia","inertia_deceleration","inertia_max_speed","interpolation","keyboard","keyboard_pan_offset","keyboard_zoom_offset","max_zoom","min_zoom","prefer_canvas","scroll_wheel_zoom","tap","tap_tolerance","touch_zoom","world_copy_jump","zoom","zoom_animation_threshold","zoom_delta","zoom_snap"],"panes":{},"prefer_canvas":false,"right":0,"scroll_wheel_zoom":false,"south":0,"style":"IPY_MODEL_08100192e7ef4bf5b00862e2f7131c56","tabbable":null,"tap":true,"tap_tolerance":15,"tooltip":null,"top":9007199254740991,"touch_zoom":true,"west":0,"window_url":"","world_copy_jump":false,"zoom":12,"zoom_animation_threshold":4,"zoom_delta":1,"zoom_snap":1}},"0a3d3be14bd74906ba01de80087e22b6":{"model_module":"jupyter-leaflet","model_module_version":"^0.17","model_name":"LeafletMapStyleModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.17","_model_name":"LeafletMapStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"StyleView","cursor":"move"}},"24151b2714ce45a3a1353bcb07615489":{"model_module":"jupyter-leaflet","model_module_version":"^0.17","model_name":"LeafletZoomControlModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.17","_model_name":"LeafletZoomControlModel","_view_count":null,"_view_module":"jupyter-leaflet","_view_module_version":"^0.17","_view_name":"LeafletZoomControlView","options":["position","zoom_in_text","zoom_in_title","zoom_out_text","zoom_out_title"],"position":"topleft","zoom_in_text":"+","zoom_in_title":"Zoom in","zoom_out_text":"-","zoom_out_title":"Zoom out"}},"37b9a0c4cac6444b86675c886c99df25":{"model_module":"jupyter-leaflet","model_module_version":"^0.17","model_name":"LeafletMarkerModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.17","_model_name":"LeafletMarkerModel","_view_count":null,"_view_module":"jupyter-leaflet","_view_module_version":"^0.17","_view_name":"LeafletMarkerView","alt":"","base":false,"bottom":false,"draggable":false,"icon":null,"keyboard":true,"location":[47.169722472687916,-122.60208720946943],"name":"","opacity":1,"options":["alt","draggable","keyboard","rise_offset","rise_on_hover","rotation_angle","rotation_origin","title","z_index_offset"],"pane":"","popup":null,"popup_max_height":null,"popup_max_width":300,"popup_min_width":50,"rise_offset":250,"rise_on_hover":false,"rotation_angle":0,"rotation_origin":"","subitems":[],"title":"Steilacoon, WA","visible":true,"z_index_offset":0}},"754e2f94e33b4541a46894cd8440ca14":{"model_module":"jupyter-leaflet","model_module_version":"^0.17","model_name":"LeafletAttributionControlModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.17","_model_name":"LeafletAttributionControlModel","_view_count":null,"_view_module":"jupyter-leaflet","_view_module_version":"^0.17","_view_name":"LeafletAttributionControlView","options":["position","prefix"],"position":"bottomright","prefix":"ipyleaflet"}},"7a7fd7b2aa334e85b48b1c86f5dc88e5":{"model_module":"jupyter-leaflet","model_module_version":"^0.17","model_name":"LeafletMapStyleModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.17","_model_name":"LeafletMapStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"StyleView","cursor":"grab"}},"da9f4054838b4050b1d00a480d0fe296":{"model_module":"jupyter-leaflet","model_module_version":"^0.17","model_name":"LeafletTileLayerModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.17","_model_name":"LeafletTileLayerModel","_view_count":null,"_view_module":"jupyter-leaflet","_view_module_version":"^0.17","_view_name":"LeafletTileLayerView","attribution":"&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors","base":true,"bottom":true,"bounds":null,"detect_retina":false,"loading":false,"max_native_zoom":null,"max_zoom":19,"min_native_zoom":null,"min_zoom":1,"name":"OpenStreetMap.Mapnik","no_wrap":false,"opacity":1,"options":["attribution","bounds","detect_retina","max_native_zoom","max_zoom","min_native_zoom","min_zoom","no_wrap","tile_size","tms","zoom_offset"],"pane":"","popup":null,"popup_max_height":null,"popup_max_width":300,"popup_min_width":50,"show_loading":false,"subitems":[],"tile_size":256,"tms":false,"url":"https://tile.openstreetmap.org/{z}/{x}/{y}.png","visible":true,"zoom_offset":0}},"f1d62377043948dba51884793ccb6ff4":{"model_module":"@jupyter-widgets/base","model_module_version":"2.0.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"2.0.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"2.0.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border_bottom":null,"border_left":null,"border_right":null,"border_top":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":"160px","justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"padding":null,"right":null,"top":null,"visibility":null,"width":"100%"}}},"version_major":2,"version_minor":0}
-</script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

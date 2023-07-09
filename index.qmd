@@ -3,8 +3,9 @@ title: Welcome
 pagetitle: Toolkit
 toc: false
 about:
-  template: jolla
+  template: solana
   image: https://avatars.githubusercontent.com/u/48339519?v=4
+  # image: /static/logo.svg
   links:
     - icon: linkedin
       text: LinkedIn
@@ -17,17 +18,10 @@ about:
       href: https://geocoug.com
 ---
 
-This site is designed to be my personal curated toolkit. It is where I store useful information, tools, and code snippets I use on a regular basis.
+This site is designed to be my personal curated toolkit. It is where I store useful information, resources, tools, and code snippets I use on a regular basis.
 
-::: {.grid}
-::: {.g-col-md-2 .g-col-6 .d-flex .align-items-center .justify-content-center}
-![](/static/wsu.svg){fig-align="center" height=80px}
-:::
-::: {.g-col-md-2 .g-col-6 .d-flex .align-items-center .justify-content-center}
-![](/static/kraken.svg){fig-align="center" height=80px}
-:::
-::: {.g-col-md-4 .g-col-12}
-
+---
+<!-- 
 ```{python}
 # | echo: false
 # | height: 80px
@@ -53,13 +47,19 @@ marker = Marker(
 )
 m.add_layer(marker)
 m
-```
+``` -->
 
+::: {.grid}
+::: {.g-col-md-3 .g-col-6 .d-flex .align-items-center .justify-content-center}
+![](/static/wsu.svg){fig-align="center" height=80px}
 :::
-::: {.g-col-md-2 .g-col-6 .d-flex .align-items-center .justify-content-center}
+::: {.g-col-md-3 .g-col-6 .d-flex .align-items-center .justify-content-center}
+![](/static/kraken.svg){fig-align="center" height=80px}
+:::
+::: {.g-col-md-3 .g-col-6 .d-flex .align-items-center .justify-content-center}
 ![](/static/mariners.svg){fig-align="center" height=80px}
 :::
-::: {.g-col-md-2 .g-col-6 .d-flex .align-items-center .justify-content-center}
+::: {.g-col-md-3 .g-col-6 .d-flex .align-items-center .justify-content-center}
 ![](/static/seahawks.svg){fig-align="center" height=100px}
 :::
 :::

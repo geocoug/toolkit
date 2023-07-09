@@ -65,7 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../development/tools/docker.html" rel="next">
+<link href="../../development/tools/index.html" rel="next">
 <link href="../../development/code/regex.html" rel="prev">
 <link href="../..//static/favicon.ico" rel="icon">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
@@ -127,19 +127,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link active" href="../../development/index.html" rel="" target="" aria-current="page"><i class="bi bi-code-slash" role="img">
-</i> 
- <span class="menu-text">Development</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-development" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Development</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-development">    
+        <li>
+    <a class="dropdown-item" href="../../development/index.html" rel="" target="">
+ <span class="dropdown-text">Best Practices</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../../development/code/index.html" rel="" target="">
+ <span class="dropdown-text">Code</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../development/server/index.html" rel="" target="">
+ <span class="dropdown-text">Server</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../development/tools/index.html" rel="" target="">
+ <span class="dropdown-text">Tools</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
-    <a class="nav-link" href="../../resources/index.html" rel="" target=""><i class="bi bi-tools" role="img">
-</i> 
+    <a class="nav-link" href="../../resources/index.html" rel="" target="">
  <span class="menu-text">Resources</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../blog/index.html" rel="" target=""><i class="bi bi-rss" role="img">
-</i> 
+    <a class="nav-link" href="../../blog/index.html" rel="" target="">
  <span class="menu-text">Blog</span></a>
   </li>  
 </ul>
@@ -169,7 +185,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../development/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Development</span></a>
+ <span class="menu-text">Best Practices</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -221,7 +237,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a href="../../development/tools/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tools</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -539,23 +555,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-4" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-4" data-code-annotation="1" data-code-lines="1,2,3,4,5">Create a read-only user.</span>
+<span data-code-annotation="1" data-code-cell="annotated-cell-4" data-code-lines="1,2,3,4,5">Create a read-only user.</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-4" data-code-annotation="2" data-code-lines="7">Allow user to create database objects.</span>
+<span data-code-annotation="2" data-code-cell="annotated-cell-4" data-code-lines="7">Allow user to create database objects.</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-4" data-code-annotation="3" data-code-lines="9">Allow user to insert rows to any schema and table.</span>
+<span data-code-annotation="3" data-code-cell="annotated-cell-4" data-code-lines="9">Allow user to insert rows to any schema and table.</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-cell="annotated-cell-4" data-code-annotation="4" data-code-lines="11">Allow user to update rows in any schema and table.</span>
+<span data-code-annotation="4" data-code-cell="annotated-cell-4" data-code-lines="11">Allow user to update rows in any schema and table.</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-cell="annotated-cell-4" data-code-annotation="5" data-code-lines="13">Allow user to delete rows in any schema and table.</span>
+<span data-code-annotation="5" data-code-cell="annotated-cell-4" data-code-lines="13">Allow user to delete rows in any schema and table.</span>
 </dd>
 </dl>
 </section>
@@ -1462,8 +1478,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../development/tools/docker.html" class="pagination-link">
-        <span class="nav-page-text">Docker</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../development/tools/index.html" class="pagination-link">
+        <span class="nav-page-text">Tools</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

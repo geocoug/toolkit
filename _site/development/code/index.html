@@ -121,19 +121,35 @@ ul.task-list li input[type="checkbox"] {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link active" href="../../development/index.html" rel="" target="" aria-current="page"><i class="bi bi-code-slash" role="img">
-</i> 
- <span class="menu-text">Development</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-development" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Development</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-development">    
+        <li>
+    <a class="dropdown-item" href="../../development/index.html" rel="" target="">
+ <span class="dropdown-text">Best Practices</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../../development/code/index.html" rel="" target="">
+ <span class="dropdown-text">Code</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../development/server/index.html" rel="" target="">
+ <span class="dropdown-text">Server</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../development/tools/index.html" rel="" target="">
+ <span class="dropdown-text">Tools</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
-    <a class="nav-link" href="../../resources/index.html" rel="" target=""><i class="bi bi-tools" role="img">
-</i> 
+    <a class="nav-link" href="../../resources/index.html" rel="" target="">
  <span class="menu-text">Resources</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../blog/index.html" rel="" target=""><i class="bi bi-rss" role="img">
-</i> 
+    <a class="nav-link" href="../../blog/index.html" rel="" target="">
  <span class="menu-text">Blog</span></a>
   </li>  
 </ul>
@@ -163,7 +179,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../development/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Development</span></a>
+ <span class="menu-text">Best Practices</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -215,7 +231,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a href="../../development/tools/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tools</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -829,7 +845,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../../development/index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Development</span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Best Practices</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

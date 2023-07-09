@@ -1,6 +1,6 @@
 ---
-title: Development
-description: Development resources
+title: Best Practices
+description: Development Best Practices
 image: /static/development/dev-tools.jpg
 ---
 

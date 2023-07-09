@@ -15,7 +15,7 @@
 <link>http://toolkit.goecoug.com/resources/index.html</link>
 </image>
 <generator>quarto-1.3.433</generator>
-<lastBuildDate>Fri, 07 Jul 2023 14:28:34 GMT</lastBuildDate>
+<lastBuildDate>Sun, 09 Jul 2023 21:47:07 GMT</lastBuildDate>
 <item>
   <title>Bookmarks</title>
   <link>http://toolkit.goecoug.com/resources/bookmarks.html</link>
@@ -88,7 +88,7 @@
 
 <a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
   <guid>http://toolkit.goecoug.com/resources/bookmarks.html</guid>
-  <pubDate>Fri, 07 Jul 2023 14:28:34 GMT</pubDate>
+  <pubDate>Sun, 09 Jul 2023 21:47:07 GMT</pubDate>
   <media:content url="http://toolkit.goecoug.com/static/resources/bookmark.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
@@ -798,7 +798,7 @@ font-style: inherit;">8</span>)</span></code></pre></div>
 
 <a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
   <guid>http://toolkit.goecoug.com/resources/data-management.html</guid>
-  <pubDate>Fri, 07 Jul 2023 14:28:34 GMT</pubDate>
+  <pubDate>Sun, 09 Jul 2023 21:47:07 GMT</pubDate>
   <media:content url="http://toolkit.goecoug.com/static/resources/datamanagement.png" medium="image" type="image/png" height="137" width="144"/>
 </item>
 <item>
@@ -1038,6 +1038,25 @@ font-style: inherit;">8</span>)</span></code></pre></div>
 <li>Slice a hoagie roll in half, add ranch, lettuce, tomato, and meatballs, and eat.</li>
 </ol>
 </section>
+<section id="hummus" class="level2">
+<h2 class="anchored" data-anchor-id="hummus">Hummus</h2>
+<ul>
+<li>3 cups chickpeas</li>
+<li>1-2 cloves garlic</li>
+<li>1/3 cup tahini</li>
+<li>1 lemon</li>
+<li>drizzle of olive oil</li>
+<li>salt</li>
+</ul>
+<ol type="1">
+<li>Cook the chickpeas well (even canned chickpeas can use a quick simmer!). Overcooked chichpeas = thicker hummus.</li>
+<li>Peel the chickpeas. Chickpea skins are edible, but if you want creamy hummus, peel the chickpeas and discard the skins.</li>
+<li>In a food processor, combine chickpeas, tahini, garlic, lemon, and salt</li>
+<li>For fluffy hummus, add ice cube while blending</li>
+<li>Let the food processor run for 4 to 5 minutes. Run the food processor for a few minutes so the hummus mixture will blend well enough to a smooth texture. Test, and if needed, add a tiny bit of hot water through the opener of the food processor as it’s running to help continue to smooth the hummus even more until it’s utterly creamy.</li>
+<li>Add to a bowl for storing in refridgerator. Top with olive oil.</li>
+</ol>
+</section>
 <section id="others" class="level2">
 <h2 class="anchored" data-anchor-id="others">Others</h2>
 <ul>
@@ -1050,7 +1069,7 @@ font-style: inherit;">8</span>)</span></code></pre></div>
 
 <a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
   <guid>http://toolkit.goecoug.com/resources/recipes.html</guid>
-  <pubDate>Fri, 07 Jul 2023 14:28:34 GMT</pubDate>
+  <pubDate>Sun, 09 Jul 2023 21:47:07 GMT</pubDate>
   <media:content url="http://toolkit.goecoug.com/static/resources/food.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
@@ -2769,7 +2788,7 @@ Farmer Carry
 
 <a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
   <guid>http://toolkit.goecoug.com/resources/workouts.html</guid>
-  <pubDate>Fri, 07 Jul 2023 14:28:34 GMT</pubDate>
+  <pubDate>Sun, 09 Jul 2023 21:47:07 GMT</pubDate>
   <media:content url="http://toolkit.goecoug.com/static/resources/workouts.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 </channel>
