@@ -81,7 +81,7 @@ font-style: inherit;">//192.168.50.19/Transfer</span> /mnt/share/Q cifs credenti
 
 </section>
 
-<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
+ ]]></description>
   <category>Linux</category>
   <guid>http://toolkit.goecoug.com/blog/posts/mounting-a-windows-share/index.html</guid>
   <pubDate>Wed, 05 Jul 2023 07:00:00 GMT</pubDate>
@@ -156,7 +156,7 @@ font-style: inherit;">;</span></span></code></pre></div>
 
 
 
-<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
+ ]]></description>
   <category>Quarto</category>
   <guid>http://toolkit.goecoug.com/blog/posts/quarto-tabsets/index.html</guid>
   <pubDate>Mon, 03 Jul 2023 07:00:00 GMT</pubDate>
@@ -205,7 +205,7 @@ font-style: inherit;">;</span></span></code></pre></div>
 
 
 
-<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
+ ]]></description>
   <category>Git</category>
   <guid>http://toolkit.goecoug.com/blog/posts/git-merge/index.html</guid>
   <pubDate>Fri, 30 Jun 2023 07:00:00 GMT</pubDate>
@@ -300,7 +300,7 @@ font-style: inherit;"># inherit permissions for newly created files/folders</spa
 </section>
 </section>
 
-<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
+ ]]></description>
   <category>Linux</category>
   <guid>http://toolkit.goecoug.com/blog/posts/linux-permissions/index.html</guid>
   <pubDate>Fri, 30 Jun 2023 07:00:00 GMT</pubDate>
@@ -319,7 +319,7 @@ font-style: inherit;"># inherit permissions for newly created files/folders</spa
 
 
 
-<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
+ ]]></description>
   <category>Quarto</category>
   <category>Blog</category>
   <guid>http://toolkit.goecoug.com/blog/posts/creating-a-post/index.html</guid>
@@ -340,7 +340,7 @@ font-style: inherit;"># inherit permissions for newly created files/folders</spa
 
 
 
-<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
+ ]]></description>
   <category>Quarto</category>
   <category>Variables</category>
   <guid>http://toolkit.goecoug.com/blog/posts/accessing-quarto-variables/index.html</guid>

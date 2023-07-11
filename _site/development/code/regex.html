@@ -264,12 +264,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Miscellaneous</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../development/tools/psql.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">psql</span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -311,7 +305,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#markdown-link-pattern" id="toc-markdown-link-pattern" class="nav-link active" data-scroll-target="#markdown-link-pattern">Markdown link pattern</a></li>
+  <li><a href="#metacharacters-need-to-be-escaped" id="toc-metacharacters-need-to-be-escaped" class="nav-link active" data-scroll-target="#metacharacters-need-to-be-escaped">MetaCharacters (Need to be escaped)</a></li>
+  <li><a href="#characters" id="toc-characters" class="nav-link" data-scroll-target="#characters">Characters</a></li>
+  <li><a href="#character-classes" id="toc-character-classes" class="nav-link" data-scroll-target="#character-classes">Character Classes</a></li>
+  <li><a href="#quantifiers" id="toc-quantifiers" class="nav-link" data-scroll-target="#quantifiers">Quantifiers</a></li>
+  <li><a href="#anchors-boundaries" id="toc-anchors-boundaries" class="nav-link" data-scroll-target="#anchors-boundaries">Anchors &amp; Boundaries</a></li>
+  <li><a href="#logic" id="toc-logic" class="nav-link" data-scroll-target="#logic">Logic</a></li>
+  <li><a href="#white-space" id="toc-white-space" class="nav-link" data-scroll-target="#white-space">White-space</a></li>
+  <li><a href="#snippets" id="toc-snippets" class="nav-link" data-scroll-target="#snippets">Snippets</a>
+  <ul class="collapse">
+  <li><a href="#markdown-link-pattern" id="toc-markdown-link-pattern" class="nav-link" data-scroll-target="#markdown-link-pattern">Markdown link pattern</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/geocoug/toolkit/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -340,14 +344,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="markdown-link-pattern" class="level2">
-<h2 class="anchored" data-anchor-id="markdown-link-pattern">Markdown link pattern</h2>
+<ul>
+<li><a href="https://www.rexegg.com/regex-quickstart.html">Quickstart</a></li>
+<li><a href="https://regex101.com/">Regex101</a></li>
+</ul>
+<section id="metacharacters-need-to-be-escaped" class="level2">
+<h2 class="anchored" data-anchor-id="metacharacters-need-to-be-escaped">MetaCharacters (Need to be escaped)</h2>
+<p><code>. ^ $ * + ? { } [ ] \ | ( )</code></p>
+</section>
+<section id="characters" class="level2">
+<h2 class="anchored" data-anchor-id="characters">Characters</h2>
+<p><code>.</code> - Any Character Except New Line<br> <code>\d</code> - Digit (0-9)<br> <code>\D</code> - Not a Digit (0-9)<br> <code>\w</code> - Word Character (a-z, A-Z, 0-9, _)<br> <code>\W</code> - Not a Word Character<br> <code>\s</code> - Whitespace (space, tab, newline)<br> <code>\S</code> - Not Whitespace (space, tab, newline)<br></p>
+</section>
+<section id="character-classes" class="level2">
+<h2 class="anchored" data-anchor-id="character-classes">Character Classes</h2>
+<p><code>[]</code> - Matches Characters in brackets<br> <code>[^ ]</code> - Matches Characters NOT in brackets<br> <code>[a-z]</code> - Any lowercase character between a and z<br> <code>[A-Z]</code> - Any UPPERCASE character between A and Z<br></p>
+</section>
+<section id="quantifiers" class="level2">
+<h2 class="anchored" data-anchor-id="quantifiers">Quantifiers</h2>
+<p><code>*</code> - 0 or More<br> <code>+</code> - 1 or More<br> <code>?</code> - 0 or One<br> <code>{3}</code> - Exact Number<br> <code>{3,4}</code> - Range of Numbers (Minimum, Maximum)<br> <code>{3,}</code> - At least 3<br></p>
+</section>
+<section id="anchors-boundaries" class="level2">
+<h2 class="anchored" data-anchor-id="anchors-boundaries">Anchors &amp; Boundaries</h2>
+<p><code>\b</code> - Word Boundary<br> <code>\B</code> - Not a Word Boundary<br> <code>^</code> - Beginning of a String<br> <code>$</code> - End of a String<br></p>
+</section>
+<section id="logic" class="level2">
+<h2 class="anchored" data-anchor-id="logic">Logic</h2>
+<p><code>|</code> - Either Or<br> <code>( )</code> - Group<br> <code>\1</code> - Contents of group 1<br></p>
+</section>
+<section id="white-space" class="level2">
+<h2 class="anchored" data-anchor-id="white-space">White-space</h2>
+<p><code>\t</code> - Tab<br> <code>\r</code> - Carriage return<br> <code>\n</code> - New line<br></p>
+</section>
+<section id="snippets" class="level2">
+<h2 class="anchored" data-anchor-id="snippets">Snippets</h2>
+<section id="markdown-link-pattern" class="level3">
+<h3 class="anchored" data-anchor-id="markdown-link-pattern">Markdown link pattern</h3>
 <div class="sourceCode" id="cb1"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>\[([^\]]+)\]\(([^\)]+)\)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
+</section>
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

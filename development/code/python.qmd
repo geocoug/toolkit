@@ -111,59 +111,7 @@ logger.info(response.json())
 
 ## Regular Expressions
 
-- [Quickstart](https://www.rexegg.com/regex-quickstart.html)
-- [Regex101](https://regex101.com/)
-
-### MetaCharacters (Need to be escaped)
-
-`. ^ $ * + ? { } [ ] \ | ( )`
-
-### Characters
-
-`.`       - Any Character Except New Line<br>
-`\d`      - Digit (0-9)<br>
-`\D`      - Not a Digit (0-9)<br>
-`\w`      - Word Character (a-z, A-Z, 0-9, _)<br>
-`\W`      - Not a Word Character<br>
-`\s`      - Whitespace (space, tab, newline)<br>
-`\S`      - Not Whitespace (space, tab, newline)<br>
-
-### Character Classes
-
-`[]`      - Matches Characters in brackets<br>
-`[^ ]`    - Matches Characters NOT in brackets<br>
-`[a-z]`   - Any lowercase character between a and z<br>
-`[A-Z]`   - Any UPPERCASE character between A and Z<br>
-
-### Quantifiers
-
-`*`       - 0 or More<br>
-`+`       - 1 or More<br>
-`?`       - 0 or One<br>
-`{3}`     - Exact Number<br>
-`{3,4}`   - Range of Numbers (Minimum, Maximum)<br>
-`{3,}`    - At least 3<br>
-
-### Anchors & Boundaries
-
-`\b`      - Word Boundary<br>
-`\B`      - Not a Word Boundary<br>
-`^`       - Beginning of a String<br>
-`$`       - End of a String<br>
-
-### Logic
-
-`|`       - Either Or<br>
-`( )`     - Group<br>
-`\1`      - Contents of group 1<br>
-
-### White-space
-
-`\t`      - Tab<br>
-`\r`      - Carriage return<br>
-`\n`      - New line<br>
-
-### Example
+See [here](regex.qmd) for more information on regex syntax.
 
 ```{python}
 import re

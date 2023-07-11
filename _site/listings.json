@@ -9,17 +9,6 @@
     ]
   },
   {
-    "listing": "/development/code/index.html",
-    "items": [
-      "/development/code/bash.html",
-      "/development/code/cmd.html",
-      "/development/code/html.html",
-      "/development/code/python.html",
-      "/development/code/regex.html",
-      "/development/code/sql.html"
-    ]
-  },
-  {
     "listing": "/blog/index.html",
     "items": [
       "/blog/posts/mounting-a-windows-share/index.html",
@@ -28,6 +17,17 @@
       "/blog/posts/linux-permissions/index.html",
       "/blog/posts/creating-a-post/index.html",
       "/blog/posts/accessing-quarto-variables/index.html"
+    ]
+  },
+  {
+    "listing": "/development/code/index.html",
+    "items": [
+      "/development/code/bash.html",
+      "/development/code/cmd.html",
+      "/development/code/html.html",
+      "/development/code/python.html",
+      "/development/code/regex.html",
+      "/development/code/sql.html"
     ]
   }
 ]

@@ -21,7 +21,7 @@ website:
   favicon: /static/favicon.ico
   site-url: http://toolkit.goecoug.com
   page-navigation: true
-  back-to-top-navigation: true
+  back-to-top-navigation: false
   repo-url: https://github.com/geocoug/toolkit
   repo-actions: [issue]
   search:

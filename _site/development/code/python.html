@@ -264,12 +264,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Miscellaneous</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../development/tools/psql.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">psql</span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -314,17 +308,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#batch-file-rename" id="toc-batch-file-rename" class="nav-link active" data-scroll-target="#batch-file-rename">Batch File Rename</a></li>
   <li><a href="#logging-basics" id="toc-logging-basics" class="nav-link" data-scroll-target="#logging-basics">Logging Basics</a></li>
   <li><a href="#sending-http-requests" id="toc-sending-http-requests" class="nav-link" data-scroll-target="#sending-http-requests">Sending HTTP Requests</a></li>
-  <li><a href="#regular-expressions" id="toc-regular-expressions" class="nav-link" data-scroll-target="#regular-expressions">Regular Expressions</a>
-  <ul class="collapse">
-  <li><a href="#metacharacters-need-to-be-escaped" id="toc-metacharacters-need-to-be-escaped" class="nav-link" data-scroll-target="#metacharacters-need-to-be-escaped">MetaCharacters (Need to be escaped)</a></li>
-  <li><a href="#characters" id="toc-characters" class="nav-link" data-scroll-target="#characters">Characters</a></li>
-  <li><a href="#character-classes" id="toc-character-classes" class="nav-link" data-scroll-target="#character-classes">Character Classes</a></li>
-  <li><a href="#quantifiers" id="toc-quantifiers" class="nav-link" data-scroll-target="#quantifiers">Quantifiers</a></li>
-  <li><a href="#anchors-boundaries" id="toc-anchors-boundaries" class="nav-link" data-scroll-target="#anchors-boundaries">Anchors &amp; Boundaries</a></li>
-  <li><a href="#logic" id="toc-logic" class="nav-link" data-scroll-target="#logic">Logic</a></li>
-  <li><a href="#white-space" id="toc-white-space" class="nav-link" data-scroll-target="#white-space">White-space</a></li>
-  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a></li>
-  </ul></li>
+  <li><a href="#regular-expressions" id="toc-regular-expressions" class="nav-link" data-scroll-target="#regular-expressions">Regular Expressions</a></li>
   <li><a href="#oop-basics" id="toc-oop-basics" class="nav-link" data-scroll-target="#oop-basics">OOP Basics</a></li>
   <li><a href="#dbms-data-types" id="toc-dbms-data-types" class="nav-link" data-scroll-target="#dbms-data-types">DBMS Data Types</a></li>
   <li><a href="#dbms-libraries" id="toc-dbms-libraries" class="nav-link" data-scroll-target="#dbms-libraries">DBMS Libraries</a></li>
@@ -460,40 +444,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="regular-expressions" class="level2">
 <h2 class="anchored" data-anchor-id="regular-expressions">Regular Expressions</h2>
-<ul>
-<li><a href="https://www.rexegg.com/regex-quickstart.html">Quickstart</a></li>
-<li><a href="https://regex101.com/">Regex101</a></li>
-</ul>
-<section id="metacharacters-need-to-be-escaped" class="level3">
-<h3 class="anchored" data-anchor-id="metacharacters-need-to-be-escaped">MetaCharacters (Need to be escaped)</h3>
-<p><code>. ^ $ * + ? { } [ ] \ | ( )</code></p>
-</section>
-<section id="characters" class="level3">
-<h3 class="anchored" data-anchor-id="characters">Characters</h3>
-<p><code>.</code> - Any Character Except New Line<br> <code>\d</code> - Digit (0-9)<br> <code>\D</code> - Not a Digit (0-9)<br> <code>\w</code> - Word Character (a-z, A-Z, 0-9, _)<br> <code>\W</code> - Not a Word Character<br> <code>\s</code> - Whitespace (space, tab, newline)<br> <code>\S</code> - Not Whitespace (space, tab, newline)<br></p>
-</section>
-<section id="character-classes" class="level3">
-<h3 class="anchored" data-anchor-id="character-classes">Character Classes</h3>
-<p><code>[]</code> - Matches Characters in brackets<br> <code>[^ ]</code> - Matches Characters NOT in brackets<br> <code>[a-z]</code> - Any lowercase character between a and z<br> <code>[A-Z]</code> - Any UPPERCASE character between A and Z<br></p>
-</section>
-<section id="quantifiers" class="level3">
-<h3 class="anchored" data-anchor-id="quantifiers">Quantifiers</h3>
-<p><code>*</code> - 0 or More<br> <code>+</code> - 1 or More<br> <code>?</code> - 0 or One<br> <code>{3}</code> - Exact Number<br> <code>{3,4}</code> - Range of Numbers (Minimum, Maximum)<br> <code>{3,}</code> - At least 3<br></p>
-</section>
-<section id="anchors-boundaries" class="level3">
-<h3 class="anchored" data-anchor-id="anchors-boundaries">Anchors &amp; Boundaries</h3>
-<p><code>\b</code> - Word Boundary<br> <code>\B</code> - Not a Word Boundary<br> <code>^</code> - Beginning of a String<br> <code>$</code> - End of a String<br></p>
-</section>
-<section id="logic" class="level3">
-<h3 class="anchored" data-anchor-id="logic">Logic</h3>
-<p><code>|</code> - Either Or<br> <code>( )</code> - Group<br> <code>\1</code> - Contents of group 1<br></p>
-</section>
-<section id="white-space" class="level3">
-<h3 class="anchored" data-anchor-id="white-space">White-space</h3>
-<p><code>\t</code> - Tab<br> <code>\r</code> - Carriage return<br> <code>\n</code> - New line<br></p>
-</section>
-<section id="example" class="level3">
-<h3 class="anchored" data-anchor-id="example">Example</h3>
+<p>See <a href="../../development/code/regex.html">here</a> for more information on regex syntax.</p>
 <div class="cell" data-execution_count="1">
 <details>
 <summary>Code</summary>
@@ -531,7 +482,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 900.987.6543</code></pre>
 </div>
 </div>
-</section>
 </section>
 <section id="oop-basics" class="level2">
 <h2 class="anchored" data-anchor-id="oop-basics">OOP Basics</h2>
@@ -1705,7 +1655,7 @@ NaN
 
 </section>
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

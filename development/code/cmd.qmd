@@ -6,7 +6,7 @@ image: https://img.icons8.com/?size=512&id=8799&format=png
 
 ## Run a Python Script
 
-```bat
+```cmd
 @echo off
 cls
 
