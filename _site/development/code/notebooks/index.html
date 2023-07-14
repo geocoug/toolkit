@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Server setup and administration">
+<meta name="description" content="Collection of Jupyter Notebooks">
 
-<title>Toolkit - Server</title>
+<title>Toolkit - Notebooks</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,64 +21,32 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<link href="../../development/server/jupyter-server.html" rel="next">
-<link href="../../development/tools/miscellaneous.html" rel="prev">
-<link href="../..//static/favicon.ico" rel="icon">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../development/code/notebooks/data-science.html" rel="next">
+<link href="../../../development/code/sql.html" rel="prev">
+<link href="../../..//static/favicon.ico" rel="icon">
+<script src="../../../site_libs/quarto-listing/list.min.js"></script>
+<script src="../../../site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": true,
@@ -99,11 +67,42 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
 <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous">
 </script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="../../static/styles.css">
+<link rel="stylesheet" href="../../../static/styles.css">
 </head>
 
 <body class="nav-sidebar docked nav-fixed">
@@ -113,8 +112,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../static/logo.svg" alt="" class="navbar-logo">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../static/logo.svg" alt="" class="navbar-logo">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -124,15 +123,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../../development/index.html" rel="" target="" aria-current="page">
+    <a class="nav-link active" href="../../../development/index.html" rel="" target="" aria-current="page">
  <span class="menu-text">Development</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../resources/index.html" rel="" target="">
+    <a class="nav-link" href="../../../resources/index.html" rel="" target="">
  <span class="menu-text">Resources</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../blog/index.html" rel="" target="">
+    <a class="nav-link" href="../../../blog/index.html" rel="" target="">
  <span class="menu-text">Blog</span></a>
   </li>  
 </ul>
@@ -147,7 +146,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../development/server/index.html">Server</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../development/code/index.html">Code</a></li><li class="breadcrumb-item"><a href="../../../development/code/notebooks/index.html">Notebooks</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -161,13 +160,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../development/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../development/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Best Practices</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../development/code/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../../development/code/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Code</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -176,106 +175,106 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../development/code/bash.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../development/code/bash.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bash</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../development/code/cmd.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../development/code/cmd.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">CMD</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../development/code/html.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../development/code/html.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">HTML</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../development/code/python.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../development/code/python.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Python</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../development/code/regex.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../development/code/regex.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Regex</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../development/code/sql.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../development/code/sql.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">SQL</span></a>
   </div>
 </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../development/code/notebooks/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../../development/code/notebooks/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Notebooks</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../development/code/notebooks/data-science.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../development/code/notebooks/data-science.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data Science</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../development/code/notebooks/grib.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../development/code/notebooks/grib.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">GRIB</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../development/code/notebooks/logging.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../development/code/notebooks/logging.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Logging</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../development/code/notebooks/ml-notes.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../development/code/notebooks/ml-notes.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">ML Notes</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../development/code/notebooks/ml-train-and-test.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../development/code/notebooks/ml-train-and-test.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">ML Training</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../development/code/notebooks/pyspark-practice.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../development/code/notebooks/pyspark-practice.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">PySpark Practice</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../development/code/notebooks/python-fundamentals.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../development/code/notebooks/python-fundamentals.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Python Fundamentals</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../development/code/notebooks/sleep-data.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../development/code/notebooks/sleep-data.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Sleep Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../development/code/notebooks/visualization-with-seaborn.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../development/code/notebooks/visualization-with-seaborn.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Visualization with Seaborn</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../development/code/notebooks/web-scraping.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../development/code/notebooks/web-scraping.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Web Scraping</span></a>
   </div>
 </li>
@@ -294,25 +293,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../development/tools/docker.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../development/tools/docker.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Docker</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../development/tools/git.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../development/tools/git.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Git</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../development/tools/github.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../development/tools/github.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">GitHub</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../development/tools/miscellaneous.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../development/tools/miscellaneous.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Miscellaneous</span></a>
   </div>
 </li>
@@ -320,7 +319,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../development/server/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../../../development/server/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Server</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -329,19 +328,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../development/server/jupyter-server.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../development/server/jupyter-server.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Jupyter Server</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../development/server/python-web-app.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../development/server/python-web-app.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Python Web App</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../development/server/rstudio-server.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../development/server/rstudio-server.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Rstudio Server</span></a>
   </div>
 </li>
@@ -353,31 +352,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#server-initialization" id="toc-server-initialization" class="nav-link active" data-scroll-target="#server-initialization">Server Initialization</a></li>
-  <li><a href="#permissions" id="toc-permissions" class="nav-link" data-scroll-target="#permissions">Permissions</a>
-  <ul class="collapse">
-  <li><a href="#syntax" id="toc-syntax" class="nav-link" data-scroll-target="#syntax">Syntax</a></li>
-  <li><a href="#commands" id="toc-commands" class="nav-link" data-scroll-target="#commands">Commands</a></li>
-  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a></li>
-  </ul></li>
-  </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/geocoug/toolkit/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Server</h1>
+<h1 class="title">Notebooks</h1>
 </div>
 
 <div>
   <div class="description">
-    Server setup and administration
+    Collection of Jupyter Notebooks
   </div>
 </div>
 
@@ -392,92 +379,237 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="server-initialization" class="level2">
-<h2 class="anchored" data-anchor-id="server-initialization">Server Initialization</h2>
-<p>Initial Linux server setup steps:</p>
-<ol type="1">
-<li>Login to server as root: <code>ssh root@&lt;ip&gt;</code></li>
-<li>Create new admin user: <code>sudo adduser &lt;user&gt;</code></li>
-<li>Add user to sudo group: <code>sudo usermod -aG sudo &lt;user&gt;</code></li>
-<li>Disable root login
-<ol type="1">
-<li>Open SSH configuration: <code>sudo vi /etc/ssh/sshd_config</code></li>
-<li>Set <code>PermitRootLogin</code> to <code>no</code></li>
-</ol></li>
-<li>Configure Uncomplicated Firewall (UFW)
-<ol type="1">
-<li>Allow SSH connections: <code>sudo ufw allow OpenSSH</code></li>
-<li>Open port 80 and 443 for Apache: <code>sudo ufw allow 'Apache Full'</code></li>
-<li>Turn on firewall: <code>sudo ufw enable</code></li>
-<li>Check: <code>sudo ufw status verbose</code></li>
-</ol></li>
-<li>Reboot the server: <code>sudo reboot</code></li>
-<li>Login as new user: <code>ssh &lt;user&gt;@&lt;ip&gt;</code></li>
-<li>Check for package updates <code>apt list --upgradable</code> 1, Upgrade packages <code>sudo apt upgrade</code></li>
-<li>Show system info: <code>uname -a</code></li>
-<li>Even though the kernel was updated, need to reboot to take effect: <code>sudo reboot</code></li>
-<li>Just to be sure: <code>sudo apt update &amp;&amp; sudo apt upgrade</code></li>
-<li>Shutdown for backup/snapshot <code>sudo shutdown -h now</code></li>
-<li>After snapshot, navigate to provider website and restart machine</li>
-</ol>
-</section>
-<section id="permissions" class="level2">
-<h2 class="anchored" data-anchor-id="permissions">Permissions</h2>
-<section id="syntax" class="level3">
-<h3 class="anchored" data-anchor-id="syntax">Syntax</h3>
-<p>General: <code>_rwxrwxrwx 1 owner group</code></p>
-<p><code>_ | rwx | rwx | rwx</code> = Special | Owner | Group | All Users</p>
-<section id="shorthand" class="level4">
-<h4 class="anchored" data-anchor-id="shorthand">Shorthand</h4>
-<ul>
-<li><code>4</code> | <code>r</code> = Read</li>
-<li><code>2</code> | <code>w</code> = Write</li>
-<li><code>1</code> | <code>x</code> = Execute</li>
-</ul>
-</section>
-<section id="detailed" class="level4">
-<h4 class="anchored" data-anchor-id="detailed">Detailed</h4>
-<ul>
-<li><code>0</code> = <code>---</code></li>
-<li><code>1</code> = <code>--x</code></li>
-<li><code>2</code> = <code>-w-</code></li>
-<li><code>3</code> = <code>-wx</code></li>
-<li><code>4</code> = <code>r-</code></li>
-<li><code>5</code> = <code>r-x</code></li>
-<li><code>6</code> = <code>rw-</code></li>
-<li><code>7</code> = <code>rwx</code></li>
-</ul>
-</section>
-</section>
-<section id="commands" class="level3">
-<h3 class="anchored" data-anchor-id="commands">Commands</h3>
-<p><code>chgrp</code> = Change group</p>
-<p><em>Example</em>: <code>sudo chgrp -R &lt;group&gt; &lt;folder&gt;</code></p>
-<p><code>chown</code> = Change ownership</p>
-<p><em>Example</em>: <code>sudo chown -R &lt;user&gt;:&lt;group&gt; &lt;file/folder&gt;</code></p>
-<p><code>chmod</code> = Change permissions</p>
-<p><em>Example</em>: <code>sudo chmod -R 774 &lt;file/folder&gt;</code></p>
-<p>Make new files inherit the group: <code>sudo chmod g+s &lt;folder&gt;</code></p>
-</section>
-<section id="example" class="level3">
-<h3 class="anchored" data-anchor-id="example">Example</h3>
-<p>Create a shared directory for a group.</p>
-<ol type="1">
-<li><p>Create a shared directory for users to access: <code>/share</code></p></li>
-<li><p>Assign users to a common group (staff): <code>sudo usermod -a -G staff &lt;user&gt;</code></p></li>
-<li><p>Verify user groups: <code>groups &lt;user&gt;</code></p></li>
-<li><p>Create shared directory and assign permissions:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> mkdir /share <span class="kw">&amp;&amp;</span> <span class="dt">\</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> chgrp <span class="at">-R</span> staff /share <span class="kw">&amp;&amp;</span> <span class="ex">\ </span> <span class="co"># assign group</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> chmod <span class="at">-R</span> g+w /share <span class="kw">&amp;&amp;</span> <span class="ex">\ </span> <span class="co"># permissions</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> chmod <span class="at">-R</span> +s /share  <span class="co"># inherit permissions for newly created files/folders</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-</ol>
 
 
-</section>
-</section>
 
-</main> <!-- /main -->
+
+<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-listing-file-modified-sort="1689350020011" data-listing-reading-time-sort="1">
+<a href="../../../development/code/notebooks/data-science.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="../../../static/development/data-science.jpg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Data Science
+</h5>
+<div class="card-text listing-description">
+Intro to data science with Python
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="1" data-listing-file-modified-sort="1689350024407" data-listing-reading-time-sort="1">
+<a href="../../../development/code/notebooks/grib.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="../../../static/development/grib.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+GRIB
+</h5>
+<div class="card-text listing-description">
+Manipulating gridded datasets
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="2" data-listing-file-modified-sort="1689350027095" data-listing-reading-time-sort="1">
+<a href="../../../development/code/notebooks/logging.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="../../../static/development/logging.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Logging
+</h5>
+<div class="card-text listing-description">
+Basics of the standard library logging module
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="3" data-listing-file-modified-sort="1689350030412" data-listing-reading-time-sort="2">
+<a href="../../../development/code/notebooks/ml-notes.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="../../../static/development/ml.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+ML Notes
+</h5>
+<div class="card-text listing-description">
+Machine Learning (supervised learning) notes
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="4" data-listing-file-modified-sort="1689350623410" data-listing-reading-time-sort="1">
+<a href="../../../development/code/notebooks/ml-train-and-test.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="../../../static/development/ml.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+ML Training
+</h5>
+<div class="card-text listing-description">
+Test a machine learning model
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="5" data-listing-file-modified-sort="1689350037318" data-listing-reading-time-sort="1">
+<a href="../../../development/code/notebooks/pyspark-practice.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="../../../static/development/pyspark.jpeg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+PySpark Practice
+</h5>
+<div class="card-text listing-description">
+Introduction to Apache Spark | PySpark
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="6" data-listing-file-modified-sort="1689350041757" data-listing-reading-time-sort="1">
+<a href="../../../development/code/notebooks/python-fundamentals.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="../../../static/development/python.jpg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Python Fundamentals
+</h5>
+<div class="card-text listing-description">
+Concepts and methods on the fundamentals of Python
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="7" data-listing-file-modified-sort="1689350819988" data-listing-reading-time-sort="1">
+<a href="../../../development/code/notebooks/sleep-data.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="../../../static/development/sleep.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Sleep Data
+</h5>
+<div class="card-text listing-description">
+Load sleep data into PostgreSQL collected from the Sleep Cycle phone app
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="8" data-listing-file-modified-sort="1689350049460" data-listing-reading-time-sort="8">
+<a href="../../../development/code/notebooks/visualization-with-seaborn.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="../../../static/development/seaborn.svg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Visualization with Seaborn
+</h5>
+<div class="card-text listing-description">
+Exploring Matplotlib + Seaborn visualization capabilities
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="9" data-listing-file-modified-sort="1689350761961" data-listing-reading-time-sort="1">
+<a href="../../../development/code/notebooks/web-scraping.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="../../../static/development/webscrape.svg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Web Scraping
+</h5>
+<div class="card-text listing-description">
+Download .grb2 files from WAVEWATCH III web server
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -842,13 +974,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../development/tools/miscellaneous.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Miscellaneous</span>
+      <a href="../../../development/code/sql.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">SQL</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../development/server/jupyter-server.html" class="pagination-link">
-        <span class="nav-page-text">Jupyter Server</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../../development/code/notebooks/data-science.html" class="pagination-link">
+        <span class="nav-page-text">Data Science</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -858,7 +990,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">Caleb Grant, 2023</div>   
     <div class="nav-footer-center">
       &nbsp;
-    </div>
+    <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/geocoug/toolkit/issues/new" class="toc-action">Report an issue</a></p></div></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">

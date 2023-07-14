@@ -40,9 +40,25 @@
       "/development/code/bash.html",
       "/development/code/cmd.html",
       "/development/code/html.html",
+      "/development/code/notebooks/index.html",
       "/development/code/python.html",
       "/development/code/regex.html",
       "/development/code/sql.html"
+    ]
+  },
+  {
+    "listing": "/development/code/notebooks/index.html",
+    "items": [
+      "/development/code/notebooks/data-science.html",
+      "/development/code/notebooks/grib.html",
+      "/development/code/notebooks/logging.html",
+      "/development/code/notebooks/ml-notes.html",
+      "/development/code/notebooks/ml-train-and-test.html",
+      "/development/code/notebooks/pyspark-practice.html",
+      "/development/code/notebooks/python-fundamentals.html",
+      "/development/code/notebooks/sleep-data.html",
+      "/development/code/notebooks/visualization-with-seaborn.html",
+      "/development/code/notebooks/web-scraping.html"
     ]
   }
 ]

@@ -1,0 +1,9 @@
+---
+title: Notebooks
+description: Collection of Jupyter Notebooks
+image: /static/development/jupyter.png
+listing:
+    type: grid
+    contents:
+      - "*.ipynb"
+---

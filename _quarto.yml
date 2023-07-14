@@ -40,11 +40,7 @@ website:
     collapse-below: lg
     left:
       - text: "Development"
-        menu:
-          - development/index.qmd
-          - development/code/index.qmd
-          - development/server/index.qmd
-          - development/tools/index.qmd
+        href: development/index.qmd
       - text: "Resources"
         href: resources/index.qmd
       - text: "Blog"
@@ -62,8 +58,11 @@ website:
           href: development/code/index.qmd
           contents:
             - auto: "development/code/*"
+            - section: "Notebooks"
+              href: development/code/notebooks/index.qmd
+              contents:
+                - auto: "development/code/notebooks/*"
         - section: "Tools"
-          href: development/tools/index.qmd
           contents:
             - auto: "development/tools/*"
         - section: "Server"
