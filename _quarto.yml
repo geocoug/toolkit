@@ -11,6 +11,7 @@ project:
     - "/static/*"
   render:
     - "*.qmd"
+    - "*.ipynb"
 
 execute:
   freeze: auto  # Re-compute previously generated computational output only in case their source file changes

@@ -8,3 +8,10 @@
 /.luarc.json
 .venv
 .env
+.ipynb_checkpoints
+.ipython
+.jupyter
+.local
+*cache*
+.config
+.npm

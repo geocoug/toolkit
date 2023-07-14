@@ -612,23 +612,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-5" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-5" data-code-lines="1,2,3,4,5" data-code-annotation="1">Create a read-only user.</span>
+<span data-code-annotation="1" data-code-lines="1,2,3,4,5" data-code-cell="annotated-cell-5">Create a read-only user.</span>
 </dd>
 <dt data-target-cell="annotated-cell-5" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-5" data-code-lines="7" data-code-annotation="2">Allow user to create database objects.</span>
+<span data-code-annotation="2" data-code-lines="7" data-code-cell="annotated-cell-5">Allow user to create database objects.</span>
 </dd>
 <dt data-target-cell="annotated-cell-5" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-5" data-code-lines="8" data-code-annotation="3">Allow user to insert rows to any schema and table.</span>
+<span data-code-annotation="3" data-code-lines="8" data-code-cell="annotated-cell-5">Allow user to insert rows to any schema and table.</span>
 </dd>
 <dt data-target-cell="annotated-cell-5" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-cell="annotated-cell-5" data-code-lines="9" data-code-annotation="4">Allow user to update rows in any schema and table.</span>
+<span data-code-annotation="4" data-code-lines="9" data-code-cell="annotated-cell-5">Allow user to update rows in any schema and table.</span>
 </dd>
 <dt data-target-cell="annotated-cell-5" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-cell="annotated-cell-5" data-code-lines="10" data-code-annotation="5">Allow user to delete rows in any schema and table.</span>
+<span data-code-annotation="5" data-code-lines="10" data-code-cell="annotated-cell-5">Allow user to delete rows in any schema and table.</span>
 </dd>
 </dl>
 </section>
@@ -911,10 +911,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="use-pg_stat_statements-to-find-the-queries-and-processes-that-use-the-most-resources" class="level4">
 <h4 class="anchored" data-anchor-id="use-pg_stat_statements-to-find-the-queries-and-processes-that-use-the-most-resources">Use pg_stat_statements to find the queries and processes that use the most resources</h4>
 <div class="sourceCode" id="cb32"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span></span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    total_exec_time,</span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>    mean_exec_time <span class="kw">as</span> avg_ms,</span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>    calls,</span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">query</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a> total_exec_time,</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a> mean_exec_time <span class="kw">as</span> avg_ms,</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a> calls,</span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a> <span class="kw">query</span></span>
 <span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> pg_stat_statements</span>
 <span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> mean_exec_time <span class="kw">DESC</span></span>
 <span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a><span class="kw">LIMIT</span> <span class="dv">10</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -923,7 +923,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h4 class="anchored" data-anchor-id="monitor-connections-in-postgres">Monitor connections in Postgres</h4>
 <p>This query will provide the number of connection based on type.</p>
 <div class="sourceCode" id="cb33"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">count</span>(<span class="op">*</span>),</span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>       state</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>    state</span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> pg_stat_activity</span>
 <span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> state;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>If you see idle connections is above 20, it is recommended to explore using PgBouncer.</p>

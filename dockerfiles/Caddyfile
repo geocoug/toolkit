@@ -1,0 +1,4 @@
+jupyter.localhost {
+  reverse_proxy notebook:8888
+}
+

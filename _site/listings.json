@@ -9,6 +9,21 @@
     ]
   },
   {
+    "listing": "/development/code/python.html",
+    "items": [
+      "/development/code/notebooks/data-science.html",
+      "/development/code/notebooks/grib.html",
+      "/development/code/notebooks/logging.html",
+      "/development/code/notebooks/ml-notes.html",
+      "/development/code/notebooks/ml-train-and-test.html",
+      "/development/code/notebooks/pyspark-practice.html",
+      "/development/code/notebooks/python-fundamentals.html",
+      "/development/code/notebooks/sleep-data.html",
+      "/development/code/notebooks/visualization-with-seaborn.html",
+      "/development/code/notebooks/web-scraping.html"
+    ]
+  },
+  {
     "listing": "/blog/index.html",
     "items": [
       "/blog/posts/mounting-a-windows-share/index.html",
