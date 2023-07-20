@@ -21,33 +21,6 @@ about:
 This site is designed to be my personal curated toolkit. It is where I store useful information, resources, tools, and code snippets I use on a regular basis.
 
 ---
-<!-- 
-```{python}
-# | echo: false
-# | height: 80px
-# | fig-align: center
-from ipyleaflet import (
-    Map,
-    Marker,
-    basemaps,
-    basemap_to_tiles,
-)
-from ipywidgets import Layout
-
-m = Map(
-    basemap=basemap_to_tiles(basemaps.OpenStreetMap.Mapnik),
-    center=(47.169722472687916, -122.60208720946943),
-    zoom=12,
-    layout=Layout(width="100%", height="160px"),
-)
-marker = Marker(
-    location=(47.169722472687916, -122.60208720946943),
-    draggable=False,
-    title="Steilacoon, WA",
-)
-m.add_layer(marker)
-m
-``` -->
 
 ::: {.grid}
 ::: {.g-col-md-3 .g-col-6 .d-flex .align-items-center .justify-content-center}

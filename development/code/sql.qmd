@@ -197,6 +197,124 @@ order by relationships asc) results
 where substring(table_name, 5, 2) = 'd_'; -- substring(string, start_position, length)
 ```
 
+### List column definitions and order between a set of tables
+
+```sql
+with recursive
+main_tables (
+    table_schema,
+    table_name
+) as (
+values
+    ('idb', 'd_document'),
+    ('idb', 'd_docfile'),
+    ('idb', 'd_study'),
+    ('idb', 'd_location'),
+    ('idb', 'd_studylocation'),
+    ('idb', 'd_sampcoll'),
+    ('idb', 'd_sampmain'),
+    ('idb', 'd_sampsplit'),
+    ('idb', 'd_labsample'),
+    ('idb', 'd_labpkg'),
+    ('idb', 'd_labresult')
+),
+exclude_columns (column_name) as (
+    values
+    ('gid'),
+    ('studyloc_alias'),
+    ('sampcoll_alias'),
+    ('sample_alias'),
+    ('analresult_alias'),
+    ('rev_user'),
+    ('rev_time')
+),
+dependencies as (
+    select
+        tc.table_name as child,
+        tu.table_name as parent
+    from
+        information_schema.table_constraints as tc
+        inner join information_schema.constraint_table_usage as tu
+            on tu.constraint_name = tc.constraint_name
+    where
+        tc.constraint_type = 'FOREIGN KEY'
+        and tc.table_name <> tu.table_name
+),
+dep_depth as (
+    select
+        dep.child, dep.parent, 1 as lvl
+    from
+        dependencies as dep
+    union all
+    select
+        dep.child, dep.parent, dd.lvl + 1 as lvl
+    from
+        dep_depth as dd
+        inner join dependencies as dep on dep.parent = dd.child
+    ),
+table_order as (
+    select
+        all_levels.table_name, all_levels.table_order
+    from (
+        select
+            dd.parent as table_name, max(lvl) as table_order
+        from
+            dep_depth as dd
+        group by
+            table_name
+        union
+        select
+            dd.child as table_name, max(lvl) + 1 as level
+        from
+            dep_depth as dd
+            left join dependencies as dp on dp.parent = dd.child
+        where
+            dp.parent is null
+        group by dd.child
+    ) as all_levels
+    order by table_order
+),
+cols as (
+    select
+        cc.table_name,
+        -- Some column names need changing because they exist in multiple tables
+        case
+            when cc.column_name in ('comments', 'description', 'fraction')
+            then replace(cc.table_name, 'd_', '') || '_' || cc.column_name
+            else cc.column_name end as column_name,
+        data_type,
+        character_maximum_length,
+        is_nullable,
+        table_order,
+        ordinal_position,
+        row_number() over () as col_order
+    from
+        information_schema.columns as cc
+        inner join table_order on table_order.table_name=cc.table_name
+        inner join main_tables on 
+            main_tables.table_schema=cc.table_schema 
+            and main_tables.table_name=cc.table_name
+        left join exclude_columns on cc.column_name=exclude_columns.column_name
+    where exclude_columns.column_name is null
+    order by table_order.table_order, table_order.table_name, cc.ordinal_position
+)
+select distinct
+    cols.column_name,
+    cols.column_name
+        || ' '
+        || data_type
+        || case
+                when character_maximum_length is null
+                then ''
+                else '(' || character_maximum_length || ')'
+                end
+     -- || case when not is_nullable::boolean then ' NOT NULL' else '' end as col_def,
+        as col_def,
+    cols.table_order, cols.table_name, cols.ordinal_position, row_number() over () as col_order
+from cols
+order by cols.table_order, cols.table_name, cols.ordinal_position
+```
+
 ### Common Functions
 
 - `LENGTH(string)`: Returns the length of the provided string

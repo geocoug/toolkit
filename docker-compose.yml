@@ -1,8 +1,7 @@
 ---
-version: '3.8'
+version: "3.8"
 
 services:
-
   caddy:
     container_name: caddy
     image: caddy:latest
@@ -17,13 +16,13 @@ services:
 
   notebook:
     container_name: notebook
-    build: 
-        context: .
-        dockerfile: ./dockerfiles/Dockerfile
+    build:
+      context: .
+      dockerfile: ./dockerfiles/Dockerfile
     depends_on:
       - caddy
     volumes:
-      - '${PWD}/development/code/notebooks:/home/jovyan'
+      - "${PWD}/development/code/notebooks:/home/jovyan"
     ports:
       - "8888:8888"
     restart: unless-stopped
