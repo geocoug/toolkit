@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Caleb Grant">
+<meta name="dcterms.date" content="2023-06-30">
+<meta name="description" content="Merging git branches locally">
 
-<title>Toolkit</title>
+<title>Toolkit - Git Merge</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +26,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href=".//static/favicon.ico" rel="icon">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../../">
+<link href="../../../..//static/favicon.ico" rel="icon">
+<script src="../../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": true,
@@ -61,22 +65,39 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<style>
+
+      .quarto-title-block .quarto-title-banner h1,
+      .quarto-title-block .quarto-title-banner h2,
+      .quarto-title-block .quarto-title-banner h3,
+      .quarto-title-block .quarto-title-banner h4,
+      .quarto-title-block .quarto-title-banner h5,
+      .quarto-title-block .quarto-title-banner h6
+      {
+        color: #212529;
+      }
+
+      .quarto-title-block .quarto-title-banner {
+        color: #212529;
+background: #EDF3F9;
+      }
+</style>
 <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous">
 </script>
 
 
-<link rel="stylesheet" href="static/styles.css">
+<link rel="stylesheet" href="../../../../static/styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./static/logo.svg" alt="" class="navbar-logo">
+    <a href="../../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../../static/logo.svg" alt="" class="navbar-logo">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -86,15 +107,15 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./content/development/index.html" rel="" target="">
+    <a class="nav-link" href="../../../../content/development/index.html" rel="" target="">
  <span class="menu-text">Development</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./content/resources/index.html" rel="" target="">
+    <a class="nav-link" href="../../../../content/resources/index.html" rel="" target="">
  <span class="menu-text">Resources</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./content/blog/index.html" rel="" target="">
+    <a class="nav-link" href="../../../../content/blog/index.html" rel="" target="">
  <span class="menu-text">Blog</span></a>
   </li>  
 </ul>
@@ -106,76 +127,89 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Git Merge</h1>
+                  <div>
+        <div class="description">
+          Merging git branches locally
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">Git</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Caleb Grant </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">June 30, 2023</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
-<!-- main -->
-<div class="quarto-about-solana column-body">
-  <div class="about-entity">
-    <div class="entity-contents">
-      <header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Welcome</h1>
-</div>
-<div class="quarto-title-meta">
-  </div>
-</header> <div class="about-links">
-  <a href="https://linkedin.com/in/c-grant" class="about-link" rel="" target="">
-    <i class="bi bi-linkedin"></i>
-     <span class="about-link-text">LinkedIn</span>
-  </a>
-  <a href="https://github.com/geocoug" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">Github</span>
-  </a>
-  <a href="https://geocoug.com" class="about-link" rel="" target="">
-    <i class="bi bi-person-fill"></i>
-     <span class="about-link-text">Portfolio</span>
-  </a>
-</div>
-      <div class="about-contents"><main class="content" id="quarto-document-content">
-<p>This site is designed to be my personal curated toolkit. It is where I store useful information, resources, tools, and code snippets I use on a regular basis.</p>
-<hr>
-<div class="grid">
-<div class="g-col-md-3 g-col-6 d-flex align-items-center justify-content-center">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="./static/wsu.svg" height="80" class="figure-img"></p>
-</figure>
-</div>
-</div>
-<div class="g-col-md-3 g-col-6 d-flex align-items-center justify-content-center">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="./static/kraken.svg" height="80" class="figure-img"></p>
-</figure>
-</div>
-</div>
-<div class="g-col-md-3 g-col-6 d-flex align-items-center justify-content-center">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="./static/mariners.svg" height="80" class="figure-img"></p>
-</figure>
-</div>
-</div>
-<div class="g-col-md-3 g-col-6 d-flex align-items-center justify-content-center">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="./static/seahawks.svg" height="100" class="figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-
-
-</main></div>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
     </div>
-    <img src="https://avatars.githubusercontent.com/u/48339519?v=4" class="about-image
-  rounded " style="width: 15em;">
-  </div>
-</div>
- <!-- /main -->
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<p>The steps below can be used to merge two branches on your local machine. The braches used in this example are:</p>
+<ul>
+<li><code>main</code>: The authoritative or “production” code lives in this branch.</li>
+<li><code>dev</code>: This branch is split from the <code>main</code> branch and a new feature or update is coded with the intent to merge changes back into the <code>main</code> branch.</li>
+</ul>
+<ol type="1">
+<li><p>Pull <code>main</code> and <code>dev</code> branches so local repo is up to date with the remote.</p>
+<ol type="1">
+<li><code>git checkout main</code></li>
+<li><code>git pull origin main</code></li>
+<li><code>git checkout dev</code></li>
+<li><code>git pull origin dev</code></li>
+</ol></li>
+<li><p>Checkout the main branch so we can merge the <code>dev</code> branch into <code>main</code></p>
+<ol type="1">
+<li><code>git checkout main</code></li>
+<li><code>git merge dev</code></li>
+</ol>
+<img src="./merge.png" class="img-fluid" alt="img"></li>
+<li><p>Check the branch status: <code>git status</code></p>
+<img src="./status.png" class="img-fluid" alt="img"></li>
+<li><p>Evaluate the two files with a conflict (ie. <code>.gitignore</code> and <code>requirements.txt</code>) and reconcile issues, then <code>git add</code> when ready.</p></li>
+<li><p>Commit the changes: <code>git commit -m "merge @tnelson-integral dev branch with main"</code></p></li>
+<li><p>Push changes to the remote on GitHub: <code>git push origin main</code></p></li>
+<li><p>Check out the <code>dev</code> branch locally and pull the <code>main</code> branch changes into it so <code>dev</code> can be up-to-date with <code>main</code></p>
+<ol type="1">
+<li><code>git checkout dev</code></li>
+<li><code>git pull origin main</code></li>
+<li><code>git push origin dev</code></li>
+</ol></li>
+</ol>
+
+
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -311,6 +345,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   } else {
     toggleColorMode(false);
   }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     

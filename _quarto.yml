@@ -40,11 +40,11 @@ website:
     collapse-below: lg
     left:
       - text: "Development"
-        href: development/index.qmd
+        href: content/development/index.qmd
       - text: "Resources"
-        href: resources/index.qmd
+        href: content/resources/index.qmd
       - text: "Blog"
-        href: blog/index.qmd
+        href: content/blog/index.qmd
 
   sidebar:
     - id: development
@@ -52,30 +52,30 @@ website:
       align: left
       style: "docked"
       contents:
-        - development/index.qmd
-        - auto: "development/*"
+        - content/development/index.qmd
+        - auto: "content/development/*"
         - section: "Code"
-          href: development/code/index.qmd
+          href: content/development/code/index.qmd
           contents:
-            - auto: "development/code/*"
+            - auto: "content/development/code/*"
             - section: "Notebooks"
-              href: development/code/notebooks/index.qmd
+              href: content/development/code/notebooks/index.qmd
               contents:
-                - auto: "development/code/notebooks/*"
+                - auto: "content/development/code/notebooks/*"
         - section: "Tools"
           contents:
-            - auto: "development/tools/*"
+            - auto: "content/development/tools/*"
         - section: "Server"
-          href: development/server/index.qmd
+          href: content/development/server/index.qmd
           contents:
-            - auto: "development/server/*"
+            - auto: "content/development/server/*"
     - id: resources
       collapse-level: 2
       align: left
       style: "docked"
       contents:
-        - resources/index.qmd
-        - auto: "resources/*"
+        - content/resources/index.qmd
+        - auto: "content/resources/*"
 
 format:
   html:

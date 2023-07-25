@@ -1,0 +1,1063 @@
+---
+title: SQL
+description: Structured Query Language
+image: https://img.icons8.com/?size=512&id=MBA5vPE4dGz2&format=png
+filters:
+    - interactive-sql
+databases:
+  - name: hr
+    # Must be served from a server
+    path: "https://raw.githubusercontent.com/shafayetShafee/interactive-sql/main/hr.sql"
+
+---
+
+The code snippets on this page are primarily geared towards the PostgreSQL dialect.
+
+## Fundamentals
+
+### Primary Key Relationships
+
+**Columns**
+
+- table_schema: PK schema name
+- table_name: PK table name
+- constraint_name: PK constraint name
+- position: index of column in table (1, 2, ...). 2 or higher means key is composite (contains more than one column)
+- key_column: PK column name
+
+**Rows**
+
+- One row represents one primary key column
+- Scope of rows: columns of all PK constraints in a database
+- Ordered by table schema, table name, column position
+
+```sql
+select * from (
+ -- Main query. Returns all tables
+ select kcu.table_schema,
+     kcu.table_name,
+     tco.constraint_name,
+     kcu.ordinal_position as position,
+     kcu.column_name as key_column
+ from information_schema.table_constraints tco
+ join information_schema.key_column_usage kcu 
+   on kcu.constraint_name = tco.constraint_name
+   and kcu.constraint_schema = tco.constraint_schema
+   and kcu.constraint_name = tco.constraint_name
+ where tco.constraint_type = 'PRIMARY KEY'
+ order by kcu.table_schema,
+    kcu.table_name,
+    position
+) main
+where table_name = 'd_location'
+```
+
+### Foreign Key Relationships
+
+**Columns**
+
+- foreign_table: foreign table schema and name
+- rel: relationship symbol implicating direction
+- primary_table: primary (rerefenced) table schema and name
+- fk_columns: list of FK colum names, separated with ","
+- constraint_name: foreign key constraint name
+
+**Rows**
+
+- One row represents one foreign key.
+- If foreign key consists of multiple columns (composite key) it is still represented as one row.
+- Scope of rows: all foregin keys in a database.
+- Ordered by foreign table schema name and table name.
+
+### Ordering Tables by FK
+
+```sql
+drop table if exists dependencies cascade;
+create temporary table dependencies as
+select 
+  tc.table_name as child,
+  tu.table_name as parent
+from 
+  information_schema.table_constraints as tc
+  inner join information_schema.constraint_table_usage as tu
+    on tu.constraint_name = tc.constraint_name
+where 
+  tc.constraint_type = 'FOREIGN KEY'
+  and tc.table_name <> tu.table_name;
+
+with recursive dep_depth as (
+select
+  dep.child, dep.parent, 1 as lvl
+from
+  dependencies as dep
+union all
+select
+  dep.child, dep.parent, dd.lvl + 1 as lvl
+from
+  dep_depth as dd
+  inner join dependencies as dep on dep.parent = dd.child
+)
+select
+  table_name, table_order
+from (
+  select
+    dd.parent as table_name, max(lvl) as table_order
+  from
+    dep_depth as dd
+  group by
+    table_name
+  union
+  select
+    dd.child as table_name, max(lvl) + 1 as level
+  from
+    dep_depth as dd
+    left join dependencies as dp on dp.parent = dd.child
+  where
+    dp.parent is null
+  group by dd.child
+) as all_levels
+order by table_order;
+```
+
+### Return FK relationships for all tables
+
+```sql
+select * from (
+ -- Main query. Returns FK relationships for all tables
+ select 
+   kcu.table_schema as table_schema,
+   kcu.table_name as foreign_table,
+     '>-' as relationship,
+     rel_tco.table_name as primary_table,
+     string_agg(kcu.column_name, ', ') as fk_columns,
+     kcu.constraint_name
+ from information_schema.table_constraints tco
+ join information_schema.key_column_usage kcu
+     on tco.constraint_schema = kcu.constraint_schema
+     and tco.constraint_name = kcu.constraint_name
+ join information_schema.referential_constraints rco
+     on tco.constraint_schema = rco.constraint_schema
+     and tco.constraint_name = rco.constraint_name
+ join information_schema.table_constraints rel_tco
+     on rco.unique_constraint_schema = rel_tco.constraint_schema
+     and rco.unique_constraint_name = rel_tco.constraint_name
+ where tco.constraint_type = 'FOREIGN KEY'
+ group by kcu.table_schema,
+    kcu.table_name,
+    rel_tco.table_name,
+    rel_tco.table_schema,
+    kcu.constraint_name
+ order by kcu.table_schema,
+    kcu.table_name
+) main
+where primary_table = 'd_location'
+```
+
+### Most Table Relationships
+
+[List tables with most relationships.](https://dataedo.com/kb/query/postgresql/list-tables-with-most-relationships)
+
+```sql
+select * from
+(select relations.table_name as table_name, -- schema name and table name
+       count(relations.table_name) as relationships, -- number of table relationships
+       count(relations.referenced_tables) as foreign_keys, -- number of foreign keys in a table
+       count(relations.referencing_tables) as references, -- number of foreign keys that are refering to this table
+       count(distinct related_table) as related_tables, -- number of related tables
+       count(distinct relations.referenced_tables) as referenced_tables, -- number of different tables referenced with FKs (multiple FKs can refer to one table, so number of FKs might be different than number of referenced tables)
+       count(distinct relations.referencing_tables) as referencing_tables -- number of different tables that are refering to this table (similar to referenced_tables)
+from(
+     select pk_tco.table_schema || '.' || pk_tco.table_name as table_name,
+            fk_tco.table_schema || '.' || fk_tco.table_name as related_table,
+            fk_tco.table_name as referencing_tables,
+            null::varchar(100) as referenced_tables
+     from information_schema.referential_constraints rco
+     join information_schema.table_constraints fk_tco
+          on rco.constraint_name = fk_tco.constraint_name
+          and rco.constraint_schema = fk_tco.table_schema
+     join information_schema.table_constraints pk_tco
+          on rco.unique_constraint_name = pk_tco.constraint_name
+          and rco.unique_constraint_schema = pk_tco.table_schema
+    union all
+    select fk_tco.table_schema || '.' || fk_tco.table_name as table_name,
+           pk_tco.table_schema || '.' || pk_tco.table_name as related_table,
+           null as referencing_tables,
+           pk_tco.table_name as referenced_tables
+    from information_schema.referential_constraints rco
+    join information_schema.table_constraints fk_tco 
+         on rco.constraint_name = fk_tco.constraint_name
+         and rco.constraint_schema = fk_tco.table_schema
+    join information_schema.table_constraints pk_tco
+         on rco.unique_constraint_name = pk_tco.constraint_name
+         and rco.unique_constraint_schema = pk_tco.table_schema
+) relations
+group by table_name
+order by relationships asc) results
+
+where substring(table_name, 5, 2) = 'd_'; -- substring(string, start_position, length)
+```
+
+### List column definitions and order between a set of tables
+
+```sql
+with recursive
+main_tables (
+    table_schema,
+    table_name
+) as (
+values
+    ('idb', 'd_document'),
+    ('idb', 'd_docfile'),
+    ('idb', 'd_study'),
+    ('idb', 'd_location'),
+    ('idb', 'd_studylocation'),
+    ('idb', 'd_sampcoll'),
+    ('idb', 'd_sampmain'),
+    ('idb', 'd_sampsplit'),
+    ('idb', 'd_labsample'),
+    ('idb', 'd_labpkg'),
+    ('idb', 'd_labresult')
+),
+exclude_columns (column_name) as (
+    values
+    ('gid'),
+    ('studyloc_alias'),
+    ('sampcoll_alias'),
+    ('sample_alias'),
+    ('analresult_alias'),
+    ('rev_user'),
+    ('rev_time')
+),
+dependencies as (
+    select
+        tc.table_name as child,
+        tu.table_name as parent
+    from
+        information_schema.table_constraints as tc
+        inner join information_schema.constraint_table_usage as tu
+            on tu.constraint_name = tc.constraint_name
+    where
+        tc.constraint_type = 'FOREIGN KEY'
+        and tc.table_name <> tu.table_name
+),
+dep_depth as (
+    select
+        dep.child, dep.parent, 1 as lvl
+    from
+        dependencies as dep
+    union all
+    select
+        dep.child, dep.parent, dd.lvl + 1 as lvl
+    from
+        dep_depth as dd
+        inner join dependencies as dep on dep.parent = dd.child
+    ),
+table_order as (
+    select
+        all_levels.table_name, all_levels.table_order
+    from (
+        select
+            dd.parent as table_name, max(lvl) as table_order
+        from
+            dep_depth as dd
+        group by
+            table_name
+        union
+        select
+            dd.child as table_name, max(lvl) + 1 as level
+        from
+            dep_depth as dd
+            left join dependencies as dp on dp.parent = dd.child
+        where
+            dp.parent is null
+        group by dd.child
+    ) as all_levels
+    order by table_order
+),
+cols as (
+    select
+        cc.table_name,
+        -- Some column names need changing because they exist in multiple tables
+        case
+            when cc.column_name in ('comments', 'description', 'fraction')
+            then replace(cc.table_name, 'd_', '') || '_' || cc.column_name
+            else cc.column_name end as column_name,
+        data_type,
+        character_maximum_length,
+        is_nullable,
+        table_order,
+        ordinal_position,
+        row_number() over () as col_order
+    from
+        information_schema.columns as cc
+        inner join table_order on table_order.table_name=cc.table_name
+        inner join main_tables on 
+            main_tables.table_schema=cc.table_schema 
+            and main_tables.table_name=cc.table_name
+        left join exclude_columns on cc.column_name=exclude_columns.column_name
+    where exclude_columns.column_name is null
+    order by table_order.table_order, table_order.table_name, cc.ordinal_position
+)
+select distinct
+    cols.column_name,
+    cols.column_name
+        || ' '
+        || data_type
+        || case
+                when character_maximum_length is null
+                then ''
+                else '(' || character_maximum_length || ')'
+                end
+     -- || case when not is_nullable::boolean then ' NOT NULL' else '' end as col_def,
+        as col_def,
+    cols.table_order, cols.table_name, cols.ordinal_position, row_number() over () as col_order
+from cols
+order by cols.table_order, cols.table_name, cols.ordinal_position
+```
+
+### Common Functions
+
+- `LENGTH(string)`: Returns the length of the provided string
+- `POSITION(string IN substring)`: Returns the position of the substring within the specified string.
+- `CAST(expression AS datatype)`: Converts an expression into the specified data type.
+- `NOW: Returns the current date, including time.
+- `CEIL(input_val)`: Returns the smallest integer greater than the provided number.
+- `FLOOR(input_val)`: Returns the largest integer less than the provided number.
+- `ROUND(input_val, [round_to])`: Rounds a number to a specified number of decimal places.
+- `TRUNC(input_value, num_decimals)`: Truncates a number to a number of decimals.
+- `REPLACE(whole_string, string_to_replace, replacement_string)`: Replaces one string inside the whole string with another string.
+- `SUBSTRING(string, [start_pos], [length])`: Returns part of a value, based on a position and length.
+
+### Add Role
+
+```sql
+create user <username> with password 'password'; -- <1>
+grant connect on database <db_name> to <username>; -- <1>
+grant usage on schema <schema_name> to <username>; -- <1>
+grant select on all tables in schema <schema_name> to <username>; -- <1>
+alter default privileges in schema <schema_name> grant select on tables to <username>; -- <1>
+
+grant create on database <db_name> to <username>; -- <2>
+grant insert on database <db_name> to <username>; -- <3>
+grant update on database <db_name> to <username>; -- <4>
+grant update on database <db_name> to <username>; -- <5>
+```
+
+1. Create a read-only user.
+2. Allow user to create database objects.
+3. Allow user to insert rows to any schema and table.
+4. Allow user to update rows in any schema and table.
+5. Allow user to delete rows in any schema and table.
+
+### Create read only user - shorthand
+
+Once already creating a specific user role, you can user the \`pg\_read\_all_data\` to grant read only access to all tables.
+
+```sql
+GRANT pg_read_all_data TO username;
+```
+
+### Finding Temporary Objects
+
+```sql
+SELECT
+ n.nspname as SchemaName,
+ c.relname as RelationName,
+ CASE c.relkind
+  WHEN 'r' THEN 'table'
+  WHEN 'v' THEN 'view'
+  WHEN 'i' THEN 'index'
+  WHEN 'S' THEN 'sequence'
+  WHEN 's' THEN 'special'
+  END as RelationType,
+ pg_catalog.pg_get_userbyid(c.relowner) as RelationOwner,             
+ pg_size_pretty(pg_relation_size(n.nspname ||'.'|| c.relname)) as RelationSize
+FROM pg_catalog.pg_class c
+LEFT JOIN pg_catalog.pg_namespace AS n ON n.oid = c.relnamespace
+ WHERE  c.relkind IN ('r','s') 
+ AND  (n.nspname !~ '^pg_toast' and nspname like 'pg_temp%')
+ORDER BY pg_relation_size(n.nspname ||'.'|| c.relname) DESC;
+```
+
+## SQL
+
+### Terminate backends of a particular user ("test")
+
+This query will kill every backend user "test" is connected to.
+
+```sql
+WITH pids AS (
+  SELECT pid
+  FROM pg_stat_activity
+  WHERE usename='test'
+)
+
+SELECT pg_terminate_backend(pid)
+FROM pids;
+```
+
+### Cancel every running SQL commands from a particular user ("test")
+
+This query will cancel every running query issued by the particular user "test".
+
+```sql
+WITH pids AS ( 
+  SELECT pid 
+  FROM pg_stat_activity 
+  WHERE username='test' 
+) 
+SELECT pg_cancel_backend(pid) 
+FROM pids;
+```
+
+### List tables in database
+
+```sql
+SELECT table_schema, table_name 
+FROM information_schema.tables 
+ORDER BY table_schema,table_name;
+```
+
+### List columns in table
+
+```sql
+SELECT column_name
+FROM   information_schema.columns
+WHERE  table_schema = 'schema'
+AND    table_name = 'table';
+```
+
+### Create a read-only user
+
+```sql
+grant connect on database db_name to user;
+grant usage on schema schema_name to user;
+grant select on all tables in schema schema_name to user;
+alter default privileges in schema schema_name grant select on tables to user;
+```
+
+### Create DB
+
+```sql
+create database <new_db_name> owner <user_or_group> template <name_of_db_to_use_as_template>;
+-- show search_path;
+set search_path to <default_schema>,public;
+create extension if not exists postgis;
+create extension if not exists dblink;
+
+-- Database Creation
+-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+create database <new_db_name> owner <user_or_group> template <name_of_db_to_use_as_template>;
+-- show search_path;
+set search_path to idb, public;
+
+grant connect, temporary on database <new_db_name> to public;
+grant all on database <new_db_name> to <user>;
+grant all on database <new_db_name> to <group>;
+
+create extension if not exists postgis;
+create extension if not exists dblink;
+
+create schema staging;
+
+-- Add a unique constraint to e_analyte.full_name and e_analyte.cas_rn so that
+-- no full name or cas_rn can be used for more than one analyte
+-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+alter table e_analyte
+  add constraint uc_fullname unique(full_name),
+  add constraint uc_casrn unique(cas_rn);
+```
+
+### DBLink
+
+```sql
+select
+  a.*, b.*
+from
+  table1 as a
+  left join (
+    select * from dblink(
+      'dbname=<database>',
+      'select col1, col2, col3 from <table>'
+    ) as d (
+      col1 text, col2 text, col3 text
+    )
+  ) as b
+  on a.col1 = b.col2
+```
+
+### Partitioning
+
+```sql
+select * from (
+    select *, row_number() over(
+        partition by
+            col1, col2, col3
+        order by col1 desc
+    ) rowid
+    from sometable
+) someid
+where rowid > 1;
+```
+
+### Current Database
+
+```sql
+select * from pg_catalog.current_database()
+```
+
+### Current user/role
+
+```sql
+select * from current_role
+select * from current_user
+```
+
+### Process ID
+
+```sql
+select * from pg_catalog.pg_backend_pid()
+```
+
+### List functions/defs/args
+
+```sql
+select 
+ pg_get_userbyid(p.proowner) as owner,
+ n.nspname as function_schema,
+ p.proname as function_name,
+ l.lanname as function_language,
+ case when l.lanname = 'internal' then p.prosrc
+  else pg_get_functiondef(p.oid)
+  end as definition,
+ pg_get_function_arguments(p.oid) as function_arguments,
+ t.typname as return_type
+from pg_proc p
+ left join pg_namespace n on p.pronamespace = n.oid
+ left join pg_language l on p.prolang = l.oid
+ left join pg_type t on t.oid = p.prorettype 
+where n.nspname not in ('pg_catalog', 'information_schema')
+and n.nspname = 'idb'
+order by function_schema, function_name;
+```
+
+### Whos logged in
+
+```sql
+select * from pg_stat_activity
+where usename != '' and usename != 'postgres'
+order by usename, pid
+```
+
+### Aggregate Functions
+
+[pg_aggregate catalog](https://www.postgresql.org/docs/9.6/catalog-pg-aggregate.html)
+
+```sql
+-- pg_proc contains data for aggregate functions as well as plain functions
+select * from pg_proc
+-- pg_aggregate is an extension of pg_proc.
+select * from pg_aggregate
+```
+
+### List users
+
+```sql
+SELECT rolname FROM pg_roles;
+```
+
+### Update From
+
+```sql
+UPDATE tablename
+SET columnname = someothervalue
+FROM ...
+WHERE ...
+```
+
+### Materialized View
+
+[Reference](https://www.postgresqltutorial.com/postgresql-materialized-views/)
+
+```sql
+CREATE MATERIALIZED VIEW view_name
+AS
+query
+WITH [NO] DATA;
+```
+
+When you refresh data for a materialized view, PostgreSQL locks the entire table therefore you cannot query data against it. To avoid this, you can use the CONCURRENTLY option.
+
+With CONCURRENTLY option, PostgreSQL creates a temporary updated version of the materialized view, compares two versions, and performs INSERT and UPDATE only the differences.
+
+```sql
+REFRESH MATERIALIZED VIEW CONCURRENTLY view_name;
+```
+
+### Constants
+
+```sql
+WITH myconstants (analyte_search) as (
+   values ('%Hexachlorocyclopentadiene%')
+)
+
+SELECT *
+FROM e_analyte, myconstants
+WHERE analyte ilike analyte_search
+   OR full_name ilike analyte_search
+   OR aliases ilike analyte_search;
+```
+
+### Sequential Keys
+
+```sql
+seq_key bigint NOT NULL DEFAULT nextval('seq_key'::regclass)
+
+ALTER SEQUENCE seq_key RESTART WITH 3;
+```
+
+### Cross-Database Search
+
+These could be refined further by creating a function.
+
+```sql
+with
+const (param) as (
+    values ('%solid%')
+),
+dbrows as (
+   select analyte, full_name, chem_class, aliases, cas_rn, current_database() as db from e_analyte
+  union
+    select * from dblink(
+        'dbname=database1',
+        'select analyte, full_name, chem_class, aliases, cas_rn, current_database() as db from e_analyte'
+        ) as d (analyte text, full_name text, chem_class text, aliases text, cas_rn text, db text)
+  union
+    select * from dblink(
+        'dbname=database2',
+        'select analyte, full_name, chem_class, aliases, cas_rn, current_database() as db from e_analyte'
+        ) as d (analyte text, full_name text, chem_class text, aliases text, cas_rn text, db text)
+  union
+    select * from dblink(
+     'dbname=database3',
+     'select analyte, full_name, chem_class, aliases, cas_rn, current_database() as db from e_analyte'
+ ) as d (analyte text, full_name text, chem_class text, aliases text, cas_rn text, db text)
+)
+select 
+ analyte, full_name, chem_class, cas_rn, aliases, 
+ count(*) as num_instances, string_agg(db, '; ') as db
+from dbrows, const
+where analyte ilike param
+   or full_name ilike param
+   or aliases ilike param
+group by analyte, full_name, chem_class, cas_rn, aliases
+order by chem_class, analyte;
+```
+
+### Logging
+
+#### Log slow queries by setting log\_min\_duration_statement
+
+```sql
+ALTER database postgres SET log_min_duration_statement = '250ms';
+```
+
+#### Control which statement types get logged
+
+Control the types of statements that are logged for your database.
+
+```sql
+ALTER DATABASE postgres SET log_statement = 'all';
+```
+
+Valid values include all, ddl, none, mod
+
+#### Log when waiting on a lock
+
+Log when database is waiting on a lock.
+
+```sql
+ALTER DATABASE postgres SET log_lock_waits = 'on';
+```
+
+### Performance
+
+#### Use statement timeouts to control runaway queries
+
+Setting a statement timeout prevents queries from running longer than the specified time. You can set a statement timeout on the database, user, or session level. We recommend you set a global timeout on Postgres and then override that one specific users or sessions that need a longer allowed time to run.
+
+```sql
+ALTER DATABASE mydatabase SET statement_timeout = '60s';
+```
+
+#### Use pg\_stat\_statements to find the queries and processes that use the most resources
+
+```sql
+SELECT
+ total_exec_time,
+ mean_exec_time as avg_ms,
+ calls,
+ query
+FROM pg_stat_statements
+ORDER BY mean_exec_time DESC
+LIMIT 10;
+```
+
+#### Monitor connections in Postgres
+
+This query will provide the number of connection based on type.
+
+```sql
+SELECT count(*),
+    state
+FROM pg_stat_activity
+GROUP BY state;
+```
+
+If you see idle connections is above 20, it is recommended to explore using PgBouncer.
+
+#### Query size of specific table
+
+Will give you the size of the specific relation you pass in.
+
+```sql
+SELECT pg_relation_size('table_name');
+
+-- For prettier formatting you can wrap with:
+
+SELECT pg_size_pretty(pg_relation_size('table_name'));
+```
+
+#### Query all relation sizes
+
+Will report on all table sizes in descending order
+
+```sql
+SELECT relname AS relation,
+       pg_size_pretty (
+         pg_total_relation_size (C .oid)
+       ) AS total_size
+FROM pg_class C
+LEFT JOIN pg_namespace N ON (N.oid = C .relnamespace)
+WHERE nspname NOT IN (
+        'pg_catalog',
+        'information_schema'
+      )
+  AND C .relkind <> 'i'
+  AND nspname !~ '^pg_toast'
+  ORDER BY pg_total_relation_size (C .oid) DESC
+```
+
+#### Check for unused indexes
+
+Will return the unused indexes in descending order of size. Keep in mind you want to also check replicas before dropping indexes.
+
+```sql
+SELECT schemaname || '.' || relname AS table,
+       indexrelname AS index,
+       pg_size_pretty(pg_relation_size(i.indexrelid)) AS "index size",
+       idx_scan as "index scans"
+FROM pg_stat_user_indexes ui
+JOIN pg_index i ON ui.indexrelid = i.indexrelid
+WHERE NOT indisunique
+  AND idx_scan < 50
+  AND pg_relation_size(relid) > 5 * 8192
+ORDER BY 
+  pg_relation_size(i.indexrelid) / nullif(idx_scan, 0) DESC NULLS FIRST,
+  pg_relation_size(i.indexrelid) DESC;
+```
+
+#### Get approximate counts for a table
+
+Will return the approximate count for a table based on PostgreSQL internal statistics. Useful for large tables where performing a \`SELECT count(*)\` is costly on performance.
+
+```sql
+SELECT reltuples::numeric as count
+FROM pg_class
+WHERE relname='table_name';
+```
+
+#### Non-blocking index creation
+
+Adding \`CONCURRENTLY\` during index creation, while not permitted in a transaction, will not hold a lock on the table while creating your index.
+
+```sql
+CREATE INDEX CONCURRENTLY foobar ON foo (bar);
+```
+
+### Replace nulls with other value
+
+Coalesce will use the value and if the value is null display your specified string.
+
+```sql
+SELECT id, 
+       coalesce(ip, 'no IP') 
+FROM logs;
+```
+
+You can supply two columns as well prior to your replacement value and the function will use first not null value.
+
+### Import Schema with Mapping a Foreign Data Wrapper (FDW)
+
+Import foreign schema creates foreign tables representing those from the foreign server.
+
+```sql
+IMPORT FOREIGN SCHEMA "public";
+```
+
+You can `IMPORT FOREIGN SCHEMA` when mapping a foreign data wrapper to save you from building a new one
+
+### Generate data with generate_series
+
+Generates values from the start to the end values supplied based on the interval. Values can be numbers or timestamps. Can be used in a FROM or JOIN clause or CTE. Commonly used when building charts and reports that require all dates to be filled.
+
+```sql
+SELECT * FROM
+generate_series(now() - '3 month'::interval, now(), '1 day');
+```
+
+### Round dates with date_trunc
+
+Will truncate the date to the specified level of precision. Some example precision levels include: month, week, day, hour, minute.
+
+```sql
+SELECT date_trunc('day', now());
+```
+
+### Perform time math with intervals
+
+You can add or subtract specific amounts of time of a timestamp by casting the value you want as an interval.
+
+```sql
+SELECT now() - '1 month'::interval;
+```
+
+### Make your session rest a bit
+
+This function will make your session sleep for 2.5 seconds. Useful in any testing tool executing a script in a given loop where you want to pause a bit between iterations, as an example.
+
+```sql
+select pg_sleep(2.5);
+```
+
+## PL/pgSQL
+
+### Wipe Schema Tables
+
+```sql
+-- DROP FUNCTION IF EXISTS idb.wipe_staging();
+CREATE OR REPLACE FUNCTION idb.wipe_staging()
+RETURNS TABLE(staging_schema text, deleted_tables integer) 
+LANGUAGE 'plpgsql'
+COST 100
+VOLATILE PARALLEL UNSAFE
+ROWS 1000
+AS $BODY$
+#variable_conflict use_column
+DECLARE
+  staging_schema TEXT;
+  table_name TEXT;
+  deleted_tables INTEGER := 0;
+BEGIN
+staging_schema = (select 'stg_' || user)::text;
+FOR table_name IN (
+    SELECT table_name 
+    FROM information_schema.tables
+    WHERE table_schema = staging_schema
+)
+LOOP
+EXECUTE format('DROP TABLE %I.%I CASCADE', staging_schema, table_name );
+deleted_tables := deleted_tables + 1;
+END LOOP;
+RETURN query select staging_schema, deleted_tables;
+END;
+$BODY$;
+ALTER FUNCTION idb.wipe_staging()
+    OWNER TO envdb_dm;
+```
+
+## psql
+
+[Cheat sheet](https://quickref.me/postgres)
+
+```{python}
+import pandas as pd
+
+f = "../../../static/development/commands.xlsx"
+
+t4 = pd.read_excel(f, sheet_name="psql-commands")
+t4.to_html(index=False)
+```
+
+### Export table to CSV
+
+- `\copy table TO '<path>' CSV`
+- `\copy table(col1,col1) TO '<path>' CSV`
+- `\copy (SELECT...) TO '<path>' CSV`
+  
+### Backup
+
+Use pg_dumpall to backup all databases
+
+`pg_dumpall -U postgres > all.sql`
+
+Use pg_dump to backup a database
+
+`pg_dump -d mydb -f mydb_backup.sql`
+
+- `-a`   Dump only the data, not the schema
+- `-s`   Dump only the schema, no data
+- `-c`   Drop database before recreating
+- `-C`   Create database before restoring
+- `-t`   Dump the named table(s) only
+- `-F`   Format (`c`: custom, `d`: directory, `t`: tar)
+
+Use `pg_dump -?` to get the full list of options
+
+### Restore
+
+`psql -U user mydb < mydb_backup.sql`
+
+#### pg_restore
+
+`pg_restore -d mydb mydb_backup.sql -c`
+
+- `-U   Specify a database user`
+- `-c   Drop database before recreating`
+- `-C   Create database before restoring`
+- `-e   Exit if an error has encountered`
+- `-F   Format (c: custom, d: directory, t: tar, p: plain text sql(default))`
+
+Use pg_restore -? to get the full list of options
+
+### Automatically log query time in psql
+
+Will automatically print the time it took to run a query from within psql. \*Of note this is the round trip time not simply query execution time.\*
+
+```bash
+\timing
+```
+
+You can save this in your `.psqlrc` to be a default setting
+
+### Autoformat query results in psql
+
+Will automatically reorganize the query output based on your terminal window for better readability.
+
+```bash
+\x auto
+```
+
+You can save this in your `.psqlrc` to be a default setting
+
+### Edit your psql queries in editor of your choice
+
+Will automatically open your last run query in your default `$EDITOR`. When you save and close it will execute that query.
+
+```bash
+\e
+```
+
+### Set a value for nulls
+
+Will render the nulls as whatever character you specify. Handy for easier parsing of nulls vs. blank text.
+
+```bash
+\pset null 👻
+```
+
+You can save this in your `.psqlrc` to be a default setting
+
+### Save your query history per database locally
+
+Will automatically save a history file for each \*\*DBNAME\*\*.
+
+```bash
+\set HISTFILE ~/.psql_history- :DBNAME
+```
+
+You can save this in your `.psqlrc` to be a default setting
+
+### Show queries issued by internal psql commands
+
+Add "-E" (or --echo-hidden) option to psql in the command line. This option will display queries that internal psql commands generate (like "\\dt mytable"). This is a cool way to learn more about system catalogs, or reuse queries issued by psql in your own tool.
+
+```sql
+psql -E
+```
+
+### Get data back, and only the data
+
+Add "-qtA" options to psql in the command line. Those options will have psql run in quiet mode ("-q"), return tuples only ("-t") in an unaligned fashion ("-A"). Combined with "-c" option to send a single query, it can be useful for your scripts if you want the data and only that back from Postgres. Returns one line per row.
+
+```sql
+psql -qtA
+```
+
+### Get results as an HTML table
+
+Add "-qtH" options to psql in the command line. Those options will have psql run in quiet mode ("-q"), return tuples only ("-t") in an HTML table ("-H"). Combined with "-c" option to send a single query, can be a fast way to embed the result of a query in an HTML page.
+
+```sql
+psql -qtH
+```
+
+### Clear your psql screen
+
+Will clear your screen in current psql session
+
+```bash
+\! clear
+```
+
+### Continually run a query with watch
+
+Will automatically run the last query every 2 seconds and display the output. You can also specify the query that will run after watch as well.
+
+```bash
+\watch
+```
+
+### Rollback to previous statement on error when in interactive mode
+
+When you encounter an error when in interactive mode this will automatically rollback to just before the previous command, allowing you to continue working as you would expect.
+
+```sql
+\set ON_ERROR_ROLLBACK interactive
+```
+
+### Export a CSV from directly in psql
+
+When providing the `--csv` value with a query, this command will run the specific query and return CSV to STDOUT.
+
+```sql
+psql <connection-string> --csv -c 'select * from test;'
+```
+
+### Run a query from a file in psql
+
+Will execute the specified file when inside psql.
+
+```sql
+\i filename
+```
+
+### Provide clean border within psql
+
+Will give you a border around the output of your queries when in psql
+
+```sql
+\pset border 2
+```
+
+You can save this in your `.psqlrc` to be a default setting
+
+### Set linestyle to unicode
+
+Changes the linestyle to unicode, which when combined with above tip leads to much cleaner formatting
+
+```sql
+\pset linestyle unicode
+```
+
+You can save this in your `.psqlrc` to be a default setting

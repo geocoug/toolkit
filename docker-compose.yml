@@ -22,7 +22,7 @@ services:
     depends_on:
       - caddy
     volumes:
-      - "${PWD}/development/code/notebooks:/home/jovyan"
+      - "${PWD}/content/development/code/notebooks:/home/jovyan"
     ports:
       - "8888:8888"
     restart: unless-stopped

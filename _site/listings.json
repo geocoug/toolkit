@@ -1,49 +1,49 @@
 [
   {
-    "listing": "/resources/index.html",
+    "listing": "/content/development/code/notebooks/index.html",
     "items": [
-      "/resources/bookmarks.html",
-      "/resources/data-management.html",
-      "/resources/recipes.html",
-      "/resources/workouts.html"
+      "/content/development/code/notebooks/data-science.html",
+      "/content/development/code/notebooks/grib.html",
+      "/content/development/code/notebooks/logging.html",
+      "/content/development/code/notebooks/ml-notes.html",
+      "/content/development/code/notebooks/ml-train-and-test.html",
+      "/content/development/code/notebooks/pyspark-practice.html",
+      "/content/development/code/notebooks/python-fundamentals.html",
+      "/content/development/code/notebooks/sleep-data.html",
+      "/content/development/code/notebooks/visualization-with-seaborn.html",
+      "/content/development/code/notebooks/web-scraping.html"
     ]
   },
   {
-    "listing": "/development/code/notebooks/index.html",
+    "listing": "/content/blog/index.html",
     "items": [
-      "/development/code/notebooks/data-science.html",
-      "/development/code/notebooks/grib.html",
-      "/development/code/notebooks/logging.html",
-      "/development/code/notebooks/ml-notes.html",
-      "/development/code/notebooks/ml-train-and-test.html",
-      "/development/code/notebooks/pyspark-practice.html",
-      "/development/code/notebooks/python-fundamentals.html",
-      "/development/code/notebooks/sleep-data.html",
-      "/development/code/notebooks/visualization-with-seaborn.html",
-      "/development/code/notebooks/web-scraping.html"
+      "/content/blog/posts/mounting-a-windows-share/index.html",
+      "/content/blog/posts/quarto-tabsets/index.html",
+      "/content/blog/posts/git-merge/index.html",
+      "/content/blog/posts/linux-permissions/index.html",
+      "/content/blog/posts/creating-a-post/index.html",
+      "/content/blog/posts/accessing-quarto-variables/index.html"
     ]
   },
   {
-    "listing": "/blog/index.html",
+    "listing": "/content/development/code/index.html",
     "items": [
-      "/blog/posts/mounting-a-windows-share/index.html",
-      "/blog/posts/quarto-tabsets/index.html",
-      "/blog/posts/git-merge/index.html",
-      "/blog/posts/linux-permissions/index.html",
-      "/blog/posts/creating-a-post/index.html",
-      "/blog/posts/accessing-quarto-variables/index.html"
+      "/content/development/code/bash.html",
+      "/content/development/code/cmd.html",
+      "/content/development/code/html.html",
+      "/content/development/code/notebooks/index.html",
+      "/content/development/code/python.html",
+      "/content/development/code/regex.html",
+      "/content/development/code/sql.html"
     ]
   },
   {
-    "listing": "/development/code/index.html",
+    "listing": "/content/resources/index.html",
     "items": [
-      "/development/code/bash.html",
-      "/development/code/cmd.html",
-      "/development/code/html.html",
-      "/development/code/notebooks/index.html",
-      "/development/code/python.html",
-      "/development/code/regex.html",
-      "/development/code/sql.html"
+      "/content/resources/bookmarks.html",
+      "/content/resources/data-management.html",
+      "/content/resources/recipes.html",
+      "/content/resources/workouts.html"
     ]
   }
 ]
