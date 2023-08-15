@@ -6,4 +6,4 @@ author: Caleb Grant
 categories: [Quarto, Blog]
 ---
 
-To add a post, create a copy of `blog/posts/_template`, modify the folder name with the title of the post, then update the `index.qmd` with your content. New posts under `blog/posts` will show up in the [blog listings](/blog/index.qmd) when the site is rendered.
+To add a post, create a copy of `blog/posts/_template`, modify the folder name with the title of the post, then update the `index.qmd` with your content. New posts under `blog/posts` will show up in the [blog listings](/content/blog/index.qmd) when the site is rendered.

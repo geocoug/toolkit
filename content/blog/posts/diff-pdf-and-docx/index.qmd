@@ -1,0 +1,27 @@
+---
+title: DIFFing PDF and DOCX files
+description: Compare DIFFerences in text between PDF and DOCX files.
+author: Caleb Grant
+date: 2023-08-08
+categories: [Linux, Utility]
+---
+
+If you have a `PDF` and `DOCX` of the _same_ document and want to check for difference in text, use `diff` to compare them. Since we’re using `--word-diff`, it doesn’t matter that the two files use _wildly_ different line wrapping.
+
+```sh
+gs -q -sDEVICE=txtwrite -o- file1.pdf > file1.txt
+pandoc -t plain file2.docx > file2.txt
+git diff --no-index --word-diff file1.txt file2.txt
+```
+
+Or create a shortcut...
+
+```sh
+alias pdfcat='gs -q -sDEVICE=txtwrite -o-'
+alias doccat='pandoc -t plain'
+pdfcat file1.pdf > file1.txt
+doccat file2.docx > file2.txt
+git diff --no-index --word-diff file1.txt file2.txt
+```
+
+[Credits](https://chaos.social/@scy/110854990215865183)

@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Data management wokflow for historical data.">
+
+<title>Toolkit - Data Management Workflow for Historical Data</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../content/data-management/processes/data-management-workflow-for-sampling-data.html" rel="prev">
+<link href="../../..//static/favicon.ico" rel="icon">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": true,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous">
+</script>
+
+
+<link rel="stylesheet" href="../../../static/styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../static/logo.svg" alt="" class="navbar-logo">
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../content/development/index.html" rel="" target="">
+ <span class="menu-text">Development</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../../../content/data-management/index.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Data Management</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../content/resources/index.html" rel="" target="">
+ <span class="menu-text">Resources</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../content/blog/index.html" rel="" target="">
+ <span class="menu-text">Blog</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../content/data-management/processes/index.html">Processes</a></li><li class="breadcrumb-item"><a href="../../../content/data-management/processes/data-management-workflow-for-historical-data.html">Data Management Workflow for Historical Data</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/data-management/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Management</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/data-management/best-practices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Best Practices</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/data-management/data-quality.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Quality</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/data-management/data-literacy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Literacy</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/data-management/data-issues.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Issue Tracking</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/data-management/guidance-and-tips.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Guidance and Tips</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../content/data-management/processes/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Processes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/data-management/processes/estimating-data-management-efforts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Estimating Data Management Efforts</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/data-management/processes/data-management-workflow-for-sampling-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Management Workflow for Sampling Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/data-management/processes/data-management-workflow-for-historical-data.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Data Management Workflow for Historical Data</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#processes" id="toc-processes" class="nav-link active" data-scroll-target="#processes">Processes</a>
+  <ul class="collapse">
+  <li><a href="#p1.-data-management-planning" id="toc-p1.-data-management-planning" class="nav-link" data-scroll-target="#p1.-data-management-planning">P1. Data Management Planning</a></li>
+  <li><a href="#p11.-data-usability-assessment" id="toc-p11.-data-usability-assessment" class="nav-link" data-scroll-target="#p11.-data-usability-assessment">P11. Data Usability Assessment</a></li>
+  <li><a href="#p12.-data-analysis-and-visualization" id="toc-p12.-data-analysis-and-visualization" class="nav-link" data-scroll-target="#p12.-data-analysis-and-visualization">P12. Data Analysis and Visualization</a></li>
+  <li><a href="#p13.-data-table-production" id="toc-p13.-data-table-production" class="nav-link" data-scroll-target="#p13.-data-table-production">P13. Data Table Production</a></li>
+  <li><a href="#p14.-data-reporting" id="toc-p14.-data-reporting" class="nav-link" data-scroll-target="#p14.-data-reporting">P14. Data Reporting</a></li>
+  <li><a href="#p15.-identify-historical-data-sets" id="toc-p15.-identify-historical-data-sets" class="nav-link" data-scroll-target="#p15.-identify-historical-data-sets">P15. Identify Historical Data Sets</a></li>
+  <li><a href="#p16.-evaluate-value-of-data-set" id="toc-p16.-evaluate-value-of-data-set" class="nav-link" data-scroll-target="#p16.-evaluate-value-of-data-set">P16. Evaluate Value of Data Set</a></li>
+  <li><a href="#p17.-acquire-historical-data-sets" id="toc-p17.-acquire-historical-data-sets" class="nav-link" data-scroll-target="#p17.-acquire-historical-data-sets">P17. Acquire Historical Data Sets</a></li>
+  <li><a href="#p18.-load-data-set" id="toc-p18.-load-data-set" class="nav-link" data-scroll-target="#p18.-load-data-set">P18. Load Data Set</a></li>
+  <li><a href="#p19.-address-data-issues" id="toc-p19.-address-data-issues" class="nav-link" data-scroll-target="#p19.-address-data-issues">P19. Address Data Issues</a></li>
+  <li><a href="#p20.-correct-data-quality-issues" id="toc-p20.-correct-data-quality-issues" class="nav-link" data-scroll-target="#p20.-correct-data-quality-issues">P20. Correct Data Quality Issues</a></li>
+  <li><a href="#p21.-export-data" id="toc-p21.-export-data" class="nav-link" data-scroll-target="#p21.-export-data">P21. Export Data</a></li>
+  </ul></li>
+  <li><a href="#data-flows" id="toc-data-flows" class="nav-link" data-scroll-target="#data-flows">Data Flows</a>
+  <ul class="collapse">
+  <li><a href="#f25.-data-sources" id="toc-f25.-data-sources" class="nav-link" data-scroll-target="#f25.-data-sources">F25. Data Sources</a></li>
+  <li><a href="#f26.-data-set-description-and-status-information" id="toc-f26.-data-set-description-and-status-information" class="nav-link" data-scroll-target="#f26.-data-set-description-and-status-information">F26. Data Set Description and Status Information</a></li>
+  <li><a href="#f27.-data-set-description" id="toc-f27.-data-set-description" class="nav-link" data-scroll-target="#f27.-data-set-description">F27. Data Set Description</a></li>
+  <li><a href="#f28.-data-set-status" id="toc-f28.-data-set-status" class="nav-link" data-scroll-target="#f28.-data-set-status">F28. Data Set Status</a></li>
+  <li><a href="#f29.-data-set-description" id="toc-f29.-data-set-description" class="nav-link" data-scroll-target="#f29.-data-set-description">F29. Data Set Description</a></li>
+  <li><a href="#f30.-data-set-status" id="toc-f30.-data-set-status" class="nav-link" data-scroll-target="#f30.-data-set-status">F30. Data Set Status</a></li>
+  <li><a href="#f31.-historical-data-sets" id="toc-f31.-historical-data-sets" class="nav-link" data-scroll-target="#f31.-historical-data-sets">F31. Historical Data Sets</a></li>
+  <li><a href="#f32.-data-set-characteristics" id="toc-f32.-data-set-characteristics" class="nav-link" data-scroll-target="#f32.-data-set-characteristics">F32. Data Set Characteristics</a></li>
+  <li><a href="#f33.-data-set" id="toc-f33.-data-set" class="nav-link" data-scroll-target="#f33.-data-set">F33. Data Set</a></li>
+  <li><a href="#f34.-standardized-data" id="toc-f34.-standardized-data" class="nav-link" data-scroll-target="#f34.-standardized-data">F34. Standardized Data</a></li>
+  <li><a href="#f35.-data-set-status" id="toc-f35.-data-set-status" class="nav-link" data-scroll-target="#f35.-data-set-status">F35. Data Set Status</a></li>
+  <li><a href="#f36.-compiled-data-characteristics" id="toc-f36.-compiled-data-characteristics" class="nav-link" data-scroll-target="#f36.-compiled-data-characteristics">F36. Compiled Data Characteristics</a></li>
+  <li><a href="#f37.-data-issues" id="toc-f37.-data-issues" class="nav-link" data-scroll-target="#f37.-data-issues">F37. Data Issues</a></li>
+  <li><a href="#f38.-data-issues" id="toc-f38.-data-issues" class="nav-link" data-scroll-target="#f38.-data-issues">F38. Data Issues</a></li>
+  <li><a href="#f39.-data-issues" id="toc-f39.-data-issues" class="nav-link" data-scroll-target="#f39.-data-issues">F39. Data Issues</a></li>
+  <li><a href="#f40.-data-issue-resolutions" id="toc-f40.-data-issue-resolutions" class="nav-link" data-scroll-target="#f40.-data-issue-resolutions">F40. Data Issue Resolutions</a></li>
+  <li><a href="#f41.-data-issue-resolutions" id="toc-f41.-data-issue-resolutions" class="nav-link" data-scroll-target="#f41.-data-issue-resolutions">F41. Data Issue Resolutions</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/geocoug/toolkit/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Data Management Workflow for Historical Data</h1>
+</div>
+
+<div>
+  <div class="description">
+    Data management wokflow for historical data.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>This page describes data management processes and data flows for projects (or project tasks) that include the compilation of data obtained or received from other sources. The other sources may include literature, clients, other consultants, and websites. Data from such sources is referred to here as historical data, to distinguish it from data that are collected by Integral. An alternative workflow for data collected by Integra is described on the companion wiki page Data Management Workflow for Sampling Data.</p>
+<p>Data management processes and data flows are shown in the following data flow diagram (DFD). Each of the processes and data flows are described in following sections. This DFD uses Yourdon/DeMarco symbology, as described by Wikipedia. Note that the arrows in the DFD do not represent sequence or control flow, as in a flowchart. A DFD is more useful than a flowchart for a data-based workflow. The contrast between flowcharts and DFDs is briefly discussed on the page Data Management Workflows for Sampling Data.</p>
+<p><img src="../../../static/data-management/historical-data-dfd.svg" class="img-fluid"></p>
+<section id="processes" class="level2">
+<h2 class="anchored" data-anchor-id="processes">Processes</h2>
+<section id="p1.-data-management-planning" class="level3">
+<h3 class="anchored" data-anchor-id="p1.-data-management-planning">P1. Data Management Planning</h3>
+<p>This process should ordinarily be conducted as part of project planning. It should be carried out jointly by the project manager and the project data manager. This process may include:</p>
+<ul>
+<li>Identification of data needed for analysis and reporting based on project goals (the DQO process).</li>
+<li>Identification of data needed for export, if data are to be transmitted to other organizations.</li>
+<li>Completion of a project initiation checklist.</li>
+<li>Development of a scope description for data management activities.</li>
+<li>Identification of the data model needed</li>
+<li>Identification of sources of historical data.</li>
+<li>Determination of the coordinate reference system and basemap data to be used.</li>
+<li>Budgeting for data management activities.</li>
+<li>Development of a Data Management Plan.</li>
+<li>Initiation of a project database and GIS project.</li>
+</ul>
+<p>Other activities may be conducted and products produced if the project will require other types of data, such as newly-collected sampling data.</p>
+</section>
+<section id="p11.-data-usability-assessment" class="level3">
+<h3 class="anchored" data-anchor-id="p11.-data-usability-assessment">P11. Data Usability Assessment</h3>
+<p>Prior to conducting statistical, geospatial, or other analyses, the usability of the selected data should be assessed. This process should be carried out by the data analyst and project data manager, depending on the type of assessment to be performed and the best tool or technology for the job. The data usability assessment may make use of descriptive and status information in the data set inventory, and metrics for the different dimensions of data quality. This process ordinarily starts with the production of appropriate data summaries by the project data manager.</p>
+</section>
+<section id="p12.-data-analysis-and-visualization" class="level3">
+<h3 class="anchored" data-anchor-id="p12.-data-analysis-and-visualization">P12. Data Analysis and Visualization</h3>
+<p>This process should be carried out primarily by the data analyst, but the first step in analyses will frequently be the selection, extaction, and summarization of data from the database, and that step may be carried out by the project data manager. The Data Accessibility page describes a variety of different ways in which data can be accessed and summarized by either data managers or other project staff. A number of standard data summaries are available that meet many common data needs. These standard summaries may be used as is, or customized. More specialized data summaries may need to be created to support some analyses. Often data summarization could be carried out using either SQL or analysis software (e.g., R, Python, Julia), and the most appropriate approach should be identified through discussions between data analysts and data managers.</p>
+<p>Summaries of chemistry data should use the default rules for summarization of chemistry data or explicitly specify alternate data handling rules. Additional information on data summarization (primarily for data managers) is presented on the pages Producing Custom Data Summaries and Guidance and Tips for Data Managers. Custom scripts have also been developed to prepare data for some types of specialized analyses (e.g., unmixing, HCPCA, and t-SNE). Otherwise, custom data summarization scripts may need to be developed for particular analyses (if so, a budget for this effort should have been developed during the planning process).</p>
+<p>Data analyses should follow relevant recommendations on Data Analysis Standards and Guidance and Best Practices for Data Analysis, and avoid the Worst Practices for Data Analysis. An initial stage of data exploration may be facilitated by using some of the available GUI Tools for Data Exploration.</p>
+<p>Although data analysis and visualization is described here as a single process, frequently it is a multi-step process that could could be described by its own flowchart, data flow diagram, work breakdown structure, or other type of process map. Describing and documenting the planned data analysis process during project planning, and accounting for variances, can help to ensure that this work is carried out in a way that clearly supports project goals and is performed in an orderly and efficient fashion.</p>
+</section>
+<section id="p13.-data-table-production" class="level3">
+<h3 class="anchored" data-anchor-id="p13.-data-table-production">P13. Data Table Production</h3>
+<p>This process is carried out by the project data manager. Data to be reported as a project deliverable are extracted from the project database and restructured and formatted as appropriate. This process is ordinarily scripted. The wiki page Producing Data Summaries describes the major steps in this process. The section “Producing Data Tables for Reports or for Data Analyses” on the wiki page Guidance and Tips for Data Managers contains guidelines for the production of report data tables.</p>
+</section>
+<section id="p14.-data-reporting" class="level3">
+<h3 class="anchored" data-anchor-id="p14.-data-reporting">P14. Data Reporting</h3>
+<p>This process is carried out cooperatively by multiple project staff. Reports may include data tables, graphics, and maps prepared by DMA staff and others. This process ordinarily requires that more effort be applied to consistency of data representation and adherence to publication standards than do the data analysis and visualization activities.</p>
+</section>
+<section id="p15.-identify-historical-data-sets" class="level3">
+<h3 class="anchored" data-anchor-id="p15.-identify-historical-data-sets">P15. Identify Historical Data Sets</h3>
+<p>This process may be carried out by any project staff. It may require literature searches, online searches, and contacts with clients, agencies, and other consultants. The results of this process are ordinarily compiled into a data set inventory that includes a unique identifier for each data set, a general description of the data set, additional information on characteristics of particular interest to the projects, informatoin on data set availability, and indicators of the assessed value of the data set and whether or not it has been acquired and compiled with other data sets. The data set inventory may be maintained in a spreadsheet or a database.</p>
+<p><img src="../../../static/data-management/inventory-organization.jpg" class="img-fluid"></p>
+</section>
+<section id="p16.-evaluate-value-of-data-set" class="level3">
+<h3 class="anchored" data-anchor-id="p16.-evaluate-value-of-data-set">P16. Evaluate Value of Data Set</h3>
+<p>This process may be carried out by any project staff. The value of a data set may be evaluted at several different times during a project:</p>
+<ul>
+<li>When a data set is first identified, based on its description and availability. After a data set is obtained, based on its actual content and format.</li>
+<li>During the data loading process, based on the type and number of data quality issues that are found.</li>
+<li>After a data set has been loaded, based on the support it provides for project goals. There may be overlap or interactions between this assessment and the data usability assessments that are conducted prior to individual data analyses.</li>
+</ul>
+<p>The data set evaluation checklist, or a customized version of the checklist, may be useful for carrying out this process. Systematic analysis of data quality issues in a data set may require the expertise of a data manager. The data set inventory should be updated, as appropriate, with the results of this evaluation.</p>
+<p>Data quality issues that are identified during this assessment ordinarily should be tracked in a data issue log.</p>
+</section>
+<section id="p17.-acquire-historical-data-sets" class="level3">
+<h3 class="anchored" data-anchor-id="p17.-acquire-historical-data-sets">P17. Acquire Historical Data Sets</h3>
+<p>This process may be carried out by any project staff. Each data set should be filed in the project data store–typically the “Data” subdirectory under the project directory for tabular data. The data set inventory should be updated when a data set is acquired.</p>
+</section>
+<section id="p18.-load-data-set" class="level3">
+<h3 class="anchored" data-anchor-id="p18.-load-data-set">P18. Load Data Set</h3>
+<p>This process is carried out by the project data manager. The data set is loaded into the project database, and data quality checks, and any necessary cleaning and transformations of the data, are carried out as part of this process. This includes resolution of any data issues that have been identified. The standard procedure is to carry out this process using a SQL script. If data set is in a format that has been previously used, then an existing loading script may be used or customized; if not, a new script will have to be developed (and if so, a budget for this effort should have been established during the planning process).</p>
+</section>
+<section id="p19.-address-data-issues" class="level3">
+<h3 class="anchored" data-anchor-id="p19.-address-data-issues">P19. Address Data Issues</h3>
+<p>This process may be carried out by various project staff, as appropriate to their knowledge and skills. Data issues that have been identified during initial data set review or during the data loading proocess (which may be interrupted when issues are found) may be addressed in a number of different ways. This process may require collection of additional information, application of assumptions and default values, or even a decision to omit some data. One or more resolutions may be proposed, and then reviewed and evaluated, before a final resolution is accepted. Some data issues may be unresolvable. Data issue resolutions should be documented in the data issue log and then used during the data loading process.</p>
+</section>
+<section id="p20.-correct-data-quality-issues" class="level3">
+<h3 class="anchored" data-anchor-id="p20.-correct-data-quality-issues">P20. Correct Data Quality Issues</h3>
+<p>Initiation of data analyses, and the associated data usability assessment (P11) may reveal data quality issues that were not identified during initial data compilation and loading. These issues are typically identified by a data analyst, and resolution of an issue may involve data managers, data analysts, field staff, and the project manager. These issues may be recorded in the data issue log (this interaction is not shown in the DFD above).</p>
+</section>
+<section id="p21.-export-data" class="level3">
+<h3 class="anchored" data-anchor-id="p21.-export-data">P21. Export Data</h3>
+<p>This process may not be required for all projects. When data must be exported to a regulator or some other organization, the data ordinarily must be retrieved from the project database and prepared in a specified data exchange format or EDD. The EDD format that is used for data exchange between organizations is typically different from the EDD format in which laboratory results are delivered. The data exchange EDD format may be specified by the external organization or may be determined by a negotiation between Integral and that organization. Some external organizations may require data that Integral would not typically record (e.g., during field work), and so export data requirements must be considered during project and data management planning. This task is ordinarily carried out by data managers, but may require some support from other project staff.</p>
+<p>Exporting data should be carried out following the process described on the wiki page Producing Data Summaries. Requests for data that are to be exported for others may be recorded in a request tracker.</p>
+</section>
+</section>
+<section id="data-flows" class="level2">
+<h2 class="anchored" data-anchor-id="data-flows">Data Flows</h2>
+<p>See the page Workflows for Sampling Data for descriptions of data flows not listed below. The sections below describe only the data flows that are specific to historical data.</p>
+<section id="f25.-data-sources" class="level3">
+<h3 class="anchored" data-anchor-id="f25.-data-sources">F25. Data Sources</h3>
+<p>This data flow consists of the identities of all documents, websites, organizations, and individuals who are actual or potential sources of historical data sets or other information (e.g., metadata or additional data sources) about historical data sets.</p>
+</section>
+<section id="f26.-data-set-description-and-status-information" class="level3">
+<h3 class="anchored" data-anchor-id="f26.-data-set-description-and-status-information">F26. Data Set Description and Status Information</h3>
+<p>This data flow consists of a unique identifier for each historical data set, a description of the data that it contains (e.g., spatial extent, dates, materials, chemicals), information about its location and availability, and whether it has been acquired, reviewed for usability, and incorporated into the project database.</p>
+</section>
+<section id="f27.-data-set-description" class="level3">
+<h3 class="anchored" data-anchor-id="f27.-data-set-description">F27. Data Set Description</h3>
+<p>This data flow consists of information sufficient to evaluate the usability of each historical data set, including information such as its spatial extent, temporal extent, materials sampled and analyzed, and chemicals analyzed.</p>
+</section>
+<section id="f28.-data-set-status" class="level3">
+<h3 class="anchored" data-anchor-id="f28.-data-set-status">F28. Data Set Status</h3>
+<p>This data flow consists of information on whether a historical data set is usable and should be acquired (if it has not been already) and incorporated into the project database. It may also indicate relative value or priority of a data set.</p>
+</section>
+<section id="f29.-data-set-description" class="level3">
+<h3 class="anchored" data-anchor-id="f29.-data-set-description">F29. Data Set Description</h3>
+<p>This data flow consist of information about a historical data set sufficient to obtain that data set from the data source.</p>
+</section>
+<section id="f30.-data-set-status" class="level3">
+<h3 class="anchored" data-anchor-id="f30.-data-set-status">F30. Data Set Status</h3>
+<p>This data flow consists of information about the results of efforts to obtain a historical data set. This may indicate that the data set is not available, will be received at a future date, or has been obtained and is filed in a specific location (e.g., in the project data library).</p>
+</section>
+<section id="f31.-historical-data-sets" class="level3">
+<h3 class="anchored" data-anchor-id="f31.-historical-data-sets">F31. Historical Data Sets</h3>
+<p>This data flow consists of all historical data sets that are obtained, including any associated metadata documents, transmittal documentation, and the identifier for that data set that is used in the data set inventory.</p>
+</section>
+<section id="f32.-data-set-characteristics" class="level3">
+<h3 class="anchored" data-anchor-id="f32.-data-set-characteristics">F32. Data Set Characteristics</h3>
+<p>This data flow consists of information produced from a review of a data set, such as detailed information on locations sampled and measurements made, as needed to evaluate the data set’s usability.</p>
+</section>
+<section id="f33.-data-set" class="level3">
+<h3 class="anchored" data-anchor-id="f33.-data-set">F33. Data Set</h3>
+<p>This data flow consists of all data and metadata for a historical data set that will be loaded to the project database or that is needed to support data loading.</p>
+</section>
+<section id="f34.-standardized-data" class="level3">
+<h3 class="anchored" data-anchor-id="f34.-standardized-data">F34. Standardized Data</h3>
+<p>This data flow consists of historical data that have been transformed into the structure of the project database and that conforms to other requirements such as a consistent set of valid values. This data flow is electronic and occurs between the data loading script and the database server.</p>
+</section>
+<section id="f35.-data-set-status" class="level3">
+<h3 class="anchored" data-anchor-id="f35.-data-set-status">F35. Data Set Status</h3>
+<p>This data flow consists of information that characterizes the completion of data loading. This may consist of information such as ‘loading complete’, ‘loading paused pending resolution of data issues’, and ‘partially loaded’.</p>
+</section>
+<section id="f36.-compiled-data-characteristics" class="level3">
+<h3 class="anchored" data-anchor-id="f36.-compiled-data-characteristics">F36. Compiled Data Characteristics</h3>
+<p>This data flow consists of characteristics of any data sets in the project database that may be useful to assess the value of these or any other historical data sets.</p>
+</section>
+<section id="f37.-data-issues" class="level3">
+<h3 class="anchored" data-anchor-id="f37.-data-issues">F37. Data Issues</h3>
+<p>This data flow consists of a description, priority, and supporting data for any data issue that is identified during evaluation o fthe usability of the data set. This information may include a proposed or accepted resolution of the issue.</p>
+</section>
+<section id="f38.-data-issues" class="level3">
+<h3 class="anchored" data-anchor-id="f38.-data-issues">F38. Data Issues</h3>
+<p>This data flow consists of a description, priority, and supporting data for any data issue that is identified during an attempt to load a data set. This infomation may include a proposed or accepted resolution of the issue.</p>
+</section>
+<section id="f39.-data-issues" class="level3">
+<h3 class="anchored" data-anchor-id="f39.-data-issues">F39. Data Issues</h3>
+<p>This data flow consists of all information in the issue log pertaining to unresolved data issues.</p>
+</section>
+<section id="f40.-data-issue-resolutions" class="level3">
+<h3 class="anchored" data-anchor-id="f40.-data-issue-resolutions">F40. Data Issue Resolutions</h3>
+<p>This data flow consists of proposed or accepted resolutions for data issues.</p>
+</section>
+<section id="f41.-data-issue-resolutions" class="level3">
+<h3 class="anchored" data-anchor-id="f41.-data-issue-resolutions">F41. Data Issue Resolutions</h3>
+<p>This data flow consis of accepted resolutions for data issues.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp("http:\/\/toolkit\.goecoug\.com");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../../content/data-management/processes/data-management-workflow-for-sampling-data.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Data Management Workflow for Sampling Data</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Caleb Grant, 2023</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/geocoug/toolkit">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>

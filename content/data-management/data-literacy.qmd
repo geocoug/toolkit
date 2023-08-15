@@ -1,0 +1,44 @@
+---
+title: Data Literacy
+tbl-colwidths: [15,35,50]
+order: 3
+---
+
+All staff who use data should be data-literate.  The level of any person's data literacy should increase over time as they gain professional experience, skills, and knowledge of the principles, requirements, and constraints of data management.  The table below summarizes components of data literacy in terms of knowledge, skills, and experience.  This table is excerpted from [Meeting the Challenges of Data Quality Management](https://www.sciencedirect.com/book/9780128217375/meeting-the-challenges-of-data-quality-management).  A few amendations relevant to environmental data management work are included in square brackets, italicized.
+
+## Data Literacy Levels
+
+The corresponding data literacy levels are described as:
+
+- **Level 1**: Knowledge of data input and output of business [project] processes for which they have direct reponsibility.
+- **Level 2**: Knowledge of data-as-data, how to organize and prepare data for presentation or use.
+- **Level 3**: Knowledge of how to query and manipulate complex data and prepare it for presentation or use; can use data to influence decisions or to formulate options for solving problems.
+- **Level 4**: Knowledge of how to combine data and how to apply statistical [and geospatial] methodologies to existing data to understand and interpret data.
+- **Level 5**: Advanced knowledge of statistics, knowledge of how to create predictive models through data selection, hopythesis formation, testing, and training.
+
+In addition to the above, technical knowledge relevant to specific project work (e.g., chemistry, ecology, hydrogeology, environmental engineering, regulations) is a key component of data literacy for data management staff.
+
+## Data Literacy Components
+
+| ​Literacy Component | ​Data Literacy Component | Detail |
+|---|---|---|
+| ​Knowledge | ​Knowledge of &quot;data as data&quot;--structure and life cycle | ​Understanding of how data can be collected, structured, and organized for use, how data may change over time and have different uses in different circumstances (e.g., knowledge of the data life cycle). |
+| ​Knowledge | ​Knowledge of the things that can go wrong with data | ​Understanding of how a process relies on data input and creates data output; ability to see data as the product of a process and to recognize factors that contribute to or diminish the reliability of data. |
+| ​Knowledge | ​Knowledge of ways of looking at data | ​Knowledge of data visualization and understanding of how data may be combined, aggregated, and calculated before visualization techniques are applied.&#160; This knowledge comtributes to the ability to &quot;tell a story&quot; (interpret) data. |
+| ​Knowledge | ​Knowledge of statistical methods | ​Basic understanding of statistics and how statistical techniques are applied to data.&#160; Knowledge of the riske associated with applying inappropriate techniques. |
+| ​Knowledge | ​Knowledge of data domains | ​Knowledge of data domains, whether understood through industry (health care data financial data, educational data _[, environmental data]_) or by master data concepts (customer, product, geography). |
+| ​Knowledge | ​Knowledge of peculiarities of data within a given organization | ​Understanding of data as the DNA of an organization, the source of knowledge about the ways the organization works. |
+| ​Knowledge | ​Knowledge of the impact of technology on data | ​Understanding of how different tools work, how they enable one to manipulate and use data, and what the best tool is for the job in any given instance. |
+| ​Knowledge | ​Knowledge of the quality expectations for data | ​Knowledge of what it means for a data set to be complete, valid, and current.&#160; This includes understanding concepts related to data quality management in general, and knowledge of the particular data quality requirements of the organization or industry. |
+| ​Skills | ​Technical skills that enable access to data | ​Ability to query data effectively |
+| ​Skills | ​Skill at identifying and evaluating the appropriateness of a data set to the task at hand | ​Understanding the level of detail, criteria for completeness, and ability to inform the question at hand. |
+| ​Skills | ​Skill at organizing data for analysis | ​Getting data at the right level of detail, de-normalizing it, combining it, and aggregating it. |
+| ​Skills | ​Skill at applying appropriate analysis techniques | ​Determining the best way to test hypotheses _[also: to conduct exploratory data analyses, to formulate hypotheses, to develop and apply predictive models, and to compute relative likelihoods]_. |
+| ​Skills | ​Skill at robustly testing hypotheses while interpreting data | ​Avoiding cognitive traps. |
+| ​Skills | ​Skill at organizing data for presentation | ​Ability to make a business case, influence decsisions, or solve problems; ability to use data visualization to support both interpretation of data and communications around data. |
+| ​Experience | ​Experience querying data | ​Finding the approriate data through querying for specific analyses. |
+| ​Experience | ​Experience evaluating the quality of data | ​From basic inspection and comparison to rules for assessment of the reliability of the source. |
+| ​Experience | ​Experience preparing data for presentation or analysis | ​From the basics of choosing the appropriate data to present, getting rid of the noise, combining and visualizing data, and so on.&#160; This starts with running reports and actually thinking about the results and continues through being able to create sophisticated models.&#160; It may include anything from a cost-benefit analysis to an annual report.&#160; Preparing data for presentation or analysis is really a way of learning to think about data. |
+| ​Experience | ​Experience tracing the root causes of data issues | ​Although root cause analysis is usually associated with data quality work, many analysts who find data issues do a lot of digging to try to uncover the sources of their frustrateion; doing so increases their knowledge of organizational&#160;[project] data, the data chain, and the risks associated with not managing data purposefully. |
+| ​Experience | ​Experience interpreting data | ​Evaluating quality is a necessary step to interpreting data (actually drawing conclusions from what you see, or at least formulating hypotheses that can be tested).&#160; Interpreting data is more than just saying what you think it means.&#160; For complex data, it also includes learning how to apply different analysis techniques and choosing techniques that are most appropriate to the task at hand. |
+| ​Experience | ​Experience using data tools | ​From basic query tools and spreadsheets to more sophisticated data visualization tools, all the way through to tools that allow you to combine disparate data sets for complex analyses.&#160; This is not so much about &quot;reliance on technology&quot; as it is about understanding how empowering some technologies can be and choosing the right one for the job. |

@@ -1,39 +1,37 @@
 ---
 title: Quarto Tabsets
 description: Creating tabsets with Quarto
-date: 2023-07-03
 author: Caleb Grant
+date: 2023-08-07
 categories: [Quarto]
 ---
 
+Tabsets can be useful when you want to show multiple flavors of the same thing. For example, what's the command to copy files on [PowerShell](/content/development/code/powershell.qmd), [CMD](/content/development/code/cmd.qmd), and [Bash](/content/development/code/bash.qmd)?
+
 :::{.panel-tabset}
 
-## Python
+## Bash
 
-**Markup**:
+Copy a file or directory.
 
-    ```{{py}}
-    print("Hello World")
-    ```
-
-**Output**:
-
-```py
-print("Hello World")
+```sh
+cp -rf file.txt ./output/
 ```
 
-## JavaScript
+## PowerShell
 
-**Markup**:
+Copy a file or directory.
 
-    ```{{js}}
-    console.log("Hello World");
-    ```
+```powershell
+CopyItem -Recurse -Force file.txt .\output\
+```
 
-**Output**:
+## CMD
 
-```js
-console.log("Hello World");
+Copy a file or directory.
+
+```powershell
+xcopy file.txt .\output\ /E/H
 ```
 
 :::

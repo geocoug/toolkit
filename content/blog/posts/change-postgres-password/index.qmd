@@ -1,0 +1,13 @@
+---
+title: Changing your PostgreSQL password
+description: Steps for any user to change their PostgreSQL password
+author: Caleb Grant
+date: 2023-07-11
+categories: [PostgreSQL]
+---
+
+Open command prompt or PowerShell (Start > type “CMD”> press enter) and enter the command below after you’ve replaced **USERNAME** and **YOUR NEW PASSWORD**. Make sure you don’t delete any of the quotes in this command:
+
+`psql -U USERNAME -h env4 -d db_inventory -c "alter role USERNAME with password 'YOUR NEW PASSWORD'"`
+
+The command will ask you for your current password once, then set your new password.

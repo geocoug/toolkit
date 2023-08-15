@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="41cm" height="30cm" viewBox="348 28 816 600" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #d8e5e5" x="350" y="30" width="813" height="597"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="350" y="30" width="813" height="597"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="756.5" y="332.4">
+      <tspan x="756.5" y="332.4"></tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #e5e7d5" x="419" y="75" width="639" height="38"/>
+    <path style="fill: #e5e7d5" d="M 419,75 A 4,4 0 0 0 415,79 L 419,79 z"/>
+    <path style="fill: #e5e7d5" d="M 1062,79 A 4,4 0 0 0 1058,75 L 1058,79 z"/>
+    <rect style="fill: #e5e7d5" x="415" y="79" width="647" height="30"/>
+    <path style="fill: #e5e7d5" d="M 415,109 A 4,4 0 0 0 419,113 L 419,109 z"/>
+    <path style="fill: #e5e7d5" d="M 1058,113 A 4,4 0 0 0 1062,109 L 1058,109 z"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" x1="419" y1="75" x2="1058" y2="75"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" x1="419" y1="113" x2="1058" y2="113"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" d="M 419,75 A 4,4 0 0 0 415,79"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" d="M 1062,79 A 4,4 0 0 0 1058,75"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" x1="415" y1="79" x2="415" y2="109"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" x1="1062" y1="79" x2="1062" y2="109"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" d="M 415,109 A 4,4 0 0 0 419,113"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" d="M 1058,113 A 4,4 0 0 0 1062,109"/>
+    <text font-size="12.8" style="fill: #714b1d;text-anchor:middle;font-family:Arial;font-style:normal;font-weight:700" x="738.5" y="97.6">
+      <tspan x="738.5" y="97.6">Project Planning</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #e5e7d5" x="423.874" y="158" width="108.25" height="70"/>
+    <path style="fill: #e5e7d5" d="M 423.874,158 A 4,4 0 0 0 419.874,162 L 423.874,162 z"/>
+    <path style="fill: #e5e7d5" d="M 536.124,162 A 4,4 0 0 0 532.124,158 L 532.124,162 z"/>
+    <rect style="fill: #e5e7d5" x="419.874" y="162" width="116.25" height="62"/>
+    <path style="fill: #e5e7d5" d="M 419.874,224 A 4,4 0 0 0 423.874,228 L 423.874,224 z"/>
+    <path style="fill: #e5e7d5" d="M 532.124,228 A 4,4 0 0 0 536.124,224 L 532.124,224 z"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" x1="423.874" y1="158" x2="532.124" y2="158"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" x1="423.874" y1="228" x2="532.124" y2="228"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" d="M 423.874,158 A 4,4 0 0 0 419.874,162"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" d="M 536.124,162 A 4,4 0 0 0 532.124,158"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" x1="419.874" y1="162" x2="419.874" y2="224"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" x1="536.124" y1="162" x2="536.124" y2="224"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" d="M 419.874,224 A 4,4 0 0 0 423.874,228"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" d="M 532.124,228 A 4,4 0 0 0 536.124,224"/>
+    <text font-size="12.8" style="fill: #714b1d;text-anchor:middle;font-family:Arial;font-style:normal;font-weight:700" x="477.999" y="180.6">
+      <tspan x="477.999" y="180.6">Document</tspan>
+      <tspan x="477.999" y="196.6">and File</tspan>
+      <tspan x="477.999" y="212.6">Management</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #e5e7d5" x="502.85" y="281" width="96.15" height="74"/>
+    <path style="fill: #e5e7d5" d="M 502.85,281 A 4,4 0 0 0 498.85,285 L 502.85,285 z"/>
+    <path style="fill: #e5e7d5" d="M 603,285 A 4,4 0 0 0 599,281 L 599,285 z"/>
+    <rect style="fill: #e5e7d5" x="498.85" y="285" width="104.15" height="66"/>
+    <path style="fill: #e5e7d5" d="M 498.85,351 A 4,4 0 0 0 502.85,355 L 502.85,351 z"/>
+    <path style="fill: #e5e7d5" d="M 599,355 A 4,4 0 0 0 603,351 L 599,351 z"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" x1="502.85" y1="281" x2="599" y2="281"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" x1="502.85" y1="355" x2="599" y2="355"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" d="M 502.85,281 A 4,4 0 0 0 498.85,285"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" d="M 603,285 A 4,4 0 0 0 599,281"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" x1="498.85" y1="285" x2="498.85" y2="351"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" x1="603" y1="285" x2="603" y2="351"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" d="M 498.85,351 A 4,4 0 0 0 502.85,355"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" d="M 599,355 A 4,4 0 0 0 603,351"/>
+    <text font-size="12.8" style="fill: #714b1d;text-anchor:middle;font-family:Arial;font-style:normal;font-weight:700" x="550.925" y="313.6">
+      <tspan x="550.925" y="313.6">Data</tspan>
+      <tspan x="550.925" y="329.6">Acquisition</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #e5e7d5" x="669.65" y="166" width="107.35" height="78"/>
+    <path style="fill: #e5e7d5" d="M 669.65,166 A 4,4 0 0 0 665.65,170 L 669.65,170 z"/>
+    <path style="fill: #e5e7d5" d="M 781,170 A 4,4 0 0 0 777,166 L 777,170 z"/>
+    <rect style="fill: #e5e7d5" x="665.65" y="170" width="115.35" height="70"/>
+    <path style="fill: #e5e7d5" d="M 665.65,240 A 4,4 0 0 0 669.65,244 L 669.65,240 z"/>
+    <path style="fill: #e5e7d5" d="M 777,244 A 4,4 0 0 0 781,240 L 777,240 z"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" x1="669.65" y1="166" x2="777" y2="166"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" x1="669.65" y1="244" x2="777" y2="244"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" d="M 669.65,166 A 4,4 0 0 0 665.65,170"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" d="M 781,170 A 4,4 0 0 0 777,166"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" x1="665.65" y1="170" x2="665.65" y2="240"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" x1="781" y1="170" x2="781" y2="240"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" d="M 665.65,240 A 4,4 0 0 0 669.65,244"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" d="M 777,244 A 4,4 0 0 0 781,240"/>
+    <text font-size="12.8" style="fill: #714b1d;text-anchor:middle;font-family:Arial;font-style:normal;font-weight:700" x="723.325" y="192.6">
+      <tspan x="723.325" y="192.6">Data</tspan>
+      <tspan x="723.325" y="208.6">Quality</tspan>
+      <tspan x="723.325" y="224.6">Assessment</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #e5e7d5" x="666.4" y="297" width="129.2" height="86"/>
+    <path style="fill: #e5e7d5" d="M 666.4,297 A 4,4 0 0 0 662.4,301 L 666.4,301 z"/>
+    <path style="fill: #e5e7d5" d="M 799.6,301 A 4,4 0 0 0 795.6,297 L 795.6,301 z"/>
+    <rect style="fill: #e5e7d5" x="662.4" y="301" width="137.2" height="78"/>
+    <path style="fill: #e5e7d5" d="M 662.4,379 A 4,4 0 0 0 666.4,383 L 666.4,379 z"/>
+    <path style="fill: #e5e7d5" d="M 795.6,383 A 4,4 0 0 0 799.6,379 L 795.6,379 z"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" x1="666.4" y1="297" x2="795.6" y2="297"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" x1="666.4" y1="383" x2="795.6" y2="383"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" d="M 666.4,297 A 4,4 0 0 0 662.4,301"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" d="M 799.6,301 A 4,4 0 0 0 795.6,297"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" x1="662.4" y1="301" x2="662.4" y2="379"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" x1="799.6" y1="301" x2="799.6" y2="379"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" d="M 662.4,379 A 4,4 0 0 0 666.4,383"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" d="M 795.6,383 A 4,4 0 0 0 799.6,379"/>
+    <text font-size="12.8" style="fill: #714b1d;text-anchor:middle;font-family:Arial;font-style:normal;font-weight:700" x="731" y="319.6">
+      <tspan x="731" y="319.6">Data</tspan>
+      <tspan x="731" y="335.6">Standardization</tspan>
+      <tspan x="731" y="351.6">and</tspan>
+      <tspan x="731" y="367.6">Centralization</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #e5e7d5" x="848.426" y="161" width="103.15" height="70"/>
+    <path style="fill: #e5e7d5" d="M 848.426,161 A 4,4 0 0 0 844.426,165 L 848.426,165 z"/>
+    <path style="fill: #e5e7d5" d="M 955.576,165 A 4,4 0 0 0 951.576,161 L 951.576,165 z"/>
+    <rect style="fill: #e5e7d5" x="844.426" y="165" width="111.15" height="62"/>
+    <path style="fill: #e5e7d5" d="M 844.426,227 A 4,4 0 0 0 848.426,231 L 848.426,227 z"/>
+    <path style="fill: #e5e7d5" d="M 951.576,231 A 4,4 0 0 0 955.576,227 L 951.576,227 z"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" x1="848.426" y1="161" x2="951.576" y2="161"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" x1="848.426" y1="231" x2="951.576" y2="231"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" d="M 848.426,161 A 4,4 0 0 0 844.426,165"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" d="M 955.576,165 A 4,4 0 0 0 951.576,161"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" x1="844.426" y1="165" x2="844.426" y2="227"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" x1="955.576" y1="165" x2="955.576" y2="227"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" d="M 844.426,227 A 4,4 0 0 0 848.426,231"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" d="M 951.576,231 A 4,4 0 0 0 955.576,227"/>
+    <text font-size="12.8" style="fill: #714b1d;text-anchor:middle;font-family:Arial;font-style:normal;font-weight:700" x="900.001" y="183.6">
+      <tspan x="900.001" y="183.6">Data</tspan>
+      <tspan x="900.001" y="199.6">Usability</tspan>
+      <tspan x="900.001" y="215.6">Assessment</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #e5e7d5" x="916.002" y="276" width="87.998" height="80"/>
+    <path style="fill: #e5e7d5" d="M 916.002,276 A 4,4 0 0 0 912.002,280 L 916.002,280 z"/>
+    <path style="fill: #e5e7d5" d="M 1008,280 A 4,4 0 0 0 1004,276 L 1004,280 z"/>
+    <rect style="fill: #e5e7d5" x="912.002" y="280" width="95.998" height="72"/>
+    <path style="fill: #e5e7d5" d="M 912.002,352 A 4,4 0 0 0 916.002,356 L 916.002,352 z"/>
+    <path style="fill: #e5e7d5" d="M 1004,356 A 4,4 0 0 0 1008,352 L 1004,352 z"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" x1="916.002" y1="276" x2="1004" y2="276"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" x1="916.002" y1="356" x2="1004" y2="356"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" d="M 916.002,276 A 4,4 0 0 0 912.002,280"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" d="M 1008,280 A 4,4 0 0 0 1004,276"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" x1="912.002" y1="280" x2="912.002" y2="352"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" x1="1008" y1="280" x2="1008" y2="352"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" d="M 912.002,352 A 4,4 0 0 0 916.002,356"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" d="M 1004,356 A 4,4 0 0 0 1008,352"/>
+    <text font-size="12.8" style="fill: #714b1d;text-anchor:middle;font-family:Arial;font-style:normal;font-weight:700" x="960.001" y="311.6">
+      <tspan x="960.001" y="311.6">Data</tspan>
+      <tspan x="960.001" y="327.6">Analysis</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #e5e7d5" x="909.988" y="396.5" width="100.6" height="70"/>
+    <path style="fill: #e5e7d5" d="M 909.988,396.5 A 4,4 0 0 0 905.988,400.5 L 909.988,400.5 z"/>
+    <path style="fill: #e5e7d5" d="M 1014.59,400.5 A 4,4 0 0 0 1010.59,396.5 L 1010.59,400.5 z"/>
+    <rect style="fill: #e5e7d5" x="905.988" y="400.5" width="108.6" height="62"/>
+    <path style="fill: #e5e7d5" d="M 905.988,462.5 A 4,4 0 0 0 909.988,466.5 L 909.988,462.5 z"/>
+    <path style="fill: #e5e7d5" d="M 1010.59,466.5 A 4,4 0 0 0 1014.59,462.5 L 1010.59,462.5 z"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" x1="909.988" y1="396.5" x2="1010.59" y2="396.5"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" x1="909.988" y1="466.5" x2="1010.59" y2="466.5"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" d="M 909.988,396.5 A 4,4 0 0 0 905.988,400.5"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" d="M 1014.59,400.5 A 4,4 0 0 0 1010.59,396.5"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" x1="905.988" y1="400.5" x2="905.988" y2="462.5"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" x1="1014.59" y1="400.5" x2="1014.59" y2="462.5"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" d="M 905.988,462.5 A 4,4 0 0 0 909.988,466.5"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" d="M 1010.59,466.5 A 4,4 0 0 0 1014.59,462.5"/>
+    <text font-size="12.8" style="fill: #714b1d;text-anchor:middle;font-family:Arial;font-style:normal;font-weight:700" x="960.288" y="419.1">
+      <tspan x="960.288" y="419.1">Data</tspan>
+      <tspan x="960.288" y="435.1">Presentation</tspan>
+      <tspan x="960.288" y="451.1">and Reporting</tspan>
+    </text>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" d="M 572.75,135.5 A 4,4 0 0 0 576.75,131.5"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" x1="576.75" y1="113" x2="576.75" y2="131.5"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" d="M 481.999,135.5 A 4,4 0 0 0 477.999,139.5"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" x1="572.75" y1="135.5" x2="481.999" y2="135.5"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" x1="477.999" y1="139.5" x2="477.999" y2="147.146"/>
+    <polygon style="fill: #714b1d" points="477.999,154.646 472.999,144.646 477.999,147.146 482.999,144.646 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 3; stroke: #714b1d" points="477.999,154.646 472.999,144.646 477.999,147.146 482.999,144.646 "/>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" d="M 576.75,196.925 A 0.0751301,0.0751301 0 0 0 576.825,197"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" x1="576.75" y1="113" x2="576.75" y2="196.925"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" d="M 576.962,197.049 A 0.0485676,0.0485676 0 0 0 576.914,197"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" x1="576.825" y1="197" x2="576.914" y2="197"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" x1="576.962" y1="197.049" x2="576.963" y2="270.146"/>
+    <polygon style="fill: #714b1d" points="576.963,277.646 571.963,267.646 576.963,270.146 581.963,267.646 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 3; stroke: #714b1d" points="576.963,277.646 571.963,267.646 576.963,270.146 581.963,267.646 "/>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" d="M 477.999,251.004 A 4,4 0 0 0 481.999,255.004"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" x1="477.999" y1="239.863" x2="477.999" y2="251.004"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" d="M 524.887,259.004 A 4,4 0 0 0 520.887,255.004"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" x1="481.999" y1="255.004" x2="520.887" y2="255.004"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" x1="524.887" y1="259.004" x2="524.888" y2="270.146"/>
+    <polygon style="fill: #714b1d" points="477.999,232.363 482.999,242.363 477.999,239.863 472.999,242.363 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 3; stroke: #714b1d" points="477.999,232.363 482.999,242.363 477.999,239.863 472.999,242.363 "/>
+    <polygon style="fill: #714b1d" points="524.888,277.646 519.888,267.646 524.888,270.146 529.888,267.646 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 3; stroke: #714b1d" points="524.888,277.646 519.888,267.646 524.888,270.146 529.888,267.646 "/>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" d="M 734.5,139.5 A 4,4 0 0 0 738.5,135.5"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" x1="738.5" y1="113" x2="738.5" y2="135.5"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" d="M 727.276,139.5 A 3.95096,3.95096 0 0 0 723.325,143.451"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" x1="734.5" y1="139.5" x2="727.276" y2="139.5"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" x1="723.325" y1="143.451" x2="723.325" y2="155.146"/>
+    <polygon style="fill: #714b1d" points="723.325,162.646 718.325,152.646 723.325,155.146 728.325,152.646 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 3; stroke: #714b1d" points="723.325,162.646 718.325,152.646 723.325,155.146 728.325,152.646 "/>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" d="M 630.325,318 A 4,4 0 0 0 634.325,314"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" x1="603" y1="318" x2="630.325" y2="318"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" d="M 638.325,205 A 4,4 0 0 0 634.325,209"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" x1="634.325" y1="314" x2="634.325" y2="209"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" x1="638.325" y1="205" x2="654.796" y2="205"/>
+    <polygon style="fill: #714b1d" points="662.296,205 652.296,210 654.796,205 652.296,200 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 3; stroke: #714b1d" points="662.296,205 652.296,210 654.796,205 652.296,200 "/>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" d="M 723.325,268.291 A 2.71352,2.71352 0 0 0 726.039,271.005"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" x1="723.325" y1="255.864" x2="723.325" y2="268.291"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" d="M 731,272.759 A 1.75415,1.75415 0 0 0 729.246,271.005"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" x1="726.039" y1="271.005" x2="729.246" y2="271.005"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" x1="731" y1="272.759" x2="731" y2="286.146"/>
+    <polygon style="fill: #714b1d" points="723.325,248.364 728.325,258.364 723.325,255.864 718.325,258.364 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 3; stroke: #714b1d" points="723.325,248.364 728.325,258.364 723.325,255.864 718.325,258.364 "/>
+    <polygon style="fill: #714b1d" points="731,293.646 726,283.646 731,286.146 736,283.646 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 3; stroke: #714b1d" points="731,293.646 726,283.646 731,286.146 736,283.646 "/>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" d="M 818.609,340 A 3.90841,3.90841 0 0 0 822.517,336.092"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" x1="811.463" y1="340" x2="818.609" y2="340"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" d="M 826.426,196 A 3.90841,3.90841 0 0 0 822.517,199.908"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" x1="822.517" y1="336.092" x2="822.517" y2="199.908"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" x1="826.426" y1="196" x2="833.572" y2="196"/>
+    <polygon style="fill: #714b1d" points="803.963,340 813.963,335 811.463,340 813.963,345 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 3; stroke: #714b1d" points="803.963,340 813.963,335 811.463,340 813.963,345 "/>
+    <polygon style="fill: #714b1d" points="841.072,196 831.072,201 833.572,196 831.072,191 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 3; stroke: #714b1d" points="841.072,196 831.072,201 833.572,196 831.072,191 "/>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" d="M 900.001,249.5 A 4,4 0 0 0 904.001,253.5"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" x1="900.001" y1="231" x2="900.001" y2="249.5"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" d="M 936.001,257.5 A 4,4 0 0 0 932.001,253.5"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" x1="904.001" y1="253.5" x2="932.001" y2="253.5"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" x1="936.001" y1="257.5" x2="936.001" y2="265.146"/>
+    <polygon style="fill: #714b1d" points="936.001,272.646 931.001,262.646 936.001,265.146 941.001,262.646 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 3; stroke: #714b1d" points="936.001,272.646 931.001,262.646 936.001,265.146 941.001,262.646 "/>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" d="M 960.001,376.651 A 0.10147,0.10147 0 0 0 960.102,376.753"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" x1="960.001" y1="357.005" x2="960.001" y2="376.651"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" d="M 960.288,376.818 A 0.0655948,0.0655948 0 0 0 960.222,376.753"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" x1="960.102" y1="376.753" x2="960.222" y2="376.753"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" x1="960.288" y1="376.818" x2="960.288" y2="385.646"/>
+    <polygon style="fill: #714b1d" points="960.288,393.146 955.288,383.146 960.288,385.646 965.288,383.146 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 3; stroke: #714b1d" points="960.288,393.146 955.288,383.146 960.288,385.646 965.288,383.146 "/>
+  </g>
+  <g>
+    <rect style="fill: #e5e7d5" x="562.574" y="397" width="85.425" height="68"/>
+    <path style="fill: #e5e7d5" d="M 562.574,397 A 4,4 0 0 0 558.574,401 L 562.574,401 z"/>
+    <path style="fill: #e5e7d5" d="M 651.999,401 A 4,4 0 0 0 647.999,397 L 647.999,401 z"/>
+    <rect style="fill: #e5e7d5" x="558.574" y="401" width="93.425" height="60"/>
+    <path style="fill: #e5e7d5" d="M 558.574,461 A 4,4 0 0 0 562.574,465 L 562.574,461 z"/>
+    <path style="fill: #e5e7d5" d="M 647.999,465 A 4,4 0 0 0 651.999,461 L 647.999,461 z"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" x1="562.574" y1="397" x2="647.999" y2="397"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" x1="562.574" y1="465" x2="647.999" y2="465"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" d="M 562.574,397 A 4,4 0 0 0 558.574,401"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" d="M 651.999,401 A 4,4 0 0 0 647.999,397"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" x1="558.574" y1="401" x2="558.574" y2="461"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" x1="651.999" y1="401" x2="651.999" y2="461"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" d="M 558.574,461 A 4,4 0 0 0 562.574,465"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" d="M 647.999,465 A 4,4 0 0 0 651.999,461"/>
+    <text font-size="12.8" style="fill: #714b1d;text-anchor:middle;font-family:Arial;font-style:normal;font-weight:700" x="605.286" y="426.6">
+      <tspan x="605.286" y="426.6">Data</tspan>
+      <tspan x="605.286" y="442.6">Exchange</tspan>
+    </text>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" d="M 550.925,372 A 4,4 0 0 0 554.925,376"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" x1="550.925" y1="355" x2="550.925" y2="372"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" d="M 581.93,379.587 A 3.58712,3.58712 0 0 0 578.343,376"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" x1="554.925" y1="376" x2="578.343" y2="376"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" x1="581.93" y1="379.587" x2="581.93" y2="386.146"/>
+    <polygon style="fill: #714b1d" points="581.93,393.646 576.93,383.646 581.93,386.146 586.93,383.646 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 3; stroke: #714b1d" points="581.93,393.646 576.93,383.646 581.93,386.146 586.93,383.646 "/>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" d="M 727,431 A 4,4 0 0 0 731,427"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" x1="731" y1="383" x2="731" y2="427"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" x1="727" y1="431" x2="662.853" y2="431"/>
+    <polygon style="fill: #714b1d" points="655.353,431 665.353,426 662.853,431 665.353,436 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 3; stroke: #714b1d" points="655.353,431 665.353,426 662.853,431 665.353,436 "/>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" d="M 900.162,137 A 0.0880348,0.0880348 0 0 0 900.25,136.912"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" x1="900.25" y1="113" x2="900.25" y2="136.912"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" d="M 900.058,137 A 0.0569098,0.0569098 0 0 0 900.001,137.057"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" x1="900.162" y1="137" x2="900.058" y2="137"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" x1="900.001" y1="137.057" x2="900.001" y2="150.146"/>
+    <polygon style="fill: #714b1d" points="900.001,157.646 895.001,147.646 900.001,150.146 905.001,147.646 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 3; stroke: #714b1d" points="900.001,157.646 895.001,147.646 900.001,150.146 905.001,147.646 "/>
+  </g>
+  <g>
+    <rect style="fill: #e5e7d5" x="432" y="529" width="613" height="45"/>
+    <path style="fill: #e5e7d5" d="M 432,529 A 4,4 0 0 0 428,533 L 432,533 z"/>
+    <path style="fill: #e5e7d5" d="M 1049,533 A 4,4 0 0 0 1045,529 L 1045,533 z"/>
+    <rect style="fill: #e5e7d5" x="428" y="533" width="621" height="37"/>
+    <path style="fill: #e5e7d5" d="M 428,570 A 4,4 0 0 0 432,574 L 432,570 z"/>
+    <path style="fill: #e5e7d5" d="M 1045,574 A 4,4 0 0 0 1049,570 L 1045,570 z"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" x1="432" y1="529" x2="1045" y2="529"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" x1="432" y1="574" x2="1045" y2="574"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" d="M 432,529 A 4,4 0 0 0 428,533"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" d="M 1049,533 A 4,4 0 0 0 1045,529"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" x1="428" y1="533" x2="428" y2="570"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" x1="1049" y1="533" x2="1049" y2="570"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" d="M 428,570 A 4,4 0 0 0 432,574"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #714b1d" d="M 1045,574 A 4,4 0 0 0 1049,570"/>
+    <text font-size="12.8" style="fill: #714b1d;text-anchor:middle;font-family:Arial;font-style:normal;font-weight:700" x="738.5" y="555.1">
+      <tspan x="738.5" y="555.1">Project Closeout / Data Preservation</tspan>
+    </text>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" d="M 605.286,493 A 4,4 0 0 0 609.286,497"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" x1="605.286" y1="465" x2="605.286" y2="493"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" d="M 738.5,501 A 4,4 0 0 0 734.5,497"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" x1="609.286" y1="497" x2="734.5" y2="497"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" x1="738.5" y1="501" x2="738.5" y2="518.146"/>
+    <polygon style="fill: #714b1d" points="738.5,525.646 733.5,515.646 738.5,518.146 743.5,515.646 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 3; stroke: #714b1d" points="738.5,525.646 733.5,515.646 738.5,518.146 743.5,515.646 "/>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" d="M 956.288,497.75 A 4,4 0 0 0 960.288,493.75"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" x1="960.288" y1="466.5" x2="960.288" y2="493.75"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" d="M 742.5,497.75 A 4,4 0 0 0 738.5,501.75"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" x1="956.288" y1="497.75" x2="742.5" y2="497.75"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" x1="738.5" y1="501.75" x2="738.5" y2="518.146"/>
+    <polygon style="fill: #714b1d" points="738.5,525.646 733.5,515.646 738.5,518.146 743.5,515.646 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 3; stroke: #714b1d" points="738.5,525.646 733.5,515.646 738.5,518.146 743.5,515.646 "/>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" d="M 1080.51,316 A 4,4 0 0 0 1084.51,312"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" x1="1008" y1="316" x2="1080.51" y2="316"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" d="M 1084.51,97.7639 A 3.76389,3.76389 0 0 0 1080.75,94"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" x1="1084.51" y1="312" x2="1084.51" y2="97.7639"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" x1="1080.75" y1="94" x2="1073.86" y2="94"/>
+    <polygon style="fill: #714b1d" points="1066.36,94 1076.36,89 1073.86,94 1076.36,99 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 3; stroke: #714b1d" points="1066.36,94 1076.36,89 1073.86,94 1076.36,99 "/>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" d="M 983.706,132.896 A 0.103945,0.103945 0 0 0 983.81,133"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" x1="983.706" y1="113.5" x2="983.706" y2="132.896"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" d="M 984,133.067 A 0.0671947,0.0671947 0 0 0 983.933,133"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" x1="983.81" y1="133" x2="983.933" y2="133"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" x1="984" y1="133.067" x2="984" y2="265.146"/>
+    <polygon style="fill: #714b1d" points="984,272.646 979,262.646 984,265.146 989,262.646 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 3; stroke: #714b1d" points="984,272.646 979,262.646 984,265.146 989,262.646 "/>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" d="M 852.794,410 A 4,4 0 0 0 856.794,414"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" x1="895.134" y1="414" x2="856.794" y2="414"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" d="M 852.794,365.5 A 4,4 0 0 0 848.794,361.5"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" x1="852.794" y1="410" x2="852.794" y2="365.5"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" x1="848.794" y1="361.5" x2="799.6" y2="361.5"/>
+    <polygon style="fill: #714b1d" points="902.634,414 892.634,419 895.134,414 892.634,409 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 3; stroke: #714b1d" points="902.634,414 892.634,419 895.134,414 892.634,409 "/>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" d="M 848.794,365.5 A 0,0 0 0 0 848.794,365.5"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" x1="781" y1="205" x2="781" y2="205"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" d="M 800,205 A 4,4 0 0 0 804,201"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" x1="781" y1="205" x2="800" y2="205"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke-linejoin: round; stroke: #714b1d" x1="804" y1="201" x2="804" y2="125.854"/>
+    <polygon style="fill: #714b1d" points="804,118.354 809,128.354 804,125.854 799,128.354 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 3; stroke: #714b1d" points="804,118.354 809,128.354 804,125.854 799,128.354 "/>
+  </g>
+</svg>

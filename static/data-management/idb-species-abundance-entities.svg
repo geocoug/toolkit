@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="17cm" height="19cm" viewBox="135 346 323 374" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="136.34" y="347.368" width="320" height="371.166"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="136.34" y="347.368" width="320" height="371.166"/>
+  </g>
+  <g>
+    <rect style="fill: #e5e7d5" x="166.417" y="373.8" width="107.924" height="54"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="166.417" y="373.8" width="107.924" height="54"/>
+    <text font-size="12.8" style="fill: #714b1d;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="220.378" y="396.7">
+      <tspan x="220.378" y="396.7">Interpretive</tspan>
+      <tspan x="220.378" y="412.7">sample</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #e5e7d5" x="197.675" y="525.8" width="111.34" height="54"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="197.675" y="525.8" width="111.34" height="54"/>
+    <text font-size="12.8" style="fill: #714b1d;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="253.345" y="548.7">
+      <tspan x="253.345" y="548.7">Abundance</tspan>
+      <tspan x="253.345" y="564.7">data</tspan>
+    </text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="220.378,427.8 220.378,476.8 253.345,476.8 253.345,525.8 "/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="253.345" y1="515.8" x2="248.345" y2="525.8"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="253.345" y1="515.8" x2="258.345" y2="525.8"/>
+    <text font-size="9.6" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="224.378" y="439.8">1</text>
+    <text font-size="9.6" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="257.345" y="521.8">n</text>
+  </g>
+  <g>
+    <rect style="fill: #e5e7d5" x="313.84" y="427" width="110.5" height="54"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="313.84" y="427" width="110.5" height="54"/>
+    <text font-size="12.8" style="fill: #714b1d;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="369.09" y="457.9">
+      <tspan x="369.09" y="457.9">Document</tspan>
+    </text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="369.09,481 369.09,552.8 309.015,552.8 "/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="319.015" y1="552.8" x2="309.015" y2="547.8"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="319.015" y1="552.8" x2="309.015" y2="557.8"/>
+  </g>
+  <g>
+    <rect style="fill: #e5e7d5" x="197.57" y="637" width="111.55" height="54"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="197.57" y="637" width="111.55" height="54"/>
+    <text font-size="12.8" style="fill: #714b1d;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="253.345" y="659.9">
+      <tspan x="253.345" y="659.9">Abundance</tspan>
+      <tspan x="253.345" y="675.9">measurement</tspan>
+    </text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="253.345,579.8 253.345,580.8 253.345,636 253.345,637 "/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="253.345" y1="627" x2="248.345" y2="637"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="253.345" y1="627" x2="258.345" y2="637"/>
+  </g>
+</svg>

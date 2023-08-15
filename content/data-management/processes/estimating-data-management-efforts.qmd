@@ -1,0 +1,170 @@
+---
+title: Estimating Data Management Efforts
+description: Considerations for estimating data management efforts.
+order: 1
+---
+
+Following is some information and some guidelines for evaluating data management needs for a project.  When preparing project budgets, consultation with the project data manager or the DMA Practice Director is recommended.
+
+## Potential Data Management Tasks
+
+Some or all of the following data management tasks may be needed during a project, and should be considered when developing the project budget.
+
+### Project planning
+
+- Review of project scope and specification of tasks and budgets.
+- Identification of data needs.
+- Identification of technical requirements.
+- Specification of scopes and budgets for tasks or subtasks.
+- Review of field sampling plans.
+- Design of sample identification schemes.
+- Status meetings and updates.
+
+### Data acquisition
+
+- Identification of data sources.
+- Negotiation of data transfer formats and schedules with clients or other consultants.
+- Data downloading from online sources.
+- Assistance with preparation of field sampling data for loading.
+- Filing, inventory initiation and updating, tracking of completion, and status reporting.
+
+### Data quality assessment
+
+- Evaluation of the referential integrity of acquired data sets.
+- Summarization of acquired data in ways to support assessments performed by other technical staff.
+
+### Data organization, standardization, and centralization
+
+- Technology assessment (i.e., do we need to use new tools or practices, or develop new or customized database structures?)
+- Software development (i.e., do we need to create or revise any data management tools?)
+- Analysis of aquired data sets to determine an appropriate relational structure, and possibly the creation and customization of data structures for these data.
+- Corrections of errors, ambiguities, conflicts, and missing values in data sets.  This may require repeated cycles of issue resolution with the data provider, if available, or additional research and information acquisition.
+- Translation and systematization of codes in acquired data set.
+- Loading of field sampling information, possibly including creation and execution of custom scripts.
+- Loading of laboratory analytical data, possibly including creation and execution of custom scripts.
+- Summarization of data to support data validation, and updating of the database with validation results.
+- Production of data summaries to support quality assurance checks of the standardized data.
+
+### Document and file management
+
+- Setup of a document management system.
+- Operational support for ongoing document processing and uploading.
+
+### Data summarization, analysis, reporting, and visualization
+
+- Setup and periodic execution of standard data summaries.
+- Development of custom summaries to support specific project tasks.
+- Production of maps and other GIS products for internal use and for project deliverables.
+- Production of data tables for project deliverables.
+- Development of custom summaries for unplanned project requirements.
+- Setup and operation of an IWeb interface.
+- Creation, setup, and maintenance of Shiny web applications.
+
+### Data exchange with clients, agencies, and other consultants
+
+- Negotiation of data formats and schedules.
+- Development of scripts to produce data in the required formats.
+- Ongoing operation of the data export/exchange process.
+
+### Project closeout
+
+- Documentation of data status at closeout.
+- Database archiving.
+
+These tasks are described in more detail on the pages Data Management Workflow for Sampling Data and Data Management Workflow for Historical Data.  Although these workflows are described separately, many projects include both workflows.
+
+Projects often use a single data management budget, without any subdivision into separate subtasks (e.g., a WBS) or assignment of different billing codes to different subtasks.  This approach runs the risk of overlooking subtasks during project planning, and therefore failing to budget for and schedule them.  It also limits the ability of the project manager, and data managers, to know whether a  particular subtask is taking more or less effort than anticipated.  Identification of each data management subtask to be carried out, and creation of a separate billing code for each of them, is recommended.  If data management is treated as a single monolithic task, it may also be treated as a black box, such that the project manager and other project staff don't know much about the machinery inside the box, and that data managers, turning the gears inside the box, don't see where the boundaries of the box are or how it is connected to other parts of the project.
+
+Correction of data quality issues is potentially one of the most labor-intensive efforts, particularly for historical data sets.  Because the extent and severity of data quality issues is unknown until efforts are underway to integrate a data set with other data, budgets for data acquisition should allow for this uncertainty, the scope for this task should include assumptions and contingencies to address unexpected types or numbers of data quality issues, and projects should be managed to allow early identification of requirements for unexpectedly high levels of effort or time requirements.  Establishing specific budgets and scopes for individual data management tasks, particularly the integration of historical data, allows better tracking and control than having a single budget for all data management activities.
+
+## Data Acquisition and Loading Costs
+
+Data loading is frequently a major data management cost, though it can be highly variable because it depends on the amount, format, and quality of data to be loaded.  When integrating data from multiple historical sources (as we ordinarily do), data entry encompasses the activities of:
+
+1. Developing an inventory of data sets and their current status.
+1. Acquisition and filing of the data.
+1. Analysis of the format and content of the obtained data to develop a sufficient understanding to standardize and integrate it with other data.
+1. Checking the data for completeness, consistency, and other data quality issues, possibly including research to obtain missing information and development of rules (e.g., data translations and transformations) to establish consistency.
+1. Development or customization of scripts to extract, clean and transform, and load (ETL) the data from the original source to the target database, and carrying out QA of those scripts.  Scripts allow the ETL process to be easily QA’d and easily revised and re-applied to the same data set or other data sets of a similar format.  Scripts also ordinarily (as a matter of our practice) include documentation of the steps carried out, and can be put under version control.  The DMA practice maintains a library of scripts for commonly-received data formats (such as EDDs from frequently-used labs), but it is common for projects to receive data in formats for which there is no pre-existing script.  In those cases, a custom loading script will need to be developed.  If a project receives multiple data sets in the same format, then the data loading effort will be lower after the loading script has been developed.  Even so, there may be errors in received data sets that need to be dealt with on a case-by-case basis.  Those errors may be recorded in a data issue log.
+1. Creating additional documentation as necessary for each data set or the data management process as a whole (the latter typically in a data management plan or data manager’s manual).
+
+> “Tidy datasets are all alike, but every messy dataset is messy in its own way.” –– Hadley Wickham
+
+If data are not already available in a digital format, and key entry is required, then steps 3 and 4 above would be replaced by the processes to hand-enter the data and QA it, and step 5 would be reduced primarily to loading the data from the staging database, where hand entry is conducted, into the production database.
+
+Data handling, including data entry, is typically a substantial fraction of the effort required when data from multiple sources must be integrated for analysis.  Some recent estimates of the relative amount of this effort are presented in the article Ten commandments for good data management on the Dynamic Ecology website (see commandment #4), which cites a figure of 70%, and in the article Data Wrangling: Transforming (1/3) on the R-Bloggers website, which cites a figure of 60-80%.  If much hand entry is required, however, that will push the level of effort up relative to obtaining data already in digital format.
+The Long Right Tail
+
+The distribution of time required for loading has a long right tail: A relatively small fraction of data sets may require a disproportionately long time.  Loading time can be highly dependent on the format in which the data are available, with time requirements generally increasing for each of these formats:
+
+- Database tables (e.g., Access) with referential integrity constraints established
+- Database tables without referential integrity constraints
+- Excel and CSV files
+- Word document tables
+- PDF document tables
+
+Data in all formats but the first are very frequently found to have data integrity errors, such as analytical results reported for a sample identifier where there is no sampling information.  Data tables in Word and PDF tables are ordinarily in report formats that are designed for reading, and often these do not include information such as coordinate locations, dates, depths, and other details of the sampling and analytical methods--that information may be elsewhere in the document, or may need to be obtained from different sources.  Data tables in PDF files must be carefully checked after extraction, if in fact they can even be extracted, because data values can slip from one row or column to another, and repeated or spurious data or other text can appear in the extracted data.
+
+The worst-case scenario for data loading is:
+
+1. Data are in tables of a PDF report
+1. Two or three extraction tools need to be used to extract the data tables, which then need to be pieced together and thorougly QA'd
+1. The data tables do not contain the minimum necessary information (e.g., sampling locations, dates, or depths are missing).
+1. The data set contains numerous data integrity errors.
+
+Data in spreadsheets and report tables also frequently need to be transformed from a crosstabbed format to a normalized format for data loading.
+
+A worst-case data set may require several tens of hours to load.
+
+The best-case scenario is data from a well-established database format that we have previously obtained data from.  For example, we have loaded a lot of data sets from the Washington Department of Ecology's EIM system, and because the structure of EIM exports is standardized and well known, we have a script to automate the loading process.  Development of that script required on the order of 36 hours, but it has been used to load dozens of data sets with multiple types of chemical and biological data.  The minumum time ever achieved to download a data set from EIM and load it into a relational database is 20 minutes.  This is about the lowest number that could ever be achieved for any data set.  Typical times for loading an EIM data set are 60 to 90 minutes.  The maximum time to load an EIM data set has been approximately 6 hours.  That is because, although EIM's structure is standardized, EIM does not constrain data submitters to use a consistent set of codes, so different data sets can (and do) use very different codes for chemicals and other things.  We have translation tables to convert many of those codes to a standard set of codes, but nevertheless some data sets are so unusual that they require a large effort to standardize.
+
+When projects need to integrate data sets from a variety of source, where the structures are not standardized but vary from one data source to another, the minimum level of effort will be higher, but the overall distribution ordinarily also has a long right tail.  One consequence of this is that estimates of data loading effort based on typical or most common costs (i.e., the mode of the distribution) will underestimate the true average and total cost.
+
+### Budget Assumptions for Data Loading
+
+Any or all of the following assumptions may be appropriate to include in a budget estimate.  These estimates are intended to protect against unanticipated costs by allowing us to identify those conditions that fall outside the assumptions on which the budget is based.
+
+1. A database received from another contractor is in the form of a relational database that is normalized to third normal form, that enforces entity, relational, and domain integrity, and that includes clear and complete documentation of the data model.  (This may be somewhat jargon-heavy, but it is specific enough that we can clearly identify violations of this assumption.)
+1. Historical data sets about which nothing is known are assumed to require:
+    1. Supplementary investigation to understand ambiguous and conflicting codes and identifiers.
+    1. Standardization of codes to establish domain integrity to allow accurate representation of the data and reliable and efficient data selection and summarization.
+    1. Restructuring to clearly distinguish locations, sample collections, interpretive samples, analytical samples, laboratory samples, laboratory analyses, and laboratory replicates.
+    1. Documentation of all of the issues encountered during these steps, and the resolution of each issue, including caveats for data users regarding any issues that could not be resolved.
+
+### Loading Data from Laboratory Data Packages
+
+Integral has established an electronic data deliverable (EDD) format for analytical laboratories to use when the data will ultimately be incorporated into the database.  A number of labs can produce in this data format, although the quality of their adherence to the requirements varies.  Generally, use of this custom EDD format is the most cost-effective way of loading laboratory data.  We also have data loading scripts for other formats, including the EqUIS 3-file format and California's EDF format.  Other formats may require the development of new custom loading scripts, the cost of which should be included in the budget of the project that uses those other formats.
+
+Following are some guidelines for the minimum, likely, and maximum effort estimates, in hours, for steps involved in loading of laboratory data.
+
+#### Scripting loading of data from a new lab EDD format
+
+| Confidence | Estimate (hours)|
+| --- | --- |
+| Minimum | 4 |
+| Maximum | 16 |
+| Most likely | 10 |
+
+#### Scripting loading of validation results
+
+| Confidence | Estimate (hours)|
+| --- | --- |
+| Minimum | 2
+| Maximum | 8
+| Most likely | 5
+
+#### Loading of each lab EDD (including receipt, filing, running the script, documentation, notification, and anything else)
+
+| Confidence | Estimate (hours)|
+| --- | --- |
+| Minimum | 0.25 |
+| Maximum | 8
+| Most likely | 0.8
+
+#### Loading of each set of validation results
+
+| Confidence | Estimate (hours)|
+| --- | --- |
+| Minimum | 0.25
+| Maximum | 6
+| Most likely | 0.4

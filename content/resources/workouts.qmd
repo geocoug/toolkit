@@ -1,76 +1,45 @@
 ---
 title: Workouts
-description: Workouts and routines
+description: Workout routines
 image: /static/resources/workouts.png
+execute:
+  echo: false
 ---
 
 ## Routines
 
 ```{python}
-import pandas as pd
+import polars as pl
 
 workouts = "../../static/resources/workouts.xlsx"
-w1 = pd.read_excel(workouts, sheet_name=0)
-w2 = pd.read_excel(workouts, sheet_name=1)
-w3 = pd.read_excel(workouts, sheet_name=2)
-w4 = pd.read_excel(workouts, sheet_name=3)
-schedule = pd.read_excel(workouts, sheet_name=4)
+back_biceps = pl.read_excel(workouts, sheet_id=1)
+chest_triceps = pl.read_excel(workouts, sheet_id=2)
+legs = pl.read_excel(workouts, sheet_id=3)
+shoulders_traps = pl.read_excel(workouts, sheet_id=4)
 ```
 
-The following regimen outlines a 4 week lift cycle. The routine is a slightly modified version of [this](https://jackedgorilla.com/chris-pratt-workout-routine/). Non-lift days should be supplemented with active recovery workouts.
-
-### Schedule
-
-```{python}
-schedule.to_html(index=False, render_links=True)
-```
+The following regimen can be used for any 5 day/week workout schedule. I typically workout Monday-Friday, where each lift is executed once Monday-Thursday, and any targeted muscle group is performed again on Friday.
 
 ### Back & Biceps
 
 ```{python}
-w1.to_html(index=False)
+back_biceps.to_pandas().fillna("").to_html(index=False, render_links=True)
 ```
 
 ### Chest & Triceps
 
 ```{python}
-w2.to_html(index=False)
+chest_triceps.to_pandas().fillna("").to_html(index=False, render_links=True)
 ```
 
 ### Legs
 
 ```{python}
-w3.to_html(index=False)
+legs.to_pandas().fillna("").to_html(index=False, render_links=True)
 ```
 
 ### Shoulders & Traps
 
 ```{python}
-w4.to_html(index=False)
-```
-
-## Introductory Routines
-
-```{python}
-w5 = pd.read_excel(workouts, sheet_name=5)
-w6 = pd.read_excel(workouts, sheet_name=6)
-w7 = pd.read_excel(workouts, sheet_name=7)
-```
-
-### Push Intro
-
-```{python}
-w5.to_html(index=False, render_links=True)
-```
-
-### Pull Intro
-
-```{python}
-w6.to_html(index=False, render_links=True)
-```
-
-### Legs Intro
-
-```{python}
-w6.to_html(index=False, render_links=True)
+shoulders_traps.to_pandas().fillna("").to_html(index=False, render_links=True)
 ```

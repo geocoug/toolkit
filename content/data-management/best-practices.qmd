@@ -1,0 +1,70 @@
+---
+title: Best Practices
+order: 1
+---
+
+The following summary of data management best practices applies specifically to operations of the Data Management, but are relevant to any data management activities carried out by other staff.
+
+1. Know the use of the data
+
+   1. For the overall project
+   2. For each data summary request
+
+2. Use a single authoritative data store.
+
+    Tabular project data are ordinarily maintained in a client-server database (PostgreSQL) that is accessible across the network.  Spatial project data are maintained in project-specific directories on the server used with ArcGIS.
+
+3. Back up important data.
+
+    PostgreSQL databases are backed up nightly.
+
+4. Verify or characterize data quality.
+
+    See the Data Quality and Data Issue Tracking pages.
+
+5. Control access to sensitive data.
+
+    Password-controlled access to PostgreSQL databases must be approved by the project manager.
+
+6. Track data changes.
+
+    Perform all updates with SQL scripts that are created in date-tagged directories to preserve the order of operations. The script processor ordinarily used to run these scripts automatically maintains a log of scripts run, data files imported, and users' responses to interactive prompts. Custom logs may also be created during data loading or ediing. The database software can also creates an audit log recording every change to every row of every table.
+
+7. Document data management practices
+
+   1. Default practices (on this wiki; see the links below and on the DMA Home page)
+   2. Project-specific
+      1. Planned: Data Management Plan
+      2. ad-hoc: Data Manager's Manual
+   3. Task-specific
+      1. Script header notes
+      2. Custom logfiles
+
+8. Preserve original data
+
+    Any data cleaning, transformation, re-coding, and re-structuring of data that is done when loading data into a database is carried out on a copy of the original data.
+
+9. Script all data revisions and data summarizations.
+
+    See the page on scripting of data management operations.
+
+10. Use version control for things that may change
+    1. Scripts (using Mercurial or Git)
+    2. Data summary outputs (using date-tagged directories or files)
+
+11. Record metadata
+
+    1. For both incoming and outgoing data
+    2. Metadata includes
+        1. Provenance: Who created, provided, or produced the data the data.
+        2. Content: What the data set contains
+        3. Purpose: What the data are intended to be used for.
+        4. Method: How the data were generated or selected and summarized.
+        5. History: The history of any revisions made to the data or the data summarization method.
+    3. Forms of metadata include:
+        1. Copies of emails or other documents that transmit data or request data.
+        2. Header notes in scripts.
+        3. 'Info' pages and glossary pages in data summaries.
+        4. Custom log files created by scripted data operations.
+
+12. Date-tag directory and file names where the sequence of changes may affect their validity.

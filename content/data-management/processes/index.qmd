@@ -1,0 +1,15 @@
+---
+title: Data Management Procedures, Processes, and Workflows
+listing:
+  id: process-listings
+  type: table
+  table-hover: true
+  contents:
+    - "*.qmd"
+  fields: [title, description, reading-time]
+---
+
+This page contains a centralized list of various data management processes, guidelines, and other information describing common operations.
+
+::: {#process-listings}
+:::

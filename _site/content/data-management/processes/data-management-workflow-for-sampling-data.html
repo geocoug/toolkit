@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Data management workflow for sampling data.">
+
+<title>Toolkit - Data Management Workflow for Sampling Data</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../content/data-management/processes/data-management-workflow-for-historical-data.html" rel="next">
+<link href="../../../content/data-management/processes/estimating-data-management-efforts.html" rel="prev">
+<link href="../../..//static/favicon.ico" rel="icon">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": true,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous">
+</script>
+
+
+<link rel="stylesheet" href="../../../static/styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../static/logo.svg" alt="" class="navbar-logo">
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../content/development/index.html" rel="" target="">
+ <span class="menu-text">Development</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../../../content/data-management/index.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Data Management</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../content/resources/index.html" rel="" target="">
+ <span class="menu-text">Resources</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../content/blog/index.html" rel="" target="">
+ <span class="menu-text">Blog</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../content/data-management/processes/index.html">Processes</a></li><li class="breadcrumb-item"><a href="../../../content/data-management/processes/data-management-workflow-for-sampling-data.html">Data Management Workflow for Sampling Data</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/data-management/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Management</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/data-management/best-practices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Best Practices</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/data-management/data-quality.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Quality</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/data-management/data-literacy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Literacy</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/data-management/data-issues.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Issue Tracking</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/data-management/guidance-and-tips.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Guidance and Tips</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../content/data-management/processes/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Processes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/data-management/processes/estimating-data-management-efforts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Estimating Data Management Efforts</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/data-management/processes/data-management-workflow-for-sampling-data.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Data Management Workflow for Sampling Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/data-management/processes/data-management-workflow-for-historical-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Management Workflow for Historical Data</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#processes" id="toc-processes" class="nav-link active" data-scroll-target="#processes">Processes</a>
+  <ul class="collapse">
+  <li><a href="#p1.-data-management-planning" id="toc-p1.-data-management-planning" class="nav-link" data-scroll-target="#p1.-data-management-planning">P1. Data Management Planning</a></li>
+  <li><a href="#p2.-field-program-planning" id="toc-p2.-field-program-planning" class="nav-link" data-scroll-target="#p2.-field-program-planning">P2. Field Program Planning</a></li>
+  <li><a href="#p3.-field-sampling" id="toc-p3.-field-sampling" class="nav-link" data-scroll-target="#p3.-field-sampling">P3. Field Sampling</a></li>
+  <li><a href="#p4.-field-edd-compilation" id="toc-p4.-field-edd-compilation" class="nav-link" data-scroll-target="#p4.-field-edd-compilation">P4. Field EDD Compilation</a></li>
+  <li><a href="#p5.-import-field-data-into-the-database" id="toc-p5.-import-field-data-into-the-database" class="nav-link" data-scroll-target="#p5.-import-field-data-into-the-database">P5. Import Field Data Into the Database</a></li>
+  <li><a href="#p6.-laboratory-oversight" id="toc-p6.-laboratory-oversight" class="nav-link" data-scroll-target="#p6.-laboratory-oversight">P6. Laboratory Oversight</a></li>
+  <li><a href="#p7.-load-lab-edd" id="toc-p7.-load-lab-edd" class="nav-link" data-scroll-target="#p7.-load-lab-edd">P7. Load Lab EDD</a></li>
+  <li><a href="#p8.-produce-validation-summary" id="toc-p8.-produce-validation-summary" class="nav-link" data-scroll-target="#p8.-produce-validation-summary">P8. Produce Validation Summary</a></li>
+  <li><a href="#p9.-validate-analytical-results" id="toc-p9.-validate-analytical-results" class="nav-link" data-scroll-target="#p9.-validate-analytical-results">P9. Validate Analytical Results</a></li>
+  <li><a href="#p10.-load-validation-qualifiers" id="toc-p10.-load-validation-qualifiers" class="nav-link" data-scroll-target="#p10.-load-validation-qualifiers">P10. Load Validation Qualifiers</a></li>
+  <li><a href="#p11.-data-usability-assessment" id="toc-p11.-data-usability-assessment" class="nav-link" data-scroll-target="#p11.-data-usability-assessment">P11. Data Usability Assessment</a></li>
+  <li><a href="#p12.-data-analysis-and-visualization" id="toc-p12.-data-analysis-and-visualization" class="nav-link" data-scroll-target="#p12.-data-analysis-and-visualization">P12. Data Analysis and Visualization</a></li>
+  <li><a href="#p13.-data-table-production" id="toc-p13.-data-table-production" class="nav-link" data-scroll-target="#p13.-data-table-production">P13. Data Table Production</a></li>
+  <li><a href="#p14.-data-reporting" id="toc-p14.-data-reporting" class="nav-link" data-scroll-target="#p14.-data-reporting">P14. Data Reporting</a></li>
+  <li><a href="#p20.-correct-data-quality-issues" id="toc-p20.-correct-data-quality-issues" class="nav-link" data-scroll-target="#p20.-correct-data-quality-issues">P20. Correct Data Quality Issues</a></li>
+  <li><a href="#p21.-export-data" id="toc-p21.-export-data" class="nav-link" data-scroll-target="#p21.-export-data">P21. Export Data</a></li>
+  </ul></li>
+  <li><a href="#data-flows" id="toc-data-flows" class="nav-link" data-scroll-target="#data-flows">Data Flows</a>
+  <ul class="collapse">
+  <li><a href="#f1.-planning-products" id="toc-f1.-planning-products" class="nav-link" data-scroll-target="#f1.-planning-products">F1. Planning Products</a></li>
+  <li><a href="#f2.-inputs-for-field-program-planning" id="toc-f2.-inputs-for-field-program-planning" class="nav-link" data-scroll-target="#f2.-inputs-for-field-program-planning">F2. Inputs for Field Program Planning</a></li>
+  <li><a href="#f3.-field-program-planning-documents-for-library" id="toc-f3.-field-program-planning-documents-for-library" class="nav-link" data-scroll-target="#f3.-field-program-planning-documents-for-library">F3. Field Program Planning Documents for Library</a></li>
+  <li><a href="#f4.-field-program-planning-documents-for-field-crew" id="toc-f4.-field-program-planning-documents-for-field-crew" class="nav-link" data-scroll-target="#f4.-field-program-planning-documents-for-field-crew">F4. Field Program Planning Documents for Field Crew</a></li>
+  <li><a href="#f5.-field-sampling-records" id="toc-f5.-field-sampling-records" class="nav-link" data-scroll-target="#f5.-field-sampling-records">F5. Field Sampling Records</a></li>
+  <li><a href="#f6.-cocs-and-analytical-requests" id="toc-f6.-cocs-and-analytical-requests" class="nav-link" data-scroll-target="#f6.-cocs-and-analytical-requests">F6. COCs and Analytical Requests</a></li>
+  <li><a href="#f7.-standardized-field-sampling-records" id="toc-f7.-standardized-field-sampling-records" class="nav-link" data-scroll-target="#f7.-standardized-field-sampling-records">F7. Standardized Field Sampling Records</a></li>
+  <li><a href="#f8.-analytical-plans" id="toc-f8.-analytical-plans" class="nav-link" data-scroll-target="#f8.-analytical-plans">F8. Analytical Plans</a></li>
+  <li><a href="#f9.-analytical-specifications-for-the-laboratory" id="toc-f9.-analytical-specifications-for-the-laboratory" class="nav-link" data-scroll-target="#f9.-analytical-specifications-for-the-laboratory">F9. Analytical Specifications for the Laboratory</a></li>
+  <li><a href="#f10.-analytical-laboratory-results" id="toc-f10.-analytical-laboratory-results" class="nav-link" data-scroll-target="#f10.-analytical-laboratory-results">F10. Analytical Laboratory Results</a></li>
+  <li><a href="#f11.-normalized-field-sampling-records" id="toc-f11.-normalized-field-sampling-records" class="nav-link" data-scroll-target="#f11.-normalized-field-sampling-records">F11. Normalized Field Sampling Records</a></li>
+  <li><a href="#f12.-laboratory-edd" id="toc-f12.-laboratory-edd" class="nav-link" data-scroll-target="#f12.-laboratory-edd">F12. Laboratory EDD</a></li>
+  <li><a href="#f13.-normalized-analytical-laboratory-results" id="toc-f13.-normalized-analytical-laboratory-results" class="nav-link" data-scroll-target="#f13.-normalized-analytical-laboratory-results">F13. Normalized Analytical Laboratory Results</a></li>
+  <li><a href="#f14.-analytical-laboratory-results-extracted-from-database" id="toc-f14.-analytical-laboratory-results-extracted-from-database" class="nav-link" data-scroll-target="#f14.-analytical-laboratory-results-extracted-from-database">F14. Analytical Laboratory Results Extracted from Database</a></li>
+  <li><a href="#f15.-analytical-laboratory-results-summarized-for-data-validators" id="toc-f15.-analytical-laboratory-results-summarized-for-data-validators" class="nav-link" data-scroll-target="#f15.-analytical-laboratory-results-summarized-for-data-validators">F15. Analytical Laboratory Results Summarized for Data Validators</a></li>
+  <li><a href="#f16.-results-of-data-validation" id="toc-f16.-results-of-data-validation" class="nav-link" data-scroll-target="#f16.-results-of-data-validation">F16. Results of Data Validation</a></li>
+  <li><a href="#f17.-data-validation-qualifiers" id="toc-f17.-data-validation-qualifiers" class="nav-link" data-scroll-target="#f17.-data-validation-qualifiers">F17. Data Validation Qualifiers</a></li>
+  <li><a href="#f18.-field-records-for-library" id="toc-f18.-field-records-for-library" class="nav-link" data-scroll-target="#f18.-field-records-for-library">F18. Field Records for Library</a></li>
+  <li><a href="#f19.-analytical-laboratory-and-lab-oversight-records-for-library" id="toc-f19.-analytical-laboratory-and-lab-oversight-records-for-library" class="nav-link" data-scroll-target="#f19.-analytical-laboratory-and-lab-oversight-records-for-library">F19. Analytical Laboratory and Lab Oversight Records for Library</a></li>
+  <li><a href="#f20.-data-for-a-task--or-analysis-specific-data-analysis" id="toc-f20.-data-for-a-task--or-analysis-specific-data-analysis" class="nav-link" data-scroll-target="#f20.-data-for-a-task--or-analysis-specific-data-analysis">F20. Data for a Task- or Analysis-Specific Data Analysis</a></li>
+  <li><a href="#f21.-data-for-deliverable-data-tables" id="toc-f21.-data-for-deliverable-data-tables" class="nav-link" data-scroll-target="#f21.-data-for-deliverable-data-tables">F21. Data for Deliverable Data Tables</a></li>
+  <li><a href="#f22.-selected-or-annotated-data-for-analysis-or-visualization" id="toc-f22.-selected-or-annotated-data-for-analysis-or-visualization" class="nav-link" data-scroll-target="#f22.-selected-or-annotated-data-for-analysis-or-visualization">F22. Selected or Annotated Data For Analysis or Visualization</a></li>
+  <li><a href="#f23.-final-analysis-results-for-interpretation-and-deliverable-preparation" id="toc-f23.-final-analysis-results-for-interpretation-and-deliverable-preparation" class="nav-link" data-scroll-target="#f23.-final-analysis-results-for-interpretation-and-deliverable-preparation">F23. Final Analysis Results for Interpretation and Deliverable Preparation</a></li>
+  <li><a href="#f24.-report-data-tables" id="toc-f24.-report-data-tables" class="nav-link" data-scroll-target="#f24.-report-data-tables">F24. Report Data Tables</a></li>
+  <li><a href="#f25.-deliverable-data-tables-maps-and-graphics" id="toc-f25.-deliverable-data-tables-maps-and-graphics" class="nav-link" data-scroll-target="#f25.-deliverable-data-tables-maps-and-graphics">F25. Deliverable Data Tables, Maps, and Graphics</a></li>
+  <li><a href="#f26.-data-quality-issues" id="toc-f26.-data-quality-issues" class="nav-link" data-scroll-target="#f26.-data-quality-issues">F26. Data Quality Issues</a></li>
+  <li><a href="#f27.-data-updates" id="toc-f27.-data-updates" class="nav-link" data-scroll-target="#f27.-data-updates">F27. Data Updates</a></li>
+  <li><a href="#f28.-sampling-information-and-analytical-results-for-data-export" id="toc-f28.-sampling-information-and-analytical-results-for-data-export" class="nav-link" data-scroll-target="#f28.-sampling-information-and-analytical-results-for-data-export">F28. Sampling Information and Analytical Results for Data Export</a></li>
+  <li><a href="#f29.-data-export-edd" id="toc-f29.-data-export-edd" class="nav-link" data-scroll-target="#f29.-data-export-edd">F29. Data Export EDD</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/geocoug/toolkit/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Data Management Workflow for Sampling Data</h1>
+</div>
+
+<div>
+  <div class="description">
+    Data management workflow for sampling data.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>This page describes data management processes and data flows for projects (or project tasks) that include the collection and chemical analysis of environmental samples. An alternative workflow for the compilation and synthesis of data from other sources is described on the companion wiki page Data Management Workflow for Historical Data.</p>
+<p>Data management processes and data flows are shown in the following data flow diagram (DFD). Each of the processes and data flows are described in following sections. This DFD uses Yourdon/DeMarco symbology, as described by Wikipedia. Note that a DFD is not a flowchart, and the arrows in the DFD do not represent sequence or control flow. A flowchart analogue follows the DFD, but the DFD is a more detailed and useful representation for a data-based workflow.</p>
+<p>The following diagrams can be viewed more clearly by zooming this page or by downloading the images or viewing them in a separate browser tab.</p>
+<p><img src="../../../static/data-management/field-data-dfd.svg" class="img-fluid"></p>
+<div class="grid">
+<div class="g-col-8">
+<p>The flowchart to the right is a representation of the same processes that shows the ideal sequence, or flow of control, between them. In a typical project there may be additional feedback loops and forward skips that are not shown here (forward skips include, for example, analyses that are conducted on data before they are validated). The actual sequence of processes in a project may therefore be (or become) less organized than shown in this flowchart. The DFD shows data-based, rather than control-based, relationships between processes, and is generally more stable than the flowchart. Controlling the control flow is a project management challenge rather than a data management challenge, though it affects data management processes through impacts on schedule and budget. The person responsible for each processs should be identified in the project plan. This responsibility includes ensuring that data quality is improved or maintained within the task’s scope and budget. This responsibility may be held by one of the individuals who carry out each process, or by other project staff.</p>
+<p>The processes shown in the diagram above, and described in the section below, and also those on the page Data Management Workflow for Historical Data, should be considered for separate project tasks, or subtasks under a data management task. Budgeting, and tracking scope and budget by these processes, can help to more accurately estimate budgets and schedule, and to track progress throughout a project.</p>
+</div>
+<div class="g-col-4">
+<p><img src="../../../static/data-management/field-data-flowchart.svg" class="img-fluid"></p>
+</div>
+</div>
+<section id="processes" class="level2">
+<h2 class="anchored" data-anchor-id="processes">Processes</h2>
+<section id="p1.-data-management-planning" class="level3">
+<h3 class="anchored" data-anchor-id="p1.-data-management-planning">P1. Data Management Planning</h3>
+<p>This process should ordinarily be conducted as part of project planning. It should be carried out jointly by the project manager and the project data manager. This process may include:</p>
+<ul>
+<li>Identification of data needed for analyses and reporting, based on project goals (the DQO process).</li>
+<li>Identification of data needed for export, if data are to be transmitted to other organizations.</li>
+<li>Completion of a project initiation checklist.</li>
+<li>Development of a scope description for data management activities.</li>
+<li>Identification of the data model needed and requirements for field sample identification.</li>
+<li>Identification of analytical laboratories, analytical requirements, and electronic data deliverable (EDD) formats.</li>
+<li>Determination of the coordinate reference system and basemap data to be used.</li>
+<li>Budgeting for data management activities.</li>
+<li>Development of a Data Management Plan.</li>
+<li>Initiation of a project database and GIS project.</li>
+</ul>
+<p>Other activities may be conducted and products produced if the project will require other types of data, such as historical data.</p>
+</section>
+<section id="p2.-field-program-planning" class="level3">
+<h3 class="anchored" data-anchor-id="p2.-field-program-planning">P2. Field Program Planning</h3>
+<p>This process should be carried out jointly by the field program lead, field staff, and project data manager. The process may include:</p>
+<ul>
+<li>Specification of procedures, tools, and forms to be used to collect information in the field.</li>
+<li>Specification of rules for naming and labelling locations, collections, interpretive samples, analytical samples, and containers, and documentation in a SAP or FSP.</li>
+<li>Initialization of GPS hardware, software, and data.</li>
+<li>Training of field staff in field documentation requirements and procedures.</li>
+</ul>
+</section>
+<section id="p3.-field-sampling" class="level3">
+<h3 class="anchored" data-anchor-id="p3.-field-sampling">P3. Field Sampling</h3>
+<p>This process is carried out by field staff. The essential activity with respect to data management is the collection of field documentation as specified in the SAP or FSP.</p>
+</section>
+<section id="p4.-field-edd-compilation" class="level3">
+<h3 class="anchored" data-anchor-id="p4.-field-edd-compilation">P4. Field EDD Compilation</h3>
+<p>Sampling information collected in the field must ordinarily be compiled into a format that represents location and sampling information in a form consistent with the data model used for the project. Field EDD forms can be used for this purpose, for data that will be loaded into the database. This process should be carried out by field staff, with support from the project data manager.</p>
+</section>
+<section id="p5.-import-field-data-into-the-database" class="level3">
+<h3 class="anchored" data-anchor-id="p5.-import-field-data-into-the-database">P5. Import Field Data Into the Database</h3>
+<p>Field sampling information is imported into the project database from the field EDD formats (or other formats as determined during planning). This process is carried out by the data manager, but may require consultation with field staff if data quality issues are found with the field records. The standard procedure is to carry out this process using a SQL script. The wiki page Workflows for Loading Data to Postgres describes the data loading process in more detail.</p>
+</section>
+<section id="p6.-laboratory-oversight" class="level3">
+<h3 class="anchored" data-anchor-id="p6.-laboratory-oversight">P6. Laboratory Oversight</h3>
+<p>This process should be carried out by the project chemist. Laboratory specifications, laboratory deliverables, and any additional analysis requests should all be handled by the project chemist as part of this process. Coordination with data validators is also carried out as part of this process. Ordinarily this process includes communication between the project chemist and the data manager regarding timing, format, and quality of the laboratory deliverables and validation results.</p>
+</section>
+<section id="p7.-load-lab-edd" class="level3">
+<h3 class="anchored" data-anchor-id="p7.-load-lab-edd">P7. Load Lab EDD</h3>
+<p>This process is carried out by the project data manager. Laboratory EDDs are loaded into the project database, and quality assurance checks of the data are carried out as part of this process. The standard procedure is to carry out this process using a SQL script. If the laboratory EDD format is one that has been previously used, then an existing loading script may be used or customized; if not, a new script will have to be developed (and if so, a budget for this effort should have been established during the planning process). The wiki page Workflows for Loading Data to Postgres describes the data loading process in more detail, particularly when a script must be developed for a new EDD format. If problems are found with the EDD format or content, the data manager should communicate these to the project chemist for resolution with the laboratory.</p>
+</section>
+<section id="p8.-produce-validation-summary" class="level3">
+<h3 class="anchored" data-anchor-id="p8.-produce-validation-summary">P8. Produce Validation Summary</h3>
+<p>This process is carried out by the project data manager. After each laboratory EDD is loaded to the database, those data are extracted and summarized into a spreadsheet for use by the data validators. This procedure is carried out using a SQL script.</p>
+</section>
+<section id="p9.-validate-analytical-results" class="level3">
+<h3 class="anchored" data-anchor-id="p9.-validate-analytical-results">P9. Validate Analytical Results</h3>
+<p>This process is carried out by validation chemists, either in-house or contracted. This process results in the assignment of validation qualifiers to analytical results. Those qualifiers should be recorded in the validation summary spreadsheet.</p>
+</section>
+<section id="p10.-load-validation-qualifiers" class="level3">
+<h3 class="anchored" data-anchor-id="p10.-load-validation-qualifiers">P10. Load Validation Qualifiers</h3>
+<p>This process is carried out by the project data manager. Data validation qualifiers are extracted from the data validation summary spreadsheet and added to the corresponding values in the database. This procedure is carried out using a SQL script.</p>
+</section>
+<section id="p11.-data-usability-assessment" class="level3">
+<h3 class="anchored" data-anchor-id="p11.-data-usability-assessment">P11. Data Usability Assessment</h3>
+<p>Prior to conducting statistical, geospatial, or other analyses, the usability of the selected data should be assessed. This process should be carried out by the data analyst and project data manager, depending on the type of assessment to be performed and the best tool or technology for the job. The data usability assessment may make use of metrics for the different dimensions of data quality. This process ordinarily starts with the production of appropriate data summaries by the data manager.</p>
+</section>
+<section id="p12.-data-analysis-and-visualization" class="level3">
+<h3 class="anchored" data-anchor-id="p12.-data-analysis-and-visualization">P12. Data Analysis and Visualization</h3>
+<p>This process should be carried out primarily by the data analyst, but the first step in analyses will frequently be the selection, extaction, and summarization of data from the database, and that step may be carried out by the project data manager. The Data Accessibility page describes a variety of different ways in which data can be accessed and summarized by either data managers or other project staff. A number of standard data summaries are available that meet many common data needs. These standard summaries may be used as is, or customized. More specialized data summaries may need to be created to support some analyses. Often data summarization could be carried out using either SQL or analysis software (e.g., R, Python, Julia), and the most appropriate approach should be identified through discussions between data analysts and data managers.</p>
+<p>Summaries of chemistry data should use the default rules for summarization of chemistry data or explicitly specify alternate data handling rules. Additional information on data summarization (primarily for data managers) is presented on the pages Producing Custom Data Summaries and Guidance and Tips for Data Managers. Custom scripts have also been developed to prepare data for some types of specialized analyses (e.g., unmixing, HCPCA, and t-SNE). Otherwise, custom data summarization scripts may need to be developed for particular analyses (if so, a budget for this effort should have been developed during the planning process).</p>
+<p>Data analyses should follow relevant recommendations on Data Analysis Standards and Guidance and Best Practices for Data Analysis, and avoid the Worst Practices for Data Analysis. An initial stage of data exploration may be facilitated by using some of the available GUI Tools for Data Exploration.</p>
+<p>Requests for data that are to be used for analysis and visualization may be recorded in a request tracker. Templates and examples are in M:_trackers.</p>
+<p>Although data analysis and visualization is described here as a single process, frequently it is a multi-step process that could could be described by its own flowchart, data flow diagram, work breakdown structure, or other type of process map. Describing and documenting the planned data analysis process during project planning, and accounting for variances, can help to ensure that this work is carried out in a way that clearly supports project goals and is performed in an orderly and efficient fashion.</p>
+</section>
+<section id="p13.-data-table-production" class="level3">
+<h3 class="anchored" data-anchor-id="p13.-data-table-production">P13. Data Table Production</h3>
+<p>This process is carried out by the project data manager. Data to be reported as a project deliverable are extracted from the project database and restructured and formatted as appropriate. This process is ordinarily scripted. The wiki page Producing Data Summaries describes the major steps in this process. The section “Producing Data Tables for Reports or for Data Analyses” on the wiki page Guidance and Tips for Data Managers contains guidelines for the production of report data tables.</p>
+<p>Requests for data that are to be used for data table production may be recorded in a request tracker. Templates and examples are in M:_trackers.</p>
+</section>
+<section id="p14.-data-reporting" class="level3">
+<h3 class="anchored" data-anchor-id="p14.-data-reporting">P14. Data Reporting</h3>
+<p>This process is carried out cooperatively by multiple project staff. Reports may include data tables, graphics, and maps prepared by DMA staff and others. This process ordinarily requires that more effort be applied to consistency of data representation and adherence to publication standards than do the data analysis and visualization activities.</p>
+</section>
+<section id="p20.-correct-data-quality-issues" class="level3">
+<h3 class="anchored" data-anchor-id="p20.-correct-data-quality-issues">P20. Correct Data Quality Issues</h3>
+<p>Initiation of data analyses, and the associated data usability assessment (P11) may reveal data quality issues that were not identified during initial data compilation and loading. These issues are typically identified by a data analyst, and resolution of an issue may involve data managers, data analysts, field staff, and the project manager. These issues may be recorded in a data issue log while a resolution is being developed (use of a data issue log is shown as part of the workflow for historical data).</p>
+</section>
+<section id="p21.-export-data" class="level3">
+<h3 class="anchored" data-anchor-id="p21.-export-data">P21. Export Data</h3>
+<p>This process may not be required for all projects. When data must be exported to a regulator or some other organization, the data ordinarily must be retrieved from the project database and prepared in a specified data exchange format or EDD. The EDD format that is used for data exchange between organizations is typically different from the EDD format in which laboratory results are delivered. The data exchange EDD format may be specified by the external organization or may be determined by a negotiation between Integral and that organization. Some external organizations may require data that Integral would not typically record (e.g., during field work), and so export data requirements must be considered during project and data management planning. This task is ordinarily carried out by data managers, but may require some support from other project staff.</p>
+<p>Exporting data should be carried out following the process described on the wiki page Producing Data Summaries. Requests for data that are to be exported for others may be recorded in a request tracker.</p>
+</section>
+</section>
+<section id="data-flows" class="level2">
+<h2 class="anchored" data-anchor-id="data-flows">Data Flows</h2>
+<section id="f1.-planning-products" class="level3">
+<h3 class="anchored" data-anchor-id="f1.-planning-products">F1. Planning Products</h3>
+<p>The planning products in this data flow may contain the following items (note that items below link to more detailed documentation):</p>
+<ul>
+<li>A project initiation checklist</li>
+<li>Data quality goals and standards for the project</li>
+<li>A data management plan (DMP) or equivalent information in a work plan</li>
+<li>Specifications for location and sample identifiers to be used in the field, specified in a DMP, work plan, or field sampling plan (FSP)</li>
+<li>Specification for electronic data deliverables (EDDs) for field and laboratory data</li>
+<li>Identification of standard or custom data management SOP</li>
+<li>Specifications of analyses to be conducted, methods to be used, and chemical data validation procedures to be followed</li>
+<li>An initial data manager’s manual (DMM).</li>
+</ul>
+</section>
+<section id="f2.-inputs-for-field-program-planning" class="level3">
+<h3 class="anchored" data-anchor-id="f2.-inputs-for-field-program-planning">F2. Inputs for Field Program Planning</h3>
+<p>This data flow consists of a subset of planning products from process P1, including:</p>
+<ul>
+<li>Specifications for location and sample identifiers to be used in the field, specified in a DMP, work plan, or field sampling plan (FSP)</li>
+<li>Specification for electronic data deliverables (EDDs) for field data</li>
+<li>Standard or custom data management SOPs</li>
+<li>A data dictionary for information to be recorded on field forms and in field EDDs.</li>
+</ul>
+</section>
+<section id="f3.-field-program-planning-documents-for-library" class="level3">
+<h3 class="anchored" data-anchor-id="f3.-field-program-planning-documents-for-library">F3. Field Program Planning Documents for Library</h3>
+<p>This data flow consists of documents produced by the field program planning process that are to be maintained as a resource and reference. This include:</p>
+<ul>
+<li>The field sampling plan (FSP)</li>
+<li>Analytical requirements to be provided to the laboratory.</li>
+</ul>
+</section>
+<section id="f4.-field-program-planning-documents-for-field-crew" class="level3">
+<h3 class="anchored" data-anchor-id="f4.-field-program-planning-documents-for-field-crew">F4. Field Program Planning Documents for Field Crew</h3>
+<p>This data flow consists of information produced by the field planning process that are to be used by field staff. This information is ordinarily compiled into an FSP, which is the sole component of this data flow. (Other documents to be used by the field staff, such as a Health and Safety Plan, are not part of the data management workflow.)</p>
+</section>
+<section id="f5.-field-sampling-records" class="level3">
+<h3 class="anchored" data-anchor-id="f5.-field-sampling-records">F5. Field Sampling Records</h3>
+<p>This data flow consists of all digital and paper documents produced during the course of field sampling and may include, but not be limited to:</p>
+<ul>
+<li>Field logbooks</li>
+<li>Completed field forms</li>
+<li>GPS records</li>
+<li>Instrument data records</li>
+<li>Chain of custody (COC) forms</li>
+<li>Analysis request forms</li>
+<li>All emails and other recorded communications pertaining to the conduct of field operations, specifically related to data collection.</li>
+</ul>
+</section>
+<section id="f6.-cocs-and-analytical-requests" class="level3">
+<h3 class="anchored" data-anchor-id="f6.-cocs-and-analytical-requests">F6. COCs and Analytical Requests</h3>
+<p>This data flow consist of all documents and information conveyed from field staff to the analytical laboratories, including COC forms, analytical requests, and emails and records of other communications pertaining to sample analysis and data handling.</p>
+</section>
+<section id="f7.-standardized-field-sampling-records" class="level3">
+<h3 class="anchored" data-anchor-id="f7.-standardized-field-sampling-records">F7. Standardized Field Sampling Records</h3>
+<p>This data flow consist of:</p>
+<ul>
+<li>Field sampling information compiled into a field EDD format, or an alternative as specified during the planning process.</li>
+<li>GPS data</li>
+<li>Field instrument data</li>
+</ul>
+</section>
+<section id="f8.-analytical-plans" class="level3">
+<h3 class="anchored" data-anchor-id="f8.-analytical-plans">F8. Analytical Plans</h3>
+<p>This data flow consists of specifications for laboratory analyses, including:</p>
+<ul>
+<li>Analyses to be conducted</li>
+<li>Analytical methods to be used</li>
+<li>Data quality standards to be met by the laboratory</li>
+<li>The laboratory EDD format to be used</li>
+<li>Level of data validation to be conducted.</li>
+</ul>
+</section>
+<section id="f9.-analytical-specifications-for-the-laboratory" class="level3">
+<h3 class="anchored" data-anchor-id="f9.-analytical-specifications-for-the-laboratory">F9. Analytical Specifications for the Laboratory</h3>
+<p>This data flow consists of specifications and work requests provided to the analytical laboratory, and ordinarily includes:</p>
+<ul>
+<li>A description of analyses to be conducted, the methods to be used, and the format and content of laboratory reports and EDDs to be produced by the laboratory, typically in the form of a Statement of Work (SOW)</li>
+<li>Any requests for sample reanalyses that are needed following initial review of laboratory deliverables.</li>
+</ul>
+<p>The first of these items will ordinarily be transmitted to the laboratory one time, after project planning is completed, whereas the second item (reanalysis requests) may be transmitted on multiple occasions.</p>
+</section>
+<section id="f10.-analytical-laboratory-results" class="level3">
+<h3 class="anchored" data-anchor-id="f10.-analytical-laboratory-results">F10. Analytical Laboratory Results</h3>
+<p>This data flow consists of laboratory deliverables as specified in the SOW, and ordinarily includes:</p>
+<ul>
+<li>A laboratory report for each sample delivery group (SDG) as a PDF file</li>
+<li>One or more completed laboratory EDDs in the specified format.</li>
+</ul>
+</section>
+<section id="f11.-normalized-field-sampling-records" class="level3">
+<h3 class="anchored" data-anchor-id="f11.-normalized-field-sampling-records">F11. Normalized Field Sampling Records</h3>
+<p>This data flow consists of field sampling information that is transformed from the field EDD format into the structure of database tables. This data flow is electronic, and occurs between the data loading script and the database server. The data loading process (P5) is described in more detail on the wiki page Workflows for Loading Data to Postgres.</p>
+</section>
+<section id="f12.-laboratory-edd" class="level3">
+<h3 class="anchored" data-anchor-id="f12.-laboratory-edd">F12. Laboratory EDD</h3>
+<p>This data flow consists of the laboratory EDD, transmitted from laboratory oversight staff to data management staff after review, tracking, and approval.</p>
+</section>
+<section id="f13.-normalized-analytical-laboratory-results" class="level3">
+<h3 class="anchored" data-anchor-id="f13.-normalized-analytical-laboratory-results">F13. Normalized Analytical Laboratory Results</h3>
+<p>This data flow consists of data from the laboratory EDD that is transformed into the structure of database tables. This data flow is electronic, and occurs between the data loading script and the database server. The data loading process (P7) is described in more detail on the wiki page Workflows for Loading Data to Postgres.</p>
+</section>
+<section id="f14.-analytical-laboratory-results-extracted-from-database" class="level3">
+<h3 class="anchored" data-anchor-id="f14.-analytical-laboratory-results-extracted-from-database">F14. Analytical Laboratory Results Extracted from Database</h3>
+<p>This data flow consist of analytical results for one or more SDGs that is used to prepare data summaries to be used by data validators. This data flow is electronic and occurs between the database server and the data summary script.</p>
+</section>
+<section id="f15.-analytical-laboratory-results-summarized-for-data-validators" class="level3">
+<h3 class="anchored" data-anchor-id="f15.-analytical-laboratory-results-summarized-for-data-validators">F15. Analytical Laboratory Results Summarized for Data Validators</h3>
+<p>This data flow consist of analytical results for one or more SDGs that is extracted from the project database (F14), summarized in a format that is designed to be annotated by the data validators.</p>
+</section>
+<section id="f16.-results-of-data-validation" class="level3">
+<h3 class="anchored" data-anchor-id="f16.-results-of-data-validation">F16. Results of Data Validation</h3>
+<p>This data flow consists of the summary of analytical results (F15) annotated with data validation qualifiers and validator comments, and possibly including revisions to data values and detection limits.</p>
+</section>
+<section id="f17.-data-validation-qualifiers" class="level3">
+<h3 class="anchored" data-anchor-id="f17.-data-validation-qualifiers">F17. Data Validation Qualifiers</h3>
+<p>This data flow consists of new information provided by data validators (F16) that is used to update existing analytical results in the project database. This data flow is electronic and occurs between the data loading script and the database server.</p>
+</section>
+<section id="f18.-field-records-for-library" class="level3">
+<h3 class="anchored" data-anchor-id="f18.-field-records-for-library">F18. Field Records for Library</h3>
+<p>This data flow consists of all digital and paper documents produced during the course of field sampling and may include, but not be limited to:</p>
+<ul>
+<li>Field logbooks</li>
+<li>Completed field forms</li>
+<li>GPS records</li>
+<li>Instrument data records</li>
+<li>Chain of custody (COC) forms</li>
+<li>Analysis request forms</li>
+<li>All emails and other recorded communications pertaining to the conduct of field operations, specifically related to data collection.</li>
+</ul>
+</section>
+<section id="f19.-analytical-laboratory-and-lab-oversight-records-for-library" class="level3">
+<h3 class="anchored" data-anchor-id="f19.-analytical-laboratory-and-lab-oversight-records-for-library">F19. Analytical Laboratory and Lab Oversight Records for Library</h3>
+<p>This data flow consists of all laboratory deliverables and laboratory oversight records and may include but not be limited to:</p>
+<ul>
+<li>Laboratory SOWs</li>
+<li>Data reports and EDDs produced by the laboratory</li>
+<li>Tracking records used to oversee correct and timely completion of laboratory wor</li>
+<li>Reanalysis requests sent to the laboratory</li>
+<li>Emails and other communications pertaining to the analysis and reporting of data.</li>
+</ul>
+</section>
+<section id="f20.-data-for-a-task--or-analysis-specific-data-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="f20.-data-for-a-task--or-analysis-specific-data-analysis">F20. Data for a Task- or Analysis-Specific Data Analysis</h3>
+<p>This data flow ordinarily will consist of one or more subsets of data that are selected based on the needs of a specific data analysis. The work flow is electronic, occurring between the database server and the SQL script used to select, summarize, and restructure the data as needed for analyses to be conducted using ArcGIS, R, QGIS, Orange, Python, or other tools.</p>
+</section>
+<section id="f21.-data-for-deliverable-data-tables" class="level3">
+<h3 class="anchored" data-anchor-id="f21.-data-for-deliverable-data-tables">F21. Data for Deliverable Data Tables</h3>
+<p>This data flow consists of all sampling information and analytical data that are to be included in deliverable data reports.</p>
+</section>
+<section id="f22.-selected-or-annotated-data-for-analysis-or-visualization" class="level3">
+<h3 class="anchored" data-anchor-id="f22.-selected-or-annotated-data-for-analysis-or-visualization">F22. Selected or Annotated Data For Analysis or Visualization</h3>
+<p>This data flow consists of the data from F20, summarized and restructured as appropriate for each data analysis to be conducted.</p>
+</section>
+<section id="f23.-final-analysis-results-for-interpretation-and-deliverable-preparation" class="level3">
+<h3 class="anchored" data-anchor-id="f23.-final-analysis-results-for-interpretation-and-deliverable-preparation">F23. Final Analysis Results for Interpretation and Deliverable Preparation</h3>
+<p>This data flow consist of all the results of data analyses that are essential for understanding, decision-making, and reporting. It may include:</p>
+<ul>
+<li>Data tables used as input to the analysis</li>
+<li>Data tables produced by the analysis</li>
+<li>Maps showing data or the results of data analyses</li>
+<li>Statistical graphics showing data or the results of data analyses.</li>
+</ul>
+</section>
+<section id="f24.-report-data-tables" class="level3">
+<h3 class="anchored" data-anchor-id="f24.-report-data-tables">F24. Report Data Tables</h3>
+<p>This data flow consists of all sampling information and analytical data that are to be included in deliverable data reports (F21), restructured into deliverable data tables. Guidance for production of these tables is in the section titled “Producing Data Tables for Reports or for Data Analyses” of the wiki page Guidance and Tips for Data Managers. The tables in this data flow ordinarily will require formatting (typically by production staff) and addition of table numbers and titles.</p>
+</section>
+<section id="f25.-deliverable-data-tables-maps-and-graphics" class="level3">
+<h3 class="anchored" data-anchor-id="f25.-deliverable-data-tables-maps-and-graphics">F25. Deliverable Data Tables, Maps, and Graphics</h3>
+<p>This data flow consist of all of the materials from data flows F23 and F24, compiled and prepared in a form for delivery to the client.</p>
+</section>
+<section id="f26.-data-quality-issues" class="level3">
+<h3 class="anchored" data-anchor-id="f26.-data-quality-issues">F26. Data Quality Issues</h3>
+<p>This data flow consists of a description, and possibly examples, of data quality issues that are identified when data are used. This data flow may include emails, spreadsheets, example scripts, and entries in an issue tracking log.</p>
+</section>
+<section id="f27.-data-updates" class="level3">
+<h3 class="anchored" data-anchor-id="f27.-data-updates">F27. Data Updates</h3>
+<p>This data flow consists of revisions to the project database and ordinarily takes the form of changes made using scripted SQL statements.</p>
+</section>
+<section id="f28.-sampling-information-and-analytical-results-for-data-export" class="level3">
+<h3 class="anchored" data-anchor-id="f28.-sampling-information-and-analytical-results-for-data-export">F28. Sampling Information and Analytical Results for Data Export</h3>
+<p>This data flow consists of all project data that is to be exported from the database for transmittal to another organization. This data flow is ordinarily completely electronic, through a connection between the database and the export script.</p>
+</section>
+<section id="f29.-data-export-edd" class="level3">
+<h3 class="anchored" data-anchor-id="f29.-data-export-edd">F29. Data Export EDD</h3>
+<p>This data flow consists of project data that has been transformed into a data exchange EDD format as specified by, or agreed to with, the receiving organization.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp("http:\/\/toolkit\.goecoug\.com");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../../content/data-management/processes/estimating-data-management-efforts.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Estimating Data Management Efforts</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../../content/data-management/processes/data-management-workflow-for-historical-data.html" class="pagination-link">
+        <span class="nav-page-text">Data Management Workflow for Historical Data</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Caleb Grant, 2023</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/geocoug/toolkit">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>

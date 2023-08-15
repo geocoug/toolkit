@@ -2,11 +2,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Recipies">
 
 <title>Toolkit - Recipes</title>
 <style>
@@ -32,8 +31,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
 <link href="../../content/resources/workouts.html" rel="next">
-<link href="../../content/resources/data-management.html" rel="prev">
+<link href="../../content/resources/index.html" rel="prev">
 <link href="../..//static/favicon.ico" rel="icon">
+<script src="../../site_libs/quarto-listing/list.min.js"></script>
+<script src="../../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -65,9 +66,40 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-recipe-listings .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-description','listing-Cook Time','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-recipe-listings'] = new List('listing-recipe-listings', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
 <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous">
 </script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../../static/styles.css">
 </head>
@@ -92,6 +124,10 @@ ul.task-list li input[type="checkbox"] {
   <li class="nav-item">
     <a class="nav-link" href="../../content/development/index.html" rel="" target="">
  <span class="menu-text">Development</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../content/data-management/index.html" rel="" target="">
+ <span class="menu-text">Data Management</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="../../content/resources/index.html" rel="" target="" aria-current="page">
@@ -120,7 +156,7 @@ ul.task-list li input[type="checkbox"] {
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
     <div class="sidebar-menu-container"> 
@@ -129,18 +165,6 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="../../content/resources/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Resources</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../content/resources/bookmarks.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bookmarks</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../content/resources/data-management.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data Management</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -161,39 +185,16 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#sourdough-bread" id="toc-sourdough-bread" class="nav-link active" data-scroll-target="#sourdough-bread">Sourdough Bread</a></li>
-  <li><a href="#greek-yogurt-protein-smoothie" id="toc-greek-yogurt-protein-smoothie" class="nav-link" data-scroll-target="#greek-yogurt-protein-smoothie">Greek Yogurt Protein Smoothie</a></li>
-  <li><a href="#overnight-protein-oats" id="toc-overnight-protein-oats" class="nav-link" data-scroll-target="#overnight-protein-oats">Overnight Protein Oats</a></li>
-  <li><a href="#buffalo-cauliflower" id="toc-buffalo-cauliflower" class="nav-link" data-scroll-target="#buffalo-cauliflower">Buffalo Cauliflower</a></li>
-  <li><a href="#quinoa-cucumber-salad" id="toc-quinoa-cucumber-salad" class="nav-link" data-scroll-target="#quinoa-cucumber-salad">Quinoa &amp; Cucumber Salad</a></li>
-  <li><a href="#cougar-gold-mac-cheese" id="toc-cougar-gold-mac-cheese" class="nav-link" data-scroll-target="#cougar-gold-mac-cheese">Cougar Gold Mac &amp; Cheese</a></li>
-  <li><a href="#lemon-dill-sauce" id="toc-lemon-dill-sauce" class="nav-link" data-scroll-target="#lemon-dill-sauce">Lemon Dill Sauce</a></li>
-  <li><a href="#salad-dressing" id="toc-salad-dressing" class="nav-link" data-scroll-target="#salad-dressing">Salad Dressing</a></li>
-  <li><a href="#rice-pilaf" id="toc-rice-pilaf" class="nav-link" data-scroll-target="#rice-pilaf">Rice Pilaf</a></li>
-  <li><a href="#egg-protein-bars" id="toc-egg-protein-bars" class="nav-link" data-scroll-target="#egg-protein-bars">Egg Protein Bars</a></li>
-  <li><a href="#buffalo-chicken-meatballs" id="toc-buffalo-chicken-meatballs" class="nav-link" data-scroll-target="#buffalo-chicken-meatballs">Buffalo Chicken Meatballs</a></li>
-  <li><a href="#hummus" id="toc-hummus" class="nav-link" data-scroll-target="#hummus">Hummus</a></li>
-  <li><a href="#others" id="toc-others" class="nav-link" data-scroll-target="#others">Others</a></li>
-  </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/geocoug/toolkit/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
-    </div>
+        
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(11)</span></div><div class="category" data-category="Bread">Bread <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Dressing">Dressing <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Meal">Meal <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Protein">Protein <span class="quarto-category-count">(4)</span></div><div class="category" data-category="Side">Side <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Snack">Snack <span class="quarto-category-count">(5)</span></div></div></div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content column-body" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Recipes</h1>
 </div>
 
-<div>
-  <div class="description">
-    Recipies
-  </div>
-</div>
 
 
 <div class="quarto-title-meta">
@@ -206,266 +207,197 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="sourdough-bread" class="level2">
-<h2 class="anchored" data-anchor-id="sourdough-bread">Sourdough Bread</h2>
-<p>Typical schedule for baking sourdough bread. Timing could change based on room temperature.</p>
-<table class="table">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
+
+
+
+
+<div class="quarto-listing quarto-listing-container-table" id="listing-recipe-listings">
+<div class="listing-actions-group">
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
+</div>
+
+<table class="quarto-listing-table table">
 <thead>
-<tr class="header">
-<th>Time</th>
-<th>Step</th>
-<th>Notes</th>
+<tr>
+<th>
+Title
+</th>
+<th>
+Description
+</th>
+<th>
+Cook Time
+</th>
+<th>
+Categories
+</th>
 </tr>
 </thead>
-<tbody>
-<tr class="odd">
-<td>8:00am</td>
-<td>Feed starter</td>
-<td>Discard all but at least 2 tbsp</td>
+<tbody class="list">
+<tr data-index="0" data-categories="Snack" data-listing-file-modified-sort="1691761667665" data-listing-reading-time-sort="1" data-listing-title-sort="Buffalo Cauliflower" data-listing-filename-sort="buffalo-cauliflower.qmd">
+<td>
+<a href="../../content/resources/recipes/buffalo-cauliflower.html" class="title listing-title">Buffalo Cauliflower</a>
+</td>
+<td>
+<span class="listing-description">Buffalo cauliflower bites</span>
+</td>
+<td>
+<span class="listing-Cook Time">45 minutes</span>
+</td>
+<td>
+<span class="listing-categories">Snack</span>
+</td>
 </tr>
-<tr class="even">
-<td>12:00pm</td>
-<td>Autolyse</td>
-<td></td>
+<tr data-index="1" data-categories="Meal" data-listing-file-modified-sort="1691761794289" data-listing-reading-time-sort="1" data-listing-title-sort="Cougar Gold Mac &amp; Cheese" data-listing-filename-sort="cougar-gold-mac.qmd">
+<td>
+<a href="../../content/resources/recipes/cougar-gold-mac.html" class="title listing-title">Cougar Gold Mac &amp; Cheese</a>
+</td>
+<td>
+<span class="listing-description">Rich and filling Cougar Gold mac &amp; cheese</span>
+</td>
+<td>
+<span class="listing-Cook Time">1 hour</span>
+</td>
+<td>
+<span class="listing-categories">Meal</span>
+</td>
 </tr>
-<tr class="odd">
-<td>1:00pm</td>
-<td>Add starter &amp; salt</td>
-<td></td>
+<tr data-index="2" data-categories="Protein,Snack" data-listing-file-modified-sort="1691762056648" data-listing-reading-time-sort="1" data-listing-title-sort="Egg Protein Bars" data-listing-filename-sort="egg-protein-bars.qmd">
+<td>
+<a href="../../content/resources/recipes/egg-protein-bars.html" class="title listing-title">Egg Protein Bars</a>
+</td>
+<td>
+<span class="listing-description">Egg protein bars</span>
+</td>
+<td>
+<span class="listing-Cook Time">1 hour</span>
+</td>
+<td>
+<span class="listing-categories">Protein,Snack</span>
+</td>
 </tr>
-<tr class="even">
-<td>1:30pm</td>
-<td>Stretch &amp; fold</td>
-<td>Every 30 min for 2-2.5 hours</td>
+<tr data-index="3" data-categories="Protein,Snack" data-listing-file-modified-sort="1691761681211" data-listing-reading-time-sort="1" data-listing-title-sort="Greek Yogurt Protein Smoothie" data-listing-filename-sort="yogurt-protein-smoothie.qmd">
+<td>
+<a href="../../content/resources/recipes/yogurt-protein-smoothie.html" class="title listing-title">Greek Yogurt Protein Smoothie</a>
+</td>
+<td>
+<span class="listing-description">High protein smoothie.</span>
+</td>
+<td>
+<span class="listing-Cook Time">2 minutes</span>
+</td>
+<td>
+<span class="listing-categories">Protein,Snack</span>
+</td>
 </tr>
-<tr class="odd">
-<td>3:30pm</td>
-<td>Bulk rise</td>
-<td>1-3 hours, should rise 30-50%</td>
+<tr data-index="4" data-categories="Dressing" data-listing-file-modified-sort="1691761945260" data-listing-reading-time-sort="1" data-listing-title-sort="Italian Dressing" data-listing-filename-sort="italian-dressing.qmd">
+<td>
+<a href="../../content/resources/recipes/italian-dressing.html" class="title listing-title">Italian Dressing</a>
+</td>
+<td>
+<span class="listing-description">Italian dressing</span>
+</td>
+<td>
+<span class="listing-Cook Time">5 minutes</span>
+</td>
+<td>
+<span class="listing-categories">Dressing</span>
+</td>
 </tr>
-<tr class="even">
-<td>8:30pm</td>
-<td>Pre shape &amp; bench rest</td>
-<td></td>
+<tr data-index="5" data-categories="Dressing" data-listing-file-modified-sort="1691761884818" data-listing-reading-time-sort="1" data-listing-title-sort="Lemon Dill Sauce" data-listing-filename-sort="lemon-dill-sauce.qmd">
+<td>
+<a href="../../content/resources/recipes/lemon-dill-sauce.html" class="title listing-title">Lemon Dill Sauce</a>
+</td>
+<td>
+<span class="listing-description">Lemon dill sauce.</span>
+</td>
+<td>
+<span class="listing-Cook Time">5 minutes</span>
+</td>
+<td>
+<span class="listing-categories">Dressing</span>
+</td>
 </tr>
-<tr class="odd">
-<td>9:00pm</td>
-<td>Final shaping &amp; proof</td>
-<td>Place in proofing baskets, cover, place in fridge overnight</td>
+<tr data-index="6" data-categories="Protein,Snack" data-listing-file-modified-sort="1691761672758" data-listing-reading-time-sort="1" data-listing-title-sort="Overnight Protein Oats" data-listing-filename-sort="overnight-protein-oats.qmd">
+<td>
+<a href="../../content/resources/recipes/overnight-protein-oats.html" class="title listing-title">Overnight Protein Oats</a>
+</td>
+<td>
+<span class="listing-description">Overnight protein oats</span>
+</td>
+<td>
+<span class="listing-Cook Time">12 hours</span>
+</td>
+<td>
+<span class="listing-categories">Protein,Snack</span>
+</td>
 </tr>
-<tr class="even">
-<td>9:00am</td>
-<td>Bake</td>
-<td>500 F in dutch oven, 20 min lid on, lower to 450, 15-30 min lid off</td>
+<tr data-index="7" data-categories="Meal" data-listing-file-modified-sort="1691761711556" data-listing-reading-time-sort="1" data-listing-title-sort="Quinoa &amp; Cucumber Salad" data-listing-filename-sort="quinoa-cucumber-salad.qmd">
+<td>
+<a href="../../content/resources/recipes/quinoa-cucumber-salad.html" class="title listing-title">Quinoa &amp; Cucumber Salad</a>
+</td>
+<td>
+<span class="listing-description">Refreshing quinoa and cucumber salad with avacado dressing</span>
+</td>
+<td>
+<span class="listing-Cook Time">30 minutes</span>
+</td>
+<td>
+<span class="listing-categories">Meal</span>
+</td>
+</tr>
+<tr data-index="8" data-categories="Side" data-listing-file-modified-sort="1691762000108" data-listing-reading-time-sort="1" data-listing-title-sort="Rice Pilaf" data-listing-filename-sort="rice-pilaf.qmd">
+<td>
+<a href="../../content/resources/recipes/rice-pilaf.html" class="title listing-title">Rice Pilaf</a>
+</td>
+<td>
+<span class="listing-description">Rice pilaf</span>
+</td>
+<td>
+<span class="listing-Cook Time">45 minutes</span>
+</td>
+<td>
+<span class="listing-categories">Side</span>
+</td>
+</tr>
+<tr data-index="9" data-categories="Bread" data-listing-file-modified-sort="1691761695235" data-listing-reading-time-sort="1" data-listing-title-sort="Sourdough Bread" data-listing-filename-sort="sourdough-bread.qmd">
+<td>
+<a href="../../content/resources/recipes/sourdough-bread.html" class="title listing-title">Sourdough Bread</a>
+</td>
+<td>
+<span class="listing-description">Typical schedule for baking sourdough bread</span>
+</td>
+<td>
+<span class="listing-Cook Time">24 hours</span>
+</td>
+<td>
+<span class="listing-categories">Bread</span>
+</td>
+</tr>
+<tr data-index="10" data-categories="Protein,Snack" data-listing-file-modified-sort="1691762362182" data-listing-reading-time-sort="1" data-listing-title-sort="Turkey Meatballs" data-listing-filename-sort="turkey-meatballs.qmd">
+<td>
+<a href="../../content/resources/recipes/turkey-meatballs.html" class="title listing-title">Turkey Meatballs</a>
+</td>
+<td>
+<span class="listing-description">Ground turkey meatballs</span>
+</td>
+<td>
+<span class="listing-Cook Time">30 minutes</span>
+</td>
+<td>
+<span class="listing-categories">Protein,Snack</span>
+</td>
 </tr>
 </tbody>
+
 </table>
-</section>
-<section id="greek-yogurt-protein-smoothie" class="level2">
-<h2 class="anchored" data-anchor-id="greek-yogurt-protein-smoothie">Greek Yogurt Protein Smoothie</h2>
-<ul>
-<li>1-2 scoops protein powder</li>
-<li>1/2 cup greek yogurt</li>
-<li>1 banana</li>
-<li>1/3 cup berries</li>
-<li>1/2 tbsp flaxseed</li>
-<li>1/3 tbsp chia seed</li>
-<li>1 tbsp honey</li>
-<li>ice &amp; water for desired consistency</li>
-</ul>
-</section>
-<section id="overnight-protein-oats" class="level2">
-<h2 class="anchored" data-anchor-id="overnight-protein-oats">Overnight Protein Oats</h2>
-<ul>
-<li>1-2 scoops protein powder</li>
-<li>90 grams oats</li>
-<li>90 grams greek yogurt</li>
-<li>140 grams milk</li>
-<li>5 grams chia and/or flaxseed</li>
-<li>15 grams honey</li>
-</ul>
-<p>Stir or shake to combine. Refrigerate overnight.</p>
-</section>
-<section id="buffalo-cauliflower" class="level2">
-<h2 class="anchored" data-anchor-id="buffalo-cauliflower">Buffalo Cauliflower</h2>
-<ol type="1">
-<li>Preheat oven to 450 F</li>
-<li><strong>Batter</strong>:
-<ul>
-<li>3/4 cup flour</li>
-<li>1 tsp paprika</li>
-<li>2 tsp garlic powder</li>
-<li>1 tsp salt</li>
-<li>1/2 tsp black pepper</li>
-<li>3/4 cup milk</li>
-</ul></li>
-<li><strong>Sauce</strong>:
-<ul>
-<li>1/4 cup buffalo sauce</li>
-<li>1 tbsp Honey</li>
-<li>1/2 tsp black pepper</li>
-</ul></li>
-<li>Split cauliflower into florets and mix in batter</li>
-<li>Bake for 20 minutes, flip after 10.</li>
-<li>Brush sauce onto cauliflower, bake 10 minutes.</li>
-<li>Flip cauliflower and brush again with sauce, bake 10 minutes.</li>
-</ol>
-</section>
-<section id="quinoa-cucumber-salad" class="level2">
-<h2 class="anchored" data-anchor-id="quinoa-cucumber-salad">Quinoa &amp; Cucumber Salad</h2>
-<ul>
-<li><strong>Salad</strong>:
-<ul>
-<li>2 cups cucumber, spiralized or julienned</li>
-<li>2 cups chopped tomatoes</li>
-<li>2 large avocados, diced</li>
-<li>1 red onion, sliced</li>
-<li>2 cups cooked quinoa</li>
-<li>1 handful chopped parsley (or cilantro)</li>
-</ul></li>
-<li><strong>Dressing</strong> - blend the following:
-<ul>
-<li>1 ripe avocado</li>
-<li>1/4 cup white wine vinegar</li>
-<li>Juice of one lime</li>
-<li>Salt and fresh cracked pepper, to taste</li>
-<li>3/4 cup olive oil</li>
-</ul></li>
-</ul>
-</section>
-<section id="cougar-gold-mac-cheese" class="level2">
-<h2 class="anchored" data-anchor-id="cougar-gold-mac-cheese">Cougar Gold Mac &amp; Cheese</h2>
-<ul>
-<li>6 cups water</li>
-<li>2 1/2 cups pasta</li>
-<li>2 tbsp butter</li>
-<li>2 tbsp all-purpose flour</li>
-<li>1 1/3 cups milk</li>
-<li>1 1/3 cups heavy cream</li>
-<li>1 1/2 cups Cougar Gold, grated</li>
-<li>1 1/2 cups Crimson Fire, grated</li>
-<li>1/2 cup ricotta</li>
-<li>1/2 tbsp chicken bouillon</li>
-<li>ground black pepper, paprika to taste</li>
-<li>1/2 cup fresh breadcrumbs (optional)</li>
-</ul>
-<p>Preheat oven to 350° F.</p>
-<p>Bring the water, salt and pasta to a rolling boil in a medium saucepan. Cook just until tender. Drain pasta, put into prepared baking dish and set aside. Meanwhile prepare the sauce. In a saucepan over medium-low heat, melt 2 tablespoons of butter. While whisking, gradually add the flour. Whisk for about 2 minutes or until golden and bubbling. Very slowly add the milk, whisking constantly to avoid developing lumps. Simmer for 15 minutes until thickened (alfredo sauce consistency), stirring often to prevent mixture from burning. Remove from heat and stir in Cougar cheese, ricotta, chicken bouillon, paprika and black pepper to taste. Pour sauce onto cooked pasta (do not stir). Optionally top with breadcrumbs tossed in melted butter. Bake for 30 minutes until browned and bubbling.</p>
-</section>
-<section id="lemon-dill-sauce" class="level2">
-<h2 class="anchored" data-anchor-id="lemon-dill-sauce">Lemon Dill Sauce</h2>
-<ul>
-<li>1/2 lemon</li>
-<li>1 tsp dill</li>
-<li>4 tbsp olive oil</li>
-<li>1 tsp honey</li>
-<li>1-2 tsp dijon mustard</li>
-<li>1 clove garlic finely minced</li>
-<li>paprika &amp; ground black pepper to taste</li>
-</ul>
-</section>
-<section id="salad-dressing" class="level2">
-<h2 class="anchored" data-anchor-id="salad-dressing">Salad Dressing</h2>
-<ul>
-<li>1/2 cup extra virgin olive oil</li>
-<li>1/3 cup apple cider vinegar</li>
-<li>1/4 cup honey, use maple syrup for vegan</li>
-<li>2 teaspoons balsamic vinegar</li>
-<li>1 teaspoon dijon mustard</li>
-<li>2 cloves garlic finely minced</li>
-<li>pinch of sea salt</li>
-</ul>
-</section>
-<section id="rice-pilaf" class="level2">
-<h2 class="anchored" data-anchor-id="rice-pilaf">Rice Pilaf</h2>
-<ul>
-<li>1 cup rice</li>
-<li>1/8 cup spaghetti noodle broken into 1/4 inch pieces</li>
-<li>1.5 tbsp butter</li>
-<li>1 tsp chicken bouillon</li>
-<li>2 cups water</li>
-</ul>
-<p>Heat the butter in a sauce pan then add rice and noodle. Add boillon to the water and mix to combine then add to sauce pan. Cook on high for 1 minute then cover and simmer for 40 minutes.</p>
-</section>
-<section id="egg-protein-bars" class="level2">
-<h2 class="anchored" data-anchor-id="egg-protein-bars">Egg Protein Bars</h2>
-<ul>
-<li>1.5 lbs sausage</li>
-<li>15 eggs</li>
-<li>10 button mushrooms</li>
-<li>20 cherry tomatoes</li>
-<li>5 ounce container baby spinach</li>
-<li>2 cups cheddar cheese</li>
-<li>Salt and pepper</li>
-</ul>
-<ol type="1">
-<li>Preheat your oven to 350 degrees.</li>
-<li>Heat a large sautee pan on high heat and brown the sausage. Add the mushrooms and sautee until browned, about 3 minutes. Add the spinach and cook for an additional minute, until slightly browned, then add sliced cherry tomatoes, stir, and take off the heat.</li>
-<li>Whisk eggs, salt and pepper, and cheese together, then toss in your sausage and vegetables and whisk.</li>
-<li>Line a deep baking dish with parchment paper, then pour egg mixture on top, and bake at 350 degrees for 40 minutes, until cooked.</li>
-<li>Remove from oven, allow to cool for 20 minutes, then turn over, cut into 5 portions, and wrap.</li>
-</ol>
-</section>
-<section id="buffalo-chicken-meatballs" class="level2">
-<h2 class="anchored" data-anchor-id="buffalo-chicken-meatballs">Buffalo Chicken Meatballs</h2>
-<ul>
-<li>3 lbs ground turkey</li>
-<li>0.75 cup breadcrumbs</li>
-<li>1 tsp salt</li>
-<li>6 ounces crumbled blue cheese</li>
-<li>0.5 cup buffalo sauce</li>
-<li>1 bunch scallions</li>
-<li>3 eggs</li>
-<li>3 garlic cloves</li>
-<li>Amoroso hoagie roll</li>
-<li>Shrettuce</li>
-<li>Sliced tomato</li>
-<li>Pickles</li>
-<li>Ranch</li>
-</ul>
-<ol type="1">
-<li>Add ground turkey, blue cheese, salt, and breadcrumbs to a large bowl.</li>
-<li>Add eggs, buffalo sauce, scallions, and garlic to a blender and blend. Add the wet ingredients to the meat and mix.</li>
-<li>Use an ice cream scoop to scoop out the meatballs onto a parchment lined baking sheet, and bake at 550 degrees for 12 minutes.</li>
-<li>Douse in buffalo sauce and toss.</li>
-<li>Slice a hoagie roll in half, add ranch, lettuce, tomato, and meatballs, and eat.</li>
-</ol>
-</section>
-<section id="hummus" class="level2">
-<h2 class="anchored" data-anchor-id="hummus">Hummus</h2>
-<ul>
-<li>3 cups chickpeas</li>
-<li>1-2 cloves garlic</li>
-<li>1/3 cup tahini</li>
-<li>1 lemon</li>
-<li>drizzle of olive oil</li>
-<li>salt</li>
-</ul>
-<ol type="1">
-<li>Cook the chickpeas well (even canned chickpeas can use a quick simmer!). Overcooked chichpeas = thicker hummus.</li>
-<li>Peel the chickpeas. Chickpea skins are edible, but if you want creamy hummus, peel the chickpeas and discard the skins.</li>
-<li>In a food processor, combine chickpeas, tahini, garlic, lemon, and salt</li>
-<li>For fluffy hummus, add ice cube while blending</li>
-<li>Let the food processor run for 4 to 5 minutes. Run the food processor for a few minutes so the hummus mixture will blend well enough to a smooth texture. Test, and if needed, add a tiny bit of hot water through the opener of the food processor as it’s running to help continue to smooth the hummus even more until it’s utterly creamy.</li>
-<li>Add to a bowl for storing in refridgerator. Top with olive oil.</li>
-</ol>
-</section>
-<section id="others" class="level2">
-<h2 class="anchored" data-anchor-id="others">Others</h2>
-<ul>
-<li><a href="https://www.simplyrecipes.com/recipes/steak_diane/">Steak Diane</a></li>
-<li><a href="https://www.eatwell101.com/cilantro-lime-shrimp-with-zucchini-noodles">Cilantro Lime Shrimp with Zucchini Noodles</a></li>
-</ul>
-
-
-</section>
-
-</main> <!-- /main -->
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -828,10 +760,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
 });
 </script>
-<nav class="page-navigation">
+<nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="../../content/resources/data-management.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Data Management</span>
+      <a href="../../content/resources/index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Resources</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
@@ -846,7 +778,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">Caleb Grant, 2023</div>   
     <div class="nav-footer-center">
       &nbsp;
-    </div>
+    <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/geocoug/toolkit/issues/new" class="toc-action">Report an issue</a></p></div></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">

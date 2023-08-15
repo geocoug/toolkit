@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="14cm" height="3cm" viewBox="11 1 270 49" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="11" y="14">
+    <tspan x="11" y="14">SELECT  count(*) AS sample_count</tspan>
+    <tspan x="11" y="30">FROM    d_sampmain</tspan>
+    <tspan x="11" y="46">WHERE   sample_material='Sediment';</tspan>
+  </text>
+</svg>

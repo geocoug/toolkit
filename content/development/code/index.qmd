@@ -12,3 +12,11 @@ listing:
 
 ::: {#code-listings}
 :::
+
+## Character Encoding
+
+We deal with character encoding issues when importing data to databases all the time.  All databases are encoded in UTF-8, and the most common non-ASCII, non-UTF-8 format is Microsoft's custom encoding, which is CP-1252 (also known as win-1252 and a few other things).  The character encoding of a file can't necessarily be definitively determined by examination, but the Linux command-line tool file generally does a good job.  If you want to change the encoding of a file rather than importing it in a known format, the Linux command-line tool iconv will do that for you.  There's a Python library on PyPI named chardet that will also diagnose file encodings.
+
+For data managers, the workflow is to first guess that encoding errors on data import are due to the file being cp-1252.  That covers about 90% of cases.  Our import tool also automatically diagnoses instances where a file starts with a byte order mark (BOM), which covers most of the rest of the cases.  For the remainders, Geany is usually the quickest way to check the file encoding.
+
+Everything that comes out of our databases is always in UTF-8, so I, at least, don't ordinarily have encoding issues when importing data to R.  For those who use data from other sources, it is a good idea to document a recommended workflow and set of tools.

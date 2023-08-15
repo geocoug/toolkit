@@ -41,6 +41,8 @@ website:
     left:
       - text: "Development"
         href: content/development/index.qmd
+      - text: "Data Management"
+        href: content/data-management/index.qmd
       - text: "Resources"
         href: content/resources/index.qmd
       - text: "Blog"
@@ -69,6 +71,17 @@ website:
           href: content/development/server/index.qmd
           contents:
             - auto: "content/development/server/*"
+    - id: data-management
+      collapse-level: 1
+      align: left
+      style: "docked"
+      contents:
+        - content/data-management/index.qmd
+        - auto: "content/data-management/*"
+        - section: "Processes"
+          href: content/data-management/processes/index.qmd
+          contents:
+            - auto: "content/data-management/processes/*"
     - id: resources
       collapse-level: 2
       align: left

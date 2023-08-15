@@ -1,15 +1,12 @@
 ---
 title: Resources
-description: Resources
+description: Miscellaneous resources
 image: /static/resources/resources.jpg
 listing:
-  contents: "*.qmd"
+  id: resource-listings
   type: grid
-  page-size: 10
-  fields: [image, title, description]
-  sort: 
-    - "title"
-  feed: true
-page-layout: full
+  grid-columns: 4
+  contents:
+    - "recipes.qmd"
+    - "workouts.qmd"
 ---
-

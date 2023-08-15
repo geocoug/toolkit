@@ -14,8 +14,204 @@
 <title>Toolkit</title>
 <link>http://toolkit.goecoug.com/content/blog/index.html</link>
 </image>
-<generator>quarto-1.3.433</generator>
-<lastBuildDate>Wed, 05 Jul 2023 07:00:00 GMT</lastBuildDate>
+<generator>quarto-1.3.450</generator>
+<lastBuildDate>Tue, 08 Aug 2023 07:00:00 GMT</lastBuildDate>
+<item>
+  <title>DIFFing PDF and DOCX files</title>
+  <dc:creator>Caleb Grant</dc:creator>
+  <link>http://toolkit.goecoug.com/content/blog/posts/diff-pdf-and-docx/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>If you have a <code>PDF</code> and <code>DOCX</code> of the <em>same</em> document and want to check for difference in text, use <code>diff</code> to compare them. Since we’re using <code>--word-diff</code>, it doesn’t matter that the two files use <em>wildly</em> different line wrapping.</p>
+<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">gs</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-q</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-sDEVICE</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>txtwrite <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-o-</span> file1.pdf <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> file1.txt</span>
+<span id="cb1-2"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">pandoc</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-t</span> plain file2.docx <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> file2.txt</span>
+<span id="cb1-3"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">git</span> diff <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--no-index</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--word-diff</span> file1.txt file2.txt</span></code></pre></div>
+<p>Or create a shortcut…</p>
+<div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">alias</span> pdfcat=<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'gs -q -sDEVICE=txtwrite -o-'</span></span>
+<span id="cb2-2"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">alias</span> doccat=<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'pandoc -t plain'</span></span>
+<span id="cb2-3"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">pdfcat</span> file1.pdf <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> file1.txt</span>
+<span id="cb2-4"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">doccat</span> file2.docx <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> file2.txt</span>
+<span id="cb2-5"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">git</span> diff <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--no-index</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--word-diff</span> file1.txt file2.txt</span></code></pre></div>
+<p><a href="https://chaos.social/@scy/110854990215865183">Credits</a></p>
+
+
+
+ ]]></description>
+  <category>Linux</category>
+  <category>Utility</category>
+  <guid>http://toolkit.goecoug.com/content/blog/posts/diff-pdf-and-docx/index.html</guid>
+  <pubDate>Tue, 08 Aug 2023 07:00:00 GMT</pubDate>
+  <media:content url="http://toolkit.goecoug.com/static/logo.svg" medium="image" type="image/svg+xml"/>
+</item>
+<item>
+  <title>Quarto Tabsets</title>
+  <dc:creator>Caleb Grant</dc:creator>
+  <link>http://toolkit.goecoug.com/content/blog/posts/quarto-tabsets/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>Tabsets can be useful when you want to show multiple flavors of the same thing. For example, what’s the command to copy files on <a href="../../../../content/development/code/powershell.html">PowerShell</a>, <a href="../../../../content/development/code/cmd.html">CMD</a>, and <a href="../../../../content/development/code/bash.html">Bash</a>?</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs"><li class="nav-item"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" aria-controls="tabset-1-1" aria-selected="true">Bash</a></li><li class="nav-item"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" aria-controls="tabset-1-2" aria-selected="false">PowerShell</a></li><li class="nav-item"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" aria-controls="tabset-1-3" aria-selected="false">CMD</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" aria-labelledby="tabset-1-1-tab">
+<p>Copy a file or directory.</p>
+<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">cp</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-rf</span> file.txt ./output/</span></code></pre></div>
+</div>
+<div id="tabset-1-2" class="tab-pane" aria-labelledby="tabset-1-2-tab">
+<p>Copy a file or directory.</p>
+<div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb2-1">CopyItem <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span>Recurse <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span>Force file<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">txt</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span>\output\</span></code></pre></div>
+</div>
+<div id="tabset-1-3" class="tab-pane" aria-labelledby="tabset-1-3-tab">
+<p>Copy a file or directory.</p>
+<div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb3-1">xcopy file<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">txt</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span>\output\ <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span>E<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">H</span></span></code></pre></div>
+</div>
+</div>
+</div>
+
+
+
+ ]]></description>
+  <category>Quarto</category>
+  <guid>http://toolkit.goecoug.com/content/blog/posts/quarto-tabsets/index.html</guid>
+  <pubDate>Mon, 07 Aug 2023 07:00:00 GMT</pubDate>
+  <media:content url="http://toolkit.goecoug.com/static/logo.svg" medium="image" type="image/svg+xml"/>
+</item>
+<item>
+  <title>Changing your PostgreSQL password</title>
+  <dc:creator>Caleb Grant</dc:creator>
+  <link>http://toolkit.goecoug.com/content/blog/posts/change-postgres-password/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>Open command prompt or PowerShell (Start &gt; type “CMD”&gt; press enter) and enter the command below after you’ve replaced <strong>USERNAME</strong> and <strong>YOUR NEW PASSWORD</strong>. Make sure you don’t delete any of the quotes in this command:</p>
+<p><code>psql -U USERNAME -h env4 -d db_inventory -c "alter role USERNAME with password 'YOUR NEW PASSWORD'"</code></p>
+<p>The command will ask you for your current password once, then set your new password.</p>
+
+
+
+ ]]></description>
+  <category>PostgreSQL</category>
+  <guid>http://toolkit.goecoug.com/content/blog/posts/change-postgres-password/index.html</guid>
+  <pubDate>Tue, 11 Jul 2023 07:00:00 GMT</pubDate>
+  <media:content url="http://toolkit.goecoug.com/static/logo.svg" medium="image" type="image/svg+xml"/>
+</item>
+<item>
+  <title>SFTP</title>
+  <dc:creator>Caleb Grant</dc:creator>
+  <link>http://toolkit.goecoug.com/content/blog/posts/sftp/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<ol type="1">
+<li><p>Allow secure connection for local IP on remote machine</p>
+<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sudo</span> ufw allow from 73.239.143.170 to any port 22</span></code></pre></div></li>
+<li><p>Create SFTP connection to remote from local machine</p>
+<div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">sftp</span> hostname@167.99.102.213</span>
+<span id="cb2-2"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">sftp</span> hostname@167.99.102.213<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'s password: SuperSecret</span></span></code></pre></div></li>
+<li><p>Pull remote files to local machine</p>
+<div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">get</span> {remote-path} {local-path}</span></code></pre></div></li>
+</ol>
+
+
+
+ ]]></description>
+  <category>Linux</category>
+  <guid>http://toolkit.goecoug.com/content/blog/posts/sftp/index.html</guid>
+  <pubDate>Fri, 07 Jul 2023 07:00:00 GMT</pubDate>
+  <media:content url="http://toolkit.goecoug.com/static/logo.svg" medium="image" type="image/svg+xml"/>
+</item>
 <item>
   <title>Mounting a Windows Share</title>
   <dc:creator>Caleb Grant</dc:creator>
@@ -85,81 +281,6 @@ font-style: inherit;">//192.168.50.19/Transfer</span> /mnt/share/Q cifs credenti
   <category>Linux</category>
   <guid>http://toolkit.goecoug.com/content/blog/posts/mounting-a-windows-share/index.html</guid>
   <pubDate>Wed, 05 Jul 2023 07:00:00 GMT</pubDate>
-  <media:content url="http://toolkit.goecoug.com/static/logo.svg" medium="image" type="image/svg+xml"/>
-</item>
-<item>
-  <title>Quarto Tabsets</title>
-  <dc:creator>Caleb Grant</dc:creator>
-  <link>http://toolkit.goecoug.com/content/blog/posts/quarto-tabsets/index.html</link>
-  <description><![CDATA[ 
-
-
-
-
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs"><li class="nav-item"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" aria-controls="tabset-1-1" aria-selected="true">Python</a></li><li class="nav-item"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" aria-controls="tabset-1-2" aria-selected="false">JavaScript</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" aria-labelledby="tabset-1-1-tab">
-<p><strong>Markup</strong>:</p>
-<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><span class="in" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">```{py}</span></span>
-<span id="cb1-2"><span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Hello World"</span>)</span>
-<span id="cb1-3"><span class="in" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">```</span></span></code></pre></div>
-<p><strong>Output</strong>:</p>
-<div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode py code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Hello World"</span>)</span></code></pre></div>
-</div>
-<div id="tabset-1-2" class="tab-pane" aria-labelledby="tabset-1-2-tab">
-<p><strong>Markup</strong>:</p>
-<div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><span class="in" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">```{js}</span></span>
-<span id="cb3-2"><span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">console</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">log</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Hello World"</span>)<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">;</span></span>
-<span id="cb3-3"><span class="in" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">```</span></span></code></pre></div>
-<p><strong>Output</strong>:</p>
-<div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb4-1"><span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">console</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">log</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Hello World"</span>)<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">;</span></span></code></pre></div>
-</div>
-</div>
-</div>
-
-
-
- ]]></description>
-  <category>Quarto</category>
-  <guid>http://toolkit.goecoug.com/content/blog/posts/quarto-tabsets/index.html</guid>
-  <pubDate>Mon, 03 Jul 2023 07:00:00 GMT</pubDate>
   <media:content url="http://toolkit.goecoug.com/static/logo.svg" medium="image" type="image/svg+xml"/>
 </item>
 <item>
@@ -315,7 +436,7 @@ font-style: inherit;"># inherit permissions for newly created files/folders</spa
 
 
 
-<p>To add a post, create a copy of <code>blog/posts/_template</code>, modify the folder name with the title of the post, then update the <code>index.qmd</code> with your content. New posts under <code>blog/posts</code> will show up in the <a href="../../../../blog/index.qmd">blog listings</a> when the site is rendered.</p>
+<p>To add a post, create a copy of <code>blog/posts/_template</code>, modify the folder name with the title of the post, then update the <code>index.qmd</code> with your content. New posts under <code>blog/posts</code> will show up in the <a href="../../../../content/blog/index.html">blog listings</a> when the site is rendered.</p>
 
 
 

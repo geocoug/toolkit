@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Data Management standards, concepts, tools, and processes.">
+
+<title>Toolkit - Data Management</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../content/data-management/best-practices.html" rel="next">
+<link href="../..//static/favicon.ico" rel="icon">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": true,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous">
+</script>
+
+
+<link rel="stylesheet" href="../../static/styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../static/logo.svg" alt="" class="navbar-logo">
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../content/development/index.html" rel="" target="">
+ <span class="menu-text">Development</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../../content/data-management/index.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Data Management</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../content/resources/index.html" rel="" target="">
+ <span class="menu-text">Resources</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../content/blog/index.html" rel="" target="">
+ <span class="menu-text">Blog</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../content/data-management/index.html">Data Management</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/data-management/index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Data Management</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/data-management/best-practices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Best Practices</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/data-management/data-quality.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Quality</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/data-management/data-literacy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Literacy</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/data-management/data-issues.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Issue Tracking</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/data-management/guidance-and-tips.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Guidance and Tips</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../content/data-management/processes/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Processes</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/data-management/processes/estimating-data-management-efforts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Estimating Data Management Efforts</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/data-management/processes/data-management-workflow-for-sampling-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Management Workflow for Sampling Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/data-management/processes/data-management-workflow-for-historical-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Management Workflow for Historical Data</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#goals" id="toc-goals" class="nav-link active" data-scroll-target="#goals">Goals</a></li>
+  <li><a href="#data-management-standards" id="toc-data-management-standards" class="nav-link" data-scroll-target="#data-management-standards">Data Management Standards</a></li>
+  <li><a href="#data-management-activities" id="toc-data-management-activities" class="nav-link" data-scroll-target="#data-management-activities">Data Management Activities</a>
+  <ul class="collapse">
+  <li><a href="#project-planning" id="toc-project-planning" class="nav-link" data-scroll-target="#project-planning">Project Planning</a></li>
+  <li><a href="#data-acquisition" id="toc-data-acquisition" class="nav-link" data-scroll-target="#data-acquisition">Data Acquisition</a></li>
+  <li><a href="#data-quality-assessment" id="toc-data-quality-assessment" class="nav-link" data-scroll-target="#data-quality-assessment">Data Quality Assessment</a></li>
+  <li><a href="#data-organization-standardization-and-centralization" id="toc-data-organization-standardization-and-centralization" class="nav-link" data-scroll-target="#data-organization-standardization-and-centralization">Data Organization, Standardization, and Centralization</a></li>
+  <li><a href="#document-and-file-management" id="toc-document-and-file-management" class="nav-link" data-scroll-target="#document-and-file-management">Document and file management</a></li>
+  <li><a href="#data-summarization-analysis-reporting-and-visualization" id="toc-data-summarization-analysis-reporting-and-visualization" class="nav-link" data-scroll-target="#data-summarization-analysis-reporting-and-visualization">Data Summarization, Analysis, Reporting, and Visualization</a></li>
+  <li><a href="#data-exchange-with-clients-agencies-and-other-consultants" id="toc-data-exchange-with-clients-agencies-and-other-consultants" class="nav-link" data-scroll-target="#data-exchange-with-clients-agencies-and-other-consultants">Data exchange with clients, agencies, and other consultants</a></li>
+  <li><a href="#project-closeout" id="toc-project-closeout" class="nav-link" data-scroll-target="#project-closeout">Project closeout</a></li>
+  </ul></li>
+  <li><a href="#data-management-planning" id="toc-data-management-planning" class="nav-link" data-scroll-target="#data-management-planning">Data Management Planning</a></li>
+  <li><a href="#documentation" id="toc-documentation" class="nav-link" data-scroll-target="#documentation">Documentation</a></li>
+  <li><a href="#data-management-resources-and-tools" id="toc-data-management-resources-and-tools" class="nav-link" data-scroll-target="#data-management-resources-and-tools">Data Management Resources and Tools</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/geocoug/toolkit/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Data Management</h1>
+</div>
+
+<div>
+  <div class="description">
+    Data Management standards, concepts, tools, and processes.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>Data management staff support internal and external clients by compiling, organizing, and standardizing data so that it is available and suitable for technical analyses; by conducting geospatial analyses and producing map figures; by carrying out a variety of data summarization and data analysis tasks including statistical analyses, graphic visualization, and data modeling; and by developing web sites for presentation of data and analytical results.</p>
+<p>Data are the foundation of most of the decision support services. Interpretations, assessments, judgments, and recommendations can only be as good as the underlying data. Because data are often voluminous and complex, data management practices should have established goals, standards, practices, and tools for handling data efficiently and consistently.</p>
+<section id="goals" class="level2">
+<h2 class="anchored" data-anchor-id="goals">Goals</h2>
+<p>Data management standards and practices are designed to meet the following goals:</p>
+<div class="grid">
+<div class="g-col-10">
+<ul>
+<li>Establish and maintain the highest level of data quality that is consistent with the needs of each project. <a href="../../content/data-management/data-quality.html#data-quality-dimensions">Six dimensions of data quality</a>, and the approaches to handling them, are described on the <a href="../../content/data-management/data-quality.html">Data Quality</a> page.</li>
+<li>Establish data security: ensuring that clients’ data are available only to authorized project staff, and that data revisions are controlled and documented.</li>
+<li>Ensure that data are accessible and available to project staff either directly or with the assistance of experienced data managers.</li>
+<li>Carry out data summarization and analysis using consistent, efficient, and technically appropriate methods, including both standard and cutting-edge analysis methods.</li>
+<li>Document the provenance, handling, and history of each data set, providing traceability analogous to chain-of-custody procedures for digital data.</li>
+</ul>
+</div>
+<div class="g-col-2">
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="../../static/data-management/data-to-action.svg" height="360" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="data-management-standards" class="level2">
+<h2 class="anchored" data-anchor-id="data-management-standards">Data Management Standards</h2>
+<p>The following data management standards help assure that data management activities are carried out efficiently, consistently, flexibly, and reliably within and across projects.</p>
+<ul>
+<li>Use of a centralized, standardized, authoritative database (ordinarily IDB for environmental data).</li>
+<li>Adhering to <a href="../../content/data-management/best-practices.html">data management best practices</a>.</li>
+<li>Use of scripts to perform all changes to data.</li>
+<li>Documentation
+<ul>
+<li>Data Management Plan</li>
+<li>Completed checklists</li>
+<li><a href="../../content/development/code/sql.html#script-header">Script documentation</a></li>
+<li><a href="../../content/data-management/data-issues.html">Issue logs</a></li>
+</ul></li>
+<li>Templates for entry and uploading of field sampling information.</li>
+<li>Checklists for project initiation, data set evaluation, and other activities</li>
+<li>EDD templates for laboratory analytical results</li>
+</ul>
+</section>
+<section id="data-management-activities" class="level2">
+<h2 class="anchored" data-anchor-id="data-management-activities">Data Management Activities</h2>
+<p>Data management is not a single activity that occurs at a discrete point in a project. Data management consists of a set of interrelated activities–acquisition, organization, summarization, analysis, and presentation of data, among others–that runs through, and connects, other project tasks. Project tasks, and their data management elements, are described briefly below.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../static/data-management/field-data-dfd.svg" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<section id="project-planning" class="level3">
+<h3 class="anchored" data-anchor-id="project-planning">Project Planning</h3>
+<p>Incorporation of data management planning into overall project planning helps to ensure that appropriate staff, tools, and budget are available, and that schedules and responsibilities are aligned so that data quality objectives are met. The pages on data management plans, data management checklists, workflows for sampling and historical data, and budgeting provide additional information and tools.</p>
+</section>
+<section id="data-acquisition" class="level3">
+<h3 class="anchored" data-anchor-id="data-acquisition">Data Acquisition</h3>
+<p>Project data may be obtained from a variety of sources, each needing different strategies to identify, obtain, review, and standardize the data. Data management staff can lead, guide, or perform these activities.</p>
+</section>
+<section id="data-quality-assessment" class="level3">
+<h3 class="anchored" data-anchor-id="data-quality-assessment">Data Quality Assessment</h3>
+<p>Assessment of data quality may be required at several different points in a project, and vary depending on the type and origin of the data. Data management staff work closely with analytical chemists, quality assurance specialists, and other technical staff to perform or support screening-level and in-depth technical analyses of data quality. The Data Quality page contains more in-depth information on the dimensions of data quality and our approaches to assess, improve, and document it.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../static/data-management/qa-coding.jpg" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="data-organization-standardization-and-centralization" class="level3">
+<h3 class="anchored" data-anchor-id="data-organization-standardization-and-centralization">Data Organization, Standardization, and Centralization</h3>
+<p>Core elements of data quality are that data are unambiguous, do not contain internal inconsistencies, and are centrally available to avoid problems resulting from multiple versions of a data set. Organization of data to meet these requirements is one of the core functions of data management activities. Key goals of these data management activities are to ensure that data are:</p>
+<ul>
+<li>As correct as possible, internally consistent, and unambiguous</li>
+<li>Handled consistently across all projects</li>
+<li>Centralized to prevent proliferation of multiple inconsistent versions</li>
+<li>Readily available to project technical staff in whatever formats are needed</li>
+<li>Managed efficiently and consistently across changes in staff availability.</li>
+</ul>
+<p>Data management staff use databases instead of spreadsheets because databases provide better data integrity, speed, documentation, replicability of operations, QA-ability of operations, security, and automated backups.</p>
+</section>
+<section id="document-and-file-management" class="level3">
+<h3 class="anchored" data-anchor-id="document-and-file-management">Document and file management</h3>
+<p>Documents and files must not only ordinarily be managed to establish the provenance of project data, but management of documents or files may be a completely separate project goal or requirement. Different tools are appropriate–and available–for document and file management in different circumstances.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../static/data-management/document-management.jpg" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="data-summarization-analysis-reporting-and-visualization" class="level3">
+<h3 class="anchored" data-anchor-id="data-summarization-analysis-reporting-and-visualization">Data Summarization, Analysis, Reporting, and Visualization</h3>
+<p>Many complex data summaries can be automated so that they can be conducted reliably and efficiently, and easily revised and updated. Quality assurance reviews can be more easily conducted on automated (scripted) processes than on point-and-click processes. Database, GIS, and statistical tools all support automation of data summarization, analysis and visualization tasks. A set of standard data summaries can be easily adapted to meet most common data summarization and analysis needs.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../static/data-management/vertical-profiles.png" class="img-fluid figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+</section>
+<section id="data-exchange-with-clients-agencies-and-other-consultants" class="level3">
+<h3 class="anchored" data-anchor-id="data-exchange-with-clients-agencies-and-other-consultants">Data exchange with clients, agencies, and other consultants</h3>
+<p>When data are to be provided to clients or other consultants, the data should be complete, have well-established data integrity, have documented data quality, and be provided in a well-defined format.</p>
+</section>
+<section id="project-closeout" class="level3">
+<h3 class="anchored" data-anchor-id="project-closeout">Project closeout</h3>
+<p>When a project is completed, or even when it is put on hold for a lengthy period, there may be tracking and documentation tasks to be completed. Project data may be set to read-only so that it cannot be subsequently modified in any way for any reason. Automatic backups of project data should ordinarily be discontinued and a final archive copy of the complete set of data created. These steps will ensure that the future value of the data will not be lost to the client.</p>
+<p>Many project activities such as sample collection, sample analysis, and data analysis occur in a sequence, like beads on a thread. However, data management activities, like project management activities, run through and connect all of these other activities.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../static/data-management/pm-dm-threads.png" class="img-fluid figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+<p>An analogy can also be made to the somatic systems of a vertebrate: there are organs with specialized functions like the lungs, liver, kidneys, eyes, skin, and musculo-skeletal systems, and there are also systems that connect these so that they interact and work together: the nervous system (a project management analogue) and the circulatory system (a data management analogue).</p>
+<p>The data management activities that are carried out throughout a project’s lifecycle are conducted partly in sequence and partly in parallel.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../static/data-management/project-data-lifecycle.svg" class="img-fluid figure-img" style="width:75.0%"></p>
+</figure>
+</div>
+</section>
+</section>
+<section id="data-management-planning" class="level2">
+<h2 class="anchored" data-anchor-id="data-management-planning">Data Management Planning</h2>
+<div class="grid">
+<div class="g-col-6">
+<p>Planning for data management activities helps to avoid later surprises about the type or amount of work required to support creation of project deliverables. Data management activities should be integrated with other project activities, and both the tasks to be completed and the level of effort required should be planned so that they contribute to meeting project goals. Planning data management activities early in the project helps to ensure that they are carried out consistently and efficiently, and that appropriate tools and skilled personnel are available. In some cases you may get by without planning, relying only on the skills and experience of data management staff. In those cases, however, data management activities for your project will most likely be carried out according to the plan for some other project–or maybe even pieces and parts of several different projects if several people work on the project without any common plan.</p>
+<p>Data management activities should be incorporated into the project plan. A standalone data management plan (DMP) may be required for projects conducted under the oversight of regulatory agencies, but even when it is not required, a DMP will provide all project staff with a reference and resource for conducting the work consistently and efficiently. Documenting data management standards and approaches is particularly valuable for projects where personnel may change over time. A DMP need not be complex, and may evolve over the course of a project. To simplify the creation of a project-specific DMP, a template is available to use as a foundation. This template describes default standards and approaches for data management activities, and may be useful for project planning even if a project-specific DMP is not required.</p>
+</div>
+<div class="g-col-6">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../static/data-management/data-workflow.svg" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="documentation" class="level2">
+<h2 class="anchored" data-anchor-id="documentation">Documentation</h2>
+<p>Documentation of project data management activities includes some or all of the following components:</p>
+<ul>
+<li>A data management plan (DMP)</li>
+<li>A data managers’ manual (DMM)</li>
+<li>Data management SOPs</li>
+<li>A revision date and the data manager’s name automatically recorded on every row of every table</li>
+<li>An audit log that automatically records every addition, deletion, and modification to every table</li>
+<li>Notes in the <a href="../../content/development/code/sql.html#script-header">header of SQL scripts</a></li>
+<li><a href="../../content/data-management/data-issues.html#data-issue-tracking">Logs of data issues and resolutions</a></li>
+<li>Logs of script actions</li>
+<li>Custom logs of script actions that may be created by the data manager and some standard scripts.</li>
+</ul>
+<p>See the page on data management <a href="../../content/data-management/processes/index.html#data-management-procedures-processes-and-workflows">procedures, processes, and workflows</a> for additional information.</p>
+</section>
+<section id="data-management-resources-and-tools" class="level2">
+<h2 class="anchored" data-anchor-id="data-management-resources-and-tools">Data Management Resources and Tools</h2>
+<ul>
+<li>Boilerplate text and presentations on data management topics.</li>
+<li>ExecSQL, a Python program that is the primary tool for automating data management operations.</li>
+<li>Additional software tools for data manipulation, available to network and Citrix users. Some of these are open-source, others were developed by data management staff.</li>
+<li>Design documents and tools for environmental databases, including:
+<ul>
+<li>SQL code to initialize a new PostgreSQL instance of the database</li>
+<li>Specifications for field and laboratory electronic data deliverables (EDDs), including import procedures and SQL scripts to carry out QA checks and data loading.</li>
+<li>A library of SQL code to carry out common (or complex) data summarizations</li>
+<li>A (Python) software tool for running a SQL script on multiple PostgreSQL databases sequentially.</li>
+<li>An Access template for loading and export of data (using the dbmigrator program, see below)</li>
+</ul></li>
+<li>Tools to review the inventory of project databases.</li>
+<li>Software tools to assist with manipulation of data files (e.g., automated editing and crosstabbing and un-crosstabbing CSV files).</li>
+<li>A (Python) software tool to assist with exporting database audit log data.</li>
+<li>ArcGIS templates.</li>
+<li>Common data, such as data sets with national scope.</li>
+<li>Project-specific data sets and ArcGIS project files used by GIS staff.</li>
+<li>Boilerplate text and presentations related to data analysis</li>
+<li>Technical approaches and guidance on a variety of topics</li>
+<li>A library of R scripts for data analysis and presentation</li>
+<li>A library of MATLAB scripts for data analysis</li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp("http:\/\/toolkit\.goecoug\.com");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../content/data-management/best-practices.html" class="pagination-link">
+        <span class="nav-page-text">Best Practices</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Caleb Grant, 2023</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/geocoug/toolkit">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>

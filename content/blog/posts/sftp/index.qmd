@@ -1,0 +1,26 @@
+---
+title: SFTP
+description: Steps for pulling server files to local machine via sftp
+author: Caleb Grant
+date: 2023-07-07
+categories: [Linux]
+---
+
+1. Allow secure connection for local IP on remote machine
+
+    ```sh
+    sudo ufw allow from 73.239.143.170 to any port 22
+    ```
+
+1. Create SFTP connection to remote from local machine
+
+   ```sh
+   sftp hostname@167.99.102.213
+   sftp hostname@167.99.102.213's password: SuperSecret
+   ```
+
+1. Pull remote files to local machine
+
+    ```sh
+    get {remote-path} {local-path}
+    ```

@@ -1,0 +1,11 @@
+{
+  "hash": "31efd49c3f3a754f85a67ca98136db86",
+  "result": {
+    "markdown": "---\ntitle: Shoulders\ndescription: Shoulders\n---\n\n::: {.cell execution_count=1}\n``` {.python .cell-code}\nimport pandas as pd\n\nworkouts = \"../../../static/resources/workouts.xlsx\"\nw1 = pd.read_excel(workouts, sheet_name=0)\nw2 = pd.read_excel(workouts, sheet_name=1)\nw3 = pd.read_excel(workouts, sheet_name=2)\nw4 = pd.read_excel(workouts, sheet_name=3)\nschedule = pd.read_excel(workouts, sheet_name=4)\n```\n:::\n\n\n## Test Output\n\n::: {.cell execution_count=2}\n``` {.python .cell-code}\nschedule.to_html(index=False, render_links=True)\n```\n\n::: {.cell-output .cell-output-display execution_count=4}\n<table border=\"1\" class=\"dataframe\">\\n  <thead>\\n    <tr style=\"text-align: right;\">\\n      <th>Week</th>\\n      <th>Sunday</th>\\n      <th>Monday</th>\\n      <th>Tuesday</th>\\n      <th>Wednesday</th>\\n      <th>Thursday</th>\\n      <th>Friday</th>\\n      <th>Saturday</th>\\n    </tr>\\n  </thead>\\n  <tbody>\\n    <tr>\\n      <td>1</td>\\n      <td>Cardio</td>\\n      <td>Chest &amp; Triceps, Run</td>\\n      <td>Back &amp; Biceps</td>\\n      <td>Shoulders &amp; Traps, Run</td>\\n      <td>Legs</td>\\n      <td>Chest &amp; Triceps, Run</td>\\n      <td>Cardio</td>\\n    </tr>\\n    <tr>\\n      <td>2</td>\\n      <td>Cardio</td>\\n      <td>Shoulders &amp; Traps, Run</td>\\n      <td>Chest &amp; Triceps</td>\\n      <td>Back &amp; Biceps, Run</td>\\n      <td>Legs</td>\\n      <td>Shoulders &amp; Traps, Run</td>\\n      <td>Cardio</td>\\n    </tr>\\n    <tr>\\n      <td>3</td>\\n      <td>Cardio</td>\\n      <td>Back &amp; Biceps, Run</td>\\n      <td>Shoulders &amp; Traps</td>\\n      <td>Chest &amp; Triceps, Run</td>\\n      <td>Legs</td>\\n      <td>Back &amp; Biceps, Run</td>\\n      <td>Cardio</td>\\n    </tr>\\n    <tr>\\n      <td>4</td>\\n      <td>Cardio</td>\\n      <td>Chest &amp; Triceps, Run</td>\\n      <td>Legs</td>\\n      <td>Shoulders &amp; Traps, Run</td>\\n      <td>Legs</td>\\n      <td>Back &amp; Biceps, Run</td>\\n      <td>Cardio</td>\\n    </tr>\\n  </tbody>\\n</table>\n:::\n:::\n\n\n",
+    "supporting": [
+      "shoulders_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

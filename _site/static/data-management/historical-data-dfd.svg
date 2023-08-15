@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="65cm" height="73cm" viewBox="-2 56 1286 1459" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="-0.806544" y="57.5896" width="1283.98" height="1456.7"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-0.806544" y="57.5896" width="1283.98" height="1456.7"/>
+  </g>
+  <g>
+    <ellipse style="fill: #e8c85c" cx="103.119" cy="152.872" rx="69.6387" ry="65.1283"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="103.119" cy="152.872" rx="69.6387" ry="65.1283"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="103.119" y="140.772">
+      <tspan x="103.119" y="140.772">P1. Data</tspan>
+      <tspan x="103.119" y="156.772">management</tspan>
+      <tspan x="103.119" y="172.772">planning</tspan>
+    </text>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 270.271,145.127 A 266.902,266.902 0 0 0 171.568,136.63"/>
+    <polygon style="fill: #000000" points="277.463,147.237 266.416,148.959 270.318,144.956 269.457,139.432 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="277.463,147.237 266.416,148.959 270.318,144.956 269.457,139.432 "/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="191.863" y="108.461">
+    <tspan x="191.863" y="108.461">F25. Data</tspan>
+    <tspan x="191.863" y="124.461">sources</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="769.588" y="1365.77">
+    <tspan x="769.588" y="1365.77"></tspan>
+  </text>
+  <g>
+    <text font-size="15.8496" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="119.765" y="857.868">
+      <tspan x="119.765" y="857.868">Key</tspan>
+    </text>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="112.953" y1="862.304" x2="312.868" y2="863.166"/>
+    <g>
+      <ellipse style="fill: #e8c85c" cx="141.186" cy="900.624" rx="17.5498" ry="17.8161"/>
+      <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="141.186" cy="900.624" rx="17.5498" ry="17.8161"/>
+      <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="141.186" y="904.524">
+        <tspan x="141.186" y="904.524"></tspan>
+      </text>
+    </g>
+    <g>
+      <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 122.158,932.362 A 24.7553,24.7553 0 0 0 151.832,949.29"/>
+      <polygon style="fill: #000000" points="158.39,946.737 153.135,956.605 152.276,951.081 147.342,948.454 "/>
+      <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="158.39,946.737 153.135,956.605 152.276,951.081 147.342,948.454 "/>
+    </g>
+    <g>
+      <rect style="fill: #a9caaf" x="113.526" y="973.374" width="55.3197" height="22"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="113.526" y="973.374" width="55.3197" height="22"/>
+      <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="119.058" y1="973.374" x2="119.058" y2="995.374"/>
+      <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="163.314" y1="973.374" x2="163.314" y2="995.374"/>
+      <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="141.186" y="988.374">
+        <tspan x="141.186" y="988.374"></tspan>
+      </text>
+    </g>
+    <g>
+      <rect style="fill: #d8e5e5" x="118.377" y="1010.02" width="45.6169" height="38"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="118.377" y="1010.02" width="45.6169" height="38"/>
+      <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="141.186" y="1032.92">
+        <tspan x="141.186" y="1032.92"></tspan>
+      </text>
+    </g>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="209.278" y="905.624">
+      <tspan x="209.278" y="905.624">Process</tspan>
+    </text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="209.278" y="946.122">
+      <tspan x="209.278" y="946.122">Data flow</tspan>
+    </text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="209.278" y="987.744">
+      <tspan x="209.278" y="987.744">Data store</tspan>
+    </text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="209.278" y="1032.93">
+      <tspan x="209.278" y="1032.93">Organization</tspan>
+    </text>
+  </g>
+  <g>
+    <ellipse style="fill: #e8c85c" cx="342.699" cy="177.63" rx="69.6387" ry="65.1283"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="342.699" cy="177.63" rx="69.6387" ry="65.1283"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="342.699" y="165.53">
+      <tspan x="342.699" y="165.53">P15. Identify</tspan>
+      <tspan x="342.699" y="181.53">historical</tspan>
+      <tspan x="342.699" y="197.53">data sets</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #a9caaf" x="933.908" y="304.918" width="173.423" height="60.8764"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="933.908" y="304.918" width="173.423" height="60.8764"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="951.25" y1="304.918" x2="951.25" y2="365.794"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="1089.99" y1="304.918" x2="1089.99" y2="365.794"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="1020.62" y="331.356">
+      <tspan x="1020.62" y="331.356">D3. Project data</tspan>
+      <tspan x="1020.62" y="347.356">library</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #a9caaf" x="717.516" y="828.418" width="222.059" height="77.4496"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="717.516" y="828.418" width="222.059" height="77.4496"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="739.722" y1="828.418" x2="739.722" y2="905.868"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="917.37" y1="828.418" x2="917.37" y2="905.868"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="828.546" y="863.143">
+      <tspan x="828.546" y="863.143">D2. Project</tspan>
+      <tspan x="828.546" y="879.143">database</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #a9caaf" x="486.8" y="314.732" width="173.423" height="60.8764"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="486.8" y="314.732" width="173.423" height="60.8764"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="504.142" y1="314.732" x2="504.142" y2="375.608"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="642.881" y1="314.732" x2="642.881" y2="375.608"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="573.512" y="341.17">
+      <tspan x="573.512" y="341.17">D5. Data set</tspan>
+      <tspan x="573.512" y="357.17">inventory</tspan>
+    </text>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="963.55" y="202.5">
+    <tspan x="963.55" y="202.5">F31. Historical</tspan>
+    <tspan x="963.55" y="218.5">data sets</tspan>
+  </text>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 547.047,305.961 A 352.646,352.646 0 0 0 409.507,199.121"/>
+    <polygon style="fill: #000000" points="551.591,311.924 541.643,306.822 547.153,305.878 549.704,300.904 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="551.591,311.924 541.643,306.822 547.153,305.878 549.704,300.904 "/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="386.672" y="261.388">
+    <tspan x="386.672" y="261.388">F26. Data set</tspan>
+    <tspan x="386.672" y="277.388">description and</tspan>
+    <tspan x="386.672" y="293.388">status information</tspan>
+  </text>
+  <g>
+    <ellipse style="fill: #e8c85c" cx="779.993" cy="201.017" rx="69.6387" ry="65.1283"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="779.993" cy="201.017" rx="69.6387" ry="65.1283"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="779.993" y="188.917">
+      <tspan x="779.993" y="188.917">P17. Acquire</tspan>
+      <tspan x="779.993" y="204.917">historical</tspan>
+      <tspan x="779.993" y="220.917">data sets</tspan>
+    </text>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 702.987,222.508 A 269.454,269.454 0 0 0 592.501,313.728"/>
+    <polygon style="fill: #000000" points="709.867,219.531 702.476,227.92 702.915,222.347 698.721,218.652 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="709.867,219.531 702.476,227.92 702.915,222.347 698.721,218.652 "/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="594.96" y="200.32">
+    <tspan x="594.96" y="200.32">F29. Data</tspan>
+    <tspan x="594.96" y="216.32">set</tspan>
+    <tspan x="594.96" y="232.32">decription</tspan>
+  </text>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 670.738,355.14 A 144.633,144.633 0 0 0 771.027,266.6"/>
+    <polygon style="fill: #000000" points="663.431,356.766 672.406,350.099 670.817,355.458 674.15,359.945 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="663.431,356.766 672.406,350.099 670.817,355.458 674.15,359.945 "/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="661.48" y="287.56">
+    <tspan x="661.48" y="287.56">F30. Data set</tspan>
+    <tspan x="661.48" y="303.56">status</tspan>
+  </text>
+  <g>
+    <ellipse style="fill: #e8c85c" cx="444.117" cy="619.352" rx="69.6387" ry="65.1283"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="444.117" cy="619.352" rx="69.6387" ry="65.1283"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="444.117" y="607.252">
+      <tspan x="444.117" y="607.252">P16. Evaluate</tspan>
+      <tspan x="444.117" y="623.252">value of</tspan>
+      <tspan x="444.117" y="639.252">data set</tspan>
+    </text>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 1003.92,295.318 A 196.505,196.505 0 0 0 850.332,194.86"/>
+    <polygon style="fill: #000000" points="1007.44,301.935 998.544,295.16 1004.13,295.202 1007.52,290.755 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1007.44,301.935 998.544,295.16 1004.13,295.202 1007.52,290.755 "/>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 488.92,556.394 A 644.132,644.132 0 0 0 566.201,376.616"/>
+    <polygon style="fill: #000000" points="484.912,562.732 486.139,551.62 488.982,556.433 494.538,557.046 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="484.912,562.732 486.139,551.62 488.982,556.433 494.538,557.046 "/>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 932.916,343.559 A 787.269,787.269 0 0 0 496.67,562.032"/>
+    <polygon style="fill: #000000" points="491.358,567.326 494.826,556.697 496.628,561.989 501.942,563.723 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="491.358,567.326 494.826,556.697 496.628,561.989 501.942,563.723 "/>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 453.553,694.587 A 269.248,269.248 0 0 0 716.516,893.023"/>
+    <polygon style="fill: #000000" points="451.674,687.33 458.821,695.928 453.383,694.633 449.084,698.207 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="451.674,687.33 458.821,695.928 453.383,694.633 449.084,698.207 "/>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 477.169,364.182 A 159.892,159.892 0 0 0 406.419,563.532"/>
+    <polygon style="fill: #000000" points="483.791,360.687 476.927,369.512 477.025,363.923 472.613,360.491 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="483.791,360.687 476.927,369.512 477.025,363.923 472.613,360.491 "/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="462.8" y="433.188">
+    <tspan x="462.8" y="433.188">F27. Data</tspan>
+    <tspan x="462.8" y="449.188">set</tspan>
+    <tspan x="462.8" y="465.188">decription</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="326.29" y="414.352">
+    <tspan x="326.29" y="414.352">F28. Data set</tspan>
+    <tspan x="326.29" y="430.352">status</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="807.016" y="326.822">
+    <tspan x="807.016" y="326.822">F32. Data set</tspan>
+    <tspan x="807.016" y="342.822">characteristics</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="378.044" y="800.936">
+    <tspan x="378.044" y="800.936">F36. Compiled</tspan>
+    <tspan x="378.044" y="816.936">data characteristics</tspan>
+  </text>
+  <g>
+    <ellipse style="fill: #e8c85c" cx="930.143" cy="512.71" rx="69.6387" ry="65.1283"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="930.143" cy="512.71" rx="69.6387" ry="65.1283"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="930.143" y="508.61">
+      <tspan x="930.143" y="508.61">P18. Load</tspan>
+      <tspan x="930.143" y="524.61">data set</tspan>
+    </text>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 1001.51,478.649 A 118.847,118.847 0 0 0 1033.12,366.793"/>
+    <polygon style="fill: #000000" points="996.069,483.778 1000.47,473.5 1001.79,478.931 1006.93,481.131 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="996.069,483.778 1000.47,473.5 1001.79,478.931 1006.93,481.131 "/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="1049.38" y="452.424">
+    <tspan x="1049.38" y="452.424">F33 data set</tspan>
+  </text>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 878.195,820.078 A 306.778,306.778 0 0 0 947.018,576.885"/>
+    <polygon style="fill: #000000" points="873.3,825.756 876.265,814.976 878.313,820.177 883.703,821.66 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="873.3,825.756 876.265,814.976 878.313,820.177 883.703,821.66 "/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="940.07" y="747.812">
+    <tspan x="940.07" y="747.812">F34. Standardized data</tspan>
+  </text>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 616.735,382.707 A 622.707,622.707 0 0 0 860.709,500.512"/>
+    <polygon style="fill: #000000" points="610.878,378.023 621.787,380.476 616.688,382.767 615.462,388.221 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="610.878,378.023 621.787,380.476 616.688,382.767 615.462,388.221 "/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="777.924" y="446.204">
+    <tspan x="777.924" y="446.204">F35 data</tspan>
+    <tspan x="777.924" y="462.204">set status</tspan>
+  </text>
+  <g>
+    <ellipse style="fill: #e8c85c" cx="994.077" cy="1174.51" rx="76.0975" ry="73.5489"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="994.077" cy="1174.51" rx="76.0975" ry="73.5489"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="994.077" y="1162.41">
+      <tspan x="994.077" y="1162.41">P11. Data</tspan>
+      <tspan x="994.077" y="1178.41">usability</tspan>
+      <tspan x="994.077" y="1194.41">assessment</tspan>
+    </text>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 1014.73,1092.79 A 216.557,216.557 0 0 0 926.396,906.871"/>
+    <polygon style="fill: #000000" points="1014.23,1100.27 1010.22,1089.84 1014.95,1092.81 1020.17,1090.8 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1014.23,1100.27 1010.22,1089.84 1014.95,1092.81 1020.17,1090.8 "/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="1010.34" y="973.356">
+    <tspan x="1010.34" y="973.356">F20. Analytical</tspan>
+    <tspan x="1010.34" y="989.356">results,</tspan>
+    <tspan x="1010.34" y="1005.36">sampling</tspan>
+    <tspan x="1010.34" y="1021.36">information</tspan>
+  </text>
+  <g>
+    <ellipse style="fill: #e8c85c" cx="895.465" cy="1385.95" rx="72.036" ry="70.2455"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="895.465" cy="1385.95" rx="72.036" ry="70.2455"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="895.465" y="1373.85">
+      <tspan x="895.465" y="1373.85">P12. Data</tspan>
+      <tspan x="895.465" y="1389.85">analysis and</tspan>
+      <tspan x="895.465" y="1405.85">visualization</tspan>
+    </text>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 970.71,1353.1 A 136.152,136.152 0 0 0 1017.2,1245.62"/>
+    <polygon style="fill: #000000" points="964.953,1357.88 969.922,1347.86 970.939,1353.36 975.946,1355.84 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="964.953,1357.88 969.922,1347.86 970.939,1353.36 975.946,1355.84 "/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="752.26" y="1088.46">
+    <tspan x="752.26" y="1088.46">F21. Analytical</tspan>
+    <tspan x="752.26" y="1104.46">results,</tspan>
+    <tspan x="752.26" y="1120.46">sampling</tspan>
+    <tspan x="752.26" y="1136.46">information</tspan>
+  </text>
+  <g>
+    <ellipse style="fill: #e8c85c" cx="510.971" cy="1403.53" rx="73.202" ry="74.0059"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="510.971" cy="1403.53" rx="73.202" ry="74.0059"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="510.971" y="1399.43">
+      <tspan x="510.971" y="1399.43">P14. Data</tspan>
+      <tspan x="510.971" y="1415.43">reporting</tspan>
+    </text>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 593.872,1416.21 A 772.556,772.556 0 0 0 824.816,1404.01"/>
+    <polygon style="fill: #000000" points="586.412,1415.45 596.9,1411.57 593.866,1416.27 595.802,1421.51 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="586.412,1415.45 596.9,1411.57 593.866,1416.27 595.802,1421.51 "/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="649.875" y="1435.93">
+    <tspan x="649.875" y="1435.93">F23. Analysis results,</tspan>
+    <tspan x="649.875" y="1451.93">maps, graphics, method</tspan>
+    <tspan x="649.875" y="1467.93">documentation</tspan>
+  </text>
+  <g>
+    <rect style="fill: #d8e5e5" x="119.767" y="1364.1" width="145.688" height="77.9505"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="119.767" y="1364.1" width="145.688" height="77.9505"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="192.611" y="1406.97">
+      <tspan x="192.611" y="1406.97">E2. Client</tspan>
+    </text>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 276.183,1408.43 A 1876.91,1876.91 0 0 0 436.917,1408.25"/>
+    <polygon style="fill: #000000" points="268.69,1408.11 278.914,1403.58 276.182,1408.46 278.445,1413.57 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="268.69,1408.11 278.914,1403.58 276.182,1408.46 278.445,1413.57 "/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="291.707" y="1358.19">
+    <tspan x="291.707" y="1358.19">F25. Deliverable</tspan>
+    <tspan x="291.707" y="1374.19">data tables, maps,</tspan>
+    <tspan x="291.707" y="1390.19">and graphics</tspan>
+  </text>
+  <g>
+    <ellipse style="fill: #e8c85c" cx="771.1" cy="1235.91" rx="73.202" ry="74.0059"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="771.1" cy="1235.91" rx="73.202" ry="74.0059"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="771.1" y="1223.81">
+      <tspan x="771.1" y="1223.81">P13. Report</tspan>
+      <tspan x="771.1" y="1239.81">table</tspan>
+      <tspan x="771.1" y="1255.81">production</tspan>
+    </text>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 821.378,1168.21 A 323.442,323.442 0 0 0 845.058,906.873"/>
+    <polygon style="fill: #000000" points="817.662,1174.72 818.494,1163.57 821.506,1168.28 827.081,1168.7 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="817.662,1174.72 818.494,1163.57 821.506,1168.28 827.081,1168.7 "/>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 590.58,1376.84 A 464.816,464.816 0 0 0 720.805,1291.06"/>
+    <polygon style="fill: #000000" points="583.693,1379.8 591.016,1371.36 590.621,1376.93 594.846,1380.59 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="583.693,1379.8 591.016,1371.36 590.621,1376.93 594.846,1380.59 "/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="1022.4" y="1294.77">
+    <tspan x="1022.4" y="1294.77">F22. Analytica</tspan>
+    <tspan x="1022.4" y="1310.77"> results,</tspan>
+    <tspan x="1022.4" y="1326.77">sampling</tspan>
+    <tspan x="1022.4" y="1342.77">information</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="683.36" y="1339.43">
+    <tspan x="683.36" y="1339.43">F24. Report</tspan>
+    <tspan x="683.36" y="1355.43">data tables</tspan>
+  </text>
+  <g>
+    <rect style="fill: #a9caaf" x="655.14" y="721.118" width="151.813" height="60.8764"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="655.14" y="721.118" width="151.813" height="60.8764"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="670.321" y1="721.118" x2="670.321" y2="781.994"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="791.772" y1="721.118" x2="791.772" y2="781.994"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="731.047" y="747.556">
+      <tspan x="731.047" y="747.556">D6. Data</tspan>
+      <tspan x="731.047" y="763.556">issue log</tspan>
+    </text>
+  </g>
+  <g>
+    <ellipse style="fill: #e8c85c" cx="674.513" cy="569.302" rx="69.6387" ry="65.1283"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="674.513" cy="569.302" rx="69.6387" ry="65.1283"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="674.513" y="565.202">
+      <tspan x="674.513" y="565.202">P19. Address</tspan>
+      <tspan x="674.513" y="581.202">data issues</tspan>
+    </text>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 499.88,659.942 A 633.792,633.792 0 0 0 644.912,729.556"/>
+    <polygon style="fill: #000000" points="652.042,731.879 641.002,733.646 644.888,729.627 644.004,724.107 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="652.042,731.879 641.002,733.646 644.888,729.627 644.004,724.107 "/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="507.85" y="715.062">
+    <tspan x="507.85" y="715.062">F37. Data</tspan>
+    <tspan x="507.85" y="731.062">issues</tspan>
+  </text>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 816.901,733.277 A 202.457,202.457 0 0 0 933.093,578.748"/>
+    <polygon style="fill: #000000" points="810.034,736.274 817.464,727.919 816.998,733.49 821.176,737.205 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="810.034,736.274 817.464,727.919 816.998,733.49 821.176,737.205 "/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="827.834" y="667.822">
+    <tspan x="827.834" y="667.822">F38. Data</tspan>
+    <tspan x="827.834" y="683.822">issues</tspan>
+  </text>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 634.248,634.399 A 100.725,100.725 0 0 0 660.483,720.123"/>
+    <polygon style="fill: #000000" points="635.717,627.076 637.972,638.026 633.785,634.323 628.309,635.45 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="635.717,627.076 637.972,638.026 633.785,634.323 628.309,635.45 "/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="561.75" y="651.922">
+    <tspan x="561.75" y="651.922">F39. Data</tspan>
+    <tspan x="561.75" y="667.922">issues</tspan>
+  </text>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 871.387,564.46 A 763.244,763.244 0 0 0 748.771,720.118"/>
+    <polygon style="fill: #000000" points="876.777,559.245 872.98,569.761 871.344,564.415 866.086,562.517 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="876.777,559.245 872.98,569.761 871.344,564.415 866.086,562.517 "/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="777.73" y="548.29">
+    <tspan x="777.73" y="548.29">F41. Data</tspan>
+    <tspan x="777.73" y="564.29">issue</tspan>
+    <tspan x="777.73" y="580.29">resolutions</tspan>
+  </text>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 742.368,710.518 A 145.173,145.173 0 0 0 722.541,617.79"/>
+    <polygon style="fill: #000000" points="741.283,717.924 738.25,707.163 742.692,710.558 748.072,709.042 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="741.283,717.924 738.25,707.163 742.692,710.558 748.072,709.042 "/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="668.708" y="658.488">
+    <tspan x="668.708" y="658.488">F40. Data</tspan>
+    <tspan x="668.708" y="674.488">issue</tspan>
+    <tspan x="668.708" y="690.488">resolutions</tspan>
+  </text>
+  <g>
+    <ellipse style="fill: #e8c85c" cx="1172.8" cy="883.185" rx="76.0975" ry="73.5489"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="1172.8" cy="883.185" rx="76.0975" ry="73.5489"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="1172.8" y="871.085">
+      <tspan x="1172.8" y="871.085">P20. Correct</tspan>
+      <tspan x="1172.8" y="887.085">data quality</tspan>
+      <tspan x="1172.8" y="903.085">issues</tspan>
+    </text>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 1070.31,1163.36 A 194.291,194.291 0 0 0 1198.19,963.593"/>
+    <polygon style="fill: #000000" points="1197.41,956.142 1203.73,965.364 1198.44,963.572 1193.82,966.732 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1197.41,956.142 1203.73,965.364 1198.44,963.572 1193.82,966.732 "/>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 1100.11,858.343 A 486.939,486.939 0 0 0 950.291,844.037"/>
+    <polygon style="fill: #000000" points="942.809,844.539 952.378,838.756 950.285,843.94 953.176,848.724 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="942.809,844.539 952.378,838.756 950.285,843.94 953.176,848.724 "/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="1179.1" y="1092.73">
+    <tspan x="1179.1" y="1092.73">F26. Data</tspan>
+    <tspan x="1179.1" y="1108.73">quality</tspan>
+    <tspan x="1179.1" y="1124.73">issues</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="1000.95" y="823.7">
+    <tspan x="1000.95" y="823.7">F27. Data</tspan>
+    <tspan x="1000.95" y="839.7">updates</tspan>
+  </text>
+  <g>
+    <rect style="fill: #d8e5e5" x="216.99" y="1174.44" width="145.688" height="77.9505"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="216.99" y="1174.44" width="145.688" height="77.9505"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="289.834" y="1201.32">
+      <tspan x="289.834" y="1201.32">E3. Regulator</tspan>
+      <tspan x="289.834" y="1217.32">or other external</tspan>
+      <tspan x="289.834" y="1233.32">organization</tspan>
+    </text>
+  </g>
+  <g>
+    <ellipse style="fill: #e8c85c" cx="571.842" cy="1129.95" rx="76.0975" ry="73.5489"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="571.842" cy="1129.95" rx="76.0975" ry="73.5489"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="571.842" y="1125.85">
+      <tspan x="571.842" y="1125.85">P21. Export</tspan>
+      <tspan x="571.842" y="1141.85">data</tspan>
+    </text>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 654.33,1103.83 A 311.934,311.934 0 0 0 820.118,906.857"/>
+    <polygon style="fill: #000000" points="647.53,1106.99 654.669,1098.39 654.395,1103.97 658.697,1107.54 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="647.53,1106.99 654.669,1098.39 654.395,1103.97 658.697,1107.54 "/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="657.614" y="988.191">
+    <tspan x="657.614" y="988.191">F28. Analytical</tspan>
+    <tspan x="657.614" y="1004.19">results,</tspan>
+    <tspan x="657.614" y="1020.19">sampling</tspan>
+    <tspan x="657.614" y="1036.19">information</tspan>
+  </text>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 373.393,1216.86 A 335.337,335.337 0 0 0 510.183,1174.7"/>
+    <polygon style="fill: #000000" points="365.916,1217.41 375.627,1211.87 373.405,1217 376.175,1221.85 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="365.916,1217.41 375.627,1211.87 373.405,1217 376.175,1221.85 "/>
+  </g>
+</svg>

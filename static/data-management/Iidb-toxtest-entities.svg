@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="23cm" height="29cm" viewBox="127 342 455 570" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="128.34" y="343.368" width="452.172" height="567.166"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="128.34" y="343.368" width="452.172" height="567.166"/>
+  </g>
+  <g>
+    <rect style="fill: #e5e7d5" x="160.417" y="372.8" width="97.4" height="54"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="160.417" y="372.8" width="97.4" height="54"/>
+    <text font-size="12.8" style="fill: #714b1d;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="209.117" y="395.7">
+      <tspan x="209.117" y="395.7">Interpretive</tspan>
+      <tspan x="209.117" y="411.7">sample</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #e5e7d5" x="273.65" y="600.8" width="94.15" height="54"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="273.65" y="600.8" width="94.15" height="54"/>
+    <text font-size="12.8" style="fill: #714b1d;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="320.725" y="623.7">
+      <tspan x="320.725" y="623.7">Tox test</tspan>
+      <tspan x="320.725" y="639.7">result</tspan>
+    </text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="209.117,427.807 209.117,462.671 296.55,462.671 296.55,497.534 "/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="296.55" y1="487.534" x2="291.55" y2="497.534"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="296.55" y1="487.534" x2="301.55" y2="497.534"/>
+    <text font-size="9.6" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="213.117" y="439.807">1</text>
+    <text font-size="9.6" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="300.55" y="493.534">n</text>
+  </g>
+  <g>
+    <rect style="fill: #e5e7d5" x="376.012" y="379.534" width="94.15" height="54"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="376.012" y="379.534" width="94.15" height="54"/>
+    <text font-size="12.8" style="fill: #714b1d;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="423.087" y="402.434">
+      <tspan x="423.087" y="402.434">Tox test</tspan>
+      <tspan x="423.087" y="418.434">batch</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #e5e7d5" x="273.012" y="497.534" width="94.15" height="54"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="273.012" y="497.534" width="94.15" height="54"/>
+    <text font-size="12.8" style="fill: #714b1d;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="320.087" y="520.434">
+      <tspan x="320.087" y="520.434">Tox test</tspan>
+      <tspan x="320.087" y="536.434">replicate</tspan>
+    </text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="399.55,433.534 399.55,465.534 343.625,465.534 343.625,497.534 "/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="343.625" y1="487.534" x2="338.625" y2="497.534"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="343.625" y1="487.534" x2="348.625" y2="497.534"/>
+  </g>
+  <g>
+    <rect style="fill: #e5e7d5" x="447.012" y="605.534" width="94.15" height="54"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="447.012" y="605.534" width="94.15" height="54"/>
+    <text font-size="12.8" style="fill: #714b1d;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="494.087" y="628.434">
+      <tspan x="494.087" y="628.434">Tox test</tspan>
+      <tspan x="494.087" y="644.434">control</tspan>
+    </text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="320.087,551.534 320.087,576.167 320.725,576.167 320.725,600.8 "/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="320.725" y1="590.8" x2="315.725" y2="600.8"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="320.725" y1="590.8" x2="325.725" y2="600.8"/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="446.625,433.534 446.625,519.534 494.087,519.534 494.087,605.534 "/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="494.087" y1="595.534" x2="489.087" y2="605.534"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="494.087" y1="595.534" x2="499.087" y2="605.534"/>
+  </g>
+  <g>
+    <rect style="fill: #e5e7d5" x="370.637" y="714.534" width="94.15" height="54"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="370.637" y="714.534" width="94.15" height="54"/>
+    <text font-size="12.8" style="fill: #714b1d;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="417.712" y="737.434">
+      <tspan x="417.712" y="737.434">Tox test</tspan>
+      <tspan x="417.712" y="753.434">rep sample</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #e5e7d5" x="369.012" y="826.534" width="97.4" height="54"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="369.012" y="826.534" width="97.4" height="54"/>
+    <text font-size="12.8" style="fill: #714b1d;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="417.712" y="849.434">
+      <tspan x="417.712" y="849.434">Lab</tspan>
+      <tspan x="417.712" y="865.434">sample</tspan>
+    </text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="367.162,524.534 417.712,524.534 417.712,714.534 "/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="417.712" y1="704.534" x2="412.712" y2="714.534"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="417.712" y1="704.534" x2="422.712" y2="714.534"/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="417.712,769.541 417.712,770.541 417.712,825.534 417.712,826.534 "/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="417.712" y1="816.534" x2="412.712" y2="826.534"/>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="417.712" y1="816.534" x2="422.712" y2="826.534"/>
+  </g>
+</svg>
