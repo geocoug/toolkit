@@ -293,7 +293,7 @@ Categories
 <span class="listing-categories">Protein,Snack</span>
 </td>
 </tr>
-<tr data-index="4" data-categories="Dressing" data-listing-file-modified-sort="1691761945260" data-listing-reading-time-sort="1" data-listing-title-sort="Italian Dressing" data-listing-filename-sort="italian-dressing.qmd">
+<tr data-index="4" data-categories="Dressing" data-listing-file-modified-sort="1692135181357" data-listing-reading-time-sort="1" data-listing-title-sort="Italian Dressing" data-listing-filename-sort="italian-dressing.qmd">
 <td>
 <a href="../../content/resources/recipes/italian-dressing.html" class="title listing-title">Italian Dressing</a>
 </td>
@@ -307,7 +307,7 @@ Categories
 <span class="listing-categories">Dressing</span>
 </td>
 </tr>
-<tr data-index="5" data-categories="Dressing" data-listing-file-modified-sort="1691761884818" data-listing-reading-time-sort="1" data-listing-title-sort="Lemon Dill Sauce" data-listing-filename-sort="lemon-dill-sauce.qmd">
+<tr data-index="5" data-categories="Dressing" data-listing-file-modified-sort="1692135181512" data-listing-reading-time-sort="1" data-listing-title-sort="Lemon Dill Sauce" data-listing-filename-sort="lemon-dill-sauce.qmd">
 <td>
 <a href="../../content/resources/recipes/lemon-dill-sauce.html" class="title listing-title">Lemon Dill Sauce</a>
 </td>
@@ -754,8 +754,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
-          // target, if specified
-          link.setAttribute("target", "_blank");
+          // default icon
+          link.classList.add("external");
       }
     }
 });

@@ -104,7 +104,7 @@ format:
     code-line-numbers: false
     code-annotations: below
     highlight-style: github
-    link-external-newwindow: true
+    link-external-icon: true
     filters:
       - black-formatter
       - downloadthis

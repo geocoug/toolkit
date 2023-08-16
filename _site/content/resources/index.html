@@ -240,7 +240,7 @@ Recipes
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-listing-file-modified-sort="1692134803618" data-listing-reading-time-sort="1">
+<div class="g-col-1" data-index="1" data-listing-file-modified-sort="1692147768946" data-listing-reading-time-sort="1">
 <a href="../../content/resources/workouts.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -623,8 +623,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
-          // target, if specified
-          link.setAttribute("target", "_blank");
+          // default icon
+          link.classList.add("external");
       }
     }
 });
