@@ -797,23 +797,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-6" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-lines="1,2,3,4,5" data-code-annotation="1" data-code-cell="annotated-cell-6">Create a read-only user.</span>
+<span data-code-cell="annotated-cell-6" data-code-annotation="1" data-code-lines="1,2,3,4,5">Create a read-only user.</span>
 </dd>
 <dt data-target-cell="annotated-cell-6" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-lines="7" data-code-annotation="2" data-code-cell="annotated-cell-6">Allow user to create database objects.</span>
+<span data-code-cell="annotated-cell-6" data-code-annotation="2" data-code-lines="7">Allow user to create database objects.</span>
 </dd>
 <dt data-target-cell="annotated-cell-6" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-lines="8" data-code-annotation="3" data-code-cell="annotated-cell-6">Allow user to insert rows to any schema and table.</span>
+<span data-code-cell="annotated-cell-6" data-code-annotation="3" data-code-lines="8">Allow user to insert rows to any schema and table.</span>
 </dd>
 <dt data-target-cell="annotated-cell-6" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-lines="9" data-code-annotation="4" data-code-cell="annotated-cell-6">Allow user to update rows in any schema and table.</span>
+<span data-code-cell="annotated-cell-6" data-code-annotation="4" data-code-lines="9">Allow user to update rows in any schema and table.</span>
 </dd>
 <dt data-target-cell="annotated-cell-6" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-lines="10" data-code-annotation="5" data-code-cell="annotated-cell-6">Allow user to delete rows in any schema and table.</span>
+<span data-code-cell="annotated-cell-6" data-code-annotation="5" data-code-lines="10">Allow user to delete rows in any schema and table.</span>
 </dd>
 </dl>
 </section>
@@ -2066,20 +2066,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var filterRegex = new RegExp("http:\/\/toolkit\.goecoug\.com");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-          // default icon
-          link.classList.add("external");
-      }
-    }
 });
 </script>
 <nav class="page-navigation">
