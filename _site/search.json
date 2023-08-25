@@ -1089,7 +1089,7 @@
     "href": "content/resources/recipes.html",
     "title": "Recipes",
     "section": "",
-    "text": "Title\n\n\nDescription\n\n\nCook Time\n\n\nCategories\n\n\n\n\n\n\nBolognese\n\n\nBolognese Sauce\n\n\n1 hour\n\n\nSauce\n\n\n\n\nBuffalo Cauliflower\n\n\nBuffalo cauliflower bites\n\n\n45 minutes\n\n\nSnack\n\n\n\n\nCauliflower Pizza Crust\n\n\nCauliflower pizza crust\n\n\n45 minutes\n\n\nMeal\n\n\n\n\nCougar Gold Mac & Cheese\n\n\nRich and filling Cougar Gold mac & cheese\n\n\n1 hour\n\n\nMeal\n\n\n\n\nEgg Protein Bars\n\n\nEgg protein bars\n\n\n1 hour\n\n\nProtein,Snack\n\n\n\n\nGreek Yogurt Protein Smoothie\n\n\nHigh protein smoothie.\n\n\n2 minutes\n\n\nProtein,Snack\n\n\n\n\nItalian Dressing\n\n\nItalian dressing\n\n\n5 minutes\n\n\nDressing\n\n\n\n\nLemon Dill Sauce\n\n\nLemon dill sauce.\n\n\n5 minutes\n\n\nDressing\n\n\n\n\nOvernight Protein Oats\n\n\nOvernight protein oats\n\n\n12 hours\n\n\nProtein,Snack\n\n\n\n\nQuinoa & Cucumber Salad\n\n\nRefreshing quinoa and cucumber salad with avacado dressing\n\n\n30 minutes\n\n\nMeal\n\n\n\n\nRice Pilaf\n\n\nRice pilaf\n\n\n45 minutes\n\n\nSide\n\n\n\n\nSourdough Bread\n\n\nTypical schedule for baking sourdough bread\n\n\n24 hours\n\n\nBread\n\n\n\n\nTurkey Meatballs\n\n\nGround turkey meatballs\n\n\n30 minutes\n\n\nProtein,Snack\n\n\n\n\n\n\nNo matching items"
+    "text": "Title\n\n\nDescription\n\n\nCook Time\n\n\nCategories\n\n\n\n\n\n\nBolognese\n\n\nBolognese Sauce\n\n\n1 hour\n\n\nSauce\n\n\n\n\nBuffalo Cauliflower\n\n\nBuffalo cauliflower bites\n\n\n45 minutes\n\n\nSnack\n\n\n\n\nCauliflower Pizza Crust\n\n\nCauliflower pizza crust\n\n\n45 minutes\n\n\nMeal\n\n\n\n\nCeasar Dressing\n\n\nCeasar Dressing\n\n\n10 minutes\n\n\nDressing\n\n\n\n\nCougar Gold Mac & Cheese\n\n\nRich and filling Cougar Gold mac & cheese\n\n\n1 hour\n\n\nMeal\n\n\n\n\nDay Island Iced Tea\n\n\nDay Island Iced Tea\n\n\n1 minute\n\n\nDrink,Alcohol\n\n\n\n\nEgg Protein Bars\n\n\nEgg protein bars\n\n\n1 hour\n\n\nProtein,Snack\n\n\n\n\nGreek Yogurt Protein Smoothie\n\n\nHigh protein smoothie.\n\n\n2 minutes\n\n\nProtein,Snack\n\n\n\n\nItalian Dressing\n\n\nItalian dressing\n\n\n5 minutes\n\n\nDressing\n\n\n\n\nLemon Dill Sauce\n\n\nLemon dill sauce.\n\n\n5 minutes\n\n\nDressing\n\n\n\n\nOvernight Protein Oats\n\n\nOvernight protein oats\n\n\n12 hours\n\n\nProtein,Snack\n\n\n\n\nQuinoa & Cucumber Salad\n\n\nRefreshing quinoa and cucumber salad with avacado dressing\n\n\n30 minutes\n\n\nMeal\n\n\n\n\nRavioli\n\n\nRavioli\n\n\n2 hours\n\n\nMeal\n\n\n\n\nRice Pilaf\n\n\nRice pilaf\n\n\n45 minutes\n\n\nSide\n\n\n\n\nSourdough Bread\n\n\nTypical schedule for baking sourdough bread\n\n\n24 hours\n\n\nBread\n\n\n\n\nTurkey Meatballs\n\n\nGround turkey meatballs\n\n\n30 minutes\n\n\nProtein,Snack\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "content/resources/recipes/cougar-gold-mac.html",
@@ -1370,5 +1370,40 @@
     "title": "Cauliflower Pizza Crust",
     "section": "",
     "text": "1 head cauliflower\n1 egg\n1/3 cup soft goat cheese\n1 teaspoon italian seasoning\nSalt & pepper\n\nPreheat oven to 400F. Steam cauliflower until tender. Place the clauliflower in a food processor and process until it has a rice-like texture. Squeeze the excess moisture out of the cauliflower. In a large bowl, combine the cauliflower, egg, goat cheese, and seasonings. Mix until homogonized. Dump the dough onto a baking sheet covered with parchment paper, spreading with a spatula/hands. Bake for 30-35 minutes until dry and golden. Remove from oven, flip the crust, then top with your favorite pizza toppings. Place back in the overn and cook for another 7-10 minutes or until desired."
+  },
+  {
+    "objectID": "content/resources/recipes/ceasar-dressing.html",
+    "href": "content/resources/recipes/ceasar-dressing.html",
+    "title": "Ceasar Dressing",
+    "section": "",
+    "text": "Egg yolk\nOlive oil\n1/4 lemon\nJohnnys seasoning salt\nBlack pepper\nTobasco/hot sauce\nDijon mustard\nAnchovi paste\nRed wine vinegar\nWorcestershire\nGarlic\n\nSee also"
+  },
+  {
+    "objectID": "content/resources/recipes/day-island-iced-tea.html",
+    "href": "content/resources/recipes/day-island-iced-tea.html",
+    "title": "Day Island Iced Tea",
+    "section": "",
+    "text": "Equal parts:\n\nIce tea flavored vodka\nRum\nGin\nTriple sec\nLemonade\nIced tea"
+  },
+  {
+    "objectID": "content/resources/recipes/ravioli.html",
+    "href": "content/resources/recipes/ravioli.html",
+    "title": "Ravioli",
+    "section": "",
+    "text": "Spinach\nCelery\nYellow onions\nGarlic\nMeats\nMarjoram\nThyme\nJohnnies seasoning\nSeasoned breadcrumbs\nParmesan cheese (granulated)\nRicotta cheese"
+  },
+  {
+    "objectID": "content/resources/recipes/ravioli.html#filling",
+    "href": "content/resources/recipes/ravioli.html#filling",
+    "title": "Ravioli",
+    "section": "",
+    "text": "Spinach\nCelery\nYellow onions\nGarlic\nMeats\nMarjoram\nThyme\nJohnnies seasoning\nSeasoned breadcrumbs\nParmesan cheese (granulated)\nRicotta cheese"
+  },
+  {
+    "objectID": "content/resources/recipes/ravioli.html#pasta",
+    "href": "content/resources/recipes/ravioli.html#pasta",
+    "title": "Ravioli",
+    "section": "Pasta",
+    "text": "Pasta\n\n3 1/2 cups flour\n2/3 cup water\n3 eggs\n1/4 cup olive oil\n1 tsp salt"
   }
 ]
