@@ -60,6 +60,7 @@
   {
     "listing": "/content/resources/recipes.html",
     "items": [
+      "/content/resources/recipes/bloody-mary.html",
       "/content/resources/recipes/bolognese.html",
       "/content/resources/recipes/buffalo-cauliflower.html",
       "/content/resources/recipes/cauliflower-pizza-crust.html",
@@ -73,6 +74,7 @@
       "/content/resources/recipes/overnight-protein-oats.html",
       "/content/resources/recipes/quinoa-cucumber-salad.html",
       "/content/resources/recipes/ravioli.html",
+      "/content/resources/recipes/rib-marinade.html",
       "/content/resources/recipes/rice-pilaf.html",
       "/content/resources/recipes/sourdough-bread.html",
       "/content/resources/recipes/turkey-meatballs.html"

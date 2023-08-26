@@ -1,0 +1,12 @@
+---
+title: Bloody Mary
+description: Bloody Mary
+categories: [Drink,Alcohol]
+Cook Time: 5 minutes
+---
+
+- V8
+- Celery salt
+- Horseradish
+- Worcestershire sauce
+- Buffalo sauce
