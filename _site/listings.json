@@ -1,9 +1,25 @@
 [
   {
-    "listing": "/content/resources/index.html",
+    "listing": "/content/recipes/index.html",
     "items": [
-      "/content/resources/recipes.html",
-      "/content/resources/workouts.html"
+      "/content/recipes/bloody-mary.html",
+      "/content/recipes/bolognese.html",
+      "/content/recipes/buffalo-cauliflower.html",
+      "/content/recipes/cauliflower-pizza-crust.html",
+      "/content/recipes/ceasar-dressing.html",
+      "/content/recipes/cougar-gold-mac.html",
+      "/content/recipes/day-island-iced-tea.html",
+      "/content/recipes/egg-protein-bars.html",
+      "/content/recipes/yogurt-protein-smoothie.html",
+      "/content/recipes/italian-dressing.html",
+      "/content/recipes/lemon-dill-sauce.html",
+      "/content/recipes/overnight-protein-oats.html",
+      "/content/recipes/quinoa-cucumber-salad.html",
+      "/content/recipes/ravioli.html",
+      "/content/recipes/rib-marinade.html",
+      "/content/recipes/rice-pilaf.html",
+      "/content/recipes/sourdough-bread.html",
+      "/content/recipes/turkey-meatballs.html"
     ]
   },
   {
@@ -55,29 +71,6 @@
       "/content/blog/posts/linux-permissions/index.html",
       "/content/blog/posts/creating-a-post/index.html",
       "/content/blog/posts/accessing-quarto-variables/index.html"
-    ]
-  },
-  {
-    "listing": "/content/resources/recipes.html",
-    "items": [
-      "/content/resources/recipes/bloody-mary.html",
-      "/content/resources/recipes/bolognese.html",
-      "/content/resources/recipes/buffalo-cauliflower.html",
-      "/content/resources/recipes/cauliflower-pizza-crust.html",
-      "/content/resources/recipes/ceasar-dressing.html",
-      "/content/resources/recipes/cougar-gold-mac.html",
-      "/content/resources/recipes/day-island-iced-tea.html",
-      "/content/resources/recipes/egg-protein-bars.html",
-      "/content/resources/recipes/yogurt-protein-smoothie.html",
-      "/content/resources/recipes/italian-dressing.html",
-      "/content/resources/recipes/lemon-dill-sauce.html",
-      "/content/resources/recipes/overnight-protein-oats.html",
-      "/content/resources/recipes/quinoa-cucumber-salad.html",
-      "/content/resources/recipes/ravioli.html",
-      "/content/resources/recipes/rib-marinade.html",
-      "/content/resources/recipes/rice-pilaf.html",
-      "/content/resources/recipes/sourdough-bread.html",
-      "/content/resources/recipes/turkey-meatballs.html"
     ]
   }
 ]

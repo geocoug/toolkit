@@ -43,8 +43,10 @@ website:
         href: content/development/index.qmd
       - text: "Data Management"
         href: content/data-management/index.qmd
-      - text: "Resources"
-        href: content/resources/index.qmd
+      - text: "Recipes"
+        href: content/recipes/index.qmd
+      - text: "Workouts"
+        href: content/workouts.qmd
       - text: "Blog"
         href: content/blog/index.qmd
 
@@ -82,13 +84,19 @@ website:
           href: content/data-management/processes/index.qmd
           contents:
             - auto: "content/data-management/processes/*"
-    - id: resources
-      collapse-level: 2
-      align: left
-      style: "docked"
-      contents:
-        - content/resources/index.qmd
-        - auto: "content/resources/*"
+    # - id: recipes
+    #   collapse-level: 2
+    #   align: left
+    #   style: "docked"
+    #   contents:
+    #     - content/recipes/index.qmd
+    #     - auto: "content/recipes/*"
+    # - id: workouts
+    #   collapse-level: 2
+    #   align: left
+    #   style: "docked"
+    #   contents:
+    #     - content/workouts.qmd
 
 format:
   html:

@@ -1,0 +1,19 @@
+---
+title: Recipes
+image: /static/resources/food.jpg
+listing:
+  id: recipe-listings
+  type: table
+  categories: true
+  page-size: 15
+  fields: [title, description, cooktime, categories]
+  field-display-names: 
+    cooktime: "Cook Time"
+  sort: title
+  sort-ui: false
+  table-striped: true
+  table-hover: true 
+  contents:
+    - "*.qmd"
+page-layout: full
+---

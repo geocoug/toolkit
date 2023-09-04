@@ -1,0 +1,15 @@
+---
+title: Day Island Iced Tea
+description: Day Island Iced Tea
+categories: [Drink,Alcohol]
+cooktime: 1 minute
+---
+
+Equal parts:
+
+- Ice tea flavored vodka
+- Rum
+- Gin
+- Triple sec
+- Lemonade
+- Iced tea
