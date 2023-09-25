@@ -41,17 +41,18 @@ website:
     left:
       - text: "Development"
         href: content/development/index.qmd
-      - text: "Data Management"
-        href: content/data-management/index.qmd
+      # - text: "Data Management"
+      #   href: content/data-management/index.qmd
       - text: "Recipes"
         href: content/recipes/index.qmd
       - text: "Workouts"
-        href: content/workouts.qmd
+        href: content/workouts/index.qmd
       - text: "Blog"
         href: content/blog/index.qmd
 
   sidebar:
     - id: development
+      title: "Development"
       collapse-level: 2
       align: left
       style: "docked"
@@ -73,30 +74,23 @@ website:
           href: content/development/server/index.qmd
           contents:
             - auto: "content/development/server/*"
-    - id: data-management
+    # - id: data-management
+    #   collapse-level: 1
+    #   align: left
+    #   contents:
+    #     - content/data-management/index.qmd
+    #     - auto: "content/data-management/*"
+    #     - section: "Processes"
+    #       href: content/data-management/processes/index.qmd
+    #       contents:
+    #         - auto: "content/data-management/processes/*"
+    - id: workouts
+      title: "Workouts"
       collapse-level: 1
       align: left
-      style: "docked"
       contents:
-        - content/data-management/index.qmd
-        - auto: "content/data-management/*"
-        - section: "Processes"
-          href: content/data-management/processes/index.qmd
-          contents:
-            - auto: "content/data-management/processes/*"
-    # - id: recipes
-    #   collapse-level: 2
-    #   align: left
-    #   style: "docked"
-    #   contents:
-    #     - content/recipes/index.qmd
-    #     - auto: "content/recipes/*"
-    # - id: workouts
-    #   collapse-level: 2
-    #   align: left
-    #   style: "docked"
-    #   contents:
-    #     - content/workouts.qmd
+        - content/workouts/index.qmd
+        - auto: "content/workouts/*"
 
 format:
   html:

@@ -11,15 +11,11 @@ execute:
 ```{python}
 import polars as pl
 
-workouts = "../static/resources/workouts.xlsx"
+workouts = "../../static/resources/workouts.xlsx"
 back_biceps = pl.read_excel(workouts, sheet_id=1)
 chest_triceps = pl.read_excel(workouts, sheet_id=2)
 legs = pl.read_excel(workouts, sheet_id=3)
 shoulders_traps = pl.read_excel(workouts, sheet_id=4)
-...
-intro_push = pl.read_excel(workouts, sheet_id=5)
-intro_pull = pl.read_excel(workouts, sheet_id=6)
-intro_legs = pl.read_excel(workouts, sheet_id=7)
 ```
 
 The following regimen can be used for any 5 day/week workout schedule. I typically workout Monday-Friday, where each lift is executed once Monday-Thursday, and any targeted muscle group is performed again on Friday.
@@ -46,24 +42,4 @@ legs.to_pandas().fillna("").to_html(index=False, render_links=True)
 
 ```{python}
 shoulders_traps.to_pandas().fillna("").to_html(index=False, render_links=True)
-```
-
-## Introductory Routines
-
-### Intro to Push
-
-```{python}
-intro_push.to_pandas().fillna("").to_html(index=False, render_links=True)
-```
-
-### Intro to Pull
-
-```{python}
-intro_pull.to_pandas().fillna("").to_html(index=False, render_links=True)
-```
-
-### Intro to Legs
-
-```{python}
-intro_legs.to_pandas().fillna("").to_html(index=False, render_links=True)
 ```

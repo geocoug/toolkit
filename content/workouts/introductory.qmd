@@ -1,0 +1,36 @@
+---
+title: Intro Workouts
+description: Introductory workout routines
+image: /static/resources/workouts.png
+execute:
+  echo: false
+---
+
+## Introductory Routines
+
+```{python}
+import polars as pl
+
+workouts = "../../static/resources/workouts.xlsx"
+intro_push = pl.read_excel(workouts, sheet_id=5)
+intro_pull = pl.read_excel(workouts, sheet_id=6)
+intro_legs = pl.read_excel(workouts, sheet_id=7)
+```
+
+### Intro to Push
+
+```{python}
+intro_push.to_pandas().fillna("").to_html(index=False, render_links=True)
+```
+
+### Intro to Pull
+
+```{python}
+intro_pull.to_pandas().fillna("").to_html(index=False, render_links=True)
+```
+
+### Intro to Legs
+
+```{python}
+intro_legs.to_pandas().fillna("").to_html(index=False, render_links=True)
+```
