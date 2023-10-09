@@ -2,6 +2,7 @@
   {
     "listing": "/content/blog/index.html",
     "items": [
+      "/content/blog/posts/data-engineering-blogs/index.html",
       "/content/blog/posts/diff-pdf-and-docx/index.html",
       "/content/blog/posts/quarto-tabsets/index.html",
       "/content/blog/posts/change-postgres-password/index.html",

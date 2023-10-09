@@ -8,6 +8,8 @@ execute:
 
 ## Intermediate Routines
 
+### Version 1
+
 ```{python}
 import polars as pl
 
@@ -20,26 +22,82 @@ shoulders_traps = pl.read_excel(workouts, sheet_id=4)
 
 The following regimen can be used for any 5 day/week workout schedule. I typically workout Monday-Friday, where each lift is executed once Monday-Thursday, and any targeted muscle group is performed again on Friday.
 
-### Back & Biceps
+#### Back & Biceps
 
 ```{python}
 back_biceps.to_pandas().fillna("").to_html(index=False, render_links=True)
 ```
 
-### Chest & Triceps
+#### Chest & Triceps
 
 ```{python}
 chest_triceps.to_pandas().fillna("").to_html(index=False, render_links=True)
 ```
 
-### Legs
+#### Legs
 
 ```{python}
 legs.to_pandas().fillna("").to_html(index=False, render_links=True)
 ```
 
-### Shoulders & Traps
+#### Shoulders & Traps
 
 ```{python}
 shoulders_traps.to_pandas().fillna("").to_html(index=False, render_links=True)
 ```
+
+### Version 2
+
+It's great that you're looking to switch up your weightlifting routine. Here's a 5-day lifting routine that you can follow using the equipment you have in your home gym. This routine focuses on different muscle groups each day to provide variety and promote balanced muscle development.
+
+#### Day 1: Chest and Triceps
+
+1. Bench Press
+2. Incline Dumbbell Press
+3. Dumbbell Flyes
+4. Dips (using the dip attachment on your functional strength trainer)
+5. Tricep Pushdowns (using the cable machine)
+6. Push-Ups (bodyweight or with added weight if needed)
+7. Ab Roller or Planks for core work
+8. Cardio: Consider running or rowing for cardio.
+
+#### Day 2: Back and Biceps
+
+1. Pull-Ups (if you have a pull-up bar)
+2. Bent-over Rows (with the barbell or dumbbells)
+3. Lat Pulldowns (using the cable machine)
+4. Seated Cable Rows
+5. Barbell or Dumbbell Bicep Curls
+6. Hammer Curls (using dumbbells)
+7. Back Extensions (using the back hyperextension/dip machine)
+8. Cardio: Rowing or running can be good options.
+
+#### Day 3: Legs
+
+1. Squats (with the squat rack and barbell)
+2. Romanian Deadlifts (with the barbell)
+3. Lunges (with dumbbells)
+4. Leg Press (if your cable machine allows for it)
+5. Leg Extensions (if your cable machine allows for it)
+6. Calf Raises (using the squat rack)
+7. Planks for core work
+8. Cardio: Rowing or running.
+
+#### Day 4: Shoulders and Abs
+
+1. Overhead Press (with the barbell or dumbbells)
+2. Side Lateral Raises (with dumbbells)
+3. Front Raises (with dumbbells)
+4. Upright Rows (with the barbell)
+5. Face Pulls (using the cable machine)
+6. Hanging Leg Raises (if you have a pull-up bar)
+7. Russian Twists (using a dumbbell)
+8. Cardio: Running or rowing.
+
+#### Day 5: Full Body and Cardio
+
+1. Deadlifts (with the barbell)
+2. Push-Ups or Push-Up Variations
+3. Pull-Ups or Bodyweight Rows
+4. Planks (focus on core stability)
+5. Cardio: A combination of running, rowing, or using the functional strength trainer for a full-body circuit.

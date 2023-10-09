@@ -15,7 +15,83 @@
 <link>http://toolkit.goecoug.com/content/blog/index.html</link>
 </image>
 <generator>quarto-1.3.450</generator>
-<lastBuildDate>Tue, 08 Aug 2023 07:00:00 GMT</lastBuildDate>
+<lastBuildDate>Mon, 09 Oct 2023 07:00:00 GMT</lastBuildDate>
+<item>
+  <title>Data Engineering Blogs</title>
+  <dc:creator>Caleb Grant</dc:creator>
+  <link>http://toolkit.goecoug.com/content/blog/posts/data-engineering-blogs/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<ul>
+<li><a href="https://netflixtechblog.com/">Netflix</a></li>
+<li><a href="https://github.blog/category/engineering/">GitHub</a></li>
+<li><a href="https://aws.amazon.com/blogs/aws/">AWS</a></li>
+<li><a href="https://www.uber.com/blog/engineering">Uber</a></li>
+<li><a href="https://stackoverflow.blog/engineering/">Stack Overflow</a></li>
+<li><a href="https://tech.trivago.com/">Trivago</a></li>
+<li><a href="https://lnkd.in/dFNp3x8s">Facebook</a></li>
+<li><a href="https://blog.asana.com/category/eng/">Asana</a></li>
+<li><a href="https://bytes.swiggy.com/?gi=8701a7b46ac5">Swiggy</a></li>
+<li><a href="https://www.docker.com/blog/">Docker</a></li>
+<li><a href="https://hacks.mozilla.org/">Mozilla Hacks</a></li>
+<li><a href="https://lnkd.in/dCkBDY4H">Postman</a></li>
+<li><a href="https://lnkd.in/dvVP5NFk">Twilio</a></li>
+<li><a href="https://lnkd.in/dHs2yk5X">GoDaddy</a></li>
+<li><a href="https://lnkd.in/dj7QqzqB">Pinterest</a></li>
+<li><a href="https://lnkd.in/d_c_KCzU">Instagram</a></li>
+<li><a href="https://lnkd.in/dKh6xQFr">Quora</a></li>
+<li><a href="https://lnkd.in/dMZraThc">Medium</a></li>
+<li><a href="https://medium.com/@SkyscannerEng">Skyscanner</a></li>
+<li><a href="https://blog.booking.com/">Booking.com</a></li>
+<li><a href="https://lnkd.in/djAaxyce">GO-JEK</a></li>
+<li><a href="https://engineering.linkedin.com/blog">LinkedIn</a></li>
+<li><a href="https://lnkd.in/dVVETxsW">GitHub</a></li>
+<li><a href="https://lnkd.in/duk5Fg78">WalmartLabs</a></li>
+<li><a href="https://lnkd.in/dMpXCXT4">Mozilla</a></li>
+<li><a href="https://lnkd.in/dGeq3_xM">Zapier</a></li>
+<li><a href="https://slack.engineering/">Slack</a></li>
+<li><a href="https://medium.com/tinder">Tinder</a></li>
+<li><a href="https://lnkd.in/dbmZfx6R">Heroku</a></li>
+<li><a href="https://lnkd.in/dxN7Ugci">Canva</a></li>
+<li><a href="https://lnkd.in/dacfcwNQ">BlaBlaCar</a></li>
+<li><a href="https://lnkd.in/dJxeCyuM">Dropbox</a></li>
+<li><a href="https://lnkd.in/dvYZTY_f">DigitalOcean</a></li>
+<li><a href="https://lnkd.in/dFXvFgH9">Grammarly</a></li>
+<li><a href="https://blogs.nvidia.com/">Nvidia</a></li>
+<li><a href="https://lnkd.in/dh9MnPpc">Discord</a></li>
+<li><a href="https://lnkd.in/dUA67tx3">Cloudflare</a></li>
+<li><a href="https://lnkd.in/deQwKk-v">BitTorrent</a></li>
+<li><a href="https://stripe.com/blog">Stripe</a></li>
+<li><a href="https://lnkd.in/dpaBXHtR">Atlassian</a></li>
+<li><a href="https://lnkd.in/d8mjk2TW">Salesforce</a></li>
+<li><a href="https://lnkd.in/dMen9p6Z">Google Security</a></li>
+<li><a href="https://lnkd.in/dFXhWya5">Twitter</a></li>
+<li><a href="https://lnkd.in/daUMxX6z">Shopify</a></li>
+<li><a href="https://lnkd.in/daSjTH8C">Twitch</a></li>
+<li><a href="https://engineering.atspotify.com/">Spotify</a></li>
+<li><a href="https://evernote.com/blog/">Evernote</a></li>
+<li><a href="https://lnkd.in/df4mzp7h">Red Hat</a></li>
+<li><a href="https://lnkd.in/dPp5VxKj">HackerEarth</a></li>
+<li><a href="https://lnkd.in/dEFNY_Jz">Reddit</a></li>
+<li><a href="https://lnkd.in/d_vNKhnM">Yahoo</a></li>
+<li><a href="https://lnkd.in/dT4PHH9i">Airbnb</a></li>
+<li><a href="https://lnkd.in/dCsg-92a">Indeed</a></li>
+<li><a href="https://lnkd.in/d8Ay5SxH">Expedia</a></li>
+<li><a href="https://lnkd.in/d34wFXhj">Postmark</a></li>
+<li><a href="https://lnkd.in/dxQStUGn">Paypal</a></li>
+</ul>
+
+
+
+ ]]></description>
+  <category>Blog</category>
+  <guid>http://toolkit.goecoug.com/content/blog/posts/data-engineering-blogs/index.html</guid>
+  <pubDate>Mon, 09 Oct 2023 07:00:00 GMT</pubDate>
+  <media:content url="http://toolkit.goecoug.com/static/logo.svg" medium="image" type="image/svg+xml"/>
+</item>
 <item>
   <title>DIFFing PDF and DOCX files</title>
   <dc:creator>Caleb Grant</dc:creator>

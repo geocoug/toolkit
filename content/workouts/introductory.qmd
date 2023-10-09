@@ -1,5 +1,5 @@
 ---
-title: Intro Workouts
+title: Introductory Workouts
 description: Introductory workout routines
 image: /static/resources/workouts.png
 execute:
