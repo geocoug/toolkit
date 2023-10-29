@@ -15,7 +15,329 @@
 <link>http://toolkit.goecoug.com/content/blog/index.html</link>
 </image>
 <generator>quarto-1.3.450</generator>
-<lastBuildDate>Mon, 09 Oct 2023 07:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sat, 28 Oct 2023 07:00:00 GMT</lastBuildDate>
+<item>
+  <title>Infographics</title>
+  <dc:creator>Caleb Grant</dc:creator>
+  <link>http://toolkit.goecoug.com/content/blog/posts/infographics/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>This is a collection of infographic templates.</p>
+<div id="listing-infographic-listing" class="quarto-listing quarto-listing-container-table">
+<div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+     <select id="listing-infographic-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-infographic-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+       <option value="" disabled="" selected="" hidden="">Order By</option>
+       <option value="index" data-direction="asc">Default</option>
+         <option value="listing-filename-sort" data-direction="asc">
+          File Name
+        </option>
+         <option value="listing-file-modified-sort" data-direction="asc">
+          Modified - Oldest
+        </option>
+         <option value="listing-file-modified-sort" data-direction="desc">
+          Modified - Newest
+        </option>
+     </select>
+  </div>
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
+</div>
+
+<table class="quarto-listing-table table">
+<thead>
+<tr>
+<th>
+<a class="sort" data-sort="listing-filename-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">File Name</a>
+</th>
+<th>
+<a class="sort" data-sort="listing-file-modified-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Modified</a>
+</th>
+</tr>
+</thead>
+<tbody class="list">
+<tr data-index="0" data-listing-file-modified-sort="1579046698000" data-listing-filename-sort="AIDA Blue.pptx">
+<td>
+<a href="../../../../content/blog/posts/infographics/infographics/AIDA Blue.pptx" class="filename listing-filename">AIDA Blue.pptx</a>
+</td>
+<td>
+<span class="listing-file-modified">1/14/20, 4:04:58 PM</span>
+</td>
+</tr>
+<tr data-index="1" data-listing-file-modified-sort="1662262560000" data-listing-filename-sort="Abstract.pptx">
+<td>
+<a href="../../../../content/blog/posts/infographics/infographics/Abstract.pptx" class="filename listing-filename">Abstract.pptx</a>
+</td>
+<td>
+<span class="listing-file-modified">9/3/22, 8:36:00 PM</span>
+</td>
+</tr>
+<tr data-index="2" data-listing-file-modified-sort="1604880774000" data-listing-filename-sort="Agile.pptx">
+<td>
+<a href="../../../../content/blog/posts/infographics/infographics/Agile.pptx" class="filename listing-filename">Agile.pptx</a>
+</td>
+<td>
+<span class="listing-file-modified">11/8/20, 4:12:54 PM</span>
+</td>
+</tr>
+<tr data-index="3" data-listing-file-modified-sort="1643596340000" data-listing-filename-sort="Artificial Intelligence.pptx">
+<td>
+<a href="../../../../content/blog/posts/infographics/infographics/Artificial Intelligence.pptx" class="filename listing-filename">Artificial Intelligence.pptx</a>
+</td>
+<td>
+<span class="listing-file-modified">1/30/22, 6:32:20 PM</span>
+</td>
+</tr>
+<tr data-index="4" data-listing-file-modified-sort="1606150522000" data-listing-filename-sort="Budget Forecast.pptx">
+<td>
+<a href="../../../../content/blog/posts/infographics/infographics/Budget Forecast.pptx" class="filename listing-filename">Budget Forecast.pptx</a>
+</td>
+<td>
+<span class="listing-file-modified">11/23/20, 8:55:22 AM</span>
+</td>
+</tr>
+<tr data-index="5" data-listing-file-modified-sort="1653457638000" data-listing-filename-sort="Budget Forecasting.pptx">
+<td>
+<a href="../../../../content/blog/posts/infographics/infographics/Budget Forecasting.pptx" class="filename listing-filename">Budget Forecasting.pptx</a>
+</td>
+<td>
+<span class="listing-file-modified">5/24/22, 10:47:18 PM</span>
+</td>
+</tr>
+<tr data-index="6" data-listing-file-modified-sort="1563627512000" data-listing-filename-sort="Business concepts.pptx">
+<td>
+<a href="../../../../content/blog/posts/infographics/infographics/Business concepts.pptx" class="filename listing-filename">Business concepts.pptx</a>
+</td>
+<td>
+<span class="listing-file-modified">7/20/19, 5:58:32 AM</span>
+</td>
+</tr>
+<tr data-index="7" data-listing-file-modified-sort="1640489500000" data-listing-filename-sort="Communication.pptx">
+<td>
+<a href="../../../../content/blog/posts/infographics/infographics/Communication.pptx" class="filename listing-filename">Communication.pptx</a>
+</td>
+<td>
+<span class="listing-file-modified">12/25/21, 7:31:40 PM</span>
+</td>
+</tr>
+<tr data-index="8" data-listing-file-modified-sort="1696684348000" data-listing-filename-sort="Comparison.pptx">
+<td>
+<a href="../../../../content/blog/posts/infographics/infographics/Comparison.pptx" class="filename listing-filename">Comparison.pptx</a>
+</td>
+<td>
+<span class="listing-file-modified">10/7/23, 6:12:28 AM</span>
+</td>
+</tr>
+<tr data-index="9" data-listing-file-modified-sort="1696474566000" data-listing-filename-sort="Corporate Light.pptx">
+<td>
+<a href="../../../../content/blog/posts/infographics/infographics/Corporate Light.pptx" class="filename listing-filename">Corporate Light.pptx</a>
+</td>
+<td>
+<span class="listing-file-modified">10/4/23, 7:56:06 PM</span>
+</td>
+</tr>
+<tr data-index="10" data-listing-file-modified-sort="1696474554000" data-listing-filename-sort="Digital Marketing.pptx">
+<td>
+<a href="../../../../content/blog/posts/infographics/infographics/Digital Marketing.pptx" class="filename listing-filename">Digital Marketing.pptx</a>
+</td>
+<td>
+<span class="listing-file-modified">10/4/23, 7:55:54 PM</span>
+</td>
+</tr>
+<tr data-index="11" data-listing-file-modified-sort="1637573476000" data-listing-filename-sort="Environmental.pptx">
+<td>
+<a href="../../../../content/blog/posts/infographics/infographics/Environmental.pptx" class="filename listing-filename">Environmental.pptx</a>
+</td>
+<td>
+<span class="listing-file-modified">11/22/21, 1:31:16 AM</span>
+</td>
+</tr>
+<tr data-index="12" data-listing-file-modified-sort="1641276752000" data-listing-filename-sort="Food.pptx">
+<td>
+<a href="../../../../content/blog/posts/infographics/infographics/Food.pptx" class="filename listing-filename">Food.pptx</a>
+</td>
+<td>
+<span class="listing-file-modified">1/3/22, 10:12:32 PM</span>
+</td>
+</tr>
+<tr data-index="13" data-listing-file-modified-sort="1643855264000" data-listing-filename-sort="Governance.pptx">
+<td>
+<a href="../../../../content/blog/posts/infographics/infographics/Governance.pptx" class="filename listing-filename">Governance.pptx</a>
+</td>
+<td>
+<span class="listing-file-modified">2/2/22, 6:27:44 PM</span>
+</td>
+</tr>
+<tr data-index="14" data-listing-file-modified-sort="1638329034000" data-listing-filename-sort="Health.pptx">
+<td>
+<a href="../../../../content/blog/posts/infographics/infographics/Health.pptx" class="filename listing-filename">Health.pptx</a>
+</td>
+<td>
+<span class="listing-file-modified">11/30/21, 7:23:54 PM</span>
+</td>
+</tr>
+<tr data-index="15" data-listing-file-modified-sort="1644453940000" data-listing-filename-sort="Innovation.pptx">
+<td>
+<a href="../../../../content/blog/posts/infographics/infographics/Innovation.pptx" class="filename listing-filename">Innovation.pptx</a>
+</td>
+<td>
+<span class="listing-file-modified">2/9/22, 4:45:40 PM</span>
+</td>
+</tr>
+<tr data-index="16" data-listing-file-modified-sort="1638330122000" data-listing-filename-sort="Investment.pptx">
+<td>
+<a href="../../../../content/blog/posts/infographics/infographics/Investment.pptx" class="filename listing-filename">Investment.pptx</a>
+</td>
+<td>
+<span class="listing-file-modified">11/30/21, 7:42:02 PM</span>
+</td>
+</tr>
+<tr data-index="17" data-listing-file-modified-sort="1654006212000" data-listing-filename-sort="Law.pptx">
+<td>
+<a href="../../../../content/blog/posts/infographics/infographics/Law.pptx" class="filename listing-filename">Law.pptx</a>
+</td>
+<td>
+<span class="listing-file-modified">5/31/22, 7:10:12 AM</span>
+</td>
+</tr>
+<tr data-index="18" data-listing-file-modified-sort="1648694118000" data-listing-filename-sort="Merchandise Marketing Presentation Light ( No Image ).pptx">
+<td>
+<a href="../../../../content/blog/posts/infographics/infographics/Merchandise Marketing Presentation Light ( No Image ).pptx" class="filename listing-filename">Merchandise Marketing Presentation Light ( No Image ).pptx</a>
+</td>
+<td>
+<span class="listing-file-modified">3/30/22, 7:35:18 PM</span>
+</td>
+</tr>
+<tr data-index="19" data-listing-file-modified-sort="1662262564000" data-listing-filename-sort="Neumorphic.pptx">
+<td>
+<a href="../../../../content/blog/posts/infographics/infographics/Neumorphic.pptx" class="filename listing-filename">Neumorphic.pptx</a>
+</td>
+<td>
+<span class="listing-file-modified">9/3/22, 8:36:04 PM</span>
+</td>
+</tr>
+<tr data-index="20" data-listing-file-modified-sort="1639873912000" data-listing-filename-sort="Office Scenes.pptx">
+<td>
+<a href="../../../../content/blog/posts/infographics/infographics/Office Scenes.pptx" class="filename listing-filename">Office Scenes.pptx</a>
+</td>
+<td>
+<span class="listing-file-modified">12/18/21, 4:31:52 PM</span>
+</td>
+</tr>
+<tr data-index="21" data-listing-file-modified-sort="1591854810000" data-listing-filename-sort="Pyramid.pptx">
+<td>
+<a href="../../../../content/blog/posts/infographics/infographics/Pyramid.pptx" class="filename listing-filename">Pyramid.pptx</a>
+</td>
+<td>
+<span class="listing-file-modified">6/10/20, 10:53:30 PM</span>
+</td>
+</tr>
+<tr data-index="22" data-listing-file-modified-sort="1639641526000" data-listing-filename-sort="Real Estate.pptx">
+<td>
+<a href="../../../../content/blog/posts/infographics/infographics/Real Estate.pptx" class="filename listing-filename">Real Estate.pptx</a>
+</td>
+<td>
+<span class="listing-file-modified">12/15/21, 11:58:46 PM</span>
+</td>
+</tr>
+<tr data-index="23" data-listing-file-modified-sort="1635576078000" data-listing-filename-sort="Sports.pptx">
+<td>
+<a href="../../../../content/blog/posts/infographics/infographics/Sports.pptx" class="filename listing-filename">Sports.pptx</a>
+</td>
+<td>
+<span class="listing-file-modified">10/29/21, 11:41:18 PM</span>
+</td>
+</tr>
+<tr data-index="24" data-listing-file-modified-sort="1609733578000" data-listing-filename-sort="Startup 2.pptx">
+<td>
+<a href="../../../../content/blog/posts/infographics/infographics/Startup 2.pptx" class="filename listing-filename">Startup 2.pptx</a>
+</td>
+<td>
+<span class="listing-file-modified">1/3/21, 8:12:58 PM</span>
+</td>
+</tr>
+<tr data-index="25" data-listing-file-modified-sort="1662262562000" data-listing-filename-sort="Strategy.pptx">
+<td>
+<a href="../../../../content/blog/posts/infographics/infographics/Strategy.pptx" class="filename listing-filename">Strategy.pptx</a>
+</td>
+<td>
+<span class="listing-file-modified">9/3/22, 8:36:02 PM</span>
+</td>
+</tr>
+<tr data-index="26" data-listing-file-modified-sort="1641769486000" data-listing-filename-sort="Time Management.pptx">
+<td>
+<a href="../../../../content/blog/posts/infographics/infographics/Time Management.pptx" class="filename listing-filename">Time Management.pptx</a>
+</td>
+<td>
+<span class="listing-file-modified">1/9/22, 3:04:46 PM</span>
+</td>
+</tr>
+<tr data-index="27" data-listing-file-modified-sort="1648361528000" data-listing-filename-sort="Training.pptx">
+<td>
+<a href="../../../../content/blog/posts/infographics/infographics/Training.pptx" class="filename listing-filename">Training.pptx</a>
+</td>
+<td>
+<span class="listing-file-modified">3/26/22, 11:12:08 PM</span>
+</td>
+</tr>
+<tr data-index="28" data-listing-file-modified-sort="1637807486000" data-listing-filename-sort="Transportation Logistics.pptx">
+<td>
+<a href="../../../../content/blog/posts/infographics/infographics/Transportation Logistics.pptx" class="filename listing-filename">Transportation Logistics.pptx</a>
+</td>
+<td>
+<span class="listing-file-modified">11/24/21, 6:31:26 PM</span>
+</td>
+</tr>
+<tr data-index="29" data-listing-file-modified-sort="1643025638000" data-listing-filename-sort="Work From Home.pptx">
+<td>
+<a href="../../../../content/blog/posts/infographics/infographics/Work From Home.pptx" class="filename listing-filename">Work From Home.pptx</a>
+</td>
+<td>
+<span class="listing-file-modified">1/24/22, 4:00:38 AM</span>
+</td>
+</tr>
+</tbody>
+
+</table>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+
+
+
+
+ ]]></description>
+  <category>Templates</category>
+  <guid>http://toolkit.goecoug.com/content/blog/posts/infographics/index.html</guid>
+  <pubDate>Sat, 28 Oct 2023 07:00:00 GMT</pubDate>
+  <media:content url="http://toolkit.goecoug.com/static/logo.svg" medium="image" type="image/svg+xml"/>
+</item>
+<item>
+  <title>Linux Filesystem</title>
+  <dc:creator>Caleb Grant</dc:creator>
+  <link>http://toolkit.goecoug.com/content/blog/posts/linux-filesystem/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p><img src="http://toolkit.goecoug.com/content/blog/posts/linux-filesystem/linux-filesystem.jpeg" class="img-fluid"></p>
+
+
+
+ ]]></description>
+  <category>Linux</category>
+  <guid>http://toolkit.goecoug.com/content/blog/posts/linux-filesystem/index.html</guid>
+  <pubDate>Sat, 28 Oct 2023 07:00:00 GMT</pubDate>
+  <media:content url="http://toolkit.goecoug.com/static/logo.svg" medium="image" type="image/svg+xml"/>
+</item>
 <item>
   <title>Data Engineering Blogs</title>
   <dc:creator>Caleb Grant</dc:creator>

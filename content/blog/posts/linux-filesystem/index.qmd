@@ -1,0 +1,9 @@
+---
+title: Linux Filesystem
+description: Linux Filesystem
+date: 2023-10-28
+author: Caleb Grant
+categories: [Linux]
+---
+
+![](./linux-filesystem.jpeg)

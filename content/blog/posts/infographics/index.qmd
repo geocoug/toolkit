@@ -1,0 +1,16 @@
+---
+title: Infographics
+description: Infographic templates
+date: 2023-10-28
+author: Caleb Grant
+categories: [Templates]
+listing:
+  - id: infographic-listing
+    contents: "infographics/*"
+    type: table
+---
+
+This is a collection of infographic templates.
+
+::: {#infographic-listing}
+:::

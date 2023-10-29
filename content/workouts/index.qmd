@@ -1,6 +1,6 @@
 ---
-title: Workouts
-description: Workout routines
+title: Strength Training
+description: Strength training workout routines
 image: /static/resources/workouts.png
 execute:
   echo: false
