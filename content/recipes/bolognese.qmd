@@ -2,7 +2,8 @@
 title: Bolognese
 description: Bolognese Sauce
 categories: [Sauce]
-cooktime: 1 hour
+cooktime: 1 hours
+date: 2023-07-02
 ---
 
 - 2 carrot sticks

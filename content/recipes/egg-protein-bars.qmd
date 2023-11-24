@@ -2,7 +2,8 @@
 title: Egg Protein Bars
 description: Egg protein bars
 categories: [Protein, Snack]
-cooktime: 1 hour
+cooktime: 1 hours
+date: 2023-08-08
 ---
 
 * 1.5 lbs sausage

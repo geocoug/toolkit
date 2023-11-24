@@ -3,6 +3,7 @@ title: Bloody Mary
 description: Bloody Mary
 categories: [Drink,Alcohol]
 cooktime: 5 minutes
+date: 2023-01-11
 ---
 
 - V8

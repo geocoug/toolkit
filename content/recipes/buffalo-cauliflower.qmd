@@ -3,6 +3,7 @@ title: Buffalo Cauliflower
 description: Buffalo cauliflower bites
 categories: [Snack]
 cooktime: 45 minutes
+date: 2023-08-08
 ---
 
 1. Preheat oven to 450 F

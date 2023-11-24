@@ -659,17 +659,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    table_name</span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>) <span class="kw">as</span> (</span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="kw">values</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'idb'</span>, <span class="st">'d_document'</span>),</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'idb'</span>, <span class="st">'d_docfile'</span>),</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'idb'</span>, <span class="st">'d_study'</span>),</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'idb'</span>, <span class="st">'d_location'</span>),</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'idb'</span>, <span class="st">'d_studylocation'</span>),</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'idb'</span>, <span class="st">'d_sampcoll'</span>),</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'idb'</span>, <span class="st">'d_sampmain'</span>),</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'idb'</span>, <span class="st">'d_sampsplit'</span>),</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'idb'</span>, <span class="st">'d_labsample'</span>),</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'idb'</span>, <span class="st">'d_labpkg'</span>),</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'idb'</span>, <span class="st">'d_labresult'</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'gsidb'</span>, <span class="st">'d_document'</span>),</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'gsidb'</span>, <span class="st">'d_docfile'</span>),</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'gsidb'</span>, <span class="st">'d_study'</span>),</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'gsidb'</span>, <span class="st">'d_location'</span>),</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'gsidb'</span>, <span class="st">'d_studylocation'</span>),</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'gsidb'</span>, <span class="st">'d_sampcoll'</span>),</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'gsidb'</span>, <span class="st">'d_sampmain'</span>),</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'gsidb'</span>, <span class="st">'d_sampsplit'</span>),</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'gsidb'</span>, <span class="st">'d_labsample'</span>),</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'gsidb'</span>, <span class="st">'d_labpkg'</span>),</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'gsidb'</span>, <span class="st">'d_labresult'</span>)</span>
 <span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>),</span>
 <span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>exclude_columns (column_name) <span class="kw">as</span> (</span>
 <span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>    <span class="kw">values</span></span>
@@ -797,23 +797,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-6" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-6" data-code-annotation="1" data-code-lines="1,2,3,4,5">Create a read-only user.</span>
+<span data-code-annotation="1" data-code-cell="annotated-cell-6" data-code-lines="1,2,3,4,5">Create a read-only user.</span>
 </dd>
 <dt data-target-cell="annotated-cell-6" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-6" data-code-annotation="2" data-code-lines="7">Allow user to create database objects.</span>
+<span data-code-annotation="2" data-code-cell="annotated-cell-6" data-code-lines="7">Allow user to create database objects.</span>
 </dd>
 <dt data-target-cell="annotated-cell-6" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-6" data-code-annotation="3" data-code-lines="8">Allow user to insert rows to any schema and table.</span>
+<span data-code-annotation="3" data-code-cell="annotated-cell-6" data-code-lines="8">Allow user to insert rows to any schema and table.</span>
 </dd>
 <dt data-target-cell="annotated-cell-6" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-cell="annotated-cell-6" data-code-annotation="4" data-code-lines="9">Allow user to update rows in any schema and table.</span>
+<span data-code-annotation="4" data-code-cell="annotated-cell-6" data-code-lines="9">Allow user to update rows in any schema and table.</span>
 </dd>
 <dt data-target-cell="annotated-cell-6" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-cell="annotated-cell-6" data-code-annotation="5" data-code-lines="10">Allow user to delete rows in any schema and table.</span>
+<span data-code-annotation="5" data-code-cell="annotated-cell-6" data-code-lines="10">Allow user to delete rows in any schema and table.</span>
 </dd>
 </dl>
 </section>
@@ -900,7 +900,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="co">-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></span>
 <span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="kw">create</span> <span class="kw">database</span> <span class="op">&lt;</span>new_db_name<span class="op">&gt;</span> owner <span class="op">&lt;</span>user_or_group<span class="op">&gt;</span> template <span class="op">&lt;</span>name_of_db_to_use_as_template<span class="op">&gt;</span>;</span>
 <span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="co">-- show search_path;</span></span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="kw">set</span> search_path <span class="kw">to</span> idb, <span class="kw">public</span>;</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="kw">set</span> search_path <span class="kw">to</span> gsidb, <span class="kw">public</span>;</span>
 <span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="kw">grant</span> <span class="kw">connect</span>, <span class="kw">temporary</span> <span class="kw">on</span> <span class="kw">database</span> <span class="op">&lt;</span>new_db_name<span class="op">&gt;</span> <span class="kw">to</span> <span class="kw">public</span>;</span>
 <span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="kw">grant</span> <span class="kw">all</span> <span class="kw">on</span> <span class="kw">database</span> <span class="op">&lt;</span>new_db_name<span class="op">&gt;</span> <span class="kw">to</span> <span class="op">&lt;</span><span class="fu">user</span><span class="op">&gt;</span>;</span>
@@ -976,7 +976,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a> <span class="kw">left</span> <span class="kw">join</span> pg_language l <span class="kw">on</span> p.prolang <span class="op">=</span> l.<span class="kw">oid</span></span>
 <span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a> <span class="kw">left</span> <span class="kw">join</span> pg_type t <span class="kw">on</span> t.<span class="kw">oid</span> <span class="op">=</span> p.prorettype </span>
 <span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a><span class="kw">where</span> n.nspname <span class="kw">not</span> <span class="kw">in</span> (<span class="st">'pg_catalog'</span>, <span class="st">'information_schema'</span>)</span>
-<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a><span class="kw">and</span> n.nspname <span class="op">=</span> <span class="st">'idb'</span></span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a><span class="kw">and</span> n.nspname <span class="op">=</span> <span class="st">'gsidb'</span></span>
 <span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a><span class="kw">order</span> <span class="kw">by</span> function_schema, function_name;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="whos-logged-in" class="level3">
@@ -1208,8 +1208,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="plpgsql">PL/pgSQL</h2>
 <section id="wipe-schema-tables" class="level3">
 <h3 class="anchored" data-anchor-id="wipe-schema-tables">Wipe Schema Tables</h3>
-<div class="sourceCode" id="cb46"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- DROP FUNCTION IF EXISTS idb.wipe_staging();</span></span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">OR</span> <span class="kw">REPLACE</span> <span class="kw">FUNCTION</span> idb.wipe_staging()</span>
+<div class="sourceCode" id="cb46"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- DROP FUNCTION IF EXISTS gsidb.wipe_staging();</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">OR</span> <span class="kw">REPLACE</span> <span class="kw">FUNCTION</span> gsidb.wipe_staging()</span>
 <span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>RETURNS <span class="kw">TABLE</span>(staging_schema text, deleted_tables <span class="dt">integer</span>) </span>
 <span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>LANGUAGE <span class="st">'plpgsql'</span></span>
 <span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a><span class="kw">COST</span> <span class="dv">100</span></span>
@@ -1235,7 +1235,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb46-25"><a href="#cb46-25" aria-hidden="true" tabindex="-1"></a><span class="kw">RETURN</span> <span class="kw">query</span> <span class="kw">select</span> staging_schema, deleted_tables;</span>
 <span id="cb46-26"><a href="#cb46-26" aria-hidden="true" tabindex="-1"></a><span class="cf">END</span>;</span>
 <span id="cb46-27"><a href="#cb46-27" aria-hidden="true" tabindex="-1"></a>$BODY$;</span>
-<span id="cb46-28"><a href="#cb46-28" aria-hidden="true" tabindex="-1"></a><span class="kw">ALTER</span> <span class="kw">FUNCTION</span> idb.wipe_staging()</span>
+<span id="cb46-28"><a href="#cb46-28" aria-hidden="true" tabindex="-1"></a><span class="kw">ALTER</span> <span class="kw">FUNCTION</span> gsidb.wipe_staging()</span>
 <span id="cb46-29"><a href="#cb46-29" aria-hidden="true" tabindex="-1"></a>    OWNER <span class="kw">TO</span> envdb_dm;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>

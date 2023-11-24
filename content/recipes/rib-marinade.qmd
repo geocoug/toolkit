@@ -3,6 +3,7 @@ title: Rib Marinade
 description: Rib Marinade
 categories: [Marinade]
 cooktime: 5 minutes
+date: 2023-01-01
 ---
 
 - Yellow mustard

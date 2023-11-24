@@ -2,7 +2,8 @@
 title: Cougar Gold Mac & Cheese
 description: Rich and filling Cougar Gold mac & cheese
 categories: [Meal]
-cooktime: 1 hour
+cooktime: 1 hours
+date: 2023-03-01
 ---
 
 ## Cougar Gold Mac & Cheese

@@ -1,8 +1,9 @@
 ---
 title: Greek Yogurt Protein Smoothie
 description: High protein smoothie.
-categories: [Protein, Snack]
+categories: [Protein, Healthy]
 cooktime: 2 minutes
+date: 2023-07-12
 ---
 
 * 2 scoops protein powder

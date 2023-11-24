@@ -1,8 +1,9 @@
 ---
 title: Rice Pilaf
 description: Rice pilaf
-categories: [Side]
+categories: [Snack]
 cooktime: 45 minutes
+date: 2023-01-01
 ---
 
 * 1 cup rice

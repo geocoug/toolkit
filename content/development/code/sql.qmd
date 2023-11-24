@@ -206,17 +206,17 @@ main_tables (
     table_name
 ) as (
 values
-    ('idb', 'd_document'),
-    ('idb', 'd_docfile'),
-    ('idb', 'd_study'),
-    ('idb', 'd_location'),
-    ('idb', 'd_studylocation'),
-    ('idb', 'd_sampcoll'),
-    ('idb', 'd_sampmain'),
-    ('idb', 'd_sampsplit'),
-    ('idb', 'd_labsample'),
-    ('idb', 'd_labpkg'),
-    ('idb', 'd_labresult')
+    ('gsidb', 'd_document'),
+    ('gsidb', 'd_docfile'),
+    ('gsidb', 'd_study'),
+    ('gsidb', 'd_location'),
+    ('gsidb', 'd_studylocation'),
+    ('gsidb', 'd_sampcoll'),
+    ('gsidb', 'd_sampmain'),
+    ('gsidb', 'd_sampsplit'),
+    ('gsidb', 'd_labsample'),
+    ('gsidb', 'd_labpkg'),
+    ('gsidb', 'd_labresult')
 ),
 exclude_columns (column_name) as (
     values
@@ -449,7 +449,7 @@ create extension if not exists dblink;
 -- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 create database <new_db_name> owner <user_or_group> template <name_of_db_to_use_as_template>;
 -- show search_path;
-set search_path to idb, public;
+set search_path to gsidb, public;
 
 grant connect, temporary on database <new_db_name> to public;
 grant all on database <new_db_name> to <user>;
@@ -537,7 +537,7 @@ from pg_proc p
  left join pg_language l on p.prolang = l.oid
  left join pg_type t on t.oid = p.prorettype 
 where n.nspname not in ('pg_catalog', 'information_schema')
-and n.nspname = 'idb'
+and n.nspname = 'gsidb'
 order by function_schema, function_name;
 ```
 
@@ -845,8 +845,8 @@ select pg_sleep(2.5);
 ### Wipe Schema Tables
 
 ```sql
--- DROP FUNCTION IF EXISTS idb.wipe_staging();
-CREATE OR REPLACE FUNCTION idb.wipe_staging()
+-- DROP FUNCTION IF EXISTS gsidb.wipe_staging();
+CREATE OR REPLACE FUNCTION gsidb.wipe_staging()
 RETURNS TABLE(staging_schema text, deleted_tables integer) 
 LANGUAGE 'plpgsql'
 COST 100
@@ -872,7 +872,7 @@ END LOOP;
 RETURN query select staging_schema, deleted_tables;
 END;
 $BODY$;
-ALTER FUNCTION idb.wipe_staging()
+ALTER FUNCTION gsidb.wipe_staging()
     OWNER TO envdb_dm;
 ```
 

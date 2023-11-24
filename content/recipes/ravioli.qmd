@@ -3,6 +3,7 @@ title: Ravioli
 description: John's famous ravioli
 categories: [Meal]
 cooktime: 2 hours
+date: 2023-01-01
 ---
 
 ## Filling

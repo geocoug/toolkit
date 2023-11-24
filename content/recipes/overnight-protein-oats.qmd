@@ -3,6 +3,7 @@ title: Overnight Protein Oats
 description: Overnight protein oats
 categories: [Protein, Snack]
 cooktime: 12 hours
+date: 2023-06-01
 ---
 
 * 2 scoops protein powder

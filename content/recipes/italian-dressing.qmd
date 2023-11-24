@@ -1,8 +1,9 @@
 ---
 title: Italian Dressing
 description: Italian dressing
-categories: [Dressing]
+categories: [Dressing, Sauce]
 cooktime: 5 minutes
+date: 2023-07-01
 ---
 
 * 1/2 cup extra virgin olive oil

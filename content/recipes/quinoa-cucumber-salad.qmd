@@ -3,6 +3,7 @@ title: Quinoa & Cucumber Salad
 description: Refreshing quinoa and cucumber salad with avacado dressing
 categories: [Meal]
 cooktime: 30 minutes
+date: 2023-06-01
 ---
 
 * **Salad**:

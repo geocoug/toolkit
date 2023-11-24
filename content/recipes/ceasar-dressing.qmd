@@ -1,8 +1,9 @@
 ---
 title: Ceasar Dressing
 description: Ceasar Dressing
-categories: [Dressing]
+categories: [Dressing, Sauce]
 cooktime: 10 minutes
+date: 2023-08-02
 ---
 
 - Egg yolk

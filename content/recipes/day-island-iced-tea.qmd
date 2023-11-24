@@ -2,7 +2,8 @@
 title: Day Island Iced Tea
 description: Day Island Iced Tea
 categories: [Drink,Alcohol]
-cooktime: 1 minute
+cooktime: 1 minutes
+date: 2023-08-01
 ---
 
 Equal parts:

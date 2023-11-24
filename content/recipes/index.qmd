@@ -6,11 +6,14 @@ listing:
   type: table
   categories: true
   page-size: 15
-  fields: [title, description, cooktime, categories]
+  fields: [title, cooktime, categories, date]
   field-display-names: 
     cooktime: "Cook Time"
-  sort: title
-  sort-ui: false
+    date: "Date Added"
+  sort: 
+    - "date desc"
+    - "title"
+  sort-ui: [title, date, categories]
   table-striped: true
   table-hover: true 
   contents:

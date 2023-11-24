@@ -3,6 +3,7 @@ title: Sourdough Bread
 description: Typical schedule for baking sourdough bread
 categories: [Bread]
 cooktime: 24 hours
+date: 2023-08-01
 ---
 
 Timing could change based on room temperature.
