@@ -1,18 +1,24 @@
 ---
 title: Ravioli
-description: John's famous ravioli
+description: John & Matteo's famous ravioli
 categories: [Meal]
 cooktime: 2 hours
 date: 2023-01-01
 ---
 
-## Filling
+## Ingredients
+
+### Filling
 
 - Spinach
 - Celery
 - Yellow onions
+- Basil
 - Garlic
 - Meats
+  - Pork tenderloin
+  - Prime rib
+  - Turkey
 - Marjoram
 - Thyme
 - Johnnies seasoning
@@ -20,7 +26,7 @@ date: 2023-01-01
 - Parmesan cheese (granulated)
 - Ricotta cheese
 
-## Pasta
+### Pasta
 
 - 3 1/2 cups flour
 - 2/3 cup water
