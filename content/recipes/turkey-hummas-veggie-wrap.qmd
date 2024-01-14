@@ -1,0 +1,18 @@
+---
+title: Turkey Hummas Veggie Wrap
+description: Turkey, hummas, and veggie wrap
+categories: [Healthy, Lunch, Snack]
+cooktime: 5 minutes
+date: 2024-01-14
+---
+
+## Ingredients
+
+* 1 whole wheat tortilla
+* 1 tbsp hummus
+* 2 leaves romaine lettuce
+* 75 g deli turkey
+* 75 g cucumber
+* 3 cherry tomatoes
+* 30 g bell pepper
+* 1/4 avocado

@@ -1,39 +1,5 @@
 [
   {
-    "listing": "/content/recipes/index.html",
-    "items": [
-      "/content/recipes/avocado-tzatziki copy.html",
-      "/content/recipes/blackened-shrimp-bowl.html",
-      "/content/recipes/buffalo-shrimp-lettuce-wraps.html",
-      "/content/recipes/chipotle-burrito-bowl.html",
-      "/content/recipes/cranberry-apple-quinoa-salad.html",
-      "/content/recipes/fish-taco-bowl.html",
-      "/content/recipes/meatballs-and-zoodles.html",
-      "/content/recipes/chicken-and-quinoa.html",
-      "/content/recipes/cheesesteak-lettuce-wraps.html",
-      "/content/recipes/spicy-salmon-bowl.html",
-      "/content/recipes/stuffed-peppers-with-falafel.html",
-      "/content/recipes/buffalo-cauliflower.html",
-      "/content/recipes/egg-protein-bars.html",
-      "/content/recipes/ceasar-dressing.html",
-      "/content/recipes/day-island-iced-tea.html",
-      "/content/recipes/sourdough-bread.html",
-      "/content/recipes/yogurt-protein-smoothie.html",
-      "/content/recipes/turkey-meatballs.html",
-      "/content/recipes/bolognese.html",
-      "/content/recipes/italian-dressing.html",
-      "/content/recipes/lemon-dill-sauce.html",
-      "/content/recipes/cauliflower-pizza-crust.html",
-      "/content/recipes/overnight-protein-oats.html",
-      "/content/recipes/quinoa-cucumber-salad.html",
-      "/content/recipes/cougar-gold-mac.html",
-      "/content/recipes/bloody-mary.html",
-      "/content/recipes/ravioli.html",
-      "/content/recipes/rib-marinade.html",
-      "/content/recipes/rice-pilaf.html"
-    ]
-  },
-  {
     "listing": "/content/development/code/notebooks/index.html",
     "items": [
       "/content/development/code/notebooks/data-science.html",
@@ -90,5 +56,45 @@
   {
     "listing": "/content/blog/posts/infographics/index.html",
     "items": []
+  },
+  {
+    "listing": "/content/recipes/index.html",
+    "items": [
+      "/content/recipes/cinnamon-protein-balls.html",
+      "/content/recipes/kuing-pao-chicken.html",
+      "/content/recipes/shrimp-fried-cauliflower-rice.html",
+      "/content/recipes/shrimp-and-pineapple.html",
+      "/content/recipes/spicy-chicken-and-sweet-potato.html",
+      "/content/recipes/turkey-hummas-veggie-wrap.html",
+      "/content/recipes/avocado-tzatziki copy.html",
+      "/content/recipes/blackened-shrimp-bowl.html",
+      "/content/recipes/buffalo-shrimp-lettuce-wraps.html",
+      "/content/recipes/chipotle-burrito-bowl.html",
+      "/content/recipes/cranberry-apple-quinoa-salad.html",
+      "/content/recipes/fish-taco-bowl.html",
+      "/content/recipes/meatballs-and-zoodles.html",
+      "/content/recipes/chicken-and-quinoa.html",
+      "/content/recipes/cheesesteak-lettuce-wraps.html",
+      "/content/recipes/spicy-salmon-bowl.html",
+      "/content/recipes/stuffed-peppers-with-falafel.html",
+      "/content/recipes/buffalo-cauliflower.html",
+      "/content/recipes/egg-protein-bars.html",
+      "/content/recipes/ceasar-dressing.html",
+      "/content/recipes/day-island-iced-tea.html",
+      "/content/recipes/sourdough-bread.html",
+      "/content/recipes/yogurt-protein-smoothie.html",
+      "/content/recipes/turkey-meatballs.html",
+      "/content/recipes/bolognese.html",
+      "/content/recipes/italian-dressing.html",
+      "/content/recipes/lemon-dill-sauce.html",
+      "/content/recipes/cauliflower-pizza-crust.html",
+      "/content/recipes/overnight-protein-oats.html",
+      "/content/recipes/quinoa-cucumber-salad.html",
+      "/content/recipes/cougar-gold-mac.html",
+      "/content/recipes/bloody-mary.html",
+      "/content/recipes/ravioli.html",
+      "/content/recipes/rib-marinade.html",
+      "/content/recipes/rice-pilaf.html"
+    ]
   }
 ]
